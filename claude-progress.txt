@@ -6,6 +6,7 @@
 - ✅ 创建feature_list.json
 - ✅ Feature #7: AI调用层支持多模型（Claude、Gemini、GLM-5）
 - ✅ Feature #2: 飞书多维表格存储用户数据
+- ✅ Feature #1: 飞书认证（基础结构）
 
 ## 当前任务
 
