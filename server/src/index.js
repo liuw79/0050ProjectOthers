@@ -12,8 +12,12 @@ const larkClient = new LarkClient();
 // 多维表格配置（临时，实际需要从飞书获取）
 const BITABLE_CONFIG = {
   users: {
-    app_token: 'placeholder_users_table_token',
-    table_id: 'placeholder_users_table_id',
+    app_token: process.env.LARK_USERS_APP_TOKEN || 'placeholder_users_table_token',
+    table_id: process.env.LARK_USERS_TABLE_ID || 'placeholder_users_table_id',
+  },
+  materials: {
+    app_token: process.env.LARK_MATERIALS_APP_TOKEN || 'placeholder_materials_table_token',
+    table_id: process.env.LARK_MATERIALS_TABLE_ID || 'placeholder_materials_table_id',
   }
 };
 
@@ -34,7 +38,7 @@ app.get('/api/users/:userId', async (req, res) => {
     const records = await larkClient.queryBitableRecords(
       BITABLE_CONFIG.users.app_token,
       BITABLE_CONFIG.users.table_id,
-      { filter: { conditions: [{ field_name: 'user_id', value: [userId] }] }
+      { filter: { conditions: [{ field_name: 'user_id', operator: 'is', value: [userId] }] } }
     );
     if (records.length === 0) {
       return res.status(404).json({ success: false, error: '用户不存在' });
@@ -60,6 +64,70 @@ app.post('/api/users', async (req, res) => {
       }
     );
     res.json({ success: true, user: result.fields });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// ========== 素材库API ==========
+
+// 添加素材
+app.post('/api/materials', async (req, res) => {
+  try {
+    const { userId, title, content, tags, category } = req.body;
+    if (!userId || !title || !content) {
+      return res.status(400).json({ success: false, error: '缺少必填字段: userId, title, content' });
+    }
+    const result = await larkClient.addBitableRecord(
+      BITABLE_CONFIG.materials.app_token,
+      BITABLE_CONFIG.materials.table_id,
+      {
+        user_id: userId,
+        title: title,
+        content: content,
+        tags: tags || [],
+        category: category || 'default',
+        created_at: new Date().toISOString(),
+      }
+    );
+    res.json({ success: true, material: result.fields });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// 获取素材列表
+app.get('/api/materials', async (req, res) => {
+  try {
+    const { userId, tag, category } = req.query;
+    const filter = { conditions: [] };
+    if (userId) {
+      filter.conditions.push({
+        field_name: 'user_id',
+        operator: 'is',
+        value: [userId]
+      });
+    }
+    if (tag) {
+      filter.conditions.push({
+        field_name: 'tags',
+        operator: 'contains',
+        value: [tag]
+      });
+    }
+    if (category) {
+      filter.conditions.push({
+        field_name: 'category',
+        operator: 'is',
+        value: [category]
+      });
+    }
+    const records = await larkClient.queryBitableRecords(
+      BITABLE_CONFIG.materials.app_token,
+      BITABLE_CONFIG.materials.table_id,
+      filter.conditions.length > 0 ? filter : undefined
+    );
+    res.json({ success: true, materials: records.map(r => r.fields) });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
@@ -118,6 +186,8 @@ app.listen(PORT, () => {
   console.log(`  GET  /health`);
   console.log(`  GET  /api/users/:userId`);
   console.log(`  POST /api/users`);
+  console.log(`  GET  /api/materials`);
+  console.log(`  POST /api/materials`);
   console.log(`  POST /api/ai/claude`);
   console.log(`  POST /api/ai/gemini`);
   console.log(`  POST /api/ai/glm`);
