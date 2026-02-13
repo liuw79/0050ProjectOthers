@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>素材库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+    .header {
+      background: white;
+      padding: 20px 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      margin: 0;
+      color: #333;
+    }
+    .header .nav a {
+      margin-left: 20px;
+      color: #666;
+      text-decoration: none;
+    }
+    .header .nav a:hover {
+      color: #3385ff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    .toolbar {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .toolbar input,
+    .toolbar select,
+    .toolbar button {
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .toolbar button {
+      background: #3385ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .toolbar button:hover {
+      background: #2563eb;
+    }
+    .materials-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .material-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .material-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .material-card h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .material-card .content {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      max-height: 100px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+    .material-card .meta {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .material-card .meta span {
+      padding: 4px 12px;
+      background: #f0f0f0;
+      color: #666;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .material-card .category {
+      background: #e3f2fd;
+      color: white;
+    }
+    .material-card .date {
+      margin-left: auto;
+      color: #999;
+    }
+    .loading {
+      text-align: center;
+      padding: 50px;
+      color: #666;
+    }
+    .empty {
+      text-align: center;
+      padding: 100px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>我的素材</h1>
+    <div class="nav">
+      <a href="login.html">退出登录</a>
+      <a href="add-material.html">添加素材</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="toolbar">
+      <input type="text" id="tagFilter" placeholder="按标签搜索...">
+      <select id="categoryFilter">
+        <option value="">所有分类</option>
+        <option value="default">默认</option>
+        <option value="案例">案例</option>
+        <option value="金句">金句</option>
+        <option value="观点">观点</option>
+      </select>
+      <button onclick="loadMaterials()">刷新</button>
+    </div>
+
+    <div id="materialsList" class="materials-list">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://localhost:3000/api';
+    let currentUserId = null;
+
+    // 从URL获取userId
+    function getUserId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('userId') || 'test123'; // 临时使用测试ID
+    }
+
+    // 加载素材列表
+    async function loadMaterials() {
+      currentUserId = getUserId();
+      const tagFilter = document.getElementById('tagFilter').value;
+      const categoryFilter = document.getElementById('categoryFilter').value;
+
+      const container = document.getElementById('materialsList');
+      container.innerHTML = '<div class="loading">加载中...</div>';
+
+      try {
+        const params = new URLSearchParams({ userId: currentUserId });
+        if (tagFilter) params.append('tag', tagFilter);
+        if (categoryFilter) params.append('category', categoryFilter);
+
+        const response = await fetch(`${API_BASE}/materials?${params}`);
+        const data = await response.json();
+
+        if (data.success && data.materials.length > 0) {
+          container.innerHTML = data.materials.map(m => `
+            <div class="material-card">
+              <h3>${escapeHtml(m.title)}</h3>
+              <div class="content">${escapeHtml(m.content)}</div>
+              <div class="meta">
+                ${(m.tags || []).map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join('')}
+                <span class="category">${escapeHtml(m.category)}</span>
+                <span class="date">${new Date(m.created_at).toLocaleDateString()}</span>
+              </div>
+            </div>
+          `).join('');
+        } else {
+          container.innerHTML = '<div class="empty">暂无素材，点击上方"添加素材"按钮创建</div>';
+        }
+      } catch (error) {
+        container.innerHTML = `<div class="empty">加载失败：${error.message}</div>`;
+      }
+    }
+
+    // HTML转义，防止XSS
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // 页面加载时获取素材
+    window.onload = loadMaterials;
+  </script>
+</body>
+</html>
