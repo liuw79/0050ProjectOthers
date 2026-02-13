@@ -1,0 +1,120 @@
+[
+  {
+    "id": "1",
+    "category": "auth",
+    "description": "用户可以通过飞书认证登录系统",
+    "steps": [
+      "点击飞书登录按钮",
+      "用户被重定向到飞书授权页面",
+      "用户同意授权",
+      "系统获取用户信息",
+      "验证用户可以访问主页"
+    ],
+    "passes": false
+  },
+  {
+    "id": "2",
+    "category": "data",
+    "description": "飞书多维表格存储用户数据",
+    "steps": [
+      "用户登录后，多维表格新增用户记录",
+      "用户信息包括user_id、name、role",
+      "验证用户数据正确写入多维表格"
+    ],
+    "passes": false
+  },
+  {
+    "id": "3",
+    "category": "content",
+    "description": "用户可以查看个人素材库",
+    "steps": [
+      "用户登录后进入系统",
+      "点击'我的素材'菜单",
+      "查看素材列表",
+      "验证只显示当前用户的素材"
+    ],
+    "passes": false
+  },
+  {
+    "id": "4",
+    "category": "content",
+    "description": "用户可以添加个人素材",
+    "steps": [
+      "点击'添加素材'按钮",
+      "填写标题、内容、标签、分类",
+      "提交保存",
+      "验证素材出现在列表中"
+    ],
+    "passes": false
+  },
+  {
+    "id": "5",
+    "category": "content",
+    "description": "用户可以选择内容类型开始创作",
+    "steps": [
+      "用户登录后进入主页",
+      "查看内容类型选项（公众号、主持词、朋友圈等）",
+      "选择'公众号'",
+      "进入公众号创作流程"
+    ],
+    "passes": false
+  },
+  {
+    "id": "6",
+    "category": "workflow",
+    "description": "系统展示创作流程进度条",
+    "steps": [
+      "用户选择内容类型",
+      "显示进度条：步骤1/9→步骤2/9...",
+      "当前步骤高亮显示",
+      "验证进度正确展示"
+    ],
+    "passes": false
+  },
+  {
+    "id": "7",
+    "category": "ai",
+    "description": "AI调用层支持多模型（Claude、Gemini、GLM-5）",
+    "steps": [
+      "调用Claude API",
+      "调用Gemini API",
+      "调用GLM-5 API",
+      "验证各模型接口正常"
+    ],
+    "passes": false
+  },
+  {
+    "id": "8",
+    "category": "knowledge",
+    "description": "飞书文档存储课程全文（仅管理员可见）",
+    "steps": [
+      "管理员上传课程文档",
+      "文档存储在飞书文档",
+      "设置权限为仅管理员可见",
+      "验证普通用户无法访问"
+    ],
+    "passes": false
+  },
+  {
+    "id": "9",
+    "category": "knowledge",
+    "description": "飞书多维表格存储知识点",
+    "steps": [
+      "在多维表格创建knowledge_points表",
+      "包含标题、内容、标签、关联字段",
+      "API可以读取和写入知识点"
+    ],
+    "passes": false
+  },
+  {
+    "id": "10",
+    "category": "skill",
+    "description": "Skills数据存储和版本管理",
+    "steps": [
+      "多维表格创建skills表",
+      "包含版本号、父版本、状态字段",
+      "支持版本历史查询"
+    ],
+    "passes": false
+  }
+]
