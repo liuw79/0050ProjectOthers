@@ -81,7 +81,7 @@
       "调用GLM-5 API",
       "验证各模型接口正常"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "8",
