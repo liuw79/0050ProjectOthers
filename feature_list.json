@@ -21,7 +21,7 @@
       "用户信息包括user_id、name、role",
       "验证用户数据正确写入多维表格"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "id": "3",
