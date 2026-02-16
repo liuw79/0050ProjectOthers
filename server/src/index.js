@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import materialsRouter from './routes/materials.js';
 import coursesRouter from './routes/courses.js';
+import topicsRouter from './routes/topics.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/health', (req, res) => {
 // API 路由
 app.use('/api/materials', materialsRouter);
 app.use('/api/courses', coursesRouter);
+app.use('/api/topics', topicsRouter);
 
 app.listen(PORT, () => {
   console.log(`GW.Content 2.0 运行在 http://localhost:${PORT}`);
