@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import materialsRouter from './routes/materials.js';
 import coursesRouter from './routes/courses.js';
 import topicsRouter from './routes/topics.js';
+import suggestMaterialsRouter from './routes/suggest-materials.js';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.get('/health', (req, res) => {
 app.use('/api/materials', materialsRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/topics', topicsRouter);
+app.use('/api/suggest-materials', suggestMaterialsRouter);
 
 app.listen(PORT, () => {
   console.log(`GW.Content 2.0 运行在 http://localhost:${PORT}`);
