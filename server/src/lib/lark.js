@@ -3,10 +3,16 @@ const FEISHU_BASE = 'https://open.feishu.cn/open-apis';
 
 export class LarkClient {
   constructor() {
-    this.appId = process.env.LARK_APP_ID;
-    this.appSecret = process.env.LARK_APP_SECRET;
     this.token = null;
     this.tokenExpire = 0;
+  }
+
+  get appId() {
+    return process.env.LARK_APP_ID;
+  }
+
+  get appSecret() {
+    return process.env.LARK_APP_SECRET;
   }
 
   async getToken() {
@@ -30,11 +36,18 @@ export class LarkClient {
 
   async getRecords(appToken, tableId) {
     const token = await this.getToken();
-    const res = await fetch(
-      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=500`,
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
-    const data = await res.json();
+    const url = `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=500`;
+    console.log('Lark request:', url);
+    const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    const text = await res.text();
+    console.log('Lark response status:', res.status, 'body:', text.slice(0, 200));
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      console.error('Lark JSON parse error:', e.message);
+      throw new Error(`飞书 API 返回非 JSON: ${text.slice(0, 100)}`);
+    }
     if (data.code !== 0) throw new Error(`获取记录失败: ${data.msg}`);
     return this.normalize(data.data.items || []);
   }

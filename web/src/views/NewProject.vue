@@ -142,9 +142,29 @@
 
     <!-- Step 3: 生成内容 -->
     <div v-if="step === 3" class="bg-white rounded-lg p-6 shadow-sm">
-      <h2 class="text-xl font-bold mb-4">Step 3: 生成内容</h2>
+      <!-- 标题栏 -->
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-xl font-bold">Step 3: 生成内容</h2>
+          <p class="text-gray-500 text-sm mt-1">选题：{{ finalTopic }}</p>
+        </div>
+        <!-- 视图切换 -->
+        <div v-if="generatedContent" class="flex gap-2">
+          <button
+            @click="viewMode = 'preview'"
+            :class="viewMode === 'preview' ? 'bg-blue-500 text-white' : 'bg-gray-100'"
+            class="px-3 py-1 rounded text-sm"
+          >预览</button>
+          <button
+            @click="viewMode = 'source'"
+            :class="viewMode === 'source' ? 'bg-blue-500 text-white' : 'bg-gray-100'"
+            class="px-3 py-1 rounded text-sm"
+          >源码</button>
+        </div>
+      </div>
 
-      <div v-if="!generatedContent" class="text-center py-8">
+      <!-- 生成按钮 -->
+      <div v-if="!generatedContent" class="text-center py-12">
         <button
           @click="generateContent"
           :disabled="generating"
@@ -152,16 +172,56 @@
         >
           {{ generating ? 'AI 写作中...' : '生成文章' }}
         </button>
+        <p v-if="generating" class="text-gray-500 mt-3 text-sm">正在生成，请稍候...</p>
       </div>
 
+      <!-- 生成结果 -->
       <div v-else>
-        <div class="prose max-w-none mb-6" v-html="renderedContent"></div>
-        <div class="flex gap-4">
-          <button @click="copyContent" class="flex-1 border py-2 rounded-lg hover:bg-gray-50">
-            复制
+        <!-- 统计信息 -->
+        <div class="flex items-center gap-6 text-sm text-gray-500 mb-4 pb-4 border-b">
+          <span>📄 {{ contentStats.chars }} 字</span>
+          <span>📝 {{ contentStats.paragraphs }} 段</span>
+          <span>⏱️ {{ contentStats.readTime }} 分钟阅读</span>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="mb-6">
+          <!-- 预览模式 -->
+          <div v-if="viewMode === 'preview'" class="prose max-w-none" v-html="renderedContent"></div>
+          <!-- 源码模式 -->
+          <pre v-else class="bg-gray-50 p-4 rounded-lg text-sm overflow-auto max-h-[60vh] whitespace-pre-wrap">{{ generatedContent }}</pre>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="flex gap-3">
+          <button
+            @click="copyContent"
+            class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50"
+          >
+            <span>📋</span>
+            <span>{{ copySuccess ? '已复制!' : '复制' }}</span>
           </button>
-          <button @click="saveProject" class="flex-1 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
-            保存
+          <button
+            @click="regenerate"
+            :disabled="generating"
+            class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50 disabled:opacity-50"
+          >
+            <span>🔄</span>
+            <span>重新生成</span>
+          </button>
+          <button
+            @click="downloadMarkdown"
+            class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50"
+          >
+            <span>💾</span>
+            <span>下载</span>
+          </button>
+          <button
+            @click="saveProject"
+            class="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 rounded-lg hover:bg-green-600"
+          >
+            <span>☁️</span>
+            <span>保存到飞书</span>
           </button>
         </div>
       </div>
@@ -200,6 +260,8 @@ const showPromptPreview = ref(false);
 const previewPromptText = ref('');
 const generating = ref(false);
 const generatedContent = ref('');
+const viewMode = ref('preview');
+const copySuccess = ref(false);
 
 const stepClass = (n) => `px-4 py-2 rounded-full ${step.value >= n ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-500'}`;
 
@@ -308,16 +370,57 @@ async function generateContent() {
 
 const renderedContent = computed(() => {
   if (!generatedContent.value) return '';
-  return generatedContent.value
+  // 先移除 markdown 代码块标记
+  let content = generatedContent.value
+    .replace(/^```markdown\n?/gm, '')
+    .replace(/\n?```$/gm, '');
+  return content
     .replace(/^## (.+)$/gm, '<h2 class="text-xl font-bold mt-6 mb-2">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\n\n/g, '</p><p class="my-3">')
     .replace(/\n/g, '<br>');
 });
 
-function copyContent() {
-  navigator.clipboard.writeText(generatedContent.value);
-  alert('已复制');
+// 文章统计
+const contentStats = computed(() => {
+  if (!generatedContent.value) return { chars: 0, paragraphs: 0, readTime: 0 };
+  const text = generatedContent.value
+    .replace(/^```markdown\n?/gm, '')
+    .replace(/\n?```$/gm, '')
+    .replace(/[#*\n]/g, '');
+  const chars = text.length;
+  const paragraphs = generatedContent.value.split(/\n\n+/).filter(p => p.trim()).length;
+  const readTime = Math.max(1, Math.ceil(chars / 500)); // 假设每分钟阅读500字
+  return { chars, paragraphs, readTime };
+});
+
+async function copyContent() {
+  // 复制时移除 markdown 代码块标记
+  const cleanContent = generatedContent.value
+    .replace(/^```markdown\n?/gm, '')
+    .replace(/\n?```$/gm, '');
+  await navigator.clipboard.writeText(cleanContent);
+  copySuccess.value = true;
+  setTimeout(() => { copySuccess.value = false; }, 2000);
+}
+
+async function regenerate() {
+  generatedContent.value = '';
+  await generateContent();
+}
+
+function downloadMarkdown() {
+  const cleanContent = generatedContent.value
+    .replace(/^```markdown\n?/gm, '')
+    .replace(/\n?```$/gm, '');
+  const blob = new Blob([cleanContent], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${finalTopic.value.slice(0, 30)}.md`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 function saveProject() {

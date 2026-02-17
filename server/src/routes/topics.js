@@ -5,7 +5,8 @@ import { ai } from '../lib/ai.js';
 
 const router = express.Router();
 
-const TABLES = {
+// 延迟获取配置（确保 dotenv 已加载）
+const getTables = () => ({
   courses: {
     appToken: process.env.LARK_COURSES_APP_TOKEN,
     tableId: process.env.LARK_COURSES_TABLE_ID,
@@ -14,13 +15,14 @@ const TABLES = {
     appToken: process.env.LARK_MATERIALS_APP_TOKEN,
     tableId: process.env.LARK_MATERIALS_TABLE_ID,
   },
-};
+});
 
 // 根据课程或关键词推荐选题
 router.post('/suggest', async (req, res) => {
   try {
     const { courseIds, keywords } = req.body;
 
+    const TABLES = getTables();
     // 获取课程内容
     let courseContent = '';
     if (courseIds?.length > 0) {
@@ -53,9 +55,14 @@ ${keywords ? `【用户关注的关键词】${keywords}` : ''}
 3. 站在创始人立场`;
 
     const result = await ai.generateJSON(prompt);
+    console.log('AI result:', JSON.stringify(result)?.slice(0, 500));
+    if (!result) {
+      return res.status(500).json({ success: false, error: 'AI 返回内容解析失败' });
+    }
     res.json({ success: true, ...result });
   } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    console.error('Topics suggest error:', err);
+    res.status(500).json({ success: false, error: err.message, stack: err.stack });
   }
 });
 

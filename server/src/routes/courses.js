@@ -4,16 +4,18 @@ import { lark } from '../lib/lark.js';
 
 const router = express.Router();
 
-const TABLES = {
+// 延迟获取配置
+const getTables = () => ({
   courses: {
     appToken: process.env.LARK_COURSES_APP_TOKEN,
     tableId: process.env.LARK_COURSES_TABLE_ID,
   },
-};
+});
 
 // 获取课程列表（只返回名称，不返回内容）
 router.get('/', async (req, res) => {
   try {
+    const TABLES = getTables();
     const records = await lark.getRecords(TABLES.courses.appToken, TABLES.courses.tableId);
     const courses = records.map(r => ({
       id: r.record_id,
@@ -29,6 +31,7 @@ router.get('/', async (req, res) => {
 // 获取课程内容（用于 AI 分析）
 router.get('/:id/content', async (req, res) => {
   try {
+    const TABLES = getTables();
     const records = await lark.getRecords(TABLES.courses.appToken, TABLES.courses.tableId);
     const course = records.find(r => r.record_id === req.params.id);
 
