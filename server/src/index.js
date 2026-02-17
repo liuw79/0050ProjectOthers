@@ -1,13 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import materialsRouter from './routes/materials.js';
 import coursesRouter from './routes/courses.js';
 import topicsRouter from './routes/topics.js';
 import suggestMaterialsRouter from './routes/suggest-materials.js';
 import writeRouter from './routes/write.js';
 
-dotenv.config();
+dotenv.config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
