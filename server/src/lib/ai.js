@@ -26,7 +26,7 @@ export class AIClient {
   }
 
   async generate(prompt, options = {}) {
-    const model = options.model || 'gemini-2.0-flash';
+    const model = options.model || 'gemini-3-pro-preview';
     const maxTokens = options.maxTokens || 8192;
 
     if (this.isOpenAIFormat) {

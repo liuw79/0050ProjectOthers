@@ -88,6 +88,24 @@ export class LarkClient {
     return data.data;
   }
 
+  async updateRecord(appToken, tableId, recordId, fields) {
+    const token = await this.getToken();
+    const res = await fetch(
+      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records/${recordId}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fields }),
+      }
+    );
+    const data = await res.json();
+    if (data.code !== 0) throw new Error(`更新记录失败: ${data.msg}`);
+    return data.data;
+  }
+
   normalize(records) {
     return records.map(r => {
       const fields = {};

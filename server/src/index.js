@@ -8,6 +8,7 @@ import coursesRouter from './routes/courses.js';
 import topicsRouter from './routes/topics.js';
 import suggestMaterialsRouter from './routes/suggest-materials.js';
 import writeRouter from './routes/write.js';
+import segmentsRouter from './routes/segments.js';
 
 dotenv.config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '../.env') });
 
@@ -28,6 +29,7 @@ app.use('/api/courses', coursesRouter);
 app.use('/api/topics', topicsRouter);
 app.use('/api/suggest-materials', suggestMaterialsRouter);
 app.use('/api/write', writeRouter);
+app.use('/api/segments', segmentsRouter);
 
 app.listen(PORT, () => {
   console.log(`GW.Content 2.0 运行在 http://localhost:${PORT}`);
