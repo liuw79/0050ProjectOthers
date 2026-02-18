@@ -1,3 +1,45 @@
+# 2026-02-18｜课程段落语义切分功能
+
+- **背景**：飞书课程表 content 字段大多为空，本地有 41 门课程完整逐字稿（约 200 万字），需要按语义拆分成约 10 段，每段约 1 万字
+
+- **新增文件**：
+  - `server/src/lib/segmenter.js` - 语义切分核心模块（使用 GLM-4-flash 生成标题和摘要）
+  - `server/src/routes/segments.js` - 段落 API 路由
+  - `server/scripts/process-courses.js` - 课程处理脚本
+
+- **修改文件**：
+  - `server/src/lib/lark.js` - 新增 `updateRecord` 方法
+  - `server/src/routes/courses.js` - 新增 overview/segment_index/process_status 字段返回
+  - `server/src/index.js` - 注册 segments 路由
+
+- **飞书数据结构**：
+  - 新建「课程段落」表（tblisnJgNwYsqqmf）：title/course/segment_index/summary/content/char_count/keywords
+  - 课程表新增字段：overview（概述）/segment_index（段落索引）/process_status（处理状态）
+
+- **API 接口**：
+  - `GET /api/segments` - 段落列表
+  - `GET /api/segments/:id` - 段落详情
+  - `POST /api/segments/batch` - 批量获取
+  - `GET /api/segments/index/:courseId` - 按课程获取索引
+  - `GET /api/courses/:id` - 课程详情（含概述和段落索引）
+
+- **使用方法**：
+  ```bash
+  node scripts/process-courses.js              # 处理所有课程
+  node scripts/process-courses.js --limit 2    # 处理前2门
+  node scripts/process-courses.js --course "GTM"  # 处理指定课程
+  node scripts/process-courses.js --dry-run    # 预演模式
+  ```
+
+- **已处理课程**（试点）：
+  | 课程 | 段落数 | 状态 |
+  |------|--------|------|
+  | 1号找人官 | 7 段 | ✅ |
+  | GTM | 12 段 | ✅ |
+  | 超级面试官 | 22 段 | ✅ (GLM 标题) |
+
+- **Git 提交**：`6c8ea03 feat: 课程段落语义切分功能`
+
 # 2026-02-17｜GW.Content 2.0 Bug 修复与功能增强
 
 - **Bug 修复**：
