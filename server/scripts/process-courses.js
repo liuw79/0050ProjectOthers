@@ -9,6 +9,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 import dotenv from 'dotenv';
 import { segmenter } from '../src/lib/segmenter.js';
 import { lark } from '../src/lib/lark.js';
@@ -77,7 +78,7 @@ function readLocalCourses() {
     let content = '';
     for (const file of files) {
       const filePath = path.join(coursePath, file);
-      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const fileContent = readFileWithEncoding(filePath);
       content += `\n\n=== ${file} ===\n\n${fileContent}`;
     }
 
@@ -87,6 +88,46 @@ function readLocalCourses() {
       fileCount: files.length,
     };
   }).filter(Boolean);
+}
+
+/**
+ * 检测并转换文件编码
+ */
+function readFileWithEncoding(filePath) {
+  // 先尝试 UTF-8
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    // 检查是否有乱码特征
+    if (!content.includes('�') && !hasGarbledText(content)) {
+      return content;
+    }
+  } catch (e) {}
+
+  // 尝试 GBK 转 UTF-8
+  try {
+    const result = execFileSync('iconv', ['-f', 'GBK', '-t', 'UTF-8', filePath], {
+      encoding: 'utf-8',
+      maxBuffer: 50 * 1024 * 1024
+    });
+    console.log(`  编码转换: ${path.basename(filePath)} (GBK → UTF-8)`);
+    return result;
+  } catch (e) {
+    console.log(`  编码转换失败: ${path.basename(filePath)} - ${e.message}`);
+    return fs.readFileSync(filePath, 'utf-8');
+  }
+}
+
+/**
+ * 检测是否有乱码
+ */
+function hasGarbledText(text) {
+  // 检查常见的 GBK 乱码特征
+  const sample = text.slice(0, 2000);
+  const garbledPatterns = [
+    /[\x80-\x9F]{3,}/,  // 连续高位字节
+    /ā|ē|ī|ō|ū|ǖ|ǘ|ǚ|ǜ/, // 拼音符号乱码
+  ];
+  return garbledPatterns.some(p => p.test(sample));
 }
 
 /**
