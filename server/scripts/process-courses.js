@@ -1,10 +1,16 @@
 /**
  * 处理本地课程文件，生成语义段落并存入飞书
  *
+ * 改进版本 v2：
+ * - 写入前删除旧段落（防止重复）
+ * - 单进程保护（文件锁）
+ * - 更好的错误处理
+ *
  * 使用方法:
  *   node scripts/process-courses.js              # 处理所有课程
  *   node scripts/process-courses.js --course "课程名"  # 处理指定课程
  *   node scripts/process-courses.js --limit 2    # 只处理前2门课程
+ *   node scripts/process-courses.js --force      # 强制重新处理（忽略已完成状态）
  */
 import fs from 'fs';
 import path from 'path';
@@ -17,6 +23,7 @@ import { lark } from '../src/lib/lark.js';
 dotenv.config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '../.env') });
 
 const COURSES_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../01_课程知识库');
+const LOCK_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '.process-courses.lock');
 
 const TABLES = {
   courses: {
@@ -30,6 +37,29 @@ const TABLES = {
 };
 
 /**
+ * 单进程保护 - 获取文件锁
+ */
+function acquireLock() {
+  if (fs.existsSync(LOCK_FILE)) {
+    const lockContent = fs.readFileSync(LOCK_FILE, 'utf-8');
+    console.error(`❌ 另一个进程正在运行 (PID: ${lockContent})`);
+    console.error(`   如果确定没有其他进程，请删除: ${LOCK_FILE}`);
+    process.exit(1);
+  }
+  fs.writeFileSync(LOCK_FILE, process.pid.toString());
+
+  // 退出时释放锁
+  process.on('exit', () => releaseLock());
+  process.on('SIGINT', () => { releaseLock(); process.exit(0); });
+}
+
+function releaseLock() {
+  if (fs.existsSync(LOCK_FILE)) {
+    fs.unlinkSync(LOCK_FILE);
+  }
+}
+
+/**
  * 解析命令行参数
  */
 function parseArgs() {
@@ -38,6 +68,7 @@ function parseArgs() {
     course: null,
     limit: null,
     dryRun: false,
+    force: false,  // 强制重新处理
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -49,6 +80,8 @@ function parseArgs() {
       i++;
     } else if (args[i] === '--dry-run') {
       options.dryRun = true;
+    } else if (args[i] === '--force' || args[i] === '-f') {
+      options.force = true;
     }
   }
 
@@ -174,13 +207,56 @@ function matchCourses(localCourses, feishuCourses) {
 }
 
 /**
+ * 删除课程的所有旧段落（防止重复）
+ */
+async function deleteOldSegments(courseId, dryRun = false) {
+  if (dryRun) {
+    console.log(`  [DRY RUN] 将删除旧段落`);
+    return 0;
+  }
+
+  try {
+    // 获取所有段落
+    const records = await lark.getRecords(TABLES.segments.appToken, TABLES.segments.tableId);
+
+    // 筛选该课程的段落
+    const toDelete = records.filter(r => {
+      const courseField = r.fields.course;
+      if (!courseField) return false;
+      // 关联字段格式: {link_record_ids: ["xxx"]} 或直接数组
+      if (courseField.link_record_ids) {
+        return courseField.link_record_ids.includes(courseId);
+      }
+      if (Array.isArray(courseField)) {
+        return courseField.some(c => c.record_id === courseId || c === courseId);
+      }
+      return false;
+    });
+
+    if (toDelete.length === 0) return 0;
+
+    // 批量删除
+    const recordIds = toDelete.map(r => r.record_id);
+    await lark.deleteRecords(TABLES.segments.appToken, TABLES.segments.tableId, recordIds);
+    console.log(`  🗑️  删除 ${toDelete.length} 个旧段落`);
+    return toDelete.length;
+  } catch (err) {
+    console.log(`  ⚠️ 删除旧段落失败: ${err.message}`);
+    return 0;
+  }
+}
+
+/**
  * 将段落写入飞书
  */
 async function saveSegmentsToFeishu(courseId, segments, dryRun = false) {
   if (dryRun) {
     console.log(`  [DRY RUN] 将保存 ${segments.length} 个段落到飞书`);
-    return;
+    return 0;
   }
+
+  // 先删除旧段落（防止重复）
+  await deleteOldSegments(courseId, dryRun);
 
   let savedCount = 0;
   for (const segment of segments) {
@@ -260,7 +336,9 @@ function generateSegmentIndex(segments) {
 /**
  * 处理单门课程
  */
-async function processCourse(localCourse, feishuCourse, dryRun = false) {
+async function processCourse(localCourse, feishuCourse, options = {}) {
+  const { dryRun = false, force = false } = options;
+
   console.log(`\n${'='.repeat(60)}`);
   console.log(`处理课程: ${localCourse.name}`);
   console.log(`文件数: ${localCourse.fileCount}, 总字数: ${localCourse.content.length}`);
@@ -271,9 +349,13 @@ async function processCourse(localCourse, feishuCourse, dryRun = false) {
     return { success: false, reason: '未匹配' };
   }
 
-  if (feishuCourse.processStatus === '已完成') {
-    console.log('⏭️ 课程已处理过，跳过（如需重新处理，请先清除状态）');
+  if (feishuCourse.processStatus === '已完成' && !force) {
+    console.log('⏭️ 课程已处理过，跳过（使用 --force 强制重新处理）');
     return { success: false, reason: '已处理' };
+  }
+
+  if (force && feishuCourse.processStatus === '已完成') {
+    console.log('🔄 强制重新处理模式');
   }
 
   try {
@@ -304,12 +386,22 @@ async function processCourse(localCourse, feishuCourse, dryRun = false) {
  * 主函数
  */
 async function main() {
-  console.log('课程段落处理脚本');
-  console.log('================\n');
+  console.log('课程段落处理脚本 v2');
+  console.log('==================\n');
 
   const options = parseArgs();
+
+  // 单进程保护
+  if (!options.dryRun) {
+    acquireLock();
+  }
+
   if (options.dryRun) {
     console.log('🔍 DRY RUN 模式 - 不会实际写入飞书\n');
+  }
+
+  if (options.force) {
+    console.log('🔄 强制模式 - 将重新处理已完成的课程\n');
   }
 
   // 读取本地课程
@@ -360,7 +452,7 @@ async function main() {
   };
 
   for (const match of toProcess) {
-    const result = await processCourse(match.local, match.feishu, options.dryRun);
+    const result = await processCourse(match.local, match.feishu, options);
     results.details.push({
       name: match.local.name,
       ...result,

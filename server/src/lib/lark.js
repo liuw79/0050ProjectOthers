@@ -106,6 +106,26 @@ export class LarkClient {
     return data.data;
   }
 
+  async deleteRecords(appToken, tableId, recordIds) {
+    if (!recordIds || recordIds.length === 0) return { deleted: 0 };
+
+    const token = await this.getToken();
+    const res = await fetch(
+      `${FEISHU_BASE}/bitable/v1/apps/${appToken}/tables/${tableId}/records/batch_delete`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ records: recordIds }),
+      }
+    );
+    const data = await res.json();
+    if (data.code !== 0) throw new Error(`删除记录失败: ${data.msg}`);
+    return { deleted: recordIds.length };
+  }
+
   normalize(records) {
     return records.map(r => {
       const fields = {};
