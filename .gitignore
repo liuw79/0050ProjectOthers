@@ -1,80 +1,18 @@
-# === 已有独立 Git 的项目 ===
-GW.DataAnalysis/
-GW.KnowledgeBase/
-GW.Trackr/
-GW.Website/
-GW.Content/
-Tool.Agent-S/
-YY.Fangcheng/
+# Dependencies
+node_modules/
 
-# === 大型目录（全排除）===
-Tool.Docs/
-LW.eBook/
-memory/
-restrictURL/
-
-# === Tool.System 运行时/缓存 ===
-Tool.System/runtime/
-Tool.System/local_node/
-Tool.System/dot_claude/
-Tool.System/node_modules/
-Tool.System/backups/
-
-# === 系统文件 ===
+# OS files
 .DS_Store
 Thumbs.db
-*.log
 
-# === 大文件类型 ===
-# 音频
-*.mp3
-*.m4a
-*.wav
-*.flac
-*.aac
-# 视频
-*.mp4
-*.mov
-*.avi
-*.mkv
-# 安装包
-*.exe
-*.pkg
-*.dmg
-*.app
-*.iso
-# 压缩包
-*.zip
-*.tar.gz
-*.rar
-*.7z
-# Python wheel
-*.whl
-# PDF（大文件）
-*.pdf
-
-# === 依赖目录 ===
-**/node_modules/
-venv/
-.venv/
-__pycache__/
-.pytest_cache/
-*.egg-info/
-packages/
-
-# === 构建输出 ===
-dist/
-build/
-*.pyc
-
-# === 编辑器/IDE ===
+# IDE
 .idea/
 .vscode/
 *.swp
-*.swo
 
-# === 敏感文件 ===
-.env
-.env.*
-*.pem
-*.key
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.temp
