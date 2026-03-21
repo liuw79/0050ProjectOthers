@@ -1,0 +1,9 @@
+# 飞书应用配置
+LARK_APP_ID=cli_a91c59780ff89ced
+LARK_APP_SECRET=foaaZIXNqYmFEP2biimzSc8Uf3Hbph0c
+
+# 服务配置
+PORT=3000
+
+# 当前会话（运行时自动更新）
+CURRENT_PROJECT=sys

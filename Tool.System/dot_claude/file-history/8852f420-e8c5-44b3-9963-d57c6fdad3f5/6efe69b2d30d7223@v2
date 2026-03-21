@@ -1,0 +1,23 @@
+[
+  {"query": "把这个文档发布到飞书", "should_trigger": true},
+  {"query": "帮我创建一个飞书文档，标题是会议纪要", "should_trigger": true},
+  {"query": "把这段内容同步到飞书知识库", "should_trigger": true},
+  {"query": "发布到飞书", "should_trigger": true},
+  {"query": "用飞书记录这个方案", "should_trigger": true},
+  {"query": "把这个markdown转成飞书文档", "should_trigger": true},
+  {"query": "新建一个飞书文档存放测试结果", "should_trigger": true},
+  {"query": "把项目说明文档上传到飞书", "should_trigger": true},
+  {"query": "发送到飞书文档", "should_trigger": true},
+  {"query": "帮我写个飞书文档整理今天的会议", "should_trigger": true},
+
+  {"query": "读取飞书文档的内容", "should_trigger": false},
+  {"query": "给我飞书的下载链接", "should_trigger": false},
+  {"query": "飞书怎么用", "should_trigger": false},
+  {"query": "打开飞书", "should_trigger": false},
+  {"query": "发送飞书消息给张三", "should_trigger": false},
+  {"query": "查看飞书日历", "should_trigger": false},
+  {"query": "帮我登录飞书", "should_trigger": false},
+  {"query": "飞书会议怎么开", "should_trigger": false},
+  {"query": "把文件发送到微信", "should_trigger": false},
+  {"query": "发布到公众号", "should_trigger": false}
+]

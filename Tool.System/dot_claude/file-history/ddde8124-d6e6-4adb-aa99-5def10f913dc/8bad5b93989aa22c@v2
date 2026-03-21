@@ -1,0 +1,166 @@
+# 飞书文档 API 开发笔记
+
+> 日期：2026-03-20
+> 来源：GW.Content 项目 feishu-doc-create skill 开发实践
+
+---
+
+## 核心结论
+
+**创建飞书文档 + 添加内容 + 分享权限，推荐方案：**
+
+| 步骤 | 方案 | 说明 |
+|------|------|------|
+| 创建文档 | 自建脚本 | 简单 API 调用 |
+| 添加内容 | **MCP `docx_builtin_import`** | 原生支持 Markdown，格式完美 |
+| 分享权限 | 自建脚本 | 必须用 email 类型 |
+
+---
+
+## 凭证配置
+
+### 优先级
+
+1. **环境变量**（最高优先级）
+   ```bash
+   export FEISHU_APP_ID="cli_xxx"
+   export FEISHU_APP_SECRET="xxx"
+   ```
+
+2. **Claude MCP 配置**（推荐）
+   ```json
+   // ~/.claude/claude_desktop_config.json
+   {
+     "mcpServers": {
+       "lark-mcp": {
+         "env": {
+           "LARK_APP_ID": "cli_xxx",
+           "LARK_APP_SECRET": "xxx"
+         }
+       }
+     }
+   }
+   ```
+
+3. **本地配置文件**
+   ```bash
+   echo '{"appId":"xxx","appSecret":"xxx"}' > ~/.claude/skills/feishu-doc-create/credentials.json
+   ```
+
+---
+
+## API 调用流程
+
+### 1. 获取 Token
+
+```bash
+POST https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal
+Body: {"app_id":"xxx","app_secret":"xxx"}
+返回: {"tenant_access_token":"t-xxx"}
+```
+
+### 2. 创建空文档
+
+```bash
+POST https://open.feishu.cn/open-apis/docx/v1/documents
+Headers: Authorization: Bearer {token}
+Body: {"title":"文档标题"}
+返回: {"document":{"document_id":"xxx"}}
+```
+
+### 3. 添加内容
+
+**⚠️ 坑：标题块格式复杂，容易报错**
+
+推荐方案：
+- **方案A**：用 MCP 的 `docx_builtin_import`（完美支持 Markdown）
+- **方案B**：全部用普通文本块（block_type: 2），用符号区分标题
+
+```javascript
+// 普通文本块（最安全）
+{
+  "block_type": 2,
+  "text": {
+    "elements": [{ "text_run": { "content": "内容" } }]
+  }
+}
+```
+
+**标题块格式（容易出错，不推荐）：**
+```javascript
+// 一级标题 - 格式要求严格
+{
+  "block_type": 4,
+  "heading1": {
+    "elements": [{ "text_run": { "content": "标题" } }],
+    "style": {}  // 可能需要这个字段
+  }
+}
+```
+
+### 4. 添加协作者 ⚠️ 关键格式
+
+**正确格式：**
+```json
+{
+  "path": { "token": "文档ID" },
+  "params": { "type": "docx" },
+  "data": {
+    "member_type": "email",
+    "member_id": "xxx@xxx.com",
+    "perm": "full_access"
+  }
+}
+```
+
+**常见错误：**
+| 错误 | 正确 |
+|------|------|
+| `member_type: "openid"` | `member_type: "email"` |
+| 缺少 `params.type` | 必须加 `"type": "docx"` |
+| body 里加 `type: "user"` | 不要加这个字段 |
+
+**权限级别：**
+- `view` - 可阅读
+- `edit` - 可编辑
+- `full_access` - 完全控制
+
+---
+
+## 文档链接格式
+
+```
+https://feishu.cn/docx/{document_id}
+```
+
+---
+
+## 坑总结
+
+| 坑 | 解决方案 |
+|-----|----------|
+| 标题块报 "invalid param" | 用普通文本块或 MCP import |
+| 分享失败 | 用 email 类型，加 params.type |
+| 凭证找不到 | 从 MCP 配置读取 |
+
+---
+
+## 相关文件
+
+- Skill 脚本：`GW.Content/.claude/skills/feishu-doc-create/create-doc.mjs`
+- Skill 文档：`GW.Content/.claude/skills/feishu-doc-create/SKILL.md`
+- 命令参考：`GW.Content/.claude/commands/feishu-doc.md`
+
+---
+
+## MCP 工具参考
+
+| 工具 | 用途 |
+|------|------|
+| `mcp__lark-mcp__docx_builtin_import` | Markdown 导入飞书文档（推荐） |
+| `mcp__lark-mcp__docx_v1_document_rawContent` | 读取文档内容 |
+| `mcp__lark-mcp__drive_v1_permissionMember_create` | 添加协作者权限 |
+
+---
+
+*下次更新建议：当飞书 API 有新版本或格式变化时更新*

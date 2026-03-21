@@ -1,0 +1,224 @@
+# AI 教练评估系统 - 飞书发布方案
+
+**日期**: 2026-03-19
+**状态**: 🔄 进行中
+**目标**: 实现飞书文档发布的永久方案（带隐私隔离）
+
+## 背景
+
+班主任 AI 教练评估系统需要将评估报告发送给班主任：
+- ✅ 邮件发送（HTML 格式）- 已实现
+- 🔄 飞书发布（Markdown 格式）- 进行中
+
+## 核心问题
+
+飞书发布有两种 token 类型：
+| Token 类型 | 文档归属 | 问题 |
+|-----------|---------|------|
+| tenant_access_token | 机器人名下 | 其他人无法访问 |
+| user_access_token | 用户名下 | Token 2小时过期 |
+
+## 最终方案：使用 lark-mcp 内置 OAuth
+
+**发现**：lark-mcp 已内置完整的 OAuth 和 token 管理！
+
+| 功能 | 状态 | 说明 |
+|------|------|------|
+| OAuth 登录 | ✅ 内置 | `lark-mcp login` |
+| Token 存储 | ✅ 内置 | 自动管理 |
+| 自动刷新 | ✅ 内置 | 请求前检查并刷新 |
+| 隐私隔离 | ✅ 天然 | 文档在用户自己空间 |
+
+### 实施进度
+
+1. ✅ 调研飞书 OAuth refresh_token 机制
+2. ✅ 发现 lark-mcp 内置 OAuth 功能
+3. ✅ 完成 OAuth 登录：`npx @larksuiteoapi/lark-mcp login -a cli_a9f1c604d6b9dbc9`
+4. ✅ Token 验证成功（whoami 显示有效）
+5. 🔄 **当前问题**：MCP 服务使用旧 App ID (cli_a90590cbbdb8dcd5)，与登录的不匹配
+6. ⏳ 待解决：重启 Claude Code 或用另一个 App ID 登录
+
+### 下一步选择
+
+- **A. 重启 Claude Code**（推荐）- 让 MCP 使用新配置
+- **B. 用 cli_a90590cbbdb8dcd5 重新登录**
+
+### 相关文件
+
+- MCP 配置：`~/.claude/claude_desktop_config.json`
+- coach.js：`/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/skill-coach/coach.js`
+- 报告示例：`/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务管理者养成 碧容/`
+
+### 关键学习
+
+1. **lark-mcp 的 `login` 命令**：内置 OAuth 流程，自动存储和刷新 token
+2. **token 绑定 App**：OAuth token 是绑定到特定飞书应用的
+3. **隐私天然隔离**：使用 user_access_token 创建的文档在用户自己空间
+
+---
+
+# Claude Remote - 飞书远程控制
+
+## 项目完成记录
+
+**日期**: 2026-02-19
+**状态**: ✅ 服务运行中，待飞书配置
+**方案**: 飞书机器人 + WebSocket长连接（无需公网地址）
+
+### 实现的功能
+
+1. ✅ 飞书机器人接收消息
+2. ✅ 多项目切换（/kb, /gc, /ts 等）
+3. ✅ 与 Claude Code 对话
+4. ✅ 历史记录查看
+5. ✅ WebSocket长连接（无需内网穿透）
+
+### 文件结构
+
+```
+claude-remote/
+├── src/
+│   ├── index.js      # 主服务入口（官方SDK长连接）
+│   ├── claude.js     # Claude CLI 封装
+│   ├── session.js    # 会话管理
+│   └── commands.js   # 命令解析
+├── config/
+│   ├── projects.json # 项目配置
+│   └── .env          # 环境变量
+├── scripts/
+│   ├── start.sh      # 启动脚本
+│   └── stop.sh       # 停止脚本
+├── 启动服务.command   # 双击启动
+├── 停止服务.command   # 双击停止
+├── README.md         # 使用文档
+└── 待办事项.md       # 配置指南 ⭐
+```
+
+### 当前状态
+
+- 模式: WebSocket长连接（使用官方SDK）
+- App ID: cli_a91c59780ff89ced
+- 状态: ✅ ws client ready
+
+### 待完成
+
+- [ ] 飞书应用启用机器人
+- [ ] 飞书应用配置权限（im:message, im:message:send_as_bot）
+- [ ] 飞书应用配置事件订阅（选择「长连接」模式）
+- [ ] 发布飞书应用版本
+
+### 使用方法
+
+1. 双击 `启动服务.command` 启动
+2. 配置飞书应用（见 `待办事项.md`）
+3. 在飞书中找到机器人发送消息
+
+### 命令列表
+
+| 命令 | 说明 |
+|------|------|
+| /status | 查看当前项目 |
+| /projects | 列出所有项目 |
+| /kb /gc /ts 等 | 切换项目 |
+| /history | 查看历史 |
+| /help | 显示帮助 |
+
+---
+
+# Finder 右键新建 Markdown 文件
+
+## 项目完成记录
+
+**日期**: 2026-02-01  
+**状态**: ✅ 完成并可用  
+**最终方案**: Automator 服务（Finder → 服务 → 新建 md）  
+**教训**: 简单才是最好的，不要过度复杂化
+
+### 实现的功能
+
+1. ✅ 创建 Automator 快速操作
+2. ✅ 在 Finder 右键菜单中添加「新建 Markdown 文件」选项
+3. ✅ 自动处理重名文件（添加数字后缀）
+4. ✅ 创建后自动选中并进入重命名模式
+5. ✅ 系统通知反馈
+6. ✅ 提供完整的安装/卸载脚本
+7. ✅ 详细的使用文档
+
+### 文件结构
+
+```
+finder-new-md/
+├── create_new_md.sh      # 核心脚本：创建 MD 文件
+├── install.sh            # 安装脚本
+├── uninstall.sh          # 卸载脚本
+├── 启动安装.command       # 双击安装
+├── README.md             # 技术文档
+└── 使用指南.md           # 用户指南
+```
+
+### 安装位置
+
+- 快速操作: `~/Library/Services/新建 Markdown 文件.workflow`
+- 在所有 Finder 窗口的右键菜单中可用
+
+### 使用方法
+
+1. **右键菜单**: Finder 空白处右键 → 快速操作 → 新建 Markdown 文件
+2. **快捷键**: 可在系统设置中自定义
+3. **工具栏**: 可拖到 Finder 工具栏
+
+### 技术要点
+
+- 使用 Automator 服务框架
+- Shell 脚本处理文件逻辑
+- AppleScript 控制 Finder 交互
+- 自动进入重命名模式（延迟 + 回车键）
+
+### 遇到的问题和解决方案
+
+**问题 1**: 自动生成的 workflow 文件无法被 Automator 打开
+- 错误信息: "未能打开文稿 '新建 Markdown 文件 v2.workflow'"
+- 原因: 通过脚本生成的 workflow XML 格式可能与系统不完全兼容
+- 解决: 手动在 Automator 中创建（用户已完成）
+
+**问题 2**: macOS 26.2 中右键菜单没有「快速操作」选项
+- 原因: 较新版本 macOS 默认可能不显示服务菜单
+- 解决方案:
+  1. 启用 Finder 服务菜单: `defaults write com.apple.finder ShowServicesInContextMenu -bool true`
+  2. 通过 Finder 菜单栏访问: Finder → 服务 → 新建md
+  3. 设置快捷键使用（最推荐）
+
+**最终可用方式**:
+- ✅ Finder 菜单栏 → 服务 → 新建md
+- ✅ 快捷键（需在系统设置中配置）
+- ⚠️  右键菜单（已启用但可能不显示，取决于系统版本）
+
+### 经验教训
+
+1. ✅ macOS 的 Automator workflow 格式非常严格
+2. ✅ 手动创建比自动脚本更可靠
+3. ✅ 需要通过 Automator 保存才能让系统识别服务
+4. ✅ 注销重新登录是最可靠的刷新方法
+
+### 后续优化建议
+
+- [ ] 添加更多模板选择
+- [ ] 支持从剪贴板创建
+- [ ] 添加图标
+- [ ] 支持其他文件类型
+
+### 相关文档
+
+- **📖 最终使用指南**: `finder-new-md/📖最终使用指南.md` ⭐⭐⭐
+- 技术说明: `finder-new-md/README.md`
+- 快速指南: `finder-new-md/使用指南.md`
+- 手动创建教程: `finder-new-md/手动创建教程.md`
+- 故障排除: `finder-new-md/故障排除.md`
+- 右键菜单问题: `finder-new-md/右键菜单无快速操作解决方案.md`
+- 脚本代码: `finder-new-md/脚本代码-复制我.sh`
+
+### 辅助脚本
+
+- `设置快捷键.command` - 双击打开系统设置配置快捷键
+- `refresh_service.sh` - 刷新系统服务
+- `uninstall.sh` - 卸载服务

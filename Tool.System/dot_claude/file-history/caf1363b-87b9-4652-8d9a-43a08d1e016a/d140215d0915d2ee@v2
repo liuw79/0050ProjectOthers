@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+    h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+    .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+    .total-score { font-size: 36px; font-weight: bold; color: #333; }
+    .summary { font-size: 16px; margin-top: 10px; color: #555; }
+    .critical { color: #d9534f; font-weight: bold; }
+    .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .table-scores td:last-child { text-align: right; font-weight: bold; }
+    .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+    .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+    .module { margin-bottom: 25px; }
+    .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+    .label { font-weight: bold; color: #555; margin-right: 5px; }
+    .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+    .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+    .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+    .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+    <h1>高维AI教练现场主持专属报告</h1>
+    <div class="meta">
+        对象：碧容 | 课程：业务管理者养成 | 日期：2026-03-14
+    </div>
+
+    <div class="score-block">
+        <span class="total-score">81 / 100</span>
+        <div class="summary">
+            极具亲和力与场域敏锐度的"控场主导者"，将教学设计巧妙融入主持互动，拉满了开场氛围。
+            <br><br>
+            <span class="critical">核心觉察：过度的前序共情与情绪铺垫，无意间挤压了后段"硬核工具与案例"的展现空间，导致给业务一把手提供的"解法厚度"未能完全匹配你挖出的"痛点深度"。</span>
+        </div>
+    </div>
+
+    <h2>一、 胜任力分项评分</h2>
+    <table class="table-scores">
+        <tr><td>【产品介绍：定性开场】 (20%) - 痛点共情与场景带入</td><td>9.0 / 10</td></tr>
+        <tr><td>【产品介绍：信任背书】 (15%) - 导师势能与专业气场</td><td>8.5 / 10</td></tr>
+        <tr><td>【产品介绍：核心价值】 (20%) - 课程收益的精准提炼</td><td>8.0 / 10</td></tr>
+        <tr><td>【产品介绍：方法工具】 (15%) - 落地抓手的具象表达</td><td>6.5 / 10</td></tr>
+        <tr><td>【产品介绍：生动案例】 (10%) - 实践成果的信任筹码</td><td>6.5 / 10</td></tr>
+        <tr><td>【控场素养：口语节奏】 (10%) - 表达流畅度与顿挫感</td><td>8.5 / 10</td></tr>
+        <tr><td>【控场素养：带场能力】 (10%) - 场域设计与互动能量</td><td>9.0 / 10</td></tr>
+    </table>
+
+    <h2>二、 ✨ 场域高光时刻</h2>
+
+    <div class="highlight">
+        <span class="highlight-quote">"咱们每一组选出你们组的特战队队长... 选不出的时候咱们就选颜值最高的那位就对了好吗？"</span>
+        <strong>陪跑伙伴洞察：</strong>这是整场开场白中最惊艳的场域设计！你没有像传统主持人那样干巴巴地要求大家推选组长，而是极其敏锐地调用了课程内容中的核心概念——"特战小队"，直接在开场完成了建制。用"选颜值最高"化解了企业家的社交包袱，这展现了你作为成长伙伴极强的业务理解力和游刃有余的破冰功底。
+    </div>
+
+    <div class="highlight">
+        <span class="highlight-quote">"明明以前自己做业务的时候，妥妥的明星对不对？... 但为什么有了团队之后，反而效率没有以前高了？"</span>
+        <strong>陪跑伙伴洞察：</strong>非常生动！你完全吃透了【产品介绍：定性开场】的精髓，把冰冷的痛点文字化作了极具画面感的"暴击"。你的语气中带着深深的理解和共情，瞬间拉近了与现场业务一号位们的心理距离。
+    </div>
+
+    <h2>三、 🔍 AI教练精准纠偏</h2>
+
+    <div class="module">
+        <span class="module-title">1. 【破冰互动：氛围调动与正向激励】</span>
+        <div><span class="label">当前表现：</span>"稀稀拉拉的掌声可以再热烈一点。"</div>
+        <div class="insight">
+            教练洞察：碧容，你天生带着一种让人放松的幽默感，这让大家觉得你很亲切。但正因为你的气场非常生活化，使用"稀稀拉拉"这样的词汇，容易让高势能的学员（尤其是刚入场的一把手）产生微妙的被评判感。作为陪跑伙伴，我们可以把"指出不足"转化为"拔高势能"。
+        </div>
+        <div class="suggestion">
+            <strong>建议话术：</strong>"刚刚的掌声是大家给彼此的早安问候，接下来，让我们拿出企业家的势能，给出今天第一波震撼全场的热烈掌声！"
+        </div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">2. 【产品介绍：方法工具的硬核厚度】</span>
+        <div><span class="label">当前表现：</span>将工具概括为业务作战计划、团队管理宪章、管理日历，遗漏了"五看"和"SOC标准操作清单"。</div>
+        <div class="insight">
+            教练洞察：正是因为你在前面（定性开场）把业务痛点挖得极深、极其到位，学员的胃口已经被你吊到了最高。这时候，如果你给出的工具武器库不够具体、不够震撼，学员心理就会产生"雷声大雨点小"的落差感。企业家不仅要听理念，更要拿到能直接抄作业的"终极武器"（如SOC）。
+        </div>
+        <div class="suggestion">
+            <strong>建议话术：</strong>"面对最头疼的识人用人，汤老师会给出'五看'工具；更有帮大家把60分员工萃取变成90分的终极武器——'SOC标准操作清单'，全都是拿来就能抄作业的模板！"
+        </div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">3. 【产品介绍：真实案例的心理冲击力】</span>
+        <div><span class="label">当前表现：</span>在工具介绍后，语速较快地一语带过了韶音和奶糖派，未提及"师兄通关"的成果。</div>
+        <div class="insight">
+            教练洞察：你非常流畅地把企业案例串联在了工具后面，逻辑连贯性极佳。但也正是因为你追求表达的顺滑，导致语速偏快，稀释了案例本该承载的"信任筹码"。案例在开场中不是名词，而是让学员产生"别的企业用这套方法打穿了瓶颈，我也能行"的心理代偿，必须留出停顿和重音。
+        </div>
+        <div class="suggestion">
+            <strong>建议话术：</strong>"不仅如此，很多高维的师兄学完回去，直接套用课上的'特战小队'模式，仅仅几个月时间，就彻底打穿了卡壳多年的业务瓶颈！"
+        </div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">4. 【产品介绍：核心价值的结构与分量】</span>
+        <div><span class="label">当前表现：</span>用"打好仗、用好人"两句话高度概括了原本的"4件要事"。</div>
+        <div class="insight">
+            教练洞察：你极强的归纳能力让听众很容易记住主线，这是很棒的转化。然而，过于简化的概括，让你损失了标准稿中那些直击痛点的业务切口（如：打破部门墙、不再被核心骨干绑架）。高维课程的含金量，往往就藏在这些具体、尖锐的业务承诺里。
+        </div>
+        <div class="suggestion">
+            <strong>建议话术：</strong>保留你的优秀框架，但在其下挂载锋利的业务场景："核心解决两件事——第一打好仗：用项目制打破部门墙，集中火力攻坚；第二用好人：精准识人留人，让咱们以后不再被核心员工'绑架'！"
+        </div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">5. 【场域把控：时间分配的黄金比例】</span>
+        <div><span class="label">当前表现：</span>前期的迎新和高维5句话铺垫十分饱满，导致课程核心介绍节奏稍显仓促。</div>
+        <div class="insight">
+            教练洞察：碧容，你是一个非常在乎学员体验的陪伴者，所以你在迎新、致敬学习型组织上给足了情绪价值。但也正是这种对所有人的全方位照顾，使得原本属于"主讲导师与硬核课程"的高光时间被压缩。主持的最高境界是"引而不发"，把最强的势能和期待引向导师。
+        </div>
+        <div class="suggestion">
+            <strong>建议优化：</strong>前期的迎新与"高维五句话"保持现在的准确度，但可以稍微提速、保持克制；将更饱满的激情、更重的停顿，留在"推出汤老师的四大核心价值和独家武器库"上，形成欲扬先抑的场域张力。
+        </div>
+    </div>
+
+    <div class="ending">
+        碧容，听你的开场是一种享受，你身上有一种让企业家卸下防备的松弛感与亲和力。当你能把这份难得的亲和力，与更加锋利、硬核的业务工具表达结合起来时，你不仅是舞台上优秀的班主任，更是真正能够与一号位同频共振的企业成长陪跑专家。下一场，期待看到你更加雷厉风行的专业气场！
+    </div>
+
+    <div class="footer">
+        Generated by 高维学堂 AI 运营专家 & 资深 HRBP | 科学创业，不走弯路
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!--history.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">停车历史记录</view>
+    <view class="header-btns">
+      <view class="export-btn" bindtap="exportRecords">导出</view>
+      <view class="clear-btn" bindtap="clearHistory">清空</view>
+    </view>
+  </view>
+  
+  <view class="record-list">
+    <block wx:if="{{parkingRecords.length > 0}}">
+      <view class="record-item" wx:for="{{parkingRecords}}" wx:key="timestamp">
+        <view class="record-top">
+          <view class="record-info">
+            <view class="record-floor">{{item.name}}</view>
+            <view class="record-time">
+              <text>{{item.formattedTime}}</text>
+              <text class="day-text">{{item.dayText}}</text>
+            </view>
+          </view>
+          <view class="photo-thumbnail" wx:if="{{item.photoInfo}}" bindtap="viewPhoto" data-photo="{{item.photoInfo.path}}">
+            <image src="{{item.photoInfo.path}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <view class="empty-tip" wx:else>
+      <text>暂无停车记录</text>
+    </view>
+  </view>
+</view> 

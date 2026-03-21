@@ -1,0 +1,30 @@
+# LLM Configuration
+llm:
+  provider: anthropic
+  api_key: ${ANTHROPIC_API_KEY}
+  model: claude-sonnet-4-5-20250929
+  max_tokens: 4096
+
+# Project Configuration
+project:
+  work_dir: ./src
+  feature_list_path: ./feature_list.json
+  progress_file: ./progress.txt
+  init_script: ./init.sh
+
+# Test Configuration
+test:
+  tool: pytest
+  headless: true
+  screenshot_dir: ./screenshots
+
+# Git Configuration
+git:
+  auto_commit: true
+  commit_message_format: "feat: {description}"
+
+# Web Dashboard (optional)
+dashboard:
+  enabled: false
+  host: 0.0.0.0
+  port: 8000

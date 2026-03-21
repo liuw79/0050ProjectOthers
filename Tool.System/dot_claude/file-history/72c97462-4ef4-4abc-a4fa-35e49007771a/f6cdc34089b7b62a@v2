@@ -1,0 +1,108 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+import type { H5TabKey, H5Tab } from '@/types/h5'
+
+interface Props {
+  activeKey: H5TabKey
+}
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: 'update:activeKey', value: H5TabKey): void
+}>()
+
+const tabs: H5Tab[] = [
+  { key: 'intro', label: '课程介绍' },
+  { key: 'modules', label: '核心模块' },
+  { key: 'mentor', label: '导师介绍' },
+  { key: 'feedback', label: '学友反馈' },
+  { key: 'notice', label: '报名须知' }
+]
+
+const tabsRef = ref<HTMLElement | null>(null)
+const isSticky = ref(false)
+
+const handleTabClick = (key: H5TabKey) => {
+  emit('update:activeKey', key)
+}
+
+// 监听滚动实现吸顶效果
+const handleScroll = () => {
+  if (tabsRef.value) {
+    const rect = tabsRef.value.getBoundingClientRect()
+    isSticky.value = rect.top <= 44 // header height
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
+<template>
+  <div ref="tabsRef" class="h5-tabs" :class="{ 'h5-tabs-sticky': isSticky }">
+    <button
+      v-for="tab in tabs"
+      :key="tab.key"
+      class="h5-tab"
+      :class="{ 'h5-tab-active': activeKey === tab.key }"
+      @click="handleTabClick(tab.key)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+</template>
+
+<style scoped>
+.h5-tabs {
+  display: flex;
+  background: var(--h5-bg-white);
+  border-bottom: 1px solid var(--h5-border-light);
+  position: relative;
+  z-index: 50;
+}
+
+.h5-tabs-sticky {
+  position: sticky;
+  top: 44px;
+}
+
+.h5-tab {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.h5-tab-active {
+  color: var(--h5-primary);
+  font-weight: 600;
+}
+
+.h5-tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: var(--h5-primary);
+  border-radius: 2px;
+}
+
+.h5-tab:active {
+  opacity: 0.8;
+}
+</style>

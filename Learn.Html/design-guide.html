@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高维学堂 APP UI 配色方案设计规范</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Alibaba PuHuiTi', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #231815;
+            background: #EFEFEF;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00A0EB 0%, #004960 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(0, 160, 235, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #00A0EB 0%, #004960 100%);
+            color: white;
+            padding: 18px 30px;
+            border-radius: 30px;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 160, 235, 0.3);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+            border-color: #00A0EB;
+            box-shadow: 0 8px 30px rgba(0, 160, 235, 0.2);
+        }
+
+        .color-preview {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-info {
+            margin-bottom: 10px;
+        }
+
+        .color-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #231815;
+        }
+
+        .color-code {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin: 3px 0;
+            border: 1px solid #e9ecef;
+        }
+
+        .color-usage {
+            font-size: 0.95em;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        .ratio-chart {
+            display: flex;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ratio-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .font-demo {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+        }
+
+        .font-sample {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #00A0EB;
+        }
+
+        .interface-demo {
+            background: #EFEFEF;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .demo-navbar {
+            background: #00A0EB;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .demo-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #00A0EB;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0088cc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #91D6F2;
+            color: #231815;
+        }
+
+        .btn-secondary:hover {
+            background: #7bc9ed;
+            transform: translateY(-2px);
+        }
+
+        .btn-disabled {
+            background: #EFEFEF;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .spec-item {
+            background: linear-gradient(135deg, #C3E7F4 0%, #91D6F2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #00A0EB;
+        }
+
+        .spec-title {
+            font-weight: bold;
+            color: #004960;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .spec-content {
+            color: #231815;
+            line-height: 1.6;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .color-grid,
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-buttons {
+                flex-direction: column;
+            }
+
+            .ratio-chart {
+                height: 80px;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .color-card:nth-child(1) { animation-delay: 0.1s; }
+        .color-card:nth-child(2) { animation-delay: 0.2s; }
+        .color-card:nth-child(3) { animation-delay: 0.3s; }
+        .color-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <div class="header">
+            <h1>高维学堂 APP UI 配色方案</h1>
+            <p class="subtitle">基于品牌规范的完整设计指南</p>
+        </div>
+
+        <!-- 主色部分 -->
+        <div class="section">
+            <div class="section-title">🎨 主色（Primary Color）</div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #00A0EB;"></div>
+                    <div class="color-info">
+                        <div class="color-name">品牌主题色</div>
+                        <div class="color-code">PANTONE 2925C</div>
+                        <div class="color-code">RGB: 0, 160, 235</div>
+                        <div class="color-code">#00A0EB</div>
+                        <div class="color-usage">应用场景：主要按钮、导航栏、关键操作、品牌标志</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中性色部分 -->
+        <div class="section">
+            <div class="section-title">⚪ 中性色（Neutral Colors）</div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #EFEFEF;"></div>
+                    <div class="color-info">
+                        <div class="color-name">浅灰色（背景/辅助）</div>
+                        <div class="color-code">RGB: 239, 239, 239</div>
+                        <div class="color-code">#EFEFEF</div>
+                        <div class="color-usage">应用场景：背景色、卡片底色、分割线、非强调文本</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #231815;"></div>
+                    <div class="color-info">
+                        <div class="color-name">深黑色（文字/强调）</div>
+                        <div class="color-code">RGB: 35, 24, 21</div>
+                        <div class="color-code">#231815</div>
+                        <div class="color-usage">应用场景：标题文字、正文、图标描边</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 辅助色部分 -->
+        <div class="section">
+            <div class="section-title">🔵 辅助色（Secondary Colors）</div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #C3E7F4;"></div>
+                    <div class="color-info">
+                        <div class="color-name">浅蓝</div>
+                        <div class="color-code">#C3E7F4</div>
+                        <div class="color-usage">次级按钮、图标填充、进度条、标签</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #91D6F2;"></div>
+                    <div class="color-info">
+                        <div class="color-name">中浅蓝</div>
+                        <div class="color-code">#91D6F2</div>
+                        <div class="color-usage">次级按钮、图标填充、进度条、标签</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #004960;"></div>
+                    <div class="color-info">
+                        <div class="color-name">深蓝灰</div>
+                        <div class="color-code">#004960</div>
+                        <div class="color-usage">深色模式背景、图表底色</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #002733;"></div>
+                    <div class="color-info">
+                        <div class="color-name">接近黑色</div>
+                        <div class="color-code">#002733</div>
+                        <div class="color-usage">深色模式背景、图表底色</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 特殊强调色部分 -->
+        <div class="section">
+            <div class="section-title">⚡ 特殊强调色（Accent Colors）</div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #ECC2AD;"></div>
+                    <div class="color-info">
+                        <div class="color-name">浅米色</div>
+                        <div class="color-code">RGB: 230, 194, 173</div>
+                        <div class="color-code">#ECC2AD</div>
+                        <div class="color-usage">警告提示、高亮标签、临时状态</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #2D459A;"></div>
+                    <div class="color-info">
+                        <div class="color-name">深蓝</div>
+                        <div class="color-code">RGB: 45, 69, 154</div>
+                        <div class="color-code">#2D459A</div>
+                        <div class="color-usage">警告提示、高亮标签、临时状态</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 配色比例建议 -->
+        <div class="section">
+            <div class="section-title">📊 配色比例建议</div>
+            <div class="ratio-chart">
+                <div class="ratio-segment" style="background: #00A0EB; flex: 40;">主色 40%</div>
+                <div class="ratio-segment" style="background: #EFEFEF; color: #231815; flex: 50;">中性色 50%</div>
+                <div class="ratio-segment" style="background: #91D6F2; color: #231815; flex: 8;">辅助色 8%</div>
+                <div class="ratio-segment" style="background: #ECC2AD; color: #231815; flex: 2;">强调色 2%</div>
+            </div>
+            <p style="text-align: center; color: #666; margin-top: 15px;">主色用于导航和核心按钮，中性色用于背景和文字，辅助色用于次级元素，强调色用于特殊情况</p>
+        </div>
+
+        <!-- 字体规范 -->
+        <div class="section">
+            <div class="section-title">🔤 字体规范</div>
+            <div class="font-demo">
+                <div class="font-sample">
+                    <h3 style="font-family: 'Alibaba PuHuiTi', sans-serif; font-weight: bold;">中文字体：阿里巴巴普惠体 Bold</h3>
+                    <p style="font-family: 'Alibaba PuHuiTi', sans-serif; font-weight: normal;">这是阿里巴巴普惠体 Regular 的示例文本，用于正文内容显示。</p>
+                </div>
+                <div class="font-sample">
+                    <h3 style="font-family: 'Gotham', 'Arial Black', sans-serif; font-weight: 900;">English Font: Gotham Black</h3>
+                    <p style="font-family: 'Gotham', 'Arial', sans-serif; font-weight: 500;">This is Gotham Medium sample text for body content display.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 界面配色示例 -->
+        <div class="section">
+            <div class="section-title">📱 界面配色示例</div>
+            <div class="interface-demo">
+                <div class="demo-navbar">首页导航栏 - 主色 + 白色文字</div>
+                <div class="demo-card">
+                    <h4 style="color: #231815; margin-bottom: 10px;">卡片标题 - 深黑色文字</h4>
+                    <p style="color: #666;">这是卡片内容，使用浅灰色背景和深黑色文字，确保良好的可读性。</p>
+                </div>
+                <div class="demo-buttons">
+                    <button class="btn btn-primary">主要按钮</button>
+                    <button class="btn btn-secondary">次级按钮</button>
+                    <button class="btn btn-disabled">禁用状态</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 注意事项 -->
+        <div class="section">
+            <div class="section-title">⚠️ 注意事项</div>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-title">最小尺寸要求</div>
+                    <div class="spec-content">
+                        • 品牌标志宽度 ≥15mm<br>
+                        • Slogan 宽度 ≥16mm<br>
+                        • 组合标志 ≥26.8mm<br>
+                        （屏幕适配时需等比换算为像素）
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">色彩模式规范</div>
+                    <div class="spec-content">
+                        • 屏幕显示统一使用 RGB 值<br>
+                        • 避免使用 CMYK 或 PANTONE<br>
+                        • 确保颜色在不同设备上的一致性
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">辅助图形使用</div>
+                    <div class="spec-content">
+                        • 延展应用时需等比缩放<br>
+                        • 保持颜色一致性<br>
+                        • 避免自行修改图形元素
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-title">品牌一致性</div>
+                    <div class="spec-content">
+                        • 确保品牌视觉一致性<br>
+                        • 满足用户体验需求<br>
+                        • 保持功能层级清晰
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.6s ease-out';
+                observer.observe(section);
+            });
+
+            // 颜色卡片交互效果
+            const colorCards = document.querySelectorAll('.color-card');
+            colorCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const colorCode = this.querySelector('.color-code:last-of-type').textContent;
+                    navigator.clipboard.writeText(colorCode).then(() => {
+                        const originalText = this.querySelector('.color-name').textContent;
+                        this.querySelector('.color-name').textContent = '已复制到剪贴板！';
+                        setTimeout(() => {
+                            this.querySelector('.color-name').textContent = originalText;
+                        }, 1500);
+                    });
+                });
+            });
+
+            // 按钮交互效果
+            const buttons = document.querySelectorAll('.btn:not(.btn-disabled)');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-2px) scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

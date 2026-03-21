@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-23T22:41:55.850243",
+  "summary": {
+    "total_piano_tutorials": 1,
+    "total_deleted_tutorials": 0,
+    "categories_created": 1
+  },
+  "piano_categories": {
+    "📦 其他教材": {
+      "count": 1,
+      "tutorials": [
+        "钢琴教程专区"
+      ],
+      "description": "其他钢琴教材和内容"
+    }
+  },
+  "deleted_tutorials": [],
+  "operations": {
+    "moves": 1,
+    "deletions": 0
+  }
+}

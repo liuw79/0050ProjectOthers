@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">85<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        一句话总评：不仅把控了全场节奏，更用极具画面的比喻打透了痛点，展现了作为"成长陪跑伙伴"极强的业务理解力和同理心！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+    <div class="score-row"><span>高维介绍（30%）</span><span>28/30</span></div>
+    <div class="score-detail">
+        扣分原因：五句话要素均已覆盖，但过度衔接略显零散，逻辑线可更紧凑。明白这是为了让表达更自然，但若能用更笃定的语气串联，信任感会更强。<br>
+        <span class="suggested-script">建议话术："如果把创业比作闯关游戏，通关攻略就在这张路线图中。今天这门课，正是要帮大家攻克扩张期的核心卡点——备粮草！"</span>
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>25/30</span></div>
+    <div class="score-detail">
+        扣分原因：痛点引入虽有，但场景刻画略显单薄；且在讲述过往学长案例时，缺乏了进一步的价值升华（底气变业绩）。<br>
+        <span class="suggested-script">建议话术："上过课的学长都说，不管现在是千万还是几十亿的盘子，这套方法都能帮我们把目标变成打仗的底气，把底气变成实打实的业绩！"</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>12/15</span></div>
+    <div class="score-detail">
+        扣分原因：邀约理由偏向"帮高维迭代"，这是善意的坦诚，但若能转换为"帮学员自我复盘"的利他视角，学员的填写动力会更足。<br>
+        <span class="suggested-script">建议话术："邀请大家花5分钟，不仅是给我们真实的反馈，更是借此机会给自己的大脑做个快速归档，梳理一下马上就能带回去落地的关键行动。"</span>
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>4/10</span></div>
+    <div class="score-detail">
+        扣分原因：课程结束仅停留在了签到和填表上，完全缺失了对课程核心价值的高度总结与行动号召，结尾力量感不足。<br>
+        <span class="suggested-script">建议话术："各位同学，战略的价值绝不在于墙上的口号，而在于真实的落地。希望大家带着这两天共创出的作战地图，回去打赢今年的每一场硬仗！"</span>
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>7/10</span></div>
+    <div class="score-detail">
+        扣分原因：口语化连接词（"然后"、"就是"）较多，稀释了专业气场。<br>
+        <span class="suggested-script">优化建议：作为高阶顾问，若能顺势用"停顿"代替"然后"，不仅能留出让学员思考的空白，更能建立更强大的控场气场。</span>
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+
+    <div class="bonus-item">
+        <div class="bonus-title">[形象化隐喻赋能]（+3）</div>
+        <div class="bonus-detail"><strong>原稿表达：</strong>仅指出战略和执行之间断层。</div>
+        <div class="bonus-detail"><strong>现场金句：</strong>"从战略拆解的落地，像跳楼机一样。就是我们有战略，然后直接跳下来...中间是缺了梯子的。"</div>
+        <div class="bonus-detail"><strong>分析：</strong>非常绝妙的现场发挥！"跳楼机"和"缺梯子"的隐喻极具画面感，精准且极度生动地戳中了企业上下级之间的承接断层，瞬间拉近了与企业家的共鸣，让深奥的管理学语言瞬间接地气。</div>
+    </div>
+
+    <div class="bonus-item">
+        <div class="bonus-title">[实战场景化引导]（+1）</div>
+        <div class="bonus-detail"><strong>原稿表达：</strong>仅要求选出书记员进行记录。</div>
+        <div class="bonus-detail"><strong>现场金句：</strong>"让大家都带了电脑，因为这样子方便我们...初步的雏形在那了啊不要回去还要再腾。"</div>
+        <div class="bonus-detail"><strong>分析：</strong>没有生硬地宣读场控规则，而是从"方便大家带走实战成果、不用重抄"的利他角度切入。这不仅化解了高强度演练的疲惫预期，更体现了作为陪跑伙伴的细腻与同理心。</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 关于【定性开场痛点刻画的穿透力】</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>场域共鸣不足</p>
+            <p><strong>具体表现：</strong>在讲开场痛点时，提到了"年底年初复盘发现干的活跟战略没关系"，但没有彻底点透老板和高管之间的拉扯与无奈情绪。</p>
+            <p><strong>深度洞察：</strong>管理痛点不仅是"没做对"，更是组织内的痛楚（老板觉得队伍带不动，高管觉得老板拍脑袋）。作为场域引导者，我们需要精准戳中企业家的这些"隐痛"。我理解您可能是为了快速切入正题而简化了这部分，但开场其实是建立信任的黄金窗口。在这里慢下来，用几句话深挖场景，能让他们对接下来的课程产生极强的"解药渴求"，为老师铺好完美的场域。</p>
+            <p class="suggestion"><strong>优化建议：</strong>强化"上下同欲"的场景刻画。用更强烈的对比句式，将高层的宏大构想和基层的迷茫无力对立起来，迅速抓住全场注意力。</p>
+            <p><span class="suggested-script">建议话术：</span>"明明年底战略会大家都很激动，为什么干到年底发现落不了地？因为CEO心里清楚方向，团队却在'雾里看花'；大目标定得激动人心，但各部门墙高筑，资源协同不起来。"</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 关于【结尾价值升华与行动激发】</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>收尾力量感不足</p>
+            <p><strong>具体表现：</strong>第二天结语主要围绕"填表打分"和"签到得小红花"，最后以"有需求找我们"平淡结束，缺乏对战略落地的心智收拢。</p>
+            <p><strong>深度洞察：</strong>结营时刻是学员情绪的最高峰，也是学习成果向企业现实迁移的起爆点。班主任绝不仅仅是处理表单的教务，更是伴随企业成长的战略伙伴。如果结尾只谈评价和签到，会极大削弱两天烧脑共创的厚重感。作为高阶顾问，若能在此时给学员注入一针"行动强心剂"，不仅能呼应您开场提到的"找梯子"，更能让这门课的价值在学员心中久久回荡。</p>
+            <p class="suggestion"><strong>优化建议：</strong>在处理完会务事宜后，特意停顿一下，语调转为郑重，送上一段拔高课程价值的"送行致辞"，将课堂氛围推向高潮。</p>
+            <p><span class="suggested-script">建议话术：</span>"各位同学，战略的价值不在于墙上的精美图表，而在于全员的真实落地。接下来的挑战才刚刚开始，希望大家带着这把两天共创打磨出来的'梯子'，回去打赢你们的必赢之战！"</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 关于【课评邀约的利他视角转换】</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>课评邀约势能偏弱</p>
+            <p><strong>具体表现：</strong>邀约填写反馈时，强调了"为了让杨冰老师和高维把课程迭代得更好"。</p>
+            <p><strong>深度洞察：</strong>坦诚我们渴望反馈是非常真诚的做法。但对于刚刚经历了48小时高强度烧脑、身心俱疲的高管们来说，最有效的驱动力永远是"这对他们当下有什么确切的好处"。将写课评与"梳理个人所学、固化认知"紧密结合，能瞬间把"你帮我打分"的请求，翻转为"我陪你做最后一次深度复盘"的赋能动作。这种微小的视角转换，体现的是顶级运营的功力。</p>
+            <p class="suggestion"><strong>优化建议：</strong>调整课评邀约的立意，先谈"对学员个人的价值"（复盘、总结），再顺带感谢他们的反馈对平台的帮助。</p>
+            <p><span class="suggested-script">建议话术：</span>"这两天大家非常烧脑，在课程结束的最后一刻，我想邀请大家趁热打铁，花5分钟时间给自己的大脑做个复盘。表单里有你们的收获和接下来的行动计划，写下来就是落地的第一步。同时，也特别期待您真实的体验反馈..."</p>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    每一次有温度、有洞察的主持，都是对"科学创业"理念最生动的践行。你那句"跳楼机"的比喻真的太精彩了！期待在未来的场域中，继续看到你以伙伴之姿，点燃更多成长型企业的光芒！
+</div>
+
+<div class="footer">
+    文件源参考：<br>
+    /Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/高维学堂5句话介绍.md<br>
+    /Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/战略解码到战略承接-主持词.md
+</div>
+
+</body>
+</html>

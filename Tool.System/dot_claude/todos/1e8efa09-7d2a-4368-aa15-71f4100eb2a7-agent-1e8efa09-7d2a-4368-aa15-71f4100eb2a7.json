@@ -1,0 +1,27 @@
+[
+  {
+    "content": "阅读文章并规划系统架构",
+    "status": "completed",
+    "activeForm": "阅读文章并规划系统架构"
+  },
+  {
+    "content": "创建基础目录结构和配置文件",
+    "status": "completed",
+    "activeForm": "创建基础目录结构和配置文件"
+  },
+  {
+    "content": "创建信息源文件",
+    "status": "completed",
+    "activeForm": "创建信息源文件"
+  },
+  {
+    "content": "完善工作区配置（朋友圈、视频）",
+    "status": "completed",
+    "activeForm": "完善工作区配置"
+  },
+  {
+    "content": "说明个人素材库使用方法",
+    "status": "in_progress",
+    "activeForm": "说明个人素材库使用方法"
+  }
+]

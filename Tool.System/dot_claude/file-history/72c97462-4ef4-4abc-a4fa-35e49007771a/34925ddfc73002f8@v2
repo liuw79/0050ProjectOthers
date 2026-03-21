@@ -1,0 +1,56 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
+  },
+  {
+    path: '/courses',
+    name: 'Courses',
+    component: () => import('@/views/Courses.vue')
+  },
+  // H5 课程详情页
+  {
+    path: '/h5/course/:id',
+    name: 'H5CourseDetail',
+    component: () => import('@/views/h5/CourseDetail.vue'),
+    meta: { isH5: true }
+  },
+  {
+    path: '/cases',
+    name: 'Cases',
+    component: () => import('@/views/Cases.vue')
+  },
+  {
+    path: '/mentors',
+    name: 'Mentors',
+    component: () => import('@/views/Mentors.vue')
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: () => import('@/views/News.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/About.vue')
+  }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0, behavior: 'smooth' }
+    }
+  }
+})
+
+export default router

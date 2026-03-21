@@ -1,0 +1,213 @@
+# 网络诊断脚本 - 诊断"微信能用但网页打不开"
+# 使用方法: 右键以管理员身份运行 PowerShell, 然后执行此脚本
+
+Write-Host "========== 网络诊断脚本 ==========" -ForegroundColor Cyan
+Write-Host ""
+
+# 检查管理员权限
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    Write-Host "[警告] 未以管理员身份运行, 部分诊断可能不完整" -ForegroundColor Yellow
+    Write-Host "建议: 右键PowerShell -> 以管理员身份运行" -ForegroundColor Yellow
+    Write-Host ""
+}
+
+# ========== 1. 基础网络连通性测试 ==========
+Write-Host "[1] 基础网络连通性测试" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+# Ping 测试
+$pingTargets = @("8.8.8.8", "223.5.5.5", "www.baidu.com", "www.qq.com")
+foreach ($target in $pingTargets) {
+    $result = Test-Connection -ComputerName $target -Count 2 -Quiet -ErrorAction SilentlyContinue
+    if ($result) {
+        Write-Host "  Ping $target : [OK] 通" -ForegroundColor Green
+    } else {
+        Write-Host "  Ping $target : [X] 不通" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# ========== 2. DNS 解析测试 ==========
+Write-Host "[2] DNS 解析测试" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$dnsDomains = @("www.baidu.com", "www.qq.com", "www.taobao.com")
+foreach ($domain in $dnsDomains) {
+    try {
+        $ips = [System.Net.Dns]::GetHostAddresses($domain)
+        Write-Host "  $domain -> $($ips[0].IPAddressToString)" -ForegroundColor Green
+    } catch {
+        Write-Host "  $domain -> 解析失败" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# 当前DNS服务器
+Write-Host "  当前DNS服务器:" -ForegroundColor Cyan
+Get-DnsClientServerAddress -AddressFamily IPv4 | Where-Object { $_.ServerAddresses } |
+    Select-Object -First 5 | ForEach-Object {
+        Write-Host "    $($_.InterfaceAlias): $($_.ServerAddresses -join ', ')"
+    }
+Write-Host ""
+
+# ========== 3. 代理设置检查 ==========
+Write-Host "[3] 代理设置检查" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+# 系统代理
+$proxy = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -ErrorAction SilentlyContinue
+if ($proxy.ProxyEnable -eq 1) {
+    Write-Host "  系统代理: 已启用" -ForegroundColor Yellow
+    Write-Host "  代理地址: $($proxy.ProxyServer)" -ForegroundColor Yellow
+    Write-Host "  >>> 建议: 如果不再使用代理, 请关闭" -ForegroundColor Red
+} else {
+    Write-Host "  系统代理: 未启用" -ForegroundColor Green
+}
+
+# 自动检测设置
+$autoDetect = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" -ErrorAction SilentlyContinue
+if ($autoDetect.DefaultConnectionSettings[8] -band 0x08) {
+    Write-Host "  自动检测设置: 已启用" -ForegroundColor Green
+} else {
+    Write-Host "  自动检测设置: 未启用" -ForegroundColor Yellow
+}
+Write-Host ""
+
+# ========== 4. 网络适配器状态 ==========
+Write-Host "[4] 网络适配器状态" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+Get-NetAdapter | Where-Object { $_.Status -eq "Up" } | ForEach-Object {
+    Write-Host "  $($_.Name): $($_.Status)" -ForegroundColor Green
+    $ip = Get-NetIPAddress -InterfaceAlias $_.Name -AddressFamily IPv4 -ErrorAction SilentlyContinue
+    if ($ip) {
+        Write-Host "    IP: $($ip.IPAddress)"
+        $gateway = Get-NetRoute -InterfaceAlias $_.Name -DestinationPrefix 0.0.0.0/0 -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty NextHop
+        if ($gateway) {
+            Write-Host "    网关: $gateway"
+        }
+    }
+}
+Write-Host ""
+
+# ========== 5. 防火墙状态 ==========
+Write-Host "[5] 防火墙状态" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$fwStatus = Get-NetFirewallProfile | Select-Object Name, Enabled
+$fwStatus | ForEach-Object {
+    if ($_.Enabled) {
+        Write-Host "  $($_.Name): 已启用" -ForegroundColor Yellow
+    } else {
+        Write-Host "  $($_.Name): 已关闭" -ForegroundColor Green
+    }
+}
+Write-Host ""
+
+# ========== 6. 系统时间检查 ==========
+Write-Host "[6] 系统时间检查" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$currentTime = Get-Date
+Write-Host "  本地时间: $currentTime"
+
+# 尝试获取网络时间
+try {
+    $tcpClient = New-Object System.Net.Sockets.TcpClient("time.windows.com", 37)
+    $stream = $tcpClient.GetStream()
+    $buffer = New-Object byte[] 4
+    $stream.Read($buffer, 0, 4) | Out-Null
+    $seconds = [BitConverter]::ToUInt32($buffer, 0)
+    $ntpTime = [DateTime]::new(1900, 1, 1).AddSeconds($seconds)
+    $tcpClient.Close()
+    $diff = ($currentTime - $ntpTime).TotalMinutes
+    if ([Math]::Abs($diff) -gt 5) {
+        Write-Host "  时间偏差: $([Math]::Round($diff, 1)) 分钟" -ForegroundColor Red
+        Write-Host "  >>> 建议: 同步系统时间 (运行: w32tm /resync)" -ForegroundColor Red
+    } else {
+        Write-Host "  时间偏差: $([Math]::Round($diff, 1)) 分钟 (正常)" -ForegroundColor Green
+    }
+} catch {
+    Write-Host "  无法获取网络时间进行对比" -ForegroundColor Yellow
+}
+Write-Host ""
+
+# ========== 7. HTTP/HTTPS 连通性测试 ==========
+Write-Host "[7] HTTP/HTTPS 连通性测试" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$urls = @("http://www.baidu.com", "https://www.baidu.com", "http://www.qq.com", "https://www.qq.com")
+foreach ($url in $urls) {
+    try {
+        $response = Invoke-WebRequest -Uri $url -TimeoutSec 5 -UseBasicParsing -ErrorAction Stop
+        Write-Host "  $url -> 状态码 $($response.StatusCode)" -ForegroundColor Green
+    } catch {
+        $errorMsg = $_.Exception.Message
+        Write-Host "  $url -> 失败" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# ========== 8. Hosts 文件检查 ==========
+Write-Host "[8] Hosts 文件可疑条目检查" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$hostsPath = "$env:SystemRoot\System32\drivers\etc\hosts"
+$hostsContent = Get-Content $hostsPath -ErrorAction SilentlyContinue | Where-Object {
+    $_ -notmatch "^\s*#" -and $_ -match "\S"
+}
+if ($hostsContent) {
+    Write-Host "  发现自定义条目:" -ForegroundColor Yellow
+    $hostsContent | ForEach-Object { Write-Host "    $_" -ForegroundColor Yellow }
+} else {
+    Write-Host "  Hosts文件无自定义条目" -ForegroundColor Green
+}
+Write-Host ""
+
+# ========== 诊断总结 ==========
+Write-Host "========== 诊断完成 ==========" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "常见解决方案:" -ForegroundColor Yellow
+Write-Host "1. DNS问题: netsh interface ip set dns `"以太网`" static 223.5.5.5"
+Write-Host "2. 重置代理: 设置 -> 网络 -> 代理 -> 关闭所有代理"
+Write-Host "3. 重置Winsock: netsh winsock reset && netsh int ip reset"
+Write-Host "4. 清除DNS缓存: ipconfig /flushdns"
+Write-Host "5. 同步时间: w32tm /resync"
+Write-Host ""
+
+# 询问是否执行修复
+if ($isAdmin) {
+    $fix = Read-Host "是否执行一键修复? (y/n)"
+    if ($fix -eq "y") {
+        Write-Host ""
+        Write-Host "执行修复..." -ForegroundColor Cyan
+
+        # 刷新DNS
+        Write-Host "  刷新DNS缓存..." -NoNewline
+        ipconfig /flushdns | Out-Null
+        Write-Host " 完成" -ForegroundColor Green
+
+        # 重置Winsock
+        Write-Host "  重置Winsock..." -NoNewline
+        netsh winsock reset | Out-Null
+        Write-Host " 完成" -ForegroundColor Green
+
+        # 重置IP栈
+        Write-Host "  重置IP协议栈..." -NoNewline
+        netsh int ip reset | Out-Null
+        Write-Host " 完成" -ForegroundColor Green
+
+        # 清除ARP缓存
+        Write-Host "  清除ARP缓存..." -NoNewline
+        netsh interface ip delete arpcache | Out-Null
+        Write-Host " 完成" -ForegroundColor Green
+
+        Write-Host ""
+        Write-Host "修复完成! 请重启电脑后测试。" -ForegroundColor Green
+    }
+}
+
+Write-Host ""
+Write-Host "按任意键退出..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

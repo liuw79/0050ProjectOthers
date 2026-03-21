@@ -1,0 +1,338 @@
+#!/usr/bin/env node
+/**
+ * Markdown 转 HTML 转换器
+ *
+ * 用法：
+ *   node md2html.js input.md output.html
+ *   node md2html.js input.md  # 输出到同名 .html 文件
+ *
+ * 专门为 AI 教练评估报告设计，保留原有邮件样式。
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// ==================== 样式模板 ====================
+
+const HTML_TEMPLATE = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI教练评估报告</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .header .subtitle {
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    h1 { font-size: 22px; margin: 25px 0 15px; color: #333; border-bottom: 2px solid #667eea; padding-bottom: 8px; }
+    h2 { font-size: 18px; margin: 20px 0 12px; color: #444; }
+    h3 { font-size: 16px; margin: 15px 0 10px; color: #555; }
+    h4 { font-size: 15px; margin: 12px 0 8px; color: #666; }
+
+    p { margin: 10px 0; }
+
+    strong { color: #333; }
+    em { color: #666; }
+
+    blockquote {
+      border-left: 4px solid #667eea;
+      margin: 15px 0;
+      padding: 10px 20px;
+      background: #f8f9ff;
+      color: #555;
+    }
+
+    blockquote p { margin: 5px 0; }
+
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #e0e0e0;
+      margin: 25px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f8f9ff;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .score-box {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .footer {
+      background: #f8f9ff;
+      padding: 20px 30px;
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      .content { padding: 20px; }
+      .header { padding: 20px; }
+      h1 { font-size: 18px; }
+      h2 { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎯 AI教练评估报告</h1>
+      <div class="subtitle">高维学堂 · 班主任能力提升系统</div>
+    </div>
+    <div class="content">
+{{CONTENT}}
+    </div>
+    <div class="footer">
+      本报告由 <a href="https://gaowei.com">高维学堂 AI教练</a> 自动生成<br>
+      如有疑问，请联系班主任团队
+    </div>
+  </div>
+</body>
+</html>`;
+
+// ==================== Markdown 转 HTML ====================
+
+function markdownToHtml(md) {
+  let html = md;
+
+  // 移除 YAML frontmatter
+  html = html.replace(/^---[\s\S]*?---\n*/, '');
+
+  // 移除文档标题（已在 header 中显示）
+  html = html.replace(/^# 班主任AI教练评估报告\n*/i, '');
+  html = html.replace(/^> 本报告由.*?\n\n?/s, '');
+  html = html.replace(/^---\n*/, '');
+
+  // 处理标题
+  html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
+  html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+
+  // 处理分数显示 (如 **85分** → 特殊样式)
+  html = html.replace(/\*\*(\d{1,3})分?\*\*/g, '<span class="score-box">$1分</span>');
+
+  // 处理加粗和斜体
+  html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // 处理引用块
+  html = html.replace(/^&gt; (.*?)$/gm, '<blockquote><p>$1</p></blockquote>');
+  // 合并连续的引用块
+  html = html.replace(/<\/blockquote>\n<blockquote>/g, '\n');
+
+  // 处理无序列表
+  html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+
+  // 处理有序列表
+  html = html.replace(/^\d+\. (.*?)$/gm, '<li>$1</li>');
+  // 注意：有序列表也可能被上面的无序列表处理覆盖，这里简化处理
+
+  // 处理行内代码
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // 处理代码块
+  html = html.replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+
+  // 处理水平线
+  html = html.replace(/^---$/gm, '<hr>');
+
+  // 处理表格（简化处理）
+  html = html.replace(/^\| (.*) \|$/gm, function(match, content) {
+    const cells = content.split(' | ').map(c => c.trim());
+    const isHeader = cells.every(c => /^[-:]+$/.test(c));
+    if (isHeader) return ''; // 跳过分隔行
+
+    const cellTag = 'td';
+    return '<tr>' + cells.map(c => `<${cellTag}>${c}</${cellTag}>`).join('') + '</tr>\n';
+  });
+
+  // 包装表格
+  html = html.replace(/(<tr>.*<\/tr>\n?)+/g, '<table>$&</table>');
+
+  // 处理段落（不在其他标签中的文本）
+  html = html.split('\n\n').map(para => {
+    para = para.trim();
+    if (!para) return '';
+    // 如果已经是 HTML 块级元素，不再包装
+    if (/^<(h[1-4]|ul|ol|li|blockquote|pre|table|hr|div|p)/.test(para)) {
+      return para;
+    }
+    // 如果以 HTML 块级元素结尾
+    if (/<\/(h[1-4]|ul|ol|li|blockquote|pre|table|div|p)>$/.test(para)) {
+      return para;
+    }
+    return `<p>${para.replace(/\n/g, '<br>')}</p>`;
+  }).join('\n');
+
+  // 清理多余空行
+  html = html.replace(/\n{3,}/g, '\n\n');
+
+  return html;
+}
+
+// ==================== 主函数 ====================
+
+function main() {
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    console.log(`
+Markdown 转 HTML 转换器
+
+用法：
+  node md2html.js input.md [output.html]
+  node md2html.js input.md  # 输出到 input.html
+
+参数：
+  input.md    输入的 Markdown 文件
+  output.html 输出的 HTML 文件（可选，默认同名）
+`);
+    process.exit(0);
+  }
+
+  const inputPath = args[0];
+  let outputPath = args[1];
+
+  if (!fs.existsSync(inputPath)) {
+    console.error(`❌ 文件不存在: ${inputPath}`);
+    process.exit(1);
+  }
+
+  // 默认输出路径
+  if (!outputPath) {
+    outputPath = inputPath.replace(/\.md$/i, '.html');
+  }
+
+  // 读取 MD 文件
+  const mdContent = fs.readFileSync(inputPath, 'utf-8');
+
+  // 转换
+  const htmlContent = markdownToHtml(mdContent);
+
+  // 填充模板
+  const finalHtml = HTML_TEMPLATE.replace('{{CONTENT}}', htmlContent);
+
+  // 写入 HTML 文件
+  fs.writeFileSync(outputPath, finalHtml, 'utf-8');
+
+  console.log(`✅ 转换完成`);
+  console.log(`   输入: ${inputPath}`);
+  console.log(`   输出: ${outputPath}`);
+}
+
+main();

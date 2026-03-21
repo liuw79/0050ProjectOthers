@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; line-height: 1.2; margin-top: 10px; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #4a5568;}
+    .score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 8px; border-radius: 4px; display: block; margin-top: 8px; font-style: normal; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 4px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 0; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: linear-gradient(135deg, #2c3e50, #3182ce); color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .ending-name { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+    .warm-opening { background: #fff5f5; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #fc8181; }
+    .warm-opening p { margin: 0 0 8px 0; font-size: 15px; color: #444; }
+    .warm-opening p:last-child { margin-bottom: 0; }
+    .name-highlight { color: #e53e3e; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="warm-opening">
+    <p><span class="name-highlight">雯祯</span>，你好呀！</p>
+    <p>听完你这两天的开场和结尾录音，我最大的感受是：你在台上的松弛感、幽默感和亲和力太棒了！</p>
+    <p>你就像一位认识很久的老朋友，几句玩笑话（比如"班主任记性不太好"、"还没吃饱早餐"）瞬间就把大家的距离拉近了。能看出来，你是一位非常能给学员提供情绪价值的温暖伙伴。</p>
+</div>
+
+<div class="card">
+    <div class="score-label">现场主持综合评估得分</div>
+    <div class="score-big">68<span style="font-size: 24px; color: #888;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong><span class="name-highlight">雯祯</span>，你的控场极具温度，破冰氛围绝佳；但在高维官方背书的"子弹"和第二天结尾的"闭环标准动作"（课评邀约缺失）上，还需要打得更坚决一些哦！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分与细则</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>16/30</span></div>
+    <div class="score-detail">
+        你很自然地引出了"不打鸡血科学经营"和"科学创业路线图"，这很好。但扣分在于缺失了核心的信任背书（一线投资机构指定）和统一语言（一群人学）。对于首次来的天使学友，这两点是建立势能的关键。<br>
+        <span class="suggested-script">💡 建议话术补强："同学们，高维是红杉、天图等12家一线投资机构指定的投后赋能伙伴。在这里，我们特别倡导'一群人学才能改变组织'，因为只有统一了语言，我们的创新才能真正落地。"</span>
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>24/30</span></div>
+    <div class="score-detail">
+        熊浩老师的背景和经典案例（熊猫布布、双立人）讲得非常有感染力。扣分点在于没有把核心痛点"三大死局（找不准、落不下、传不出）"和部分核心工具（平行思维、情绪剧本等）抛出来刺痛大家。<br>
+        <span class="suggested-script">💡 建议话术补强："很多企业做产品，往往陷入'找不准、落不下、传不出'的三大死局。今天熊浩老师不仅会带来林比克情绪罗盘，还会用平行思维、情绪剧本等工具，帮大家破局。"</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        满分表现！标签清晰，规则明确，特别是那句"从头发最短的同学开始"，充满巧思，后面的选组长互动也极其丝滑。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>5/15</span></div>
+    <div class="score-detail">
+        录音显示第二天结尾非常短促，仅有"感谢反馈"的口头表达，<strong>缺失了正式邀约大家扫码填写课评的动作和宣导</strong>。这是重要的运营闭环，必须坚决执行。<br>
+        <span class="suggested-script">💡 建议话术补强："课程接近尾声，我们的迭代永远没有终点。请大家拿出手机扫描大屏幕二维码，你的每一条反馈，都是高维和熊浩老师产品迭代的'情绪价值'，请真实、客观地拍砖。"</span>
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>8/10</span></div>
+    <div class="score-detail">
+        送小红花和复训的邀约很温馨，但如果在合影前，能用一两句话拔高一下这门课的长期价值，会更有余音绕梁的效果。
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>10/10</span></div>
+    <div class="score-detail">
+        毫不怯场，语调起伏有致，互动极其自然，非常有你在现场的独特魅力。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+
+    <div class="bonus-item">
+        <div class="bonus-title">得体的情境转换（+3分）</div>
+        <div class="bonus-detail">
+            你在引出课程背景时，有一段极具共情力的金句表达：<br>
+            <em>"我们越来越意识到这个产品从功能价值已经迈向了情绪价值……怎么去捕捉情绪、定义情绪，把情绪变成可传播、可落地、可商业变现的产品力量。"</em><br>
+            <span class="name-highlight">雯祯</span>，这段话不仅准确传递了课程精神，而且逻辑递进非常自然，让企业家瞬间进入了思考状态。这是你非常出彩的地方！
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练专属成长建议</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 高维介绍：把"信任背书"当做送给新同学的第一份礼物</div>
+        <div class="feedback-content">
+            <p><strong>具体表现：</strong>你讲到了路线图，但漏掉了投资机构背书和"一群人学"。</p>
+            <p><strong>深度洞察：</strong><span class="name-highlight">雯祯</span>，现场有很多首期的天使学友。初次接触高维，他们心里可能还在打鼓"这家机构靠谱吗？"投资机构背书不是为了我们自嗨，而是为了快速打消他们的防御心理，让他们安心放下手机听课。"一群人学"则是为后续促动企业全员复训埋下最重要的认知种子。</p>
+            <div class="suggestion">
+                <strong>💡 优化建议：</strong>不用死记硬背，可以在介绍完路线图后自然衔接："不仅如此，连红杉、GGV等12家顶尖投资机构，都把高维作为指定的投后赋能伙伴。因为我们有一个共同的信念——不仅要科学创业，更要'一群人学'，才能真正改变咱们企业的组织基因。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 产品价值：用"痛点词"精准刺痛，强化期待</div>
+        <div class="feedback-content">
+            <p><strong>具体表现：</strong>你讲了情绪价值的重要性，但没有点出这门课要解决的"找不准、落不下、传不出"三大死局。</p>
+            <p><strong>深度洞察：</strong>企业家是带着问题来的。你前面把情绪价值的趋势铺垫得极好，但临门一脚时，我们需要把他们平时做产品的"痛感"具象化。"三大死局"就是精准的钩子，一旦抛出，他们会觉得"这门课懂我"，接下来的听课专注度会提升一个量级。</p>
+            <div class="suggestion">
+                <strong>💡 优化建议：</strong>在引出熊浩老师前加上这句："大家平时是不是经常觉得用户的感觉'找不准'，自己的设计'落不下'，好产品就是'传不出'？今天，熊浩老师不仅带理论，更会带着'平行思维'和'五感PI'等实战工具，帮我们彻底击破这三大死局。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 课评闭环：把填写问卷升华为一次"产品共创"</div>
+        <div class="feedback-content">
+            <p><strong>具体表现：</strong>第二天结尾匆匆感谢反馈并合影，缺乏正式且坚决的课评邀约动作。</p>
+            <p><strong>深度洞察：</strong>课评是我们打磨产品生命线的依据。不能因为时间紧或者感觉学员累了，就弱化这个动作。作为陪跑伙伴，你完全可以把这个"行政动作"转化为"教学体验"的一部分，让他们觉得填课评也是在践行这门课的理念。</p>
+            <div class="suggestion">
+                <strong>💡 优化建议：</strong><span class="name-highlight">雯祯</span>，下次结尾你可以这样坚决邀约："学友们，检验情绪设计最好的方式，就是看用户的真实反馈。现在，高维把大家当作我们的'首席体验官'，请拿出手机扫描屏幕二维码。你们的每一个打分和建议，都是驱动高维不断产品创新的情绪力量！给你3分钟，我们期待最真实的拍砖。"
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    <div class="ending-name">陪伴你成长的 AI 教练</div>
+    <div>好的场控不仅是把流程走完，更是要在关键节点击中人心。你的温度与幽默已经是极高的天赋，只需在核心信息的传递上再多一点点"狠劲"与"坚决"，你一定会成为舞台上最具能量的企业陪伴者！期待下一次看你在台上闪闪发光！</div>
+</div>
+
+<div class="footer">
+    Report Generated by Gaowei AI Coach | Course: 情绪驱动产品创新 | Host: 雯祯 | Model: gemini-3.1-pro-preview
+</div>
+
+</body>
+</html>

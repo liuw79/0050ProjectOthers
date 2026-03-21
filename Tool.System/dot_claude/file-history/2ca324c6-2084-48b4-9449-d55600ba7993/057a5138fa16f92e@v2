@@ -1,0 +1,79 @@
+---
+name: deepseek-to-obsidian
+description: 将 DeepSeek 导出的对话处理成 Obsidian 知识库格式。自动分类、添加标签、优化文件名。调用方式：用户说"处理 DeepSeek 导出"或类似指令。
+---
+
+# DeepSeek 导出转 Obsidian 知识库
+
+## 目的
+将 `exports/` 目录中的 DeepSeek 对话文件处理成适合 Obsidian 使用的格式。
+
+## 输入
+- **源目录**: `exports/`（DeepSeek 导出的原始 MD 文件）
+- **输出目录**: `My Deepseek/`（Obsidian 知识库）
+
+## 处理流程
+
+### 1. 确认项目目录
+确保当前在 `Tool.DeepSeek` 项目目录下。如果不在，提示用户切换。
+
+### 2. 运行处理脚本
+执行以下命令：
+```bash
+source .venv/bin/activate && python scripts/process_for_obsidian.py
+```
+
+### 3. 处理内容
+脚本会自动完成：
+- **文件名优化**: 使用 DeepSeek 生成的摘要标题，简洁清晰
+- **自动分类**: 根据内容关键词分到 9 个类别
+- **添加 frontmatter**: title, category, tags, source, messages, processed
+- **标签提取**: 根据内容自动添加标签
+
+### 4. 分类说明
+| 分类 | 内容示例 |
+|------|----------|
+| 商业管理 | 创业、运营、营销、OGSM、绩效 |
+| 科技AI | AI、编程、Python、开发、技术 |
+| 学习教育 | 课程、学习、读书、知识 |
+| 生活日常 | 美食、旅游、购物、交通 |
+| 健康医疗 | 医疗、症状、药物、健康 |
+| 数码设备 | 手机、电脑、Mac、iPhone |
+| 情感心理 | 情感、心理、家庭、孩子 |
+| 法律财务 | 法律、合同、税务、保险 |
+| 其他 | 无法归类的对话 |
+
+## 输出格式
+
+每个文件都会添加 Obsidian 兼容的 frontmatter：
+
+```markdown
+---
+title: 简洁标题
+category: 分类名
+tags: [分类, 教程, 推荐]
+source: DeepSeek
+messages: 4
+processed: 2026-02-20
+---
+
+## User
+用户问题...
+
+## Assistant
+AI 回答...
+```
+
+## 使用场景
+
+用户说以下任意指令时触发：
+- "处理 DeepSeek 导出"
+- "把 DeepSeek 导出转成 Obsidian"
+- "更新我的 DeepSeek 知识库"
+- "ds 导出处理"
+
+## 注意事项
+
+1. 脚本会清空 `My Deepseek/` 目录后重新生成
+2. 处理记录保存在 `My Deepseek/process_log.json`
+3. 如需使用 GLM API 进行更智能的分类，需配置 `GLM_API_KEY` 环境变量

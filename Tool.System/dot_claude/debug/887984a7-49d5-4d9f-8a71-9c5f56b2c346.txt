@@ -1,0 +1,61 @@
+2026-02-20T08:14:05.678Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-20T08:14:05.679Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-20T08:14:05.679Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-20T08:14:05.680Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-20T08:14:05.685Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-20T08:14:05.693Z [DEBUG] Loading plugin superpowers from source: {"source":"url","url":"https://github.com/obra/superpowers.git"}
+2026-02-20T08:14:05.693Z [DEBUG] No version found for superpowers@claude-plugins-official, using 'unknown'
+2026-02-20T08:14:05.693Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/obra/superpowers.git"} to temporary path /Users/comdir/.claude/plugins/cache/temp_git_1771575245693_lumgou
+2026-02-20T08:14:05.704Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-20T08:14:05.704Z [DEBUG] [STARTUP] Running setup()...
+2026-02-20T08:14:05.707Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-20T08:14:05.719Z [DEBUG] Error log sink initialized
+2026-02-20T08:14:05.722Z [DEBUG] [STARTUP] setup() completed in 18ms
+2026-02-20T08:14:05.722Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-20T08:14:05.737Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-02-20T08:14:05.749Z [DEBUG] Loaded 15 unique skills (15 unconditional, 0 conditional, managed: 0, user: 14, project: 0, additional: 0, legacy commands: 1)
+2026-02-20T08:15:20.806Z [ERROR] Failed to cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771575245693_lumgou'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75043 ms: Couldn't connect to server
+2026-02-20T08:15:20.806Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-02-20T08:15:20.806Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-02-20T08:15:20.807Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771575245693_lumgou'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75043 ms: Couldn't connect to server
+2026-02-20T08:15:20.807Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-02-20T08:15:20.807Z [DEBUG] Total plugin skills loaded: 0
+2026-02-20T08:15:20.807Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771575245693_lumgou'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75043 ms: Couldn't connect to server
+2026-02-20T08:15:20.807Z [DEBUG] Total plugin commands loaded: 0
+2026-02-20T08:15:20.808Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-02-20T08:15:20.808Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771575245693_lumgou'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75043 ms: Couldn't connect to server
+2026-02-20T08:15:20.808Z [DEBUG] Total plugin agents loaded: 0
+2026-02-20T08:15:20.808Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-20T08:15:20.808Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-20T08:15:20.808Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-20T08:15:20.809Z [DEBUG] getSkills returning: 15 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-20T08:15:20.811Z [DEBUG] [STARTUP] Commands and agents loaded in 75088ms
+2026-02-20T08:15:20.811Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-20T08:15:20.811Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-20T08:15:20.811Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-20T08:15:20.812Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T08:15:20.812Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T08:15:20.845Z [DEBUG] Total LSP servers loaded: 0
+2026-02-20T08:15:20.847Z [DEBUG] [STARTUP] MCP configs loaded in 75162ms
+2026-02-20T08:15:20.852Z [DEBUG] MCP server "lark-mcp": Starting connection with timeout of 30000ms
+2026-02-20T08:15:20.854Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-20T08:15:20.854Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-20T08:15:20.854Z [DEBUG] LSP server manager initialized successfully
+2026-02-20T08:15:20.854Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-20T08:15:20.854Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T08:15:20.886Z [DEBUG] Failed to fetch org penguin mode status, defaulting to disabled
+2026-02-20T08:15:20.932Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-20T08:15:20.933Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a54; cc_entrypoint=sdk-cli; cch=00000;
+2026-02-20T08:15:20.934Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T08:15:20.934Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T08:15:20.936Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T08:15:20.939Z [ERROR] API error (attempt 1/11): undefined Connection error.
+2026-02-20T08:15:21.547Z [ERROR] API error (attempt 2/11): undefined Connection error.
+2026-02-20T08:15:22.727Z [ERROR] API error (attempt 3/11): undefined Connection error.
+2026-02-20T08:15:25.005Z [ERROR] API error (attempt 4/11): undefined Connection error.
+2026-02-20T08:15:29.630Z [ERROR] API error (attempt 5/11): undefined Connection error.
+2026-02-20T08:15:37.862Z [ERROR] API error (attempt 6/11): undefined Connection error.

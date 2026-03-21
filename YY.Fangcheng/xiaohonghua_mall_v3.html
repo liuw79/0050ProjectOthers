@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红花商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "阿里巴巴普惠体", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #EFEFEF;
+            min-height: 100vh;
+            color: #231815; /* 深黑色文字 R35 G24 B21 */
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0,0,0,0.04);
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background: #00A0EB; /* 品牌主题色 R0 G160 B235 */
+            padding: 32px 14px 14px;
+            color: white;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .header-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .header-menu {
+            width: 22px;
+            height: 22px;
+            opacity: 0;
+        }
+
+        /* 用户信息区域 */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar {
+            width: 46px;
+            height: 46px;
+            background: #C3E7F4; /* 浅蓝色 */
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .user-details h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .user-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .points-info {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .points-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .points-text {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* 切换标签 */
+        .tab-switch {
+            display: flex;
+            margin-top: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .tab-option {
+            flex: 1;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-option.active {
+            background: white;
+            color: #00A0EB;
+        }
+
+        /* 导航标签 - 可滑动 */
+        .nav-tabs-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            background: #EFEFEF; /* 浅灰色背景 */
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+
+        .nav-tabs {
+            display: inline-flex;
+            padding: 0 8px;
+        }
+
+        .nav-tab {
+            padding: 12px 14px;
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-tab.active {
+            color: #00A0EB;
+            font-weight: 600;
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 2px;
+            background: #00A0EB;
+            border-radius: 1px;
+        }
+
+        /* 内容区域 */
+        .content {
+            padding: 16px;
+            background: #EFEFEF; /* 浅灰色背景 */
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .more-link {
+            font-size: 13px;
+            color: #999;
+            text-decoration: none;
+        }
+
+        /* 课程卡片 */
+        .course-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            display: flex;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .course-image {
+            width: 52px;
+            height: 52px;
+            background: #91D6F2; /* 中浅蓝 */
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .course-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .course-stats {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .like-count {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 11px;
+            color: #ECC2AD; /* 浅米色 */
+        }
+
+        .exchange-btn {
+            background: #00A0EB; /* 品牌主题色 */
+            color: white;
+            border: none;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .exchange-btn:hover {
+            background: #0090d5;
+            transform: translateY(-1px);
+        }
+
+        .exchange-btn:active {
+            transform: translateY(0);
+        }
+
+        /* 学友实践案例 */
+        .practice-card {
+            background: white;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .practice-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .practice-avatar {
+            width: 32px;
+            height: 32px;
+            background: #C3E7F4;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .practice-user {
+            flex: 1;
+        }
+
+        .practice-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 1px;
+        }
+
+        .practice-time {
+            font-size: 10px;
+            color: #999;
+        }
+
+        .practice-content {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .practice-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-likes {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .practice-tag {
+            background: #F0F8FF;
+            color: #00A0EB;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        /* 线下活动专区 */
+        .activity-card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .activity-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #91D6F2 0%, #C3E7F4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+
+        .activity-content {
+            padding: 12px;
+        }
+
+        .activity-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 4px;
+        }
+
+        .activity-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .activity-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .activity-btn {
+            background: #00A0EB;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .activity-btn:hover {
+            background: #0090d5;
+        }
+
+        /* 隐藏内容区域 */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 375px) {
+            .container {
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 28px 12px 12px;
+            }
+            
+            .content {
+                padding: 14px;
+            }
+            
+            .course-card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <div class="header">
+            <div class="header-top">
+                <div class="back-btn">←</div>
+                <div class="header-title">小红花商城</div>
+                <div class="header-menu"></div>
+            </div>
+            
+            <!-- 用户信息 -->
+            <div class="user-info">
+                <div class="avatar">👤</div>
+                <div class="user-details">
+                    <h2>小红花学员</h2>
+                    <div class="user-subtitle">积分兑换专区</div>
+                </div>
+            </div>
+            
+            <!-- 积分信息 -->
+            <div class="points-info">
+                <div class="points-row">
+                    <span class="points-text">🌺 可兑换积分：1,280</span>
+                </div>
+            </div>
+            
+            <!-- 切换标签 -->
+            <div class="tab-switch">
+                <div class="tab-option active" data-tab="exchange">🎁 我要兑换</div>
+                <div class="tab-option" data-tab="records">📋 兑换记录</div>
+            </div>
+        </div>
+        
+        <!-- 导航标签 -->
+        <div class="nav-tabs-container">
+            <div class="nav-tabs">
+                <div class="nav-tab active" data-content="courses">精品课程</div>
+                <div class="nav-tab" data-content="practice">学友实践</div>
+                <div class="nav-tab" data-content="activities">线下活动</div>
+                <div class="nav-tab" data-content="materials">学习资料</div>
+                <div class="nav-tab" data-content="tools">实用工具</div>
+            </div>
+        </div>
+        
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 精品课程 -->
+            <div class="content-section active" id="courses">
+                <div class="section-title">
+                    <span>🎯 热门推荐</span>
+                    <a href="#" class="more-link">查看更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">📚</div>
+                        <div class="course-info">
+                            <div class="course-title">高效学习方法论</div>
+                            <div class="course-meta">
+                                <span>⏱️ 2小时</span>
+                                <span>👥 1,234人学习</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>128</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">💡</div>
+                        <div class="course-info">
+                            <div class="course-title">创新思维训练营</div>
+                            <div class="course-meta">
+                                <span>⏱️ 3小时</span>
+                                <span>👥 856人学习</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>96</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🎨</div>
+                        <div class="course-info">
+                            <div class="course-title">设计美学基础</div>
+                            <div class="course-meta">
+                                <span>⏱️ 1.5小时</span>
+                                <span>👥 642人学习</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>74</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学友实践案例 -->
+            <div class="content-section" id="practice">
+                <div class="section-title">
+                    <span>🌟 优秀案例</span>
+                    <a href="#" class="more-link">查看更多 ></a>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <div class="practice-avatar">👨</div>
+                        <div class="practice-user">
+                            <div class="practice-name">张同学</div>
+                            <div class="practice-time">2小时前</div>
+                        </div>
+                    </div>
+                    <div class="practice-content">
+                        通过学习高效学习方法论，我的学习效率提升了300%！现在每天只需要2小时就能完成之前4小时的学习量。
+                    </div>
+                    <div class="practice-stats">
+                        <div class="practice-likes">
+                            <span>🌺</span>
+                            <span>42</span>
+                        </div>
+                        <div class="practice-tag">学习心得</div>
+                    </div>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <div class="practice-avatar">👩</div>
+                        <div class="practice-user">
+                            <div class="practice-name">李同学</div>
+                            <div class="practice-time">5小时前</div>
+                        </div>
+                    </div>
+                    <div class="practice-content">
+                        创新思维训练营让我学会了从不同角度思考问题，在工作中提出的解决方案得到了领导的高度认可。
+                    </div>
+                    <div class="practice-stats">
+                        <div class="practice-likes">
+                            <span>🌺</span>
+                            <span>38</span>
+                        </div>
+                        <div class="practice-tag">实践分享</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 线下活动专区 -->
+            <div class="content-section" id="activities">
+                <div class="section-title">
+                    <span>🎪 精彩活动</span>
+                    <a href="#" class="more-link">查看更多 ></a>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">🎯</div>
+                    <div class="activity-content">
+                        <div class="activity-title">学习方法分享会</div>
+                        <div class="activity-desc">与优秀学员面对面交流，分享高效学习经验和技巧</div>
+                        <div class="activity-meta">
+                            <span>📅 本周六 14:00</span>
+                            <button class="activity-btn">立即报名</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">🚀</div>
+                    <div class="activity-content">
+                        <div class="activity-title">创新思维工作坊</div>
+                        <div class="activity-desc">通过实际案例练习，提升创新思维和解决问题的能力</div>
+                        <div class="activity-meta">
+                            <span>📅 下周日 10:00</span>
+                            <button class="activity-btn">立即报名</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学习资料 -->
+            <div class="content-section" id="materials">
+                <div class="section-title">
+                    <span>📖 精选资料</span>
+                    <a href="#" class="more-link">查看更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">📄</div>
+                        <div class="course-info">
+                            <div class="course-title">学习方法论电子书</div>
+                            <div class="course-meta">
+                                <span>📊 PDF格式</span>
+                                <span>💾 2.5MB</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>156</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🎵</div>
+                        <div class="course-info">
+                            <div class="course-title">专注力训练音频</div>
+                            <div class="course-meta">
+                                <span>🎧 MP3格式</span>
+                                <span>⏱️ 30分钟</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>89</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 实用工具 -->
+            <div class="content-section" id="tools">
+                <div class="section-title">
+                    <span>🛠️ 学习工具</span>
+                    <a href="#" class="more-link">查看更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">⏰</div>
+                        <div class="course-info">
+                            <div class="course-title">番茄钟学习计时器</div>
+                            <div class="course-meta">
+                                <span>📱 小程序</span>
+                                <span>🎯 专注学习</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>203</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">📝</div>
+                        <div class="course-info">
+                            <div class="course-title">思维导图模板包</div>
+                            <div class="course-meta">
+                                <span>🎨 20个模板</span>
+                                <span>💡 创意思维</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>167</span>
+                                </div>
+                                <button class="exchange-btn">🌺 去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 导航标签切换
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // 移除所有活跃状态
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                
+                // 添加当前活跃状态
+                this.classList.add('active');
+                const contentId = this.getAttribute('data-content');
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+        
+        // 顶部标签切换
+        document.querySelectorAll('.tab-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.tab-option').forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 这里可以添加切换内容的逻辑
+                if (this.getAttribute('data-tab') === 'records') {
+                    // 显示兑换记录
+                    console.log('显示兑换记录');
+                } else {
+                    // 显示兑换商城
+                    console.log('显示兑换商城');
+                }
+            });
+        });
+        
+        // 卡片点击效果
+        document.querySelectorAll('.course-card, .practice-card, .activity-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('exchange-btn') && !e.target.classList.contains('activity-btn')) {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+            });
+        });
+        
+        // 兑换按钮点击
+        document.querySelectorAll('.exchange-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.style.background = '#0090d5';
+                this.textContent = '兑换中...';
+                
+                setTimeout(() => {
+                    this.style.background = '#4CAF50';
+                    this.textContent = '✓ 已兑换';
+                }, 1000);
+                
+                setTimeout(() => {
+                    this.style.background = '#00A0EB';
+                    this.textContent = '🌺 去兑换';
+                }, 3000);
+            });
+        });
+        
+        // 活动报名按钮点击
+        document.querySelectorAll('.activity-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.style.background = '#4CAF50';
+                this.textContent = '已报名';
+                
+                setTimeout(() => {
+                    this.style.background = '#00A0EB';
+                    this.textContent = '立即报名';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

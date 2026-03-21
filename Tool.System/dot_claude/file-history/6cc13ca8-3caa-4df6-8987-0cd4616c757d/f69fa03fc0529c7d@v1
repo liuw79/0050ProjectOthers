@@ -1,0 +1,82 @@
+# 项目路径索引
+# 用途：Claude Code 快速定位项目目录
+
+projects:
+  # ============ 高维核心项目 (GW.) ============
+  knowledgebase:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.KnowledgeBase
+    desc: 知识库管理，客户拜访录音、萃取
+
+  content:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Content
+    desc: 内容管理
+
+  gtm:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.GTM
+    desc: GTM 市场
+
+  classroom:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Classroom
+    desc: 课堂相关
+
+  roadmap:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.RoadMap
+    desc: 路线图
+
+  trackr:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Trackr
+    desc: 追踪系统
+
+  sqlbot:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Sqlbot
+    desc: SQL 机器人
+
+  invest:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Invest
+    desc: 投资相关
+
+  # ============ AI 相关 ============
+  agents:
+    path: /Users/comdir/SynologyDrive/0050Project/AI.long-running-agents
+    desc: 长运行 Agent 框架
+
+  browser-use:
+    path: /Users/comdir/SynologyDrive/0050Project/browser-use
+    desc: 浏览器自动化
+
+  # ============ 工具类 (Tool.) ============
+  system:
+    path: /Users/comdir/SynologyDrive/0050Project/others/Tool.System
+    desc: 系统工具集
+
+  agent-s:
+    path: /Users/comdir/SynologyDrive/0050Project/Tool.Agent-S
+    desc: Agent 工具
+
+  docs:
+    path: /Users/comdir/SynologyDrive/0050Project/Tool.Docs
+    desc: 文档工具
+
+  # ============ 阅读相关 (LW.) ============
+  reading:
+    path: /Users/comdir/SynologyDrive/0050Project/LW.Reading
+    desc: 阅读项目
+
+  ebook:
+    path: /Users/comdir/SynologyDrive/0050Project/LW.eBook
+    desc: 电子书
+
+  bloomreader:
+    path: /Users/comdir/SynologyDrive/0050Project/LW.BloomReader
+    desc: Bloom 阅读器
+
+  # ============ 其他 ============
+  ceo:
+    path: /Users/comdir/SynologyDrive/0050Project/Ceo.Ceo
+    desc: CEO 相关
+
+# 快捷别名（简短名称到项目名的映射）
+shortcuts:
+  kb: knowledgebase
+  gw: knowledgebase
+  proj: /Users/comdir/SynologyDrive/0050Project

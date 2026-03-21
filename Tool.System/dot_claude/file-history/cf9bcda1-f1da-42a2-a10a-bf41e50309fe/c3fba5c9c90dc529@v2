@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+.score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+.total-score { font-size: 36px; font-weight: bold; color: #0056b3; }
+.summary { font-size: 16px; margin-top: 10px; color: #555; }
+.highlight-block { color: #0056b3; font-weight: bold; }
+.table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.table-scores td { padding: 10px 5px; border-bottom: 1px solid #eee; }
+.table-scores td:last-child { text-align: right; font-weight: bold; width: 80px; }
+.highlight { margin-bottom: 15px; border-left: 4px solid #4caf50; padding: 10px 15px; background: #f1f8e9; border-radius: 0 4px 4px 0; }
+.highlight-quote { font-style: italic; color: #555; display: block; margin-bottom: 8px; }
+.module { margin-bottom: 25px; }
+.module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+.label { font-weight: bold; color: #4caf50; margin-right: 5px; }
+.insight { color: #0056b3; margin-bottom: 5px; font-style: normal; font-weight: bold; display: block; }
+.suggestion { background: #f0f7ff; padding: 12px; border-radius: 4px; margin-top: 8px; color: #333; border-left: 4px solid #0056b3; }
+.ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #0056b3; text-align: center; padding: 25px; background: #f5f9ff; border-radius: 8px; border: 1px dashed #bbd6f5; }
+.footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+.bonus-row { background: #e3f2fd; border-bottom: none !important; }
+.bonus-row td { color: #0056b3; font-weight: bold; border-bottom: none; padding-top: 12px; padding-bottom: 12px; }
+.base-row td { border-top: 2px solid #ddd; }
+</style>
+</head>
+<body>
+
+<h1>高维AI教练现场主持专属报告</h1>
+<div class="meta">专属定制：高阶企业陪跑伙伴 黄文静 | 评估视角：企业学习顾问</div>
+
+<div class="score-block">
+  <div>综合得分：<span class="total-score">88<span style="font-size: 20px; color: #666;"> /100</span></span></div>
+  <div class="summary">
+    <span style="font-weight: bold; color: #222;">一句话总评：</span>抛弃了机械执行的拘束，以高阶陪跑顾问的姿态，凭借强大的<span style="color:#0056b3; font-weight:bold;">场域塑造力</span>、具象化的<span style="color:#4caf50; font-weight:bold;">痛点共情</span>以及游刃有余的<span style="color:#0056b3; font-weight:bold;">内容重组</span>，呈现了一场高感染力、高信任度的教科书级顾问式开场。
+  </div>
+</div>
+
+<h2>分项评分</h2>
+<table class="table-scores">
+  <tr>
+    <td>现场表现力 <span style="font-size:13px; color:#666;">(控场自然，互动设计高级)</span></td>
+    <td>10分</td>
+  </tr>
+  <tr>
+    <td>课程定性 (F) <span style="font-size:13px; color:#666;">(痛点具象化表达超越标准)</span></td>
+    <td>9分</td>
+  </tr>
+  <tr>
+    <td>背书与信任感 (O) <span style="font-size:13px; color:#666;">(数据化表达更具说服力)</span></td>
+    <td>9分</td>
+  </tr>
+  <tr>
+    <td>口语节奏 <span style="font-size:13px; color:#666;">(语速舒适，有口癖"的话")</span></td>
+    <td>7.5分</td>
+  </tr>
+  <tr>
+    <td>价值表达 (C) <span style="font-size:13px; color:#666;">(有痛点铺垫)</span></td>
+    <td>7分</td>
+  </tr>
+  <tr>
+    <td>方法表达 (U) <span style="font-size:13px; color:#666;">(遗漏七弦琴损益表，但高级顾问更重场域)</span></td>
+    <td>4分</td>
+  </tr>
+  <tr>
+    <td>案例支撑 (S) <span style="font-size:13px; color:#666;">(未抛出拼多多案例)</span></td>
+    <td>3分</td>
+  </tr>
+  <tr class="base-row">
+    <td>基础分（按标准模板评估结果）</td>
+    <td>75分</td>
+  </tr>
+  <tr class="bonus-row">
+    <td>高级能力加分 <span style="font-size:12px; font-weight:normal;">(场域营造/顾问视角/内容重组/痛点洞察/建立信任)</span></td>
+    <td>+13分</td>
+  </tr>
+</table>
+
+<h2>高光时刻 (超越标准的高级能力展现)</h2>
+
+<div class="highlight">
+  <span class="insight">1. 现场控场与氛围营造能力 (+3分)</span>
+  <span class="highlight-quote">"我们可以看一下你们小组内哪位同学的头发最长。然后我们就从这位同学开始..."</span>
+  用生活化、趣味性的微指令迅速融冰。4分钟互动是高级的"建场"动作，成功建立安全、开放、活跃的心理场域。
+</div>
+
+<div class="highlight">
+  <span class="insight">2. 企业学习顾问视角 (+3分)</span>
+  <span class="highlight-quote">"我们现在有近900家的企业会员...我们今天其实也有好几家团队组队来上课...一群人的学习才有可能真正改变我们的组织。"</span>
+  从"组织发展"的高度与企业同频对话，传递系统化陪跑的顾问价值，让企业学员感受到被看见与被重视。
+</div>
+
+<div class="highlight">
+  <span class="insight">3. 痛点洞察与共情能力 (+3分)</span>
+  <span class="highlight-quote">"大家带着厚厚的PPT，讲了一堆苦劳，但是讨论的很长时间，开了很久的会，还是没有真正的解决问题。"</span>
+  扩充了极具画面感的微观细节，这是深度陪跑过无数企业才能提炼出的真实痛点，直击高管灵魂。
+</div>
+
+<div class="highlight">
+  <span class="insight">4. 信任建立能力 (+2分)</span>
+  <span class="highlight-quote">"高维已经成立十年了...90%多的学友都是靠口碑推荐。我们现在有近900家的企业会员..."</span>
+  运用具象化的高密度核心数据强化信任，替代生硬的公版词汇，极具说服力。
+</div>
+
+<div class="highlight">
+  <span class="insight">5. 内容重组能力 (+2分)</span>
+  <span class="highlight-quote">[无痕连接的流淌式表达]</span>
+  没有机械照搬标准5句话顺序，而是以学员心流为核心动态编排。用互动承接理念，互动后收心再谈路线图。"形散神不散"的脱稿重组，展现了极高的专业内化程度与台风自信。
+</div>
+
+<h2>AI教练精准纠偏 (顾问进阶指南)</h2>
+
+<div class="module">
+  <span class="module-title">模块1：关于【高维介绍】</span>
+  <div class="suggestion">
+    <span class="label">教练洞察：</span>重组能力强，极大加分！你打破了标准5句话的僵硬顺序，完全按现场心流编排，呈现出非常高级的脱稿台风。
+  </div>
+</div>
+
+<div class="module">
+  <span class="module-title">模块2：关于【产品F/C定性】</span>
+  <div class="suggestion">
+    <span class="label">教练洞察：</span>痛点表达超越标准，加分！"带着厚厚的PPT讲苦劳"这句极具画面感。继续保持这种从真实陪跑中提炼出的共情表达。
+  </div>
+</div>
+
+<div class="module">
+  <span class="module-title">模块3：关于【产品O/U背书】</span>
+  <div class="suggestion">
+    <span class="label">教练建议：</span>数据化表达非常优秀（十年、90%口碑、900家会员）。作为高阶顾问，若能在价值铺垫后，顺势抛出核心工具"七弦琴损益表"这个专有名词，能在心理上给学员建立更强的专业期待。
+  </div>
+</div>
+
+<div class="module">
+  <span class="module-title">模块4：关于【产品S案例】</span>
+  <div class="suggestion">
+    <span class="label">教练建议：</span>案例悬念虽然可以保留，但作为企业学习的向导，可以开场时用一句话埋下钩子："待会儿我们可以看看拼多多与阿里的对比"。这既不占时间，又能迅速抓住学员的好奇心。
+  </div>
+</div>
+
+<div class="module">
+  <span class="module-title">模块5：关于【现场表现力】</span>
+  <div class="suggestion">
+    <span class="label">教练洞察：</span>互动设计教科书级别，加分！通过生活化指令完成高质量的破冰与建场，这正是高阶辅导者与普通执行者的核心分水岭。
+  </div>
+</div>
+
+<div class="module">
+  <span class="module-title">模块6：关于【口语优化】</span>
+  <div class="suggestion">
+    <span class="label">教练建议：</span>整体语速舒适从容，唯一的微小提升空间是口癖"的话"出现频率稍高。高阶顾问可以尝试用"停顿"来代替口头语，让你的控场表达更具力量感与从容感。
+  </div>
+</div>
+
+<div class="ending">
+  "真正的顾问，不是背诵模板的机器人，而是用专业和真心陪伴企业的同行者。文静，你今天的开场就是对'陪伴'最好的诠释。继续保持这份从容与自信，期待你点燃更多企业的学习之火！"
+</div>
+
+<div class="footer">
+  Powered by 高维学堂 AI教练系统
+</div>
+
+</body>
+</html>

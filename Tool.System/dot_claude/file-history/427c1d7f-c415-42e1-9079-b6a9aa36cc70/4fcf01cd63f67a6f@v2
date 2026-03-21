@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">68<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        一句话总评：具备极强的业务联动意识和温暖的场域亲和力，但在核心价值的"锚点定海"与关键运营动作的"闭环收口"上，还有巨大的升维空间。
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>28/30</span></div>
+    <div class="score-detail">
+        表现良好，五句话逻辑基本覆盖，对"统一语言"和"创业路线图"的阐释很自然。扣除2分在于口语衔接稍显零散。
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>18/30</span></div>
+    <div class="score-detail">
+        扣分原因：讲透了"是什么"（痛点与定位），但为了控制时长，主动省略了【方法工具】（如关键事件/行为预判）和【生动案例】的呈现。缺乏这部分，学员对课程"能给到什么具体抓手"的期待感会打折扣。<br>
+        <span class="suggested-script">建议话术："在接下来的两天，川益老师将交付一套从'人才画像-关键事件-行为预判'的解码技术。就像我们一位学友说的：学完才发现，用'业务关键挑战'反推人才画像，才是真把人才变成资产。"</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        巧妙利用姓名贴和"年级"设定来识别老学长，快速拉近距离，动作自然且有效。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>0/15</span></div>
+    <div class="score-detail">
+        扣分原因：相信你是为了在结尾给学员提供更多的后续课程指引（如流程型组织、领导力等）而投入了大量精力，但在收尾阶段完全遗漏了"邀约课评"这一核心动作。课评是高维产品迭代的生命线，缺失这一环会导致运营闭环断裂。<br>
+        <span class="suggested-script">建议话术："高维的每一门课都是和大家共创出来的。屏幕上是本次课程的评估问卷，您的每一个真实反馈，都是我们迭代的最高指令。请大家用2分钟时间扫码填写，完成后凭提交页面找班委领取结业证书。"</span>
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>9/10</span></div>
+    <div class="score-detail">
+        "想得清楚才能问对问题"的价值拔高非常精准，课程推荐逻辑紧凑。
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>7/10</span></div>
+    <div class="score-detail">
+        扣分原因：语速适中，但过渡词"然后"、"去"使用过于频繁（如"然后去倡导...然后也即此...然后去统一..."），削弱了专业表达的力量感。<br>
+        <span class="suggested-script">建议话术：尝试用"停顿"代替"然后"。比如："找到对的人更是难上加难。（停顿2秒）过往我们在招聘时，往往存在碰运气的成分..."</span>
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">破冰设计与场域融合（+1）</div>
+        <div class="bonus-detail"><b>原稿表达：</b>无明确的识别新老学员话术设计。</div>
+        <div class="bonus-detail"><b>现场金句：</b>"大家可以通过年级去有效的分辨出来，本组有没有我们的学长学姐，带领我们去探索今天的这个高维之旅。"</div>
+        <div class="bonus-detail"><b>分析：</b>作为一个优秀的陪跑伙伴，你敏锐地抓住了高维独特的"年级"文化，并在开场前30秒就把它变成了赋能老学员、带领新学员的破冰工具，瞬间建立了团队共学的场域安全感。</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 关于"课评邀约"的绝对闭环</div>
+        <div class="feedback-content">
+            <p><b>问题类型：</b>核心运营动作缺失</p>
+            <p><b>具体表现：</b>第二天结课时，详细推荐了后续复训时间及联动课程，但直接以"祝愿大家返程顺利"结尾，未引导填写课评问卷。</p>
+            <p><b>深度洞察：</b>我非常理解你作为高阶班主任，急迫地想为企业家规划后续的学习路径（你对课程体系的串联非常精彩！）。但从运营视角看，"课评"不仅是我们的NPS考核指标，更是学员对自己这两天学习情绪的一次"宣泄与沉淀"。不给他们留出这个神圣的2分钟，场域的能量就没有完全收口。高维的实战精神，正是建立在敬畏客户反馈的基础上的。</p>
+            <p><b>优化建议：</b>作为场域的掌舵者，若能在激发他们对后续课程兴趣的同时，顺势抛出"评价是共建的基础"，能在心理上建立更强的信任纽带。把"课评环节"当作一个重要的仪式感去设计，而不是一个附属任务。</p>
+            <div class="suggestion">
+                <b>建议话术：</b>"刚刚给大家规划了接下来的组织进化路径。但回到当下，这门《超级面试官》能否真正在未来帮助到更多企业，决定权在在座各位手中。请大家拿出手机扫描屏幕二维码，高维从来不怕差评，只怕听不到真话，您的反馈就是我们的底气。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 关于"产品核心价值"的具象化交付</div>
+        <div class="feedback-content">
+            <p><b>问题类型：</b>内容结构缺失</p>
+            <p><b>具体表现：</b>第一天开场讲透了"招聘靠运气"的痛点，但在介绍课程交付内容时，缺少了【方法工具】的直接亮剑和【生动案例】的信任背书。</p>
+            <p><b>深度洞察：</b>先假设这是你为了迅速让川益老师登场而做的主动精简。但请注意，台下的企业家往往带着"这门课到底能不能落地"的审视心态。如果只讲"基于业务场景去识别"，偏向于"理念"；只有抛出如"人才画像、关键事件"这样硬核的"词汇"，并配以真实学友的震撼反馈，才能瞬间在学员心中植入"有兵器、有胜仗"的实战预期，帮老师彻底把场子热透。</p>
+            <p><b>优化建议：</b>在定性产品后，必须要用"1个工具包 + 1个微案例"来完成信任闭环。哪怕只用三句话，也要把"武器"展示出来。</p>
+            <div class="suggestion">
+                <b>建议话术：</b>"川益老师不仅会帮大家看透业务，还会交付一套'从人才画像到行为预判'的硬核工具。往期有位医疗行业的学长学完后感叹：'以前招人是撞大运，现在用关键挑战反推画像，招人终于成了一道算术题！'"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 关于"口语表达"的留白与力量感</div>
+        <div class="feedback-content">
+            <p><b>问题类型：</b>语言节奏控制</p>
+            <p><b>具体表现：</b>全篇大量使用"然后"、"去"等口语化连接词，导致句子绵长，缺乏段落感（如："然后逐渐去转化成...然后基于业务场景去找到...在很多时候我们再去..."）。</p>
+            <p><b>深度洞察：</b>能感受到你在现场是脱稿的，大脑在高速运转、即兴组织语言，这是非常棒的控场能力！但大量的"然后"会稀释你作为专业顾问的气场。对于企业家受众而言，清晰、笃定、有力量的短句，比连绵不断的流长句更具穿透力和权威感。</p>
+            <p><b>优化建议：</b>尝试"切短句+物理停顿"的刻意练习。当你脑海中想说"然后"时，闭上嘴，停顿一秒钟，直接说下一个主语。留白不仅能给自己思考的空间，也能让学员有消化吸收的时间。</p>
+            <div class="suggestion">
+                <b>建议话术练习：</b>将"然后想的清楚我们才能够问对问题，然才能找到更精准的人" -> 优化为："想得清楚（停顿），才能问对问题（停顿）。最终，找到最精准的同行者。"
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ending">
+    你对高维课程体系（从业务到组织到领导力）的熟稔程度令人赞叹，这正是企业成长陪跑伙伴的核心壁垒所在。期待你补齐"结构锚点"与"运营闭环"，让你的专业光芒在场域中更加耀眼！
+</div>
+
+<div class="footer">
+    File ref: /GW.Content/五句话介绍/高维学堂5句话介绍.md<br>
+    File ref: /GW.Content/五句话介绍/超级面试官-主持词.md
+</div>
+
+</body>
+</html>

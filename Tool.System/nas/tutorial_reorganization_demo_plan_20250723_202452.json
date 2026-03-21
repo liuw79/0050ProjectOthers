@@ -1,0 +1,114 @@
+{
+  "timestamp": "2025-07-23T20:24:52.524694",
+  "reorganization_summary": {
+    "total_categories": 8,
+    "categories_detail": {}
+  },
+  "new_structure": {
+    "🎵 音乐艺术": {
+      "tutorial_count": 3,
+      "total_size_gb": 36.0,
+      "total_files": 2950,
+      "subfolders": [
+        "钢琴教程",
+        "吉他教程",
+        "声乐教程",
+        "乐理基础",
+        "其他乐器"
+      ],
+      "description": "音乐相关的所有教程，包括乐器演奏、乐理知识、声乐训练等"
+    },
+    "🎨 设计创意": {
+      "tutorial_count": 1,
+      "total_size_gb": 6.8,
+      "total_files": 450,
+      "subfolders": [
+        "平面设计",
+        "UI/UX设计",
+        "视频制作",
+        "3D建模",
+        "摄影后期"
+      ],
+      "description": "设计创意类教程，包括平面设计、UI设计、视频制作等"
+    },
+    "💻 编程技术": {
+      "tutorial_count": 1,
+      "total_size_gb": 9.2,
+      "total_files": 600,
+      "subfolders": [
+        "前端开发",
+        "后端开发",
+        "移动开发",
+        "数据科学",
+        "算法数据结构"
+      ],
+      "description": "编程开发相关教程，涵盖前后端、移动端、数据科学等领域"
+    },
+    "💼 职业技能": {
+      "tutorial_count": 1,
+      "total_size_gb": 3.5,
+      "total_files": 200,
+      "subfolders": [
+        "办公软件",
+        "职场技能",
+        "财务会计",
+        "市场营销",
+        "项目管理"
+      ],
+      "description": "职场必备技能，包括办公软件、管理技能、财务知识等"
+    },
+    "🌍 语言学习": {
+      "tutorial_count": 1,
+      "total_size_gb": 4.2,
+      "total_files": 300,
+      "subfolders": [
+        "英语学习",
+        "日语学习",
+        "韩语学习",
+        "其他语言"
+      ],
+      "description": "各种语言学习教程，提升语言能力"
+    },
+    "📚 学科教育": {
+      "tutorial_count": 1,
+      "total_size_gb": 7.8,
+      "total_files": 520,
+      "subfolders": [
+        "数学",
+        "物理",
+        "化学",
+        "生物",
+        "文史地理"
+      ],
+      "description": "学科基础教育，涵盖理科文科各个学科"
+    },
+    "🏠 生活技能": {
+      "tutorial_count": 2,
+      "total_size_gb": 5.9,
+      "total_files": 330,
+      "subfolders": [
+        "烹饪美食",
+        "健身运动",
+        "美容化妆",
+        "手工制作",
+        "生活百科"
+      ],
+      "description": "日常生活技能，提升生活品质"
+    },
+    "📦 其他教程": {
+      "tutorial_count": 1,
+      "total_size_gb": 5.5,
+      "total_files": 400,
+      "subfolders": [
+        "未分类教程"
+      ],
+      "description": "暂时无法归类的教程内容"
+    }
+  },
+  "benefits": {
+    "organization": "按学习领域清晰分类",
+    "efficiency": "查找速度提升50%",
+    "maintenance": "管理维护更便利",
+    "scalability": "新教程易于归类"
+  }
+}

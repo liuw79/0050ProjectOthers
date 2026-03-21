@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""
+发布班主任AI教练报告到飞书知识库
+"""
+import json
+import time
+import requests
+import re
+import sys
+
+# 配置
+SPACE_ID = "7600806729793686488"
+TOKEN = "eyJhbGciOiJFUzI1NiIsImZlYXR1cmVfY29kZSI6IkZlYXR1cmVPQXV0aEpXVFNpZ25fQ04iLCJraWQiOiI3NjE2ODk0MzA1NzE3OTE0NTczIiwidHlwIjoiSldUIn0.eyJqdGkiOiI3NjE4MTQyOTIyNDE1ODY4ODY1IiwiaWF0IjoxNzczNzM3MTIwLCJleHAiOjE3NzM3NDQzMjAsInZlciI6InYxIiwidHlwIjoiYWNjZXNzX3Rva2VuIiwiY2xpZW50X2lkIjoiY2xpX2E5ZjFjNjA0ZDZiOWRiYzkiLCJzY29wZSI6ImF1dGg6dXNlci5pZDpyZWFkIGRvY3g6ZG9jdW1lbnQgZHJpdmU6ZHJpdmUgd2lraTp3aWtpIiwiYXV0aF9pZCI6Ijc2MTgxNDI5MTg2OTEzOTI3MDkiLCJhdXRoX3RpbWUiOjE3NzM3MzcxMTksImF1dGhfZXhwIjoxODA1MjczMTE5LCJ1bml0IjoiZXVfbmMiLCJ0ZW5hbnRfdW5pdCI6ImV1X25jIiwib3BhcXVlIjp0cnVlLCJlbmMiOiJBaVFrQVFFQ0FNSURBQUVCQXdBQ0FRMEFBd3NMQUFBQUF3QUFBQWRHWldGMGRYSmxBQUFBRUc5aGRYUm9YMjl3WVhGMVpWOXFkM1FBQUFBSVZHVnVZVzUwU1dRQUFBQUJNQUFBQUFSVWFXMWxBQUFBQ2pFM056TTJNVGt5TURBUEFBUU1BQUFBQVFvQUFXTEZJbG12Z0FBaUN3QUNBQUFBREU2R2xSNk83RWlaMlB4aHRRc0FBd0FBQURCYWpINFBKbHp3aUhINnJteUJlWDhNZGNIcDFza3RTdHpzeHZTUXk1S1IvYkRiUmEyeGh5UDlEdVhYMW9RNG9oVUFDd0FGQUFBQUJXVjFYMjVqQU91bzJ6K0hNRnhieTZmZ0JKeE40bnc4ZzNDTzNZSXRXU1B1Q0JTYlpFRHg5eWI4bHA0THI5cGRSSEFubXg2dk9DRENRMXZCdkR6cS9CYVo0TzRzZU1UODJvd3g3Y21YVmd1ek5FVTBUQVFBNmtKNG96Vzk5WmdsUXBEZ0JBMzVmWlpNdU56ZkJBL2dxSTVyUWRYcWY2Wm1wQkNrUDR6Sjl4NkVldmtGOThjckJqZE1sOU5UajlBOWxNaHJ3YWlDeUFtRlpRPT0iLCJlbmNfdmVyIjoidjEifQ.C4LuJzK8V7muikxRpWx9YOaoll5m-W-4sIVeS8hgemU3lLwwcK8GF5DEHim5mv7TmE3RVa-DCkDzQz1DLWHWWw"
+
+HEADERS = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Content-Type": "application/json"
+}
+
+# 主目录node_token（已创建）
+MAIN_NODE_TOKEN = "An6fwgDdHiJwrskIrewcey0Enih"
+
+# 报告数据
+REPORTS = [
+    {
+        "name": "雯祯",
+        "course": "情绪驱动产品创新",
+        "date": "20260313",
+        "file": "/tmp/雯祯-AI教练报告.md",
+        "folder_name": "20260313情绪驱动产品创新_雯祯"
+    },
+    {
+        "name": "邬培莹",
+        "course": "超级面试官",
+        "date": "20260313",
+        "file": "/tmp/邬培莹-AI教练报告.md",
+        "folder_name": "20260313超级面试官_邬培莹"
+    },
+    {
+        "name": "碧容",
+        "course": "业务管理者养成",
+        "date": "20260314",
+        "file": "/tmp/碧容-AI教练报告.md",
+        "folder_name": "20260314业务管理者养成_碧容"
+    },
+    {
+        "name": "阿左",
+        "course": "业务优化与利润提升",
+        "date": "20260314",
+        "file": "/tmp/阿左-AI教练报告.md",
+        "folder_name": "20260314业务优化与利润提升_阿左"
+    },
+    {
+        "name": "丁芹伟",
+        "course": "战略解码",
+        "date": "20260314",
+        "file": "/tmp/丁芹伟-AI教练报告.md",
+        "folder_name": "20260314战略解码_丁芹伟"
+    },
+    {
+        "name": "黄文静",
+        "course": "流程型组织",
+        "date": "20260314",
+        "file": "/tmp/黄文静-AI教练报告.md",
+        "folder_name": "20260314流程型组织_黄文静"
+    }
+]
+
+def create_wiki_node(title, parent_token=None):
+    """创建Wiki节点"""
+    url = f"https://open.feishu.cn/open-apis/wiki/v2/spaces/{SPACE_ID}/nodes"
+    data = {
+        "node_type": "origin",
+        "obj_type": "docx",
+        "title": title
+    }
+    if parent_token:
+        data["parent_node_token"] = parent_token
+
+    resp = requests.post(url, headers=HEADERS, json=data, timeout=30)
+
+    try:
+        result = resp.json()
+    except:
+        print(f"  ❌ JSON解析失败，响应: {resp.text[:200]}")
+        return None, None
+
+    if result.get("code") == 0:
+        node = result["data"]["node"]
+        return node["obj_token"], node["node_token"]
+    else:
+        print(f"  ❌ 创建节点失败: {result.get('msg', str(result))}")
+        return None, None
+
+def parse_inline_format(text):
+    """解析行内格式"""
+    elements = []
+    # 处理加粗
+    parts = re.split(r'(\*\*[^*]+\*\*)', text)
+
+    for part in parts:
+        if part.startswith('**') and part.endswith('**'):
+            elements.append({
+                "text_run": {
+                    "content": part[2:-2],
+                    "text_element_style": {"bold": True}
+                }
+            })
+        elif part:
+            elements.append({
+                "text_run": {
+                    "content": part,
+                    "text_element_style": {}
+                }
+            })
+
+    return elements if elements else [{"text_run": {"content": text, "text_element_style": {}}}]
+
+def parse_markdown_to_blocks(content):
+    """将Markdown解析为飞书blocks"""
+    blocks = []
+    lines = content.split('\n')
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            continue
+
+        # 标题处理
+        if stripped.startswith('### '):
+            elements = parse_inline_format(stripped[4:])
+            blocks.append({"block_type": 5, "heading3": {"elements": elements}})
+        elif stripped.startswith('## '):
+            elements = parse_inline_format(stripped[3:])
+            blocks.append({"block_type": 4, "heading2": {"elements": elements}})
+        elif stripped.startswith('# '):
+            elements = parse_inline_format(stripped[2:])
+            blocks.append({"block_type": 3, "heading1": {"elements": elements}})
+        elif stripped.startswith('> '):
+            elements = parse_inline_format(stripped[2:])
+            blocks.append({"block_type": 15, "quote": {"elements": elements}})
+        elif stripped.startswith('- ') or stripped.startswith('* '):
+            elements = parse_inline_format('• ' + stripped[2:])
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+        elif stripped == '---':
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": "─" * 40}}]}
+            })
+        else:
+            elements = parse_inline_format(stripped)
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+
+    return blocks
+
+def write_document_content(obj_token, blocks):
+    """写入文档内容"""
+    url = f"https://open.feishu.cn/open-apis/docx/v1/documents/{obj_token}/blocks/{obj_token}/children/batch_create"
+
+    # 分批写入（每批50个）
+    success_count = 0
+    for i in range(0, len(blocks), 50):
+        batch = blocks[i:i+50]
+        data = {
+            "children": batch,
+            "index": -1  # 追加到末尾
+        }
+
+        try:
+            resp = requests.post(url, headers=HEADERS, json=data, timeout=30)
+            result = resp.json()
+
+            if result.get("code") == 0:
+                success_count += len(batch)
+            else:
+                print(f"    ⚠️ 批次 {i//50 + 1} 失败: {result.get('msg', '')}")
+
+        except Exception as e:
+            print(f"    ⚠️ 批次 {i//50 + 1} 异常: {str(e)[:100]}")
+
+        time.sleep(0.3)  # 频率限制
+
+    return success_count, len(blocks)
+
+def main():
+    print("🚀 继续发布班主任AI教练报告到飞书Wiki\n")
+    print(f"📁 主目录已创建: {MAIN_NODE_TOKEN}\n")
+
+    results = []
+
+    for report in REPORTS:
+        print(f"📝 处理: {report['name']} - {report['course']}")
+
+        # 创建子目录
+        folder_obj_token, folder_node_token = create_wiki_node(
+            report["folder_name"],
+            parent_token=MAIN_NODE_TOKEN
+        )
+
+        if not folder_node_token:
+            print(f"  ⚠️ 文件夹创建失败，跳过\n")
+            results.append({"name": report["name"], "status": "文件夹失败"})
+            continue
+
+        print(f"  ✅ 文件夹: {folder_node_token}")
+
+        # 读取报告内容
+        with open(report["file"], 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # 创建文档
+        doc_title = f"AI教练报告_{report['name']}_{report['course']}"
+        doc_obj_token, doc_node_token = create_wiki_node(doc_title, parent_token=folder_node_token)
+
+        if not doc_obj_token:
+            print(f"  ⚠️ 文档创建失败\n")
+            results.append({"name": report["name"], "status": "文档失败"})
+            continue
+
+        # 写入内容
+        blocks = parse_markdown_to_blocks(content)
+        success, total = write_document_content(doc_obj_token, blocks)
+
+        if success == total:
+            print(f"  ✅ 文档发布成功 ({success}/{total} blocks)")
+            results.append({"name": report["name"], "status": "成功", "doc_token": doc_obj_token})
+        else:
+            print(f"  ⚠️ 内容写入不完整 ({success}/{total} blocks)")
+            results.append({"name": report["name"], "status": "部分成功", "doc_token": doc_obj_token})
+
+        time.sleep(0.5)
+        print()
+
+    print("\n" + "="*50)
+    print("📊 发布结果汇总:")
+    print("="*50)
+
+    for r in results:
+        status_icon = "✅" if r["status"] == "成功" else "⚠️"
+        print(f"  {status_icon} {r['name']}: {r['status']}")
+
+    print("\n🔗 知识库链接: https://gaowei1.feishu.cn/wiki/space/7600806729793686488")
+
+if __name__ == "__main__":
+    main()

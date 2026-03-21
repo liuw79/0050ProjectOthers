@@ -1,0 +1,93 @@
+{
+  "success": true,
+  "materials": [
+    {
+      "category": "理论",
+      "content": "战略设计分为三个层次：公司层战略、业务层战略和职能层战略。公司层战略决定企业进入什么业务；业务层战略如何在特定业务中竞争；职能层战略如何支持业务战略。",
+      "created_at": "2024-01-01T00:00:00.000Z",
+      "tags": "战略",
+      "title": "战略设计的三个层次",
+      "user_id": "test_sample_001"
+    },
+    {
+      "category": "案例",
+      "content": "组织变革中最大的阻力往往来自中层管理者。他们既有的权力和利益可能被重新分配，因此对变革持抵触态度。解决这个问题需要让他们参与变革过程，而不是被动接受。",
+      "created_at": "2024-01-05T00:00:00.000Z",
+      "tags": "组织变革",
+      "title": "组织变革的阻力",
+      "user_id": "test_sample_001"
+    },
+    {
+      "category": "金句",
+      "content": "看财报不能只看净利润，要看现金流量表。很多公司净利润很高但现金流是负的，这说明可能是应收账款过高或存货积压。健康的现金流是企业持续经营的基础。",
+      "created_at": "2024-01-10T00:00:00.000Z",
+      "tags": "财务",
+      "title": "财务报表的解读",
+      "user_id": "test_sample_001"
+    },
+    {
+      "category": "案例",
+      "content": "真正的品牌护城河不是知名度，而是用户的心智占领。当用户想到某个品类时，第一个想到的是你的品牌，这才是真正的品牌优势。这需要长期一致的品牌建设。",
+      "created_at": "2024-01-15T00:00:00.000Z",
+      "tags": "品牌",
+      "title": "品牌价值的护城河",
+      "user_id": "test_sample_001"
+    },
+    {
+      "category": "理论",
+      "content": "很多公司的绩效管理流于形式，只关注打分而不关注反馈。有效的绩效管理应该是持续对话的过程，管理者应该定期与员工沟通进展，及时调整方向。",
+      "created_at": "2024-01-20T00:00:00.000Z",
+      "tags": "绩效管理",
+      "title": "绩效管理的误区",
+      "user_id": "test_sample_001"
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    },
+    {
+      "category": null,
+      "content": null,
+      "created_at": null,
+      "tags": null,
+      "title": null,
+      "user_id": null
+    }
+  ]
+}

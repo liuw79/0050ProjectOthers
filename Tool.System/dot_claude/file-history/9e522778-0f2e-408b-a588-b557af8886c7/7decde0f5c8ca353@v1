@@ -1,0 +1,193 @@
+import type * as Lark from "@larksuiteoapi/node-sdk";
+import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
+import { listEnabledFeishuAccounts } from "./accounts.js";
+import { createFeishuClient } from "./client.js";
+import { FeishuCalendarSchema } from "./calendar-schema.js";
+import type { FeishuCalendarParams } from "./calendar-schema.js";
+import { resolveToolsConfig } from "./tools-config.js";
+
+function json(data: unknown) {
+  return {
+    content: [{ type: "text" as const, text: JSON.stringify(data, null, 2) }],
+    details: data,
+  };
+}
+
+// Convert ISO time to Feishu timestamp (seconds)
+function toTimestamp(isoTime: string): number {
+  return Math.floor(new Date(isoTime).getTime() / 1000);
+}
+
+// Get the primary calendar ID by listing calendars
+async function getPrimaryCalendarId(client: Lark.Client): Promise<string> {
+  try {
+    const resp: any = await client.calendar.calendar.list({
+      params: { page_size: 50 },
+    });
+
+    if (resp.code !== 0 || !resp.data?.calendar_list?.length) {
+      throw new Error("No calendars found");
+    }
+
+    // Find primary calendar (usually the first one or marked as primary)
+    const primaryCal = resp.data.calendar_list.find(
+      (cal: any) => cal.primary === true || cal.type === "primary"
+    ) || resp.data.calendar_list[0];
+
+    return primaryCal.calendar_id;
+  } catch (err) {
+    throw new Error(`Failed to get calendar list: ${err instanceof Error ? err.message : String(err)}`);
+  }
+}
+
+async function createEvent(client: Lark.Client, params: FeishuCalendarParams) {
+  if (!params.summary || !params.start_time || !params.end_time) {
+    return { error: "Missing required fields: summary, start_time, end_time" };
+  }
+
+  // Get the actual calendar ID instead of using "primary"
+  const calendarId = await getPrimaryCalendarId(client);
+
+  const body: any = {
+    summary: params.summary,
+    description: params.description || "",
+    start_time: { timestamp: toTimestamp(params.start_time), timezone: "Asia/Shanghai" },
+    end_time: { timestamp: toTimestamp(params.end_time), timezone: "Asia/Shanghai" },
+    visibility: params.visibility || "default",
+  };
+
+  if (params.location) {
+    body.location = { name: params.location };
+  }
+
+  if (params.attendees && params.attendees.length > 0) {
+    body.attendees = params.attendees.map((id) => ({
+      type: "user",
+      user_id: id,
+    }));
+  }
+
+  const resp: any = await client.calendar.calendarEvent.create({
+    path: { calendar_id: calendarId },
+    params: { user_id_type: "open_id" },
+    data: body,
+  });
+
+  if (resp.code !== 0) {
+    throw new Error(resp.msg || `Failed to create event: ${resp.code}`);
+  }
+
+  return {
+    event_id: resp.data?.event?.event_id,
+    summary: resp.data?.event?.summary,
+    start_time: resp.data?.event?.start_time,
+    end_time: resp.data?.event?.end_time,
+    attendees: resp.data?.event?.attendees,
+  };
+}
+
+async function getEvent(client: Lark.Client, eventId: string) {
+  const resp: any = await client.calendar.event.get({
+    path: { event_id: eventId },
+  });
+
+  if (resp.code !== 0) {
+    throw new Error(resp.msg || `Failed to get event: ${resp.code}`);
+  }
+
+  return resp.data?.event;
+}
+
+async function updateEvent(client: Lark.Client, eventId: string, params: FeishuCalendarParams) {
+  const body: any = {};
+  
+  if (params.summary) body.summary = params.summary;
+  if (params.description !== undefined) body.description = params.description;
+  if (params.start_time) {
+    body.start_time = { timestamp: toTimestamp(params.start_time), timezone: "Asia/Shanghai" };
+  }
+  if (params.end_time) {
+    body.end_time = { timestamp: toTimestamp(params.end_time), timezone: "Asia/Shanghai" };
+  }
+  if (params.location) body.location = { name: params.location };
+  if (params.visibility) body.visibility = params.visibility;
+  
+  if (params.attendees) {
+    body.attendees = params.attendees.map((id) => ({
+      type: "user",
+      user_id: id,
+    }));
+  }
+
+  const resp: any = await client.calendar.event.patch({
+    path: { event_id: eventId },
+    data: body,
+  });
+
+  if (resp.code !== 0) {
+    throw new Error(resp.msg || `Failed to update event: ${resp.code}`);
+  }
+
+  return { event_id: eventId, updated: true };
+}
+
+async function deleteEvent(client: Lark.Client, eventId: string) {
+  const resp: any = await client.calendar.event.delete({
+    path: { event_id: eventId },
+  });
+
+  if (resp.code !== 0) {
+    throw new Error(resp.msg || `Failed to delete event: ${resp.code}`);
+  }
+
+  return { event_id: eventId, deleted: true };
+}
+
+export function registerFeishuCalendarTools(api: OpenClawPluginApi) {
+  const accounts = listEnabledFeishuAccounts(api.config);
+  if (accounts.length === 0) return;
+
+  const firstAccount = accounts[0];
+  const toolsCfg = resolveToolsConfig(firstAccount.config.tools);
+  if (toolsCfg.calendar === false) return;
+
+  const getClient = () => createFeishuClient(firstAccount);
+
+  api.registerTool({
+    name: "feishu_calendar",
+    label: "Feishu Calendar",
+    description: "Create and manage Feishu calendar events. Actions: create, update, delete, get",
+    parameters: FeishuCalendarSchema,
+    async execute(_toolCallId, params) {
+      const p = params as FeishuCalendarParams;
+      try {
+        const client = getClient();
+        
+        if (p.action === "create") {
+          return json(await createEvent(client, p));
+        }
+        
+        if (p.action === "get") {
+          if (!p.event_id) return json({ error: "Missing event_id" });
+          return json(await getEvent(client, p.event_id));
+        }
+        
+        if (p.action === "update") {
+          if (!p.event_id) return json({ error: "Missing event_id" });
+          return json(await updateEvent(client, p.event_id, p));
+        }
+        
+        if (p.action === "delete") {
+          if (!p.event_id) return json({ error: "Missing event_id" });
+          return json(await deleteEvent(client, p.event_id));
+        }
+        
+        return json({ error: `Unknown action: ${(p as any).action}` });
+      } catch (err) {
+        return json({ error: err instanceof Error ? err.message : String(err) });
+      }
+    },
+  }, { name: "feishu_calendar" });
+
+  api.logger.info?.("feishu_calendar: Registered");
+}

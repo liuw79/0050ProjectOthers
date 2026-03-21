@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+exports/
+.venv/
+*.egg-info/
+.pytest_cache/
+browser_data/
+screenshots/

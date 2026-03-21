@@ -1,0 +1,9 @@
+{
+  "id": "14",
+  "subject": "完善初始化代理 (Task 8)",
+  "description": "完善 InitializerAgent 的完整实现，包括创建功能清单、init.sh、进度文件和初始化 Git",
+  "activeForm": "完善初始化代理实现中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

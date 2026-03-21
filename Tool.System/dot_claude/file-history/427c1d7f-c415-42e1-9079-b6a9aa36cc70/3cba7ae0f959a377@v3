@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+.score-label { text-align: center; color: #888; font-size: 14px; }
+.summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+.suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 8px 12px; border-radius: 4px; display: block; margin-top: 8px; font-style: italic; }
+.score-row:last-child, .score-detail:last-child { border-bottom: none; }
+.bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+.bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+.bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+.feedback-item { margin-bottom: 20px; }
+.feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+.feedback-content { font-size: 14px; color: #444; }
+.feedback-content p { margin: 6px 0; }
+.suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+.ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">75<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong>阿左展现了极佳的亲和力与场域互动感，"大拇指选组长"的设计让人眼前一亮；若能在开场时补足方法工具与学长案例的交付，并在结尾更坚定地收拢课评，就能彻底转化为场域的"能量放大器"！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>28/30</span></div>
+    <div class="score-detail">
+        基础打得很牢！高维的五大核心要点传达到位，且巧妙地使用了"兵马未动粮草先行"的比喻来定位课程。
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>16/30</span></div>
+    <div class="score-detail">
+        讲透了企业痛点（定性开场）和张老师的强悍背景（信任背书），也点出了五大经营痛点。但在最关键的开场阶段，缺失了具体的方法工具（U）和学长实战案例（S），使得学员对"接下来到底能带走什么"的画面感稍显不足。
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        破冰指令清晰，包含"关于自己"和"关于高维推荐"双层设计，有效激活了老学员带新学员的氛围。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>8/15</span></div>
+    <div class="score-detail">
+        将课评邀约放在了颁发奖品和拍大合照之后，且仅作为提醒一带而过。此时场域已经处于"散场状态"，动作显得不够坚决，极易导致课评回收率大打折扣。
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>8/10</span></div>
+    <div class="score-detail">
+        很巧妙！在第二天结尾总结时，把"三层业务检视"、"三中心作战室"等核心工具词汇点了出来，很好地串联了"利润与现金流双增长"的目标，首尾呼应。
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>7/10</span></div>
+    <div class="score-detail">
+        整体语流顺畅自然，亲和力满分。但存在一定数量的冗余口头禅（如高频出现"其实"、"帮我们"），稍加精简会更显干练。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+
+    <div class="bonus-item">
+        <div class="bonus-title">+3分：极佳的场域互动设计（打破僵局）</div>
+        <div class="bonus-detail">
+            在选组长环节，摒弃了传统的"被动指派"或"尴尬自荐"，通过设计<b>"大家伸出右手大拇指，我说321，一起指向心目中的组长"</b>这一动作，瞬间调动了全员的肢体参与和欢快氛围。这是一个非常高级且可直接复用于其他班主任的破冰亮点！
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议（Top 3）</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 开场赋能：用"工具+案例"拉满落地期待</div>
+        <div class="feedback-content">
+            <p>第一天的开场铺陈得很好，但对于一门实战课程，学员最渴望知道"我能拿什么武器走"。作为班主任，如果我们能在开场时顺势抛出具体的工具名称和学长的真实改变，就能在学员心里建立起极强的"落地期待"，让他们带着找工具的心态去听课，吸收率会大大提高。</p>
+            <div class="suggested-script">
+                建议在开场补充：「接下来的两天，张鹏老师不仅会带大家进行'三层业务检视'，还会交付'经营驾驶舱'等实战工具。很多往期学长反馈，以前降本只盯显性成本，学完这套工具回去一梳理流程，马上就找到了几百万的隐性利润增长点！事实证明，利润是科学设计出来的。」
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 动作坚决：将"课评邀约"前置并仪式化</div>
+        <div class="feedback-content">
+            <p>课评是我们帮助导师和高维持续迭代的生命线。阿左把课评放在了大合照之后，大家的心思往往已经飞到了回家或赶车上。如果我们能把填课评作为一个"正式的闭环仪式"，放在颁奖和合影前，大家会有更充裕的时间和更平静的心态来反馈真实声音。</p>
+            <div class="suggested-script">
+                建议调整收尾顺序与话术：「在嘉奖优秀小组之前，我想先邀请大家做一件对高维非常重要的事情。这两天老师倾囊相授，现在轮到大家为这堂课打分了。请大家拿出手机，我们留出专属的3分钟...大家每一次真实的声音，都是我们构筑知识供给站的最强力量。完成后，我们再进行隆重的颁奖和合影！」
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 精炼表达：删减口头禅，提升顾问气场</div>
+        <div class="feedback-content">
+            <p>阿左的亲和力和温度已经非常棒了！作为企业成长陪跑的专业伙伴，如果我们能在表达时更加笃定，减少"其实"、"帮我们"等过渡词汇，会立刻展现出更加干练、高级的专家气场。</p>
+            <div class="suggested-script">
+                小练习：试着把「其实很多时候并不是我们的业务不够努力，而是我们没有用到科学的方法来帮助我们...」<br>
+                精简为：「很多时候，并非业务不努力，而是缺乏科学经营的方法。」—— 用笃定的短句，代替委婉的延长音，力量感倍增！
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    阿左的场域感知力和互动设计已经具备了很高的水准，这是非常难得的天赋！期待你在下次开场时，勇敢地抛出那些硬核的工具与案例，你一定能成为学员心中最值得信赖的成长陪跑伙伴！继续加油！
+</div>
+
+<div class="footer">
+    Model Version: GW-AI-Coach-V4<br>
+    Target: 阿左 - 业务优化与利润提升
+</div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+/**history.wxss**/
+.container {
+  padding-top: 0;
+  justify-content: flex-start;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.header-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.clear-btn {
+  font-size: 28rpx;
+  color: #FF6B6B;
+  padding: 10rpx 20rpx;
+}
+
+.export-btn {
+  font-size: 28rpx;
+  color: #3281FF;
+  padding: 10rpx 20rpx;
+  margin-right: 10rpx;
+}
+
+.record-list {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.record-item {
+  width: 94%;
+  margin: 20rpx auto;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.record-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-info {
+  flex: 1;
+}
+
+.photo-thumbnail {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-left: 20rpx;
+  border: 1rpx solid #eee;
+}
+
+.photo-thumbnail image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.record-floor {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #3281FF;
+  margin-bottom: 10rpx;
+}
+
+.record-time {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.day-text {
+  margin-left: 16rpx;
+  color: #3281FF;
+}
+
+.empty-tip {
+  width: 100%;
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 30rpx;
+} 

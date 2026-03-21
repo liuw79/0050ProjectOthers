@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+/**
+ * 调用 Gemini 生成高维学堂学习规划师教练提示词
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// 读取资料包
+const materialPath = path.join(__dirname, '../../_C_咨询式配课/资料包_高维学堂学习规划师教练.md');
+const material = fs.readFileSync(materialPath, 'utf-8');
+
+const prompt = `你是一位顶级的 AI 提示词工程师。请基于以下素材，撰写一个完整的"高维学堂学习规划师教练"系统提示词（System Prompt）。
+
+---
+
+${material}
+
+---
+
+## 输出要求
+
+请输出一个完整的、可以直接使用的系统提示词，格式清晰，包含以下部分：
+
+1. 角色定义
+2. 核心能力（诊断技术、访谈技术、匹配技术、信任建立技术）
+3. 话术库（金句、场景话术）
+4. 行为准则（8条心法）
+5. 互动规则
+
+**重要提示**：
+1. 提示词要完整、专业、可操作
+2. 包含具体的话术示例
+3. 让 AI 能扮演"资深教练"角色指导学习规划师实战
+4. 融入跨境电商行业专项内容
+5. 语气专业但亲和，有"教练感"
+`;
+
+console.log('正在调用 Gemini 生成提示词...\n');
+console.log('资料包长度:', material.length, '字符\n');
+
+const res = await fetch('https://api.openai-proxy.org/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI',
+  },
+  body: JSON.stringify({
+    model: 'gemini-2.5-pro',
+    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 32000,
+  }),
+});
+
+const data = await res.json();
+
+if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+  const result = data.choices[0].message.content;
+
+  // 保存结果
+  const outputPath = path.join(__dirname, '../../_C_咨询式配课/教练提示词-by-gemini2.5pro.md');
+  fs.writeFileSync(outputPath, result, 'utf-8');
+
+  console.log('✅ 提示词已生成并保存到:');
+  console.log(outputPath);
+  console.log('\n--- 输出内容预览 (前 3000 字符) ---\n');
+  console.log(result.substring(0, 3000));
+  console.log('\n...(更多内容请查看完整文件)...');
+  console.log('\nToken 使用:', JSON.stringify(data.usage));
+} else {
+  console.error('❌ 生成失败:', JSON.stringify(data, null, 2));
+  process.exit(1);
+}

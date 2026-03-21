@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLBot - 智能问数系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .query-section {
+            margin-bottom: 30px;
+        }
+        
+        .query-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        .query-input:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+        
+        .query-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .query-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .query-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .results-section {
+            margin-top: 30px;
+        }
+        
+        .sql-display {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .results-table th {
+            background: #4facfe;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .results-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .results-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-online {
+            background: #28a745;
+        }
+        
+        .status-offline {
+            background: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 SQLBot</h1>
+            <p>智能问数系统 - 自然语言转SQL查询</p>
+            <div style="margin-top: 15px;">
+                <span class="status-indicator" id="dbStatus"></span>数据库
+                <span class="status-indicator" id="aiStatus" style="margin-left: 20px;"></span>AI模型
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="query-section">
+                <h3>💬 输入您的问题</h3>
+                <input type="text" 
+                       id="questionInput" 
+                       class="query-input" 
+                       placeholder="例如：显示所有课程信息、查找课程名称包含'数据'的课程..."
+                       onkeypress="handleKeyPress(event)">
+                <button onclick="submitQuery()" class="query-button" id="queryButton">
+                    🔍 智能查询
+                </button>
+            </div>
+            
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>📊 查询结果</h3>
+                <div id="sqlDisplay" class="sql-display"></div>
+                <div id="resultsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 检查服务状态
+        async function checkStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                
+                document.getElementById('dbStatus').className = 
+                    'status-indicator ' + (data.database === '正常' ? 'status-online' : 'status-offline');
+                document.getElementById('aiStatus').className = 
+                    'status-indicator ' + (data.ai_model === '正常' ? 'status-online' : 'status-offline');
+            } catch (error) {
+                document.getElementById('dbStatus').className = 'status-indicator status-offline';
+                document.getElementById('aiStatus').className = 'status-indicator status-offline';
+            }
+        }
+        
+        // 提交查询
+        async function submitQuery() {
+            const question = document.getElementById('questionInput').value.trim();
+            if (!question) {
+                alert('请输入问题');
+                return;
+            }
+            
+            const button = document.getElementById('queryButton');
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const sqlDisplay = document.getElementById('sqlDisplay');
+            
+            // 显示加载状态
+            button.disabled = true;
+            button.textContent = '🔄 查询中...';
+            resultsSection.style.display = 'block';
+            resultsContainer.innerHTML = '<div class="loading">正在生成SQL查询...</div>';
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // 显示SQL
+                    sqlDisplay.textContent = data.sql;
+                    
+                    // 显示结果
+                    if (data.results && data.results.data) {
+                        displayResults(data.results);
+                    } else {
+                        resultsContainer.innerHTML = '<div class="loading">查询执行成功</div>';
+                    }
+                } else {
+                    // 显示错误
+                    resultsContainer.innerHTML = `<div class="error-message">${data.error}</div>`;
+                    if (data.sql) {
+                        sqlDisplay.textContent = data.sql;
+                    }
+                }
+            } catch (error) {
+                resultsContainer.innerHTML = `<div class="error-message">网络错误: ${error.message}</div>`;
+            } finally {
+                button.disabled = false;
+                button.textContent = '🔍 智能查询';
+            }
+        }
+        
+        // 显示查询结果
+        function displayResults(results) {
+            const container = document.getElementById('resultsContainer');
+            
+            if (!results.data || results.data.length === 0) {
+                container.innerHTML = '<div class="loading">查询无结果</div>';
+                return;
+            }
+            
+            let html = '<table class="results-table"><thead><tr>';
+            
+            // 表头
+            results.columns.forEach(column => {
+                html += `<th>${column}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            
+            // 数据行
+            results.data.forEach(row => {
+                html += '<tr>';
+                row.forEach(cell => {
+                    html += `<td>${cell !== null ? cell : ''}</td>`;
+                });
+                html += '</tr>';
+            });
+            
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+        
+        // 回车键提交
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                submitQuery();
+            }
+        }
+        
+        // 页面加载时检查状态
+        window.onload = function() {
+            checkStatus();
+            setInterval(checkStatus, 30000); // 每30秒检查一次状态
+        };
+    </script>
+</body>
+</html>

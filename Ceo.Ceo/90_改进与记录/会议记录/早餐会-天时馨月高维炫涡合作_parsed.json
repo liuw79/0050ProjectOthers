@@ -1,0 +1,153 @@
+{
+  "meeting_info": {
+    "title": "早餐会 - 天时馨月高维沃拉合作框架",
+    "date": "2026-02-01",
+    "participants": ["刘军", "刘伟", "天时", "馨月"],
+    "location": "线上会议",
+    "duration": "约1小时"
+  },
+  "decisions": [
+    {
+      "content": "以沃拉(VORA)公司作为高维AI团队的承载主体，不新设公司，直接变更现有公司",
+      "priority": "high",
+      "category": "strategic"
+    },
+    {
+      "content": "高维控股沃拉，沃拉作为高维生态的AI子公司",
+      "priority": "high",
+      "category": "strategic"
+    },
+    {
+      "content": "馨月、天时、罗鑫三位创始人均在沃拉持股，天时此次新加入",
+      "priority": "high",
+      "category": "personnel"
+    },
+    {
+      "content": "沃拉拥有技术决策一票否决权，需单独签署条款",
+      "priority": "high",
+      "category": "technical"
+    },
+    {
+      "content": "采用动态股权机制，根据贡献阶段性调整",
+      "priority": "medium",
+      "category": "strategic"
+    },
+    {
+      "content": "全员留在沃拉主体，通过高维控股方式实现融合，不需要任何人单独入职高维",
+      "priority": "high",
+      "category": "personnel"
+    },
+    {
+      "content": "从2026年1月1日起计算合作费用，公对公结算",
+      "priority": "high",
+      "category": "financial"
+    },
+    {
+      "content": "公司更名为'沃拉'(VORA)，同步注册品牌商标",
+      "priority": "medium",
+      "category": "strategic"
+    },
+    {
+      "content": "沃拉财务人员(万达背景)引荐给高维，未来可承担CFO角色",
+      "priority": "medium",
+      "category": "personnel"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "请琴姐整理沃拉公司变更文档（股权变更、名称变更等）",
+      "assignee": "刘军",
+      "deadline": "年后",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "description": "沃拉股权结构调整：天时加入持股，重新分配三位创始人股权比例，为高维控股预留空间",
+      "assignee": "馨月",
+      "deadline": "年后",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "description": "查询'沃拉'商标可注册性，一并注册公司名和品牌商标",
+      "assignee": "高维相关同事",
+      "deadline": null,
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "description": "与高维财务统计2026年1月1日起的合作费用，完成首笔公对公转款",
+      "assignee": "馨月",
+      "deadline": "尽快",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "description": "安排刘军、刘伟认识沃拉财务人员（计划去成都时见面）",
+      "assignee": "馨月",
+      "deadline": null,
+      "priority": "medium",
+      "status": "pending"
+    },
+    {
+      "description": "与KK讨论周末闭门会方案，下午与天时共识AI介入点",
+      "assignee": "刘军",
+      "deadline": "2026-02-01 下午",
+      "priority": "high",
+      "status": "pending"
+    },
+    {
+      "description": "在控股协议中签署沃拉技术决策一票否决权条款",
+      "assignee": "刘伟",
+      "deadline": "年后",
+      "priority": "high",
+      "status": "pending"
+    }
+  ],
+  "next_meeting_suggestions": [
+    {
+      "content": "安排去成都面见沃拉全团队，特别是财务人员",
+      "type": "meeting_logistics"
+    },
+    {
+      "content": "闭门会后复盘AI诊断智能体练兵效果，为800家企业会员诊断做基础",
+      "type": "preparation"
+    },
+    {
+      "content": "公司变更文档确认后召开正式签署会议",
+      "type": "meeting_logistics"
+    }
+  ],
+  "topics": [
+    "沃拉公司主体选择与变更方案",
+    "高维控股沃拉的股权架构设计",
+    "AI团队7+7人员配置与核心成员介绍",
+    "技术决策一票否决权",
+    "动态股权机制",
+    "财务人员引荐与CFO角色",
+    "近期日程（美国行程、深圳、闭门会）",
+    "暑假硅谷之行计划"
+  ],
+  "team_info": {
+    "structure": "7+7配置",
+    "core_members": [
+      {"name": "馨月", "role": "团队管理/CEO", "note": "001号"},
+      {"name": "天时", "role": "技术负责人", "note": "002号"},
+      {"name": "财务(馨月初中同学)", "role": "财务+内容官+前端设计", "note": "003号, 89年, 前万达影院成都负责人, 前上市公司西南大区财务总监"},
+      {"name": "罗鑫(鑫哥)", "role": "技术", "note": "003号带入, 大学同学, 计算机背景"},
+      {"name": "子豪", "role": "AI研究(DeepMind相关博士)", "note": "前华为最年轻高工, 山西矿山机械二代"},
+      {"name": "瑞奇", "role": "数据分析/风控", "note": "成都七中>中国农大>哥伦比亚大学硕士, 现Hello单车"},
+      {"name": "何洪成/小文等", "role": "设计+业务", "note": "培养中"}
+    ]
+  },
+  "schedule": [
+    {"date": "2026-02-01 下午", "event": "刘军与天时共识闭门会AI方案"},
+    {"date": "2026-02-28", "event": "馨月、天时出发美国"},
+    {"date": "2026-03-01", "event": "落地回国"},
+    {"date": "2026-03-初", "event": "馨月、天时、星空出发深圳"},
+    {"date": "年后", "event": "启动沃拉公司变更手续"},
+    {"date": "暑假(计划)", "event": "高维团队赴硅谷，参加英伟达等AI大会"}
+  ],
+  "parsed_at": "2026-02-01T13:08:17.000000",
+  "parsed_by": "AI智能解析（口语对话转结构化纪要）"
+}

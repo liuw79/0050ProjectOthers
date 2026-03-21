@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+.score-label { text-align: center; color: #888; font-size: 14px; }
+.summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+.suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+.score-row:last-child, .score-detail:last-child { border-bottom: none; }
+.bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+.bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+.bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+.feedback-item { margin-bottom: 20px; }
+.feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+.feedback-content { font-size: 14px; color: #444; }
+.feedback-content p { margin: 6px 0; }
+.suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+.ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">75<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong>文静，你展现了极高的业务理解力与"企业陪跑伙伴"的专业深度，特别是结尾处的落地案例堪称惊艳；如果能补齐课评邀约这个关键的运营闭环，这将是一场完美的教科书级主持！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>26/30</span></div>
+    <div class="score-detail">
+        你对高维理念的传达非常精准且流畅。完美覆盖了"实战三大标准"、"一线机构投资背书"以及"共学共识"的核心价值。点名表扬了现场的投后企业，极大地增强了信任背书。
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>26/30</span></div>
+    <div class="score-detail">
+        F.O.C.U.S模型应用得非常棒！你敏锐地结合了国家层面的"高质量、反内卷"宏观趋势，顺势引出"打破职能烟囱、端到端"的课程核心价值，并点出了IPD/LTC等关键工具，专业度拉满。
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>3/5</span></div>
+    <div class="score-detail">
+        你有很好的场域意识，照顾到了"老朋友和新伙伴"，也cue到了特定的共学团队。我猜测你是为了尽快让大家进入烧脑的课程状态，所以省略了同桌破冰动作。若能加上一句简短的互动口令，场域的连接感会更强。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>0/15</span></div>
+    <div class="score-detail">
+        我留意到在第二天结尾，你将核心精力放在了高价值的落地辅导分享上，我非常理解你可能是为了保持那种"深邃且冷静思考"的场域氛围，不想用常规的运营动作去打断大家。但作为班主任，课评是我们倾听客户、迭代产品的生命线，这个闭环动作不可或缺哦。
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>10/10</span></div>
+    <div class="score-detail">
+        满分表现！用"登山的人"做隐喻极其精妙。最让我惊喜的是，你没有盲目鼓励大家去推行变革，而是分享了真实的案例，告诉大家"达成今年不做的共识"也是巨大的收获。这才是真正的顾问级洞察！
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>7/10</span></div>
+    <div class="score-detail">
+        表达从容笃定，娓娓道来，语调中自带一种让企业家信任的专业松弛感。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">🌟 陪跑伙伴的顶级洞察 (+3分)</div>
+        <div class="bonus-detail">
+            在结尾处分享的"不到一个亿的石油企业"案例极其精彩。作为班主任，你不仅懂业务，更懂企业发展的客观规律。你敢于在激动人心的课后给企业"踩刹车"（达成今年不启动变革的共识），完美诠释了高维"科学创业"的实事求是。这种平等对话的姿态，能让创始人对你产生极深的信任感。
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议（Top 3）</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 补齐闭环：顺势邀约课评，让价值沉淀</div>
+        <div class="feedback-content">
+            <p>结尾的高阶案例分享非常震撼，如果我们能顺着这股"深度思考"的势能，把评价邀约作为他们复盘的一部分抛出来，不仅不会破坏场域，反而能收集到极高质量的反馈。</p>
+            <div class="suggestion">
+                <span class="suggested-script">💡 建议话术：</span><br>
+                "刚才和大家分享了落地的心法，其实每次课程的结束，也是我们高维迭代的开始。这两天蒋博的哪句话、哪个工具真正触动了你内部的变革神经？欢迎大家扫描大屏幕的二维码，把你的思考和对我们的建议写进课评里。你们的真实反馈，是我们能持续为大家提供'底座力量'的唯一动力。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 场域预热：增加微小互动，打破物理隔阂</div>
+        <div class="feedback-content">
+            <p>开场时你提到了"一群人学改变组织"，为了让这个理念在现场立刻落地，作为高阶主持人，我们可以设计一个几秒钟的微动作，瞬间拉近同桌企业家的物理距离。</p>
+            <div class="suggestion">
+                <span class="suggested-script">💡 建议话术：</span><br>
+                "今天现场有很多新老朋友，大家能在百忙之中抽出两天来研究'推翻重建'的底座大课，本身就是同频的同路人。来，不妨现在花5秒钟，和身边的同学握个手，说一句：'这两天，一起烧脑，一起通关！'"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 开场钩子：强化"痛点共鸣"，让期待值爆表</div>
+        <div class="feedback-content">
+            <p>你结合政府报告"高质量、反内卷"的引入非常有高度。如果在这个宏观趋势后，紧接着抛出一个让大家"肉痛"的具体业务场景，能瞬间把高管们的注意力牢牢锁定在蒋博身上。</p>
+            <div class="suggestion">
+                <span class="suggested-script">💡 建议话术：</span><br>
+                "大家都知道要反内卷，但在传统的职能型组织里，大家有没有发现一个现象：我们引进了顶级的人才，大家都在拼命加班，但客户的抱怨声不仅没少，内部部门间的扯皮反而更多了？为什么？因为大家都在为上级负责，却没人为客户负责。怎么破这个局？这就是接下来蒋博要带我们彻底拆解的……"
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    文静，你的主持已经超越了"报幕员"的范畴，真正站到了"成长陪跑伙伴"的高度。那份带着石油企业案例去提醒大家的专业与真诚，让我看到了高维班主任最闪光的样子。加上课评的运营闭环，下次你必将无可挑剔！期待你的下一次登场！
+</div>
+
+<div class="footer">
+    Model Version: GW-AI-Coach-V4<br>
+    Target: 黄文静 - 流程型组织
+</div>
+
+</body>
+</html>

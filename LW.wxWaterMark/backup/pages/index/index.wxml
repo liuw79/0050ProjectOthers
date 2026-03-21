@@ -1,0 +1,41 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  
+  <!-- 图片预览区域 -->
+  <view class="image-container" bindtap="chooseImage">
+    <image 
+      wx:if="{{tempFilePath}}" 
+      src="{{tempFilePath}}" 
+      mode="aspectFit" 
+      style="width: 100%; max-height: {{imageMaxHeightPx}}px;" 
+    />
+    <view wx:else class="placeholder-text">请先点击上传图片</view>
+  </view>
+
+  <!-- 水印文字编辑区域 -->
+  <textarea 
+    placeholder="请输入内容" 
+    value="{{fullWatermarkText}}"
+    bindinput="onWatermarkTextChange"
+    style="width:85%; max-width:800px; margin: 10px auto 35px auto; height: 80px; padding:8px; font-size:16px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box; display:block; line-height: 1.5;" 
+  ></textarea>
+
+  <!-- 操作按钮横向排列区域 -->
+  <view class="button-row">
+    <button 
+      type="primary" 
+      bindtap="generateWatermarkedImage" 
+      class="generate-btn"
+    >
+      生成水印图片
+    </button>
+  </view>
+</view>
+
+<!-- 隐藏的Canvas (用于生成水印) - 真机兼容性优化 -->
+<canvas 
+  canvas-id="watermarkCanvas"
+  class="watermark-canvas"
+  style="position: fixed; top: -1000px; left: -1000px; width: 1px; height: 1px;"
+  disable-scroll="true"
+></canvas>

@@ -1,0 +1,144 @@
+/**
+ * 单独处理月度经营分析会(241019)
+ */
+import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
+dotenv.config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '../.env') });
+
+const COURSES_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../01_课程知识库');
+
+const authRes = await fetch('https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ app_id: process.env.LARK_APP_ID, app_secret: process.env.LARK_APP_SECRET }),
+});
+const authData = await authRes.json();
+const token = authData.tenant_access_token;
+console.log('✅ 认证成功\n');
+
+// 1. 获取飞书课程
+const coursesRes = await fetch(
+  `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.LARK_COURSES_APP_TOKEN}/tables/${process.env.LARK_COURSES_TABLE_ID}/records?page_size=100`,
+  { headers: { 'Authorization': `Bearer ${token}` } }
+);
+const coursesData = await coursesRes.json();
+const courses = (coursesData.data?.items || []).map(r => ({
+  id: r.record_id,
+  name: r.fields.course_name?.[0]?.text || r.fields.course_name,
+}));
+
+const course = courses.find(c => c.name.includes('月度经营分析会') && c.name.includes('241019'));
+if (!course) {
+  console.log('❌ 未找到飞书课程');
+  process.exit(1);
+}
+console.log(`飞书课程: ${course.name} (${course.id})\n`);
+
+// 2. 读取本地文件
+const localDir = path.join(COURSES_DIR, '月度经营分析会(241019)');
+const files = fs.readdirSync(localDir).filter(f => f.endsWith('.txt'));
+console.log(`本地文件: ${files.join(', ')}\n`);
+
+let content = '';
+for (const file of files) {
+  const filePath = path.join(localDir, file);
+  const fileContent = execFileSync('iconv', ['-f', 'GBK', '-t', 'UTF-8', filePath], {
+    encoding: 'utf-8',
+    maxBuffer: 50 * 1024 * 1024
+  });
+  content += `\n\n=== ${file} ===\n\n${fileContent}`;
+}
+console.log(`本地内容: ${content.length} 字\n`);
+
+// 3. 删除旧段落
+console.log('删除旧段落...');
+let allSegments = [];
+let pageToken = '';
+for (let i = 0; i < 10; i++) {
+  const res = await fetch(
+    `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.LARK_SEGMENTS_APP_TOKEN}/tables/${process.env.LARK_SEGMENTS_TABLE_ID}/records/search`,
+    {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page_size: 500, page_token: pageToken })
+    }
+  );
+  const data = await res.json();
+  if (data.data?.items) allSegments.push(...data.data.items);
+  pageToken = data.data?.page_token || '';
+  if (!data.data?.has_more) break;
+}
+
+const toDelete = allSegments.filter(r => {
+  const courseId = r.fields.course?.link_record_ids?.[0];
+  return courseId === course.id;
+}).map(r => r.record_id);
+
+if (toDelete.length > 0) {
+  for (let i = 0; i < toDelete.length; i += 500) {
+    const batch = toDelete.slice(i, i + 500);
+    await fetch(
+      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.LARK_SEGMENTS_APP_TOKEN}/tables/${process.env.LARK_SEGMENTS_TABLE_ID}/records/batch_delete`,
+      {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ records: batch }),
+      }
+    );
+  }
+  console.log(`删除 ${toDelete.length} 个旧段落\n`);
+}
+
+// 4. 调用 segmenter 处理
+const { segmenter } = await import('../src/lib/segmenter.js');
+const result = await segmenter.processCourse(content.trim(), '月度经营分析会(241019)');
+
+console.log(`划分: ${result.segments.length} 个段落\n`);
+
+// 5. 保存段落
+let saved = 0;
+for (const seg of result.segments) {
+  try {
+    await fetch(
+      `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.LARK_SEGMENTS_APP_TOKEN}/tables/${process.env.LARK_SEGMENTS_TABLE_ID}/records`,
+      {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: {
+            title: seg.title,
+            segment_index: seg.index,
+            summary: seg.summary,
+            content: seg.content,
+            char_count: seg.charCount,
+            course: [course.id],
+          }
+        }),
+      }
+    );
+    saved++;
+    console.log(`  ✅ 段落 ${seg.index} 保存成功`);
+  } catch (e) {
+    console.log(`  ⚠️ 段落 ${seg.index} 保存失败: ${e.message}`);
+  }
+}
+
+// 6. 更新课程状态
+await fetch(
+  `https://open.feishu.cn/open-apis/bitable/v1/apps/${process.env.LARK_COURSES_APP_TOKEN}/tables/${process.env.LARK_COURSES_TABLE_ID}/records/${course.id}`,
+  {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: {
+        overview: result.overview,
+        process_status: '已完成',
+      }
+    }),
+  }
+);
+
+console.log(`\n✅ 处理完成，保存 ${saved} 个段落`);

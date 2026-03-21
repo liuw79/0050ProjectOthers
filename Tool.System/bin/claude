@@ -1,0 +1,8 @@
+#!/bin/bash
+# 调用真实的 claude，并强制添加 --permission-mode=bypassPermissions
+# 注意：bypassPermissions 可能太危险，建议用 default 或 specific
+# 用户要求 "不要再跟我确认"，对应 --permission-mode=bypassPermissions (或 dontAsk?)
+# 查看 help: choices: "acceptEdits", "bypassPermissions", "default", "delegate", "dontAsk", "plan"
+# dontAsk 可能是不询问直接执行，bypassPermissions 可能是绕过权限检查
+# 试一下 bypassPermissions 或 dontAsk
+exec "/Users/comdir/SynologyDrive/0050Project/others/Tool.System/local-tools/bin/claude" --permission-mode=bypassPermissions "$@"

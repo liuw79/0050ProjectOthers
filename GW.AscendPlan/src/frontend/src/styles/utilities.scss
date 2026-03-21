@@ -1,0 +1,850 @@
+// ===== SCSS工具类文件 =====
+
+// ===== 间距工具类映射 =====
+$spacing-map: (
+  'xs': $spacing-xs,
+  'sm': $spacing-sm,
+  'md': $spacing-md,
+  'lg': $spacing-lg,
+  'xl': $spacing-xl,
+  'xxl': $spacing-xxl,
+  'xxxl': $spacing-xxxl,
+  'xxxxl': $spacing-xxxxl
+);
+
+// 基础间距工具类 - Margin
+@for $i from 0 through 12 {
+  .m-#{$i} {
+    margin: #{$i * $spacing-unit}px !important;
+  }
+  
+  .mt-#{$i} {
+    margin-top: #{$i * $spacing-unit}px !important;
+  }
+  
+  .mr-#{$i} {
+    margin-right: #{$i * $spacing-unit}px !important;
+  }
+  
+  .mb-#{$i} {
+    margin-bottom: #{$i * $spacing-unit}px !important;
+  }
+  
+  .ml-#{$i} {
+    margin-left: #{$i * $spacing-unit}px !important;
+  }
+  
+  .mx-#{$i} {
+    margin-left: #{$i * $spacing-unit}px !important;
+    margin-right: #{$i * $spacing-unit}px !important;
+  }
+  
+  .my-#{$i} {
+    margin-top: #{$i * $spacing-unit}px !important;
+    margin-bottom: #{$i * $spacing-unit}px !important;
+  }
+}
+
+// 语义化间距工具类 - Margin
+@each $name, $value in $spacing-map {
+  .m-#{$name} {
+    margin: $value !important;
+  }
+  
+  .mt-#{$name} {
+    margin-top: $value !important;
+  }
+  
+  .mr-#{$name} {
+    margin-right: $value !important;
+  }
+  
+  .mb-#{$name} {
+    margin-bottom: $value !important;
+  }
+  
+  .ml-#{$name} {
+    margin-left: $value !important;
+  }
+  
+  .mx-#{$name} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+  
+  .my-#{$name} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+}
+
+// 基础间距工具类 - Padding
+@for $i from 0 through 12 {
+  .p-#{$i} {
+    padding: #{$i * $spacing-unit}px !important;
+  }
+  
+  .pt-#{$i} {
+    padding-top: #{$i * $spacing-unit}px !important;
+  }
+  
+  .pr-#{$i} {
+    padding-right: #{$i * $spacing-unit}px !important;
+  }
+  
+  .pb-#{$i} {
+    padding-bottom: #{$i * $spacing-unit}px !important;
+  }
+  
+  .pl-#{$i} {
+    padding-left: #{$i * $spacing-unit}px !important;
+  }
+  
+  .px-#{$i} {
+    padding-left: #{$i * $spacing-unit}px !important;
+    padding-right: #{$i * $spacing-unit}px !important;
+  }
+  
+  .py-#{$i} {
+    padding-top: #{$i * $spacing-unit}px !important;
+    padding-bottom: #{$i * $spacing-unit}px !important;
+  }
+}
+
+// 语义化间距工具类 - Padding
+@each $name, $value in $spacing-map {
+  .p-#{$name} {
+    padding: $value !important;
+  }
+  
+  .pt-#{$name} {
+    padding-top: $value !important;
+  }
+  
+  .pr-#{$name} {
+    padding-right: $value !important;
+  }
+  
+  .pb-#{$name} {
+    padding-bottom: $value !important;
+  }
+  
+  .pl-#{$name} {
+    padding-left: $value !important;
+  }
+  
+  .px-#{$name} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  
+  .py-#{$name} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+}
+
+// ===== 负边距工具类 =====
+@for $i from 1 through 8 {
+  .-m-#{$i} {
+    margin: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-mt-#{$i} {
+    margin-top: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-mr-#{$i} {
+    margin-right: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-mb-#{$i} {
+    margin-bottom: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-ml-#{$i} {
+    margin-left: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-mx-#{$i} {
+    margin-left: #{-$i * $spacing-unit}px !important;
+    margin-right: #{-$i * $spacing-unit}px !important;
+  }
+  
+  .-my-#{$i} {
+    margin-top: #{-$i * $spacing-unit}px !important;
+    margin-bottom: #{-$i * $spacing-unit}px !important;
+  }
+}
+
+// 自动边距
+.m-auto {
+  margin: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+// ===== 间隙工具类 =====
+@for $i from 0 through 12 {
+  .gap-#{$i} {
+    gap: #{$i * $spacing-unit}px !important;
+  }
+  
+  .gap-x-#{$i} {
+    column-gap: #{$i * $spacing-unit}px !important;
+  }
+  
+  .gap-y-#{$i} {
+    row-gap: #{$i * $spacing-unit}px !important;
+  }
+}
+
+// 语义化间隙工具类
+@each $name, $value in $spacing-map {
+  .gap-#{$name} {
+    gap: $value !important;
+  }
+  
+  .gap-x-#{$name} {
+    column-gap: $value !important;
+  }
+  
+  .gap-y-#{$name} {
+    row-gap: $value !important;
+  }
+}
+
+// 尺寸工具类
+$sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  32: 8rem,
+  40: 10rem,
+  48: 12rem,
+  56: 14rem,
+  64: 16rem
+);
+
+@each $key, $value in $sizes {
+  .w-#{$key} {
+    width: $value !important;
+  }
+  
+  .h-#{$key} {
+    height: $value !important;
+  }
+  
+  .min-w-#{$key} {
+    min-width: $value !important;
+  }
+  
+  .min-h-#{$key} {
+    min-height: $value !important;
+  }
+  
+  .max-w-#{$key} {
+    max-width: $value !important;
+  }
+  
+  .max-h-#{$key} {
+    max-height: $value !important;
+  }
+}
+
+// 特殊尺寸
+.w-screen {
+  width: 100vw !important;
+}
+
+.h-screen {
+  height: 100vh !important;
+}
+
+.min-h-screen {
+  min-height: 100vh !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.h-full {
+  height: 100% !important;
+}
+
+.w-fit {
+  width: fit-content !important;
+}
+
+.h-fit {
+  height: fit-content !important;
+}
+
+// 定位工具类
+$positions: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  16: 4rem,
+  20: 5rem
+);
+
+@each $key, $value in $positions {
+  .top-#{$key} {
+    top: $value !important;
+  }
+  
+  .right-#{$key} {
+    right: $value !important;
+  }
+  
+  .bottom-#{$key} {
+    bottom: $value !important;
+  }
+  
+  .left-#{$key} {
+    left: $value !important;
+  }
+  
+  .inset-#{$key} {
+    top: $value !important;
+    right: $value !important;
+    bottom: $value !important;
+    left: $value !important;
+  }
+  
+  .inset-x-#{$key} {
+    left: $value !important;
+    right: $value !important;
+  }
+  
+  .inset-y-#{$key} {
+    top: $value !important;
+    bottom: $value !important;
+  }
+}
+
+// 负定位
+@each $key, $value in $positions {
+  @if $key != 0 {
+    .-top-#{$key} {
+      top: -$value !important;
+    }
+    
+    .-right-#{$key} {
+      right: -$value !important;
+    }
+    
+    .-bottom-#{$key} {
+      bottom: -$value !important;
+    }
+    
+    .-left-#{$key} {
+      left: -$value !important;
+    }
+  }
+}
+
+// Z-index工具类
+$z-indexes: (
+  0: 0,
+  10: 10,
+  20: 20,
+  30: 30,
+  40: 40,
+  50: 50,
+  auto: auto
+);
+
+@each $key, $value in $z-indexes {
+  .z-#{$key} {
+    z-index: $value !important;
+  }
+}
+
+// 透明度工具类
+$opacities: (
+  0: 0,
+  5: 0.05,
+  10: 0.1,
+  20: 0.2,
+  25: 0.25,
+  30: 0.3,
+  40: 0.4,
+  50: 0.5,
+  60: 0.6,
+  70: 0.7,
+  75: 0.75,
+  80: 0.8,
+  90: 0.9,
+  95: 0.95,
+  100: 1
+);
+
+@each $key, $value in $opacities {
+  .opacity-#{$key} {
+    opacity: $value !important;
+  }
+}
+
+// 变换工具类
+.transform {
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.transform-none {
+  transform: none !important;
+}
+
+// 旋转
+$rotations: (
+  0: 0deg,
+  1: 1deg,
+  2: 2deg,
+  3: 3deg,
+  6: 6deg,
+  12: 12deg,
+  45: 45deg,
+  90: 90deg,
+  180: 180deg
+);
+
+@each $key, $value in $rotations {
+  .rotate-#{$key} {
+    transform: rotate($value) !important;
+  }
+  
+  @if $key != 0 {
+    .-rotate-#{$key} {
+      transform: rotate(-$value) !important;
+    }
+  }
+}
+
+// 缩放
+$scales: (
+  0: 0,
+  50: 0.5,
+  75: 0.75,
+  90: 0.9,
+  95: 0.95,
+  100: 1,
+  105: 1.05,
+  110: 1.1,
+  125: 1.25,
+  150: 1.5
+);
+
+@each $key, $value in $scales {
+  .scale-#{$key} {
+    transform: scale($value) !important;
+  }
+  
+  .scale-x-#{$key} {
+    transform: scaleX($value) !important;
+  }
+  
+  .scale-y-#{$key} {
+    transform: scaleY($value) !important;
+  }
+}
+
+// 平移
+$translates: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  32: 8rem,
+  40: 10rem,
+  48: 12rem,
+  56: 14rem,
+  64: 16rem,
+  full: 100%,
+  half: 50%
+);
+
+@each $key, $value in $translates {
+  .translate-x-#{$key} {
+    transform: translateX($value) !important;
+  }
+  
+  .translate-y-#{$key} {
+    transform: translateY($value) !important;
+  }
+  
+  @if $key != 0 and $key != full and $key != half {
+    .-translate-x-#{$key} {
+      transform: translateX(-$value) !important;
+    }
+    
+    .-translate-y-#{$key} {
+      transform: translateY(-$value) !important;
+    }
+  }
+}
+
+.-translate-x-full {
+  transform: translateX(-100%) !important;
+}
+
+.-translate-y-full {
+  transform: translateY(-100%) !important;
+}
+
+.-translate-x-half {
+  transform: translateX(-50%) !important;
+}
+
+.-translate-y-half {
+  transform: translateY(-50%) !important;
+}
+
+// 过渡工具类
+.transition {
+  transition: all 0.3s ease !important;
+}
+
+.transition-none {
+  transition: none !important;
+}
+
+.transition-colors {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease !important;
+}
+
+.transition-shadow {
+  transition: box-shadow 0.3s ease !important;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease !important;
+}
+
+// 持续时间
+$durations: (
+  75: 75ms,
+  100: 100ms,
+  150: 150ms,
+  200: 200ms,
+  300: 300ms,
+  500: 500ms,
+  700: 700ms,
+  1000: 1000ms
+);
+
+@each $key, $value in $durations {
+  .duration-#{$key} {
+    transition-duration: $value !important;
+  }
+}
+
+// 缓动函数
+.ease-linear {
+  transition-timing-function: linear !important;
+}
+
+.ease-in {
+  transition-timing-function: ease-in !important;
+}
+
+.ease-out {
+  transition-timing-function: ease-out !important;
+}
+
+.ease-in-out {
+  transition-timing-function: ease-in-out !important;
+}
+
+// 滤镜工具类
+.blur-none {
+  filter: blur(0) !important;
+}
+
+.blur-sm {
+  filter: blur(4px) !important;
+}
+
+.blur {
+  filter: blur(8px) !important;
+}
+
+.blur-md {
+  filter: blur(12px) !important;
+}
+
+.blur-lg {
+  filter: blur(16px) !important;
+}
+
+.blur-xl {
+  filter: blur(24px) !important;
+}
+
+.blur-2xl {
+  filter: blur(40px) !important;
+}
+
+.blur-3xl {
+  filter: blur(64px) !important;
+}
+
+// 亮度
+$brightness: (
+  0: 0,
+  50: 0.5,
+  75: 0.75,
+  90: 0.9,
+  95: 0.95,
+  100: 1,
+  105: 1.05,
+  110: 1.1,
+  125: 1.25,
+  150: 1.5,
+  200: 2
+);
+
+@each $key, $value in $brightness {
+  .brightness-#{$key} {
+    filter: brightness($value) !important;
+  }
+}
+
+// 对比度
+@each $key, $value in $brightness {
+  .contrast-#{$key} {
+    filter: contrast($value) !important;
+  }
+}
+
+// 饱和度
+@each $key, $value in $brightness {
+  .saturate-#{$key} {
+    filter: saturate($value) !important;
+  }
+}
+
+// 灰度
+.grayscale-0 {
+  filter: grayscale(0) !important;
+}
+
+.grayscale {
+  filter: grayscale(100%) !important;
+}
+
+// 色相旋转
+$hue-rotates: (
+  0: 0deg,
+  15: 15deg,
+  30: 30deg,
+  60: 60deg,
+  90: 90deg,
+  180: 180deg
+);
+
+@each $key, $value in $hue-rotates {
+  .hue-rotate-#{$key} {
+    filter: hue-rotate($value) !important;
+  }
+}
+
+// 反转
+.invert-0 {
+  filter: invert(0) !important;
+}
+
+.invert {
+  filter: invert(100%) !important;
+}
+
+// 深褐色
+.sepia-0 {
+  filter: sepia(0) !important;
+}
+
+.sepia {
+  filter: sepia(100%) !important;
+}
+
+// 阴影工具类
+.drop-shadow-sm {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06)) !important;
+}
+
+.drop-shadow-md {
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06)) !important;
+}
+
+.drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)) !important;
+}
+
+.drop-shadow-xl {
+  filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08)) !important;
+}
+
+.drop-shadow-2xl {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.drop-shadow-none {
+  filter: drop-shadow(0 0 #0000) !important;
+}
+
+// 混合模式
+.mix-blend-normal {
+  mix-blend-mode: normal !important;
+}
+
+.mix-blend-multiply {
+  mix-blend-mode: multiply !important;
+}
+
+.mix-blend-screen {
+  mix-blend-mode: screen !important;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay !important;
+}
+
+.mix-blend-darken {
+  mix-blend-mode: darken !important;
+}
+
+.mix-blend-lighten {
+  mix-blend-mode: lighten !important;
+}
+
+.mix-blend-color-dodge {
+  mix-blend-mode: color-dodge !important;
+}
+
+.mix-blend-color-burn {
+  mix-blend-mode: color-burn !important;
+}
+
+.mix-blend-hard-light {
+  mix-blend-mode: hard-light !important;
+}
+
+.mix-blend-soft-light {
+  mix-blend-mode: soft-light !important;
+}
+
+.mix-blend-difference {
+  mix-blend-mode: difference !important;
+}
+
+.mix-blend-exclusion {
+  mix-blend-mode: exclusion !important;
+}
+
+// 背景混合模式
+.bg-blend-normal {
+  background-blend-mode: normal !important;
+}
+
+.bg-blend-multiply {
+  background-blend-mode: multiply !important;
+}
+
+.bg-blend-screen {
+  background-blend-mode: screen !important;
+}
+
+.bg-blend-overlay {
+  background-blend-mode: overlay !important;
+}
+
+.bg-blend-darken {
+  background-blend-mode: darken !important;
+}
+
+.bg-blend-lighten {
+  background-blend-mode: lighten !important;
+}
+
+.bg-blend-color-dodge {
+  background-blend-mode: color-dodge !important;
+}
+
+.bg-blend-color-burn {
+  background-blend-mode: color-burn !important;
+}
+
+.bg-blend-hard-light {
+  background-blend-mode: hard-light !important;
+}
+
+.bg-blend-soft-light {
+  background-blend-mode: soft-light !important;
+}
+
+.bg-blend-difference {
+  background-blend-mode: difference !important;
+}
+
+.bg-blend-exclusion {
+  background-blend-mode: exclusion !important;
+}

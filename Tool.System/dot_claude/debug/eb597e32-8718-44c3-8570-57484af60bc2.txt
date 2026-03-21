@@ -1,0 +1,900 @@
+2026-03-16T14:31:04.023Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:04.219Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-03-16T14:31:04.219Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:31:04.219Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-16T14:31:04.219Z [DEBUG] Cleared all session hooks for session 7e150f21-7496-45e5-b28a-1a9a0dede97a
+2026-03-16T14:31:04.220Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-03-16T14:31:04.220Z [DEBUG] Found 1 hook matchers in settings
+2026-03-16T14:31:04.220Z [DEBUG] Matched 1 unique hooks for query "clear" (1 before deduplication)
+2026-03-16T14:31:04.246Z [DEBUG] High write ratio: blit=0, write=1935 (100.0% writes), screen=79x102
+2026-03-16T14:31:04.251Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:31:04.255Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-16T14:31:04.255Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-03-16T14:31:04.255Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-03-16T14:31:04.258Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-03-16T14:31:04.258Z [DEBUG] Hook SessionStart:clear (SessionStart) error:
+/bin/sh: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.1/hooks/run-hook.cmd: No such file or directory
+2026-03-16T14:31:04.258Z [DEBUG] FileHistory: Added snapshot for c8562efb-3d6c-43ff-9130-df54f31f48f6, tracking 0 files
+2026-03-16T14:31:04.259Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-03-16T14:31:04.260Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-03-16T14:31:04.261Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:31:04.281Z [DEBUG] Full reset (shrink->below): prevHeight=79, nextHeight=23, viewport=48
+2026-03-16T14:31:05.026Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:06.031Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:07.035Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:08.037Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:09.040Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:10.043Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:11.046Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:12.050Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:13.053Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:14.055Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:15.058Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:16.062Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:17.065Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:18.068Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:19.072Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:20.075Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:21.079Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:22.082Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:23.086Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:24.090Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:25.093Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:26.097Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:27.103Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:28.107Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:29.112Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:30.116Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:31.119Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:32.122Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:32.570Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-16T14:31:32.577Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:31:32.577Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:31:32.577Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:31:32.577Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:31:32.577Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-03-16T14:31:32.577Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-03-16T14:31:32.577Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.1/skills
+2026-03-16T14:31:32.577Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.1/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.1/commands'
+2026-03-16T14:31:32.578Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-03-16T14:31:32.578Z [DEBUG] Total plugin skills loaded: 0
+2026-03-16T14:31:32.578Z [DEBUG] Total plugin commands loaded: 0
+2026-03-16T14:31:32.581Z [DEBUG] Loaded 20 unique skills (20 unconditional, 0 conditional, managed: 0, user: 20, project: 0, additional: 0, legacy commands: 0)
+2026-03-16T14:31:32.581Z [DEBUG] getSkills returning: 20 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-16T14:31:32.581Z [DEBUG] Sending 19 skills via attachment (initial, 19 total sent)
+2026-03-16T14:31:32.583Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:31:32.583Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:31:32.583Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:31:32.583Z [DEBUG] FileHistory: Making snapshot for message b9304d62-8a19-40c0-b594-b1255930f3d2
+2026-03-16T14:31:32.584Z [DEBUG] FileHistory: Added snapshot for b9304d62-8a19-40c0-b594-b1255930f3d2, tracking 0 files
+2026-03-16T14:31:32.585Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-16T14:31:32.593Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:31:32.596Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671492596
+2026-03-16T14:31:32.596Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:31:32.596Z [DEBUG] Temp file written successfully, size: 18238 bytes
+2026-03-16T14:31:32.596Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:31:32.596Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671492596 to /Users/comdir/.claude.json
+2026-03-16T14:31:32.596Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:31:32.596Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:31:32.597Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:31:32.597Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:31:32.597Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:31:32.597Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:31:32.598Z [DEBUG] autocompact: tokens=1115 threshold=167000 effectiveWindow=180000
+2026-03-16T14:31:32.599Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:31:32.601Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:31:32.601Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:31:32.602Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:31:32.602Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:31:32.602Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:31:32.604Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-16T14:31:33.035Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:31:33.126Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:33.880Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:31:34.130Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:35.134Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:36.138Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:37.141Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:38.144Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:38.288Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-16T14:31:38.289Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-16T14:31:38.289Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:31:38.289Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-16T14:31:38.295Z [DEBUG] [useDeferredValue] Messages deferred by 2 (7→9)
+2026-03-16T14:31:38.317Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:31:38.317Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:31:38.317Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:31:38.317Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:31:38.317Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-16T14:31:38.317Z [DEBUG] Found 5 hook matchers in settings
+2026-03-16T14:31:38.317Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-16T14:31:38.317Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:31:38.319Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:31:38.319Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:31:38.319Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:31:38.319Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:31:38.319Z [DEBUG] autocompact: tokens=24605 threshold=167000 effectiveWindow=180000
+2026-03-16T14:31:38.319Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:31:38.320Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:31:38.320Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:31:38.321Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:31:38.321Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:31:38.321Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:31:38.323Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-03-16T14:31:38.696Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:31:39.148Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:40.152Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:41.156Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:42.159Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:43.163Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:43.900Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:31:44.167Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:45.171Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:45.603Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-16T14:31:46.175Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:46.242Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-16T14:31:46.242Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:31:46.242Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:31:46.242Z [DEBUG] autocompact: tokens=24928 threshold=167000 effectiveWindow=180000
+2026-03-16T14:31:46.246Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:31:46.248Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:31:46.249Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:31:46.250Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:31:46.250Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:31:46.250Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:31:46.254Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-16T14:31:46.257Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:31:46.915Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:31:47.177Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:48.181Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:49.184Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:50.187Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:51.190Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:52.194Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:53.198Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:54.202Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:55.206Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:56.210Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:57.214Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:58.218Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:31:59.222Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:00.225Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:01.229Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:02.232Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:03.235Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:32:03.236Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:03.346Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:32:03.349Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-16T14:32:03.349Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:32:03.349Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:32:03.349Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=343 output=322 cacheRead=24576 cacheCreate=0
+2026-03-16T14:32:04.238Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:05.244Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:06.248Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:07.251Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:08.254Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:09.256Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:10.258Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:11.262Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:12.266Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:13.270Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:14.273Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:15.277Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:16.281Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:17.285Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:18.289Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:19.292Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:20.296Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:21.300Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:22.303Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:23.306Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:24.310Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:25.314Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:26.318Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:27.321Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:28.324Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:29.328Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:30.332Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:31.335Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:32.342Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:33.345Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:34.349Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:35.353Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:36.354Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:37.358Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:38.361Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:39.364Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:40.368Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:41.371Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:42.374Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:43.381Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:44.385Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:45.389Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:46.392Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:47.394Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:48.398Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:49.401Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:50.403Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:51.406Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:52.410Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:53.413Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:54.415Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:55.419Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:56.422Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:57.424Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:58.427Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:32:59.431Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:00.434Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:01.439Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:02.441Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:03.444Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:04.448Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:05.451Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:06.454Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:07.457Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:08.459Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:09.462Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:10.466Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:11.470Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:12.473Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:13.478Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:14.481Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:15.485Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:16.488Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:17.492Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:18.494Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:19.497Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:20.501Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:21.504Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:22.508Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:23.511Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:24.516Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:25.520Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:26.524Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:27.527Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:28.531Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:29.535Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:30.537Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:31.541Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:32.545Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:33.547Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:34.550Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:35.554Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:36.558Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:37.562Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:38.566Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:39.570Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:40.574Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:41.576Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:42.580Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:43.584Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:44.326Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-16T14:33:44.326Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-16T14:33:44.326Z [DEBUG] Metrics export disabled by organization setting
+2026-03-16T14:33:44.588Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:45.591Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:46.595Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:47.599Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:48.602Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:49.605Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:50.609Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:51.612Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:52.616Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:53.619Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:54.623Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:55.626Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:56.630Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:57.634Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:58.637Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:33:59.641Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:00.644Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:01.648Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:02.651Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:03.653Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:04.655Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:05.571Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:34:05.571Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:34:05.571Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:34:05.571Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:34:05.574Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:34:05.574Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:34:05.574Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:34:05.574Z [DEBUG] FileHistory: Making snapshot for message eb73eba9-6439-4df3-b068-fccc45581d70
+2026-03-16T14:34:05.574Z [DEBUG] FileHistory: Added snapshot for eb73eba9-6439-4df3-b068-fccc45581d70, tracking 0 files
+2026-03-16T14:34:05.577Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-16T14:34:05.587Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:34:05.588Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-16T14:34:05.596Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671645596
+2026-03-16T14:34:05.597Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:34:05.597Z [DEBUG] Temp file written successfully, size: 18238 bytes
+2026-03-16T14:34:05.597Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:34:05.597Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671645596 to /Users/comdir/.claude.json
+2026-03-16T14:34:05.597Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:34:05.597Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:34:05.598Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f21; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:05.598Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:05.598Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:05.598Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:05.601Z [DEBUG] Loaded 20 unique skills (20 unconditional, 0 conditional, managed: 0, user: 20, project: 0, additional: 0, legacy commands: 0)
+2026-03-16T14:34:05.601Z [DEBUG] getSkills returning: 20 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-16T14:34:05.601Z [DEBUG] autocompact: tokens=24654 threshold=167000 effectiveWindow=180000
+2026-03-16T14:34:05.601Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:34:05.603Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:34:05.604Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:05.604Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:05.604Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:05.604Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:05.607Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-16T14:34:05.659Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:06.101Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:06.660Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:07.663Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:08.666Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:09.670Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:10.674Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:11.678Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:11.988Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:12.682Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:13.685Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:13.719Z [DEBUG] executePreToolHooks called for tool: Skill
+2026-03-16T14:34:13.720Z [DEBUG] Getting matching hook commands for PreToolUse with query: Skill
+2026-03-16T14:34:13.720Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:34:13.720Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-16T14:34:13.723Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671653723
+2026-03-16T14:34:13.723Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:34:13.724Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:34:13.724Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:34:13.724Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671653723 to /Users/comdir/.claude.json
+2026-03-16T14:34:13.724Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:34:13.725Z [DEBUG] Metadata string for coaching-interview:
+2026-03-16T14:34:13.725Z [DEBUG] <command-message>coaching-interview</command-message>
+<command-name>/coaching-interview</command-name>
+2026-03-16T14:34:13.725Z [DEBUG] command-message tags in metadata: 1
+2026-03-16T14:34:13.726Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:34:13.726Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:34:13.726Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:34:13.726Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:34:13.726Z [DEBUG] processPromptSlashCommand creating 3 messages for coaching-interview
+2026-03-16T14:34:13.726Z [DEBUG] Message 1: <command-message>coaching-interview</command-message>
+<command-name>/coaching-interview</command-name>
+2026-03-16T14:34:13.726Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/coaching-interview\n\n# 教练式访谈 Skill\r\n\r\n## 核心目的\r\n\r\n在首次深度沟通中，用专业的提问技巧：\r\n1. **建立信任**：让对方愿意多说\r\n2. **获取信息**：自
+2026-03-16T14:34:13.726Z [DEBUG] Message 3: [ATTACHMENT]
+2026-03-16T14:34:13.726Z [DEBUG] SkillTool returning 2 newMessages for skill coaching-interview
+2026-03-16T14:34:13.726Z [DEBUG] newMessage 1: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/coaching-interview\n\n# 教练式访谈 Skill\r\n\r\n## 核心目的\r\n\r\n在首次深度沟通中...
+2026-03-16T14:34:13.728Z [DEBUG] Getting matching hook commands for PostToolUse with query: Skill
+2026-03-16T14:34:13.728Z [DEBUG] Found 5 hook matchers in settings
+2026-03-16T14:34:13.728Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-16T14:34:13.728Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:34:13.728Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:34:13.728Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:34:13.728Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:34:13.729Z [DEBUG] autocompact: tokens=26743 threshold=167000 effectiveWindow=180000
+2026-03-16T14:34:13.730Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:34:13.732Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:34:13.733Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:13.734Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:13.734Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:13.734Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:13.739Z [DEBUG] [useDeferredValue] Messages deferred by 5 (13→18)
+2026-03-16T14:34:14.011Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:14.689Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:15.693Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:16.696Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:17.699Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:18.466Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-16T14:34:18.702Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:19.705Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:20.707Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:21.711Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:22.715Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:23.717Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:23.854Z [DEBUG] [onCancel] focusedInputDialog=undefined streamMode=responding
+2026-03-16T14:34:23.857Z [WARN] [PROMPT CACHE BREAK] unknown cause [source=repl_main_thread, call #4, cache read: 24640 → 0, creation: 0]
+2026-03-16T14:34:23.861Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-16T14:34:23.871Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:34:24.720Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:25.723Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:26.727Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:27.734Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:28.737Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:29.739Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:30.742Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:31.319Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:34:31.319Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:34:31.319Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:34:31.319Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:34:31.322Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:34:31.322Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:34:31.322Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:34:31.322Z [DEBUG] FileHistory: Making snapshot for message 9ebf0a60-2846-4fbd-ba7a-eeb28f62a5c9
+2026-03-16T14:34:31.322Z [DEBUG] FileHistory: Added snapshot for 9ebf0a60-2846-4fbd-ba7a-eeb28f62a5c9, tracking 0 files
+2026-03-16T14:34:31.323Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-03-16T14:34:31.331Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:34:31.334Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671671334
+2026-03-16T14:34:31.334Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:34:31.335Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:34:31.335Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:34:31.335Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671671334 to /Users/comdir/.claude.json
+2026-03-16T14:34:31.335Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:34:31.335Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:34:31.336Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.05a; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:31.336Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:31.336Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:31.336Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:31.337Z [DEBUG] autocompact: tokens=9 threshold=167000 effectiveWindow=180000
+2026-03-16T14:34:31.339Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:34:31.341Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:34:31.341Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:31.342Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:31.342Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:31.342Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:31.345Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-03-16T14:34:31.746Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:31.841Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:32.749Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:33.168Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:33.753Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:34.756Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:35.760Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:36.763Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:37.767Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:38.563Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-03-16T14:34:38.770Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:39.774Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:40.778Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:41.162Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-16T14:34:41.162Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:34:41.162Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:34:41.162Z [DEBUG] autocompact: tokens=29018 threshold=167000 effectiveWindow=180000
+2026-03-16T14:34:41.163Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:34:41.165Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:34:41.165Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:34:41.166Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:34:41.166Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:34:41.166Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:34:41.169Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-03-16T14:34:41.172Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:34:41.553Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:34:41.779Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:42.783Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:43.786Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:44.789Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:45.792Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:46.796Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:47.800Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:48.802Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:49.806Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:50.810Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:51.813Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:52.816Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:53.819Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:54.822Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:55.826Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:56.830Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:57.532Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-03-16T14:34:57.533Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-03-16T14:34:57.533Z [ERROR] Error in API request: Request was aborted.
+2026-03-16T14:34:57.533Z [DEBUG] Forked agent [prompt_suggestion] received message: type=user
+2026-03-16T14:34:57.533Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[user], totalUsage: input=0 output=0 cacheRead=0 cacheCreate=0
+2026-03-16T14:34:57.833Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:58.836Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:34:59.839Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:00.842Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:01.849Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:02.853Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:03.857Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:04.368Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:35:04.368Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:35:04.368Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:35:04.368Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:35:04.371Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:35:04.371Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:35:04.371Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:35:04.371Z [DEBUG] FileHistory: Making snapshot for message 8583fbae-6fe0-46ec-812a-1fa2af661ad4
+2026-03-16T14:35:04.371Z [DEBUG] FileHistory: Added snapshot for 8583fbae-6fe0-46ec-812a-1fa2af661ad4, tracking 0 files
+2026-03-16T14:35:04.372Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-16T14:35:04.381Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:35:04.384Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671704384
+2026-03-16T14:35:04.384Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:35:04.384Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:35:04.384Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:35:04.384Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671704384 to /Users/comdir/.claude.json
+2026-03-16T14:35:04.385Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:35:04.385Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:35:04.385Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.05a; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:35:04.386Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:35:04.386Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:35:04.386Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:35:04.387Z [DEBUG] autocompact: tokens=28746 threshold=167000 effectiveWindow=180000
+2026-03-16T14:35:04.388Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:35:04.391Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:35:04.391Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:35:04.392Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:35:04.392Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:35:04.392Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:35:04.395Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-16T14:35:04.860Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:05.136Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:35:05.864Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:06.198Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:35:06.870Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:07.874Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:08.878Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:09.880Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:10.884Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:11.887Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:12.893Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:13.228Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-16T14:35:13.896Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:14.900Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:15.903Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:16.907Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:17.909Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:18.913Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:19.596Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-16T14:35:19.596Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:35:19.596Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:35:19.597Z [DEBUG] autocompact: tokens=29347 threshold=167000 effectiveWindow=180000
+2026-03-16T14:35:19.598Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:35:19.601Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:35:19.601Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:35:19.602Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:35:19.602Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:35:19.603Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:35:19.606Z [DEBUG] [useDeferredValue] Messages deferred by 1 (25→26)
+2026-03-16T14:35:19.611Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:35:19.916Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:20.363Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:35:20.919Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:21.922Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:22.925Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:23.929Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:24.932Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:25.935Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:26.939Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:27.943Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:28.947Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:29.949Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:30.850Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:35:30.853Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:35:30.861Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-16T14:35:30.861Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:35:30.861Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:35:30.861Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=602 output=214 cacheRead=28736 cacheCreate=0
+2026-03-16T14:35:30.953Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:31.957Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:32.961Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:33.964Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:34.968Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:35.973Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:36.981Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:37.984Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:38.989Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:39.992Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:40.996Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:41.999Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:43.003Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:44.007Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:45.011Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:46.014Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:47.016Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:48.019Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:49.023Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:50.026Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:51.029Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:52.031Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:53.035Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:54.040Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:55.045Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:56.049Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:57.052Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:57.212Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671757212
+2026-03-16T14:35:57.212Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:35:57.213Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:35:57.213Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:35:57.213Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671757212 to /Users/comdir/.claude.json
+2026-03-16T14:35:57.213Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:35:57.215Z [DEBUG] Metadata string for skill-creator:
+2026-03-16T14:35:57.215Z [DEBUG] <command-message>skill-creator</command-message>
+<command-name>/skill-creator</command-name>
+<command-args>list</command-args>
+2026-03-16T14:35:57.215Z [DEBUG] command-message tags in metadata: 1
+2026-03-16T14:35:57.215Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:35:57.215Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:35:57.215Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:35:57.215Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:35:57.215Z [DEBUG] processPromptSlashCommand creating 3 messages for skill-creator
+2026-03-16T14:35:57.215Z [DEBUG] Message 1: <command-message>skill-creator</command-message>
+<command-name>/skill-creator</command-name>
+<command-args>list</command-args>
+2026-03-16T14:35:57.215Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/skill-creator\n\n# Skill Creator\n\nA skill for creating new skills and iteratively improving them.\n\nAt a high lev
+2026-03-16T14:35:57.215Z [DEBUG] Message 3: [ATTACHMENT]
+2026-03-16T14:35:57.216Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:35:57.216Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:35:57.216Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:35:57.216Z [DEBUG] FileHistory: Making snapshot for message b86bbfe7-39dc-4a17-a6e2-73dfb5174e69
+2026-03-16T14:35:57.216Z [DEBUG] FileHistory: Added snapshot for b86bbfe7-39dc-4a17-a6e2-73dfb5174e69, tracking 0 files
+2026-03-16T14:35:57.217Z [DEBUG] [useDeferredValue] Messages deferred by 3 (26→29)
+2026-03-16T14:35:57.222Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:35:57.223Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671757223
+2026-03-16T14:35:57.223Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:35:57.223Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:35:57.223Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:35:57.223Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671757223 to /Users/comdir/.claude.json
+2026-03-16T14:35:57.224Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:35:57.224Z [DEBUG] autocompact: tokens=37295 threshold=167000 effectiveWindow=180000
+2026-03-16T14:35:57.224Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:35:57.225Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:35:57.226Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:35:57.226Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:35:57.226Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:35:57.227Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:35:57.229Z [DEBUG] [useDeferredValue] Messages deferred by 3 (26→29)
+2026-03-16T14:35:57.849Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:35:58.055Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:35:59.059Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:00.063Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:01.067Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:02.069Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:03.072Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:04.076Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:05.079Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:06.082Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:07.086Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:08.088Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:09.092Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:09.334Z [DEBUG] [useDeferredValue] Messages deferred by 1 (29→30)
+2026-03-16T14:36:10.095Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:11.098Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:12.101Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:13.104Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:14.108Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:15.111Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:16.114Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:17.119Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:18.122Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:19.126Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:20.130Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:21.135Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:22.138Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:22.697Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-16T14:36:22.697Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:36:22.697Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:36:22.697Z [DEBUG] autocompact: tokens=37138 threshold=167000 effectiveWindow=180000
+2026-03-16T14:36:22.698Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:36:22.701Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:36:22.701Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:36:22.702Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:36:22.702Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:36:22.702Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:36:22.706Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-03-16T14:36:22.711Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:36:23.141Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:23.171Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:36:24.145Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:25.149Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:26.151Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:27.154Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:28.157Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:29.161Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:30.163Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:31.166Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:32.169Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:33.172Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:34.175Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:35.179Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:36.182Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:37.186Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:37.296Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:36:37.407Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:36:37.411Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-16T14:36:37.411Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:36:37.411Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:36:37.411Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=777 output=305 cacheRead=36352 cacheCreate=0
+2026-03-16T14:36:38.190Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:39.193Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:40.196Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:41.200Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:42.203Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:43.207Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:43.762Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:36:43.762Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:36:43.762Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:36:43.762Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:36:43.763Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-16T14:36:43.763Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:36:43.763Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:36:43.763Z [DEBUG] FileHistory: Making snapshot for message a6848877-9c3b-43c0-a3cc-620dbc86538e
+2026-03-16T14:36:43.763Z [DEBUG] FileHistory: Added snapshot for a6848877-9c3b-43c0-a3cc-620dbc86538e, tracking 0 files
+2026-03-16T14:36:43.764Z [DEBUG] [useDeferredValue] Messages deferred by 1 (31→32)
+2026-03-16T14:36:43.772Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-16T14:36:43.776Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.49459.1773671803776
+2026-03-16T14:36:43.776Z [DEBUG] Preserving file permissions: 100600
+2026-03-16T14:36:43.776Z [DEBUG] Temp file written successfully, size: 18330 bytes
+2026-03-16T14:36:43.776Z [DEBUG] Applied original permissions to temp file
+2026-03-16T14:36:43.776Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.49459.1773671803776 to /Users/comdir/.claude.json
+2026-03-16T14:36:43.776Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-16T14:36:43.777Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:36:43.777Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.619; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:36:43.777Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:36:43.777Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:36:43.778Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:36:43.778Z [DEBUG] autocompact: tokens=36865 threshold=167000 effectiveWindow=180000
+2026-03-16T14:36:43.780Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:36:43.783Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:36:43.783Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:36:43.784Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:36:43.784Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:36:43.784Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:36:43.788Z [DEBUG] [useDeferredValue] Messages deferred by 1 (31→32)
+2026-03-16T14:36:44.210Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:44.458Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:36:45.213Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:46.217Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:47.222Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:48.226Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:49.228Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:50.037Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:36:50.232Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:51.236Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:51.806Z [DEBUG] [useDeferredValue] Messages deferred by 2 (32→34)
+2026-03-16T14:36:51.902Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-16T14:36:51.903Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-16T14:36:51.903Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:36:51.903Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-16T14:36:51.951Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-16T14:36:51.951Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0b7; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:36:51.951Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:36:51.951Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:36:51.951Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-16T14:36:51.951Z [DEBUG] Found 5 hook matchers in settings
+2026-03-16T14:36:51.951Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-16T14:36:51.951Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:36:51.953Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:36:51.953Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:36:51.953Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:36:51.953Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:36:51.953Z [DEBUG] autocompact: tokens=37304 threshold=167000 effectiveWindow=180000
+2026-03-16T14:36:51.953Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:36:51.954Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:36:51.955Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:36:51.955Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:36:51.955Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:36:51.955Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:36:51.958Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-03-16T14:36:52.162Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:36:52.240Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:53.244Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:54.249Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:55.253Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:56.256Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:57.261Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:58.265Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:36:58.616Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:36:59.268Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:00.271Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:01.274Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:01.967Z [DEBUG] [useDeferredValue] Messages deferred by 1 (35→36)
+2026-03-16T14:37:02.278Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:03.281Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:03.710Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-16T14:37:03.711Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-16T14:37:03.711Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:37:03.711Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-16T14:37:03.718Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-16T14:37:03.718Z [DEBUG] Found 5 hook matchers in settings
+2026-03-16T14:37:03.718Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-16T14:37:03.719Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:37:03.719Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:37:03.719Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:37:03.719Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:37:03.720Z [DEBUG] autocompact: tokens=38919 threshold=167000 effectiveWindow=180000
+2026-03-16T14:37:03.720Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:37:03.723Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:37:03.724Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:37:03.725Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:37:03.725Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:37:03.726Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:37:03.733Z [DEBUG] [useDeferredValue] Messages deferred by 5 (36→41)
+2026-03-16T14:37:04.285Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:04.391Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:37:05.289Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:06.293Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:07.295Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:08.299Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:09.303Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:10.306Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:11.310Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:12.314Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:13.098Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-03-16T14:37:13.320Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:14.323Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:14.871Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-16T14:37:14.871Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-16T14:37:14.871Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:37:14.871Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-16T14:37:14.876Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-16T14:37:14.876Z [DEBUG] Found 5 hook matchers in settings
+2026-03-16T14:37:14.876Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-16T14:37:14.877Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-16T14:37:14.877Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-16T14:37:14.877Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-16T14:37:14.877Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-16T14:37:14.878Z [DEBUG] autocompact: tokens=42894 threshold=167000 effectiveWindow=180000
+2026-03-16T14:37:14.879Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:37:14.882Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:37:14.883Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:37:14.884Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:37:14.884Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:37:14.885Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:37:14.889Z [DEBUG] [useDeferredValue] Messages deferred by 6 (42→48)
+2026-03-16T14:37:15.326Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:15.395Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:37:16.330Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:17.334Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:18.338Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:19.342Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:20.346Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:21.348Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:22.351Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:23.354Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:24.358Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:25.098Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-03-16T14:37:25.361Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:26.364Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:27.367Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:28.372Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:29.375Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:29.838Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-16T14:37:29.838Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:37:29.838Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:37:29.838Z [DEBUG] autocompact: tokens=46723 threshold=167000 effectiveWindow=180000
+2026-03-16T14:37:29.840Z [DEBUG] Auto tool search enabled: 29405 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-16T14:37:29.844Z [DEBUG] Dynamic tool loading: 0/97 deferred tools included
+2026-03-16T14:37:29.845Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-16T14:37:29.846Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-16T14:37:29.846Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-16T14:37:29.847Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-16T14:37:29.852Z [DEBUG] [useDeferredValue] Messages deferred by 2 (49→51)
+2026-03-16T14:37:29.859Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-16T14:37:30.378Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:30.597Z [DEBUG] Stream started - received first chunk
+2026-03-16T14:37:31.381Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:32.383Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:33.386Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:34.389Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:35.392Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:36.395Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:37.398Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:38.402Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:38.462Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:37:38.986Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-16T14:37:38.988Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-16T14:37:38.988Z [DEBUG] Found 0 hook matchers in settings
+2026-03-16T14:37:38.988Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-16T14:37:38.988Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=570 output=174 cacheRead=46144 cacheCreate=0
+2026-03-16T14:37:39.405Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:40.409Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:41.414Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:42.418Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:43.422Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:44.424Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:45.428Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:46.433Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:47.437Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:48.441Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:49.444Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:50.448Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:51.452Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:52.456Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:53.459Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:54.463Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:55.467Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:56.471Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:57.474Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:58.476Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:37:59.480Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:38:00.483Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:38:01.487Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:38:02.491Z [DEBUG] MCP server "chrome-mcp": No token data found
+2026-03-16T14:38:03.495Z [DEBUG] MCP server "chrome-mcp": No token data found

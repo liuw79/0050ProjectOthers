@@ -1,0 +1,9 @@
+{
+  "id": "10",
+  "subject": "功能清单管理器 (Task 4)",
+  "description": "实现 Feature 和 FeatureListManager，支持加载、查询和更新功能状态",
+  "activeForm": "实现功能清单管理器中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

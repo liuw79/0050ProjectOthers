@@ -1,0 +1,263 @@
+---
+name: gemini-api
+description: Gemini API 调用工具。封装了双模式（OpenAI兼容/Google原生）调用方式，支持文本生成和JSON输出。调用方式：用户说"调用 Gemini"、"用 Gemini 生成"或"Gemini API"。
+---
+
+# Gemini API 调用 Skill
+
+## 概述
+
+这是一个封装好的 Gemini API 调用工具，支持：
+- **双模式切换**：OpenAI 兼容格式 / Google 原生格式
+- **文本生成**：`generate()` 方法
+- **JSON 输出**：`generateJSON()` 方法
+
+---
+
+## 代码位置
+
+```
+GW.Content/server/src/lib/ai.js
+```
+
+---
+
+## 环境配置
+
+`.env` 文件：
+
+```bash
+# OpenAI 兼容代理接口
+GEMINI_BASE_URL=https://api.openai-proxy.org
+GEMINI_API_KEY=sk-xxxxx
+
+# 或使用 Google 官方 API（留空使用默认）
+# GEMINI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/models
+# GEMINI_API_KEY=your-google-api-key
+```
+
+**当前配置**：使用 OpenAI 代理 `https://api.openai-proxy.org`
+
+---
+
+## AIClient 类
+
+### 属性
+
+| 属性 | 来源 | 默认值 |
+|------|------|--------|
+| `apiKey` | `process.env.GEMINI_API_KEY` | - |
+| `baseUrl` | `process.env.GEMINI_BASE_URL` | `https://generativelanguage.googleapis.com/v1beta/models` |
+| `isOpenAIFormat` | 自动判断 | baseUrl 不含 `generativelanguage.googleapis.com` 时为 true |
+
+---
+
+## 调用方法
+
+### 1. generate() - 文本生成
+
+```javascript
+import { ai } from './lib/ai.js';
+
+const text = await ai.generate('你的prompt', {
+  model: 'gemini-3.1-pro-preview',  // 默认值（最佳模型）
+  maxTokens: 8192                   // 可选，默认值
+});
+```
+
+**内部逻辑**：
+
+**OpenAI 兼容模式** (`isOpenAIFormat = true`)：
+```javascript
+POST {baseUrl}/v1/chat/completions
+Headers: Authorization: Bearer {apiKey}
+Body: {
+  model: "gemini-3.1-pro-preview",
+  messages: [{ role: "user", content: prompt }],
+  max_tokens: 8192
+}
+```
+
+**Google 原生模式** (`isOpenAIFormat = false`)：
+```javascript
+POST {baseUrl}/{model}:generateContent?key={apiKey}
+Body: {
+  contents: [{ parts: [{ text: prompt }] }],
+  generationConfig: { maxOutputTokens: 8192 }
+}
+```
+
+---
+
+### 2. generateJSON() - JSON 输出
+
+```javascript
+import { ai } from './lib/ai.js';
+
+const data = await ai.generateJSON('生成一个包含name和age的JSON');
+// 返回: { name: "...", age: ... }
+```
+
+**自动处理**：
+- 在 prompt 后追加：`"只输出 JSON，不要 markdown 代码块，不要其他内容。"`
+- 自动提取 JSON（支持 markdown 代码块和花括号匹配）
+- 解析失败返回 `null`
+
+---
+
+## 使用场景
+
+### 场景1：简单文本生成
+
+```javascript
+const summary = await ai.generate('总结以下内容：...');
+console.log(summary);
+```
+
+### 场景2：结构化数据提取
+
+```javascript
+const result = await ai.generateJSON(`
+从以下文本中提取信息，返回 JSON 格式：
+{ name: 姓名, company: 公司, title: 职位 }
+
+文本：张三是阿里巴巴的高级工程师。
+`);
+// { name: "张三", company: "阿里巴巴", title: "高级工程师" }
+```
+
+### 场景3：切换模型
+
+```javascript
+const flash = await ai.generate('快速回答', {
+  model: 'gemini-2.0-flash',
+  maxTokens: 1024
+});
+```
+
+---
+
+## 完整代码
+
+```javascript
+// server/src/lib/ai.js
+export class AIClient {
+  constructor() {
+    this._apiKey = null;
+    this._baseUrl = null;
+    this._isOpenAIFormat = null;
+  }
+
+  get apiKey() {
+    if (!this._apiKey) this._apiKey = process.env.GEMINI_API_KEY;
+    return this._apiKey;
+  }
+
+  get baseUrl() {
+    if (!this._baseUrl) {
+      this._baseUrl = process.env.GEMINI_BASE_URL ||
+        'https://generativelanguage.googleapis.com/v1beta/models';
+    }
+    return this._baseUrl;
+  }
+
+  get isOpenAIFormat() {
+    if (this._isOpenAIFormat === null) {
+      this._isOpenAIFormat = !this.baseUrl.includes('generativelanguage.googleapis.com');
+    }
+    return this._isOpenAIFormat;
+  }
+
+  async generate(prompt, options = {}) {
+    const model = options.model || 'gemini-3.1-pro-preview';
+    const maxTokens = options.maxTokens || 8192;
+
+    if (this.isOpenAIFormat) {
+      const url = `${this.baseUrl}/v1/chat/completions`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: 'user', content: prompt }],
+          max_tokens: maxTokens,
+        }),
+      });
+      const data = await res.json();
+      return data.choices?.[0]?.message?.content || '';
+    } else {
+      const res = await fetch(
+        `${this.baseUrl}/${model}:generateContent?key=${this.apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { maxOutputTokens: maxTokens },
+          }),
+        }
+      );
+      const data = await res.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    }
+  }
+
+  async generateJSON(prompt, options = {}) {
+    const text = await this.generate(
+      prompt + '\n\n只输出 JSON，不要 markdown 代码块，不要其他内容。',
+      options
+    );
+    let jsonStr = text;
+    const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeBlockMatch) {
+      jsonStr = codeBlockMatch[1].trim();
+    } else {
+      const braceMatch = text.match(/\{[\s\S]*\}/);
+      if (braceMatch) jsonStr = braceMatch[0];
+    }
+    try {
+      return JSON.parse(jsonStr);
+    } catch (e) {
+      console.error('JSON parse error:', e.message);
+      return null;
+    }
+  }
+}
+
+export const ai = new AIClient();
+```
+
+---
+
+## 常见问题
+
+### Q: 如何切换到 Google 官方 API？
+
+修改 `.env`：
+```bash
+GEMINI_BASE_URL=  # 留空使用默认
+GEMINI_API_KEY=你的Google API Key
+```
+
+### Q: 支持哪些模型？
+
+- `gemini-3.1-pro-preview`（默认，最佳模型）
+- `gemini-2.0-flash`（快速模型）
+- 其他 Gemini 系列模型
+
+### Q: 如何处理错误？
+
+```javascript
+const result = await ai.generate('prompt');
+if (!result) {
+  console.error('生成失败');
+}
+```
+
+---
+
+*版本：v1.1*
+*更新时间：2026-03-11*

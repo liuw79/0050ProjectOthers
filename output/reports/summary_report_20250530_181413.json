@@ -1,0 +1,57 @@
+{
+  "analysis_date": "2025-05-30T18:17:52.287051",
+  "total_customers": 13284,
+  "individual_customers": 227,
+  "enterprise_customers": 2436,
+  "insights": {
+    "total_customers": 13284,
+    "individual_customers": 2668,
+    "enterprise_customers": 10616,
+    "avg_value_score": 2.2716169828364947,
+    "avg_rfm_score": 2.4629177958446253,
+    "top_10_percent_value": 3.3,
+    "avg_courses_per_customer": 1.6767539897621198,
+    "avg_course_diversity": 1.6436314363143631,
+    "avg_learning_span_days": 142.1817223727793,
+    "avg_learning_frequency_per_year": 2.5500896489168445,
+    "segment_distribution": {
+      "普通学员": 5480,
+      "新学员": 3583,
+      "高价值学员": 2481,
+      "忠诚学员": 1082,
+      "不能失去": 609,
+      "多元化学员": 26,
+      "成长型学员": 11,
+      "潜力学员": 7,
+      "需要关注": 4,
+      "流失风险": 1
+    },
+    "high_value_characteristics": {
+      "avg_recency": 734.682119205298,
+      "avg_frequency": 4.014716703458426,
+      "avg_monetary": 19209.90119205298,
+      "avg_course_diversity": 3.9153789551140545,
+      "avg_learning_span": 518.2038263428992,
+      "avg_engagement_score": 2.3855776306107432,
+      "avg_growth_score": 3.648270787343635
+    },
+    "customer_type_comparison": {
+      "individual": {
+        "avg_value_score": 2.1564767616191904,
+        "avg_monetary": 5394.8430697151425,
+        "avg_frequency": 1.1266866566716642
+      },
+      "enterprise": {
+        "avg_value_score": 2.3005538809344386,
+        "avg_monetary": 8594.0561360211,
+        "avg_frequency": 1.8149962321024868
+      }
+    }
+  },
+  "files": {
+    "full_results": "../output/data/customer_analysis_results_20250530_181413.csv",
+    "top_individual": "../output/data/top_individual_customers_20250530_181413.csv",
+    "top_enterprise": "../output/data/top_enterprise_customers_20250530_181413.csv",
+    "insights": "../output/reports/analysis_insights_20250530_181413.json"
+  }
+}

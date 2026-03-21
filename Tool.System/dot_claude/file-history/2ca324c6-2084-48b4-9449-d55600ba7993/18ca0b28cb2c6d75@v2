@@ -1,0 +1,398 @@
+#!/usr/bin/env python3
+"""
+将 DeepSeek 导出的对话处理成 Obsidian 知识库格式
+v2 - 优化文件名生成和分类逻辑
+"""
+
+import os
+import re
+import json
+import hashlib
+from pathlib import Path
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import requests
+import time
+
+# 配置
+EXPORTS_DIR = Path(__file__).parent.parent / "exports"
+OUTPUT_DIR = Path(__file__).parent.parent / "obsidian_vault"
+
+# GLM API 配置
+GLM_API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+GLM_API_KEY = os.environ.get("GLM_API_KEY", "")
+
+# 主题分类关键词（优化版）
+CATEGORIES = {
+    "健康医疗": [
+        "健康", "医疗", "病症", "药物", "治疗", "医院", "体检", "症状", "医生",
+        "发烧", "感冒", "咳嗽", "胃", "肝", "肾", "心脏", "血压", "血糖",
+        "癌症", "肿瘤", "手术", "疫苗", "中药", "西药", "处方", "诊断",
+        "月经", "怀孕", "生育", "儿科", "皮肤", "牙科", "眼科", "骨科"
+    ],
+    "科技AI": [
+        "AI", "人工智能", "编程", "代码", "软件", "APP", "技术", "DeepSeek",
+        "Claude", "GPT", "Python", "JavaScript", "API", "开发", "程序",
+        "机器学习", "深度学习", "神经网络", "算法", "数据", "服务器",
+        "数据库", "云计算", "Docker", "Git", "GitHub", "Cursor", "MCP"
+    ],
+    "商业管理": [
+        "商业", "管理", "创业", "公司", "企业", "运营", "营销", "品牌", "战略",
+        "OGSM", "OKR", "KPI", "绩效", "薪酬", "招聘", "HR", "人力",
+        "销售", "客户", "用户", "产品", "市场", "竞争", "投资", "融资",
+        "财务", "成本", "利润", "营收", "增长", "商业模式", "SaaS"
+    ],
+    "生活日常": [
+        "生活", "日常", "美食", "旅游", "购物", "交通", "天气", "节日",
+        "做饭", "菜谱", "餐厅", "外卖", "住宿", "酒店", "机票", "签证",
+        "穿搭", "护肤", "化妆", "健身", "运动", "减肥", "宠物", "家居",
+        "深圳", "北京", "上海", "香港", "日本", "旅游"
+    ],
+    "学习教育": [
+        "学习", "教育", "课程", "知识", "阅读", "书", "培训", "考试",
+        "学位", "大学", "中学", "小学", "英语", "数学", "物理", "化学",
+        "历史", "地理", "写作", "论文", "笔记", "记忆", "方法", "技能"
+    ],
+    "法律财务": [
+        "法律", "合同", "税务", "保险", "社保", "公积金", "劳动法",
+        "离婚", "继承", "房产证", "产权", "公司法", "诉讼", "仲裁"
+    ],
+    "情感心理": [
+        "情感", "心理", "情绪", "关系", "沟通", "家庭", "孩子", "教育",
+        "恋爱", "婚姻", "父母", "亲子", "抑郁", "焦虑", "压力", "性格",
+        "MBTI", "人格", "星座", "命运"
+    ],
+    "数码设备": [
+        "手机", "电脑", "Mac", "iPhone", "iPad", "华为", "小米", "苹果",
+        "笔记本", "平板", "相机", "耳机", "音箱", "充电器", "电池",
+        "Windows", "Linux", "路由器", "显示器", "键盘", "鼠标"
+    ],
+    "其他": []
+}
+
+
+def extract_first_user_message(content: str) -> str:
+    """提取第一个用户消息"""
+    lines = content.split('\n')
+    in_user = False
+    user_lines = []
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped == "## User":
+            in_user = True
+            continue
+        if in_user and stripped.startswith("## "):
+            break
+        if in_user and stripped:
+            user_lines.append(stripped)
+
+    return " ".join(user_lines)
+
+
+def extract_original_title(content: str) -> str:
+    """提取原始标题（第一个 # 开头的行）"""
+    for line in content.split('\n'):
+        if line.startswith('# '):
+            return line[2:].strip()
+    return ""
+
+
+def generate_clean_title(user_msg: str, original_title: str) -> str:
+    """生成简洁清晰的标题"""
+    # 优先使用原始标题（通常是 DeepSeek 生成的摘要）
+    if original_title and len(original_title) <= 30:
+        title = original_title
+    elif original_title and len(original_title) <= 50:
+        title = original_title
+    else:
+        # 从用户消息中提取
+        title = user_msg
+
+    # 清理标题
+    # 1. 移除文件扩展名提示
+    title = re.sub(r'\.(jpg|png|pdf|xlsx|doc|mp4|mp3)\b', '', title, flags=re.I)
+    # 2. 移除文件大小提示
+    title = re.sub(r'\d+\.?\d*\s*(KB|MB|GB)', '', title, flags=re.I)
+    # 3. 移除多余空白
+    title = re.sub(r'\s+', ' ', title).strip()
+    # 4. 移除特殊字符
+    title = re.sub(r'[\\/:*?"<>|\n\r\t]', '', title)
+
+    # 截断到合理长度
+    if len(title) > 35:
+        # 尝试在句号、问号或逗号处截断
+        for end_char in ['。', '？', '！', '?', '.', ',', '，']:
+            pos = title.find(end_char)
+            if 10 < pos < 35:
+                title = title[:pos]
+                break
+        else:
+            # 直接截断
+            title = title[:35]
+
+    # 如果标题太短或为空
+    if len(title) < 3:
+        title = "对话记录"
+
+    return title.strip()
+
+
+def determine_category(content: str, title: str) -> str:
+    """确定内容分类"""
+    text = (content + " " + title).lower()
+
+    # 计算每个分类的匹配分数
+    scores = {}
+    for category, keywords in CATEGORIES.items():
+        if category == "其他":
+            continue
+        score = 0
+        for kw in keywords:
+            if kw.lower() in text:
+                # 标题中的关键词权重更高
+                if kw.lower() in title.lower():
+                    score += 3
+                else:
+                    score += 1
+        scores[category] = score
+
+    # 找出最高分的分类
+    max_score = max(scores.values()) if scores else 0
+    if max_score >= 2:  # 至少匹配2次
+        return max(scores, key=scores.get)
+
+    return "其他"
+
+
+def extract_tags(content: str, title: str, category: str) -> list:
+    """提取标签"""
+    tags = [category]  # 分类作为第一个标签
+
+    # 基于内容添加相关标签
+    text = content.lower()
+
+    tag_keywords = {
+        "教程": ["教程", "怎么", "如何", "方法", "步骤"],
+        "推荐": ["推荐", "哪个", "什么", "选择", "比较好"],
+        "问题": ["问题", "错误", "失败", "不行", "无法"],
+        "对比": ["对比", "区别", "差异", "vs", "比较"],
+    }
+
+    for tag, keywords in tag_keywords.items():
+        for kw in keywords:
+            if kw in text and tag not in tags:
+                tags.append(tag)
+                break
+
+    return tags[:5]
+
+
+def parse_md_file(filepath: Path) -> dict:
+    """解析 MD 文件"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # 提取原始 frontmatter
+    original_frontmatter = {}
+    main_content = content
+
+    # 提取第一个 frontmatter
+    if content.startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) >= 3:
+            fm_text = parts[1].strip()
+            for line in fm_text.split('\n'):
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    original_frontmatter[key.strip()] = value.strip()
+            main_content = parts[2]
+
+    # 移除标题行（第一个 # 开头的行）
+    lines = main_content.split('\n')
+    content_lines = []
+    title_found = False
+    for line in lines:
+        if line.startswith('# ') and not title_found:
+            title_found = True
+            continue  # 跳过原始标题
+        content_lines.append(line)
+    main_content = '\n'.join(content_lines)
+
+    # 移除主内容中可能存在的第二个 frontmatter
+    main_content = main_content.strip()
+    if main_content.startswith('---'):
+        parts = main_content.split('---', 2)
+        if len(parts) >= 3:
+            # 提取第二个 frontmatter 中的 messages
+            fm_text = parts[1].strip()
+            for line in fm_text.split('\n'):
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    if key.strip() not in original_frontmatter:
+                        original_frontmatter[key.strip()] = value.strip()
+            main_content = parts[2]
+
+    # 提取用户消息
+    user_msg = extract_first_user_message(main_content)
+
+    return {
+        "filepath": filepath,
+        "original_name": filepath.name,
+        "original_title": original_frontmatter.get("title", ""),
+        "user_message": user_msg,
+        "frontmatter": original_frontmatter,
+        "content": main_content.strip()
+    }
+
+
+def process_file(filepath: Path, output_dir: Path) -> dict:
+    """处理单个文件"""
+    try:
+        # 解析文件
+        parsed = parse_md_file(filepath)
+
+        # 生成标题
+        title = generate_clean_title(parsed["user_message"], parsed["original_title"])
+
+        # 确定分类
+        category = determine_category(parsed["content"], title)
+
+        # 提取标签
+        tags = extract_tags(parsed["content"], title, category)
+
+        # 清理文件名
+        safe_title = re.sub(r'[\\/:*?"<>|]', '', title)
+        new_filename = f"{safe_title}.md"
+
+        # 创建分类目录
+        category_dir = output_dir / category
+        category_dir.mkdir(parents=True, exist_ok=True)
+
+        # 处理文件名冲突
+        new_filepath = category_dir / new_filename
+        counter = 1
+        while new_filepath.exists():
+            stem = Path(new_filename).stem
+            new_filepath = category_dir / f"{stem}_{counter}.md"
+            counter += 1
+
+        # 获取消息数
+        messages_count = parsed["frontmatter"].get("messages", "unknown")
+
+        # 构建 Obsidian frontmatter
+        frontmatter = [
+            "---",
+            f"title: {title}",
+            f"category: {category}",
+            f"tags: [{', '.join(tags)}]",
+            f"source: DeepSeek",
+            f"messages: {messages_count}",
+            f"processed: {datetime.now().strftime('%Y-%m-%d')}",
+            "---",
+            ""
+        ]
+
+        # 组合最终内容
+        final_content = '\n'.join(frontmatter) + parsed["content"]
+
+        # 写入文件
+        with open(new_filepath, 'w', encoding='utf-8') as f:
+            f.write(final_content)
+
+        return {
+            "status": "success",
+            "original": parsed["original_name"],
+            "new": new_filepath.name,
+            "title": title,
+            "category": category
+        }
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "file": filepath.name,
+            "error": str(e)
+        }
+
+
+def main():
+    """主函数"""
+    print("=" * 60)
+    print("DeepSeek 导出文件 -> Obsidian 知识库 转换工具 v2")
+    print("=" * 60)
+
+    if not EXPORTS_DIR.exists():
+        print(f"错误：导出目录不存在 {EXPORTS_DIR}")
+        return
+
+    # 清空并重新创建输出目录
+    if OUTPUT_DIR.exists():
+        import shutil
+        shutil.rmtree(OUTPUT_DIR)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # 获取所有 MD 文件
+    md_files = list(EXPORTS_DIR.glob("*.md"))
+    print(f"\n找到 {len(md_files)} 个文件待处理")
+
+    # 处理文件
+    results = {"success": 0, "error": 0, "details": []}
+    print("\n开始处理...")
+    start_time = time.time()
+
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {
+            executor.submit(process_file, f, OUTPUT_DIR): f
+            for f in md_files
+        }
+
+        for i, future in enumerate(as_completed(futures), 1):
+            result = future.result()
+            results["details"].append(result)
+
+            if result["status"] == "success":
+                results["success"] += 1
+                if i % 50 == 0 or i == len(md_files):
+                    print(f"[{i}/{len(md_files)}] 已处理 {results['success']} 个文件")
+            else:
+                results["error"] += 1
+                print(f"[{i}/{len(md_files)}] ✗ {result['file']}: {result['error']}")
+
+    # 统计
+    elapsed = time.time() - start_time
+    print("\n" + "=" * 60)
+    print(f"处理完成！")
+    print(f"成功: {results['success']} 个")
+    print(f"失败: {results['error']} 个")
+    print(f"耗时: {elapsed:.1f} 秒")
+    print(f"输出目录: {OUTPUT_DIR}")
+
+    # 分类统计
+    category_counts = {}
+    for r in results["details"]:
+        if r["status"] == "success":
+            cat = r["category"]
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+
+    print("\n分类统计:")
+    for cat, count in sorted(category_counts.items(), key=lambda x: -x[1]):
+        print(f"  {cat}: {count} 个")
+
+    # 保存日志
+    log_file = OUTPUT_DIR / "process_log.json"
+    with open(log_file, 'w', encoding='utf-8') as f:
+        json.dump({
+            "timestamp": datetime.now().isoformat(),
+            "total": len(md_files),
+            "success": results["success"],
+            "error": results["error"],
+            "elapsed": elapsed,
+            "categories": category_counts,
+            "details": results["details"]
+        }, f, ensure_ascii=False, indent=2)
+    print(f"\n处理记录: {log_file}")
+
+
+if __name__ == "__main__":
+    main()

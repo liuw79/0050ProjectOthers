@@ -1,0 +1,95 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#course-table-container {
+    width: 100%;
+    overflow-x: auto; /* 允许水平滚动处理过多列 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top; /* 单元格内容顶部对齐 */
+}
+
+thead th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0; /* 表头吸顶 */
+    z-index: 1;
+}
+
+/* 基础响应式调整 */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    th, td {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+}
+
+/* 更多样式将在后续添加 */
+
+/* Styles for collapsible content */
+.collapsible-content {
+    /* Container for text and toggle link */
+}
+
+.toggle-link {
+    color: blue;
+    cursor: pointer;
+    margin-left: 5px;
+    white-space: nowrap; /* Prevent link text from wrapping */
+    display: inline-block; /* Ensure margin is applied */
+}
+
+.toggle-link:hover {
+    text-decoration: underline;
+}
+
+/* Ensure content within cells can wrap */
+td {
+    word-break: break-word; /* Allow long words/text to break and wrap */
+    white-space: normal; /* Override potential nowrap styles */
+    /* Let's also give specific columns maybe a min/max width */
+}
+
+/* Give schedule column a reasonable width */
+th:last-child, td:last-child {
+    min-width: 120px; /* Adjust as needed */
+}
+
+/* Example: Give long text columns a max width */
+/* Adjust selectors if needed based on actual header text or add classes */
+/* These might need adjustment based on final column order with JSON */
+/* th:nth-child(5), td:nth-child(5), */
+/* th:nth-child(6), td:nth-child(6), */
+/* th:nth-child(7), td:nth-child(7) { */
+    /* min-width: 150px; */
+    /* max-width: 300px; */ /* Max width might interfere with expand */
+/* } */
+
+/* Adjust checkbox column width */
+th:first-child, td:first-child {
+    width: 50px; /* Fixed width for checkbox column */
+    text-align: center;
+} 

@@ -1,0 +1,269 @@
+// SCSS变量文件
+
+// ===== 品牌色彩系统 =====
+// 主色系 - 品牌蓝
+$brand-primary: #00A0EB;        // RGB(0,160,235) 主要按钮、导航栏、关键操作
+$brand-light: #C3E7F4;          // 次级按钮、图标填充
+$brand-medium: #91D6F2;         // 进度条、标签背景
+
+// 中性色系
+$neutral-light: #EFEFEF;        // RGB(239,239,239) 背景色、卡片底色、分割线
+$neutral-dark: #231815;         // RGB(35,24,21) 标题文字、正文、图标
+$neutral-white: #FFFFFF;        // 文字反色、卡片内容
+
+// 辅助色系
+$auxiliary-dark-blue: #004960;  // 深色模式背景、图表底色
+$auxiliary-near-black: #002733; // 页脚、分隔区块
+
+// 强调色系
+$accent-light-beige: #ECC2AD;   // RGB(230,194,173) 警告提示、高亮标签
+$accent-deep-blue: #2D459A;     // RGB(45,69,154) 加载动画、特殊状态指示
+
+// 系统状态色
+$success-color: #67C23A;
+$warning-color: $accent-light-beige;
+$danger-color: #F56C6C;
+$info-color: $brand-primary;
+
+// 兼容性别名（保持向后兼容）
+$primary-color: $brand-primary;
+$white: $neutral-white;
+$black: $neutral-dark;
+
+// 中性色阶（基于设计规范重新定义）
+$gray-1: $neutral-light;        // #EFEFEF 最浅
+$gray-2: #E0E0E0;              // 浅灰
+$gray-3: #CCCCCC;              // 中浅灰
+$gray-4: #AAAAAA;              // 中灰
+$gray-5: #888888;              // 中深灰
+$gray-6: #666666;              // 深灰
+$gray-7: #444444;              // 更深灰
+$gray-8: $neutral-dark;         // #231815 最深
+
+// 背景色系统
+$bg-color: $neutral-white;
+$bg-color-page: $neutral-light;
+$bg-color-overlay: $neutral-white;
+$bg-color-card: $neutral-white;
+
+// 文字颜色系统
+$text-color-primary: $neutral-dark;     // #231815 主要文字
+$text-color-regular: $neutral-dark;     // #231815 常规文字
+$text-color-secondary: #666666;         // 次要文字
+$text-color-placeholder: #AAAAAA;       // 占位符文字
+$text-color-disabled: #CCCCCC;          // 禁用文字
+$text-color-inverse: $neutral-white;    // 反色文字
+
+// 边框颜色系统
+$border-color: #CCCCCC;
+$border-color-light: #E0E0E0;
+$border-color-lighter: $neutral-light;
+$border-color-extra-light: #F8F8F8;
+$border-color-dark: #AAAAAA;
+$border-color-darker: #888888;
+$border-color-focus: $brand-primary;
+
+// 尺寸变量
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-round: 20px;
+$border-radius-circle: 100%;
+
+// ===== 间距系统 =====
+// 基础间距（基于4px/8px网格）
+$spacing-base-mobile: 4px;      // 移动端基准网格
+$spacing-base-pc: 8px;          // PC端基准网格
+
+// 间距变量（基于设计规范）
+$spacing-xs: 4px;               // 最小间距
+$spacing-sm: 8px;               // 小间距
+$spacing-md: 12px;              // 中等间距
+$spacing-lg: 16px;              // 大间距
+$spacing-xl: 24px;              // 超大间距
+$spacing-xxl: 32px;             // 最大间距
+$spacing-xxxl: 48px;            // 特大间距
+$spacing-xxxxl: 64px;           // 超特大间距
+
+// 页面边距（基于设计规范）
+$page-margin-mobile: 16px;      // 移动端页面左右边距
+$page-margin-tablet: 24px;      // 平板页面左右边距
+$page-margin-desktop: 32px;     // 桌面页面左右边距
+
+$page-margin-top-mobile: 12px;  // 移动端页面顶部边距
+$page-margin-top-tablet: 16px;  // 平板页面顶部边距
+$page-margin-top-desktop: 24px; // 桌面页面顶部边距
+
+// ===== 字体系统 =====
+// 字体大小（基于设计规范）
+$font-size-tag: 12px;           // 标签文字
+$font-size-auxiliary: 14px;     // 辅助文字
+$font-size-body: 16px;          // 正文内容
+$font-size-subtitle: 18px;      // 副标题
+$font-size-title: 24px;         // 主标题
+
+// 响应式字体大小
+$font-size-title-mobile: 24px;  // 移动端主标题
+$font-size-title-pc: 32px;      // PC端主标题
+$font-size-subtitle-mobile: 18px; // 移动端副标题
+$font-size-subtitle-pc: 24px;   // PC端副标题
+$font-size-body-mobile: 16px;   // 移动端正文
+$font-size-body-pc: 18px;       // PC端正文
+$font-size-auxiliary-mobile: 14px; // 移动端辅助文字
+$font-size-auxiliary-pc: 16px;  // PC端辅助文字
+$font-size-tag-mobile: 12px;    // 移动端标签
+$font-size-tag-pc: 14px;        // PC端标签
+
+// 兼容性别名
+$font-size-extra-small: $font-size-tag;
+$font-size-small: $font-size-auxiliary;
+$font-size-base: $font-size-auxiliary;
+$font-size-medium: $font-size-body;
+$font-size-large: $font-size-subtitle;
+$font-size-extra-large: $font-size-title;
+
+// 字体粗细（基于设计规范）
+$font-weight-regular: 400;      // Regular - 正文内容、描述文字
+$font-weight-medium: 500;       // Medium - 辅助信息、按钮文字
+$font-weight-bold: 700;         // Bold - 导航标题、主要按钮文字
+$font-weight-black: 900;        // Black - 重要标题
+
+// 兼容性别名
+$font-weight-primary: $font-weight-medium;
+$font-weight-secondary: $font-weight-regular;
+
+// 字体族（基于设计规范）
+$font-family-chinese: 'Alibaba PuHuiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', sans-serif;
+$font-family-english: 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-primary: $font-family-chinese, $font-family-english;
+$font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+// 阴影变量
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+$box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12);
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+// 过渡动画
+$transition-base: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+$transition-fade: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+$transition-md-fade: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+$transition-border: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+$transition-color: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// ===== 布局系统 =====
+// 主要布局尺寸（基于设计规范）
+$header-height-pc: 64px;        // PC端顶部导航高度
+$header-height-mobile: 56px;    // 移动端顶部导航高度
+$sidebar-width: 240px;          // 侧边栏宽度
+$sidebar-collapsed-width: 64px; // 侧边栏折叠宽度
+$footer-height: 50px;           // 页脚高度
+$bottom-nav-height: 56px;       // 移动端底部导航高度
+
+// 兼容性别名
+$header-height: $header-height-pc;
+
+// ===== 响应式断点 =====
+// 基于设计规范的断点系统
+$breakpoint-mobile: 768px;      // 手机端断点 <768px
+$breakpoint-tablet: 1024px;     // 平板端断点 768-1024px
+$breakpoint-desktop: 1024px;    // 桌面端断点 >1024px
+
+// 兼容性别名（保持向后兼容）
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: $breakpoint-mobile;
+$breakpoint-lg: $breakpoint-tablet;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1600px;
+
+// 栅格系统（基于设计规范）
+$grid-columns-mobile: 4;        // 移动端列数
+$grid-columns-tablet: 8;        // 平板端列数
+$grid-columns-desktop: 12;      // 桌面端列数
+
+$grid-gutter-mobile: 16px;      // 移动端间距
+$grid-gutter-tablet: 24px;      // 平板端间距
+$grid-gutter-desktop: 32px;     // 桌面端间距
+
+// Z-index层级
+$z-index-normal: 1;
+$z-index-top: 1000;
+$z-index-popper: 2000;
+$z-index-dialog: 3000;
+$z-index-message: 4000;
+$z-index-loading: 5000;
+
+// 表格变量
+$table-border-color: #EBEEF5;
+$table-header-bg: #F5F7FA;
+$table-row-hover-bg: #F5F7FA;
+$table-current-row-bg: #ECF5FF;
+
+// 表单变量
+$input-height-base: 40px;
+$input-height-small: 32px;
+$input-height-mini: 28px;
+$input-border-color: #DCDFE6;
+$input-border-color-hover: #C0C4CC;
+$input-border-color-focus: #409EFF;
+
+// ===== 按钮系统 =====
+// 按钮尺寸（基于设计规范）
+$button-height-large: 48px;     // 大按钮 - 核心操作
+$button-height-base: 40px;      // 中按钮 - 常规操作
+$button-height-small: 32px;     // 小按钮 - 表格操作
+
+// 按钮圆角（基于设计规范）
+$button-border-radius-large: 8px;  // 大按钮圆角
+$button-border-radius-base: 6px;   // 中按钮圆角
+$button-border-radius-small: 4px;  // 小按钮圆角
+
+// 按钮内边距（基于设计规范）
+$button-padding-large: 0 24px;     // 大按钮内边距
+$button-padding-base: 0 16px;      // 中按钮内边距
+$button-padding-small: 0 12px;     // 小按钮内边距
+
+// 兼容性别名
+$button-height-mini: $button-height-small;
+$button-padding-horizontal: 16px;
+$button-padding-vertical: 12px;
+
+// 按钮状态颜色
+$button-primary-bg: $brand-primary;        // 主要按钮背景
+$button-primary-text: $neutral-white;      // 主要按钮文字
+$button-secondary-bg: $brand-medium;       // 次要按钮背景
+$button-secondary-border: $brand-primary;  // 次要按钮边框
+$button-secondary-text: $brand-primary;    // 次要按钮文字
+$button-disabled-bg: $neutral-light;       // 禁用按钮背景
+$button-disabled-text: #AAAAAA;            // 禁用按钮文字
+
+// 卡片变量
+$card-border-color: #EBEEF5;
+$card-border-radius: 4px;
+$card-padding: 20px;
+
+// ===== 深色主题系统 =====
+// 基于设计规范的深色模式适配
+$dark-bg-color: $auxiliary-near-black;      // #002733 背景
+$dark-bg-color-page: $auxiliary-near-black; // #002733 页面背景
+$dark-bg-color-overlay: $auxiliary-dark-blue; // #004960 卡片背景
+$dark-bg-color-card: $auxiliary-dark-blue;  // #004960 卡片背景
+
+// 深色模式文字颜色
+$dark-text-color-primary: $neutral-white;   // #FFFFFF 主要文字
+$dark-text-color-regular: $neutral-white;   // #FFFFFF 常规文字
+$dark-text-color-secondary: $brand-light;   // #C3E7F4 次要文字
+$dark-text-color-placeholder: #888888;      // 占位符文字
+$dark-text-color-disabled: #666666;         // 禁用文字
+
+// 深色模式边框颜色
+$dark-border-color: $auxiliary-dark-blue;   // #004960 主要边框
+$dark-border-color-light: #336677;          // 浅色边框
+$dark-border-color-lighter: #4A7A8A;        // 更浅边框
+$dark-border-color-focus: $brand-primary;   // 聚焦边框
+
+// 深色模式分割线
+$dark-divider-color: $auxiliary-dark-blue;  // #004960 分割线
+
+// 兼容性别名（保持向后兼容）
+$dark-border-color-dark: #336677;
+$dark-border-color-darker: #4A7A8A;

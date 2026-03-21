@@ -1,0 +1,1115 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3037642 */
+  src: url('//at.alicdn.com/t/c/font_3037642_i5it0x40hmi.woff2?t=1734511686315') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3037642_i5it0x40hmi.woff?t=1734511686315') format('woff'),
+       url('//at.alicdn.com/t/c/font_3037642_i5it0x40hmi.ttf?t=1734511686315') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wdhuitui:before {
+  content: "\e60b";
+}
+
+.icon-wdreport:before {
+  content: "\e718";
+}
+
+.icon-wddocument:before {
+  content: "\e763";
+}
+
+.icon-wdquote:before {
+  content: "\e764";
+}
+
+.icon-wdtarget:before {
+  content: "\e736";
+}
+
+.icon-wdimage:before {
+  content: "\e762";
+}
+
+.icon-wdExcel1:before {
+  content: "\e75d";
+}
+
+.icon-wdURL:before {
+  content: "\e761";
+}
+
+.icon-wdword1:before {
+  content: "\e75c";
+}
+
+.icon-wdText:before {
+  content: "\e760";
+}
+
+.icon-wdCSV:before {
+  content: "\e75e";
+}
+
+.icon-wdMarkdown:before {
+  content: "\e75f";
+}
+
+.icon-wdPDF:before {
+  content: "\e75b";
+}
+
+.icon-wdPPT:before {
+  content: "\e759";
+}
+
+.icon-wdvideo:before {
+  content: "\e75a";
+}
+
+.icon-wdjiantouxie:before {
+  content: "\e624";
+}
+
+.icon-wdpk:before {
+  content: "\e606";
+}
+
+.icon-wdviewcode:before {
+  content: "\e607";
+}
+
+.icon-wdcard_view:before {
+  content: "\e728";
+}
+
+.icon-wdlist_view:before {
+  content: "\e729";
+}
+
+.icon-wdcreate_ftmodel:before {
+  content: "\e727";
+}
+
+.icon-wdbatch_task2:before {
+  content: "\e724";
+}
+
+.icon-wdfile_fail:before {
+  content: "\e725";
+}
+
+.icon-wdfile_success:before {
+  content: "\e726";
+}
+
+.icon-wdbatch_data2:before {
+  content: "\e722";
+}
+
+.icon-wdbatch_task:before {
+  content: "\e723";
+}
+
+.icon-wdbatch_data:before {
+  content: "\e721";
+}
+
+.icon-wdcancel:before {
+  content: "\e71e";
+}
+
+.icon-wdvoid:before {
+  content: "\e720";
+}
+
+.icon-wdperformance:before {
+  content: "\e71f";
+}
+
+.icon-wdbasic:before {
+  content: "\e71d";
+}
+
+.icon-wdlog:before {
+  content: "\e71b";
+}
+
+.icon-wdreview:before {
+  content: "\e71c";
+}
+
+.icon-wdconsult1:before {
+  content: "\e71a";
+}
+
+.icon-wdnew_remove:before {
+  content: "\e719";
+}
+
+.icon-wdquestion:before {
+  content: "\e717";
+}
+
+.icon-wdhelp1:before {
+  content: "\e716";
+}
+
+.icon-wdstop:before {
+  content: "\e714";
+}
+
+.icon-wdrefresh:before {
+  content: "\e715";
+}
+
+.icon-wdfinance:before {
+  content: "\e704";
+}
+
+.icon-wdapikeys:before {
+  content: "\e712";
+}
+
+.icon-wdauto:before {
+  content: "\e713";
+}
+
+.icon-wdedit1:before {
+  content: "\e711";
+}
+
+.icon-wdback:before {
+  content: "\e710";
+}
+
+.icon-wdnewlink:before {
+  content: "\e70f";
+}
+
+.icon-wdmore1:before {
+  content: "\e70e";
+}
+
+.icon-wdsearch:before {
+  content: "\e70d";
+}
+
+.icon-wdbook:before {
+  content: "\e70c";
+}
+
+.icon-wdduihua:before {
+  content: "\e70b";
+}
+
+.icon-wddelete1:before {
+  content: "\e70a";
+}
+
+.icon-wdprivate_cloud:before {
+  content: "\e706";
+}
+
+.icon-wdlora_finetuning:before {
+  content: "\e707";
+}
+
+.icon-wdfull_param_finetuning:before {
+  content: "\e708";
+}
+
+.icon-wdpublic_cloud:before {
+  content: "\e709";
+}
+
+.icon-wdinfo:before {
+  content: "\e705";
+}
+
+.icon-wdupload1:before {
+  content: "\e703";
+}
+
+.icon-wdmenu_data_on:before {
+  content: "\e6fb";
+}
+
+.icon-wdmenu_data:before {
+  content: "\e6fc";
+}
+
+.icon-wdmenu_model_on:before {
+  content: "\e6fd";
+}
+
+.icon-wdmenu_finetuning_on:before {
+  content: "\e6fe";
+}
+
+.icon-wdmenu_model:before {
+  content: "\e6ff";
+}
+
+.icon-wdmenu_deploy:before {
+  content: "\e700";
+}
+
+.icon-wdmenu_deploy_on:before {
+  content: "\e701";
+}
+
+.icon-wdmenu_finetuning:before {
+  content: "\e702";
+}
+
+.icon-wdworkorder:before {
+  content: "\e6f8";
+}
+
+.icon-wdconsult:before {
+  content: "\e6f7";
+}
+
+.icon-wdhelp:before {
+  content: "\e6f6";
+}
+
+.icon-wdtxt:before {
+  content: "\e6f5";
+}
+
+.icon-wdpartner_cooperation:before {
+  content: "\e64d";
+}
+
+.icon-wdparner_meterials:before {
+  content: "\e64e";
+}
+
+.icon-wdpartner_training:before {
+  content: "\e6f4";
+}
+
+.icon-wdicon-info:before {
+  content: "\e6b8";
+}
+
+.icon-wdconsult_phone:before {
+  content: "\e649";
+}
+
+.icon-wdconsult_online:before {
+  content: "\e648";
+}
+
+.icon-wdapp_generate:before {
+  content: "\e6b3";
+}
+
+.icon-wdapp_com_start:before {
+  content: "\e6b0";
+}
+
+.icon-wddelete_filling:before {
+  content: "\e647";
+}
+
+.icon-wdapp_dialogue:before {
+  content: "\e643";
+}
+
+.icon-wdapp_compose:before {
+  content: "\e644";
+}
+
+.icon-wdno_license:before {
+  content: "\e642";
+}
+
+.icon-wdapp_branch:before {
+  content: "\e640";
+}
+
+.icon-wdapp_data:before {
+  content: "\e641";
+}
+
+.icon-wdapp_model:before {
+  content: "\e63f";
+}
+
+.icon-wdAPP-robot8:before {
+  content: "\e6a6";
+}
+
+.icon-wdAPP-robot3:before {
+  content: "\e66b";
+}
+
+.icon-wdrobot1:before {
+  content: "\e66a";
+}
+
+.icon-wdAPP-robot7:before {
+  content: "\e6a3";
+}
+
+.icon-wdAPP-robot5:before {
+  content: "\e6a8";
+}
+
+.icon-wdapp_copy:before {
+  content: "\e63c";
+}
+
+.icon-wdcaogao:before {
+  content: "\e6a2";
+}
+
+.icon-wddelete_slim:before {
+  content: "\e6fa";
+}
+
+.icon-wdapp_layout:before {
+  content: "\e63e";
+}
+
+.icon-wdzujianleixing:before {
+  content: "\e6f9";
+}
+
+.icon-wdAPP-robot2:before {
+  content: "\e65c";
+}
+
+.icon-wdAPP-robot6:before {
+  content: "\e668";
+}
+
+.icon-wdAPP-robot4:before {
+  content: "\e669";
+}
+
+.icon-wdxialajiantou1:before {
+  content: "\e60c";
+}
+
+.icon-wdapp_preview_phone:before {
+  content: "\e63a";
+}
+
+.icon-wdapp_preview_pc:before {
+  content: "\e63b";
+}
+
+.icon-wdapp_log_locate:before {
+  content: "\e639";
+}
+
+.icon-wdapp_preview_qr:before {
+  content: "\e6f3";
+}
+
+.icon-wdapp_log:before {
+  content: "\e6f1";
+}
+
+.icon-wdapp_save:before {
+  content: "\e6f2";
+}
+
+.icon-wdapp_records:before {
+  content: "\e6f0";
+}
+
+.icon-wdapp_rollback:before {
+  content: "\e6ee";
+}
+
+.icon-wdapp_forward:before {
+  content: "\e6ef";
+}
+
+.icon-wdapp_create_start:before {
+  content: "\e64b";
+}
+
+.icon-wdpingce_create_addlist:before {
+  content: "\e633";
+}
+
+.icon-wdpingce_alert:before {
+  content: "\e630";
+}
+
+.icon-wdpingce_loading:before {
+  content: "\e62f";
+}
+
+.icon-wdpingce_info:before {
+  content: "\e62e";
+}
+
+.icon-wdpingce_model:before {
+  content: "\e62c";
+}
+
+.icon-wdpingce_app:before {
+  content: "\e62a";
+}
+
+.icon-wdpingce_component:before {
+  content: "\e62b";
+}
+
+.icon-wdmodel-table:before {
+  content: "\e629";
+}
+
+.icon-wdrenlian:before {
+  content: "\e626";
+}
+
+.icon-wdshouquan:before {
+  content: "\e628";
+}
+
+.icon-wddakuan:before {
+  content: "\e627";
+}
+
+.icon-wdongoing:before {
+  content: "\e625";
+}
+
+.icon-wdtixing:before {
+  content: "\e6ed";
+}
+
+.icon-wdfanhui:before {
+  content: "\e6ec";
+}
+
+.icon-wdcanshupeizhi:before {
+  content: "\e6eb";
+}
+
+.icon-wdjianchageshi:before {
+  content: "\e6ea";
+}
+
+.icon-wdStar-line:before {
+  content: "\e64f";
+}
+
+.icon-wdSetting-line:before {
+  content: "\e650";
+}
+
+.icon-wdDelete-line:before {
+  content: "\e651";
+}
+
+.icon-wdShare-line:before {
+  content: "\e6e8";
+}
+
+.icon-wdStar:before {
+  content: "\e6e9";
+}
+
+.icon-wdHide:before {
+  content: "\e6e7";
+}
+
+.icon-wdwords:before {
+  content: "\e655";
+}
+
+.icon-wdapps:before {
+  content: "\e6e6";
+}
+
+.icon-wdfuzhi1:before {
+  content: "\e6e3";
+}
+
+.icon-wdfilter_select:before {
+  content: "\e6e4";
+}
+
+.icon-wdfilter:before {
+  content: "\e6e5";
+}
+
+.icon-wdzan-moren:before {
+  content: "\e6a7";
+}
+
+.icon-wdcai-moren:before {
+  content: "\e6e2";
+}
+
+.icon-wdzan-dianji:before {
+  content: "\e694";
+}
+
+.icon-wdcai-dianji:before {
+  content: "\e657";
+}
+
+.icon-wdreset:before {
+  content: "\e658";
+}
+
+.icon-wdcheck:before {
+  content: "\e656";
+}
+
+.icon-wdshare:before {
+  content: "\e654";
+}
+
+.icon-wdedit:before {
+  content: "\e653";
+}
+
+.icon-wddelete:before {
+  content: "\e652";
+}
+
+.icon-wdzhishipeizhi:before {
+  content: "\e63d";
+}
+
+.icon-wdzhishishangchuan:before {
+  content: "\e64a";
+}
+
+.icon-wdInd-upgrading:before {
+  content: "\e6df";
+}
+
+.icon-wdgen-incentives:before {
+  content: "\e6e0";
+}
+
+.icon-wdtech-leading:before {
+  content: "\e6e1";
+}
+
+.icon-wdgains:before {
+  content: "\e6de";
+}
+
+.icon-wddiscuss:before {
+  content: "\e6d9";
+}
+
+.icon-wdpro-support:before {
+  content: "\e6da";
+}
+
+.icon-wdtech-training:before {
+  content: "\e6db";
+}
+
+.icon-wdtech-support:before {
+  content: "\e6dc";
+}
+
+.icon-wdco-support:before {
+  content: "\e6dd";
+}
+
+.icon-wdExcel:before {
+  content: "\e6d8";
+}
+
+.icon-wdshouqi:before {
+  content: "\e6d6";
+}
+
+.icon-wdzhankai:before {
+  content: "\e6d7";
+}
+
+.icon-wdcomponents-delete:before {
+  content: "\e65f";
+}
+
+.icon-wdtable-list:before {
+  content: "\e6d4";
+}
+
+.icon-wdcard-list:before {
+  content: "\e6d5";
+}
+
+.icon-wdprompt:before {
+  content: "\e6cb";
+}
+
+.icon-wdknowledge1:before {
+  content: "\e6ce";
+}
+
+.icon-wdknowledge:before {
+  content: "\e6d3";
+}
+
+.icon-wda-03:before {
+  content: "\e6d2";
+}
+
+.icon-wda-reducecosts:before {
+  content: "\e6d1";
+}
+
+.icon-wda-04:before {
+  content: "\e6cf";
+}
+
+.icon-wdtokens:before {
+  content: "\e6d0";
+}
+
+.icon-wddone:before {
+  content: "\e6cc";
+}
+
+.icon-wda-nextstep:before {
+  content: "\e6cd";
+}
+
+.icon-wda-Group427322349:before {
+  content: "\e6ca";
+}
+
+.icon-wdlink1:before {
+  content: "\e6c9";
+}
+
+.icon-wdselect:before {
+  content: "\e6c8";
+}
+
+.icon-wdresources-api:before {
+  content: "\e6b4";
+}
+
+.icon-wdresources-guide:before {
+  content: "\e6c3";
+}
+
+.icon-wdresources-demo:before {
+  content: "\e6c6";
+}
+
+.icon-wddocument-anchor:before {
+  content: "\e6c7";
+}
+
+.icon-wdundone:before {
+  content: "\e6b2";
+}
+
+.icon-wdurl:before {
+  content: "\e6aa";
+}
+
+.icon-wdurl-line:before {
+  content: "\e6a5";
+}
+
+.icon-wdapi-line1:before {
+  content: "\e6ad";
+}
+
+.icon-wdapi:before {
+  content: "\e6af";
+}
+
+.icon-wddocument-line1:before {
+  content: "\e6c4";
+}
+
+.icon-wddocument2:before {
+  content: "\e6c5";
+}
+
+.icon-wdrewrite:before {
+  content: "\e6c2";
+}
+
+.icon-wdsend:before {
+  content: "\e6c1";
+}
+
+.icon-wda-newchat:before {
+  content: "\e6c0";
+}
+
+.icon-wda-shareapp:before {
+  content: "\e6bf";
+}
+
+.icon-wda-addapp:before {
+  content: "\e6be";
+}
+
+.icon-wdword:before {
+  content: "\e6ba";
+}
+
+.icon-wdurl-doc:before {
+  content: "\e6bb";
+}
+
+.icon-wdpdf:before {
+  content: "\e6bc";
+}
+
+.icon-wdapi-doc:before {
+  content: "\e6bd";
+}
+
+.icon-wdKnowledgebase-icon2:before {
+  content: "\e6b9";
+}
+
+.icon-wdKB-select:before {
+  content: "\e6b7";
+}
+
+.icon-wdKB-plus:before {
+  content: "\e6b6";
+}
+
+.icon-wdalert:before {
+  content: "\e6b1";
+}
+
+.icon-wdbasicmodel:before {
+  content: "\e6a4";
+}
+
+.icon-wdupload:before {
+  content: "\e69a";
+}
+
+.icon-wdarrow-light:before {
+  content: "\e6b5";
+}
+
+.icon-wdKB-folder1:before {
+  content: "\e6a9";
+}
+
+.icon-wdKB-folder2:before {
+  content: "\e6ab";
+}
+
+.icon-wdKB-upload2:before {
+  content: "\e6ac";
+}
+
+.icon-wdKB-delete:before {
+  content: "\e6ae";
+}
+
+.icon-wdKnowledgebase_icon1:before {
+  content: "\e6a0";
+}
+
+.icon-wdKnowledgebase_icon5:before {
+  content: "\e6a1";
+}
+
+.icon-wdKnowledgebase_icon6:before {
+  content: "\e69b";
+}
+
+.icon-wdKnowledgebase_icon7:before {
+  content: "\e69c";
+}
+
+.icon-wdKnowledgebase_icon4:before {
+  content: "\e69d";
+}
+
+.icon-wdKnowledgebase_icon3:before {
+  content: "\e69e";
+}
+
+.icon-wdmore:before {
+  content: "\e699";
+}
+
+.icon-wdfine-tuning-task:before {
+  content: "\e660";
+}
+
+.icon-wdfine-tuning-data:before {
+  content: "\e697";
+}
+
+.icon-wdjson-file:before {
+  content: "\e698";
+}
+
+.icon-wdlink:before {
+  content: "\e65e";
+}
+
+.icon-wdcamera:before {
+  content: "\e65d";
+}
+
+.icon-wdalipay:before {
+  content: "\e602";
+}
+
+.icon-wdwaiting:before {
+  content: "\e601";
+}
+
+.icon-wdnochange:before {
+  content: "\e65b";
+}
+
+.icon-wdliuzi:before {
+  content: "\e65a";
+}
+
+.icon-wduser:before {
+  content: "\e659";
+}
+
+.icon-wdtable-no-data:before {
+  content: "\e600";
+}
+
+.icon-wdsubtraction:before {
+  content: "\e60d";
+}
+
+.icon-wdadd:before {
+  content: "\e605";
+}
+
+.icon-wdinsight:before {
+  content: "\e667";
+}
+
+.icon-wdhelp-circle-filled:before {
+  content: "\e604";
+}
+
+.icon-wdzanwu:before {
+  content: "\e696";
+}
+
+.icon-wda-SearchAnalysis:before {
+  content: "\e695";
+}
+
+.icon-wdshiyongzhinan:before {
+  content: "\e693";
+}
+
+.icon-wdHistogram:before {
+  content: "\e69f";
+}
+
+.icon-wdren:before {
+  content: "\e692";
+}
+
+.icon-wdgonggao:before {
+  content: "\e691";
+}
+
+.icon-wdjiantou2:before {
+  content: "\e68c";
+}
+
+.icon-wdjianquanshuoming:before {
+  content: "\e68d";
+}
+
+.icon-wdmoren:before {
+  content: "\e68e";
+}
+
+.icon-wdgerenrenzheng:before {
+  content: "\e68f";
+}
+
+.icon-wdqiyerenzheng:before {
+  content: "\e690";
+}
+
+.icon-wdneirongtishi:before {
+  content: "\e603";
+}
+
+.icon-wdtijiao-shi:before {
+  content: "\e68b";
+}
+
+.icon-wdfenlei1:before {
+  content: "\e689";
+}
+
+.icon-wdyuyijiansuo:before {
+  content: "\e68a";
+}
+
+.icon-wdduihualei:before {
+  content: "\e685";
+}
+
+.icon-wdfanyilei:before {
+  content: "\e686";
+}
+
+.icon-wdwenda:before {
+  content: "\e687";
+}
+
+.icon-wdxiezuo:before {
+  content: "\e688";
+}
+
+.icon-wdtiaoyongjieshao:before {
+  content: "\e680";
+}
+
+.icon-wdjiekou:before {
+  content: "\e681";
+}
+
+.icon-wdshouce:before {
+  content: "\e682";
+}
+
+.icon-wdshuoming:before {
+  content: "\e683";
+}
+
+.icon-wda-wenzhangjiekou1:before {
+  content: "\e684";
+}
+
+.icon-wddankuangguanbi:before {
+  content: "\e67f";
+}
+
+.icon-wdxinduihua:before {
+  content: "\e67d";
+}
+
+.icon-wdtijiao:before {
+  content: "\e67e";
+}
+
+.icon-wdshanchu1:before {
+  content: "\e67c";
+}
+
+.icon-wddaima:before {
+  content: "\e66c";
+}
+
+.icon-wdtuichuquanping:before {
+  content: "\e66d";
+}
+
+.icon-wdtupian:before {
+  content: "\e66e";
+}
+
+.icon-wdbiaoti:before {
+  content: "\e66f";
+}
+
+.icon-wdtuichuquanping1:before {
+  content: "\e670";
+}
+
+.icon-wdfuzhikey:before {
+  content: "\e671";
+}
+
+.icon-wdxiala1:before {
+  content: "\e672";
+}
+
+.icon-wdfuzhidaima:before {
+  content: "\e673";
+}
+
+.icon-wdbrowse-off-base-outline:before {
+  content: "\e674";
+}
+
+.icon-wdbrowse-base-outline:before {
+  content: "\e675";
+}
+
+.icon-wdxiazai:before {
+  content: "\e676";
+}
+
+.icon-wdguanyu:before {
+  content: "\e677";
+}
+
+.icon-wdquanping:before {
+  content: "\e678";
+}
+
+.icon-wdlogo:before {
+  content: "\e67b";
+}
+
+.icon-wda-Doublequotes:before {
+  content: "\e679";
+}
+
+.icon-wdarrow:before {
+  content: "\e67a";
+}
+
+.icon-wdxialajiantou:before {
+  content: "\e666";
+}
+
+.icon-wda-svgicon-arrow:before {
+  content: "\e665";
+}
+
+.icon-wdh5-more-Close:before {
+  content: "\e661";
+}
+
+.icon-wdh5-more:before {
+  content: "\e662";
+}
+
+.icon-wdjiantou1:before {
+  content: "\e663";
+}
+
+.icon-wdzanwushuju:before {
+  content: "\e64c";
+}
+

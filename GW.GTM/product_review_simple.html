@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品复盘表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1890ff;
+        }
+
+        .header h1 {
+            color: #1890ff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            color: #1890ff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #1890ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .controls {
+            padding: 20px 30px;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            color: #666;
+            min-width: 80px;
+        }
+
+        .input-group input {
+            padding: 10px 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            min-width: 200px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1890ff 0%, #52c41a 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(24, 144, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .table-container {
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background: #1890ff;
+            color: white;
+        }
+
+        th {
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border-right: 1px solid rgba(255,255,255,0.3);
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            background: #fafafa;
+            vertical-align: top;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background: white;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            resize: vertical;
+            line-height: 1.5;
+            font-family: inherit;
+        }
+
+        /* 不同方面的颜色标识 */
+        .aspect-good {
+            border-left: 4px solid #52c41a;
+        }
+
+        .aspect-poor {
+            border-left: 4px solid #ff4d4f;
+        }
+
+        .aspect-unsolved {
+            border-left: 4px solid #faad14;
+        }
+
+        .instructions {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #e6f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #1890ff;
+        }
+
+        .instructions h3 {
+            color: #1890ff;
+            margin-bottom: 15px;
+        }
+
+        .instruction-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .instruction-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid;
+        }
+
+        .instruction-item.good {
+            border-left-color: #52c41a;
+        }
+
+        .instruction-item.poor {
+            border-left-color: #ff4d4f;
+        }
+
+        .instruction-item.unsolved {
+            border-left-color: #faad14;
+        }
+
+        .instruction-item h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .instruction-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 1000;
+            min-width: 300px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .message-success {
+            background: #f6ffed;
+            color: #389e0d;
+            border: 2px solid #52c41a;
+        }
+
+        .message-error {
+            background: #fff2f0;
+            color: #cf1322;
+            border: 2px solid #ff4d4f;
+        }
+
+        .message-info {
+            background: #e6f7ff;
+            color: #0050b3;
+            border: 2px solid #1890ff;
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            cursor: pointer;
+        }
+
+        .message-success::before {
+            border-left-color: #52c41a;
+        }
+
+        .message-error::before {
+            border-left-color: #ff4d4f;
+        }
+
+        .message-info::before {
+            border-left-color: #1890ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 引入导航组件 -->
+    <script src="http://localhost:3002/components/gtm_navigation.js"></script>
+    <!-- 使用说明 -->
+    <div class="instructions">
+        <h3>📋 产品复盘表使用指南</h3>
+        <p style="color: #333; margin-bottom: 15px;">
+            <strong>目的：</strong>全面回顾产品表现，识别成功经验、改进空间和持续挑战，为下一阶段制定更好的策略。
+        </p>
+
+        <div class="instruction-grid">
+            <div class="instruction-item good">
+                <h4>✅ 做的好的</h4>
+                <p>列出产品表现优秀的TOP3方面，分析成功的根本原因，便于复制和放大优势。</p>
+            </div>
+
+            <div class="instruction-item poor">
+                <h4>❌ 做的不好</h4>
+                <p>识别产品表现不佳的TOP3问题，深挖问题根源，制定针对性改进措施。</p>
+            </div>
+
+            <div class="instruction-item unsolved">
+                <h4>⚠️ 依然没有解决的问题</h4>
+                <p>梳理仍未解决的TOP3挑战，分析阻碍因素，寻找突破口和解决方案。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>产品复盘表</h1>
+            <div class="logo">
+                <span class="logo-text">高维学堂</span>
+                <div class="logo-icon">®</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <label>复盘名称：</label>
+                <input type="text" id="reviewName" placeholder="如：2024年Q3产品复盘">
+            </div>
+
+            <div class="input-group">
+                <label>复盘周期：</label>
+                <input type="text" id="reviewPeriod" placeholder="如：2024年Q3">
+            </div>
+
+            <button class="btn btn-primary" onclick="saveReview()">💾 保存复盘</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%">三个方面</th>
+                        <th style="width: 42%">TOP3的表现</th>
+                        <th style="width: 43%">原因</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="aspect-good">
+                        <td>
+                            <select onchange="updateRowStyle(this)">
+                                <option value="good_performance" selected>做的好的</option>
+                                <option value="poor_performance">做的不好</option>
+                                <option value="unsolved_issues">依然没有解决的问题</option>
+                            </select>
+                        </td>
+                        <td>
+                            <textarea placeholder="请列出3个最重要的表现：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="请分析对应的原因：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                    </tr>
+                    <tr class="aspect-poor">
+                        <td>
+                            <select onchange="updateRowStyle(this)">
+                                <option value="good_performance">做的好的</option>
+                                <option value="poor_performance" selected>做的不好</option>
+                                <option value="unsolved_issues">依然没有解决的问题</option>
+                            </select>
+                        </td>
+                        <td>
+                            <textarea placeholder="请列出3个最重要的表现：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="请分析对应的原因：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                    </tr>
+                    <tr class="aspect-unsolved">
+                        <td>
+                            <select onchange="updateRowStyle(this)">
+                                <option value="good_performance">做的好的</option>
+                                <option value="poor_performance">做的不好</option>
+                                <option value="unsolved_issues" selected>依然没有解决的问题</option>
+                            </select>
+                        </td>
+                        <td>
+                            <textarea placeholder="请列出3个最重要的表现：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                        <td>
+                            <textarea placeholder="请分析对应的原因：&#10;1. &#10;2. &#10;3. "></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function updateRowStyle(select) {
+            const row = select.closest('tr');
+            // 移除旧的类名
+            row.classList.remove('aspect-good', 'aspect-poor', 'aspect-unsolved');
+
+            // 根据选择添加新的类名
+            switch (select.value) {
+                case 'good_performance':
+                    row.classList.add('aspect-good');
+                    break;
+                case 'poor_performance':
+                    row.classList.add('aspect-poor');
+                    break;
+                case 'unsolved_issues':
+                    row.classList.add('aspect-unsolved');
+                    break;
+            }
+        }
+
+        function showMessage(text, type = 'info') {
+            // 移除旧的消息
+            const existingMessage = document.querySelector('.message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            const message = document.createElement('div');
+            message.className = `message message-${type}`;
+            message.textContent = text;
+
+            // 添加点击关闭功能
+            message.addEventListener('click', () => {
+                message.remove();
+            });
+
+            // 直接添加到body
+            document.body.appendChild(message);
+
+            // 自动关闭
+            setTimeout(() => {
+                if (message.parentNode) {
+                    message.remove();
+                }
+            }, 4000);
+        }
+
+        async function saveReview() {
+            const reviewName = document.getElementById('reviewName').value.trim();
+            const reviewPeriod = document.getElementById('reviewPeriod').value.trim();
+
+            if (!reviewName) {
+                showMessage('请输入复盘名称', 'error');
+                return;
+            }
+
+            // 收集表格数据
+            const rows = document.querySelectorAll('tbody tr');
+            const data = [];
+
+            rows.forEach(row => {
+                const select = row.querySelector('select');
+                const textareas = row.querySelectorAll('textarea');
+
+                if (select && textareas.length >= 2) {
+                    const top3Items = textareas[0].value.trim();
+                    const causes = textareas[1].value.trim();
+
+                    if (top3Items) { // 只保存有内容的行
+                        data.push({
+                            review_aspect: select.value,
+                            top3_items: top3Items,
+                            root_causes: causes
+                        });
+                    }
+                }
+            });
+
+            if (data.length === 0) {
+                showMessage('请至少填写一个复盘项目', 'error');
+                return;
+            }
+
+            const reviewData = {
+                sheet_name: reviewName,
+                period: reviewPeriod,
+                data: data,
+                created_by: 4
+            };
+
+            try {
+                showMessage('正在保存...', 'info');
+
+                const response = await fetch('http://localhost:3002/api/projects/6/sheets/product_review', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(reviewData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showMessage('保存成功！', 'success');
+
+                    // 清空表单
+                    document.getElementById('reviewName').value = '';
+                    document.getElementById('reviewPeriod').value = '';
+                    document.querySelectorAll('textarea').forEach(textarea => {
+                        textarea.value = '';
+                    });
+                } else {
+                    showMessage('保存失败', 'error');
+                }
+            } catch (error) {
+                console.error('保存错误:', error);
+                showMessage('保存时发生错误', 'error');
+            }
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化导航，标记当前步骤为产品复盘
+            initGTMNavigation('product_review');
+
+            // 可以在这里添加一些示例数据
+            const textareas = document.querySelectorAll('textarea');
+            if (textareas.length >= 6) {
+                // 示例数据（可选）
+                textareas[0].placeholder = "例如：\n1. 用户活跃度提升30%\n2. 产品功能完善度显著改善\n3. 客户满意度达历史新高";
+                textareas[1].placeholder = "例如：\n1. 新功能上线效果超预期\n2. 技术团队优化了核心算法\n3. 客服团队服务质量提升";
+            }
+        });
+    </script>
+</body>
+</html>

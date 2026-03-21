@@ -1,0 +1,262 @@
+<script setup lang="ts">
+/**
+ * H5CourseStats - 招聘时间成本数据展示
+ * 移动端友好的数据可视化组件，替代横向PPT截图
+ */
+</script>
+
+<template>
+  <div class="h5-section" id="stats">
+    <div class="h5-section-header">
+      <h2 class="h5-section-title">招一个人，HR花了多少时间？</h2>
+    </div>
+    <div class="h5-section-content">
+      <!-- 核心数据 -->
+      <div class="h5-stats-hero">
+        <div class="h5-stats-number">80<span class="h5-stats-unit">小时</span></div>
+        <div class="h5-stats-label">招聘单人平均隐性时间</div>
+      </div>
+
+      <!-- 关键指标卡片 -->
+      <div class="h5-stats-cards">
+        <div class="h5-stats-card">
+          <div class="h5-stats-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="h5-stats-card-value">42<span>天</span></div>
+          <div class="h5-stats-card-label">平均招聘周期</div>
+        </div>
+        <div class="h5-stats-card">
+          <div class="h5-stats-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="h5-stats-card-value">200<span>份</span></div>
+          <div class="h5-stats-card-label">平均筛选简历/岗位</div>
+        </div>
+        <div class="h5-stats-card">
+          <div class="h5-stats-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="h5-stats-card-value">8-12<span>轮</span></div>
+          <div class="h5-stats-card-label">协调沟通成本</div>
+        </div>
+      </div>
+
+      <!-- 时间分布条 -->
+      <div class="h5-stats-breakdown">
+        <h3 class="h5-stats-subtitle">时间都花在哪了？</h3>
+        <div class="h5-stats-bars">
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">面试协调与执行</span>
+              <span class="h5-stats-bar-value">28%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill" style="width: 28%"></div>
+            </div>
+          </div>
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">简历筛选</span>
+              <span class="h5-stats-bar-value">25%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill" style="width: 25%"></div>
+            </div>
+          </div>
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">人才搜索</span>
+              <span class="h5-stats-bar-value">18%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill h5-stats-bar-fill-alt" style="width: 18%"></div>
+            </div>
+          </div>
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">候选人沟通</span>
+              <span class="h5-stats-bar-value">12%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill h5-stats-bar-fill-alt" style="width: 12%"></div>
+            </div>
+          </div>
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">JD撰写与发布</span>
+              <span class="h5-stats-bar-value">10%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill h5-stats-bar-fill-light" style="width: 10%"></div>
+            </div>
+          </div>
+          <div class="h5-stats-bar-item">
+            <div class="h5-stats-bar-info">
+              <span class="h5-stats-bar-label">背调/Offer/行政</span>
+              <span class="h5-stats-bar-value">7%</span>
+            </div>
+            <div class="h5-stats-bar-track">
+              <div class="h5-stats-bar-fill h5-stats-bar-fill-light" style="width: 7%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 数据来源 -->
+      <p class="h5-stats-source">数据来源：LinkedIn、北森等全球招聘报告整合</p>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-stats-hero {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.h5-stats-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--h5-text-white);
+  line-height: 1;
+}
+
+.h5-stats-unit {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.h5-stats-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 8px;
+}
+
+.h5-stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.h5-stats-card {
+  background: var(--h5-bg-white);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.h5-stats-card-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  background: rgba(0, 153, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--h5-primary);
+}
+
+.h5-stats-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--h5-text-dark);
+}
+
+.h5-stats-card-value span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--h5-text-gray);
+}
+
+.h5-stats-card-label {
+  font-size: 12px;
+  color: var(--h5-text-gray);
+  margin-top: 4px;
+}
+
+.h5-stats-breakdown {
+  background: var(--h5-bg-white);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.h5-stats-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--h5-text-dark);
+  margin-bottom: 16px;
+}
+
+.h5-stats-bar-item {
+  margin-bottom: 14px;
+}
+
+.h5-stats-bar-item:last-child {
+  margin-bottom: 0;
+}
+
+.h5-stats-bar-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.h5-stats-bar-label {
+  font-size: 13px;
+  color: var(--h5-text-gray);
+}
+
+.h5-stats-bar-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--h5-primary);
+}
+
+.h5-stats-bar-track {
+  height: 8px;
+  background: var(--h5-bg-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.h5-stats-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.h5-stats-bar-fill-alt {
+  background: linear-gradient(90deg, #4DA8FF 0%, var(--h5-primary) 100%);
+}
+
+.h5-stats-bar-fill-light {
+  background: linear-gradient(90deg, #80C4FF 0%, #4DA8FF 100%);
+}
+
+.h5-stats-source {
+  font-size: 11px;
+  color: var(--h5-text-light);
+  text-align: center;
+  padding-top: 8px;
+}
+</style>

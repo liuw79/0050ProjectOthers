@@ -1,0 +1,168 @@
+     1→// 飞书文档API客户端
+     2→const path = require('path');
+     3→require('dotenv').config({ path: path.join(__dirname, '../.env') });
+     4→
+     5→const FEISHU_BASE_URL = 'https://open.feishu.cn/open-apis';
+     6→
+     7→class FeishuDocClient {
+     8→  constructor() {
+     9→    this.appId = process.env.LARK_APP_ID;
+    10→    this.appSecret = process.env.LARK_APP_SECRET;
+    11→    this.appAccessToken = null;
+    12→    this.tokenExpireTime = 0;
+    13→  }
+    14→
+    15→  // 获取app access token
+    16→  async getAppAccessToken() {
+    17→    if (this.appAccessToken && Date.now() < this.tokenExpireTime) {
+    18→      return this.appAccessToken;
+    19→    }
+    20→
+    21→    try {
+    22→      const response = await fetch(`${FEISHU_BASE_URL}/auth/v3/app_access_token/internal`, {
+    23→        method: 'POST',
+    24→        headers: { 'Content-Type': 'application/json' },
+    25→        body: JSON.stringify({
+    26→          app_id: this.appId,
+    27→          app_secret: this.appSecret,
+    28→        }),
+    29→      });
+    30→
+    31→      const data = await response.json();
+    32→      if (data.code !== 0) {
+    33→        throw new Error(`获取app token失败: ${data.msg}`);
+    34→      }
+    35→
+    36→      this.appAccessToken = data.app_access_token;
+    37→      this.tokenExpireTime = Date.now() + (data.expire_in - 300) * 1000;
+    38→      return this.appAccessToken;
+    39→    } catch (error) {
+    40→      console.error('获取飞书token失败:', error);
+    41→      throw error;
+    42→    }
+    43→  }
+    44→
+    45→  // 创建文档
+    46→  async createDocument(title, content, folderToken = '') {
+    47→    try {
+    48→      const token = await this.getAppAccessToken();
+    49→
+    50→      const response = await fetch(`${FEISHU_BASE_URL}/docx/v1/documents`, {
+    51→        method: 'POST',
+    52→        headers: {
+    53→          'Authorization': `Bearer ${token}`,
+    54→          'Content-Type': 'application/json',
+    55→        },
+    56→        body: JSON.stringify({
+    57→          title: title,
+    58→          folder_token: folderToken,
+    59→          content: {
+    60→            text: {
+    61→              content: content,
+    62→            }
+    63→          }
+    64→        }),
+    65→      });
+    66→
+    67→      const data = await response.json();
+    68→      if (data.code !== 0) {
+    69→        throw new Error(`创建文档失败: ${data.msg}`);
+    70→      }
+    71→
+    72→      return {
+    73→        documentId: data.document.document_id,
+    74→        revisionId: data.document.revision_id,
+    75→      };
+    76→    } catch (error) {
+    77→      console.error('创建文档失败:', error);
+    78→      throw error;
+    79→    }
+    80→  }
+    81→
+    82→  // 读取文档内容
+    83→  async getDocument(documentId) {
+    84→    try {
+    85→      const token = await this.getAppAccessToken();
+    86→
+    87→      const response = await fetch(`${FEISHU_BASE_URL}/docx/v1/documents/${documentId}/raw_content`, {
+    88→        method: 'GET',
+    89→        headers: {
+    90→          'Authorization': `Bearer ${token}`,
+    91→        },
+    92→      });
+    93→
+    94→      const text = await response.text();
+    95→      return text;
+    96→    } catch (error) {
+    97→      console.error('读取文档失败:', error);
+    98→      throw error;
+    99→    }
+   100→  }
+   101→
+   102→  // 更新文档权限
+   103→  async setDocumentPermission(documentId, permissions) {
+   104→    try {
+   105→      const token = await this.getAppAccessToken();
+   106→
+   107→      const response = await fetch(`${FEISHU_BASE_URL}/drive/v1/permissions/${documentId}`, {
+   108→        method: 'PATCH',
+   109→        headers: {
+   110→          'Authorization': `Bearer ${token}`,
+   111→          'Content-Type': 'application/json',
+   112→        },
+   113→        body: JSON.stringify({
+   114→          permissions: permissions,
+   115→        }),
+   116→      });
+   117→
+   118→      const data = await response.json();
+   119→      if (data.code !== 0) {
+   120→        throw new Error(`设置文档权限失败: ${data.msg}`);
+   121→      }
+   122→
+   123→      return data;
+   124→    } catch (error) {
+   125→      console.error('设置文档权限失败:', error);
+   126→      throw error;
+   127→    }
+   128→  }
+   129→
+   130→  // 设置文档仅管理员可见
+   131→  async setAdminOnly(documentId, adminUserIds) {
+   132→    try {
+   133→      const token = await this.getAppAccessToken();
+   134→
+   135→      const response = await fetch(`${FEISHU_BASE_URL}/drive/v1/permissions/${documentId}`, {
+   136→        method: 'PATCH',
+   137→        headers: {
+   138→          'Authorization': `Bearer ${token}`,
+   139→          'Content-Type': 'application/json',
+   140→        },
+   141→        body: JSON.stringify({
+   142→          permissions: adminUserIds.map(userId => ({
+   143→            type: 'user',
+   144→            user_id: userId,
+   145→            perm: 'admin',
+   146→          })),
+   147→        }),
+   148→      });
+   149→
+   150→      const data = await response.json();
+   151→      if (data.code !== 0) {
+   152→        throw new Error(`设置管理员权限失败: ${data.msg}`);
+   153→      }
+   154→
+   155→      return data;
+   156→    } catch (error) {
+   157→      console.error('设置管理员权限失败:', error);
+   158→      throw error;
+   159→    }
+   160→  }
+   161→}
+   162→
+   163→module.exports = FeishuDocClient;
+   164→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

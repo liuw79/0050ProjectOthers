@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    .warning { background: #fff5f5; color: #c53030; padding: 8px 12px; border-radius: 4px; font-size: 13px; margin-top: 10px; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-row:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">综合评估得分</div>
+    <div class="score-big">96<span style="font-size: 24px;">分</span></div>
+    <div class="summary">
+        <strong>总评：</strong>不仅是一场教科书级别的流畅开场，更在课后展现了极度硬核的"顾问式陪跑"，完美诠释了高维班主任作为"企业成长伙伴"的顶层价值！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、 分项评分 (Base: 88分)</h2>
+    <div class="score-row"><span>高维介绍</span><span>25 / 25</span></div>
+    <div class="score-row"><span>产品���绍</span><span>24 / 25</span></div>
+    <div class="score-row"><span>团建破冰</span><span>15 / 15</span></div>
+    <div class="score-row"><span>邀约课评</span><span>11 / 15</span></div>
+    <div class="score-row"><span>结尾升华</span><span>4 / 10</span></div>
+    <div class="score-row"><span>口语节奏</span><span>9 / 10</span></div>
+</div>
+
+<div class="card">
+    <h2>二、 高阶加分项 (+8分)</h2>
+    
+    <div class="bonus-item">
+        <div class="bonus-title">[课评邀约的情感升华]（+3）</div>
+        <div class="bonus-detail">
+            <strong>原稿表达：</strong>AI会自动抓取反馈，推送给教研团队。
+        </div>
+        <div class="bonus-detail">
+            <strong>现场金句：</strong>“我们这两天所有的案例，所有的那些戳到肺管子的痛点...都是过去成百上千的师兄师姐们，给我们提了无数的迭代建议，才有了今天这一版...让后续每一期的同行者们也能有避开坑的可能性。”
+        </div>
+        <div class="bonus-detail">
+            <strong>分析：</strong>极其巧妙地将“填问卷”这个行政动作，升华成了“师兄帮师弟”的利他行为和传承使命。深刻洞察了企业家的互助心理，不仅提高了填写率，更拉升了高维的场域温度。
+        </div>
+    </div>
+
+    <div class="bonus-item">
+        <div class="bonus-title">[课后真实的顾问式陪跑]（+5）</div>
+        <div class="bonus-detail">
+            <strong>原稿表达：</strong>无。
+        </div>
+        <div class="bonus-detail">
+            <strong>现场金句：</strong>“你可以先做调研...列出来这个需求清单，就问老板让他排进去，把那个最重要的当做一个战役点...那个是你两年之后的目标，你先活下来。”
+        </div>
+        <div class="bonus-detail">
+            <strong>分析：</strong>录���中意外记录下了你在课后辅导学员切入业务战役的真实对话。思路极其清晰，直接运用了课堂上的方法论指导学员做实操。这完全超越了传统班主任的“报幕”边界，是真正的“企业成长陪跑伙伴”的绝佳示范！
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、 AI教练建议 (Top 3 突破点)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 关于课评环节的“最后一米”动线设计</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>场域掌控 / 动作精细度</p>
+            <p><strong>具体表现：</strong>前面铺垫了极其动人的课评邀约理由，但到了真正执行时，现场出现了短暂的找链接摩擦（“点点群里那个是吧？...辛苦把群里再发一下”）。</p>
+            <p><strong>深度洞察：</strong>我们先假设你是为了趁着学员情绪最高涨时“趁热打铁”，所以优先进行了口头邀约。但作为高阶运营专家，我���要深知：认知的高峰期，必须配合绝对顺滑的物理动线。企业家在这个时段往往急于返程或有些疲惫，任何“找链接”、“等重发”的停顿，都会导致刚刚拉满的情绪势能快速衰减，导致填答率流失。</p>
+            <p><strong>优化建议：</strong>提前与助教（面条老师）做好暗号。在你说出“请拿出手机”的同一秒，二维码必须已经霸屏出现在大屏幕上，且微信群同步弹出。使用“视觉锁定+倒计时”的控场技巧，用气场引导动作。</p>
+            <div class="suggestion">
+                <strong>建议话术：</strong>“此刻，请大家抬头看大屏幕上的二维码（手势指引），面条老师也已同步发到了班级群。我为大家播放一首一分钟的轻音乐，完成后请抬头给我一个眼神，让我们一起完成这次课程的闭环。”
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 关于结尾结营的闭环与价值锚定</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>情绪价值 / 行动激发</p>
+            <p><strong>具体表现：</strong>结营语相对比较匆忙（“希望大家带上所有的收获能够马上在周一就能有一个第一个起点的落地，我们下一次再见”）。</p>
+            <p><strong>深度洞察：</strong>我们理解在下午课程结束时，你体贴地希望不耽误大家赶飞机的时间，做了主动的精简。但作为陪伴式顾问，首尾呼应是建立专业信任的关键。第一天开场你精准点出了“单打独斗做工兵、没有爆破手”的痛点，如果结尾不把这个痛点“圆”回来，学员带着工具离开时，内心依然缺乏一种强烈的“战斗仪式感”。结语的重量，往往决定了他们周一早会推行新工具的力度。</p>
+            <p><strong>优化建议：</strong>花15秒钟，用一句有力量的话首尾呼应，将“知识”转化为“武器”，赋予他们回到职场的底气。</p>
+            <div class="suggestion">
+                <strong>建议话术：</strong>“周一回到公司，当���们再次面对那些难啃的业务骨头时，希望大家不再是无奈的‘明星员工’，而是真正能带出特战小队的指挥官！高维会在这里，持续陪跑大家的每一场关键战役，祝大家满载而归���一路顺利！”
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 关于破冰环节的“靶子”设定</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>互动设计 / 业务聚焦</p>
+            <p><strong>具体表现：</strong>团建破冰时，抛出的问题是“希望核心要解决的那个最重要的卡点和问题是什么”。</p>
+            <p><strong>深度洞察：</strong>这是一个非常标准且安全的主持设问，能够快速完成场域预热。但若想进一步展现懂业务的HRBP视角，可以顺势结合这门《业务管理者养成》的特定语境（如：打仗、带兵）来进行提问。泛泛的“卡点”容易让学员联想到琐碎的管理细节，而贴合课程特性的“靶子”，能让他们的大脑瞬间切换到“作战模式”，为老师后续的切入做好极佳的铺垫。</p>
+            <p><strong>��化建议：</strong>在常规问题的基础上，替换为具有“军事/实战”隐喻的具体业务场景问题。</p>
+            <div class="suggestion">
+                <strong>建议话术：</strong>“除了简单介绍我是谁，请向你的同组战友抛出一个具体的‘靶子’：也就是你当下最头疼的一场‘关键战役’，或者你团队里最难带的一类‘工兵’是什么。带着这个靶心，我们接下来的两天才会箭无虚发！”
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    每一次在讲台上的从容，背后都是对业务的深刻理解。听到你在课后耐心地辅导学员做业务需求清单，这才是高维倡导的“陪跑”最真实的模样。期待未来能看到你更多主导场域的高光时刻！
+</div>
+
+<div class="footer">
+    Target Course: 业务管理者养成<br>
+    Reference: /GW.Content/五句话介绍/高维学堂5句话介绍.md | 业务管理者养成-主持词.md<br>
+    Generated by Gaowei AI Coach System
+</div>
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红花商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "阿里巴巴普惠体", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #EFEFEF;
+            min-height: 100vh;
+            color: #231815; /* 深黑色文字 R35 G24 B21 */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background: #00A0EB; /* 品牌主题色 R0 G160 B235 */
+            padding: 36px 16px 16px;
+            color: white;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .header-menu {
+            width: 24px;
+            height: 24px;
+            opacity: 0;
+        }
+
+        /* 用户信息区域 */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: #C3E7F4; /* 浅蓝色 */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .user-details h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .user-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .points-info {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .points-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .points-text {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* 切换标签 */
+        .tab-switch {
+            display: flex;
+            margin-top: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        .tab-option {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-option.active {
+            background: white;
+            color: #00A0EB;
+        }
+
+        /* 导航标签 - 可滑动 */
+        .nav-tabs-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            background: #EFEFEF; /* 浅灰色背景 */
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-tabs-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+
+        .nav-tabs {
+            display: inline-flex;
+            padding: 0 10px;
+        }
+
+        .nav-tab {
+            padding: 14px 16px;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-tab.active {
+            color: #00A0EB;
+            font-weight: 600;
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: #00A0EB;
+            border-radius: 2px;
+        }
+
+        /* 内容区域 */
+        .content {
+            padding: 20px;
+            background: #EFEFEF; /* 浅灰色背景 */
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: #999;
+            text-decoration: none;
+        }
+
+        /* 课程卡片 */
+        .course-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .course-image {
+            width: 56px;
+            height: 56px;
+            background: #91D6F2; /* 中浅蓝 */
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .course-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .course-stats {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+
+        .like-count {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #ECC2AD; /* 浅米色 */
+        }
+
+        .exchange-btn {
+            background: #00A0EB; /* 品牌主题色 */
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .exchange-btn:hover {
+            background: #0090d5;
+            transform: scale(1.05);
+        }
+
+        /* 不同分类的背景颜色差异化 */
+        .section-knowledge {
+            background: linear-gradient(135deg, #F8FBFF 0%, #F0F8FF 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-cases {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFF5E6 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-activities {
+            background: linear-gradient(135deg, #F0FFF8 0%, #E6FFF0 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* 为不同分类调整卡片样式 */
+        .section-knowledge .course-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 160, 235, 0.1);
+        }
+
+        .section-cases .course-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 193, 7, 0.1);
+        }
+
+        .section-activities .course-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(40, 167, 69, 0.1);
+        }
+
+        /* 底部间距 */
+        .content-bottom {
+            height: 20px;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .course-card:nth-child(5) { animation-delay: 0.5s; }
+        .course-card:nth-child(6) { animation-delay: 0.6s; }
+        .course-card:nth-child(7) { animation-delay: 0.7s; }
+        .course-card:nth-child(8) { animation-delay: 0.8s; }
+        .course-card:nth-child(9) { animation-delay: 0.9s; }
+
+        /* 响应式优化 */
+        @media (max-width: 375px) {
+            .container {
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 32px 14px 14px;
+            }
+            
+            .content {
+                padding: 16px;
+            }
+            
+            .course-card {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <div class="header">
+            <div class="header-top">
+                <div class="back-btn">←</div>
+                <div class="header-title">小红花商城</div>
+                <div class="header-menu"></div>
+            </div>
+            
+            <!-- 用户信息 -->
+            <div class="user-info">
+                <div class="avatar">👤</div>
+                <div class="user-details">
+                    <h2>面条</h2>
+                    <div class="user-subtitle">高维学堂 · 三年级</div>
+                </div>
+            </div>
+            
+            <!-- 积分信息 -->
+            <div class="points-info">
+                <div class="points-row">
+                    <span class="points-text">🌺 有51朵可兑换</span>
+                    <span class="points-text">转赠记录 · 转赠好友 ></span>
+                </div>
+                <!-- 切换标签 -->
+                <div class="tab-switch">
+                    <div class="tab-option active" data-tab="exchange">🎁 我要兑换</div>
+                    <div class="tab-option" data-tab="earn">🌸 我要赚花</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 导航标签 - 可滑动 -->
+        <div class="nav-tabs-container">
+            <div class="nav-tabs">
+                <div class="nav-tab active">全部</div>
+                <div class="nav-tab">知识地图</div>
+                <div class="nav-tab">落地案例集</div>
+                <div class="nav-tab">企业参访</div>
+                <div class="nav-tab">线下沙龙</div>
+                <div class="nav-tab">主题研讨会</div>
+                <div class="nav-tab">课程复训</div>
+                <div class="nav-tab">阶段分享会</div>
+                <div class="nav-tab">特权课程</div>
+            </div>
+        </div>
+        
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 课程知识地图对照学 -->
+            <div class="section-knowledge">
+                <div class="section-title">
+                    <span>课程知识地图对照学</span>
+                    <a href="#" class="more-link">更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">📚</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨《升级定位与品牌战略》知识地图</div>
+                            <div class="course-meta">
+                                <span>428件已兑换</span>
+                                <span>·</span>
+                                <span>包邮到家</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>5</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">💼</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨《业务领先战略》知识地图</div>
+                            <div class="course-meta">
+                                <span>496件已兑换</span>
+                                <span>·</span>
+                                <span>包邮到家</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>6</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🏢</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨《组织设计总纲》知识地图</div>
+                            <div class="course-meta">
+                                <span>145件已兑换</span>
+                                <span>·</span>
+                                <span>包邮到家</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>5</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🚀</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨《创新思维与产品战略》知识地图</div>
+                            <div class="course-meta">
+                                <span>312件已兑换</span>
+                                <span>·</span>
+                                <span>包邮到家</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>8</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🔍</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨《市场洞察与用户研究》知识地图</div>
+                            <div class="course-meta">
+                                <span>267件已兑换</span>
+                                <span>·</span>
+                                <span>包邮到家</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>7</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学友实践案例参考学 -->
+            <div class="section-cases">
+                <div class="section-title">
+                    <span>学友实践案例参考学</span>
+                    <a href="#" class="more-link">更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">🎓</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨高维学友落地案例集</div>
+                            <div class="course-meta">
+                                <span>案例精选</span>
+                                <span>·</span>
+                                <span>实战指导</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>10</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">📊</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨数字化转型实践案例</div>
+                            <div class="course-meta">
+                                <span>行业领先</span>
+                                <span>·</span>
+                                <span>方法论解析</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>12</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🌐</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨全球化战略实施案例</div>
+                            <div class="course-meta">
+                                <span>跨国企业</span>
+                                <span>·</span>
+                                <span>经验分享</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>9</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 线下活动专区 -->
+            <div class="section-activities">
+                <div class="section-title">
+                    <span>线下活动专区</span>
+                    <a href="#" class="more-link">更多 ></a>
+                </div>
+                
+                <div class="course-list">
+                    <div class="course-card">
+                        <div class="course-image">🏆</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨高维学堂年度峰会门票</div>
+                            <div class="course-meta">
+                                <span>限量50张</span>
+                                <span>·</span>
+                                <span>北京站</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>15</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🤝</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨行业大咖面对面交流会</div>
+                            <div class="course-meta">
+                                <span>每月一期</span>
+                                <span>·</span>
+                                <span>上海站</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>20</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-image">🏭</div>
+                        <div class="course-info">
+                            <div class="course-title">小红花特权丨标杆企业参访名额</div>
+                            <div class="course-meta">
+                                <span>深度交流</span>
+                                <span>·</span>
+                                <span>全国多地</span>
+                            </div>
+                            <div class="course-stats">
+                                <div class="like-count">
+                                    <span>🌺</span>
+                                    <span>18</span>
+                                </div>
+                                <button class="exchange-btn">去兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-bottom"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 导航标签切换
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // 切换标签选项
+        document.querySelectorAll('.tab-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.tab-option').forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                // 这里可以添加切换内容的逻辑
+                const tabType = this.getAttribute('data-tab');
+                console.log('切换到:', tabType);
+            });
+        });
+        
+        // 卡片点击效果
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('exchange-btn')) {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+            });
+        });
+        
+        // 兑换按钮点击
+        document.querySelectorAll('.exchange-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    alert('兑换功能开发中...');
+                }, 150);
+            });
+        });
+        
+        // 返回按钮
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            alert('返回上一页');
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

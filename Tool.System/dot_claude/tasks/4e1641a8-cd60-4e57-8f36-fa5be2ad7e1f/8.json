@@ -1,0 +1,9 @@
+{
+  "id": "8",
+  "subject": "配置管理模块 (Task 2)",
+  "description": "实现 src/core/config.py，支持 YAML 配置和环境变量替换",
+  "activeForm": "实现配置管理模块中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

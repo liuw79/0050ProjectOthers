@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址限制器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>网址限制器</h1>
+            <p>防止访问特定网站的桌面应用程序</p>
+        </header>
+
+        <main>
+            <!-- 代理服务状态 -->
+            <section class="status-section">
+                <h2>代理服务状态</h2>
+                <div class="status-card">
+                    <div class="status-indicator" id="proxy-status">
+                        <div class="status-dot"></div>
+                        <span class="status-text">检查中...</span>
+                    </div>
+                    <div class="status-actions">
+                        <button id="start-proxy" class="btn btn-primary">启动代理</button>
+                        <button id="stop-proxy" class="btn btn-secondary">停止代理</button>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <p><strong>代理地址:</strong> 127.0.0.1:8080</p>
+                    <p class="info-text">请将系统代理设置为此地址以启用网址限制功能</p>
+                </div>
+            </section>
+
+            <!-- URL限制管理 -->
+            <section class="url-section">
+                <h2>URL限制管理</h2>
+                <div class="url-management">
+                    <div class="add-url">
+                        <input type="text" id="new-url" placeholder="输入要限制的网址（如：example.com）">
+                        <button id="add-url" class="btn btn-primary">添加限制</button>
+                    </div>
+                    <div class="url-list" id="restricted-urls">
+                        <!-- URL列表将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 访问日志 -->
+            <section class="log-section">
+                <h2>最近访问记录</h2>
+                <div class="log-controls">
+                    <button id="refresh-log" class="btn btn-secondary">刷新</button>
+                    <button id="clear-log" class="btn btn-danger">清空日志</button>
+                </div>
+                <div class="log-container">
+                    <table class="log-table">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>网址</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="access-log">
+                            <!-- 访问日志将通过JavaScript动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>网址限制器 v1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- 提示消息 -->
+    <div id="toast" class="toast"></div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

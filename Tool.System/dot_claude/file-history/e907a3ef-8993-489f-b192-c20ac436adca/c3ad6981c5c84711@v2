@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    .warning { background: #fff5f5; color: #c53030; padding: 8px 12px; border-radius: 4px; font-size: 13px; margin-top: 10px; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-row:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">综合主持效能评估</div>
+    <div class="score-big">93<span style="font-size: 24px;">分</span></div>
+    <div class="summary">
+        兼具专业沉稳与场域温度，将标准动作内化于心的卓越陪跑伙伴！开场逻辑极为丝滑，对课程业务痛点的抓取精准有力。
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+    <div class="score-row"><span>高维介绍（5句话完整度）</span><span>28 / 30</span></div>
+    <div class="score-row"><span>产品介绍（FOCUS框架）</span><span>29 / 30</span></div>
+    <div class="score-row"><span>团建破冰（场域激活）</span><span>14 / 15</span></div>
+    <div class="score-row"><span>邀约课评（动作坚决度）</span><span>11 / 15</span></div>
+    <div class="score-row"><span>结尾升华（激发行动）</span><span>8 / 10</span></div>
+    <div class="score-row"><span>口语节奏（亲和力与流畅度）</span><span>+3（融入总分）</span></div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">破冰化解尴尬的场域掌控力（+3）</div>
+        <div class="bonus-detail">
+            <strong>原稿表达：</strong>（无具体选组长的话术预设，仅要求选出组长）<br>
+            <strong>现场金句：</strong>"有些组比较腼腆还在谦让。我就分享一个在高维的国际惯例，当选不出组长的时候，咱们就选颜值最高的那位就对了好吗？大家拿出顶呱呱大拇指给组长点个赞…"<br>
+            <strong>分析：</strong>作为班主任，敏锐观察到了现场"谦让/破冰未彻底"的微表情，没有生硬地催促，而是用一句幽默的"国际惯例"巧妙化解了成年人社交的尴尬，顺畅推进了运营动作，展现了极佳的场域感知力。
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议 (Top 3 深度复盘)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 关于课评邀约的"最后一公里"闭环</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>现场物料协同与指令清晰度</p>
+            <p><strong>具体表现：</strong>在第二天呼吁填问卷时，出现了"点点群里那个是吧...面条群里面现在还...待会发群里头，辛苦大家再点一下"的临时确认状况。</p>
+            <p><strong>深度洞察：</strong>我理解你是为了在课程结束的高能时刻，抓紧为大家做情绪升华，所以选择相信运营伙伴会同步在群里发好链接，这是为了保持现场"情感不断线"的主动取舍。但从学员心理来看，填问卷是一个"反人性"的动作，当你的情绪铺垫达到顶峰时，如果视觉焦点（大屏二维码）或行动路径（群内置顶链接）没有瞬间对齐，学员的注意力会在你和助教确认的几秒钟内迅速消散。一旦产生"待会儿再点"的心理，课评回收率就会断崖式下跌。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>作为控场核心，我们需要在开口邀约前，用余光确认物理路径（大屏/群内）已100%就绪。如果发现群里还没发，与其在台上暴露协同盲区，不如直接启用Plan B（如引导看纸质台卡或大屏）。<br><br>
+                <strong>建议话术：</strong>"大家此刻趁着体感最深，请扫一眼我们主屏幕上的二维码（或直接说：面条老师已经把链接置顶在群里了），就花1分钟，您的一句真实反馈，就是我们下一次实战迭代的弹药。我在这里等大家1分钟。"（随后保持安静，用目光巡场，给足压迫感和专注度）。
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 关于结尾升华的行动指令</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>结束语的落地抓手</p>
+            <p><strong>具体表现：</strong>结尾以"马上在周一就能有一个起点的落地"收尾，稍显单薄。</p>
+            <p><strong>深度洞察：</strong>我知道历经两天的烧脑学习，你希望用最简洁的语言放大家早点回去休息，这是你体贴学员的表现。但作为企业成长陪跑伙伴，我们深知"课后48小时"是知识留存的黄金窗口期。一句泛泛的"落地"，对于刚吸收完海量信息、大脑处于过载状态的企业家来说，难以转化为实际动作。他们回到周一，马上又会被日常业务淹没。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>若能顺势抛出一个具体的"微行动指令"，结合汤老师课上给到的核心工具，不仅能巩固你的专业形象，更能真正在心理上给他们建立起落地的桥梁。<br><br>
+                <strong>建议话术：</strong>"周一回到公司，千头万绪不用慌。作为陪跑伙伴，我给大家的建议是：不需要马上推翻现有架构，试着先拿出汤老师给的《业务作战计划》表，找你最核心的2个骨干，花15分钟开个对齐会，这就会是我们打赢新战役最好的起点。祝大家一路顺利！"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 关于破冰环节的"角色带入感"</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>互动的业务关联度</p>
+            <p><strong>具体表现：</strong>破冰时引导大家分享"我是谁"和"要解决的卡点"，指令清晰明确。</p>
+            <p><strong>深度洞察：</strong>你把控时间的节奏非常精准，3分钟内高效完成了建组，这展现了你扎实的控场基本功。但如果站在更高阶的视角，这门课是《业务管理者养成》，核心讲的是"带兵打仗和特战小队"。目前的破冰方式稍微偏向通用的"培训班同学介绍"，缺乏了一点置身于战场的硝烟味。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>作为班主任，若能在破冰语境中直接化用老师的"业务语言"，将小组定义为"董事会"或"参谋部"，能瞬间拉升学员的代入感，让他们意识到身边坐着的不是普通同学，而是可以一起拆解业务卡点的"战友"。<br><br>
+                <strong>建议话术：</strong>"在请出汤老师带大家打仗前，我们需要先结交一下未来两天的'生死战友'。接下来3分钟，请大家在小组内做个战前交底：第一，告诉战友你带的是什么兵（业务领域）；第二，你现在前线卡壳最痛的一场战役是什么。大家互相做彼此的参谋长，我们3分钟战前预热，现在开始！"
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ending">
+    业务理解极为透彻，场域掌控游刃有余。期待你在未来的场次中，继续打磨每一个转化环节的绝对闭环，成为更多企业家身边不可或缺的实战陪跑专家！
+</div>
+
+<div class="footer">
+    <p>Target Course: 业务管理者养成</p>
+    <p>Ref: /Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/业务管理者养成-主持词.md</p>
+    <p>Report generated by 高维AI教练</p>
+</div>
+
+</body>
+</html>

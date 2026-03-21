@@ -1,0 +1,9 @@
+{
+  "id": "11",
+  "subject": "Git 集成器 (Task 5)",
+  "description": "实现 GitIntegrator，支持初始化仓库、提交、查看历史和回滚",
+  "activeForm": "实现 Git 集成器中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

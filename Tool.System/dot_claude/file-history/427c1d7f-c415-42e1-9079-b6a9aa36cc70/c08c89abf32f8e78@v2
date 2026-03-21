@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高维AI教练现场主持专属报告</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #1A365D;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .score-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #F7FAFC;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+            color: #DD6B20;
+            margin: 0;
+        }
+        .score-detail {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D3748;
+            border-left: 4px solid #DD6B20;
+            padding-left: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #F0FFF4;
+            border: 1px solid #C6F6D5;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .improvement {
+            background-color: #FFF5F5;
+            border: 1px solid #FED7D7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .point {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .quote {
+            font-weight: bold;
+            color: #2B6CB0;
+        }
+        .script-box {
+            background-color: #EDF2F7;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 13px;
+            color: #4A5568;
+            margin-top: 8px;
+            border-left: 3px solid #4299E1;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #A0AEC0;
+            background-color: #F7FAFC;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>主持复盘与陪跑反馈</h1>
+        <p>课程：《业务管理者养成》 | 导师：汤君健</p>
+    </div>
+
+    <div class="score-box">
+        <p class="score">82分</p>
+        <p class="score-detail">基础分75 + 亮点加分9 - 关键动作流失扣分2</p>
+        <p style="font-size: 14px; color: #4A5568; margin-top: 10px;">
+            <strong>HRBP寄语：</strong>碧荣你好！整场主持展现了非常扎实的业务理解力和极佳的亲和力。你的表达不仅流畅，更懂企业家痛点，是一位能与客户同频共振的优秀成长伙伴。
+        </p>
+    </div>
+
+    <div class="content">
+        <h2 class="section-title">🌟 场域高光点 (加分项)</h2>
+
+        <div class="highlight">
+            <div class="point">
+                <strong>1. 痛点共鸣极其精准 (+3分)</strong><br>
+                在产品开场时，你用<span class="quote">"明明以前自己做业务的时候，妥妥的明星...有了团队之后...只能做执行的工兵"</span>这段话，极具画面感地戳中了业务一号位的痛点。这不仅是报幕，更展现了你对业务管理场景的深刻洞察。
+            </div>
+            <div class="point">
+                <strong>2. 破冰设计幽默高效 (+1分)</strong><br>
+                在团建选组长环节，顺势抛出<span class="quote">"选不出组长咱们就选颜值最高的那位"</span>。这个小设计巧妙化解了成年人课堂的社交破冰尴尬，瞬间盘活了场域气氛。
+            </div>
+            <div class="point">
+                <strong>3. 课评邀约的价值升华 (+5分)</strong><br>
+                你没有生硬地要求大家"填问卷"，而是将其升华为<span class="quote">"师兄师姐的避坑经验共创"</span>与<span class="quote">"高维实战迭代的体现"</span>。这种将运营动作赋予"利他"价值的话术，极大增强了客户的信任感，是非常高阶的表达方式。
+            </div>
+        </div>
+
+        <h2 class="section-title">💡 赋能与精进 (建议项)</h2>
+
+        <div class="improvement">
+            <div class="point">
+                <strong>关于课评邀约的"最后一公里"控场 (-2分)</strong><br>
+                我留意到，在第二天结束邀约填表时，现场似乎出现了链接未及时就位或大家找不到群内链接的小插曲。我猜你为了不让大家干等、保持场域的流畅体验，主动选择了说<span class="quote">"待会发群里头，辛苦大家再点一下"</span>。<br><br>
+                <strong>伙伴赋能：</strong>这体现了你对客户体验的关注。不过，作为高阶的现场指挥官，课后反馈是我们迭代的生命线。一旦允许"待会填"，回收率会呈现断崖式下跌。作为业务成长伙伴，若能顺势展现更强的场域掌控力（即"温柔的坚持"），能在心理上让学员感到我们对"科学闭环"的绝对重视。
+
+                <div class="script-box">
+                    <strong>高阶顾问视角建议话术（遇突发状况时）：</strong><br>
+                    "大家先别着急收拾书包（面带微笑压场）。这份反馈对老师和教研团队太重要了，所以我们一定要在大家体感最热乎的这一刻完成。助教老师，请马上把问卷二维码投屏/重新发群里。来，请大家现在拿起手机，一分钟时间，填完的同学抬起头跟我比个OK，我们再一起带着满载的收获圆满下课！"
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">📈 综合评估与愿景</h2>
+        <p style="font-size: 14px; color: #4A5568;">
+            整体而言，你在"高维五句话"和"产品五句话"的结构完整度上做得滴水不漏，方法工具与实战案例的穿插非常自然，完全没有死记硬背的痕迹。<br><br>
+            期待在未来的带班中，你继续发挥这种"懂业务、懂痛点"的优势。在关键的运营转化节点（如问卷、复训邀约等）上，可以更加笃定地"拿住结果"，把"陪伴伙伴"的温情与"实战商学院"的执行力完美结合！
+        </p>
+
+    </div>
+
+    <div class="footer">
+        © 高维学堂 AI教练复盘系统 · 科学创业 少走弯路
+    </div>
+</div>
+
+</body>
+</html>

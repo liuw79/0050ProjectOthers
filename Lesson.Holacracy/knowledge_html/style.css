@@ -1,0 +1,91 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3 {
+    color: #343a40;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.3rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.toc {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li a {
+    display: block;
+    padding: 12px 15px;
+    background-color: #f1f3f5;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #495057;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.toc li a:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+strong {
+    color: #495057;
+}
+
+code {
+    background-color: #e9ecef;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}

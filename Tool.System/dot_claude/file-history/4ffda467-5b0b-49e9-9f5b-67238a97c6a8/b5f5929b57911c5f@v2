@@ -1,0 +1,91 @@
+# GW.Content Web 端架构
+
+## 组件结构
+
+```
+web/src/
+├── components/
+│   └── steps/                    # 共享步骤组件
+│       ├── StepBrief.vue         # ✅ 需求收集（场景、受众、特殊要求）
+│       ├── StepCourse.vue        # 🔲 选择课程 + 学习课程内容
+│       ├── StepReview.vue        # 🔲 审校优化
+│       └── StepArchive.vue       # 🔲 存档
+│
+├── views/
+│   ├── Home.vue                  # ✅ 首页（项目类型卡片）
+│   ├── NewProject.vue            # 🔲 重构：动态加载流程
+│   └── types/                    # 各类型特有流程组件
+│       ├── ArticleFlow.vue       # 🔲 公众号文章流程
+│       ├── HostFlow.vue          # 🔲 主持词流程
+│       └── IntroFlow.vue         # 🔲 五句话介绍流程
+│
+└── router/
+    └── index.js                  # 🔲 更新路由
+```
+
+## 流程设计
+
+### 共享步骤分析
+
+| 步骤 | 公众号 | 主持词 | 五句话 | 组件 |
+|-----|-------|-------|-------|-----|
+| 需求收集 | Step 1 | Step 2 | Step 1 | StepBrief.vue |
+| 学习课程 | Step 2.5 | Step 1 | Step 2 | StepCourse.vue |
+| 素材准备 | Step 2, 5.5 | Step 3 | - | 各类型特有 |
+| 撰写初稿 | Step 7 | Step 4 | Step 3 | 各类型特有 |
+| 审校优化 | Step 8 | Step 5 | Step 5 | StepReview.vue |
+| 存档 | - | - | Step 5 | StepArchive.vue |
+
+### 各类型流程
+
+**公众号文章（优化后）：**
+> 核心原则：**目的先行 → 找素材 → 从素材找灵感/切入口 → 拉框架 → 填充**
+
+1. 需求收集（目的）
+2. 选择课程 → 准备素材（课程素材、品牌素材、个人素材）
+3. 选题讨论（从素材中找灵感、找切入口）
+4. 拉框架（大纲）
+5. 撰写
+6. 审校
+7. 存档
+
+**主持词：**
+1. 需求收集 → 2. 选择课程 → 3. FOCUS框架撰写 → 4. 审校 → 5. 存档
+
+**五句话介绍：**
+1. 需求收集 → 2. 选择课程 → 3. 4版本输出 → 4. 审校 → 5. 存档
+
+---
+
+## 任务清单
+
+### Phase 1: 基础架构
+- [x] T1: 创建共享步骤组件目录
+- [x] T2: 创建 StepBrief.vue（需求收集组件）
+
+### Phase 2: 共享组件
+- [ ] T3: 创建 StepCourse.vue（课程选择 + 学习）
+- [ ] T4: 创建 StepReview.vue（审校优化）
+- [ ] T5: 创建 StepArchive.vue（存档）
+
+### Phase 3: 流程整合
+- [ ] T6: 重构 NewProject.vue，支持动态流程
+- [ ] T7: 创建 ArticleFlow.vue（公众号流程）
+- [ ] T8: 创建 HostFlow.vue（主持词流程）
+- [ ] T9: 创建 IntroFlow.vue（五句话流程）
+
+### Phase 4: 完善
+- [ ] T10: 朋友圈文案流程
+- [ ] T11: 视频脚本流程
+- [ ] T12: 后端 API 对接
+
+---
+
+## 当前进度
+
+**已完成：** T1, T2
+**下一步：** T3 - 创建 StepCourse.vue
+
+---
+
+*更新时间: 2026-03-01*

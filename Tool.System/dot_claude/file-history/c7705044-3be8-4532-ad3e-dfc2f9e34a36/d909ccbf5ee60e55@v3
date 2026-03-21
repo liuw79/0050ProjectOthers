@@ -1,0 +1,138 @@
+/**
+ * Claude Code CLI 封装模块
+ */
+
+import { spawn } from 'child_process';
+import { getCurrentProjectInfo, addHistory } from './session.js';
+import { existsSync, rmSync } from 'fs';
+import { join } from 'path';
+
+const CLAUDE_PATH = '/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/bin/claude';
+
+/**
+ * 重置项目会话上下文
+ * @param {string} projectPath - 项目路径
+ * @returns {boolean} - 是否成功
+ */
+export function resetSession(projectPath = null) {
+  const project = projectPath ? { path: projectPath } : getCurrentProjectInfo();
+
+  if (!project || !project.path) {
+    return false;
+  }
+
+  const claudeDir = join(project.path, '.claude');
+  const sessionFile = join(claudeDir, 'session.json');
+  const historyFile = join(claudeDir, 'history.json');
+
+  try {
+    // 删除会话文件
+    if (existsSync(sessionFile)) {
+      rmSync(sessionFile, { force: true });
+    }
+    if (existsSync(historyFile)) {
+      rmSync(historyFile, { force: true });
+    }
+    console.log(`[Claude] 已重置会话: ${project.path}`);
+    return true;
+  } catch (err) {
+    console.error(`[Claude] 重置会话失败: ${err.message}`);
+    return false;
+  }
+}
+
+/**
+ * 向 Claude 发送消息并获取回复
+ * @param {string} message - 用户消息
+ * @param {string} projectPath - 项目路径
+ * @param {boolean} newSession - 是否开启新会话
+ * @returns {Promise<string>} - Claude 的回复
+ */
+export async function sendMessage(message, projectPath = null, newSession = false) {
+  const project = projectPath ? { path: projectPath } : getCurrentProjectInfo();
+
+  if (!project || !project.path) {
+    throw new Error('未找到项目路径');
+  }
+
+  return new Promise((resolve, reject) => {
+    // 使用 spawn 来运行 claude 命令
+    const args = [
+      '-p',           // print 模式
+    ];
+
+    // 只有非新会话才使用 -c 继续上下文
+    if (!newSession) {
+      args.push('-c');
+    }
+
+    args.push(message);
+
+    console.log(`[Claude] 在 ${project.name || project.path} 中执行: ${message.substring(0, 50)}...`);
+
+    const claude = spawn(CLAUDE_PATH, args, {
+      cwd: project.path,
+      env: { ...process.env },
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
+
+    let output = '';
+    let errorOutput = '';
+
+    claude.stdout.on('data', (data) => {
+      output += data.toString();
+    });
+
+    claude.stderr.on('data', (data) => {
+      errorOutput += data.toString();
+    });
+
+    claude.on('close', (code) => {
+      if (code === 0) {
+        // 记录历史
+        addHistory('user', message);
+        addHistory('assistant', output);
+
+        resolve(output);
+      } else {
+        console.error(`[Claude] 错误: ${errorOutput}`);
+        reject(new Error(`Claude 退出码 ${code}: ${errorOutput}`));
+      }
+    });
+
+    claude.on('error', (err) => {
+      reject(new Error(`无法启动 Claude: ${err.message}`));
+    });
+
+    // 设置超时（5分钟）
+    setTimeout(() => {
+      claude.kill();
+      reject(new Error('Claude 响应超时'));
+    }, 5 * 60 * 1000);
+  });
+}
+
+/**
+ * 获取 Claude 版本
+ */
+export async function getVersion() {
+  return new Promise((resolve, reject) => {
+    const claude = spawn(CLAUDE_PATH, ['--version'], {
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
+
+    let output = '';
+
+    claude.stdout.on('data', (data) => {
+      output += data.toString();
+    });
+
+    claude.on('close', (code) => {
+      if (code === 0) {
+        resolve(output.trim());
+      } else {
+        reject(new Error('无法获取版本'));
+      }
+    });
+  });
+}

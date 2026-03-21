@@ -1,0 +1,101 @@
+---
+name: switch-model
+description: Switch OpenClaw default model with config validation and gateway restart. Use when user wants to change the AI model (Claude, Kimi, GLM, etc.).
+metadata:
+  openclaw:
+    emoji: "🔄"
+    os: ["darwin", "linux"]
+    requires: { bins: ["openclaw"] }
+---
+
+# Switch Model
+
+一键切换 OpenClaw 默认模型，自动验证配置并重启 Gateway。
+
+## Quick Start
+
+```bash
+# 切换到指定模型
+/switch-model moonshot/kimi-k2.5
+/switch-model anthropic/claude-opus-4-5
+/switch-model zai/glm-5
+
+# 不带参数则显示当前模型和可用模型列表
+/switch-model
+```
+
+## 执行步骤
+
+当用户请求切换模型时，按以下步骤执行：
+
+### 1. 显示当前状态
+
+```bash
+openclaw models status
+```
+
+### 2. 切换模型
+
+```bash
+openclaw models set <provider>/<model-id>
+```
+
+### 3. 重启 Gateway
+
+```bash
+pkill -f "openclaw.*gateway"
+sleep 2
+openclaw gateway
+```
+
+### 4. 验证切换成功
+
+```bash
+openclaw models status | grep "Default"
+```
+
+## 配置要点速查
+
+| Provider | API 格式 | `reasoning` | 说明 |
+|----------|----------|-------------|------|
+| anthropic | `anthropic-messages` | `true` | Claude 原生格式 |
+| moonshot | `openai-completions` | `false` | Kimi，必须关闭 reasoning |
+| zai | `openai-completions` | `false` | GLM，必须关闭 reasoning |
+
+## 常见问题排查
+
+### Message ordering conflict
+
+**原因**: 使用 OpenAI 兼容 API 时 `reasoning: true` 导致消息格式不兼容
+
+**解决**: 修改 `~/.openclaw/openclaw.json` 中对应 provider 的 `reasoning: false`
+
+### 404 没找到对象
+
+**原因**: 使用了不支持的 API 端点（如 Kimi 不支持 `/v1/messages`）
+
+**解决**: 确保 provider 使用正确的 `api` 格式：
+- Kimi/GLM → `openai-completions`
+- Claude → `anthropic-messages`
+
+### 配置不生效
+
+**原因**: 主配置文件 `~/.openclaw/openclaw.json` 优先级高于 `models.json`
+
+**解决**: 直接修改 `~/.openclaw/openclaw.json` 中的 `models.providers` 配置
+
+## 可用模型列表
+
+当前配置的模型：
+
+| 模型 | Provider | 切换命令 |
+|------|----------|----------|
+| Claude Opus 4.5 | anthropic | `/switch-model anthropic/claude-opus-4-5` |
+| Claude Opus 4.6 | anthropic | `/switch-model anthropic/claude-opus-4-6` |
+| Kimi K2.5 | moonshot | `/switch-model moonshot/kimi-k2.5` |
+| GLM | zai | `/switch-model zai/glm-5` |
+
+## 配置文件位置
+
+- 主配置: `~/.openclaw/openclaw.json`
+- 认证信息: `~/.openclaw/agents/main/agent/auth-profiles.json`

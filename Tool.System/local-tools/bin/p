@@ -1,0 +1,84 @@
+#!/bin/bash
+# p - 项目快速跳转命令
+# 用法: p kb, p agents, p content
+
+PROJECTS_FILE="$HOME/.claude/projects.yaml"
+PROJECT_ROOT="/Users/comdir/SynologyDrive/0050Project"
+
+# 从 projects.yaml 读取快捷别名
+resolve_alias() {
+    local key="$1"
+
+    # 直接匹配 projects 中的键
+    local path=$(grep -A1 "^  ${key}:" "$PROJECTS_FILE" 2>/dev/null | grep "path:" | awk '{print $2}')
+    if [[ -n "$path" && -d "$path" ]]; then
+        echo "$path"
+        return 0
+    fi
+
+    # 匹配 shortcuts 中的别名
+    local shortcut=$(grep "^  ${key}:" "$PROJECTS_FILE" 2>/dev/null | awk '{print $2}')
+    if [[ -n "$shortcut" ]]; then
+        # shortcut 可能是路径也可能是项目名
+        if [[ "$shortcut" == /* ]]; then
+            if [[ -d "$shortcut" ]]; then
+                echo "$shortcut"
+                return 0
+            fi
+        else
+            # 递归解析项目名
+            resolve_alias "$shortcut"
+            return $?
+        fi
+    fi
+
+    return 1
+}
+
+if [[ $# -eq 0 ]]; then
+    echo "用法: p <项目名或别名>"
+    echo "示例: p kb, p agents, p content"
+    echo ""
+    echo "已注册的项目:"
+    grep "^  [a-z]" "$PROJECTS_FILE" | grep -v "path\|desc" | head -15
+    exit 1
+fi
+
+key="$1"
+
+# 1. 先尝试从 projects.yaml 解析
+path=$(resolve_alias "$key")
+if [[ -n "$path" ]]; then
+    if [[ -t 1 ]]; then
+        cd "$path" && pwd
+    else
+        echo "$path"
+    fi
+    exit 0
+fi
+
+# 2. 再尝试 zoxide 查询
+zpath=$(zoxide query "$key" 2>/dev/null)
+if [[ -n "$zpath" && -d "$zpath" ]]; then
+    if [[ -t 1 ]]; then
+        cd "$zpath" && pwd
+    else
+        echo "$zpath"
+    fi
+    exit 0
+fi
+
+# 3. 最后尝试直接匹配目录名
+for dir in "$PROJECT_ROOT"/*${key}* "$PROJECT_ROOT"/${key}*; do
+    if [[ -d "$dir" ]]; then
+        if [[ -t 1 ]]; then
+            cd "$dir" && pwd
+        else
+            echo "$dir"
+        fi
+        exit 0
+    fi
+done
+
+echo "未找到项目: $key" >&2
+exit 1

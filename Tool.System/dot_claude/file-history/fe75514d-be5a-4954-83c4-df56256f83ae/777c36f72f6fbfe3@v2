@@ -1,0 +1,541 @@
+#!/usr/bin/env python3
+"""
+班主任教练报告发布到飞书WIKI
+结构：主持反馈/20260313课程名班主任名/
+"""
+
+import os
+import re
+import json
+import time
+import requests
+from html.parser import HTMLParser
+from html import unescape
+
+# ===================== 配置 =====================
+APP_ID = "cli_a9f1c604d6b9dbc9"
+APP_SECRET = "JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8"
+SPACE_ID = "7600806729793686488"  # 知识空间ID
+
+# 报告文件列表
+REPORTS = [
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313情绪驱动产品创新 雯祯/雯祯-AI教练报告-V4-final.html",
+        "folder_name": "20260313情绪驱动产品创新_雯祯",
+        "doc_title": "雯祯-AI教练报告"
+    },
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4-final.html",
+        "folder_name": "20260313超级面试官_邬培莹",
+        "doc_title": "邬培莹-AI教练报告"
+    },
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务管理者养成 碧容/碧容-AI教练报告-V4-final.html",
+        "folder_name": "20260314业务管理者养成_碧容",
+        "doc_title": "碧容-AI教练报告"
+    },
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务优化与利润提升 阿左/阿左-AI教练报告-V4-final.html",
+        "folder_name": "20260314业务优化与利润提升_阿左",
+        "doc_title": "阿左-AI教练报告"
+    },
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314战略解码 丁芹伟/丁芹伟-AI教练报告-V4-final.html",
+        "folder_name": "20260314战略解码_丁芹伟",
+        "doc_title": "丁芹伟-AI教练报告"
+    },
+    {
+        "file": "/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314流程型组织 黄文静/黄文静-AI教练报告-V4-final.html",
+        "folder_name": "20260314流程型组织_黄文静",
+        "doc_title": "黄文静-AI教练报告"
+    }
+]
+
+# ===================== HTML 解析器 =====================
+class HTMLToBlocks(HTMLParser):
+    """将HTML解析为飞书blocks格式"""
+
+    def __init__(self):
+        super().__init__()
+        self.blocks = []
+        self.current_text = []
+        self.current_tag = None
+        self.current_style = {}
+        self.in_card = False
+        self.card_class = ""
+
+    def handle_starttag(self, tag, attrs):
+        attrs_dict = dict(attrs)
+        self.current_tag = tag
+
+        if tag == "div":
+            class_name = attrs_dict.get("class", "")
+            if "card" in class_name:
+                self.in_card = True
+                self.card_class = class_name
+
+        # 处理样式标签
+        if tag == "strong" or tag == "b":
+            self.current_style["bold"] = True
+        elif tag == "em" or tag == "i":
+            self.current_style["italic"] = True
+
+    def handle_endtag(self, tag):
+        if tag == "strong" or tag == "b":
+            self.current_style.pop("bold", None)
+        elif tag == "em" or tag == "i":
+            self.current_style.pop("italic", None)
+        elif tag == "div":
+            self.in_card = False
+        elif tag == "p":
+            # 段落结束，添加block
+            text = "".join(self.current_text).strip()
+            if text:
+                self.blocks.append(self._create_text_block(text))
+            self.current_text = []
+        elif tag in ["h1", "h2", "h3"]:
+            text = "".join(self.current_text).strip()
+            if text:
+                block_type = {"h1": 3, "h2": 4, "h3": 5}[tag]
+                self.blocks.append({
+                    "block_type": block_type,
+                    f"heading{tag[1]}": {"elements": [{"text_run": {"content": text}}]}
+                })
+            self.current_text = []
+        self.current_tag = None
+
+    def handle_data(self, data):
+        if data.strip():
+            # 处理样式
+            if self.current_style.get("bold"):
+                self.current_text.append(f"**{data}**")
+            else:
+                self.current_text.append(data)
+
+    def _create_text_block(self, text):
+        """创建文本block，支持加粗"""
+        elements = []
+        # 解析 **加粗** 格式
+        pattern = r'\*\*([^*]+)\*\*'
+        last_end = 0
+        for match in re.finditer(pattern, text):
+            if match.start() > last_end:
+                plain = text[last_end:match.start()]
+                if plain:
+                    elements.append({"text_run": {"content": plain, "text_element_style": {}}})
+            elements.append({"text_run": {"content": match.group(1), "text_element_style": {"bold": True}}})
+            last_end = match.end()
+        if last_end < len(text):
+            remaining = text[last_end:]
+            if remaining:
+                elements.append({"text_run": {"content": remaining, "text_element_style": {}}})
+
+        if not elements:
+            elements = [{"text_run": {"content": text, "text_element_style": {}}}]
+
+        return {"block_type": 2, "text": {"elements": elements}}
+
+
+def html_to_blocks(html_content):
+    """将HTML内容转换为飞书blocks"""
+    blocks = []
+
+    # 简单的HTML解析，提取关键内容
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # 遍历所有元素
+    for element in soup.descendants:
+        if element.name == 'div' and 'card' in element.get('class', []):
+            # 处理卡片内容
+            continue
+
+    # 直接提取纯文本并按段落分割
+    text = soup.get_text('\n')
+    lines = text.split('\n')
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+
+        # 根据内容特征判断block类型
+        if line.startswith('总分') or '/100' in line:
+            # 分数
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"📊 {line}", "text_element_style": {"bold": True}}}]}
+            })
+        elif line.startswith('一句话总评'):
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"💬 {line}", "text_element_style": {}}}]}
+            })
+        elif re.match(r'^[一二三四五六七八九十]+、', line):
+            # 章节标题
+            blocks.append({
+                "block_type": 4,  # heading2
+                "heading2": {"elements": [{"text_run": {"content": line}}]}
+            })
+        elif line.startswith('（') or '：' in line[:10]:
+            # 带标签的内容
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"▸ {line}", "text_element_style": {}}}]}
+            })
+        else:
+            # 普通文本
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": line, "text_element_style": {}}}]}
+            })
+
+    return blocks
+
+
+def html_to_blocks_v2(html_content):
+    """使用BeautifulSoup解析HTML为飞书blocks"""
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html_content, 'html.parser')
+    blocks = []
+
+    # 查找所有卡片
+    cards = soup.find_all('div', class_='card')
+
+    for card in cards:
+        # 处理分数卡片
+        score_big = card.find('div', class_='score-big')
+        if score_big:
+            score_text = score_big.get_text(strip=True)
+            score_label = card.find('div', class_='score-label')
+            label_text = score_label.get_text(strip=True) if score_label else "总分"
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"📊 {label_text}：{score_text}", "text_element_style": {"bold": True}}}]}
+            })
+
+        # 处理总评
+        summary = card.find('div', class_='summary')
+        if summary:
+            summary_text = summary.get_text(strip=True)
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"💬 {summary_text}", "text_element_style": {}}}]}
+            })
+
+        # 处理章节标题 (h2)
+        for h2 in card.find_all('h2'):
+            h2_text = h2.get_text(strip=True)
+            blocks.append({
+                "block_type": 4,
+                "heading2": {"elements": [{"text_run": {"content": h2_text}}]}
+            })
+
+        # 处理评分行
+        for row in card.find_all('div', class_='score-row'):
+            row_text = row.get_text(strip=True)
+            # 尝试分离分数
+            match = re.match(r'(.+?)（(\d+)%）(\d+/\d+)', row_text)
+            if match:
+                name, weight, score = match.groups()
+                blocks.append({
+                    "block_type": 2,
+                    "text": {"elements": [
+                        {"text_run": {"content": f"▸ {name}（{weight}%）", "text_element_style": {}}},
+                        {"text_run": {"content": f" {score}", "text_element_style": {"bold": True}}}
+                    ]}
+                })
+            else:
+                blocks.append({
+                    "block_type": 2,
+                    "text": {"elements": [{"text_run": {"content": f"▸ {row_text}", "text_element_style": {}}}]}
+                })
+
+        # 处理评分详情
+        for detail in card.find_all('div', class_='score-detail'):
+            detail_text = detail.get_text(strip=True)
+            blocks.append({
+                "block_type": 2,
+                "text": {"elements": [{"text_run": {"content": f"   {detail_text}", "text_element_style": {}}}]}
+            })
+
+        # 处理加分项
+        for bonus in card.find_all('div', class_='bonus-item'):
+            title = bonus.find('div', class_='bonus-title')
+            if title:
+                blocks.append({
+                    "block_type": 2,
+                    "text": {"elements": [{"text_run": {"content": f"🌟 {title.get_text(strip=True)}", "text_element_style": {"bold": True}}}]}
+                })
+            for detail in bonus.find_all('div', class_='bonus-detail'):
+                detail_text = detail.get_text(strip=True)
+                blocks.append({
+                    "block_type": 2,
+                    "text": {"elements": [{"text_run": {"content": f"   {detail_text}", "text_element_style": {}}}]}
+                })
+
+        # 处理反馈项
+        for item in card.find_all('div', class_='feedback-item'):
+            title = item.find('div', class_='feedback-title')
+            if title:
+                blocks.append({
+                    "block_type": 3,
+                    "heading1": {"elements": [{"text_run": {"content": title.get_text(strip=True)}}]}
+                })
+
+            content = item.find('div', class_='feedback-content')
+            if content:
+                for p in content.find_all('p'):
+                    p_text = p.get_text(strip=True)
+                    if p_text:
+                        blocks.append({
+                            "block_type": 2,
+                            "text": {"elements": [{"text_run": {"content": p_text, "text_element_style": {}}}]}
+                        })
+
+                # 处理建议
+                suggestion = content.find('div', class_='suggestion')
+                if suggestion:
+                    for child in suggestion.children:
+                        if hasattr(child, 'name'):
+                            if child.name == 'strong':
+                                blocks.append({
+                                    "block_type": 2,
+                                    "text": {"elements": [{"text_run": {"content": f"💡 {child.get_text(strip=True)}", "text_element_style": {"bold": True}}}]}
+                                })
+                            elif child.name == 'br':
+                                continue
+                            else:
+                                text = child.get_text(strip=True) if hasattr(child, 'get_text') else str(child).strip()
+                                if text:
+                                    blocks.append({
+                                        "block_type": 2,
+                                        "text": {"elements": [{"text_run": {"content": f"   {text}", "text_element_style": {}}}]}
+                                    })
+                        else:
+                            text = str(child).strip()
+                            if text and text != '<br/>':
+                                blocks.append({
+                                    "block_type": 2,
+                                    "text": {"elements": [{"text_run": {"content": text, "text_element_style": {}}}]}
+                                })
+
+    # 处理结尾
+    ending = soup.find('div', class_='ending')
+    if ending:
+        ending_text = ending.get_text(strip=True)
+        blocks.append({
+            "block_type": 2,
+            "text": {"elements": [{"text_run": {"content": f"\n🎊 {ending_text}", "text_element_style": {}}}]}
+        })
+
+    # 处理footer
+    footer = soup.find('div', class_='footer')
+    if footer:
+        footer_text = footer.get_text(strip=True)
+        blocks.append({
+            "block_type": 2,
+            "text": {"elements": [{"text_run": {"content": f"\n📄 {footer_text}", "text_element_style": {}}}]}
+        })
+
+    return blocks
+
+
+# ===================== API 调用 =====================
+class FeishuWiki:
+    def __init__(self, user_token=None, tenant_token=None):
+        self.user_token = user_token
+        self.tenant_token = tenant_token
+        self.base_url = "https://open.feishu.cn/open-apis"
+
+    def get_headers(self, use_user_token=True):
+        token = self.user_token if use_user_token and self.user_token else self.tenant_token
+        return {
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json"
+        }
+
+    def get_tenant_token(self):
+        """获取tenant_access_token"""
+        url = f"{self.base_url}/auth/v3/tenant_access_token/internal"
+        data = {
+            "app_id": APP_ID,
+            "app_secret": APP_SECRET
+        }
+        resp = requests.post(url, json=data)
+        result = resp.json()
+        if result.get("code") == 0:
+            self.tenant_token = result["tenant_access_token"]
+            return self.tenant_token
+        else:
+            print(f"获取tenant_token失败: {result}")
+            return None
+
+    def create_wiki_node(self, title, parent_token=None, obj_type="docx"):
+        """创建wiki节点"""
+        url = f"{self.base_url}/wiki/v2/spaces/{SPACE_ID}/nodes"
+        data = {
+            "node_type": "origin",
+            "obj_type": obj_type,
+            "title": title
+        }
+        if parent_token:
+            data["parent_node_token"] = parent_token
+
+        # 尝试用user_token
+        resp = requests.post(url, headers=self.get_headers(use_user_token=True), json=data)
+        result = resp.json()
+
+        if result.get("code") != 0:
+            print(f"用user_token创建失败: {result.get('msg')}, 尝试tenant_token...")
+            resp = requests.post(url, headers=self.get_headers(use_user_token=False), json=data)
+            result = resp.json()
+
+        if result.get("code") == 0:
+            node = result["data"]["node"]
+            return node["obj_token"], node["node_token"]
+        else:
+            print(f"创建wiki节点失败: {result}")
+            return None, None
+
+    def write_document(self, obj_token, blocks):
+        """写入文档内容"""
+        url = f"{self.base_url}/docx/v1/documents/{obj_token}/blocks/{obj_token}/children"
+
+        # 分批写入，每批50个
+        batch_size = 50
+        for i in range(0, len(blocks), batch_size):
+            batch = blocks[i:i+batch_size]
+            resp = requests.post(
+                url,
+                headers=self.get_headers(use_user_token=True),
+                json={"children": batch}
+            )
+            result = resp.json()
+
+            if result.get("code") != 0:
+                print(f"用user_token写入失败: {result.get('msg')}, 尝试tenant_token...")
+                resp = requests.post(
+                    url,
+                    headers=self.get_headers(use_user_token=False),
+                    json={"children": batch}
+                )
+                result = resp.json()
+
+            if result.get("code") != 0:
+                print(f"写入文档失败: {result}")
+                return False
+
+            time.sleep(0.3)  # 频率限制
+
+        return True
+
+
+# ===================== 主流程 =====================
+def main():
+    print("=" * 60)
+    print("班主任教练报告发布到飞书WIKI")
+    print("=" * 60)
+
+    # 初始化
+    wiki = FeishuWiki()
+
+    # 获取tenant_token
+    print("\n1. 获取访问令牌...")
+    tenant_token = wiki.get_tenant_token()
+    if not tenant_token:
+        print("❌ 获取tenant_token失败")
+        return
+    print("✅ tenant_token获取成功")
+
+    # 检查user_token（从环境变量或文件）
+    user_token = os.environ.get("FEISHU_USER_TOKEN")
+    if user_token:
+        wiki.user_token = user_token
+        print("✅ 找到user_token")
+    else:
+        print("⚠️ 未找到user_token，将尝试使用tenant_token（可能权限受限）")
+
+    # 创建父目录 "主持反馈"
+    print("\n2. 创建目录结构...")
+    parent_obj_token, parent_node_token = wiki.create_wiki_node("主持反馈")
+
+    if not parent_node_token:
+        print("❌ 创建父目录失败")
+        return
+    print(f"✅ 父目录创建成功: 主持反馈 (node_token: {parent_node_token})")
+
+    # 发布每个报告
+    print("\n3. 发布报告...")
+    results = []
+
+    for report in REPORTS:
+        print(f"\n处理: {report['folder_name']}")
+
+        # 读取HTML文件
+        try:
+            with open(report['file'], 'r', encoding='utf-8') as f:
+                html_content = f.read()
+        except FileNotFoundError:
+            print(f"  ❌ 文件不存在: {report['file']}")
+            continue
+
+        # 创建子目录
+        folder_obj_token, folder_node_token = wiki.create_wiki_node(
+            report['folder_name'],
+            parent_token=parent_node_token
+        )
+
+        if not folder_node_token:
+            print(f"  ❌ 创建子目录失败")
+            continue
+        print(f"  ✅ 子目录创建成功: {report['folder_name']}")
+
+        # 在子目录中创建报告文档
+        doc_obj_token, doc_node_token = wiki.create_wiki_node(
+            report['doc_title'],
+            parent_token=folder_node_token
+        )
+
+        if not doc_obj_token:
+            print(f"  ❌ 创建文档失败")
+            continue
+        print(f"  ✅ 文档创建成功: {report['doc_title']}")
+
+        # 转换HTML为blocks
+        blocks = html_to_blocks_v2(html_content)
+        print(f"  📝 解析出 {len(blocks)} 个blocks")
+
+        # 写入内容
+        if wiki.write_document(doc_obj_token, blocks):
+            doc_url = f"https://gaowei1.feishu.cn/wiki/{doc_node_token}"
+            print(f"  ✅ 内容写入成功")
+            print(f"  🔗 链接: {doc_url}")
+            results.append({
+                "name": report['folder_name'],
+                "url": doc_url,
+                "status": "成功"
+            })
+        else:
+            print(f"  ❌ 内容写入失败")
+            results.append({
+                "name": report['folder_name'],
+                "url": "",
+                "status": "失败"
+            })
+
+        time.sleep(0.5)  # 频率限制
+
+    # 输出结果
+    print("\n" + "=" * 60)
+    print("发布结果汇总")
+    print("=" * 60)
+    for r in results:
+        status_icon = "✅" if r['status'] == "成功" else "❌"
+        print(f"{status_icon} {r['name']}: {r['url'] or r['status']}")
+
+    print(f"\n知识库链接: https://gaowei1.feishu.cn/wiki/space/{SPACE_ID}")
+
+
+if __name__ == "__main__":
+    main()

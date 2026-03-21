@@ -1,0 +1,52 @@
+// test-chat.mjs - Playwright 自动化测试对话流程
+import { chromium } from 'playwright';
+
+(async () => {
+  const browser = await chromium.launch({ headless: false, slowMo: 500 });
+  const page = await browser.newPage();
+
+  await page.goto('http://localhost:5177/new?type=article');
+  await page.waitForTimeout(1500);
+
+  // 模拟对话
+  const turns = [
+    '一季度OGSM',
+    '都',  // 选全部受众
+    'ok',  // 确认字数
+    '一季度快结束了，对于OGSM应该做些啥',  // 特殊要求
+    '确认',  // 最终确认
+  ];
+
+  for (const msg of turns) {
+    // 等待输入框可用
+    await page.waitForSelector('input:not([disabled])', { timeout: 10000 });
+
+    // 输入并发送
+    await page.fill('input', msg);
+    await page.click('button:has-text("发送")');
+    console.log('发送:', msg);
+
+    // 等待 AI 回复
+    await page.waitForTimeout(3000);
+
+    // 检查提取的标签
+    const tags = await page.$$eval('.border-t .flex span', els =>
+      els.map(e => e.textContent).filter(t => t?.trim())
+    );
+    console.log('  标签:', tags.join(' | ') || '无');
+    console.log('---');
+  }
+
+  // 检查确认按钮是否出现
+  const confirmBtn = await page.$('button:has-text("确认需求")');
+  if (confirmBtn) {
+    console.log('✅ 测试通过：确认按钮出现');
+    await page.screenshot({ path: '/tmp/chat-success.png', fullPage: true });
+  } else {
+    console.log('❌ 测试失败：确认按钮未出现');
+    await page.screenshot({ path: '/tmp/chat-failed.png', fullPage: true });
+  }
+
+  // 保持浏览器打开
+  // await browser.close();
+})();

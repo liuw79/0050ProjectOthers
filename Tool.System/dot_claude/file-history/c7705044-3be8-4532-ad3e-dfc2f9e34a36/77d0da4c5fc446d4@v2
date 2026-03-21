@@ -1,0 +1,179 @@
+{
+  "projects": {
+    "kb": {
+      "name": "GW.KnowledgeBase",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.KnowledgeBase",
+      "description": "知识库"
+    },
+    "gc": {
+      "name": "GW.Content",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "description": "内容"
+    },
+    "con": {
+      "name": "GW.Content",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "description": "内容"
+    },
+    "da": {
+      "name": "GW.DataAnalysis",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.DataAnalysis",
+      "description": "数据分析"
+    },
+    "db": {
+      "name": "GW.Database",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Database",
+      "description": "数据库"
+    },
+    "gtm": {
+      "name": "GW.GTM",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.GTM",
+      "description": "GTM"
+    },
+    "html": {
+      "name": "GW.Html",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Html",
+      "description": "HTML"
+    },
+    "ig": {
+      "name": "GW.InfoGraphic",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.InfoGraphic",
+      "description": "信息图"
+    },
+    "invest": {
+      "name": "GW.Invest",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Invest",
+      "description": "投资"
+    },
+    "jf": {
+      "name": "GW.JingyingFenxi",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.JingyingFenxi",
+      "description": "经营分析"
+    },
+    "lm": {
+      "name": "GW.LearnMap",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.LearnMap",
+      "description": "学习地图"
+    },
+    "lp": {
+      "name": "GW.LessonPromotion",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.LessonPromotion",
+      "description": "课程推广"
+    },
+    "lessons": {
+      "name": "GW.Lessons",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Lessons",
+      "description": "课程"
+    },
+    "project": {
+      "name": "GW.Project",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Project",
+      "description": "项目"
+    },
+    "rm": {
+      "name": "GW.RoadMap",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.RoadMap",
+      "description": "路线图"
+    },
+    "sqlbot": {
+      "name": "GW.Sqlbot",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Sqlbot",
+      "description": "SQL机器人"
+    },
+    "trackr": {
+      "name": "GW.Trackr",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Trackr",
+      "description": "追踪器"
+    },
+    "ui": {
+      "name": "GW.UI",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.UI",
+      "description": "UI"
+    },
+    "csv": {
+      "name": "GW.Csv",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Csv",
+      "description": "CSV"
+    },
+    "classroom": {
+      "name": "GW.Classroom",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.Classroom",
+      "description": "课堂"
+    },
+    "ascend": {
+      "name": "GW.AscendPlan",
+      "path": "/Users/comdir/SynologyDrive/0050Project/GW.AscendPlan",
+      "description": "攀升计划"
+    },
+    "br": {
+      "name": "LW.BloomReader",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.BloomReader",
+      "description": "Bloom阅读器"
+    },
+    "ebook": {
+      "name": "LW.eBook",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.eBook",
+      "description": "电子书"
+    },
+    "fy": {
+      "name": "LW.FeiYang",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.FeiYang",
+      "description": "飞扬"
+    },
+    "reading": {
+      "name": "LW.Reading",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.Reading",
+      "description": "阅读"
+    },
+    "wp": {
+      "name": "LW.wePark",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.wePark",
+      "description": "wePark"
+    },
+    "wxwm": {
+      "name": "LW.wxWaterMark",
+      "path": "/Users/comdir/SynologyDrive/0050Project/LW.wxWaterMark",
+      "description": "微信水印"
+    },
+    "ts": {
+      "name": "Tool.System",
+      "path": "/Users/comdir/SynologyDrive/0050Project/Tool.System",
+      "description": "系统工具"
+    },
+    "sys": {
+      "name": "Tool.System",
+      "path": "/Users/comdir/SynologyDrive/0050Project/Tool.System",
+      "description": "系统工具"
+    },
+    "tas": {
+      "name": "Tool.Agent-S",
+      "path": "/Users/comdir/SynologyDrive/0050Project/Tool.Agent-S",
+      "description": "Agent-S"
+    },
+    "td": {
+      "name": "Tool.Docs",
+      "path": "/Users/comdir/SynologyDrive/0050Project/Tool.Docs",
+      "description": "文档工具"
+    },
+    "ai": {
+      "name": "AI.long-running-agents",
+      "path": "/Users/comdir/SynologyDrive/0050Project/AI.long-running-agents",
+      "description": "AI长运行代理"
+    },
+    "bu": {
+      "name": "browser-use",
+      "path": "/Users/comdir/SynologyDrive/0050Project/browser-use",
+      "description": "浏览器使用"
+    },
+    "kt": {
+      "name": "KK.Time",
+      "path": "/Users/comdir/SynologyDrive/0050Project/KK.Time",
+      "description": "KK时间"
+    },
+    "yf": {
+      "name": "YY.Fangcheng",
+      "path": "/Users/comdir/SynologyDrive/0050Project/YY.Fangcheng",
+      "description": "方程"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Ignore Hammerspoon third-party Spoons
+hammerspoon/Spoons/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VSCode settings
+.vscode/
+
+# Hammerspoon runtime files
+hammerspoon/clipboard_history*.json
+hammerspoon/*_Conflict.lua
+hammerspoon/init_broken_*.lua
+hammerspoon/init_modified_*.lua
+hammerspoon/test_*
+hammerspoon/gesture_test.lua
+hammerspoon/gesture_verification.lua
+hammerspoon/window_close_test.lua
+node_modules

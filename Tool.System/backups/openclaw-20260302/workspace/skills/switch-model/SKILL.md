@@ -1,0 +1,217 @@
+---
+name: switch-model
+description: Switch OpenClaw default model with config validation and gateway restart. Use when user wants to change the AI model (Claude, Kimi, GLM, etc.).
+metadata:
+  openclaw:
+    emoji: "🔄"
+    os: ["darwin", "linux"]
+    requires: { bins: ["openclaw"] }
+---
+
+# Switch Model
+
+一键切换 OpenClaw 默认模型，自动验证配置并重启 Gateway。
+
+## Quick Start
+
+```bash
+# 切换到指定模型
+/switch-model moonshot/kimi-k2.5
+/switch-model anthropic/claude-opus-4-5
+/switch-model zai/glm-5
+
+# 不带参数则显示当前模型和可用模型列表
+/switch-model
+```
+
+## 执行步骤
+
+当用户请求切换模型时，按以下步骤执行：
+
+### 1. 显示当前状态
+
+```bash
+openclaw models status
+```
+
+### 2. 切换模型
+
+```bash
+openclaw models set <provider>/<model-id>
+```
+
+### 3. 重启 Gateway
+
+```bash
+pkill -f "openclaw.*gateway"
+sleep 2
+openclaw gateway
+```
+
+### 4. 验证切换成功
+
+```bash
+openclaw models status | grep "Default"
+```
+
+---
+
+## 配置要点（关键！）
+
+### Provider 配置规范
+
+各模型使用对应的 API 格式：
+
+| Provider | baseUrl | api | reasoning |
+|----------|---------|-----|-----------|
+| anthropic (CloseAI代理) | `https://api.openai-proxy.org/v1` | `openai-completions` | `false` |
+| moonshot (Kimi) | `https://api.moonshot.cn/v1` | `openai-completions` | `false` |
+| zai (GLM) | `https://open.bigmodel.cn/api/anthropic` | `anthropic-messages` | `false` |
+
+### 认证配置
+
+每个 provider 必须在 `~/.openclaw/agents/main/agent/auth-profiles.json` 中配置认证：
+
+```json
+{
+  "profiles": {
+    "anthropic:default": {
+      "type": "api_key",
+      "provider": "anthropic",
+      "key": "sk-xxx..."
+    },
+    "moonshot:default": {
+      "type": "api_key",
+      "provider": "moonshot",
+      "key": "sk-xxx..."
+    },
+    "zai:default": {
+      "type": "api_key",
+      "provider": "zai",
+      "key": "xxx..."
+    }
+  },
+  "lastGood": {
+    "anthropic": "anthropic:default",
+    "moonshot": "moonshot:default",
+    "zai": "zai:default"
+  }
+}
+```
+
+### 主配置文件
+
+`~/.openclaw/openclaw.json` 中的 provider 配置示例：
+
+```json
+{
+  "models": {
+    "providers": {
+      "anthropic": {
+        "baseUrl": "https://api.openai-proxy.org/v1",
+        "api": "openai-completions",
+        "models": [{ "id": "claude-opus-4-5", "reasoning": false }]
+      },
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "api": "openai-completions",
+        "models": [{ "id": "kimi-k2.5", "reasoning": false }]
+      },
+      "zai": {
+        "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+        "api": "anthropic-messages",
+        "models": [{ "id": "glm-5", "reasoning": false }]
+      }
+    }
+  }
+}
+```
+
+---
+
+## 常见问题排查
+
+### No API key found for provider
+
+**原因**: auth-profiles.json 中缺少该 provider 的认证信息
+
+**解决**: 添加认证配置
+```bash
+# 检查现有认证
+cat ~/.openclaw/agents/main/agent/auth-profiles.json | jq '.profiles | keys'
+
+# 如果缺少 anthropic，手动添加
+```
+
+### Message ordering conflict
+
+**原因**: `reasoning: true` 导致消息格式不兼容
+
+**解决**: 设置 `reasoning: false`
+
+### 404 没找到对象
+
+**原因**: baseUrl 或 api 格式配置错误
+
+**解决**:
+- Claude (CloseAI): `openai-completions` + `/v1`
+- Kimi: `openai-completions` + `/v1`
+- GLM: `anthropic-messages` + `/api/anthropic`
+
+### invalid token (GLM格式)
+
+**原因**: 代理内部路由错误，或 baseUrl 配置错误
+
+**解决**:
+- CloseAI 代理使用 `https://api.openai-proxy.org/v1`（不是 `/anthropic`）
+- 确保认证信息正确
+
+### 400 currently model xxx is not support
+
+**原因**: 模型 ID 格式错误
+
+**解决**: 使用正确的 provider/model 格式
+- ❌ 错误: `zhipu:glm-5`
+- ✅ 正确: `zai/glm-5`
+
+**验证命令**:
+```bash
+# 先检查配置中定义的模型
+openclaw config get agents.defaults.models | grep -i glm
+
+# 使用 config set 切换（不是 models set）
+openclaw config set agents.defaults.model.primary zai/glm-5
+openclaw gateway restart --force
+```
+
+---
+
+## 可用模型列表
+
+| 模型 | Provider | 切换命令 | 状态 |
+|------|----------|----------|------|
+| Claude Opus 4.5 | anthropic | `/switch-model anthropic/claude-opus-4-5` | ✅ |
+| Claude Opus 4.6 | anthropic | `/switch-model anthropic/claude-opus-4-6` | ✅ |
+| Kimi K2.5 | moonshot | `/switch-model moonshot/kimi-k2.5` | ⚠️ 工具调用偶发异常 |
+| GLM-5 | zai | `/switch-model zai/glm-5` | ✅ 2026-03-01 验证 |
+
+> ⚠️ Kimi K2.5 在调用飞书日历等工具时偶发参数格式错误 (`unexpected_state`)，建议优先使用 Claude 或 GLM-5。
+
+---
+
+## 配置文件位置
+
+| 文件 | 用途 |
+|------|------|
+| `~/.openclaw/openclaw.json` | 主配置（providers、models） |
+| `~/.openclaw/agents/main/agent/auth-profiles.json` | 认证信息（API keys） |
+| `~/.openclaw/agents/main/agent/models.json` | 辅助模型配置（优先级较低） |
+
+---
+
+## 核心原则
+
+1. **使用正确的 API 格式** - Claude/Kimi 用 `openai-completions`，GLM 用 `anthropic-messages`
+2. **关闭 reasoning** - `reasoning: false`（避免消息格式冲突）
+3. **认证必须配置** - 在 auth-profiles.json 中添加每个 provider 的 key
+4. **主配置优先** - openclaw.json 优先级高于 models.json

@@ -1,0 +1,379 @@
+// server/src/lib/segmenter.js
+import { ai } from './ai.js';
+
+// 配置常量
+const CHUNK_SIZE = 20000; // 每次处理的文本块大小（2万字）
+const MIN_SEGMENT_SIZE = 8000; // 段落最小字数
+const MAX_SEGMENT_SIZE = 15000; // 段落最大字数
+const TARGET_SEGMENT_SIZE = 10000; // 目标段落字数
+const MIN_BOUNDARY_GAP = 5000; // 最小边界间距
+
+/**
+ * 语义切分器类
+ * 实现两阶段处理：
+ * 1. 滚动识别语义边界
+ * 2. 基于边界划分段落并生成标题和摘要
+ */
+export class Segmenter {
+  constructor(options = {}) {
+    this.minSegmentSize = options.minSegmentSize || MIN_SEGMENT_SIZE;
+    this.maxSegmentSize = options.maxSegmentSize || MAX_SEGMENT_SIZE;
+    this.targetSegmentSize = options.targetSegmentSize || TARGET_SEGMENT_SIZE;
+    this.chunkSize = options.chunkSize || CHUNK_SIZE;
+    this.minBoundaryGap = options.minBoundaryGap || MIN_BOUNDARY_GAP;
+  }
+
+  /**
+   * 阶段1：识别文本中的语义边界点
+   * @param {string} text - 完整文本
+   * @returns {Promise<number[]>} 边界位置数组（字符位置）
+   */
+  async identifyBoundaries(text) {
+    const boundaries = [];
+    const totalLength = text.length;
+
+    // 按 2 万字分块处理
+    for (let start = 0; start < totalLength; start += this.chunkSize) {
+      const end = Math.min(start + this.chunkSize, totalLength);
+      const chunk = text.slice(start, end);
+
+      // 跳过太短的块
+      if (chunk.length < this.minSegmentSize / 2) continue;
+
+      console.log(`分析文本块 [${start}, ${end})，共 ${chunk.length} 字...`);
+
+      // 用 AI 识别边界点
+      const chunkBoundaries = await this._identifyChunkBoundaries(chunk, start);
+      boundaries.push(...chunkBoundaries);
+
+      // 避免请求过快
+      await this._sleep(500);
+    }
+
+    // 去重并排序
+    const uniqueBoundaries = [...new Set(boundaries)].sort((a, b) => a - b);
+    console.log(`识别到 ${uniqueBoundaries.length} 个语义边界点`);
+
+    return uniqueBoundaries;
+  }
+
+  /**
+   * 识别单个文本块内的边界点
+   */
+  async _identifyChunkBoundaries(chunk, offset) {
+    const prompt = `你是一个专业的文本分析专家。请分析以下课程逐字稿片段，找出主题转换的边界位置。
+
+文本片段（共 ${chunk.length} 字）：
+"""
+${chunk.slice(0, 15000)}
+"""
+
+请找出所有主题转换的边界点。主题转换的特征包括：
+1. 从理论讲解切换到案例分析
+2. 开始一个新的话题或概念
+3. "接下来我们讲..."、"下面来看..."等过渡语
+4. 场景切换（如从课堂讨论切换到实操演示）
+
+返回 JSON 格式：
+{
+  "boundaries": [
+    {
+      "position": 字符位置（相对于这段文本开头的偏移量，0表示开头）,
+      "reason": "简短说明为什么这里是边界"
+    }
+  ]
+}
+
+注意：
+- position 是相对于这段文本开头的偏移量（从 0 开始）
+- 只返回明显的主题转换点，不要过于细碎
+- 如果整段都是同一主题，可以返回空数组`;
+
+    try {
+      const result = await ai.generateJSON(prompt, { maxTokens: 2000 });
+      if (!result || !Array.isArray(result.boundaries)) {
+        return [];
+      }
+
+      // 转换为全局位置
+      return result.boundaries
+        .filter(b => typeof b.position === 'number' && b.position > 0)
+        .map(b => offset + b.position);
+    } catch (error) {
+      console.error('识别边界失败:', error.message);
+      return [];
+    }
+  }
+
+  /**
+   * 阶段2：基于边界划分段落
+   * @param {string} text - 完整文本
+   * @param {number[]} boundaries - 边界位置数组
+   * @returns {Array<{start: number, end: number}>} 段落数组
+   */
+  createSegments(text, boundaries) {
+    const segments = [];
+    const totalLength = text.length;
+
+    // 添加文本开头和结尾作为边界
+    const allBoundaries = [0, ...boundaries, totalLength];
+
+    // 合并过近的边界
+    const mergedBoundaries = this._mergeCloseBoundaries(allBoundaries);
+
+    // 根据边界创建段落
+    for (let i = 0; i < mergedBoundaries.length - 1; i++) {
+      const start = mergedBoundaries[i];
+      const end = mergedBoundaries[i + 1];
+      const length = end - start;
+
+      // 如果段落太短，尝试合并到下一个
+      if (length < this.minSegmentSize && i < mergedBoundaries.length - 2) {
+        continue;
+      }
+
+      // 如果段落太长，尝试在中间分割
+      if (length > this.maxSegmentSize) {
+        const subSegments = this._splitLongSegment(text, start, end);
+        segments.push(...subSegments);
+      } else {
+        segments.push({ start, end });
+      }
+    }
+
+    console.log(`划分为 ${segments.length} 个段落`);
+    return segments;
+  }
+
+  /**
+   * 合并距离过近的边界点
+   */
+  _mergeCloseBoundaries(boundaries) {
+    if (boundaries.length <= 2) return boundaries;
+
+    const merged = [boundaries[0]];
+    for (let i = 1; i < boundaries.length - 1; i++) {
+      const prev = merged[merged.length - 1];
+      const curr = boundaries[i];
+
+      // 如果距离上一个边界太近，跳过
+      if (curr - prev < this.minBoundaryGap) {
+        continue;
+      }
+      merged.push(curr);
+    }
+    merged.push(boundaries[boundaries.length - 1]);
+
+    return merged;
+  }
+
+  /**
+   * 分割过长的段落（简单按段落符分割）
+   */
+  _splitLongSegment(text, start, end) {
+    const segments = [];
+    const content = text.slice(start, end);
+    const targetSize = this.targetSegmentSize;
+
+    // 按双换行符分割
+    const paragraphs = content.split(/\n\n+/);
+    let currentStart = start;
+    let currentLength = 0;
+
+    for (const para of paragraphs) {
+      currentLength += para.length + 2; // +2 for \n\n
+
+      if (currentLength >= targetSize) {
+        segments.push({
+          start: currentStart,
+          end: start + currentLength - para.length - 2
+        });
+        currentStart = start + currentLength - para.length - 2;
+        currentLength = para.length + 2;
+      }
+    }
+
+    // 添加最后一个段落
+    if (currentLength > 0) {
+      segments.push({ start: currentStart, end });
+    }
+
+    return segments.length > 0 ? segments : [{ start, end }];
+  }
+
+  /**
+   * 为段落生成标题和摘要
+   * @param {string} text - 段落文本
+   * @param {string} courseName - 课程名称
+   * @param {number} index - 段落序号
+   * @returns {Promise<{title: string, summary: string, keywords: string[]}>}
+   */
+  async generateSegmentMeta(text, courseName, index) {
+    // 截取前 8000 字进行分析（避免超出 token 限制）
+    const analysisText = text.slice(0, 8000);
+
+    const prompt = `你是一个专业的课程内容分析师。请分析以下课程段落，生成标题、摘要和关键词。
+
+课程名称：${courseName}
+段落序号：第 ${index} 段
+
+段落内容（共 ${text.length} 字，以下为前 8000 字）：
+"""
+${analysisText}
+"""
+
+请生成：
+1. 标题（15-25字）：简洁概括这段内容的主题
+2. 摘要（约300字）：提炼核心观点、案例、方法论
+3. 关键词（3-5个）：便于检索的标签
+
+返回 JSON 格式：
+{
+  "title": "标题文本",
+  "summary": "摘要文本...",
+  "keywords": ["关键词1", "关键词2", "关键词3"]
+}`;
+
+    try {
+      const result = await ai.generateJSON(prompt, { maxTokens: 1500 });
+      if (!result) {
+        return this._getDefaultMeta(text, index);
+      }
+
+      return {
+        title: result.title || `第${index}段：课程内容`,
+        summary: result.summary || '',
+        keywords: result.keywords || []
+      };
+    } catch (error) {
+      console.error(`生成段落${index}元数据失败:`, error.message);
+      return this._getDefaultMeta(text, index);
+    }
+  }
+
+  /**
+   * 生成默认的元数据
+   */
+  _getDefaultMeta(text, index) {
+    // 从文本开头提取可能的标题
+    const firstLine = text.split('\n')[0].slice(0, 30);
+    return {
+      title: `第${index}段：${firstLine}...`,
+      summary: text.slice(0, 300) + '...',
+      keywords: []
+    };
+  }
+
+  /**
+   * 生成课程概述
+   * @param {string} text - 课程完整文本
+   * @param {string} courseName - 课程名称
+   * @returns {Promise<string>} 课程概述（约500字）
+   */
+  async generateCourseOverview(text, courseName) {
+    // 从多个位置采样，了解课程整体内容
+    const samples = [];
+    const samplePositions = [0, 0.25, 0.5, 0.75];
+    const sampleSize = 2000;
+
+    for (const pos of samplePositions) {
+      const start = Math.floor(text.length * pos);
+      samples.push(text.slice(start, start + sampleSize));
+    }
+
+    const prompt = `你是一个专业的课程分析师。请根据以下课程内容采样，生成课程概述。
+
+课程名称：${courseName}
+课程总长度：${text.length} 字
+
+内容采样：
+"""
+${samples.join('\n\n---\n\n')}
+"""
+
+请生成一段约500字的课程概述，包括：
+1. 课程核心主题和解决的问题
+2. 主要内容框架（3-5个要点）
+3. 适合的学习对象
+4. 学习后的收获
+
+只输出概述文本，不要其他内容。`;
+
+    try {
+      const overview = await ai.generate(prompt, { maxTokens: 1000 });
+      return overview || '';
+    } catch (error) {
+      console.error('生成课程概述失败:', error.message);
+      return '';
+    }
+  }
+
+  /**
+   * 完整处理一门课程
+   * @param {string} text - 课程完整文本
+   * @param {string} courseName - 课程名称
+   * @returns {Promise<{overview: string, segments: Array}>}
+   */
+  async processCourse(text, courseName) {
+    console.log(`\n开始处理课程: ${courseName}`);
+    console.log(`文本长度: ${text.length} 字`);
+
+    // 生成课程概述
+    console.log('\n1. 生成课程概述...');
+    const overview = await this.generateCourseOverview(text, courseName);
+
+    // 阶段1：识别语义边界
+    console.log('\n2. 识别语义边界...');
+    const boundaries = await this.identifyBoundaries(text);
+
+    // 阶段2：划分段落
+    console.log('\n3. 划分段落...');
+    const segmentRanges = this.createSegments(text, boundaries);
+
+    // 为每个段落生成元数据
+    console.log('\n4. 生成段落元数据...');
+    const segments = [];
+
+    for (let i = 0; i < segmentRanges.length; i++) {
+      const { start, end } = segmentRanges[i];
+      const content = text.slice(start, end).trim();
+
+      if (content.length < this.minSegmentSize / 2) {
+        console.log(`  跳过段落 ${i + 1}（内容过短: ${content.length} 字）`);
+        continue;
+      }
+
+      console.log(`  处理段落 ${i + 1}/${segmentRanges.length} (${content.length} 字)...`);
+
+      const meta = await this.generateSegmentMeta(content, courseName, i + 1);
+
+      segments.push({
+        index: i + 1,
+        title: meta.title,
+        summary: meta.summary,
+        content: content,
+        charCount: content.length,
+        keywords: meta.keywords
+      });
+
+      // 避免请求过快
+      await this._sleep(500);
+    }
+
+    console.log(`\n处理完成！共生成 ${segments.length} 个段落`);
+
+    return {
+      overview,
+      segments
+    };
+  }
+
+  /**
+   * 工具函数：延时
+   */
+  _sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+}
+
+export const segmenter = new Segmenter();

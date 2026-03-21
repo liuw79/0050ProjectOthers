@@ -1,0 +1,100 @@
+Chrome书签重复检测报告
+==================================================
+检测时间: 2025-09-23 17:56:36
+书签文件: /Users/comdir/Library/Application Support/Google/Chrome/Default/Bookmarks
+总书签数: 245
+重复组数: 6
+重复书签数: 6
+
+==================================================
+
+重复组 1: url_duplicate
+重复数量: 2
+重复URL: https://leetcode-cn.com/
+------------------------------
+  [1] 标题: (1) 力扣（LeetCode）官网 - 全球极客挚爱的技术成长平台
+      URL: https://leetcode-cn.com/
+      路径: bookmark_bar/书签栏/学习
+      添加时间: 13237736204034245
+
+  [2] 标题: (1) 力扣（LeetCode）官网 - 全球极客挚爱的技术成长平台
+      URL: https://leetcode-cn.com/
+      路径: bookmark_bar/书签栏/学习/学习IT
+      添加时间: 13237736204000000
+
+
+重复组 2: url_duplicate
+重复数量: 2
+重复URL: http://www.tuling123.com/login/index.jhtml?redirecturl=%2fmember%2fcenter%2findex.jhtml
+------------------------------
+  [1] 标题: 登录页面
+      URL: http://www.tuling123.com/login/index.jhtml?redirectUrl=%2Fmember%2Fcenter%2Findex.jhtml
+      路径: bookmark_bar/书签栏/学习/Reference
+      添加时间: 13118216840000000
+
+  [2] 标题: 图灵机器人
+      URL: http://www.tuling123.com/login/index.jhtml?redirectUrl=%2Fmember%2Fcenter%2Findex.jhtml
+      路径: bookmark_bar/书签栏/效率&审美/Plantform
+      添加时间: 13118216847000000
+
+
+重复组 3: url_duplicate
+重复数量: 2
+重复URL: http://developer.51cto.com/art/201512/501031_all.htm
+------------------------------
+  [1] 标题: 最新Web设计工具帮你更快建立起自己的网站成品 - 51CTO.COM
+      URL: http://developer.51cto.com/art/201512/501031_all.htm
+      路径: bookmark_bar/书签栏/学习/教程
+      添加时间: 13094270704000000
+
+  [2] 标题: 最新Web设计工具帮你更快建立起自己的网站成品 - 51CTO.COM
+      URL: http://developer.51cto.com/art/201512/501031_all.htm
+      路径: bookmark_bar/书签栏/效率&审美/工具介绍文章
+      添加时间: 13108023949000000
+
+
+重复组 4: url_duplicate
+重复数量: 2
+重复URL: http://www.magazin.com/home.html
+------------------------------
+  [1] 标题: Ausgew?hlt gute Produkte - MAGAZIN
+      URL: http://www.magazin.com/home.html
+      路径: bookmark_bar/书签栏/学习/字体&审美
+      添加时间: 13143482337000000
+
+  [2] 标题: Ausgew?hlt gute Produkte - MAGAZIN
+      URL: http://www.magazin.com/home.html
+      路径: bookmark_bar/书签栏/学习/字体&审美
+      添加时间: 13143482337000000
+
+
+重复组 5: url_duplicate
+重复数量: 2
+重复URL: http://ocw.nctu.edu.tw/course_detail-v.php?bgid=1&gid=1&nid=271
+------------------------------
+  [1] 标题: 國立交通大學開放式課程(OpenCourseWare, OCW)
+      URL: http://ocw.nctu.edu.tw/course_detail-v.php?bgid=1&gid=1&nid=271
+      路径: bookmark_bar/书签栏/学习/线性代数
+      添加时间: 13217065971000000
+
+  [2] 标题: 國立交通大學開放式課程(OpenCourseWare, OCW)
+      URL: http://ocw.nctu.edu.tw/course_detail-v.php?bgid=1&gid=1&nid=271
+      路径: bookmark_bar/书签栏/学习/数学&科学
+      添加时间: 13217065971000000
+
+
+重复组 6: url_duplicate
+重复数量: 2
+重复URL: https://shimo.im/docs/ddrjjwxrrcwwgjhv
+------------------------------
+  [1] 标题: 管理的实践
+      URL: https://shimo.im/docs/dDrJJWXRRCwwGJHv
+      路径: bookmark_bar/书签栏/学习
+      添加时间: 13240590696142129
+
+  [2] 标题: 管理的实践
+      URL: https://shimo.im/docs/dDrJJWXRRCwwGJHv
+      路径: bookmark_bar/书签栏/学习/人文社科
+      添加时间: 13240590696000000
+
+

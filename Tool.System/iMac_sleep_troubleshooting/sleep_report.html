@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMac 睡眠状态监控报告</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color: #1a1a1a; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: 600; }
+        tr:hover { background-color: #f5f5f5; }
+        .footer { text-align: center; margin-top: 20px; font-size: 0.9em; color: #888; }
+        .placeholder { color: #999; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iMac 睡眠状态监控报告</h1>
+        <p>本报告统计了阻止iMac进入睡眠状态的进程及其频率。</p>
+        
+        <h2>睡眠阻止者统计</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>进程名 (PID)</th>
+                    <th>阻止次数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>coreaudiod</td><td>6</td></tr>
+<tr><td>bluetoothd</td><td>4</td></tr>
+<tr><td>UserEventAgent</td><td>1</td></tr>
+
+                <tr class="placeholder"><td colspan="2">暂无数据</td></tr>
+            </tbody>
+        </table>
+
+        <h2>原始日志摘要</h2>
+        <pre><code>[2025-07-01 14:10:53] 未发现睡眠阻止者
+[2025-07-01 14:12:02] 未发现睡眠阻止者
+[2025-07-01 14:12:35] 睡眠被阻止，来源: coreaudiod,UserEventAgent
+[2025-07-01 14:23:31] 睡眠被阻止，来源: bluetoothd,coreaudiod
+检测到 bluetoothd 阻止睡眠，将重启蓝牙服务...
+[2025-07-01 14:23:31] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-01 14:23:31] 错误：蓝牙服务重启失败。
+检测到 coreaudiod 阻止睡眠，将卸载音频服务以允许休眠...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-01 22:24:14] 睡眠被阻止，来源: bluetoothd,coreaudiod
+检测到 bluetoothd 阻止睡眠，将重启蓝牙服务...
+[2025-07-01 22:24:14] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-01 22:24:14] 错误：蓝牙服务重启失败。
+检测到 coreaudiod 阻止睡眠，检查是否为持久性断言...
+将卸载音频服务以允许休眠...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-03 08:48:30] [WARN] 睡眠被阻止，来源: bluetoothd,coreaudiod
+[2025-07-03 08:48:30] [INFO] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-03 08:48:30] [ERROR] 蓝牙服务重启失败。请检查SIP状态或系统日志。
+[2025-07-03 08:48:30] [WARN] 检测到 coreaudiod 阻止睡眠，检查是否为持久性断言...
+[2025-07-03 08:48:30] [INFO] 未发现引用已终止进程的持久性断言。尝试正常卸载音频服务...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-03 08:48:38] [INFO] coreaudiod 服务已卸载。
+[2025-07-03 08:48:38] [INFO] HTML报告已成功生成: /Users/liuwei/SynologyDrive/0050Project/Tool.System/iMac_sleep_troubleshooting/sleep_report.html
+[2025-07-03 08:59:16] [WARN] 睡眠被阻止，来源: bluetoothd,coreaudiod
+[2025-07-03 08:59:16] [INFO] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-03 08:59:16] [ERROR] 蓝牙服务重启失败。请检查SIP状态或系统日志。
+[2025-07-03 08:59:16] [WARN] 检测到 coreaudiod 阻止睡眠，将执行强制重启以清除所有音频断言。
+[2025-07-03 08:59:16] [INFO] 正在强制终止 coreaudiod (PID: 193) ...
+[2025-07-03 08:59:51] [ERROR] 无法终止 coreaudiod (PID: 193)。可能需要检查 sudo 权限。
+[2025-07-03 08:59:51] [INFO] HTML报告已成功生成: /Users/liuwei/SynologyDrive/0050Project/Tool.System/iMac_sleep_troubleshooting/sleep_report.html
+[2025-07-03 08:59:59] [WARN] 睡眠被阻止，来源: coreaudiod
+[2025-07-03 08:59:59] [WARN] 检测到 coreaudiod 阻止睡眠，将执行强制重启以清除所有音频断言。
+[2025-07-03 08:59:59] [INFO] 正在强制终止 coreaudiod (PID: 193) ...
+[2025-07-03 09:00:04] [ERROR] 无法终止 coreaudiod (PID: 193)。可能需要检查 sudo 权限。
+</code></pre>
+
+        <div class="footer">
+            报告生成时间: 2025-07-03 09:00:04
+        </div>
+    </div>
+</body>
+</html>

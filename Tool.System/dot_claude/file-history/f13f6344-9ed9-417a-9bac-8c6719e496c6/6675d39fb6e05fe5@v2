@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>杨哲主持录音评估</title>
+<style>
+  body{
+    margin:0;
+    padding:0;
+    background:#f7f7f7;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",PingFang SC,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+    color:#111;
+    line-height:1.6;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:16px;
+  }
+  .card{
+    background:#ffffff;
+    border-radius:14px;
+    padding:20px 16px;
+  }
+  h1,h2,h3,p{
+    margin:0 0 12px 0;
+  }
+  .score{
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .sub{
+    font-size:14px;
+    color:#666;
+    margin-bottom:18px;
+  }
+  .quote{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:20px;
+  }
+  .section-title{
+    font-size:18px;
+    font-weight:700;
+    margin-top:18px;
+    margin-bottom:12px;
+    padding-top:4px;
+  }
+  .score-row{
+    display:block;
+    padding:12px 0;
+    border-top:1px solid #ececec;
+  }
+  .score-row:first-of-type{
+    border-top:none;
+  }
+  .row-head{
+    overflow:hidden;
+    margin-bottom:6px;
+  }
+  .row-left{
+    float:left;
+    font-size:15px;
+    font-weight:700;
+    color:#111;
+  }
+  .row-right{
+    float:right;
+    font-size:15px;
+    font-weight:700;
+    color:#111;
+  }
+  .muted{
+    font-size:14px;
+    color:#555;
+  }
+  .advice{
+    font-size:14px;
+    color:#222;
+    margin-top:6px;
+  }
+  .tag{
+    display:inline-block;
+    font-size:12px;
+    color:#666;
+    background:#f1f1f1;
+    border-radius:999px;
+    padding:2px 8px;
+    margin-bottom:10px;
+  }
+  .end{
+    margin-top:18px;
+    font-size:14px;
+    color:#444;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="tag">班主任评估｜超级转化率</div>
+      <div class="score">68分</div>
+      <div class="sub">结论：未过基准线，核心原因是高维标准动作不完整、课程核心价值表达偏弱、第二天结尾几乎无升华与强邀约。</div>
+
+      <p class="quote">杨哲，你的开场信息密度不错，老师与方法背书到位，但"标准信息传达"不够稳，导致这场主持更像课程开场，而不是一场完整的高维品牌开场。</p>
+
+      <div class="section-title">分项评分</div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">1. 高维五句话</div>
+          <div class="row-right">20/30</div>
+        </div>
+        <div class="muted">扣分点：提到了"实战商学院"、投资机构背书、课程所处阶段；但"科学创业倡导者""实战三标准""统一语言"缺失；投资机构仅说"红杉、天图等"，未形成"12家机构背书"的完整势能。</div>
+        <div class="advice">建议话术：<br>"高维学堂是一家专注服务成长型企业的实战商学院，也是科学创业倡导者。我们判断实战只有三个标准：老师做过、案例验证过、方法能落地。今天大家在这里，学的不只是一个工具，更是在建立经营上的统一语言。高维也获得了12家头部投资机构背书，成为投后赋能合作方。"</div>
+      </div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">2. 课程五句话</div>
+          <div class="row-right">22/30</div>
+        </div>
+        <div class="muted">扣分点：有趋势开场、老师背书、方法工具、南孚案例；但定性开场未打透，缺少"不投广告等死，投了广告找死"这类强记忆句；核心价值"找卡点、给方法、提效率"未明确说透；案例少了创维、八马，完整度不足。</div>
+        <div class="advice">建议话术：<br>"今天这门课最核心的价值，是帮大家找到转化卡点、拿到可复制方法、用最短时间提效率。流量红利见顶，很多企业都面临'不投广告等死，投了广告找死'，这时提升转化率是最稳的确定性抓手。"</div>
+      </div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">3. 团建破冰</div>
+          <div class="row-right">4/5</div>
+        </div>
+        <div class="muted">亮点：有"三分钟组内认识、选组长"，动作清晰。扣分点：缺少破冰目的说明，未把分组与课程产出、积分机制强绑定。</div>
+        <div class="advice">建议升级：<br>"接下来3分钟不是简单认识，而是快速形成作战小组。后面案例讨论、页面点评、积分竞争都以小组为单位，请大家尽快选出组长和记录官。"</div>
+      </div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">4. 第二天结束：邀约课评</div>
+          <div class="row-right">10/15</div>
+        </div>
+        <div class="muted">扣分点：邀约力度偏弱，只是通知，没有强调价值、稀缺性、参与动作；第二天结束未做统一收口与行动召回。根据评分原则，邀约课评动作不坚决，影响合格上限。</div>
+        <div class="advice">建议话术：<br>"在离场前，邀请大家用1分钟完成课评。你们的每一条真实反馈，都会直接影响课程迭代和老师返场安排。请大家现在打开链接/扫码提交，我等大家30秒，提交完成的同学再参与合影。"</div>
+      </div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">5. 第二天结束：价值升华</div>
+          <div class="row-right">2/10</div>
+        </div>
+        <div class="muted">扣分点：第二天结束录音仅有流程通知、合影、披萨与返场时间，无课程总结、无价值升华、无行动锚定。</div>
+        <div class="advice">建议话术：<br>"今天大家不是多听了一节课，而是开始建立一套转化经营的判断框架。晚上点评请带着真实页面回来，把'知道'变成'做到'，这才是今天最重要的闭环。"</div>
+      </div>
+
+      <div class="score-row">
+        <div class="row-head">
+          <div class="row-left">6. 全局口语节奏</div>
+          <div class="row-right">10/10</div>
+        </div>
+        <div class="muted">说明：整体表达顺畅，信息推进自然，具备班主任主持的现场感。</div>
+        <div class="advice">建议：可增加短句停顿与关键词重击，让"课程价值—方法—行动"更有节奏感。</div>
+      </div>
+
+      <div class="section-title">高阶加分项</div>
+      <p class="muted">无</p>
+
+      <div class="section-title">AI教练建议（Top 3）</div>
+
+      <p><strong>1. 把"课程价值"从隐性信息改成显性承诺</strong></p>
+      <p class="muted">你现在讲了老师厉害、方法厉害、案例厉害，但学员最关心的是"我今天到底能拿走什么"。这部分必须直给，且要在开场前90秒内完成。建议固定成三连句：找卡点、给方法、提效率。这样既满足课程5句话标准，也能让学员更快进入"我要认真听"的状态。</p>
+
+      <p><strong>2. 补齐高维学堂标准动作，建立组织级信任</strong></p>
+      <p class="muted">你的介绍更像"课程开场"，还不够像"高维品牌开场"。高维5句话里缺了3个关键抓手：科学创业倡导者、实战三标准、统一语言。少了这些，学员会知道课程厉害，但未必知道"为什么要在高维学"。建议你形成固定口播模板，每次开场都稳定输出，提升品牌一致性。</p>
+
+      <p><strong>3. 强化结尾收口，让每次通知都变成行动动员</strong></p>
+      <p class="muted">第二天结束最大问题不是"说得少"，而是"没有把少量话说在关键处"。结尾至少要有三件事：今日收获总结、下一环节价值、明确行动要求。尤其点评环节，不能只说"老师会点评"，要说"为什么必须参加、参加能获得什么、错过会损失什么"。这样邀约才有力度。</p>
+
+      <div class="section-title">结束语</div>
+      <p class="end">杨哲，你具备稳定主持的底子，下一步重点不是讲更多，而是把品牌标准动作、课程核心价值和结尾强邀约讲得更完整、更有力。你的主持质感会立刻上一个台阶。</p>
+    </div>
+  </div>
+</body>
+</html>

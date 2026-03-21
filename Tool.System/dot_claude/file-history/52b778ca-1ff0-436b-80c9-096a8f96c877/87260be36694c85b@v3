@@ -1,0 +1,150 @@
+import type * as Lark from "@larksuiteoapi/node-sdk";
+import type { OpenClawPluginApi } from "openclaw/plugin-sdk";
+import { listEnabledFeishuAccounts } from "./accounts.js";
+import { createFeishuClient } from "./client.js";
+import { FeishuContactSchema, type FeishuContactParams } from "./contact-schema.js";
+import { resolveToolsConfig } from "./tools-config.js";
+
+function json(data: unknown) {
+  return {
+    content: [{ type: "text" as const, text: JSON.stringify(data, null, 2) }],
+    details: data,
+  };
+}
+
+async function searchUsers(client: Lark.Client, query: string): Promise<{ users: any[]; debug?: any }> {
+  const users: any[] = [];
+  const debug: any = { steps: [], departments: [] };
+  const lowerQuery = query.toLowerCase();
+
+  // First, list all departments to see what's available
+  try {
+    debug.steps.push("Listing departments...");
+    const deptResp: any = await client.contact.department.list({ params: { page_size: 50, fetch_child: true, parent_department_id: "0" } });
+    if (deptResp.code === 0 && deptResp.data?.items) {
+      debug.departments = deptResp.data.items.map((d: any) => ({ id: d.open_department_id, name: d.name }));
+      debug.steps.push(`Found ${debug.departments.length} departments`);
+    }
+  } catch (e: any) {
+    debug.steps.push(`Department list error: ${e.message || e}`);
+  }
+
+  // Try list API for each department
+  for (const dept of debug.departments.slice(0, 5)) {
+    try {
+      debug.steps.push(`Trying department ${dept.name} (${dept.id})...`);
+      const resp: any = await client.contact.user.list({
+        params: { department_id: dept.id, department_id_type: "open_department_id", page_size: 50 }
+      });
+      
+      if (resp.code === 0 && resp.data?.items) {
+        debug.steps.push(`Dept ${dept.name}: ${resp.data.items.length} users`);
+        
+        for (const u of resp.data.items) {
+          const name = (u.name || "").toLowerCase();
+          if (name.includes(lowerQuery)) {
+            users.push({ open_id: u.open_id, name: u.name, email: u.email, employee_id: u.employee_id, mobile: u.mobile });
+          }
+        }
+      } else {
+        debug.steps.push(`Dept ${dept.name} resp: code=${resp.code}, msg=${resp.msg}, data_keys=${Object.keys(resp.data || {}).join(',')}, items=${resp.data?.items?.length}`);
+      }
+    } catch (e: any) {
+      debug.steps.push(`Dept ${dept.name} error: ${e.message || e}`);
+    }
+    
+    if (users.length > 0) break;
+  }
+
+  // Try list API
+  try {
+    debug.steps.push("Trying list API...");
+    let pageToken: string | undefined;
+    let pageCount = 0;
+    
+    do {
+      pageCount++;
+      const resp: any = await client.contact.user.list({ 
+        params: { page_size: 50, page_token: pageToken } 
+      });
+      
+      if (resp.code !== 0) {
+        debug.steps.push(`List API error: ${resp.msg || resp.code}`);
+        break;
+      }
+      
+      const items = resp.data?.items || [];
+      debug.steps.push(`Page ${pageCount}: ${items.length} users`);
+      
+      for (const u of items) {
+        const name = (u.name || "").toLowerCase();
+        const email = (u.email || "").toLowerCase();
+        const empId = (u.employee_id || "").toLowerCase();
+        
+        if (name.includes(lowerQuery) || email.includes(lowerQuery) || empId.includes(lowerQuery)) {
+          users.push({ 
+            open_id: u.open_id, 
+            name: u.name, 
+            email: u.email, 
+            employee_id: u.employee_id, 
+            mobile: u.mobile 
+          });
+        }
+      }
+      
+      pageToken = resp.data?.page_token;
+      if (!resp.data?.has_more) break;
+    } while (pageToken && users.length < 20 && pageCount < 10);
+    
+    debug.totalChecked = pageCount;
+  } catch (e: any) {
+    debug.steps.push(`List API error: ${e.message || e}`);
+    debug.listError = e.message || String(e);
+  }
+
+  return { users: users.slice(0, 20), debug };
+}
+
+async function getUser(client: Lark.Client, userId: string): Promise<{ user?: any }> {
+  const resp: any = await client.contact.user.get({ path: { user_id: userId } });
+  if (resp.code !== 0) throw new Error(resp.msg || resp.code);
+  const u = resp.data?.user;
+  return u ? { user: { open_id: u.open_id, name: u.name, email: u.email, employee_id: u.employee_id, mobile: u.mobile } } : {};
+}
+
+export function registerFeishuContactTools(api: OpenClawPluginApi) {
+  const accounts = listEnabledFeishuAccounts(api.config);
+  if (accounts.length === 0) return;
+
+  const firstAccount = accounts[0];
+  const toolsCfg = resolveToolsConfig(firstAccount.config.tools);
+  if (toolsCfg.contact === false) return;
+
+  const getClient = () => createFeishuClient(firstAccount);
+
+  api.registerTool({
+    name: "feishu_contact",
+    label: "Feishu Contact",
+    description: "Feishu contact search. Actions: search (by name/email), get (by user_id)",
+    parameters: FeishuContactSchema,
+    async execute(_toolCallId, params) {
+      const p = params as FeishuContactParams;
+      try {
+        const client = getClient();
+        if (p.action === "search") {
+          if (!p.query) return json({ error: "Missing query" });
+          return json(await searchUsers(client, p.query));
+        }
+        if (p.action === "get") {
+          if (!p.user_id) return json({ error: "Missing user_id" });
+          return json(await getUser(client, p.user_id));
+        }
+        return json({ error: `Unknown action: ${(p as any).action}` });
+      } catch (err) {
+        return json({ error: err instanceof Error ? err.message : String(err) });
+      }
+    },
+  }, { name: "feishu_contact" });
+
+  api.logger.info?.("feishu_contact: Registered");
+}

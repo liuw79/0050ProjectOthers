@@ -1,0 +1,638 @@
+// 通用样式文件
+
+// 布局类
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  
+  @include respond-to(lg) {
+    padding: 0 24px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 16px;
+  
+  @include respond-to(lg) {
+    padding: 0 24px;
+  }
+}
+
+// Flex布局类
+.d-flex {
+  @include flex();
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+// 显示隐藏类
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+// 响应式显示隐藏
+@include respond-to(xs) {
+  .d-xs-none { display: none !important; }
+  .d-xs-block { display: block !important; }
+  .d-xs-inline { display: inline !important; }
+  .d-xs-inline-block { display: inline-block !important; }
+}
+
+@include respond-to(sm) {
+  .d-sm-none { display: none !important; }
+  .d-sm-block { display: block !important; }
+  .d-sm-inline { display: inline !important; }
+  .d-sm-inline-block { display: inline-block !important; }
+}
+
+@include respond-to(md) {
+  .d-md-none { display: none !important; }
+  .d-md-block { display: block !important; }
+  .d-md-inline { display: inline !important; }
+  .d-md-inline-block { display: inline-block !important; }
+}
+
+@include respond-to(lg) {
+  .d-lg-none { display: none !important; }
+  .d-lg-block { display: block !important; }
+  .d-lg-inline { display: inline !important; }
+  .d-lg-inline-block { display: inline-block !important; }
+}
+
+// 文本对齐
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+// 文本颜色
+.text-primary {
+  color: $primary-color !important;
+}
+
+.text-success {
+  color: $success-color !important;
+}
+
+.text-warning {
+  color: $warning-color !important;
+}
+
+.text-danger {
+  color: $danger-color !important;
+}
+
+.text-info {
+  color: $info-color !important;
+}
+
+.text-muted {
+  color: $text-color-secondary !important;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-dark {
+  color: $text-color-primary !important;
+}
+
+// 背景颜色
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-success {
+  background-color: $success-color !important;
+}
+
+.bg-warning {
+  background-color: $warning-color !important;
+}
+
+.bg-danger {
+  background-color: $danger-color !important;
+}
+
+.bg-info {
+  background-color: $info-color !important;
+}
+
+.bg-light {
+  background-color: $gray-1 !important;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+// 字体大小
+.text-xs {
+  font-size: $font-size-extra-small !important;
+}
+
+.text-sm {
+  font-size: $font-size-small !important;
+}
+
+.text-base {
+  font-size: $font-size-base !important;
+}
+
+.text-md {
+  font-size: $font-size-medium !important;
+}
+
+.text-lg {
+  font-size: $font-size-large !important;
+}
+
+.text-xl {
+  font-size: $font-size-extra-large !important;
+}
+
+// 字体粗细
+.font-light {
+  font-weight: 300 !important;
+}
+
+.font-normal {
+  font-weight: $font-weight-secondary !important;
+}
+
+.font-medium {
+  font-weight: $font-weight-primary !important;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold !important;
+}
+
+// 文本装饰
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-line-through {
+  text-decoration: line-through !important;
+}
+
+.text-no-decoration {
+  text-decoration: none !important;
+}
+
+// 文本转换
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// 文本省略
+.text-ellipsis {
+  @include text-ellipsis();
+}
+
+.text-ellipsis-2 {
+  @include text-ellipsis(2);
+}
+
+.text-ellipsis-3 {
+  @include text-ellipsis(3);
+}
+
+// 边框
+.border {
+  border: 1px solid $border-color !important;
+}
+
+.border-top {
+  border-top: 1px solid $border-color !important;
+}
+
+.border-right {
+  border-right: 1px solid $border-color !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $border-color !important;
+}
+
+.border-left {
+  border-left: 1px solid $border-color !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.border-top-0 {
+  border-top: 0 !important;
+}
+
+.border-right-0 {
+  border-right: 0 !important;
+}
+
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.border-left-0 {
+  border-left: 0 !important;
+}
+
+// 圆角
+.rounded {
+  border-radius: $border-radius-base !important;
+}
+
+.rounded-sm {
+  border-radius: $border-radius-small !important;
+}
+
+.rounded-lg {
+  border-radius: 8px !important;
+}
+
+.rounded-xl {
+  border-radius: 12px !important;
+}
+
+.rounded-full {
+  border-radius: $border-radius-circle !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+// 阴影
+.shadow {
+  box-shadow: $box-shadow-base !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-lg {
+  box-shadow: $box-shadow-light !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+// 位置
+.position-static {
+  position: static !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+.position-sticky {
+  position: sticky !important;
+}
+
+// 浮动
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-none {
+  float: none !important;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// 溢出
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
+
+.overflow-x-auto {
+  overflow-x: auto !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+// 光标
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.cursor-wait {
+  cursor: wait !important;
+}
+
+.cursor-text {
+  cursor: text !important;
+}
+
+.cursor-move {
+  cursor: move !important;
+}
+
+// 用户选择
+.user-select-none {
+  user-select: none !important;
+}
+
+.user-select-auto {
+  user-select: auto !important;
+}
+
+.user-select-text {
+  user-select: text !important;
+}
+
+.user-select-all {
+  user-select: all !important;
+}
+
+// 指针事件
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+// 垂直对齐
+.align-baseline {
+  vertical-align: baseline !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+// 宽度
+.w-25 {
+  width: 25% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+// 高度
+.h-25 {
+  height: 25% !important;
+}
+
+.h-50 {
+  height: 50% !important;
+}
+
+.h-75 {
+  height: 75% !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+// 最大宽度
+.mw-100 {
+  max-width: 100% !important;
+}
+
+// 最大高度
+.mh-100 {
+  max-height: 100% !important;
+}
+
+// 最小宽度
+.min-w-0 {
+  min-width: 0 !important;
+}
+
+// 最小高度
+.min-h-0 {
+  min-height: 0 !important;
+}
+
+// 视口宽度
+.vw-100 {
+  width: 100vw !important;
+}
+
+// 视口高度
+.vh-100 {
+  height: 100vh !important;
+}
+
+// 滚动条样式
+.custom-scrollbar {
+  @include scrollbar();
+}
+
+// 无滚动条
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

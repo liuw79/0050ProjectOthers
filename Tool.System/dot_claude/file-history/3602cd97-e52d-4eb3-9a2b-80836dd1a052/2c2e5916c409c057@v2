@@ -1,0 +1,12 @@
+# 切换到 Tool.System 项目
+
+切换工作目录到 Tool.System 项目，并读取进度文件。
+
+## 项目路径
+/Users/comdir/SynologyDrive/0050Project/Tool.System
+
+## 执行步骤
+
+1. 切换到项目目录：`/Users/comdir/SynologyDrive/0050Project/Tool.System`
+2. 读取进度文件：`04_System/progress.md`
+3. 向用户汇报当前进度

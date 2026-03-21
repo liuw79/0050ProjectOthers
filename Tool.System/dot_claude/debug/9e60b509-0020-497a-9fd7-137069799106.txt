@@ -1,0 +1,53 @@
+2026-02-26T07:08:18.784Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-26T07:08:18.785Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-26T07:08:18.785Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-26T07:08:18.785Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-26T07:08:18.789Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-26T07:08:18.797Z [DEBUG] Loading plugin superpowers from source: {"source":"url","url":"https://github.com/obra/superpowers.git"}
+2026-02-26T07:08:18.797Z [DEBUG] No version found for superpowers@claude-plugins-official, using 'unknown'
+2026-02-26T07:08:18.797Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/obra/superpowers.git"} to temporary path /Users/comdir/.claude/plugins/cache/temp_git_1772089698797_rt06q9
+2026-02-26T07:08:18.813Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-26T07:08:18.837Z [DEBUG] [STARTUP] Running setup()...
+2026-02-26T07:08:18.840Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-26T07:08:18.852Z [DEBUG] Error log sink initialized
+2026-02-26T07:08:18.855Z [DEBUG] [STARTUP] setup() completed in 18ms
+2026-02-26T07:08:18.855Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-26T07:08:18.879Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-02-26T07:08:18.886Z [DEBUG] Loaded 16 unique skills (16 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 1)
+2026-02-26T07:10:00.081Z [ERROR] Failed to cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089698797_rt06q9'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-26T07:10:00.082Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-02-26T07:10:00.082Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-02-26T07:10:00.083Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089698797_rt06q9'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-26T07:10:00.083Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-02-26T07:10:00.083Z [DEBUG] Total plugin skills loaded: 0
+2026-02-26T07:10:00.083Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089698797_rt06q9'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-26T07:10:00.083Z [DEBUG] Total plugin commands loaded: 0
+2026-02-26T07:10:00.083Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-02-26T07:10:00.083Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089698797_rt06q9'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-26T07:10:00.083Z [DEBUG] Total plugin agents loaded: 0
+2026-02-26T07:10:00.084Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-26T07:10:00.084Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-26T07:10:00.084Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-26T07:10:00.085Z [DEBUG] getSkills returning: 16 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-26T07:10:00.087Z [DEBUG] [STARTUP] Commands and agents loaded in 101232ms
+2026-02-26T07:10:00.087Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-26T07:10:00.087Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-26T07:10:00.087Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-26T07:10:00.152Z [DEBUG] Total LSP servers loaded: 0
+2026-02-26T07:10:00.154Z [DEBUG] [STARTUP] MCP configs loaded in 101365ms
+2026-02-26T07:10:00.161Z [DEBUG] MCP server "lark-mcp": Starting connection with timeout of 30000ms
+2026-02-26T07:10:00.163Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-26T07:10:00.163Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-26T07:10:00.163Z [DEBUG] LSP server manager initialized successfully
+2026-02-26T07:10:00.163Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-26T07:10:00.214Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-26T07:10:00.215Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a54; cc_entrypoint=cli; cch=00000;
+2026-02-26T07:10:00.217Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T07:10:00.217Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T07:10:00.218Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T07:10:01.709Z [DEBUG] Failed to fetch org penguin mode status, defaulting to disabled
+2026-02-26T07:10:01.868Z [DEBUG] Stream started - received first chunk

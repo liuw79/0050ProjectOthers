@@ -1,0 +1,81 @@
+# Claude Skills 同步设置说明
+
+## 位置
+
+Skills 目录已迁移到 SynologyDrive：
+```
+~/SynologyDrive/claude-skills/
+```
+
+> 注意：目录名不带 `.` 前缀，否则 SynologyDrive 不会同步隐藏目录
+
+## 当前电脑（已完成）
+
+✅ skills 已迁移到 SynologyDrive
+✅ 软链接已创建：`~/.claude/skills` → `~/SynologyDrive/claude-skills`
+
+---
+
+## 另一台电脑设置步骤
+
+### 1. 确认 SynologyDrive 已同步
+确保 `~/SynologyDrive/claude-skills/` 目录存在
+
+### 2. 删除旧的 skills 目录（如有）
+```bash
+rm -rf ~/.claude/skills
+```
+
+### 3. 创建软链接
+```bash
+ln -s ~/SynologyDrive/claude-skills ~/.claude/skills
+```
+
+### 4. 验证
+```bash
+ls -la ~/.claude/skills
+# 应该显示: ~/.claude/skills -> ~/SynologyDrive/claude-skills
+```
+
+---
+
+## 当前 Skills 列表
+
+| 技能名称 | 功能 |
+|---------|------|
+| 3w-decode | 3W解码法提取隐性知识 |
+| coach-banzhuren | 班主任AI教练评估系统 |
+| feishu-doc-create | 创建飞书文档并分享权限 |
+| coaching-interview | 教练式访谈技术 |
+| customer-profile | 客户档案提取 |
+| deepseek-to-obsidian | DeepSeek导出转Obsidian |
+| desensitize | 知识资产脱敏 |
+| extracting-golden-quotes | 金句提取 |
+| feishu-minutes-export | 飞书妙记导出 |
+| focus-intro | FOCUS五句话介绍框架 |
+| gemini-api | Gemini API调用 |
+| glossary-extract | 专业术语提取 |
+| knowledge-extractor | 知识资产提取 |
+| naming-convention | 命名规范 |
+| publish-feishu | 发布到飞书知识库 |
+| send-email | 发送邮件 |
+| skill-creator | 创建/改进技能 |
+| strategic-questioning | 战略灵魂拷问 |
+| trust-storyteller | 信任故事提取 |
+| txt-preprocess | 逐字稿预处理 |
+| update-wiki-homepage | 更新飞书首页日志 |
+| wechat-article | 公众号写作 |
+| 文章蓝军 | 文章蓝军质疑 |
+
+---
+
+## 注意事项
+
+1. **不要直接操作** `~/.claude/skills`，它只是个链接
+2. **修改 skills** 请在 `~/SynologyDrive/claude-skills/` 中操作
+3. **两台电脑会自动同步**，修改后稍等片刻即可
+4. **目录名不能以 `.` 开头**，否则 SynologyDrive 不会同步
+
+---
+
+*更新时间：2026-03-20*

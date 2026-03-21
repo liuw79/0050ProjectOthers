@@ -1,0 +1,16 @@
+[project]
+name = "deepseek-export"
+version = "0.1.0"
+description = "Export DeepSeek chat history to Markdown"
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.40.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+deepseek-export = "deepseek_export.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

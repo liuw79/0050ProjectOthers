@@ -1,0 +1,17 @@
+[
+  {
+    "content": "分析CSV数据，提取关键统计信息",
+    "status": "in_progress",
+    "activeForm": "分析CSV数据中"
+  },
+  {
+    "content": "设计信息图数据维度框架",
+    "status": "pending",
+    "activeForm": "设计数据维度框架"
+  },
+  {
+    "content": "生成数据分析报告和信息图内容",
+    "status": "pending",
+    "activeForm": "生成数据分析报告"
+  }
+]

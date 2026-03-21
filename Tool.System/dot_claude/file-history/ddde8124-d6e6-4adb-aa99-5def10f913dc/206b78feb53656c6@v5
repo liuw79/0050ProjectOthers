@@ -1,0 +1,81 @@
+# Progress - GW.Content
+
+> **规则：** 本文件仅记录最新有效信息。如有版本迭代，只保留最新版本，删除旧版本以避免上下文混乱。
+
+---
+
+## 飞书文档发布 - 项目复盘
+
+**日期**: 2026-03-19
+**状态**: ✅ 完成
+
+### 目标
+
+AI教练评估报告 → 飞书发布（自动添加协作者权限）
+
+### 最终方案
+
+| 步骤 | 工具 | 说明 |
+|------|------|------|
+| 1. 生成报告 | `coach.js` | 输出 Markdown 文件 |
+| 2. 发布飞书 | MCP 工具 | `docx_builtin_import` |
+| 3. 添加权限 | MCP 工具 | `drive_v1_permissionMember_create` |
+
+### 走过的弯路
+
+| 弯路 | 耗时 | 教训 |
+|------|------|------|
+| OAuth 登录 | 30min | 不需要 OAuth，tenant_token 够用 |
+| 写 `publish-feishu.js` | 20min | 不需要独立脚本，MCP 工具已可用 |
+| 权限 API 参数错误 | 15min | `member_type: "email"` 不是 `"openid"` |
+
+**根本原因**：一开始没搞清楚「MCP 工具在 Claude Code 中直接可用」这个前提，走了弯路。
+
+**权限 API 失败的真正原因**：邮箱地址写错了。用了 `lw@gaowei.com`（简写），正确的是 `liuwei@gaowei.com`（全名）。
+
+### 交付物
+
+| 文件 | 变更 |
+|------|------|
+| `coach.js` | 精简，移除冗余参数 |
+| `feishu-doc.md` | ✅ 更新添加协作者 API（关键参数）|
+| `publish-feishu.js` | ✅ 删除（不需要）|
+
+### 关键知识点
+
+**添加协作者的正确参数**：
+```json
+{
+  "path": {"token": "文档token"},
+  "params": {"type": "docx"},
+  "data": {
+    "member_type": "email",
+    "member_id": "xxx@gaowei.com",
+    "perm": "full_access",
+    "type": "user"
+  }
+}
+```
+
+### 使用流程
+
+```bash
+# 1. 生成评估报告
+node coach.js --course "xxx" --teacher "xxx" --date "xxx"
+
+# 2. 在 Claude Code 中发布
+> 发布到飞书，分享给 cbr@gaowei.com, liuwei@gaowei.com
+```
+
+---
+
+## 多模型 API（必须带版本号）
+
+| 别名 | 实际模型 |
+|------|----------|
+| `gemini3.1` | gemini-3.1-pro-preview |
+| `gpt5.4` | gpt-5.4 |
+
+---
+
+*更新时间：2026-03-19*

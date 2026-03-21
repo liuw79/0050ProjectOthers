@@ -1,0 +1,224 @@
+     1→<!DOCTYPE html>
+     2→<html lang="zh-CN">
+     3→<head>
+     4→  <meta charset="UTF-8">
+     5→  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→  <title>素材库</title>
+     7→  <style>
+     8→    * {
+     9→      margin: 0;
+    10→      padding: 0;
+    11→      box-sizing: border-box;
+    12→    }
+    13→    body {
+    14→      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    15→      background: #f5f5f5;
+    16→    }
+    17→    .header {
+    18→      background: white;
+    19→      padding: 20px 30px;
+    20→      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    21→      display: flex;
+    22→      justify-content: space-between;
+    23→      align-items: center;
+    24→    }
+    25→    .header h1 {
+    26→      margin: 0;
+    27→      color: #333;
+    28→    }
+    29→    .header .nav a {
+    30→      margin-left: 20px;
+    31→      color: #666;
+    32→      text-decoration: none;
+    33→    }
+    34→    .header .nav a:hover {
+    35→      color: #3385ff;
+    36→    }
+    37→    .container {
+    38→      max-width: 1200px;
+    39→      margin: 0 auto;
+    40→      padding: 30px 20px;
+    41→    }
+    42→    .toolbar {
+    43→      display: flex;
+    44→      gap: 15px;
+    45→      margin-bottom: 30px;
+    46→      flex-wrap: wrap;
+    47→    }
+    48→    .toolbar input,
+    49→    .toolbar select,
+    50→    .toolbar button {
+    51→      padding: 12px 20px;
+    52→      border: 1px solid #ddd;
+    53→      border-radius: 6px;
+    54→      font-size: 14px;
+    55→    }
+    56→    .toolbar button {
+    57→      background: #3385ff;
+    58→      color: white;
+    59→      border: none;
+    60→      cursor: pointer;
+    61→    }
+    62→    .toolbar button:hover {
+    63→      background: #2563eb;
+    64→    }
+    65→    .materials-list {
+    66→      display: grid;
+    67→      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    68→      gap: 20px;
+    69→    }
+    70→    .material-card {
+    71→      background: white;
+    72→      border-radius: 10px;
+    73→      padding: 20px;
+    74→      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    75→      transition: transform 0.2s, box-shadow 0.2s;
+    76→    }
+    77→    .material-card:hover {
+    78→      transform: translateY(-4px);
+    79→      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    80→    }
+    81→    .material-card h3 {
+    82→      margin: 0 0 10px;
+    83→      color: #333;
+    84→    }
+    85→    .material-card .content {
+    86→      color: #666;
+    87→      font-size: 14px;
+    88→      line-height: 1.6;
+    89→      max-height: 100px;
+    90→      overflow: hidden;
+    91→      display: -webkit-box;
+    92→      -webkit-line-clamp: 4;
+    93→      -webkit-box-orient: vertical;
+    94→    }
+    95→    .material-card .meta {
+    96→      margin-top: 15px;
+    97→      display: flex;
+    98→      gap: 10px;
+    99→      flex-wrap: wrap;
+   100→    }
+   101→    .material-card .meta span {
+   102→      padding: 4px 12px;
+   103→      background: #f0f0f0;
+   104→      color: #666;
+   105→      border-radius: 20px;
+   106→      font-size: 12px;
+   107→    }
+   108→    .material-card .category {
+   109→      background: #e3f2fd;
+   110→      color: white;
+   111→    }
+   112→    .material-card .date {
+   113→      margin-left: auto;
+   114→      color: #999;
+   115→    }
+   116→    .loading {
+   117→      text-align: center;
+   118→      padding: 50px;
+   119→      color: #666;
+   120→    }
+   121→    .empty {
+   122→      text-align: center;
+   123→      padding: 100px;
+   124→      color: #999;
+   125→    }
+   126→  </style>
+   127→</head>
+   128→<body>
+   129→  <div class="header">
+   130→    <h1>我的素材</h1>
+   131→    <div class="nav">
+   132→      <a href="login.html">退出登录</a>
+   133→      <a href="add-material.html">添加素材</a>
+   134→    </div>
+   135→  </div>
+   136→
+   137→  <div class="container">
+   138→    <div class="toolbar">
+   139→      <input type="text" id="tagFilter" placeholder="按标签搜索...">
+   140→      <select id="categoryFilter">
+   141→        <option value="">所有分类</option>
+   142→        <option value="default">默认</option>
+   143→        <option value="案例">案例</option>
+   144→        <option value="金句">金句</option>
+   145→        <option value="观点">观点</option>
+   146→      </select>
+   147→      <button onclick="loadMaterials()">刷新</button>
+   148→    </div>
+   149→
+   150→    <div id="materialsList" class="materials-list">
+   151→      <div class="loading">加载中...</div>
+   152→    </div>
+   153→  </div>
+   154→
+   155→  <script>
+   156→    const API_BASE = 'http://localhost:3000/api';
+   157→    let currentUserId = null;
+   158→
+   159→    // 从localStorage获取userId
+   160→    function getUserId() {
+   161→      const userStr = localStorage.getItem('currentUser');
+   162→      if (userStr) {
+   163→        const user = JSON.parse(userStr);
+   164→        return user.userId;
+   165→      }
+   166→      // 未登录则从URL获取（用于测试）
+   167→      const params = new URLSearchParams(window.location.search);
+   168→      return params.get('userId');
+   169→    }
+   170→
+   171→    // 加载素材列表
+   172→    async function loadMaterials() {
+   173→      currentUserId = getUserId();
+   174→      const tagFilter = document.getElementById('tagFilter').value;
+   175→      const categoryFilter = document.getElementById('categoryFilter').value;
+   176→
+   177→      const container = document.getElementById('materialsList');
+   178→      container.innerHTML = '<div class="loading">加载中...</div>';
+   179→
+   180→      try {
+   181→        const params = new URLSearchParams({ userId: currentUserId });
+   182→        if (tagFilter) params.append('tag', tagFilter);
+   183→        if (categoryFilter) params.append('category', categoryFilter);
+   184→
+   185→        const response = await fetch(`${API_BASE}/materials?${params}`);
+   186→        const data = await response.json();
+   187→
+   188→        if (data.success && data.materials.length > 0) {
+   189→          container.innerHTML = data.materials.map(m => `
+   190→            <div class="material-card">
+   191→              <h3>${escapeHtml(m.title)}</h3>
+   192→              <div class="content">${escapeHtml(m.content)}</div>
+   193→              <div class="meta">
+   194→                ${(m.tags || []).map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join('')}
+   195→                <span class="category">${escapeHtml(m.category)}</span>
+   196→                <span class="date">${new Date(m.created_at).toLocaleDateString()}</span>
+   197→              </div>
+   198→            </div>
+   199→          `).join('');
+   200→        } else {
+   201→          container.innerHTML = '<div class="empty">暂无素材，点击上方"添加素材"按钮创建</div>';
+   202→        }
+   203→      } catch (error) {
+   204→        container.innerHTML = `<div class="empty">加载失败：${error.message}</div>`;
+   205→      }
+   206→    }
+   207→
+   208→    // HTML转义，防止XSS
+   209→    function escapeHtml(text) {
+   210→      const div = document.createElement('div');
+   211→      div.textContent = text;
+   212→      return div.innerHTML;
+   213→    }
+   214→
+   215→    // 页面加载时获取素材
+   216→    window.onload = loadMaterials;
+   217→  </script>
+   218→</body>
+   219→</html>
+   220→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+.score-label { text-align: center; color: #888; font-size: 14px; }
+.summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+.suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+.score-row:last-child, .score-detail:last-child { border-bottom: none; }
+.bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+.bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+.bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+.feedback-item { margin-bottom: 20px; }
+.feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+.feedback-content { font-size: 14px; color: #444; }
+.feedback-content p { margin: 6px 0; }
+.suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+.ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">68<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong>雯祯展现了极佳的场域掌控力与亲和力，对产品背景如数家珍；若能在高维品牌信任背书和结尾价值升华上做更完整的交付，将能更完美地诠释企业成长陪跑伙伴的角色定位！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>15/30</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>准确切入了"科学经营"的理念，并顺畅地将课程定位在了创业路线图的"验证期"，这说明你对高维的知识体系有很好的理解。<br>
+        <strong>教练视角：</strong>我相信你可能是为了让同学们更快进入专业课程的学习而做了精简。但作为高阶顾问，若能顺势抛出高维的"实战三标准"以及"团队共学语言"，能在心理上为企业家们建立更强的信任底座。<br>
+        <span class="suggested-script">建议话术补充："高维定义的实战有三个标准：有打过胜仗的老师、有科学实用的内容、有真实的落地案例。基于此，我们也成为了红杉等12家一线机构指定的赋能伙伴..."</span>
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>26/30</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>非常出彩！"定性开场"抓住了情绪价值的痛点；"信任背书"对熊浩老师的履历（奔驰、畅销书等）介绍得很有吸引力；工具（林比克罗盘）和案例（熊猫布布）的结合也很自然。（注：语音识别的错字不影响对你专业表达的认可）。<br>
+        <strong>教练视角：</strong>在"核心价值"部分，若能用更结构化的语言提炼出课程解决的核心痛点，会更有力量。<br>
+        <span class="suggested-script">建议话术补充："这门课最核心的价值，就是帮大家打破产品创新的三大死局：第一解决'找不准'，第二解决'落不下'，第三解决'传不出'。"</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>满分表现！场域预热非常自然（名牌、手机静音提醒有条不紊），"红包雨"的玩笑很好地拉近了距离。特别是选组长环节的"321指认法"，互动性极强，有效调动了全场气氛。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>6/15</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>表达了对同学们反馈和建议的真诚感谢，态度谦逊。<br>
+        <strong>教练视角：</strong>从逐字稿来看，这部分似乎跳过了"为什么要做课评"的前置引导，直接进入了感谢环节。作为陪跑伙伴，邀请评价是我们与企业共创迭代的重要抓手，我们需要更坚决且有仪式感地完成这个动作。<br>
+        <span class="suggested-script">建议话术补充："在课程接近尾声时，特别邀请大家花2分钟扫描屏幕二维码。你们的每一条真实反馈，都是高维和熊老师持续迭代课程的最强动力，更是留给下一期学友最好的礼物。"</span>
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>4/10</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>引导合影和佩戴蓝领巾的指令非常清晰，情绪饱满。<br>
+        <strong>教练视角：</strong>结尾偏向于行政指令的推进。若能在拍大合影前，用一分钟带大家回顾这两天最核心的"情绪"收获，并呼吁大家回到企业后落地实践，这会让班主任的身份从"主持人"瞬间升维到"促动师"。<br>
+        <span class="suggested-script">建议话术补充："这两天我们一起拆解了情绪的密码，希望大家带着林比克罗盘回到企业，不仅能造出好功能，更能设计出让人心动的超级产品！让我们带着这份能量，留下最美好的合影！"</span>
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>8/10</span></div>
+    <div class="score-detail">
+        <strong>亮点：</strong>语调自信、从容，幽默感拿捏得恰到好处（如"坑组长"、"没吃饱早餐"等互动），展现了极强的现场松弛感。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">业务赋能型破冰设计 (+3分)</div>
+        <div class="bonus-detail">
+            在安排小组三分钟认识时，你不仅让大家介绍姓名企业，还巧妙地植入了<strong>"我现在经营的是什么产品，期待破解什么情绪"</strong>。这是一个极其高阶的动作！将普通的"破冰"直接转化为"带着业务痛点入场"的业务共创准备，完美契合了本堂课的主题，展现了你极强的业务敏锐度。
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议（Top 3）</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 补齐高维大图，构建全局信任</div>
+        <div class="feedback-content">
+            <p><strong>洞察：</strong>当前开场对高维学堂的整体介绍较为单薄，直接切入了课程定位。</p>
+            <p><strong>建议：</strong>先假设台下有一半是第一次来的新朋友。把高维的"实战三标准"和"一线机构投资背书"大声讲出来。这不仅是品牌宣导，更是为你接下来两天的陪伴工作建立"专业势能"。</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 强化课评的"利他"属性与仪式感</div>
+        <div class="feedback-content">
+            <p><strong>洞察：</strong>结尾部分缺少了推动填写课评的核心话术，削弱了运营动作的闭环。</p>
+            <p><strong>建议：</strong>不要把课评当成任务去布置，而是当成"共创"去邀约。可以告诉大家："科学创业的路上，没有完美的课程，只有不断迭代的产品。你的评价就是帮我们找bug的最强武器。"赋予课评利他价值，大家的填写意愿会大幅提升。</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 结尾高光升华，激发"知行合一"</div>
+        <div class="feedback-content">
+            <p><strong>洞察：</strong>结尾过渡太快，直接进入了拍照环节，情绪留存不够。</p>
+            <p><strong>建议：</strong>作为企业成长陪跑伙伴，我们的价值不仅在课堂内，更在课堂外。在结束语中，挑一两个课上的核心金句或工具（如情绪剧本），呼吁大家明天就带回团队开会使用。用行动号召代替纯粹的感谢，余音绕梁的效果会好很多。</p>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    雯祯，你拥有非常棒的场域感知力和极具感染力的主持风格，那句"期待破解什么情绪"的破冰设计让我感到十分惊艳！期待你把对场域的掌控力，延展到对课程首尾价值的深度提炼上，相信你一定能成为陪伴企业家冲锋陷阵的顶尖顾问！加油！
+</div>
+
+<div class="footer">
+    Model Version: GW-AI-Coach-V4<br>
+    Target: 雯祯 - 情绪驱动产品创新
+</div>
+
+</body>
+</html>

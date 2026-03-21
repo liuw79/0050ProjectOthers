@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; line-height: 1.1; }
+    .score-label { text-align: center; color: #888; font-size: 14px; margin-bottom: 10px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; font-weight: bold; color: #2c3e50; }
+    .score-detail { font-size: 13px; color: #666; padding: 8px 0 12px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 8px 12px; border-radius: 4px; display: block; margin-top: 8px; font-style: italic; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .warning-box { background: #fffaf0; border-left: 3px solid #ed8936; padding: 10px 12px; font-size: 13px; color: #dd6b20; margin-bottom: 15px; border-radius: 4px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="warning-box">
+        <strong>评估说明：</strong> 本次评估基于现有素材。因缺少第二天结束的录音，【邀约课评】与【结尾升华】环节计分为 0。最终总分受此客观条件影响，仅供本次表现参考。
+    </div>
+    <div class="score-label">现场主持表现评估总分</div>
+    <div class="score-big">55<span style="font-size: 24px; color: #888;">/100</span></div>
+    <div class="summary">
+        大眼你好！我是你的 HRBP 伙伴。听了你的开场，我深刻感受到了你极佳的亲和力与场域掌控力，互动环节的设计精巧且高效。若能在产品价值的呈现上补齐硬核"弹药"，定能进一步深化你作为企业成长陪跑伙伴的专业信任感。
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分与赋能建议</h2>
+
+    <div class="score-row"><span>高维介绍 (30%)</span><span>23 / 30</span></div>
+    <div class="score-detail">
+        <p><strong>肯定：</strong> 投资机构背书、实战派定位、团队共学等核心要素都有涉及，特别是将课程巧妙地放在"科学创业路线图"的扩张期进行讲解，业务理解力很赞！</p>
+        <p><strong>不足与愿景：</strong> 我知道你在开场时想尽快将焦点拉回到现场学员的互动上，所以对"科学+实用"等实战标准做了精简。作为高阶顾问，若能在此时稍微具象化我们陪伴企业拿到结果的标准，能在最开始就稳稳地托住新学员的信任感。</p>
+        <span class="suggested-script">💡 建议话术："我们的实战不仅是老师带兵打过胜仗，更是有一套科学+实用的内容标准，并且真实陪伴过众多企业突破卡点、拿到了显性成果……"</span>
+    </div>
+
+    <div class="score-row"><span>产品介绍 (30%)</span><span>10 / 30</span></div>
+    <div class="score-detail">
+        <p><strong>肯定：</strong> 用"流量天花板"切入，顺势引出"转化率是最好的抓手"，痛点抓得极准！对陈勇老师"转化率特种兵"和多年陪伴的背书也十分自然。</p>
+        <p><strong>不足与愿景：</strong> 我猜你省略具体的模型和案例，是想把悬念留给陈勇老师亲自揭晓，这是一种主动取舍。不过作为陪伴学友的班主任，若能顺势抛出核心工具【超级转化率漏斗模型】和诸如南孚、创维的【生动案例】，这不仅是铺垫，更是在为学员提前建立学习本门课的"价值锚"。</p>
+        <span class="suggested-script">💡 建议话术："这两天陈老师会直接交付价值千万的'超级转化率漏斗模型'，通过下单三步骤等科学工具，把流量变利润。这套方法在南孚电池身上验证过，转化率飙升超200%！大家可以期待一下接下来的硬核干货。"</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰 (5%)</span><span>5 / 5</span></div>
+    <div class="score-detail">
+        <p><strong>肯定：</strong> 满分表现！通过大拇指点赞"倒数321"选组长，轻松破冰；随即赋予组长帮团队赢取"详情页点评机会"的重任。这一套组合拳，既活跃了气氛，又用实际的业务收益锁定了学员的参与度，极具运营智慧。</p>
+    </div>
+
+    <div class="score-row"><span>邀约课评 (15%)</span><span>0 / 15</span></div>
+    <div class="score-detail">
+        <p>因第二天录音缺失，本次未评估。期待下次验收你坚决有力的动作闭环！</p>
+    </div>
+
+    <div class="score-row"><span>结尾升华 (10%)</span><span>0 / 10</span></div>
+    <div class="score-detail">
+        <p>因第二天录音缺失，本次未评估。</p>
+    </div>
+
+    <div class="score-row"><span>口语节奏 (10%)</span><span>9 / 10</span></div>
+    <div class="score-detail">
+        <p><strong>肯定：</strong> 语速适中，语气非常亲切自然，有着天然的"网友见面"般的亲和力，让场域温度瞬间上升。</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+
+    <div class="bonus-item">
+        <div class="bonus-title"><span>敏锐的业务洞察与场域定制</span><span>+ 3 分</span></div>
+        <div class="bonus-detail">基于课前调研，主动在开场向大家释放"老师特地增加了跨境相关内容"的利好。这不仅提升了特定行业学员的期待值，更展示了你作为班主任深度的课前准备与业务理解力。</div>
+    </div>
+
+    <div class="bonus-item">
+        <div class="bonus-title"><span>把教务动作升华为价值运营</span><span>+ 5 分</span></div>
+        <div class="bonus-detail">在下午签到环节，没有生硬地催促，而是巧妙地将"升年级机制"与"复训席位/知识地图的小红花兑换"结合。把普通的签到打卡，包装成了极具吸引力的学习资产累积，这是一次非常漂亮的高阶运营动作！</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练赋能建议 (Top 3)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 补齐产品"武器库"，强化专业信任</div>
+        <div class="feedback-content">
+            <p>班主任的专业度很大程度上体现在对产品价值的精准传递上。痛点引入做得很棒，下一步的突破点在于：把老师的核心工具（漏斗模型、下单三步骤等）和绝对标杆案例（南孚、创维）大胆地亮出来。这不仅能让课程看起来更具实操性，也能确立你"懂业务"的伙伴形象。</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 稳定输出，让品牌五句话成为肌肉记忆</div>
+        <div class="feedback-content">
+            <p>你在讲"科学创业路线图"和"团队共学"时非常顺畅。建议将高维开场的五个核心模块（专注成长型、实战三标准、投资机构背书、路线图、统一语言）在脑海中结构化，确保每次登台都能像呼吸一样自然且不遗漏地输出，形成稳定的品牌场域。</p>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 期待在收尾环节展现你的闭环功力</div>
+        <div class="feedback-content">
+            <p>虽然这次没有听到你第二天的收尾，但基于你第一天的场域掌控力，我非常确信你有能力将课程的最后五分钟推向高潮。记得在未来实战中，要把课评作为倾听客户声音的战略动作，用升华的价值感去推动学员的坚决反馈。</p>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    大眼，作为班主任，你的亲和力与互动设计已经是极高的水准。期待你带着这份对场域的敏锐度，在产品价值解读上继续深挖。你是企业成长路上极具温度与专业度的陪跑伙伴，下个赛段见！
+</div>
+
+<div class="footer">
+    Powered by 高维AI辅导系统 | 评估模型：V4 双触点全流程版
+</div>
+
+</body>
+</html>

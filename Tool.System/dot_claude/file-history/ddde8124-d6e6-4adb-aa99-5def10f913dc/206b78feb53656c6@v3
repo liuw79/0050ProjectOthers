@@ -1,0 +1,61 @@
+# Progress - GW.Content
+
+> **规则：** 本文件仅记录最新有效信息。如有版本迭代，只保留最新版本，删除旧版本以避免上下文混乱。
+
+---
+
+## 飞书文档发布 - 完成记录
+
+**日期**: 2026-03-19
+**状态**: ✅ 完成
+
+### 方案
+
+在 Claude Code 中使用 MCP 工具直接发布，无需独立脚本。
+
+### 交付物
+
+| 文件 | 变更 |
+|------|------|
+| `feishu-doc.md` | 更新添加协作者 API（关键参数：`member_type: "email"`）|
+| `coach.js` | 移除 --feishu 参数，改为提示用户使用 /feishu-doc |
+| `publish-feishu.js` | 已删除（不需要）|
+
+### 使用流程
+
+```bash
+# 1. 生成评估报告
+node coach.js --course "xxx" --teacher "xxx" --date "xxx"
+
+# 2. 在 Claude Code 中发布
+> 发布到飞书，分享给 xxx@gaowei.com
+```
+
+### MCP 工具调用示例
+
+```json
+// 创建文档
+mcp__lark-mcp__docx_builtin_import({
+  "data": { "file_name": "标题", "markdown": "内容" }
+})
+
+// 添加协作者
+mcp__lark-mcp__drive_v1_permissionMember_create({
+  "path": { "token": "文档token" },
+  "params": { "type": "docx" },
+  "data": { "member_type": "email", "member_id": "xxx@gaowei.com", "perm": "full_access", "type": "user" }
+})
+```
+
+---
+
+## 多模型 API（必须带版本号）
+
+| 别名 | 实际模型 |
+|------|----------|
+| `gemini3.1` | gemini-3.1-pro-preview |
+| `gpt5.4` | gpt-5.4 |
+
+---
+
+*更新时间：2026-03-19*

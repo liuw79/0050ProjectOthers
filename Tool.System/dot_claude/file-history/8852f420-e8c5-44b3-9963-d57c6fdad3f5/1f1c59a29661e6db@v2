@@ -1,0 +1,181 @@
+# 飞书发布测试复盘
+
+**日期**: 2026-03-19
+**测试目的**: 验证飞书知识库发布功能
+
+---
+
+## 测试结果
+
+| 项目 | 状态 |
+|------|------|
+| 飞书授权 | ✅ 完成 |
+| Wiki节点创建 | ✅ 成功 |
+| 文档内容写入 | ✅ 成功 |
+
+**发布的文档**: [测试文档_发布功能验证](https://gaowei1.feishu.cn/wiki/LxXswZ2h8iXkKNktAUTcl9WOnfc)
+
+---
+
+## 效率问题分析
+
+### 当前流程的痛点
+
+| 步骤 | 耗时原因 | 问题 |
+|------|----------|------|
+| 1. MCP调用 | 立即失败 | Token过期，无预检 |
+| 2. 启动授权 | 手动操作 | 需要浏览器配合 |
+| 3. 再次MCP调用 | 再次失败 | **MCP服务不自动加载新token** ← 核心问题 |
+| 4. 手动提取token | 2次尝试 | 路径不熟悉，node代码调试 |
+| 5. 手动curl创建节点 | 拼接命令 | 参数复杂，容易出错 |
+| 6. 手动curl写入内容 | 构造JSON | block结构繁琐 |
+
+### 核心瓶颈
+
+**MCP服务的token不生效问题**：
+- `npx @larksuiteoapi/lark-mcp login` 授权成功
+- 但MCP服务在独立进程运行，不会自动加载新token
+- 导致每次都要手动提取token + 手动curl
+
+---
+
+## 实际执行流程（7步）
+
+```
+1. 调用 mcp__lark-mcp__docx_builtin_import
+   → 失败："token invalid or expired"
+
+2. 启动授权 npx @larksuiteoapi/lark-mcp login
+   → 成功：浏览器完成OAuth
+
+3. 再次调用 MCP 工具
+   → 失败：MCP服务未加载新token
+
+4. 尝试提取token（路径错误）
+   → 失败
+
+5. 查找正确路径后提取token
+   → 成功：从 ~/.npm/_npx/.../lark-mcp 提取
+
+6. curl 调用 API 创建Wiki节点
+   → 成功：获得 node_token 和 obj_token
+
+7. curl 调用 API 写入文档blocks
+   → 成功：文档内容写入完成
+```
+
+---
+
+## 技术细节记录
+
+### 1. Token存储位置
+
+```bash
+# npx缓存路径（动态）
+~/.npm/_npx/{hash}/node_modules/@larksuiteoapi/lark-mcp/
+
+# 提取token的node代码
+node -e "
+const { AuthStore } = require('./dist/auth/store.js');
+async function main() {
+    const store = new AuthStore();
+    await store.initialize();
+    const localToken = await store.getLocalAccessToken('cli_a9f1c604d6b9dbc9');
+    if (localToken) {
+        const tokenData = await store.getToken(localToken);
+        console.log(tokenData.extra.token.access_token);
+    }
+}
+main().catch(console.error);
+setTimeout(() => process.exit(0), 5000);
+"
+```
+
+### 2. API调用方式
+
+**创建Wiki节点**:
+```bash
+curl -X POST "https://open.feishu.cn/open-apis/wiki/v2/spaces/{SPACE_ID}/nodes" \
+  -H "Authorization: Bearer {ACCESS_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "node_type": "origin",
+    "obj_type": "docx",
+    "title": "文档标题",
+    "parent_node_token": "父目录token"
+  }'
+# 返回 node_token, obj_token
+```
+
+**写入文档内容**:
+```bash
+curl -X POST "https://open.feishu.cn/open-apis/docx/v1/documents/{OBJ_TOKEN}/blocks/{OBJ_TOKEN}/children" \
+  -H "Authorization: Bearer {ACCESS_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{"children": [...blocks...]}'
+```
+
+### 3. Block类型规则（来自publish-feishu skill）
+
+| 内容类型 | block_type | 说明 |
+|----------|------------|------|
+| 普通段落 | 2 (text) | 默认使用 |
+| 标题1/2/3 | 3/4/5 | ✅ 可用 |
+| 引用 | 15 (quote) | ✅ 可用 |
+| 无序列表 | 2 (text) | ❌ 禁用12，用 `• ` 前缀 |
+| 有序列表 | 2 (text) | ❌ 禁用13，保留原格式 |
+| 表格 | 2 (text) | ❌ 禁用23，用 `│` 格式 |
+
+---
+
+## 改进方案
+
+### 方案A：创建发布脚本（推荐）
+
+**目标结构**:
+```
+04_System/
+├── publish_feishu.py      # 一键发布脚本
+├── publish_index.md       # 发布记录
+└── feishu_config.py       # 配置（space_id, tokens等）
+```
+
+**脚本功能**:
+1. 自动检测token有效期
+2. 过期时提示授权命令
+3. 从npx缓存自动提取token
+4. Markdown → 飞书blocks 自动转换
+5. 发布到指定目录
+6. 更新发布索引
+
+### 方案B：配置MCP服务热重载
+
+研究如何让MCP服务自动加载新token（需要查看lark-mcp文档）
+
+---
+
+## 配置信息（备忘）
+
+```
+App ID: cli_a9f1c604d6b9dbc9
+知识空间ID: 7600806729793686488
+知识库链接: https://gaowei1.feishu.cn/wiki/space/7600806729793686488
+
+目录节点Token:
+- 01_客户档案: ZqT6wcOYOiBXyYkk01Lc2wg0n5s
+- 02_访谈技术: HiwhwQppwiCssVkkt9nc7K3Wnge
+- 03_方法论: ApQuw1UytiKo3Bkazt8cJdWfnSc
+- 04_客户案例: RAdZwTIjYiuWbokfFCgcty0Knnc
+- 05_高维小故事: Edyew70S1i880Ikz5R4cBTkLnkk
+- 06_持续挖掘: FaFnwadHoiSgqqkSsfJcSgPgnJ1
+- 07_组织建设: US8pwmNdHidb7akuvL2chCmVnUf
+```
+
+---
+
+## 下一步行动
+
+1. [ ] 创建 `04_System/publish_feishu.py` 脚本
+2. [ ] 封装token提取逻辑
+3. [ ] 封装Markdown→Blocks转换
+4. [ ] 测试一键发布流程

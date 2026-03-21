@@ -1,0 +1,31 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.feishu.cn',
+  port: 465,
+  secure: true,
+  auth: { user: 'liuwei@gaowei.com', pass: 'AQg6ve0Xpdb3FG87' }
+});
+
+const reports = [
+  { name: '雯祯', course: '情绪驱动产品创新', score: '59', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313情绪驱动产品创新 雯祯/雯祯-AI教练报告-V4-final.html' },
+  { name: '邬培莹', course: '超级面试官', score: '68', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4-final.html' },
+  { name: '丁芹伟', course: '战略解码', score: '85', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314战略解码 丁芹伟/丁芹伟-AI教练报告-V4-final.html' }
+];
+
+async function sendReports() {
+  for (const r of reports) {
+    const html = fs.readFileSync(r.file, 'utf-8');
+    await transporter.sendMail({
+      from: '"高维AI教练系统" <liuwei@gaowei.com>',
+      to: 'lw@gaowei.com',
+      subject: `【审核】${r.name} - ${r.course} AI教练评估报告 (${r.score}分)`,
+      html: html
+    });
+    console.log(`✅ 已发送: ${r.name} (${r.score}分)`);
+  }
+  console.log('\n全部发送完成！');
+}
+
+sendReports();

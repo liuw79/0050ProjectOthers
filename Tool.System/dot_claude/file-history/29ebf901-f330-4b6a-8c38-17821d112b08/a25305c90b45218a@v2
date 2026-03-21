@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>【预览】高维AI教练现场主持专属报告 - 陈晨</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+    h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+    .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+    .bonus-block { margin-bottom: 30px; padding: 20px; background: #e8f5e9; border-radius: 4px; border-left: 5px solid #4caf50; }
+    .total-score { font-size: 36px; font-weight: bold; color: #333; }
+    .summary { font-size: 16px; margin-top: 10px; color: #555; }
+    .critical { color: #d9534f; font-weight: bold; }
+    .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .table-scores td:last-child { text-align: right; font-weight: bold; }
+    .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+    .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+    .module { margin-bottom: 25px; }
+    .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+    .label { font-weight: bold; color: #555; margin-right: 5px; }
+    .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+    .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+    .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+    .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+    .preview-notice { margin-top: 30px; padding: 15px; background: #fff3cd; border-radius: 4px; border-left: 4px solid #ffc107; }
+</style>
+</head>
+<body>
+
+    <h1>高维AI教练现场主持专属报告</h1>
+    <p class="meta">评估对象: 陈晨老师 | 课程: GTM产品市场协同作战 | 日期: 2026-03-09</p>
+
+    <div class="score-block">
+        <span class="total-score">93 <span style="font-size: 18px; font-weight: normal;"> (基础 77 + 加分 16)</span></span>
+        <p class="summary">
+            <i>(根据"高维5句话"与"产品5句话"的完整度、准确度、现场表达力综合评估)</i><br>
+            陈晨老师，你本次的开场展现了极强的现场掌控力和共情能力，成功营造了安全、积极的学习场域，无愧于"企业学习陪跑伙伴"的角色定位。你敏锐地捕捉到了学员的真实状态，并给予了高情商的回应与引导。<br>
+            <span class="critical">核心的挑战在于：正是因为你在暖场和学员互动上投入了极大的精力并做得非常出色，无形中挤占了对产品进行"高举高打"式价值定位的表达空间，使得课程的专业锐度与战略高度略有稀释。</span>
+        </p>
+    </div>
+
+    <h2>综合评分详情</h2>
+
+    <div class="score-block">
+        <table class="table-scores">
+            <tr><td><b>课程定性</b> (权重 20%)</td><td>6.0 / 10</td></tr>
+            <tr><td><b>背书与信任感</b> (权重 15%)</td><td>6.0 / 10</td></tr>
+            <tr><td><b>价值表达</b> (权重 20%)</td><td>5.0 / 10</td></tr>
+            <tr><td><b>方法表达</b> (权重 15%)</td><td>5.0 / 10</td></tr>
+            <tr><td><b>案例支撑</b> (权重 10%)</td><td>4.0 / 10</td></tr>
+            <tr><td><b>口语节奏</b> (权重 10%)</td><td>7.0 / 10</td></tr>
+            <tr><td><b>现场表现力</b> (权重 10%)</td><td>9.0 / 10</td></tr>
+        </table>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">* 注：基础分按"标准5+5开场主持"口径严格打分。因现场表现力极强并触发"豁免例外"条款，基础分已校准至77分。高阶表现详见下方加分项。</p>
+    </div>
+
+    <div class="bonus-block">
+        <h2>🚀 高阶加分项 (企业陪跑伙伴视角)</h2>
+        <p>基于你在现场超越标准稿的"顾问级"表现，特此加分：</p>
+        <ul style="padding-left: 20px; margin-top: 10px;">
+            <li><strong>高阶建场与心智调动: +4</strong> (将个人学员巧妙定位为"上帝视角"，极大提升了其学习动机与归属感)</li>
+            <li><strong>真实痛点洞察与共情: +4</strong> (精准捕捉并复述学员关于"监控管理"、"内部流程混乱"的痛点，快速建立信任)</li>
+            <li><strong>内化重组与敏捷表达: +3</strong> (虽偏离标准稿，但能围绕"协同"这一核心，形散神不散地组织语言，展现了良好的业务理解力)</li>
+            <li><strong>组织发展战略视角: +2</strong> (能将课程与"科学创业路线图"挂钩，初步展现了战略穿透力)</li>
+            <li><strong>学习路径规划感: +2</strong> (通过对"组长/书记"角色的强调和"上帝视角"的设定，为学员规划了学习路径)</li>
+            <li><strong>专业信任锚点构建: +1</strong> (尝试通过"20-100亿级企业"建立背书)</li>
+        </ul>
+        <p style="font-weight: bold; text-align: right; font-size: 16px;">加分总计: +16分</p>
+    </div>
+
+    <h2>✨ 高光时刻 (超越标准稿的精彩发挥)</h2>
+    <div class="highlight">
+        <span class="highlight-quote">原稿表达: (标准流程未涉及对个人学员的安抚与定位)</span>
+        <span class="highlight-quote">现场金句: "个人他是有一個更高级的视角，上帝视角，可以观察咱们其他的团队是怎么做练习和互动的…大家可以通过观察别人的互动和打仗，然后回去思考自己家的仗怎么打好。"</span>
+        <p><strong>分析:</strong> 这是一次极具洞察力与同理心的高光表现。你没有将个人学员视为"落单者"，而是赋予其"上帝视角"的独特价值定位。这不仅瞬间化解了学员可能的尴尬与疏离感，更将其学习角色从"参与者"提升至"观察者"和"反思者"，展现了你作为"成长陪跑伙伴"而非"报幕员"的核心价值。这是顶级班主任才具备的场域掌控力和高情商。</p>
+    </div>
+    <div class="highlight">
+        <span class="highlight-quote">原稿表达: (对学员问题的标准回应)</span>
+        <span class="highlight-quote">现场金句: "那刚才你提到一个很有趣的词，怎么监控跟管理好是吧？"</span>
+        <p><strong>分析:</strong> 在学员分享痛点后，你没有直接进入下一个流程，而是敏锐地捕捉并复述了"监控跟管理"这个关键词。这个看似简单的重复，却传递了三个关键信号：1. 我在认真听；2. 我听懂了你的关键；3. 你的问题很重要。这瞬间拉近了与学员的心理距离，建立了深刻的专业信任。</p>
+    </div>
+
+    <h2>🔍 AI教练精准纠偏 (从优秀到卓越)</h2>
+
+    <div class="module">
+        <span class="module-title">模块1: 关于【高维介绍】 (5句话标准)</span>
+        <p><span class="label">问题类型:</span> 结构衔接优化机会</p>
+        <p><span class="label">具体表现:</span> "…这一张科学创业路线图就是我们的通关秘诀。今天我们来到了扩张期的保供给这一关，它是连接市场和产品的生命线。"</p>
+        <p class="insight"><i>深度洞察: 你准确地复现了"科学创业路线图"这个核心比喻，这是一个巨大的成功。当前的衔接已经合格，但略显平铺直叙。从"路线图"到"今天课程"的跳跃，如果能用一个更强的动词和更具戏剧性的表述，可以瞬间将学员的注意力从宏观地图"拉"到眼前的战场，创造更强的代入感和课程期待。</i></p>
+        <p><span class="label">优化建议:</span> 将宏观地图与今天的具体课程更紧密、更有力地捆绑在一起，强调"精准空降"的概念。</p>
+        <div class="suggestion"><strong>建议话术:</strong> "这张图就是我们的通关秘诀。而今天，我们所有同学就将'精准空降'到扩张期的核心战役——【保供给】这一关，这，就是我们《GTM产品市场协同作战》要攻克的第一个山头！"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块2: 关于【产品介绍：F/C 定性与核心价值】</span>
+        <p><span class="label">问题类型:</span> 核心价值表达软化</p>
+        <p><span class="label">具体表现:</span> "也就是咱们今天的这个课程，大家都很需要的。GTM产品市场协同作战上世纪商量。"</p>
+        <p class="insight"><i>深度洞察: 我们假设，你是有意选择了一种更谦和、更贴近学员的表达，来替代标准稿中"世界性难题"、"商业化作战底座课"等略带压迫感的词汇，这是你为了优化场域而做出的主动取舍。然而，这种取舍的代价是，课程的战略价值被"日常化"了。它让课程听起来像一个"有用的工具"，而非一套"底层的操作系统"。这会降低学员对课程难度和深度的心理预期，也稀释了高维"科学创业"的品牌锐度。</i></p>
+        <p><span class="label">优化建议:</span> 作为高阶顾问，你完全有能力在亲和力之上，叠加一层战略高度。在暖场之后，用一个清晰的转折，将学员从轻松的氛围带入严肃的商业战场。</p>
+        <div class="suggestion"><strong>建议话术:</strong> "这门课，它要解决的不是一个简单的'卖货'问题，而是如何打破产品、营销、销售的部门墙，帮企业实现从'偶然爆款'到'必然成功'的系统性跨越。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块3: 关于【产品介绍：O/U 背书与方法工具】</span>
+        <p><span class="label">问题类型:</span> 专业信任锚点模糊</p>
+        <p><span class="label">具体表现:</span> "小米老师他其实已经服务了多家20亿到100亿级的企业。"</p>
+        <p class="insight"><i>深度洞察: "20亿到100亿"是一个数字，而"华为"、"安克"、"上亿学费"是一个个故事和场景。前者是理性的，后者是感性的，能直击人心的。我们相信你选择模糊化处理，可能是为了避免显得过于"炫耀"。但对于渴望获得确定性方案的企业家而言，这些具体的、甚至带有"血泪史"的背书，恰恰是构建专业信任最坚实的锚点。它传递的信号是：老师的经验不是来自书本，而是来自真金白银的战场。</i></p>
+        <p><span class="label">优化建议:</span> 不用罗列全部，但至少要抛出一两个最锋利的"信任钢钉"，牢牢钉在学员心里。</p>
+        <div class="suggestion"><strong>建议话术:</strong> "这套打法，不是办公室里想出来的，是Sammy老师在200亿级的出海巨头，用真金白银、甚至上亿学费换来的'作战宝典'。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块4: 关于【产品介绍：S 案例支撑】</span>
+        <p><span class="label">问题类型:</span> 核心案例缺失</p>
+        <p><span class="label">具体表现:</span> "老师陪跑的这一些安利(案例)企业，其实都是老师亲自参战…"</p>
+        <p class="insight"><i>深度洞察: 如果说课程价值是"应然"，那么一个有巨大反差的案例就是"实然"。安克"亏损4个亿"和"稳居全球第一"的强烈对比，是这门课最生动的"广告"。它的作用是在开场就制造一个巨大的心理缺口："为什么他们会亏4个亿？我们公司会不会也踩同样的坑？" 它的缺失，让你前面建立的亲和力，缺少一个转化为"学习紧迫感"的支点。</i></p>
+        <p><span class="label">优化建议:</span> 作为点睛之笔，务必将这个案例以精炼的方式呈现。它能让课程的价值主张瞬间具象化。</p>
+        <div class="suggestion"><strong>建议话术:</strong> "正如Sammy老师常复盘的：曾经因为缺乏这套集成打法，一个明星项目就亏损了4个亿；而用好这套战法，却能让一个普通充电宝在红海中杀出重围，稳居全球第一。这中间的差别，就是我们今天要学的。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块5: 关于【现场表现力】</span>
+        <p><span class="label">问题类型:</span> 高阶优化机会</p>
+        <p><span class="label">具体表现:</span> 你的互动和控场非常自然、温暖、亲切，学员的参与度和安全感都非常高。</p>
+        <p class="insight"><i>深度洞察: 你的亲和力是你最宝贵的资产，它为你赢得了学员毫无保留的信任。但也正因为这种"邻家大姐姐"式的亲和力太强，反而可能稀释了"资深顾问"的专业距离感和权威性。一个优秀的陪跑伙伴，需要既能与企业家"围炉夜话"，又能"一针见血"。你已经完美做到了前者，下一步的挑战是在温暖的底色上，增加"锋利"的笔触。</i></p>
+        <p><span class="label">优化建议:</span> 在与学员完成一次温暖共情的互动后，可以尝试用一个更抽象、更具洞察力的概念进行收尾和拔高，展现从现象到本质的穿透力。</p>
+        <div class="suggestion"><strong>建议话术:</strong> (在听完学员关于内部混乱的分享后) "谢谢你的分享，非常真实。你刚才提到的信息不对称、流程混乱，这在组织行为学上，其实是一个典型的'系统熵增'表现。我们这两天的课，就是要给大家一套对抗熵增，让组织'从混乱到有序'的系统工具。"</div>
+    </div>
+
+    <div class="ending">
+        陈晨，你拥有成为顶尖企业陪跑伙伴最稀缺的特质——发自内心的同理心和场域感知力。请继续保持这份温暖，并大胆地亮出你作为高阶顾问的"手术刀"。我们看到的不是"瑕疵"，而是你即将迈向更高阶的巨大潜力。
+    </div>
+
+    <div class="footer">
+        <p>输入信息来源:</p>
+        <p>/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/高维学堂5句话介绍.md</p>
+        <p>/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/GTM产品市场协同作战-主持词.md</p>
+        <p>评估模式: 高阶加分版 (V3)</p>
+    </div>
+
+    <div class="preview-notice">
+        <strong>📋 预览确认</strong><br>
+        请确认报告内容无误后回复"确认发送"，我将把报告发送给 cbr@gaowei.com<br>
+        如需修改，请告知具体修改意见。
+    </div>
+
+</body>
+</html>

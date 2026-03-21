@@ -1,0 +1,101 @@
+---
+name: openclaw-model
+description: 切换 OpenClaw 大模型。支持在 GLM-5、Kimi K2.5、Opus 4.5、Opus 4.6 之间快速切换。
+---
+
+# OpenClaw 模型切换
+
+## 可用模型
+
+| 模型名 | Provider | 模型 ID | 说明 |
+|--------|----------|---------|------|
+| `opus-4.5` | anthropic | `claude-opus-4-5` | Claude Opus 4.5 (CloseAI 代理) |
+| `opus-4.6` | anthropic | `claude-opus-4-6` | Claude Opus 4.6 (CloseAI 代理) |
+| `kimi` | moonshot | `kimi-k2.5` | Moonshot Kimi K2.5 |
+| `glm-5` | zai | `glm-5` | 智谱 GLM-5 |
+
+## 配置文件位置
+
+```
+~/.openclaw/openclaw.json
+```
+
+## 切换步骤
+
+### 1. 修改配置文件
+
+找到 `agents.defaults.model.primary` 字段，修改为对应的模型：
+
+```json
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-5"
+      }
+    }
+  }
+}
+```
+
+### 2. 配置会自动热重载
+
+OpenClaw 会自动检测配置变化并热重载，无需手动重启。
+
+### 3. 验证切换成功
+
+查看日志确认：
+
+```bash
+tail -5 ~/.openclaw/logs/gateway.log | grep "agent model"
+```
+
+应显示类似：`[gateway] agent model: anthropic/claude-opus-4-5`
+
+## 快速切换命令
+
+```bash
+# 切换到 Opus 4.5
+jq '.agents.defaults.model.primary = "anthropic/claude-opus-4-5"' ~/.openclaw/openclaw.json > /tmp/oc.json && mv /tmp/oc.json ~/.openclaw/openclaw.json
+
+# 切换到 Opus 4.6
+jq '.agents.defaults.model.primary = "anthropic/claude-opus-4-6"' ~/.openclaw/openclaw.json > /tmp/oc.json && mv /tmp/oc.json ~/.openclaw/openclaw.json
+
+# 切换到 Kimi K2.5
+jq '.agents.defaults.model.primary = "moonshot/kimi-k2.5"' ~/.openclaw/openclaw.json > /tmp/oc.json && mv /tmp/oc.json ~/.openclaw/openclaw.json
+
+# 切换到 GLM-5
+jq '.agents.defaults.model.primary = "zai/glm-5"' ~/.openclaw/openclaw.json > /tmp/oc.json && mv /tmp/oc.json ~/.openclaw/openclaw.json
+```
+
+## 服务管理
+
+```bash
+# 查看服务状态
+launchctl list | grep openclaw
+
+# 重启服务（如需强制重启）
+launchctl bootout gui/$(id -u)/ai.openclaw.gateway && launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.openclaw.gateway.plist
+
+# 查看日志
+tail -f ~/.openclaw/logs/gateway.log
+```
+
+## 当前 Provider 配置
+
+### Anthropic (CloseAI 代理)
+- baseUrl: `https://api.openai-proxy.org/anthropic`
+- api: `anthropic-messages`
+
+### Moonshot (Kimi)
+- baseUrl: `https://api.moonshot.cn/v1`
+- api: `openai-completions`
+
+### Zai (GLM)
+- 使用 OpenClaw 内置配置
+
+## 注意事项
+
+1. **热重载限制**：正在进行的对话不会立即切换模型，新对话才会使用新模型
+2. **API 配额**：CloseAI 代理需要确保 API Key 有效且有余额
+3. **模型可用性**：切换前确认代理服务支持该模型

@@ -1,0 +1,345 @@
+#!/usr/bin/env node
+/**
+ * AI教练报告生成器（JSON结构化输出版）
+ *
+ * 流程：
+ * 1. 读取教练提示词（V4）和录音逐字稿
+ * 2. 组装完整 prompt（教练提示词 + JSON Schema）
+ * 3. 调用 Gemini 生成 JSON
+ * 4. 渲染成 HTML 报告
+ *
+ * 用法：
+ *   node coach-evaluate.js --prompt <prompt-file> --output <output-dir>
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+// JSON Schema 定义
+const COACH_REPORT_SCHEMA = {
+  type: "object",
+  required: ["score", "summary", "dimensions", "bonus", "suggestions", "ending", "target"],
+  properties: {
+    score: { type: "integer", minimum: 0, maximum: 100, description: "总分（0-100）" },
+    summary: { type: "string", description: "一句话总评（必须有'一句话总评：'前缀）" },
+    dimensions: {
+      type: "array",
+      minItems: 6,
+      maxItems: 6,
+      items: {
+        type: "object",
+        required: ["name", "weight", "score", "max", "detail"],
+        properties: {
+          name: { type: "string" },
+          weight: { type: "string" },
+          score: { type: "integer" },
+          max: { type: "integer" },
+          highlight: { type: "string" },
+          detail: { type: "string" },
+          suggested_script: { type: "string" }
+        }
+      }
+    },
+    bonus: {
+      type: "array",
+      items: {
+        type: "object",
+        required: ["title", "points", "detail"],
+        properties: {
+          title: { type: "string" },
+          points: { type: "integer", enum: [1, 3, 5] },
+          original: { type: "string" },
+          golden_sentence: { type: "string" },
+          detail: { type: "string" }
+        }
+      }
+    },
+    suggestions: {
+      type: "array",
+      minItems: 3,
+      maxItems: 3,
+      items: {
+        type: "object",
+        required: ["title", "problem_type", "performance", "insight", "suggestion"],
+        properties: {
+          title: { type: "string" },
+          problem_type: { type: "string" },
+          performance: { type: "string" },
+          insight: { type: "string" },
+          suggestion: { type: "string" },
+          suggested_script: { type: "string" }
+        }
+      }
+    },
+    ending: { type: "string", description: "结束语（个性化寄语）" },
+    target: {
+      type: "object",
+      required: ["name", "course"],
+      properties: {
+        name: { type: "string" },
+        course: { type: "string" }
+      }
+    }
+  }
+};
+
+// 6个维度的定义
+const DIMENSION_DEFS = [
+  { name: "高维介绍", weight: "30%", max: 30 },
+  { name: "产品介绍", weight: "30%", max: 30 },
+  { name: "团建破冰", weight: "5%", max: 5 },
+  { name: "邀约课评", weight: "15%", max: 15 },
+  { name: "结尾升华", weight: "10%", max: 10 },
+  { name: "口语节奏", weight: "10%", max: 10 }
+];
+
+// 构建 JSON Schema 提示词
+function buildSchemaPrompt() {
+  return `
+# 输出格式要求（JSON Schema）
+
+你必须输出一个符合以下 JSON Schema 的对象：
+
+\`\`\`json
+${JSON.stringify(COACH_REPORT_SCHEMA, null, 2)}
+\`\`\`
+
+## 维度定义（固定顺序和权重）
+
+| 序号 | name | weight | max |
+|------|------|--------|-----|
+${DIMENSION_DEFS.map((d, i) => `| ${i + 1} | ${d.name} | ${d.weight} | ${d.max} |`).join('\n')}
+
+## 重要格式要求
+
+1. **dimensions 数组**：必须按上述顺序包含6个维度
+2. **bonus 数组**：若无加分项，输出空数组 \`[]\`
+3. **suggestions 数组**：必须包含3条建议
+4. **score**：必须是 dimensions 分数之和 + bonus 分数
+5. **summary**：必须以"一句话总评："开头
+
+## 输出示例
+
+\`\`\`json
+{
+  "score": 88,
+  "summary": "场域掌控自然从容，核心业务与产品价值传递精准，是一位能与企业家同频共振的优秀成长陪伴者！",
+  "dimensions": [
+    {"name": "高维介绍", "weight": "30%", "score": 28, "max": 30, "highlight": "...", "detail": "..."},
+    {"name": "产品介绍", "weight": "30%", "score": 28, "max": 30, "detail": "..."},
+    {"name": "团建破冰", "weight": "5%", "score": 5, "max": 5, "detail": "..."},
+    {"name": "邀约课评", "weight": "15%", "score": 10, "max": 15, "detail": "...", "suggested_script": "..."},
+    {"name": "结尾升华", "weight": "10%", "score": 8, "max": 10, "detail": "..."},
+    {"name": "口语节奏", "weight": "10%", "score": 9, "max": 10, "detail": "..."}
+  ],
+  "bonus": [
+    {"title": "破冰金句：巧妙化解选组长尴尬", "points": 3, "golden_sentence": "...", "detail": "..."}
+  ],
+  "suggestions": [
+    {"title": "...", "problem_type": "...", "performance": "...", "insight": "...", "suggestion": "...", "suggested_script": "..."}
+  ],
+  "ending": "个性化的结束语...",
+  "target": {"name": "班主任姓名", "course": "课程名称"}
+}
+\`\`\`
+
+请只输出 JSON，不要输出任何其他内容。
+`;
+}
+
+// 渲染 HTML
+function renderHtml(data) {
+  const { score, summary, dimensions, bonus, suggestions, ending, target } = data;
+
+  const dimensionsHtml = dimensions.map(dim => `
+    <div class="score-row"><span>${dim.name}（${dim.weight}）</span><span>${dim.score}/${dim.max}</span></div>
+    <div class="score-detail">
+      ${dim.highlight ? `<strong>亮点：</strong>${dim.highlight}<br>` : ''}
+      ${dim.detail}
+      ${dim.suggested_script ? `<br><span class="suggested-script">建议话术：${dim.suggested_script}</span>` : ''}
+    </div>
+  `).join('');
+
+  const bonusHtml = bonus.length > 0
+    ? bonus.map(b => `
+        <div class="bonus-item">
+          <div class="bonus-title">${b.title}（+${b.points}分）</div>
+          ${b.original ? `<div class="bonus-detail"><strong>原稿表达：</strong>${b.original}</div>` : ''}
+          ${b.golden_sentence ? `<div class="bonus-detail"><strong>现场金句：</strong>${b.golden_sentence}</div>` : ''}
+          <div class="bonus-detail"><strong>分析：</strong>${b.detail}</div>
+        </div>
+      `).join('')
+    : '<div class="bonus-detail" style="text-align: center; color: #888;">无</div>';
+
+  const suggestionsHtml = suggestions.map((s, i) => `
+    <div class="feedback-item">
+      <div class="feedback-title">${i + 1}. ${s.title}</div>
+      <div class="feedback-content">
+        <p><strong>问题类型：</strong>${s.problem_type}</p>
+        <p><strong>具体表现：</strong>${s.performance}</p>
+        <p><strong>深度洞察：</strong>${s.insight}</p>
+        <p><strong>优化建议：</strong>${s.suggestion}</p>
+        ${s.suggested_script ? `<div class="suggestion"><strong>💡 建议话术：</strong><br>${s.suggested_script}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+.score-label { text-align: center; color: #888; font-size: 14px; }
+.summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+.suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+.score-row:last-child, .score-detail:last-child { border-bottom: none; }
+.bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+.bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+.bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+.feedback-item { margin-bottom: 20px; }
+.feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+.feedback-content { font-size: 14px; color: #444; }
+.feedback-content p { margin: 6px 0; }
+.suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+.ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">${score}<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong>${summary}
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+    ${dimensionsHtml}
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    ${bonusHtml}
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议（Top 3）</h2>
+    ${suggestionsHtml}
+</div>
+
+<div class="ending">
+    ${ending}
+</div>
+
+<div class="footer">
+    Model Version: GW-AI-Coach-V4 (JSON)<br>
+    Target: ${target.name} - ${target.course}
+</div>
+
+</body>
+</html>`;
+}
+
+// 主函数
+async function main() {
+  const args = process.argv.slice(2);
+  let promptFile = null;
+  let outputFile = null;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--prompt' || args[i] === '-p') {
+      promptFile = args[++i];
+    } else if (args[i] === '--output' || args[i] === '-o') {
+      outputFile = args[++i];
+    }
+  }
+
+  if (!promptFile) {
+    console.error('Usage: node coach-evaluate.js --prompt <prompt-file> [--output <output-file>]');
+    process.exit(1);
+  }
+
+  // 读取原始提示词
+  const originalPrompt = fs.readFileSync(promptFile, 'utf-8');
+
+  // 移除原始提示词中的 HTML 模板部分（如果有）
+  const cleanPrompt = originalPrompt.replace(/# 输出要求[\s\S]*$/m, '').trim();
+
+  // 组装完整提示词
+  const fullPrompt = `${cleanPrompt}
+
+---
+
+# 输出要求
+
+${buildSchemaPrompt()}
+
+---
+
+请根据以上信息，生成符合 JSON Schema 的评估报告。只输出 JSON，不要输出任何其他内容。
+`;
+
+  // 写入临时文件
+  const tempFile = `/tmp/coach-prompt-${Date.now()}.txt`;
+  fs.writeFileSync(tempFile, fullPrompt);
+
+  console.log('Calling Gemini API...');
+
+  // 调用 Gemini（使用 --json 模式）
+  const skillDir = path.join(process.env.HOME, '.claude/skills/gemini-api');
+  const result = execSync(`cd "${skillDir}" && node gemini.js --json --file "${tempFile}"`, {
+    encoding: 'utf-8',
+    maxBuffer: 10 * 1024 * 1024
+  });
+
+  // 解析 JSON
+  let jsonData;
+  try {
+    jsonData = JSON.parse(result);
+  } catch (e) {
+    console.error('Failed to parse JSON from Gemini:');
+    console.error(result.substring(0, 500));
+    process.exit(1);
+  }
+
+  // 验证并校准分数
+  const dimensionScore = jsonData.dimensions.reduce((sum, d) => sum + d.score, 0);
+  const bonusScore = jsonData.bonus.reduce((sum, b) => sum + b.points, 0);
+  const expectedScore = dimensionScore + bonusScore;
+
+  if (jsonData.score !== expectedScore) {
+    console.log(`Score adjustment: ${jsonData.score} -> ${expectedScore}`);
+    jsonData.score = expectedScore;
+  }
+
+  // 渲染 HTML
+  const html = renderHtml(jsonData);
+
+  // 输出
+  if (outputFile) {
+    fs.writeFileSync(outputFile, html);
+    // 同时保存 JSON
+    fs.writeFileSync(outputFile.replace('.html', '.json'), JSON.stringify(jsonData, null, 2));
+    console.log(`Report saved: ${outputFile}`);
+    console.log(`JSON saved: ${outputFile.replace('.html', '.json')}`);
+  } else {
+    console.log(html);
+  }
+
+  // 清理临时文件
+  fs.unlinkSync(tempFile);
+}
+
+main().catch(console.error);

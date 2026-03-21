@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+    h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+    .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+    .total-score { font-size: 36px; font-weight: bold; color: #333; }
+    .summary { font-size: 16px; margin-top: 10px; color: #555; }
+    .critical { color: #d9534f; font-weight: bold; }
+    .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .table-scores td:last-child { text-align: right; font-weight: bold; }
+    .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+    .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+    .module { margin-bottom: 25px; }
+    .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+    .label { font-weight: bold; color: #555; margin-right: 5px; }
+    .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+    .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+    .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+    .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>高维AI教练现场主持专属报告</h1>
+<div class="meta">
+    评估对象：雯祯 (班主任) | 评估课程：情绪驱动产品创新 | 评估视角：资深HRBP业务标准
+</div>
+
+<div class="score-block">
+    <div class="total-score">综合评分：65 / 100</div>
+    <div class="summary">
+        <strong>一句话总评：</strong>你展现了极其出色的亲和力与破冰带场能力，能迅速拉近与企业家的距离，是一位非常有温度的班主任。<span class="critical">但正是因为前端暖场、互动与组建团队的篇幅过长（占据了近8分钟），严重挤占了【高维品牌】与【产品方法论】的专业表达空间。这让整体表现更偏向于"活动主持"，而未能完全立住"企业成长陪跑BP"的专业权威感与科学交付感。</span>
+    </div>
+</div>
+
+<h2>一、 分项评分 (基于标准5+5框架)</h2>
+<table class="table-scores">
+    <tr><td><strong>课程定性</strong> (权重 20%)</td><td>7 / 10</td></tr>
+    <tr><td><strong>背书与信任感</strong> (权重 15%)</td><td>8 / 10</td></tr>
+    <tr><td><strong>价值表达</strong> (权重 20%)</td><td>6 / 10</td></tr>
+    <tr><td><strong>方法表达</strong> (权重 15%)</td><td>3 / 10</td></tr>
+    <tr><td><strong>案例支撑</strong> (权重 10%)</td><td>7 / 10</td></tr>
+    <tr><td><strong>口语节奏</strong> (权重 10%)</td><td>6 / 10</td></tr>
+    <tr><td><strong>现场表现力</strong> (权重 10%)</td><td>9 / 10</td></tr>
+</table>
+<div style="font-size: 12px; color: #999; margin-top: 10px;">
+    *说明：这次评分严格按"标准 5+5 开场主持"口径打分，不按"现场综合表现"宽口径打分。极佳的现场自然度与破冰互动，不能完全替代产品价值、核心工具（U）和高维品牌宣导的缺失。
+</div>
+
+<h2>二、 ✨ 高光时刻</h2>
+<div class="highlight">
+    <span class="highlight-quote">原稿表达：(引出痛点) 我们该如何捕捉情绪？定义它？设计它？又如何将它转化为可感知、可传播的产品力呢？</span>
+    <span class="highlight-quote" style="color:#222; font-weight:bold;">现场金句："做产品是没有成熟期的，永远都在持续不断的验证期……把这个情绪变成可传播、可落地，可商业变现的产品力量。"</span>
+    <strong>AI 洞察：</strong>这一处现场发挥极其惊艳！你将"产品力"直接翻译成了老板们最关心的"商业变现力量"，并且精准洞察到了"产品永远在验证期"的焦虑感。这几句话瞬间拉高了你的业务对话段位，让底下的企业家觉得"你懂我的经营痛点"。
+</div>
+
+<h2>三、 🔍 AI教练精准纠偏</h2>
+
+<div class="module">
+    <span class="module-title">模块 1: 关于【高维介绍】 (5句话标准)</span>
+    <div><span class="label">问题类型:</span> 结构缺失 / 品牌势能未释放</div>
+    <div><span class="label">具体表现:</span> 现场仅提了一句"欢迎大家来到不打鸡血科学经营的高危（维）学堂。今天是咱们高伟第2223期的公开课..."，直接跳过了"12家资本背书"和"3大实战标准"。</div>
+    <div class="insight">深度洞察: 你非常渴望尽快把学员带入轻松的课程状态，这很好。但正是因为跳过了高维作为"投后赋能伙伴"的硬核背书，你在学员心中的身份可能从"专业商学院的业务专家"降级为了"培训班老师"。对于初次参课的老板，对平台的信任是建立对课程信任的基石。</div>
+    <div><span class="label">优化建议:</span> 收起1分钟的暖场时间，把高维的核心肌肉亮出来，用强背书为接下来的知识交付定调。</div>
+    <div class="suggestion">
+        <strong>建议话术:</strong> "高维定义的实战有三个严苛标准……基于此，我们不仅是商学院，更是红杉、天图等12家一线投资机构指定的投后赋能伙伴。"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 2: 关于【产品介绍：F/C 定性与核心价值】</span>
+    <div><span class="label">问题类型:</span> 框架感弱化 / 痛点缺乏抓手</div>
+    <div><span class="label">具体表现:</span> 较好地讲出了"功能向情绪迈进"的定性，但在讲价值时说："经常会提出疑问，我们怎么去捕捉、定义、设计，把它变成力量。" 遗漏了核心的"三大死局"（找不准、落不下、传不出）。</div>
+    <div class="insight">深度洞察: 你的口语化表达非常自然顺畅，但过度散文式的表达削弱了专业框架的冲击力。企业家的大脑更偏好结构化的信息（1, 2, 3）。当你不用"三大死局"这种锐利的词汇去锚定痛点时，课程的"解药"属性就变弱了，听起来更像是一门"开拓视野"的课，而非"解决卡点"的课。</div>
+    <div><span class="label">优化建议:</span> 在顺畅表达的同时，刻意增加"数字化"和"痛点化"的标签，为后续的工具提供靶子。</div>
+    <div class="suggestion">
+        <strong>建议话术:</strong> "这门课最核心的价值，就是帮大家打破产品创新的'三大死局'：第一解决'找不准'，第二解决'落不下'，第三解决'传不出'。"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 3: 关于【产品介绍：O/U 背书与方法工具】</span>
+    <div><span class="label">问题类型:</span> 核心方法论被严重挤压 / 术语失准</div>
+    <div><span class="label">具体表现:</span> 时间紧迫下，一句话带过了工具："像尼米克（林比克）的情绪罗盘，用户三五（三物）等等。会带着大家利用这些工具来洞察情绪……"。且发音出现了轻微口误。</div>
+    <div class="insight">深度洞察: 科学创业的底气在于"工具和方法"。由于前端行政指令和互动耗时过长，你不得不加速通过最体现专业度的"工具模块"。一笔带过甚至念错工具名称，会直接刺破"科学经营"这四个字建立起的严谨感。我们是BP，必须对交付的武器如数家珍。</div>
+    <div><span class="label">优化建议:</span> 必须为工具模块预留至少45-60秒的高光时间。放慢语速，清晰、郑重地抛出这套"科学武器"。</div>
+    <div class="suggestion">
+        <strong>建议话术:</strong> "未来两天，熊老师会带来德国脑科学验证的'林比克情绪罗盘'，把模糊的情绪精准拆分为76种；并教大家用'五感PI'和'创造六法'，让情绪真正落地成可见的商业符号！"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 4: 关于【产品介绍：S 案例支撑】</span>
+    <div><span class="label">问题类型:</span> 高阶优化机会（归因连接不足）</div>
+    <div><span class="label">具体表现:</span> 提到了好案例："为熊猫步步打造了一个超级单品吸奶器，一经推出是有两个多亿的单品销售，细分市场全网第一。"</div>
+    <div class="insight">深度洞察: 你很棒地记住了关键数据！如果要从"优秀"走向"卓越"，我们需要在"数据"和"本课主题（情绪）"之间建立因果联系。目前的表达听起来像是熊老师很牛，但没有讲透是因为用了"情绪设计"才这么牛。</div>
+    <div><span class="label">优化建议:</span> 在抛出华丽的销售数据后，补上一句核心归因，让案例死死扣住"情绪驱动"这个题眼。</div>
+    <div class="suggestion">
+        <strong>建议话术:</strong> "大家熟知的熊猫布布吸奶器，单品年销为什么能破2亿？正是因为熊老师通过这套方法，为产品注入了精准的'情绪价值'，直接拿下了细分市场全网第一！"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 5: 关于【现场表现力】</span>
+    <div><span class="label">问题类型:</span> 角色重心的失衡（活动主持 vs 业务伙伴）</div>
+    <div><span class="label">具体表现:</span> 开场花费了大量时间（近8分钟）处理贴名牌、选组长、找没来的同学、调侃发红包雨等会务细节。</div>
+    <div class="insight">深度洞察: 你的网感和互动能力是极其稀缺的天赋，这让场域非常活跃。但作为班主任，我们更是业务合作伙伴（BP）。当你把大量的精力投放在"组织纪律"和"气氛活跃"上时，你展现出的是一位出色的"执行导向型班长"，而非能与企业家平等探讨商业痛点的"高维专家"。这种重心的偏移，变相削弱了你后面讲专业内容时的说服力。</div>
+    <div><span class="label">优化建议:</span> 把"极具亲和力的互动"作为点缀，将行政要求浓缩在1分钟内完成。把节省下来的时间，全部投资到"我如何帮你解决企业问题"的专业场域塑造上。</div>
+    <div class="suggestion">
+        <strong>建议话术:</strong> （精简行政后）"作为大家的学习陪跑伙伴，我希望这三天我们不仅是来听课，更是来带走一套能直接改变组织战斗力的管理语言。接下来，让我们进入真正的科学验证之旅。"
+    </div>
+</div>
+
+<div class="ending">
+    雯祯，你拥有非常令人羡慕的"天然亲和力"和极其敏锐的"现场觉察力"，这是很多专业主持人练多少年都难以企及的宝贵特质！你的底色已经极其温暖，接下来，我们只需要在你的"温度"之上，稍微加注一点"克制与骨架"。把行政事务的篇幅收拢，把省下的时间还给高维的品牌与产品的方法论。当你能把那套科学的武器库用坚定、专业的语调讲透时，你就是那个既能温暖人心，又能用专业征服老板的顶尖高维陪跑伙伴！期待你下一次的蜕变！
+</div>
+
+<div class="footer">
+    *注：输入信息来源：情绪驱动产品创新标准主持词、高维学堂5句话标准稿、雯祯2026-03-13现场录音逐字稿。
+</div>
+
+</body>
+</html>

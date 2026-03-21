@@ -1,0 +1,440 @@
+{
+  "total_folders": 74,
+  "total_files": 13,
+  "loose_files": [
+    ".DS_Store",
+    "Inside.Planet.Earth-thumb.jpg",
+    "Inside.Planet.Earth.nfo",
+    "Inside The Human Body 2011 Blu-thumb.jpg",
+    "Inside The Human Body 2011 Blu.nfo",
+    "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB-thumb.jpg",
+    "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB.nfo",
+    "Foundation.S01E06.Death.and.the.Maiden.DDP5.1.H.264-thumb.jpg",
+    "Foundation.S01E06.Death.and.the.Maiden.DDP5.1.H.264.nfo",
+    "Soul.2020.DSNP.EVO-thumb.jpg",
+    "Soul.2020.DSNP.EVO.nfo",
+    "CCTV航拍中国.第一季第二集.海南.Aerial.China.S01E02.Hainan.MP2-thumb.jpg",
+    "CCTV航拍中国.第一季第二集.海南.Aerial.China.S01E02.Hainan.MP2.nfo"
+  ],
+  "folders_without_chinese": [
+    "Clarksons.Farm"
+  ],
+  "folders_with_issues": [
+    {
+      "name": "【国家地理.有字幕A】",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "扪心问诊S02",
+      "issues": [
+        "缺少评分信息"
+      ]
+    },
+    {
+      "name": "大英两千年.2013.内嵌中英字幕￡CMCT呆呆熊",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "跟着书本去旅行",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "日本题材 249",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "小谢尔顿.第三季",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "小谢尔顿.第一季",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Clarksons.Farm",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "我的抗战",
+      "issues": [
+        "缺少评分信息",
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "History Of World 2012 Ep01.08 [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Cosmos.Possible.Worlds.2020 [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "请回答1988.응답하라 1988.2015.PTHome [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Suits.Season.1.4.DTG [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "四大才子之真假唐伯虎.Who.is.the.Real.Tang.Bohu.2019.PTerWEB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Three.Kingdoms.2010.WiKi [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Inside.Planet.Earth.2009 [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Word.of.Honor.2021.HDCTV [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "云南虫谷.The Worm Valley.E07.14.2021.NBP [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "云南虫谷.The Worm Valley.2021 [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "天道.Tian.Dao.2007.CHDWEB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Mexico Earth's Festival of Life 2017 GER Blu.ray . .DIY.mulpsn [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Inside The Human Body 2011 Blu.Ray [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "中国通史.General.History.of.China.2016.Bilibili [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "西游记.(1.25).Journey.to.the.West.1986. .MNHD.FRDS [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "红楼梦.A.Dream.in.Red.Mansions.1987.PTerWEB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "山东味道.A.Bite.Of.Shan.Dong.2022.HDSWEB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Cycle.Around.Japan.2015 [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "野性日本.Japan.Earths.Enchanted.Islands.I.2015.MNHD.FRDS [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "My.Chief.and.My.Regiment.2009.PTHome [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "琅琊榜.Nirvana.in.Fire.AKA.List.of.Langya.2015.PTHome [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Jade.Japan.45.Day.Itinerary.2022.NGB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "无穷之路.2021. [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Soul.2020.DSNP.EVO [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    },
+    {
+      "name": "Kyūkyoku [无评分]",
+      "issues": [
+        "可能缺少季数信息"
+      ]
+    }
+  ],
+  "categorization_suggestions": {
+    "纪录片": [
+      "History Of World 2012 Ep01.08 [无评分]",
+      "How the Universe Works Season 1 2010 [无评分]",
+      "Cosmos.Possible.Worlds.2020 [无评分]",
+      "Inside.Planet.Earth.2009 [无评分]",
+      "Eden.Untamed.Planet.Season 1 [无评分]",
+      "Mexico Earth's Festival of Life 2017 GER Blu.ray . .DIY.mulpsn [无评分]",
+      "Inside The Human Body 2011 Blu.Ray [无评分]",
+      "Civilisation.Season 1 [无评分]",
+      "中国通史.General.History.of.China.2016.Bilibili [无评分]",
+      "野性日本.Japan.Earths.Enchanted.Islands.I.2015.MNHD.FRDS [无评分]"
+    ],
+    "美剧": [
+      "老友记.Friends.Season 1.Season 10.SDHF.LZ [无评分]",
+      "Foundation.S01E06.Death.and.the.Maiden.DDP5.1.H.264 [无评分]"
+    ],
+    "英剧": [],
+    "韩剧": [
+      "Three.Kingdoms.2010.WiKi [无评分]",
+      "Animal.Kingdom.Season 1.2016.DDP5.1 [无评分]"
+    ],
+    "日剧": [
+      "Cycle.Around.Japan.2015 [无评分]",
+      "Jade.Japan.45.Day.Itinerary.2022.NGB [无评分]"
+    ],
+    "国产剧": [],
+    "综艺节目": [],
+    "其他": [
+      "【国家地理.有字幕A】",
+      "扪心问诊S02",
+      "大英两千年.2013.内嵌中英字幕￡CMCT呆呆熊",
+      "跟着书本去旅行",
+      "日本题材 249",
+      "小谢尔顿.第三季",
+      "小谢尔顿.第一季",
+      "Clarksons.Farm",
+      "我的抗战",
+      "战火熔炉.Zhan.Huo.Rong.Lu.Season 1 [无评分]",
+      "哈哈哈哈哈.Ha Ha Ha Ha Ha.Season 1.2020 [无评分]",
+      "奇葩说第6季.I.Can.I.BB.2019.Season 6.OurTV [无评分]",
+      "请回答1988.응답하라 1988.2015.PTHome [无评分]",
+      "Suits.Season.1.4.DTG [无评分]",
+      "四大才子之真假唐伯虎.Who.is.the.Real.Tang.Bohu.2019.PTerWEB [无评分]",
+      "Lie.To.Me.Season 1.2Audio.19977 [无评分]",
+      "Like.A.Flowing.River.2020.Season 2 [无评分]",
+      "One.Strange.Rock.2018.Season 1.CHDWEB [无评分]",
+      "The.Grand.Tour.Season 3.AMZN.DDP5.1.Ao [无评分]",
+      "Mom.Season 1.Season 5.AMZN.DDP5.1.H.264.NTb [无评分]",
+      "Once.Upon.a.Bite.Season 1.2018.PTHome [无评分]",
+      "Word.of.Honor.2021.HDCTV [无评分]",
+      "Home.Season 1.DDP5.1.H.264 [无评分]",
+      "云南虫谷.The Worm Valley.E07.14.2021.NBP [无评分]",
+      "Crime.Crackdown.2021.Season 1 [无评分]",
+      "云南虫谷.The Worm Valley.2021 [无评分]",
+      "知味新疆.Zhi.Wei.Xin.Jiang.2021.Season 1.Mandarin.OPS [无评分]",
+      "天道.Tian.Dao.2007.CHDWEB [无评分]",
+      "Hospital.Playlist.Season 1.2020 [无评分]",
+      "Lost.in.Space.2018.Season 1.Blu.ray.CsS [无评分]",
+      "Star.Trek.Picard.Season 1.Blu.ray [无评分]",
+      "Tokyo.Love.Story.1991.Season 1.LPCM.CHD [无评分]",
+      "老广的味道A.Bite.Of.Guangdong.Season 1.Season 7 [无评分]",
+      "The.Movies.Season 1.GUACAMOLE [无评分]",
+      "Masters.of.Sex.Season 1.DD5.1.H.264 [无评分]",
+      "西游记.(1.25).Journey.to.the.West.1986. .MNHD.FRDS [无评分]",
+      "三体.Three.Body.Season 1.2023.CHDWEB [无评分]",
+      "红楼梦.A.Dream.in.Red.Mansions.1987.PTerWEB [无评分]",
+      "狂飙.The.Knockout.Season 1.2023.HHWEB [无评分]",
+      "山东味道.A.Bite.Of.Shan.Dong.2022.HDSWEB [无评分]",
+      "My.Chief.and.My.Regiment.2009.PTHome [无评分]",
+      "琅琊榜.Nirvana.in.Fire.AKA.List.of.Langya.2015.PTHome [无评分]",
+      "Game.of.Thrones.Season 1 [无评分]",
+      "狂飙.The.Knockout.Season 1.2023 [无评分]",
+      "苍穹浩瀚S01.Season 2.The.Expanse.Blu.ray.￡cXcY [无评分]",
+      "Space.Force.Season 1.2020.DDP5.1 [无评分]",
+      "Love.Death.&.Robots.Season 1.DDP5.1 [无评分]",
+      "傲骨之战S01.Season 3.The.Good.Fight.￡cXcY [无评分]",
+      "Qin.Empire.Alliance.Season 3.2017.PuTao [无评分]",
+      "速成梦想屋.Instant.Dream.Home.2022.Season 1.YingWEB [无评分]",
+      "Tiny.World.Season 1.DDP5.1.H.265.ROCCaT [无评分]",
+      "我的阿勒泰.To.the.Wonder.Season 1.2024.CHDWEB [无评分]",
+      "龙之家族S01.House.of.the.Dragon.2022.Blu.ray.￡cXcY [无评分]",
+      "无穷之路.2021. [无评分]",
+      "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB [无评分]",
+      "Soul.2020.DSNP.EVO [无评分]",
+      "CCTV航拍中国.第一季第二集.海南.Aerial.China.S01E02.Hainan.MP2 [无评分]",
+      "Kyūkyoku [无评分]"
+    ]
+  },
+  "quality_assessment": {
+    "建议删除": [],
+    "考虑删除": [
+      {
+        "name": "Inside.Planet.Earth-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Inside.Planet.Earth.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Inside The Human Body 2011 Blu-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Inside The Human Body 2011 Blu.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "第十二夜.Shakespeare's.Globe.Twelfth.Night.2013.PTerWEB.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Foundation.S01E06.Death.and.the.Maiden.DDP5.1.H.264-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Foundation.S01E06.Death.and.the.Maiden.DDP5.1.H.264.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Soul.2020.DSNP.EVO-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "Soul.2020.DSNP.EVO.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "CCTV航拍中国.第一季第二集.海南.Aerial.China.S01E02.Hainan.MP2-thumb.jpg",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "CCTV航拍中国.第一季第二集.海南.Aerial.China.S01E02.Hainan.MP2.nfo",
+        "reason": "元数据文件，可能不需要",
+        "size_gb": 0.0
+      },
+      {
+        "name": "我的抗战",
+        "reason": "文件夹过小，可能是无用内容",
+        "size_gb": 0.0
+      }
+    ],
+    "必须保留": [
+      {
+        "name": "日本题材 249",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 102.18
+      },
+      {
+        "name": "Three.Kingdoms.2010.WiKi [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 224.92
+      },
+      {
+        "name": "The.Grand.Tour.Season 3.AMZN.DDP5.1.Ao [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 101.34
+      },
+      {
+        "name": "Mom.Season 1.Season 5.AMZN.DDP5.1.H.264.NTb [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 161.49
+      },
+      {
+        "name": "Lost.in.Space.2018.Season 1.Blu.ray.CsS [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 124.67
+      },
+      {
+        "name": "Star.Trek.Picard.Season 1.Blu.ray [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 135.03
+      },
+      {
+        "name": "Civilisation.Season 1 [无评分]",
+        "reason": "大型内容，具有保留价值",
+        "size_gb": 116.58
+      }
+    ],
+    "需要整理": []
+  },
+  "space_usage": {}
+}

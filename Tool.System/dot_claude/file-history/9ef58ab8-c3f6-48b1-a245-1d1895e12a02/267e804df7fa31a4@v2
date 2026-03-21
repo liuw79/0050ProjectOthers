@@ -1,0 +1,237 @@
+#!/usr/bin/env python3
+"""
+语音助手 - 开车时免手操作 Claude
+使用方法：
+1. 安装依赖：pip install openai anthropic openwakeword sounddevice scipy numpy
+2. 设置环境变量：export OPENAI_API_KEY="your-key" ANTHROPIC_API_KEY="your-key"
+3. 运行：python voice_claude.py
+"""
+
+import os
+import sys
+import queue
+import threading
+import time
+from datetime import datetime
+
+try:
+    import sounddevice as sd
+    import numpy as np
+    from scipy import signal
+except ImportError:
+    print("请安装音频依赖：pip install sounddevice scipy numpy")
+    sys.exit(1)
+
+try:
+    import openai
+    from anthropic import Anthropic
+except ImportError:
+    print("请安装API依赖：pip install openai anthropic")
+    sys.exit(1)
+
+try:
+    import openwakeword
+    from openwakeword.model import Model
+except ImportError:
+    print("请安装唤醒词依赖：pip install openwakeword")
+    print("注意：openwakeword 首次运行会下载模型，需要等待")
+    sys.exit(1)
+
+
+class VoiceAssistant:
+    def __init__(self):
+        # 配置
+        self.openai_key = os.environ.get("OPENAI_API_KEY")
+        self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+
+        if not self.openai_key:
+            print("错误：请设置 OPENAI_API_KEY 环境变量")
+            sys.exit(1)
+        if not self.anthropic_key:
+            print("错误：请设置 ANTHROPIC_API_KEY 环境变量")
+            sys.exit(1)
+
+        self.openai_client = openai.OpenAI(api_key=self.openai_key)
+        self.claude_client = Anthropic(api_key=self.anthropic_key)
+
+        # 音频配置
+        self.sample_rate = 16000
+        self.channels = 1
+        self.audio_queue = queue.Queue()
+
+        # 对话历史
+        self.conversation_history = []
+
+        # 唤醒词模型
+        print("加载唤醒词模型...")
+        self.oww_model = Model(
+            wakeword_models=["hey_mycroft", "alexa", "jarvis"],  # 内置唤醒词
+            enable_speex_noise_suppression=True
+        )
+        print("唤醒词模型加载完成")
+        print("支持的唤醒词：Hey Mycroft, Alexa, Jarvis")
+        print("对着麦克风说唤醒词开始...")
+
+    def audio_callback(self, indata, frames, time_info, status):
+        """音频输入回调"""
+        if status:
+            print(f"音频状态: {status}")
+        self.audio_queue.put(indata.copy())
+
+    def record_audio(self, duration=5):
+        """录音指定时长"""
+        print(f"录音中... ({duration}秒)")
+        recording = sd.rec(
+            int(duration * self.sample_rate),
+            samplerate=self.sample_rate,
+            channels=self.channels,
+            dtype='float32'
+        )
+        sd.wait()
+        return recording.flatten()
+
+    def listen_for_wakeword(self):
+        """持续监听唤醒词"""
+        print("\n🎧 监听中... 说 'Hey Mycroft' 或 'Jarvis' 唤醒")
+
+        buffer_size = 1280  # 80ms @ 16kHz
+        audio_buffer = np.zeros(buffer_size, dtype=np.float32)
+
+        with sd.InputStream(
+            samplerate=self.sample_rate,
+            channels=self.channels,
+            dtype='float32',
+            blocksize=buffer_size
+        ) as stream:
+            while True:
+                data, _ = stream.read(buffer_size)
+                audio_chunk = data.flatten()
+
+                # 检测唤醒词
+                prediction = self.oww_model.predict(audio_chunk)
+
+                # 检查是否有唤醒词被触发
+                for wakeword, score in prediction.items():
+                    if score > 0.5:  # 置信度阈值
+                        print(f"\n✅ 检测到唤醒词: {wakeword} (置信度: {score:.2f})")
+                        return True
+
+    def transcribe(self, audio_data):
+        """使用 Whisper 转录语音"""
+        # 保存临时文件
+        temp_file = "/tmp/voice_input.wav"
+        import scipy.io.wavfile as wavfile
+
+        # 转换为 16bit PCM
+        audio_int16 = (audio_data * 32767).astype(np.int16)
+        wavfile.write(temp_file, self.sample_rate, audio_int16)
+
+        print("正在转录...")
+
+        try:
+            with open(temp_file, "rb") as f:
+                transcript = self.openai_client.audio.transcriptions.create(
+                    model="whisper-1",
+                    file=f,
+                    language="zh"  # 中文
+                )
+            return transcript.text
+        except Exception as e:
+            print(f"转录错误: {e}")
+            return None
+
+    def ask_claude(self, user_message):
+        """发送消息给 Claude"""
+        self.conversation_history.append({
+            "role": "user",
+            "content": user_message
+        })
+
+        try:
+            message = self.claude_client.messages.create(
+                model="claude-sonnet-4-20250514",
+                max_tokens=1024,
+                messages=self.conversation_history
+            )
+
+            response = message.content[0].text
+            self.conversation_history.append({
+                "role": "assistant",
+                "content": response
+            })
+
+            return response
+        except Exception as e:
+            print(f"Claude API 错误: {e}")
+            return "抱歉，连接 Claude 时出错。"
+
+    def speak(self, text):
+        """使用 macOS TTS 播放语音"""
+        print(f"🔊 Claude: {text}")
+
+        # 截断过长的文本
+        if len(text) > 500:
+            text = text[:500] + "..."
+
+        # 使用 macOS say 命令
+        os.system(f'say -v "Ting-Ting" "{text}"')
+
+    def run(self):
+        """主循环"""
+        print("=" * 50)
+        print("🚗 Claude 语音助手 - 开车模式")
+        print("=" * 50)
+        print("使用方法：")
+        print("1. 说 'Hey Mycroft' 或 'Jarvis' 唤醒")
+        print("2. 听到提示音后说出你的问题")
+        print("3. Claude 会语音回答")
+        print("4. 按 Ctrl+C 退出")
+        print("=" * 50)
+
+        # 播放启动提示
+        os.system('say "语音助手已启动，请说唤醒词"')
+
+        while True:
+            try:
+                # 等待唤醒词
+                if self.listen_for_wakeword():
+                    # 播放提示音
+                    os.system('say "请说"')
+
+                    # 录音 5 秒
+                    audio = self.record_audio(duration=5)
+
+                    # 转录
+                    user_text = self.transcribe(audio)
+
+                    if user_text:
+                        print(f"👤 你: {user_text}")
+
+                        # 检查退出命令
+                        if "退出" in user_text or "停止" in user_text:
+                            self.speak("好的，再见！")
+                            break
+
+                        # 发送给 Claude
+                        response = self.ask_claude(user_text)
+
+                        # 语音播放回复
+                        self.speak(response)
+                    else:
+                        self.speak("没听清，请再说一次")
+
+            except KeyboardInterrupt:
+                print("\n退出语音助手")
+                break
+            except Exception as e:
+                print(f"错误: {e}")
+                time.sleep(1)
+
+
+def main():
+    assistant = VoiceAssistant()
+    assistant.run()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,15 @@
+total 152
+drwxr-xr-x  14 comdir  staff    448 Feb 14 16:53 .
+drwxr-xr-x  60 comdir  staff   1920 Feb 14 19:46 ..
+-rw-r--r--@  1 comdir  staff  53248 Feb 14 09:01 .coverage
+-rw-r--r--@  1 comdir  staff   6148 Feb 14 15:54 .DS_Store
+drwxr-xr-x@ 12 comdir  staff    384 Feb 15 07:09 .git
+-rw-r--r--@  1 comdir  staff    456 Feb 14 08:34 .gitignore
+drwxr-xr-x@  6 comdir  staff    192 Feb 14 08:55 .pytest_cache
+drwxr-xr-x@  3 comdir  staff     96 Feb 14 08:34 config
+drwxr-xr-x@  6 comdir  staff    192 Feb 14 17:59 docs
+-rw-r--r--@  1 comdir  staff    813 Feb 14 16:53 pyproject.toml
+-rw-r--r--@  1 comdir  staff    922 Feb 14 08:34 README.md
+-rw-r--r--@  1 comdir  staff    231 Feb 14 08:51 requirements.txt
+drwxr-xr-x@ 11 comdir  staff    352 Feb 14 18:44 src
+drwxr-xr-x@ 10 comdir  staff    320 Feb 14 09:29 tests

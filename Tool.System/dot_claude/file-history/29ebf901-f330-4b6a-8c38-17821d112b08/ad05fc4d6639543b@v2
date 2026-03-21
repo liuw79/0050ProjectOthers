@@ -1,0 +1,228 @@
+---
+name: coach-banzhuren-zhuchi
+description: 班主任主持AI教练评估系统。评估班主任开场白录音，生成HTML格式的专业评估报告并发送邮件。调用方式：用户说"评估班主任主持"、"AI教练评估主持录音"、"班主任开场评估"、"评估主持"或提供班主任录音文件夹路径时触发。当用户提到班主任、主持词、开场白、录音评估相关内容时，优先考虑使用此skill。
+---
+
+# 班主任主持 AI 教练评估系统
+
+## 概述
+
+这是一个端到端的班主任主持评估系统，用于：
+- 评估班主任开场白录音逐字稿
+- 对比高维5句话标准稿 + 课程5句话标准稿
+- 生成 HTML 格式的专业评估报告
+- 自动发送邮件给指定收件人
+- 本地存档报告
+
+---
+
+## 触发条件
+
+当用户：
+- 说"评估班主任主持"、"AI教练评估"、"班主任开场评估"
+- 提供班主任文件夹路径（如 `现场/20260307/月度经营分析会 黄文静/`）
+- 提到班主任录音、主持词评估相关需求
+
+---
+
+## 输入参数
+
+从用户输入或文件夹路径中提取：
+
+| 参数 | 必填 | 说明 | 提取方式 |
+|------|------|------|----------|
+| 班主任文件夹 | 是 | 包含录音稿的文件夹路径 | 用户提供 |
+| 课程名 | 否 | 课程名称 | 从文件夹名提取（空格前部分） |
+| 班主任名 | 否 | 班主任姓名 | 从文件夹名提取（空格后部分） |
+
+---
+
+## 执行流程
+
+### Step 1: 准备素材
+
+**1.1 读取录音逐字稿**
+- 路径：班主任文件夹内的 `.txt` 文件
+- 如有多个文件，询问用户选择哪一个
+- 如果用户没有指定文件夹，列出 `五句话介绍/现场/` 下可用的文件夹供选择
+
+**1.2 读取高维5句话标准稿**
+- 固定路径：`GW.Content/五句话介绍/高维学堂5句话介绍.md`
+
+**1.3 智能匹配课程5句话标准稿**
+按以下顺序尝试匹配：
+```
+1. GW.Content/五句话介绍/[课程名]-主持词.md
+2. GW.Content/五句话介绍/[课程名].md
+3. GW.Content/五句话介绍/[课程名]-五句话.md
+4. GW.Content/工作区/五句话介绍/[课程名]*.md
+```
+如无法匹配，询问用户提供路径。
+
+**1.4 读取评估 Prompt 模板**
+- 固定路径：`GW.Content/五句话介绍/班主任AI教练 2026年03月11日V3（高阶加分版）.md`
+
+---
+
+### Step 2: 组装完整 Prompt
+
+将评估模板中的 `[在此处填写课程名称]` 和 `[在此处粘贴录音文字]` 替换为实际内容：
+
+```
+# Role & Reality
+[评估模板的 Role & Reality 部分]
+
+# Object & Output
+[评估模板的 Object & Output 部分]
+
+**Input Data**:
+*   **Target Course**: [实际课程名]
+*   **Transcript**:
+[实际录音逐字稿内容]
+
+*   **File Paths**:
+    *   高维学堂5句话: [实际路径]
+    *   课程5句话: [实际路径]
+```
+
+---
+
+### Step 3: 调用 Gemini API 生成报告
+
+**使用 gemini-api skill 的 generate() 方法**
+
+```javascript
+import { ai } from './lib/ai.js';
+
+const htmlReport = await ai.generate(assembledPrompt, {
+  model: 'gemini-3.1-pro-preview',
+  maxTokens: 16384  // 报告较长，需要更多 tokens
+});
+```
+
+**调用方式**（在 Claude Code 中）：
+1. 读取 `GW.Content/server/src/lib/ai.js` 确认代码可用
+2. 在 `GW.Content/server/` 目录下执行 Node.js 脚本
+3. 或直接使用 curl 调用 API
+
+---
+
+### Step 4: 发送邮件
+
+**使用 send-email skill**
+
+| 字段 | 值 |
+|------|------|
+| 收件人 | `lw@gaowei.com, cbr@gaowei.com` |
+| 发件人 | `"高维学堂AI教练" <liuwei@gaowei.com>` |
+| 主题 | `[课程名] [班主任名] AI教练评估报告 - [日期]` |
+| 内容 | Gemini 生成的 HTML 报告 |
+
+**邮件标题示例**：`月度经营分析会 黄文静 AI教练评估报告 - 2026-03-12`
+
+---
+
+### Step 5: 本地存档
+
+**保存路径**：
+```
+GW.Content/五句话介绍/现场/[日期]/[课程名 班主任名]/[班主任名]-AI教练报告.html
+```
+
+**示例**：
+```
+GW.Content/五句话介绍/现场/20260307/月度经营分析会 黄文静/黄文静-AI教练报告.html
+```
+
+---
+
+## 文件路径汇总
+
+| 文件 | 路径 |
+|------|------|
+| 评估 Prompt 模板 | `GW.Content/五句话介绍/班主任AI教练 2026年03月11日V3（高阶加分版）.md` |
+| 高维5句话标准稿 | `GW.Content/五句话介绍/高维学堂5句话介绍.md` |
+| Gemini API 代码 | `GW.Content/server/src/lib/ai.js` |
+| 现场文件夹 | `GW.Content/五句话介绍/现场/` |
+
+---
+
+## 完整执行脚本示例
+
+```javascript
+// GW.Content/server/scripts/coach-evaluate.js
+
+import { ai } from '../src/lib/ai.js';
+import nodemailer from 'nodemailer';
+import fs from 'fs';
+import path from 'path';
+
+// 配置
+const COURSE_NAME = process.argv[2];
+const TEACHER_NAME = process.argv[3];
+const DATE_FOLDER = process.argv[4] || new Date().toISOString().slice(0,10).replace(/-/g, '');
+
+const BASE_DIR = '/Users/comdir/SynologyDrive/0050Project/GW.Content';
+const SCENE_DIR = `${BASE_DIR}/五句话介绍/现场/${DATE_FOLDER}/${COURSE_NAME} ${TEACHER_NAME}`;
+
+// Step 1: 读取素材
+const transcript = fs.readFileSync(`${SCENE_DIR}/录音稿.txt`, 'utf-8');
+const gaowei5 = fs.readFileSync(`${BASE_DIR}/五句话介绍/高维学堂5句话介绍.md`, 'utf-8');
+const course5 = fs.readFileSync(`${BASE_DIR}/五句话介绍/${COURSE_NAME}-主持词.md`, 'utf-8');
+const promptTemplate = fs.readFileSync(`${BASE_DIR}/五句话介绍/班主任AI教练 2026年03月11日V3（高阶加分版）.md`, 'utf-8');
+
+// Step 2: 组装 Prompt
+const fullPrompt = promptTemplate
+  .replace('[在此处填写课程名称]', COURSE_NAME)
+  .replace('[在此处粘贴录音文字]', transcript);
+
+// Step 3: 调用 Gemini
+console.log('正在生成评估报告...');
+const htmlReport = await ai.generate(fullPrompt, {
+  model: 'gemini-3.1-pro-preview',
+  maxTokens: 16384
+});
+
+// Step 4: 发送邮件
+console.log('正在发送邮件...');
+const transporter = nodemailer.createTransport({
+  host: 'smtp.feishu.cn',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'liuwei@gaowei.com',
+    pass: 'AQg6ve0Xpdb3FG87'
+  }
+});
+
+await transporter.sendMail({
+  from: '"高维学堂AI教练" <liuwei@gaowei.com>',
+  to: 'lw@gaowei.com, cbr@gaowei.com',
+  subject: `${COURSE_NAME} ${TEACHER_NAME} AI教练评估报告 - ${new Date().toLocaleDateString('zh-CN')}`,
+  html: htmlReport
+});
+
+// Step 5: 本地存档
+const reportPath = `${SCENE_DIR}/${TEACHER_NAME}-AI教练报告.html`;
+fs.writeFileSync(reportPath, htmlReport);
+console.log(`报告已保存: ${reportPath}`);
+
+console.log('完成！');
+```
+
+---
+
+## 注意事项
+
+1. **Gemini API 超时**：报告生成可能需要 30-60 秒，设置合理的 timeout
+2. **HTML 格式**：确保生成的 HTML 可以在邮件客户端正确显示
+3. **文件编码**：统一使用 UTF-8
+4. **错误处理**：如 Gemini 生成失败，保存原始 Prompt 供调试
+
+---
+
+## 版本信息
+
+- **版本**：v1.0
+- **创建时间**：2026-03-12
+- **依赖**：gemini-api skill, send-email skill

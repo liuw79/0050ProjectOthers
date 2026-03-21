@@ -1,0 +1,19 @@
+# 环境变量文件
+.env
+
+# N8N 数据目录
+n8n_data/
+postgres_data/
+local_files/
+
+# 日志文件
+*.log
+
+# macOS 系统文件
+.DS_Store
+
+# 备份文件
+*.backup
+backups/
+
+

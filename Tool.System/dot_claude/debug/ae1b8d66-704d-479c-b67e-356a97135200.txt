@@ -1,0 +1,95 @@
+2026-02-28T14:37:59.317Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T14:37:59.322Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T14:37:59.322Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:37:59.322Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-28T14:37:59.336Z [DEBUG] High write ratio: blit=0, write=6564 (100.0% writes), screen=314x53
+2026-02-28T14:37:59.385Z [DEBUG] High write ratio: blit=0, write=6564 (100.0% writes), screen=314x53
+2026-02-28T14:37:59.629Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-28T14:37:59.629Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.57a; cc_entrypoint=cli;
+2026-02-28T14:37:59.629Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:37:59.629Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:37:59.629Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:37:59.658Z [DEBUG] High write ratio: blit=0, write=6564 (100.0% writes), screen=314x53
+2026-02-28T14:37:59.661Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T14:37:59.661Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T14:37:59.661Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-28T14:37:59.676Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T14:37:59.676Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T14:37:59.676Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T14:37:59.676Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T14:37:59.686Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T14:37:59.705Z [DEBUG] High write ratio: blit=0, write=6686 (100.0% writes), screen=317x53
+2026-02-28T14:37:59.712Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-02-28T14:37:59.712Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:37:59.712Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:37:59.713Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:37:59.768Z [DEBUG] High write ratio: blit=0, write=6686 (100.0% writes), screen=317x53
+2026-02-28T14:37:59.927Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:38:02.852Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:38:06.589Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T14:38:06.589Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:38:06.589Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-28T14:38:06.610Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:06.611Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-28T14:38:06.614Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T14:38:06.616Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-02-28T14:38:06.616Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:38:06.616Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:38:06.616Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:38:06.668Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:07.099Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:38:09.587Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:11.005Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:14.506Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:18.326Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:18.330Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2026-02-28T14:38:18.330Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:38:18.330Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-28T14:38:18.379Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:38:21.184Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:40:32.276Z [DEBUG] High write ratio: blit=0, write=6738 (100.0% writes), screen=323x53
+2026-02-28T14:40:41.732Z [DEBUG] High write ratio: blit=0, write=6778 (100.0% writes), screen=327x53
+2026-02-28T14:40:41.737Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T14:40:41.737Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T14:40:41.737Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T14:40:41.737Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T14:40:41.744Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-28T14:40:41.744Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:40:41.744Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-28T14:40:41.744Z [DEBUG] FileHistory: Making snapshot for message 51f2f6c7-5048-4d63-9191-35c59ffb38ef
+2026-02-28T14:40:41.868Z [DEBUG] FileHistory: Added snapshot for 51f2f6c7-5048-4d63-9191-35c59ffb38ef, tracking 3 files
+2026-02-28T14:40:41.889Z [DEBUG] High write ratio: blit=0, write=6778 (100.0% writes), screen=327x53
+2026-02-28T14:40:41.891Z [DEBUG] Started caffeinate to prevent sleep
+2026-02-28T14:40:41.898Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-28T14:40:41.898Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.a7c; cc_entrypoint=cli;
+2026-02-28T14:40:41.898Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:40:41.898Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:40:41.898Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:40:42.128Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T14:40:42.147Z [DEBUG] High write ratio: blit=0, write=6778 (100.0% writes), screen=327x53
+2026-02-28T14:40:42.151Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-02-28T14:40:42.151Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:40:42.151Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:40:42.151Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:40:42.208Z [DEBUG] High write ratio: blit=0, write=6778 (100.0% writes), screen=327x53
+2026-02-28T14:40:42.615Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:40:43.803Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:40:49.854Z [DEBUG] High write ratio: blit=0, write=6855 (100.0% writes), screen=333x53
+2026-02-28T14:40:49.860Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T14:40:49.860Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:40:49.860Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-28T14:40:49.869Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-28T14:40:49.872Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T14:40:49.874Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-02-28T14:40:49.874Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T14:40:49.874Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T14:40:49.874Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T14:40:49.928Z [DEBUG] High write ratio: blit=0, write=6823 (100.0% writes), screen=331x53
+2026-02-28T14:40:50.479Z [DEBUG] Stream started - received first chunk
+2026-02-28T14:40:56.742Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-02-28T14:40:56.743Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-02-28T14:40:56.743Z [DEBUG] Metrics export disabled by organization setting
+2026-02-28T14:40:56.867Z [DEBUG] High write ratio: blit=0, write=6823 (100.0% writes), screen=331x53
+2026-02-28T14:40:58.365Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-02-28T14:40:58.365Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:40:58.365Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)

@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "项目初始化 (Task 1)",
+  "description": "创建 pyproject.toml、requirements.txt、README.md、目录结构、配置文件、.gitignore",
+  "activeForm": "初始化项目结构中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

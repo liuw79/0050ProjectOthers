@@ -1,0 +1,17 @@
+[
+  {
+    "content": "分析PDF内容，提取AI训战课核心结构",
+    "status": "in_progress",
+    "activeForm": "分析PDF内容结构"
+  },
+  {
+    "content": "使用3W解码法深度萃取",
+    "status": "pending",
+    "activeForm": "进行3W深度解码"
+  },
+  {
+    "content": "生成知识萃取文档",
+    "status": "pending",
+    "activeForm": "生成知识萃取文档"
+  }
+]

@@ -1,0 +1,661 @@
+2026-02-26T06:27:24.724Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-02-26T06:27:24.724Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:27:24.724Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-02-26T06:27:24.724Z [DEBUG] Cleared all session hooks for session 2e2dcf64-acb4-427d-b0ce-1db23d35b541
+2026-02-26T06:27:24.726Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-02-26T06:27:24.726Z [DEBUG] Found 1 hook matchers in settings
+2026-02-26T06:27:24.726Z [DEBUG] Matched 1 unique hooks for query "clear" (1 before deduplication)
+2026-02-26T06:27:24.765Z [DEBUG] High write ratio: blit=0, write=1572 (100.0% writes), screen=81x93
+2026-02-26T06:27:24.769Z [DEBUG] Started caffeinate to prevent sleep
+2026-02-26T06:27:24.774Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-26T06:27:24.774Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-26T06:27:24.774Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-26T06:27:24.780Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-26T06:27:24.780Z [DEBUG] Hook SessionStart:clear (SessionStart) error:
+/bin/sh: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/hooks/session-start.sh: No such file or directory
+2026-02-26T06:27:24.781Z [DEBUG] FileHistory: Added snapshot for 804e68fc-4858-4409-8c8d-c1ad94f50ea6, tracking 0 files
+2026-02-26T06:27:24.781Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-02-26T06:27:24.783Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-02-26T06:27:24.783Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-26T06:27:24.801Z [DEBUG] Full reset (shrink->below): prevHeight=81, nextHeight=23, viewport=48
+2026-02-26T06:27:24.862Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-02-26T06:28:32.019Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-26T06:28:32.031Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-26T06:28:32.031Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-26T06:28:32.031Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-26T06:28:32.031Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-26T06:28:32.031Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-26T06:28:32.031Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-26T06:28:32.031Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-26T06:28:32.032Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-26T06:28:32.032Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-26T06:28:32.032Z [DEBUG] Total plugin skills loaded: 0
+2026-02-26T06:28:32.032Z [DEBUG] Total plugin commands loaded: 0
+2026-02-26T06:28:32.054Z [DEBUG] Loaded 16 unique skills (16 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 1)
+2026-02-26T06:28:32.054Z [DEBUG] getSkills returning: 16 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-26T06:28:32.054Z [DEBUG] Sending 16 skills via attachment (initial, 16 total sent)
+2026-02-26T06:28:32.055Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-26T06:28:32.055Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:28:32.055Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-26T06:28:32.055Z [DEBUG] FileHistory: Making snapshot for message 0e2f0c16-7d98-4840-b11c-be20700fe404
+2026-02-26T06:28:32.055Z [DEBUG] FileHistory: Added snapshot for 0e2f0c16-7d98-4840-b11c-be20700fe404, tracking 0 files
+2026-02-26T06:28:32.055Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-02-26T06:28:32.059Z [DEBUG] Started caffeinate to prevent sleep
+2026-02-26T06:28:32.062Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.8539.1772087312062
+2026-02-26T06:28:32.062Z [DEBUG] Preserving file permissions: 100600
+2026-02-26T06:28:32.062Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-02-26T06:28:32.062Z [DEBUG] Applied original permissions to temp file
+2026-02-26T06:28:32.062Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.8539.1772087312062 to /Users/comdir/.claude.json
+2026-02-26T06:28:32.062Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-02-26T06:28:32.063Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-26T06:28:32.063Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:28:32.064Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:28:32.064Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:28:32.064Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:28:32.065Z [DEBUG] autocompact: tokens=912 threshold=167000 effectiveWindow=180000
+2026-02-26T06:28:32.067Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-26T06:28:32.069Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:28:32.070Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:28:32.070Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:28:32.071Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:28:32.074Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-02-26T06:28:32.607Z [ERROR] Error streaming, falling back to non-streaming mode: {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"20260226142832c5352d5412b445df"}
+2026-02-26T06:28:32.607Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:28:32.607Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:28:32.607Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:28:32.956Z [DEBUG] Stream started - received first chunk
+2026-02-26T06:28:33.229Z [ERROR] API error (attempt 1/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"20260226142832aef898dadb5d436f"}
+2026-02-26T06:28:33.230Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-02-26T06:28:34.181Z [ERROR] API error (attempt 2/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"202602261428339977ded43a5f43d8"}
+2026-02-26T06:28:34.182Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-02-26T06:28:35.752Z [ERROR] API error (attempt 3/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"20260226142835d777317233e6403a"}
+2026-02-26T06:28:35.753Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-26T06:28:38.279Z [ERROR] API error (attempt 4/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"20260226142837c8c619d5e953429c"}
+2026-02-26T06:28:38.280Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-02-26T06:28:38.312Z [DEBUG] High write ratio: blit=0, write=1017 (100.0% writes), screen=30x93
+2026-02-26T06:28:43.618Z [ERROR] API error (attempt 5/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"202602261428431984b9be20b4466c"}
+2026-02-26T06:28:43.619Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-02-26T06:28:43.638Z [DEBUG] High write ratio: blit=0, write=1018 (100.0% writes), screen=30x93
+2026-02-26T06:28:53.760Z [ERROR] API error (attempt 6/11): 429 429 {"error":{"code":"1302","message":"您的账户已达到速率限制，请您控制请求频率"},"request_id":"20260226142853e3080dfb884f4c21"}
+2026-02-26T06:28:53.761Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-02-26T06:28:53.784Z [DEBUG] High write ratio: blit=0, write=1018 (100.0% writes), screen=30x93
+2026-02-26T06:29:20.318Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-26T06:29:20.319Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-26T06:29:20.319Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:29:20.319Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-26T06:29:20.321Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-02-26T06:29:20.338Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-26T06:29:20.338Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:29:20.338Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:29:20.338Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:29:20.338Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-26T06:29:20.338Z [DEBUG] Found 5 hook matchers in settings
+2026-02-26T06:29:20.338Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-26T06:29:20.338Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:29:20.339Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-26T06:29:20.339Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-26T06:29:20.339Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-26T06:29:20.339Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-26T06:29:20.339Z [DEBUG] autocompact: tokens=33921 threshold=167000 effectiveWindow=180000
+2026-02-26T06:29:20.339Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-26T06:29:20.340Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:29:20.340Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:29:20.340Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:29:20.340Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:29:20.342Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-26T06:29:20.362Z [DEBUG] High write ratio: blit=0, write=1083 (100.0% writes), screen=35x93
+2026-02-26T06:29:20.837Z [DEBUG] Stream started - received first chunk
+2026-02-26T06:29:21.428Z [DEBUG] Stream started - received first chunk
+2026-02-26T06:29:28.370Z [DEBUG] [useDeferredValue] Messages deferred by 2 (15→17)
+2026-02-26T06:29:28.374Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-26T06:29:28.374Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-26T06:29:28.374Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:29:28.374Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-26T06:29:28.375Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-26T06:29:28.375Z [DEBUG] Found 5 hook matchers in settings
+2026-02-26T06:29:28.375Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-26T06:29:28.375Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-26T06:29:28.375Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-26T06:29:28.375Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-26T06:29:28.375Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-26T06:29:28.377Z [DEBUG] autocompact: tokens=37631 threshold=167000 effectiveWindow=180000
+2026-02-26T06:29:28.377Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-26T06:29:28.378Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:29:28.379Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:29:28.379Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:29:28.379Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:29:28.381Z [DEBUG] [useDeferredValue] Messages deferred by 4 (17→21)
+2026-02-26T06:29:28.399Z [DEBUG] High write ratio: blit=0, write=1157 (100.0% writes), screen=38x93
+2026-02-26T06:29:28.912Z [DEBUG] Stream started - received first chunk
+2026-02-26T06:29:42.927Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-26T06:29:42.958Z [DEBUG] High write ratio: blit=0, write=1161 (100.0% writes), screen=38x93
+2026-02-26T06:29:50.077Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-02-26T06:29:50.084Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-26T06:29:50.084Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:29:50.084Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-26T06:29:50.084Z [DEBUG] autocompact: tokens=41544 threshold=167000 effectiveWindow=180000
+2026-02-26T06:29:50.085Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-26T06:29:50.088Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-02-26T06:29:50.090Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T06:29:50.090Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T06:29:50.091Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T06:29:50.095Z [DEBUG] [useDeferredValue] Messages deferred by 2 (22→24)
+2026-02-26T06:29:50.098Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-26T06:29:50.125Z [DEBUG] High write ratio: blit=0, write=1692 (100.0% writes), screen=58x93
+2026-02-26T06:29:50.728Z [DEBUG] Stream started - received first chunk
+2026-02-26T06:30:21.171Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-26T06:30:21.372Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-26T06:30:21.380Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-02-26T06:30:21.380Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:30:21.380Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-26T06:30:21.380Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=639 output=114 cacheRead=40896 cacheCreate=0
+2026-02-26T06:30:50.100Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T06:30:50.100Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:30:50.100Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T06:31:19.176Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-02-26T06:31:19.176Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-02-26T06:31:19.176Z [DEBUG] Metrics export disabled by organization setting
+2026-02-26T06:42:40.515Z [DEBUG] High write ratio: blit=343, write=1568 (82.1% writes), screen=58x93
+2026-02-26T06:43:40.540Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T06:43:40.540Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:43:40.541Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T06:43:46.878Z [DEBUG] High write ratio: blit=0, write=1681 (100.0% writes), screen=58x93
+2026-02-26T06:43:46.879Z [DEBUG] Full reset (scrollback changes): scrollbackRows=12, firstChangeY=2
+  prev: "│                                 │ Tips for getting started                                │"
+  next: "│                                            │ Tips for getting started                     │"
+2026-02-26T06:44:46.949Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T06:44:46.952Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T06:44:46.953Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T07:57:20.859Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-26T07:57:33.331Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-26T07:58:33.340Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T07:58:33.340Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T07:58:33.341Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T11:00:14.340Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-26T11:03:48.333Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T11:03:48.333Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T11:03:48.333Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T15:27:14.811Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-26T15:28:14.841Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-26T15:28:14.841Z [DEBUG] Found 0 hook matchers in settings
+2026-02-26T15:28:14.842Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-26T15:49:33.401Z [DEBUG] npm view failed with code 1
+2026-02-26T15:49:33.401Z [DEBUG] npm stderr: (empty)
+2026-02-27T01:56:16.880Z [DEBUG] npm view failed with code 1
+2026-02-27T01:56:16.882Z [DEBUG] npm stderr: (empty)
+2026-02-27T03:07:53.161Z [DEBUG] npm view failed with code 1
+2026-02-27T03:07:53.161Z [DEBUG] npm stderr: (empty)
+2026-02-27T04:08:53.317Z [DEBUG] npm view failed with code 1
+2026-02-27T04:08:53.317Z [DEBUG] npm stderr: (empty)
+2026-02-27T04:46:15.531Z [DEBUG] npm view failed with code 1
+2026-02-27T04:46:15.531Z [DEBUG] npm stderr: (empty)
+2026-02-27T06:33:29.907Z [DEBUG] npm view failed with code 1
+2026-02-27T06:33:29.907Z [DEBUG] npm stderr: (empty)
+2026-02-27T07:04:33.262Z [DEBUG] npm view failed with code 1
+2026-02-27T07:04:33.262Z [DEBUG] npm stderr: (empty)
+2026-02-27T08:01:18.078Z [DEBUG] npm view failed with code 1
+2026-02-27T08:01:18.078Z [DEBUG] npm stderr: (empty)
+2026-02-27T09:13:04.442Z [DEBUG] npm view failed with code 1
+2026-02-27T09:13:04.442Z [DEBUG] npm stderr: (empty)
+2026-02-27T10:14:03.593Z [DEBUG] npm view failed with code 1
+2026-02-27T10:14:03.593Z [DEBUG] npm stderr: (empty)
+2026-02-27T11:15:03.733Z [DEBUG] npm view failed with code 1
+2026-02-27T11:15:03.733Z [DEBUG] npm stderr: (empty)
+2026-02-27T12:16:03.831Z [DEBUG] npm view failed with code 1
+2026-02-27T12:16:03.831Z [DEBUG] npm stderr: (empty)
+2026-02-27T13:17:03.957Z [DEBUG] npm view failed with code 1
+2026-02-27T13:17:03.957Z [DEBUG] npm stderr: (empty)
+2026-02-27T14:18:04.113Z [DEBUG] npm view failed with code 1
+2026-02-27T14:18:04.113Z [DEBUG] npm stderr: (empty)
+2026-02-27T15:19:04.259Z [DEBUG] npm view failed with code 1
+2026-02-27T15:19:04.260Z [DEBUG] npm stderr: (empty)
+2026-02-27T16:14:17.418Z [DEBUG] npm view failed with code 1
+2026-02-27T16:14:17.418Z [DEBUG] npm stderr: (empty)
+2026-02-27T16:59:47.767Z [DEBUG] npm view failed with code 1
+2026-02-27T16:59:47.767Z [DEBUG] npm stderr: (empty)
+2026-02-27T18:27:39.399Z [DEBUG] npm view failed with code 1
+2026-02-27T18:27:39.399Z [DEBUG] npm stderr: (empty)
+2026-02-27T19:55:46.501Z [DEBUG] npm view failed with code 1
+2026-02-27T19:55:46.501Z [DEBUG] npm stderr: (empty)
+2026-02-27T21:41:51.881Z [DEBUG] npm view failed with code 1
+2026-02-27T21:41:51.881Z [DEBUG] npm stderr: (empty)
+2026-02-27T22:14:47.572Z [DEBUG] npm view failed with code 1
+2026-02-27T22:14:47.572Z [DEBUG] npm stderr: (empty)
+2026-02-27T23:15:47.738Z [DEBUG] npm view failed with code 1
+2026-02-27T23:15:47.738Z [DEBUG] npm stderr: (empty)
+2026-02-27T23:59:27.868Z [DEBUG] npm view failed with code 1
+2026-02-27T23:59:27.868Z [DEBUG] npm stderr: (empty)
+2026-02-28T01:17:47.314Z [DEBUG] npm view failed with code 1
+2026-02-28T01:17:47.314Z [DEBUG] npm stderr: (empty)
+2026-02-28T02:18:47.458Z [DEBUG] npm view failed with code 1
+2026-02-28T02:18:47.458Z [DEBUG] npm stderr: (empty)
+2026-02-28T03:19:47.618Z [DEBUG] npm view failed with code 1
+2026-02-28T03:19:47.618Z [DEBUG] npm stderr: (empty)
+2026-02-28T04:20:47.936Z [DEBUG] npm view failed with code 1
+2026-02-28T04:20:47.936Z [DEBUG] npm stderr: (empty)
+2026-02-28T05:21:47.086Z [DEBUG] npm view failed with code 1
+2026-02-28T05:21:47.086Z [DEBUG] npm stderr: (empty)
+2026-02-28T06:22:42.043Z [DEBUG] npm view failed with code 1
+2026-02-28T06:22:42.043Z [DEBUG] npm stderr: (empty)
+2026-02-28T06:49:11.358Z [DEBUG] Detected skill change: /Users/comdir/.claude/commands/tencent-ssh.md
+2026-02-28T06:49:11.362Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T06:49:11.382Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T06:49:11.382Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T06:49:11.382Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T06:49:11.382Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T06:49:11.382Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T06:49:11.382Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T06:49:11.382Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T06:49:11.404Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T06:49:11.404Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T09:38:21.024Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-28T09:39:21.098Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-28T09:39:21.098Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T09:39:21.098Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-28T09:39:57.765Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-28T09:40:01.557Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-28T09:41:01.644Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-28T09:41:01.644Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T09:41:01.644Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-28T09:42:14.121Z [DEBUG] High write ratio: blit=819, write=1425 (63.5% writes), screen=58x93
+2026-02-28T09:43:14.128Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-28T09:43:14.128Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T09:43:14.128Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-28T11:32:47.909Z [DEBUG] Detected skill change: /Users/comdir/.claude/skills/publish-feishu/SKILL.md
+2026-02-28T11:32:47.912Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T11:32:47.927Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T11:32:47.927Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T11:32:47.927Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T11:32:47.928Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T11:32:47.928Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T11:32:47.928Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T11:32:47.928Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T11:32:47.941Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T11:32:47.941Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T11:33:11.620Z [DEBUG] Detected skill change: /Users/comdir/.claude/skills/publish-feishu/SKILL.md
+2026-02-28T11:33:11.620Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T11:33:11.626Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T11:33:11.626Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T11:33:11.626Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T11:33:11.626Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T11:33:11.626Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T11:33:11.626Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T11:33:11.626Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T11:33:11.643Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T11:33:11.643Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T11:36:38.285Z [DEBUG] Detected skill change: /Users/comdir/.claude/skills/publish-feishu/SKILL.md
+2026-02-28T11:36:38.287Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T11:36:38.299Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T11:36:38.299Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T11:36:38.299Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T11:36:38.300Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T11:36:38.300Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T11:36:38.300Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T11:36:38.300Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T11:36:38.311Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T11:36:38.311Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T11:44:31.016Z [DEBUG] Detected skill change: /Users/comdir/.claude/skills/publish-feishu/SKILL.md
+2026-02-28T11:44:31.018Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T11:44:31.031Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T11:44:31.031Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T11:44:31.031Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T11:44:31.032Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T11:44:31.032Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T11:44:31.032Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T11:44:31.032Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T11:44:31.043Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T11:44:31.043Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T12:00:21.095Z [DEBUG] Detected skill change: /Users/comdir/.claude/skills/publish-feishu/SKILL.md
+2026-02-28T12:00:21.098Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-28T12:00:21.114Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-28T12:00:21.114Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T12:00:21.114Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-28T12:00:21.114Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-28T12:00:21.114Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-28T12:00:21.114Z [DEBUG] Total plugin skills loaded: 0
+2026-02-28T12:00:21.114Z [DEBUG] Total plugin commands loaded: 0
+2026-02-28T12:00:21.124Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-28T12:00:21.124Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-28T12:44:57.619Z [DEBUG] npm view failed with code 1
+2026-02-28T12:44:57.620Z [DEBUG] npm stderr: (empty)
+2026-03-01T11:23:42.926Z [DEBUG] High write ratio: blit=387, write=1660 (81.1% writes), screen=58x108
+2026-03-01T11:24:04.095Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T11:24:04.095Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T11:24:04.095Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T11:24:04.095Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T11:24:04.099Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-01T11:24:04.099Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:24:04.099Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:24:04.099Z [DEBUG] FileHistory: Making snapshot for message 45dd58e2-1193-447d-a534-49f2022f4f18
+2026-03-01T11:24:04.099Z [DEBUG] FileHistory: Added snapshot for 45dd58e2-1193-447d-a534-49f2022f4f18, tracking 0 files
+2026-03-01T11:24:04.103Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-01T11:24:04.122Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T11:24:04.124Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-01T11:24:04.136Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.8539.1772364244136
+2026-03-01T11:24:04.136Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T11:24:04.137Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-01T11:24:04.137Z [DEBUG] Applied original permissions to temp file
+2026-03-01T11:24:04.137Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.8539.1772364244136 to /Users/comdir/.claude.json
+2026-03-01T11:24:04.137Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-01T11:24:04.138Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T11:24:04.141Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:24:04.141Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:24:04.141Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:24:04.153Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-01T11:24:04.163Z [DEBUG] Loaded 18 unique skills (18 unconditional, 0 conditional, managed: 0, user: 16, project: 0, additional: 0, legacy commands: 2)
+2026-03-01T11:24:04.163Z [DEBUG] getSkills returning: 18 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-01T11:24:04.163Z [DEBUG] autocompact: tokens=41270 threshold=167000 effectiveWindow=180000
+2026-03-01T11:24:04.164Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:24:04.165Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:24:04.173Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:24:04.173Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:24:04.175Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:24:04.175Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:24:04.194Z [DEBUG] High write ratio: blit=0, write=1808 (100.0% writes), screen=62x108
+2026-03-01T11:24:05.026Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:24:05.249Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:24:09.402Z [DEBUG] [useDeferredValue] Messages deferred by 2 (25→27)
+2026-03-01T11:24:09.409Z [WARN] [PROMPT CACHE BREAK] tools changed (tool prompt/schema changed, same tool set) [source=repl_main_thread, call #4, cache read: 34432 → 5184, creation: 0]
+2026-03-01T11:24:09.418Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T11:24:09.418Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-01T11:24:09.418Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:24:09.418Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-01T11:24:09.423Z [DEBUG] [useDeferredValue] Messages deferred by 2 (25→27)
+2026-03-01T11:24:09.455Z [DEBUG] High write ratio: blit=0, write=1848 (100.0% writes), screen=65x108
+2026-03-01T11:24:09.541Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T11:24:09.541Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.ada; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:24:09.541Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:24:09.541Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:24:09.541Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-01T11:24:09.541Z [DEBUG] Found 5 hook matchers in settings
+2026-03-01T11:24:09.541Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-01T11:24:09.541Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:24:09.542Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T11:24:09.542Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T11:24:09.542Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T11:24:09.542Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T11:24:09.542Z [DEBUG] autocompact: tokens=42475 threshold=167000 effectiveWindow=180000
+2026-03-01T11:24:09.542Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:24:09.543Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:24:09.545Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:24:09.545Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:24:09.545Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:24:09.551Z [DEBUG] [useDeferredValue] Messages deferred by 1 (27→28)
+2026-03-01T11:24:09.582Z [DEBUG] High write ratio: blit=0, write=1986 (100.0% writes), screen=68x108
+2026-03-01T11:24:09.861Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:24:10.626Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:24:18.054Z [DEBUG] [useDeferredValue] Messages deferred by 1 (28→29)
+2026-03-01T11:24:18.058Z [DEBUG] [useDeferredValue] Messages deferred by 1 (28→29)
+2026-03-01T11:24:18.097Z [DEBUG] High write ratio: blit=0, write=1992 (100.0% writes), screen=68x108
+2026-03-01T11:24:26.110Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-01T11:24:26.110Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:24:26.110Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:24:26.110Z [DEBUG] autocompact: tokens=44763 threshold=167000 effectiveWindow=180000
+2026-03-01T11:24:26.114Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:24:26.117Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:24:26.119Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:24:26.119Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:24:26.119Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:24:26.122Z [DEBUG] [useDeferredValue] Messages deferred by 1 (29→30)
+2026-03-01T11:24:26.126Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T11:24:26.156Z [DEBUG] High write ratio: blit=0, write=2761 (100.0% writes), screen=96x108
+2026-03-01T11:24:28.014Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:24:36.740Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T11:24:36.822Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T11:24:36.826Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-01T11:24:36.826Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:24:36.826Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:24:36.826Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=786 output=170 cacheRead=43968 cacheCreate=0
+2026-03-01T11:24:36.827Z [DEBUG] [Speculation] enabled=false
+2026-03-01T11:25:26.129Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-03-01T11:25:26.129Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:25:26.129Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-03-01T11:26:07.804Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T11:26:07.804Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T11:26:07.804Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T11:26:07.804Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T11:26:07.805Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-01T11:26:07.805Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:26:07.805Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:26:07.806Z [DEBUG] FileHistory: Making snapshot for message a7a9c6f2-e0cf-480d-8c79-6449309e56e0
+2026-03-01T11:26:07.806Z [DEBUG] FileHistory: Added snapshot for a7a9c6f2-e0cf-480d-8c79-6449309e56e0, tracking 0 files
+2026-03-01T11:26:07.806Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-03-01T11:26:07.814Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-01T11:26:07.817Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.8539.1772364367817
+2026-03-01T11:26:07.817Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T11:26:07.817Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-01T11:26:07.817Z [DEBUG] Applied original permissions to temp file
+2026-03-01T11:26:07.817Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.8539.1772364367817 to /Users/comdir/.claude.json
+2026-03-01T11:26:07.817Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-01T11:26:07.818Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T11:26:07.818Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:26:07.819Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:26:07.819Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:26:07.819Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:26:07.820Z [DEBUG] autocompact: tokens=44488 threshold=167000 effectiveWindow=180000
+2026-03-01T11:26:07.822Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:26:07.824Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:26:07.826Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:26:07.826Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:26:07.827Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:26:07.830Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-03-01T11:26:07.860Z [DEBUG] High write ratio: blit=0, write=2798 (100.0% writes), screen=100x108
+2026-03-01T11:26:08.631Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:26:08.990Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:26:11.997Z [DEBUG] [useDeferredValue] Messages deferred by 2 (31→33)
+2026-03-01T11:26:12.003Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T11:26:12.003Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-01T11:26:12.003Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:26:12.003Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-01T11:26:12.007Z [DEBUG] [useDeferredValue] Messages deferred by 2 (31→33)
+2026-03-01T11:26:12.023Z [DEBUG] High write ratio: blit=0, write=2836 (100.0% writes), screen=103x108
+2026-03-01T11:26:14.009Z [DEBUG] [useDeferredValue] Messages deferred by 1 (33→34)
+2026-03-01T11:26:14.050Z [DEBUG] High write ratio: blit=0, write=2868 (100.0% writes), screen=104x108
+2026-03-01T11:26:14.182Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T11:26:14.182Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.b70; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:26:14.182Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:26:14.182Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:26:14.183Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-01T11:26:14.183Z [DEBUG] Found 5 hook matchers in settings
+2026-03-01T11:26:14.183Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-01T11:26:14.183Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:26:14.185Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-01T11:26:14.185Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-01T11:26:14.185Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-01T11:26:14.185Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-01T11:26:14.186Z [DEBUG] autocompact: tokens=44597 threshold=167000 effectiveWindow=180000
+2026-03-01T11:26:14.186Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:26:14.189Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:26:14.190Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:26:14.190Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:26:14.190Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:26:14.195Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-03-01T11:26:14.201Z [DEBUG] High write ratio: blit=0, write=2836 (100.0% writes), screen=103x108
+2026-03-01T11:26:14.237Z [DEBUG] High write ratio: blit=0, write=3091 (100.0% writes), screen=106x108
+2026-03-01T11:26:14.568Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:26:15.425Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:26:16.979Z [DEBUG] [useDeferredValue] Messages deferred by 1 (35→36)
+2026-03-01T11:26:17.027Z [DEBUG] High write ratio: blit=0, write=3091 (100.0% writes), screen=106x108
+2026-03-01T11:26:18.173Z [DEBUG] [useDeferredValue] Messages deferred by 1 (36→37)
+2026-03-01T11:26:18.177Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-01T11:26:18.177Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:26:18.177Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:26:18.178Z [DEBUG] autocompact: tokens=44932 threshold=167000 effectiveWindow=180000
+2026-03-01T11:26:18.179Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-01T11:26:18.182Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-01T11:26:18.186Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T11:26:18.186Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T11:26:18.186Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T11:26:18.190Z [DEBUG] [useDeferredValue] Messages deferred by 1 (36→37)
+2026-03-01T11:26:18.193Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-01T11:26:18.227Z [DEBUG] High write ratio: blit=0, write=3109 (100.0% writes), screen=110x108
+2026-03-01T11:26:19.891Z [DEBUG] Stream started - received first chunk
+2026-03-01T11:26:31.160Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T11:26:31.279Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-01T11:26:31.283Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-01T11:26:31.283Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:26:31.283Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-01T11:26:31.283Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=315 output=261 cacheRead=44608 cacheCreate=0
+2026-03-01T11:26:31.283Z [DEBUG] [Speculation] enabled=false
+2026-03-01T11:27:18.197Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-03-01T11:27:18.197Z [DEBUG] Found 0 hook matchers in settings
+2026-03-01T11:27:18.197Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-03-01T11:28:33.446Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-01T11:28:33.446Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-01T11:28:33.446Z [DEBUG] Metrics export disabled by organization setting
+2026-03-01T13:31:24.011Z [DEBUG] npm view failed with code 1
+2026-03-01T13:31:24.011Z [DEBUG] npm stderr: (empty)
+2026-03-02T01:34:03.365Z [DEBUG] npm view failed with code 1
+2026-03-02T01:34:03.366Z [DEBUG] npm stderr: (empty)
+2026-03-02T02:09:19.416Z [DEBUG] npm view failed with code 1
+2026-03-02T02:09:19.416Z [DEBUG] npm stderr: (empty)
+2026-03-02T02:30:57.476Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T02:31:45.892Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T02:40:33.648Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T02:40:35.158Z [DEBUG] High write ratio: blit=819, write=2695 (76.7% writes), screen=110x93
+2026-03-02T02:40:35.295Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T02:40:38.613Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:41:18.050Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:41:19.617Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:44:46.238Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:45:13.699Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:45:31.460Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T02:45:34.360Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T02:45:51.355Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T02:45:58.653Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T02:48:55.232Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T02:58:06.745Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T02:59:27.531Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T03:04:18.015Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T03:05:48.487Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T03:37:38.521Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T03:37:46.036Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T03:37:49.118Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T03:51:31.164Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T03:51:37.225Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T03:53:57.984Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T04:05:03.814Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T04:06:48.578Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T04:11:59.094Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T04:12:07.192Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T06:24:18.074Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:25:17.559Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:25:18.561Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:25:19.691Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:25:26.969Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:25:51.885Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:27:06.996Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T06:27:13.651Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T06:27:16.668Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:27:25.853Z [DEBUG] High write ratio: blit=954, write=2828 (74.8% writes), screen=110x108
+2026-03-02T06:43:10.215Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T06:47:35.041Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T07:27:00.337Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T08:02:01.880Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T08:02:03.054Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T08:02:31.818Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T08:28:44.216Z [DEBUG] High write ratio: blit=387, write=2840 (88.0% writes), screen=110x93
+2026-03-02T08:28:53.509Z [DEBUG] High write ratio: blit=387, write=3003 (88.6% writes), screen=110x108
+2026-03-02T11:47:01.231Z [DEBUG] npm view failed with code 1
+2026-03-02T11:47:01.231Z [DEBUG] npm stderr: (empty)
+2026-03-03T01:03:32.803Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-03T01:03:32.804Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-03T01:03:32.804Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-03T01:03:32.804Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-03T01:03:32.807Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-03T01:03:32.807Z [DEBUG] Found 0 hook matchers in settings
+2026-03-03T01:03:32.807Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-03T01:03:32.807Z [DEBUG] FileHistory: Making snapshot for message 008a9287-642d-4efd-8555-8250eeaba18b
+2026-03-03T01:03:32.807Z [DEBUG] FileHistory: Added snapshot for 008a9287-642d-4efd-8555-8250eeaba18b, tracking 0 files
+2026-03-03T01:03:32.808Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-03T01:03:32.822Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-03T01:03:32.826Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.8539.1772499812826
+2026-03-03T01:03:32.826Z [DEBUG] Preserving file permissions: 100600
+2026-03-03T01:03:32.826Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-03T01:03:32.826Z [DEBUG] Applied original permissions to temp file
+2026-03-03T01:03:32.826Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.8539.1772499812826 to /Users/comdir/.claude.json
+2026-03-03T01:03:32.826Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-03T01:03:32.827Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-03T01:03:32.827Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.766; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:32.827Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:32.827Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:32.831Z [DEBUG] autocompact: tokens=44661 threshold=167000 effectiveWindow=180000
+2026-03-03T01:03:32.832Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-03T01:03:32.834Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:32.836Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:32.836Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:32.836Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-03T01:03:32.866Z [DEBUG] High write ratio: blit=0, write=3159 (100.0% writes), screen=114x108
+2026-03-03T01:03:34.604Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:34.604Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:35.157Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:35.252Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:40.672Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-03-03T01:03:40.710Z [DEBUG] High write ratio: blit=0, write=3309 (100.0% writes), screen=118x108
+2026-03-03T01:03:41.530Z [WARN] [PROMPT CACHE BREAK] tools changed (tool prompt/schema changed, same tool set) [source=repl_main_thread, call #8, cache read: 44480 → 768, creation: 0]
+2026-03-03T01:03:41.534Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-03T01:03:41.534Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-03T01:03:41.534Z [DEBUG] Found 0 hook matchers in settings
+2026-03-03T01:03:41.534Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-03T01:03:41.540Z [DEBUG] [useDeferredValue] Messages deferred by 1 (40→41)
+2026-03-03T01:03:41.552Z [DEBUG] High write ratio: blit=0, write=3344 (100.0% writes), screen=120x108
+2026-03-03T01:03:41.559Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-03T01:03:41.559Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0b7; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:41.559Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:41.559Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:41.578Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-03T01:03:41.578Z [DEBUG] Found 5 hook matchers in settings
+2026-03-03T01:03:41.578Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-03T01:03:41.578Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:41.579Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-03T01:03:41.579Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-03T01:03:41.579Z [DEBUG] Found 0 hook matchers in settings
+2026-03-03T01:03:41.579Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-03T01:03:41.580Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-03-03T01:03:41.592Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-03T01:03:41.592Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dd9; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:41.592Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:41.592Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:41.592Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-03T01:03:41.592Z [DEBUG] Found 5 hook matchers in settings
+2026-03-03T01:03:41.592Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-03T01:03:41.592Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:41.592Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-03T01:03:41.592Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-03T01:03:41.592Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-03T01:03:41.592Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-03T01:03:41.593Z [DEBUG] autocompact: tokens=44801 threshold=167000 effectiveWindow=180000
+2026-03-03T01:03:41.593Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-03T01:03:41.594Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:41.594Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:41.594Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:41.594Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:41.596Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-03-03T01:03:41.609Z [DEBUG] High write ratio: blit=0, write=3345 (100.0% writes), screen=120x108
+2026-03-03T01:03:42.101Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:42.255Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:42.425Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:46.319Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-03-03T01:03:46.356Z [DEBUG] High write ratio: blit=0, write=3339 (100.0% writes), screen=120x108
+2026-03-03T01:03:48.559Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-03T01:03:48.559Z [DEBUG] Found 0 hook matchers in settings
+2026-03-03T01:03:48.559Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-03T01:03:48.560Z [DEBUG] autocompact: tokens=45235 threshold=167000 effectiveWindow=180000
+2026-03-03T01:03:48.562Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-03T01:03:48.564Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-03T01:03:48.566Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-03T01:03:48.566Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-03T01:03:48.566Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-03T01:03:48.569Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-03T01:03:48.573Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-03T01:03:48.602Z [DEBUG] High write ratio: blit=0, write=3618 (100.0% writes), screen=132x108
+2026-03-03T01:03:48.965Z [DEBUG] Stream started - received first chunk
+2026-03-03T01:03:56.539Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-03T01:03:56.599Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-03T01:03:56.601Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-03T01:03:56.601Z [DEBUG] Found 0 hook matchers in settings
+2026-03-03T01:03:56.601Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-03T01:03:56.601Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=426 output=178 cacheRead=44800 cacheCreate=0
+2026-03-03T01:06:37.848Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-03T01:06:37.848Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-03T01:06:37.848Z [DEBUG] Metrics export disabled by organization setting

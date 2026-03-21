@@ -1,0 +1,256 @@
+// server/src/lib/segmenter.js
+import { ai } from './ai.js';
+
+// 配置常量
+const MIN_SEGMENT_SIZE = 8000; // 段落最小字数
+const MAX_SEGMENT_SIZE = 15000; // 段落最大字数
+const TARGET_SEGMENT_SIZE = 10000; // 目标段落字数
+
+/**
+ * 语义切分器类
+ * 策略：按语义段落（双换行）智能切分，确保每段 8000-15000 字
+ */
+export class Segmenter {
+  constructor(options = {}) {
+    this.minSegmentSize = options.minSegmentSize || MIN_SEGMENT_SIZE;
+    this.maxSegmentSize = options.maxSegmentSize || MAX_SEGMENT_SIZE;
+    this.targetSegmentSize = options.targetSegmentSize || TARGET_SEGMENT_SIZE;
+  }
+
+  /**
+   * 按语义段落切分文本
+   * 优先在双换行处切分，确保每段在目标范围内
+   */
+  createSegments(text) {
+    const totalLength = text.length;
+    const segments = [];
+
+    // 按双换行分割成自然段落
+    const paragraphs = text.split(/\n\n+/);
+    const paragraphBoundaries = [0];
+    let currentPos = 0;
+
+    for (const para of paragraphs) {
+      currentPos += para.length + 2; // +2 for \n\n
+      paragraphBoundaries.push(Math.min(currentPos, totalLength));
+    }
+
+    // 基于自然段落边界，合并成目标大小的段
+    let segmentStart = 0;
+    let segmentLength = 0;
+
+    for (let i = 0; i < paragraphs.length; i++) {
+      const paraLength = paragraphs[i].length + 2;
+      segmentLength += paraLength;
+
+      // 如果达到目标大小，且不是最后一个段落
+      if (segmentLength >= this.targetSegmentSize && i < paragraphs.length - 1) {
+        const segmentEnd = paragraphBoundaries[i + 1];
+        segments.push({ start: segmentStart, end: segmentEnd });
+        segmentStart = segmentEnd;
+        segmentLength = 0;
+      }
+    }
+
+    // 添加最后一段
+    if (segmentStart < totalLength) {
+      const lastSegmentLength = totalLength - segmentStart;
+
+      // 如果最后一段太短，合并到前一段
+      if (lastSegmentLength < this.minSegmentSize / 2 && segments.length > 0) {
+        segments[segments.length - 1].end = totalLength;
+      } else {
+        segments.push({ start: segmentStart, end: totalLength });
+      }
+    }
+
+    // 处理过长的段落
+    const finalSegments = [];
+    for (const seg of segments) {
+      const length = seg.end - seg.start;
+      if (length > this.maxSegmentSize) {
+        // 按固定大小切分
+        const subSegments = this._splitBySize(seg.start, seg.end, this.targetSegmentSize);
+        finalSegments.push(...subSegments);
+      } else {
+        finalSegments.push(seg);
+      }
+    }
+
+    console.log(`划分为 ${finalSegments.length} 个段落`);
+    return finalSegments;
+  }
+
+  /**
+   * 按固定大小切分段落
+   */
+  _splitBySize(start, end, targetSize) {
+    const segments = [];
+    let current = start;
+
+    while (current < end) {
+      const segmentEnd = Math.min(current + targetSize, end);
+      // 确保最后一段不要太短
+      if (end - segmentEnd < this.minSegmentSize / 2 && segmentEnd < end) {
+        segments.push({ start: current, end: end });
+        break;
+      }
+      segments.push({ start: current, end: segmentEnd });
+      current = segmentEnd;
+    }
+
+    return segments;
+  }
+
+  /**
+   * 为段落生成标题和摘要
+   */
+  async generateSegmentMeta(text, courseName, index) {
+    // 截取前 6000 字进行分析
+    const analysisText = text.slice(0, 6000);
+
+    const prompt = `你是课程内容分析师。请分析以下课程段落，生成标题、摘要和关键词。
+
+课程：${courseName}
+段落：第 ${index} 段
+字数：${text.length} 字
+
+内容预览：
+"""
+${analysisText}
+"""
+
+生成要求：
+- 标题：15-25字，概括主题
+- 摘要：约300字，提炼核心观点
+- 关键词：3-5个标签
+
+只返回 JSON，格式：
+{"title":"标题","summary":"摘要","keywords":["关键词1","关键词2"]}`;
+
+    try {
+      const result = await ai.generateJSON(prompt, { maxTokens: 1000 });
+      if (result && result.title) {
+        return {
+          title: result.title,
+          summary: result.summary || '',
+          keywords: result.keywords || []
+        };
+      }
+    } catch (error) {
+      console.error(`生成段落${index}元数据失败:`, error.message);
+    }
+
+    return this._getDefaultMeta(text, index);
+  }
+
+  /**
+   * 生成默认的元数据
+   */
+  _getDefaultMeta(text, index) {
+    const firstLine = text.split('\n').find(line => line.trim().length > 10) || '';
+    const title = firstLine.slice(0, 25) || `第${index}段`;
+    return {
+      title: `${title}${title.length >= 25 ? '' : '...'}`,
+      summary: text.slice(0, 300).replace(/\n/g, ' ') + '...',
+      keywords: []
+    };
+  }
+
+  /**
+   * 生成课程概述
+   */
+  async generateCourseOverview(text, courseName) {
+    // 从开头、中间、结尾采样
+    const samples = [
+      text.slice(0, 2000),
+      text.slice(Math.floor(text.length * 0.4), Math.floor(text.length * 0.4) + 2000),
+      text.slice(Math.floor(text.length * 0.7), Math.floor(text.length * 0.7) + 2000),
+    ];
+
+    const prompt = `你是课程分析师。根据内容采样生成课程概述。
+
+课程：${courseName}
+总字数：${text.length}
+
+采样内容：
+"""
+${samples.join('\n\n---\n\n')}
+"""
+
+生成约400字概述，包括：
+1. 核心主题
+2. 主要内容框架
+3. 适合人群
+4. 学习收获
+
+只输出概述文本。`;
+
+    try {
+      const overview = await ai.generate(prompt, { maxTokens: 800 });
+      return overview || '';
+    } catch (error) {
+      console.error('生成课程概述失败:', error.message);
+      return '';
+    }
+  }
+
+  /**
+   * 完整处理一门课程
+   */
+  async processCourse(text, courseName) {
+    console.log(`\n开始处理课程: ${courseName}`);
+    console.log(`文本长度: ${text.length} 字`);
+
+    // 1. 生成课程概述
+    console.log('\n1. 生成课程概述...');
+    const overview = await this.generateCourseOverview(text, courseName);
+    console.log(`   概述长度: ${overview.length} 字`);
+
+    // 2. 划分段落
+    console.log('\n2. 划分段落...');
+    const segmentRanges = this.createSegments(text);
+
+    // 3. 为每个段落生成元数据
+    console.log('\n3. 生成段落元数据...');
+    const segments = [];
+    let segmentIndex = 0;
+
+    for (let i = 0; i < segmentRanges.length; i++) {
+      const { start, end } = segmentRanges[i];
+      const content = text.slice(start, end).trim();
+
+      if (content.length < this.minSegmentSize / 2) {
+        console.log(`  跳过段落 ${i + 1}（过短: ${content.length} 字）`);
+        continue;
+      }
+
+      segmentIndex++;
+      console.log(`  处理段落 ${segmentIndex}/${segmentRanges.length} (${content.length} 字)...`);
+
+      const meta = await this.generateSegmentMeta(content, courseName, segmentIndex);
+
+      segments.push({
+        index: segmentIndex,
+        title: meta.title,
+        summary: meta.summary,
+        content: content,
+        charCount: content.length,
+        keywords: meta.keywords
+      });
+
+      // 避免请求过快
+      await this._sleep(300);
+    }
+
+    console.log(`\n处理完成！共 ${segments.length} 个段落`);
+
+    return { overview, segments };
+  }
+
+  _sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+}
+
+export const segmenter = new Segmenter();

@@ -1,0 +1,230 @@
+# 项目路径索引
+# 用途：Claude Code 快速定位项目目录
+# 更新时间：2026-03-11
+
+projects:
+  # ============ 高维核心项目 (GW.) ============
+  knowledgebase:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.KnowledgeBase
+    desc: 知识库管理，客户拜访录音、萃取
+
+  content:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Content
+    desc: 内容管理
+
+  dataanalysis:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.DataAnalysis
+    desc: 数据分析
+
+  website:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Website
+    desc: 网站项目
+
+  trackr:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.Trackr
+    desc: 追踪系统
+
+  brandwatch:
+    path: /Users/comdir/SynologyDrive/0050Project/GW.BrandWatch
+    desc: 品牌监测
+
+  # ============ 高维其他项目 (others/GW.) ============
+  gtm:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.GTM
+    desc: GTM 市场
+
+  classroom:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Classroom
+    desc: 课堂相关
+
+  roadmap:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.RoadMap
+    desc: 路线图
+
+  sqlbot:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Sqlbot
+    desc: SQL 机器人
+
+  invest:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Invest
+    desc: 投资相关
+
+  database:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Database
+    desc: 数据库
+
+  html:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Html
+    desc: HTML
+
+  infographic:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.InfoGraphic
+    desc: 信息图
+
+  jingyingfenxi:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.JingyingFenxi
+    desc: 经营分析
+
+  learnmap:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.LearnMap
+    desc: 学习地图
+
+  lessonpromotion:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.LessonPromotion
+    desc: 课程推广
+
+  lessons:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Lessons
+    desc: 课程
+
+  project:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Project
+    desc: 项目
+
+  ui:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.UI
+    desc: UI
+
+  csv:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.Csv
+    desc: CSV
+
+  ascendplan:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.AscendPlan
+    desc: 攀升计划
+
+  sharemoney:
+    path: /Users/comdir/SynologyDrive/0050Project/others/GW.ShareMoney
+    desc: 净利分配
+
+  # ============ 刘伟项目 (LW.) ============
+  lw-knowledgebase:
+    path: /Users/comdir/SynologyDrive/0050Project/LW.KnowledgeBase
+    desc: LW知识库
+
+  bloomreader:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.BloomReader
+    desc: Bloom 阅读器
+
+  ebook:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.eBook
+    desc: 电子书
+
+  reading:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.Reading
+    desc: 阅读项目
+
+  wepark:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.wePark
+    desc: wePark
+
+  wxwatermark:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.wxWaterMark
+    desc: 微信水印
+
+  feiyang:
+    path: /Users/comdir/SynologyDrive/0050Project/others/LW.FeiYang
+    desc: 飞扬
+
+  # ============ AI 相关 ============
+  agents:
+    path: /Users/comdir/SynologyDrive/0050Project/others/AI.long-running-agents
+    desc: 长运行 Agent 框架
+
+  browser-use:
+    path: /Users/comdir/SynologyDrive/0050Project/others/browser-use
+    desc: 浏览器自动化
+
+  # ============ 工具类 (Tool.) ============
+  system:
+    path: /Users/comdir/SynologyDrive/0050Project/others/Tool.System
+    desc: 系统工具集
+
+  agent-s:
+    path: /Users/comdir/SynologyDrive/0050Project/Tool.Agent-S
+    desc: Agent 工具
+
+  docs:
+    path: /Users/comdir/SynologyDrive/0050Project/Tool.Docs
+    desc: 文档工具
+
+  deepseek:
+    path: /Users/comdir/SynologyDrive/0050Project/Tool.DeepSeek
+    desc: DeepSeek导出
+
+  # ============ 其他 ============
+  ceo:
+    path: /Users/comdir/SynologyDrive/0050Project/others/Ceo.Ceo
+    desc: CEO 相关
+
+  kktime:
+    path: /Users/comdir/SynologyDrive/0050Project/others/KK.Time
+    desc: KK时间
+
+  fangcheng:
+    path: /Users/comdir/SynologyDrive/0050Project/others/YY.Fangcheng
+    desc: 方程
+
+# 快捷别名（简短名称到项目名的映射）
+shortcuts:
+  # ============ 高维 (GW) 系列 ============
+  gkb: knowledgebase
+  gc: content
+  con: content
+  da: dataanalysis
+  web: website
+  www: website
+  website: website
+  trackr: trackr
+  bw: brandwatch
+
+  # others/GW.*
+  gtm: gtm
+  classroom: classroom
+  rm: roadmap
+  sqlbot: sqlbot
+  invest: invest
+  db: database
+  html: html
+  ig: infographic
+  jf: jingyingfenxi
+  lm: learnmap
+  lp: lessonpromotion
+  lessons: lessons
+  project: project
+  ui: ui
+  csv: csv
+  ascend: ascendplan
+  sm: sharemoney
+
+  # ============ 刘伟 (LW) 系列 ============
+  lkb: lw-knowledgebase
+  br: bloomreader
+  ebook: ebook
+  reading: reading
+  wp: wepark
+  wxwm: wxwatermark
+  fy: feiyang
+
+  # ============ AI 相关 ============
+  ai: agents
+  agt: agents
+  bu: browser-use
+
+  # ============ 工具 (Tool) 系列 ============
+  ts: system
+  sys: system
+  tas: agent-s
+  td: docs
+  ds: deepseek
+  deepseek: deepseek
+
+  # ============ 其他 ============
+  ceo: ceo
+  kt: kktime
+  yf: fangcheng
+
+  # ============ 通用 ============
+  kb: knowledgebase
+  gw: knowledgebase
+  proj: /Users/comdir/SynologyDrive/0050Project

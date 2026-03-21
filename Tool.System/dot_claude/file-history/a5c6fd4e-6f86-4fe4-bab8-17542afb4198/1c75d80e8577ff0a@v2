@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班主任主持全流程复盘反馈</title>
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #EBF8FF;
+            --accent: #DD6B20;
+            --text-main: #2D3748;
+            --text-light: #718096;
+            --bg-page: #F7FAFC;
+            --bg-card: #FFFFFF;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-page); color: var(--text-main); line-height: 1.6; margin: 0; padding: 16px; font-size: 15px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .header { background: var(--primary); color: white; padding: 24px 20px; border-radius: 12px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .score-circle { width: 80px; height: 80px; border: 4px solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; margin: 0 auto 12px; }
+        .header h1 { font-size: 18px; margin: 0 0 8px 0; font-weight: 600; }
+        .header p { font-size: 14px; margin: 0; opacity: 0.9; }
+        .card { background: var(--bg-card); border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card-title { font-size: 16px; font-weight: bold; color: var(--primary); margin-bottom: 16px; display: flex; align-items: center; border-bottom: 2px solid var(--secondary); padding-bottom: 8px; }
+        .score-item { margin-bottom: 16px; }
+        .score-item-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 4px; }
+        .score-tag { font-size: 12px; padding: 2px 8px; border-radius: 12px; background: var(--secondary); color: var(--primary); }
+        .score-item p { margin: 0; font-size: 14px; color: #4A5568; }
+        .highlight-box { background: #F0FFF4; border-left: 4px solid #38A169; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; font-size: 14px; }
+        .advice-item { position: relative; padding-left: 28px; margin-bottom: 16px; }
+        .advice-item::before { content: "💡"; position: absolute; left: 0; top: 2px; }
+        .advice-item h4 { margin: 0 0 4px 0; color: var(--accent); font-size: 15px; }
+        .advice-item p { margin: 0; font-size: 14px; color: #4A5568; }
+        .footer { text-align: center; font-size: 13px; color: var(--text-light); margin-top: 32px; padding-bottom: 20px; }
+        .empower-text { font-style: italic; color: var(--primary); margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="score-circle">74</div>
+        <h1>亲和力满分，但需补齐专业框架</h1>
+        <p>阿左你好，我是HRBP。你的控场自然且有温度，但在『核心工具展示』与『课评邀约』的标准化动作上需进一步强化。</p>
+        <p style="font-size: 11px; margin-top: 8px; opacity: 0.8;">*因U/S框架在首日开场缺失及课评邀约偏软，按标准本次评分不高于75分。</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">✨ 高阶亮点 (值得全员复用)</div>
+        <div class="highlight-box">
+            <ul style="margin:0; padding-left:16px;">
+                <li><strong>场景化融合：</strong>将高维路线图与本次《业务优化与利润提升》课程巧妙结合，比喻为"备粮草阶段"，有效唤醒了企业家的痛点意识。</li>
+                <li><strong>社群运营巧思：</strong>在破冰环节，主动引导"高年级学友带动低年级"，不仅破冰自然，更无形中强化了高维社群的信任背书与同侪力量。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">📊 维度复盘 (结构解析)</div>
+        <div class="score-item">
+            <div class="score-item-header"><span>1. 高维五句话 (30%)</span><span class="score-tag">25/30</span></div>
+            <p>逻辑极度顺畅，完整覆盖了身份、标准、路线图及统一语言。特别是对"学习型组织"的致敬点名，给足了客户情绪价值。</p>
+        </div>
+        <div class="score-item">
+            <div class="score-item-header"><span>2. 产品五句话 (30%)</span><span class="score-tag">18/30</span></div>
+            <p>F(定性)、O(背书)、C(价值)讲述到位；<strong>但严重遗漏了U(方法工具)与S(生动案例)</strong>。U(三层检视等工具)被放到了第二天结课时才说，导致第一天开场时，学员对"到底能带走什么具体武器"缺乏具象期待。</p>
+        </div>
+        <div class="score-item">
+            <div class="score-item-header"><span>3. 团建破冰 (5%)</span><span class="score-tag">4.5/5</span></div>
+            <p>规则清晰，执行力强，对组长的互动幽默且能调动气氛。</p>
+        </div>
+        <div class="score-item">
+            <div class="score-item-header"><span>4. 邀约课评 (15%)</span><span class="score-tag">8/15</span></div>
+            <p>邀约语气过于客气、"顺便"。课评是教务迭代的"生命线"，作为班主任需要带着坚定的立场去要求，而非简单呼吁。</p>
+        </div>
+        <div class="score-item">
+            <div class="score-item-header"><span>5. 结尾升华 (10%)</span><span class="score-tag">8/10</span></div>
+            <p>结尾很好地串联了知识点，颁奖环节拍照站位引导专业，收尾干净利落。</p>
+        </div>
+        <div class="score-item">
+            <div class="score-item-header"><span>6. 口语节奏 (10%)</span><span class="score-tag">8/10</span></div>
+            <p>语调亲切自然。但有较多"其实"、"的话"、"然后"等口语化碎词，略微稀释了商学院的专家气场。</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">🎯 AI教练建议 (Top 3)</div>
+        <div class="advice-item">
+            <h4>重置"FOCUS"结构，将工具前置</h4>
+            <p><strong>实操建议：</strong>开场介绍老师后，必须紧接："这两天老师将交付大家『三层业务检视』等20多个实战工具，往期很多企业学完回去一梳理流程，马上就找到了利润增长点。"开场把预期拉满，学员才会以更空杯的心态进入听课状态。</p>
+        </div>
+        <div class="advice-item">
+            <h4>课评邀约要"前置且坚定"</h4>
+            <p><strong>实操建议：</strong>不要在大家拿包准备走时邀约。应在总结完课程、发完奖品后，<strong>停顿三秒锁定全场注意力</strong>："高维倡导科学创业，而科学需要闭环。现在，请大家拿出手机，用3分钟留下最真实的反馈，这是你们对这堂课最好的毕业致敬。"态度要温和但坚决。</p>
+        </div>
+        <div class="advice-item">
+            <h4>刻意练习"留白"，戒除口语碎词</h4>
+            <p><strong>实操建议：</strong>把你稿子里的"其实"、"的话"全部删掉，用<strong>停顿</strong>代替。例如："今天（停顿）我们特别邀请到了张鹏老师（停顿）走进高维课堂。"这样不仅更有力量，也能彰显你陪跑专家的专业底气。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="empower-text">"优秀的班主任，是懂业务、懂人心的组织进化推手。"</div>
+        <div>阿左，你的底色非常棒！只要在标准动作上再严谨一分，你的场域把控力一定会跃升一个台阶。期待你下一场的惊艳表现！</div>
+        <div style="margin-top: 16px; font-size: 11px;">Powered by 高维学堂 AI教练系统 | V4 双触点全流程版</div>
+    </div>
+</div>
+</body>
+</html>

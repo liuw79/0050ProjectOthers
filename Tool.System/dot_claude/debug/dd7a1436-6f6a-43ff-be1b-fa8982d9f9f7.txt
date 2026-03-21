@@ -1,0 +1,1091 @@
+2026-03-07T08:27:14.970Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-03-07T08:27:14.971Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:14.971Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-07T08:27:14.971Z [DEBUG] Cleared all session hooks for session f7923b8b-74b1-48f2-bfa1-ed0d77ba0071
+2026-03-07T08:27:14.975Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-03-07T08:27:14.975Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:14.975Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-07T08:27:14.976Z [DEBUG] FileHistory: Added snapshot for 68fc3c8b-4ea0-4377-bc80-9628ffef2c75, tracking 0 files
+2026-03-07T08:27:15.134Z [DEBUG] High write ratio: blit=0, write=9121 (100.0% writes), screen=370x108
+2026-03-07T08:27:15.134Z [DEBUG] Full reset (scrollback changes): scrollbackRows=326, firstChangeY=2
+  prev: "│                                               │ Tips for getting started                                 │"
+  next: "│                                 │ Tips for getting started                                               │"
+2026-03-07T08:27:15.156Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:27:15.164Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-03-07T08:27:15.165Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-03-07T08:27:15.170Z [DEBUG] MCP server "voice-mcp": Starting connection with timeout of 30000ms
+2026-03-07T08:27:15.176Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-07T08:27:15.176Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-03-07T08:27:15.176Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-03-07T08:27:15.178Z [DEBUG] MCP server "voice-mcp": Connection failed after 12ms: spawn uvx ENOENT
+2026-03-07T08:27:15.179Z [ERROR] MCP server "voice-mcp" Connection failed: spawn uvx ENOENT
+2026-03-07T08:27:15.190Z [DEBUG] High write ratio: blit=13, write=9108 (99.9% writes), screen=370x108
+2026-03-07T08:27:15.190Z [DEBUG] Full reset (scrollback changes): scrollbackRows=323, firstChangeY=5
+  prev: "│             ▐▛███▜▌             │ Recent activity                                                        │"
+  next: "│                                 │ Recent activity                                                        │"
+2026-03-07T08:27:15.204Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:27:15.230Z [DEBUG] Full reset (shrink->below): prevHeight=368, nextHeight=22, viewport=48
+2026-03-07T08:27:15.461Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-03-07T08:27:17.000Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-07T08:27:17.011Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:27:17.012Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:27:17.012Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:27:17.012Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:27:17.012Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771556060963_jl9xwj'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-03-07T08:27:17.012Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-07T08:27:17.012Z [DEBUG] Total plugin skills loaded: 0
+2026-03-07T08:27:17.012Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771556060963_jl9xwj'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-03-07T08:27:17.012Z [DEBUG] Total plugin commands loaded: 0
+2026-03-07T08:27:17.084Z [DEBUG] Loaded 18 unique skills (18 unconditional, 0 conditional, managed: 0, user: 16, project: 0, additional: 0, legacy commands: 2)
+2026-03-07T08:27:17.084Z [DEBUG] getSkills returning: 18 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-07T08:27:17.084Z [DEBUG] Sending 18 skills via attachment (initial, 18 total sent)
+2026-03-07T08:27:17.086Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:27:17.086Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:17.086Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:27:17.086Z [DEBUG] FileHistory: Making snapshot for message f7b82d4b-9874-4ebd-a7e8-02110ed8fe51
+2026-03-07T08:27:17.086Z [DEBUG] FileHistory: Added snapshot for f7b82d4b-9874-4ebd-a7e8-02110ed8fe51, tracking 0 files
+2026-03-07T08:27:17.086Z [DEBUG] [useDeferredValue] Messages deferred by 2 (3→5)
+2026-03-07T08:27:17.090Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:27:17.092Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872037092
+2026-03-07T08:27:17.092Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:27:17.093Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:27:17.093Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:27:17.093Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872037092 to /Users/comdir/.claude.json
+2026-03-07T08:27:17.093Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:27:17.093Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:27:17.095Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:17.095Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:17.095Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:17.100Z [DEBUG] autocompact: tokens=855 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:17.101Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:17.101Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:17.102Z [DEBUG] [useDeferredValue] Messages deferred by 2 (3→5)
+2026-03-07T08:27:21.023Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:21.024Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:21.630Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:21.634Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:21.636Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:21.636Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:21.670Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:21.798Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:22.843Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:27.876Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-03-07T08:27:27.882Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-07T08:27:27.887Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:27:27.888Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:27:27.888Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:27.888Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:27:27.897Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-07T08:27:27.916Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:27:27.917Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:27.917Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:27.917Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:27.917Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:27:27.917Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:27:27.917Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:27:27.917Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:27.918Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:27:27.918Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:27:27.918Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:27:27.918Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:27:27.919Z [DEBUG] autocompact: tokens=33638 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:27.919Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:27.920Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:27.922Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:27.922Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:27.922Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:27.925Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-03-07T08:27:28.610Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:31.356Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872051356
+2026-03-07T08:27:31.356Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:27:31.356Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:27:31.356Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:27:31.356Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872051356 to /Users/comdir/.claude.json
+2026-03-07T08:27:31.357Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:27:31.450Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:31.951Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-03-07T08:27:32.523Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-07T08:27:32.523Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:32.523Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:27:32.523Z [DEBUG] autocompact: tokens=33968 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:32.526Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:32.529Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:32.530Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:32.530Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:32.531Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:32.534Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-03-07T08:27:32.538Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:27:32.540Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:27:32.540Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:27:32.540Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:27:32.540Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:27:32.541Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:27:32.541Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:32.541Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:27:32.541Z [DEBUG] FileHistory: Making snapshot for message 06443c17-bdfd-4cd1-ae81-15ed5c2a72eb
+2026-03-07T08:27:32.541Z [DEBUG] FileHistory: Added snapshot for 06443c17-bdfd-4cd1-ae81-15ed5c2a72eb, tracking 0 files
+2026-03-07T08:27:32.541Z [DEBUG] [useDeferredValue] Messages deferred by 2 (9→11)
+2026-03-07T08:27:32.545Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:27:32.546Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-07T08:27:32.550Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872052550
+2026-03-07T08:27:32.550Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:27:32.550Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:27:32.550Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:27:32.550Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872052550 to /Users/comdir/.claude.json
+2026-03-07T08:27:32.551Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:27:32.551Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:27:32.552Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:32.552Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:32.552Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:32.552Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:32.559Z [DEBUG] Loaded 18 unique skills (18 unconditional, 0 conditional, managed: 0, user: 16, project: 0, additional: 0, legacy commands: 2)
+2026-03-07T08:27:32.559Z [DEBUG] getSkills returning: 18 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-07T08:27:32.559Z [DEBUG] autocompact: tokens=33694 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:32.559Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:32.561Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:32.562Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:32.562Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:32.562Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:32.935Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:32.966Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:33.176Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:36.301Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-03-07T08:27:36.301Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-03-07T08:27:36.302Z [ERROR] Error in API request: Request was aborted.
+2026-03-07T08:27:36.303Z [DEBUG] Forked agent [prompt_suggestion] received message: type=user
+2026-03-07T08:27:36.303Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[user], totalUsage: input=0 output=0 cacheRead=0 cacheCreate=0
+2026-03-07T08:27:37.158Z [DEBUG] [useDeferredValue] Messages deferred by 2 (11→13)
+2026-03-07T08:27:37.200Z [DEBUG] High write ratio: blit=0, write=1162 (100.0% writes), screen=38x108
+2026-03-07T08:27:37.256Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:27:37.257Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:27:37.257Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:37.257Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:27:37.279Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:27:37.279Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:37.279Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:37.279Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:37.280Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:27:37.280Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:27:37.280Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:27:37.280Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:37.281Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:27:37.281Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:27:37.281Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:27:37.281Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:27:37.281Z [DEBUG] autocompact: tokens=33778 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:37.281Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:37.283Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:37.284Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:37.285Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:37.285Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:37.288Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-03-07T08:27:37.743Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:37.787Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:44.700Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-07T08:27:45.204Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-07T08:27:45.204Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:45.204Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:27:45.204Z [DEBUG] autocompact: tokens=34096 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:45.206Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:45.209Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:45.211Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:45.211Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:45.211Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:45.215Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-07T08:27:45.218Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:27:45.576Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:46.124Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-03-07T08:27:46.124Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-03-07T08:27:46.124Z [ERROR] Error in API request: Request was aborted.
+2026-03-07T08:27:46.125Z [DEBUG] Forked agent [prompt_suggestion] received message: type=user
+2026-03-07T08:27:46.125Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[user], totalUsage: input=0 output=0 cacheRead=0 cacheCreate=0
+2026-03-07T08:27:48.077Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:27:48.077Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:27:48.077Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:27:48.077Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:27:48.078Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:27:48.078Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:27:48.078Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:27:48.078Z [DEBUG] FileHistory: Making snapshot for message eedf2ac0-c436-408c-b6f0-4659dbcd95f6
+2026-03-07T08:27:48.078Z [DEBUG] FileHistory: Added snapshot for eedf2ac0-c436-408c-b6f0-4659dbcd95f6, tracking 0 files
+2026-03-07T08:27:48.079Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-07T08:27:48.086Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:27:48.087Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-07T08:27:48.093Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872068093
+2026-03-07T08:27:48.093Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:27:48.093Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:27:48.094Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:27:48.094Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872068093 to /Users/comdir/.claude.json
+2026-03-07T08:27:48.094Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:27:48.094Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:27:48.096Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a4d; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:48.096Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:48.096Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:48.096Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:48.101Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-07T08:27:48.107Z [DEBUG] Loaded 18 unique skills (18 unconditional, 0 conditional, managed: 0, user: 16, project: 0, additional: 0, legacy commands: 2)
+2026-03-07T08:27:48.107Z [DEBUG] getSkills returning: 18 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-07T08:27:48.107Z [DEBUG] autocompact: tokens=33826 threshold=167000 effectiveWindow=180000
+2026-03-07T08:27:48.107Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:27:48.109Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:27:48.110Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:27:48.110Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:27:48.110Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:27:48.333Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:48.564Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:27:59.282Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-07T08:28:07.637Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-07T08:28:07.637Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:28:07.637Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:28:07.638Z [DEBUG] autocompact: tokens=34861 threshold=167000 effectiveWindow=180000
+2026-03-07T08:28:07.640Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:28:07.645Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:28:07.647Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:28:07.647Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:28:07.647Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:28:07.652Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-07T08:28:07.658Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:28:09.244Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:28:18.160Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:28:18.266Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:28:18.272Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-07T08:28:18.272Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:28:18.272Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:28:18.272Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=1062 output=267 cacheRead=33792 cacheCreate=0
+2026-03-07T08:28:33.816Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-07T08:28:33.816Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-07T08:28:33.816Z [DEBUG] Metrics export disabled by organization setting
+2026-03-07T08:29:07.662Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-03-07T08:29:07.662Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:29:07.662Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-03-07T08:31:04.345Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:04.345Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:04.345Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:04.345Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:04.348Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:31:04.348Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:04.348Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:31:04.348Z [DEBUG] FileHistory: Making snapshot for message 06a92601-5def-4748-977c-9f99aeb6f30c
+2026-03-07T08:31:04.349Z [DEBUG] FileHistory: Added snapshot for 06a92601-5def-4748-977c-9f99aeb6f30c, tracking 0 files
+2026-03-07T08:31:04.350Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-07T08:31:04.360Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:31:04.365Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872264365
+2026-03-07T08:31:04.365Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:31:04.365Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:31:04.365Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:31:04.365Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872264365 to /Users/comdir/.claude.json
+2026-03-07T08:31:04.365Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:31:04.366Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:31:04.366Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.270; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:04.366Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:04.366Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:04.367Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:04.368Z [DEBUG] autocompact: tokens=34589 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:04.371Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:04.375Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:04.376Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:04.376Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:04.377Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:04.380Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-07T08:31:04.953Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:05.151Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:08.725Z [DEBUG] [useDeferredValue] Messages deferred by 2 (20→22)
+2026-03-07T08:31:09.156Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-03-07T08:31:09.436Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-07T08:31:09.493Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:31:09.493Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:31:09.494Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:31:09.494Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:31:09.494Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:09.494Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:31:09.494Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:31:09.494Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:09.494Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:31:09.494Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:31:09.494Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:09.494Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:31:12.220Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:31:12.220Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:12.220Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:31:12.222Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:31:12.222Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:12.222Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:31:12.223Z [DEBUG] [useDeferredValue] Messages deferred by 6 (24→30)
+2026-03-07T08:31:12.226Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:31:12.226Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:12.226Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:31:12.227Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:12.227Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:12.227Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:12.227Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:12.227Z [DEBUG] autocompact: tokens=34704 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:12.227Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:12.229Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:12.231Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:12.231Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:12.231Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:12.238Z [DEBUG] [useDeferredValue] Messages deferred by 9 (24→33)
+2026-03-07T08:31:12.636Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:16.503Z [DEBUG] [useDeferredValue] Messages deferred by 2 (33→35)
+2026-03-07T08:31:16.509Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:31:16.510Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:31:16.510Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:16.510Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:31:16.517Z [DEBUG] [useDeferredValue] Messages deferred by 2 (33→35)
+2026-03-07T08:31:16.548Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:31:16.548Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:16.548Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:31:16.549Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:16.549Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:16.549Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:16.549Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:16.549Z [DEBUG] autocompact: tokens=37366 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:16.549Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:16.551Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:16.552Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:16.552Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:16.552Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:16.556Z [DEBUG] [useDeferredValue] Messages deferred by 3 (35→38)
+2026-03-07T08:31:16.795Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:21.240Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-03-07T08:31:21.248Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:31:21.249Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:31:21.249Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:21.249Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:31:21.256Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-03-07T08:31:21.281Z [DEBUG] High write ratio: blit=0, write=4490 (100.0% writes), screen=89x108
+2026-03-07T08:31:21.284Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:31:21.284Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0b7; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:21.284Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:21.284Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:21.285Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:31:21.285Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:21.285Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:31:21.285Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:21.286Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:21.286Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:21.286Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:21.286Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:21.286Z [DEBUG] autocompact: tokens=38059 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:21.286Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:21.288Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:21.289Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:21.289Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:21.289Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:21.293Z [DEBUG] [useDeferredValue] Messages deferred by 2 (40→42)
+2026-03-07T08:31:21.832Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:22.780Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:25.841Z [DEBUG] [useDeferredValue] Messages deferred by 2 (42→44)
+2026-03-07T08:31:25.849Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:31:25.850Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:31:25.850Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:25.850Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:31:25.855Z [DEBUG] [useDeferredValue] Messages deferred by 2 (42→44)
+2026-03-07T08:31:25.875Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:31:25.875Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.8bb; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:25.876Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:25.876Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:25.876Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:31:25.876Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:25.876Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:31:25.876Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:25.877Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:25.877Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:25.877Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:25.877Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:25.878Z [DEBUG] autocompact: tokens=38501 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:25.878Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:25.880Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:25.881Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:25.881Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:25.881Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:25.884Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-07T08:31:26.117Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:26.475Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:29.812Z [DEBUG] [useDeferredValue] Messages deferred by 1 (45→46)
+2026-03-07T08:31:29.818Z [DEBUG] [useDeferredValue] Messages deferred by 2 (45→47)
+2026-03-07T08:31:29.871Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-07T08:31:29.872Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-07T08:31:29.872Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:29.872Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-07T08:31:29.875Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-07T08:31:29.875Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:31:29.876Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-07T08:31:29.876Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:31:29.876Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:31:29.876Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:31:29.876Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:31:29.877Z [DEBUG] autocompact: tokens=39204 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:29.877Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:29.880Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:29.881Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:29.881Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:29.882Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:29.887Z [DEBUG] [useDeferredValue] Messages deferred by 3 (47→50)
+2026-03-07T08:31:30.190Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:33.235Z [DEBUG] [useDeferredValue] Messages deferred by 1 (50→51)
+2026-03-07T08:31:47.183Z [DEBUG] [useDeferredValue] Messages deferred by 1 (51→52)
+2026-03-07T08:31:47.188Z [DEBUG] [useDeferredValue] Messages deferred by 1 (51→52)
+2026-03-07T08:31:47.194Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-07T08:31:47.194Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:47.194Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:31:47.195Z [DEBUG] autocompact: tokens=40660 threshold=167000 effectiveWindow=180000
+2026-03-07T08:31:47.196Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:31:47.200Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:31:47.202Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:31:47.202Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:31:47.202Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:31:47.207Z [DEBUG] [useDeferredValue] Messages deferred by 2 (51→53)
+2026-03-07T08:31:47.211Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:31:47.736Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:31:55.157Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:31:55.477Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:31:55.481Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-07T08:31:55.481Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:31:55.481Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:31:55.481Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=779 output=176 cacheRead=39872 cacheCreate=0
+2026-03-07T08:32:56.241Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:32:56.241Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:32:56.241Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:32:56.241Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:32:56.245Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:32:56.245Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:32:56.245Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:32:56.245Z [DEBUG] FileHistory: Making snapshot for message fed011cd-d9a7-4cff-8cbb-eca4063d0125
+2026-03-07T08:32:56.245Z [DEBUG] FileHistory: Added snapshot for fed011cd-d9a7-4cff-8cbb-eca4063d0125, tracking 0 files
+2026-03-07T08:32:56.246Z [DEBUG] [useDeferredValue] Messages deferred by 1 (53→54)
+2026-03-07T08:32:56.255Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:32:56.259Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872376259
+2026-03-07T08:32:56.259Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:32:56.259Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:32:56.259Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:32:56.259Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872376259 to /Users/comdir/.claude.json
+2026-03-07T08:32:56.259Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:32:56.259Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:32:56.260Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.177; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:32:56.260Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:32:56.260Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:32:56.260Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:32:56.261Z [DEBUG] autocompact: tokens=40388 threshold=167000 effectiveWindow=180000
+2026-03-07T08:32:56.262Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:32:56.265Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:32:56.266Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:32:56.266Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:32:56.266Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:32:56.270Z [DEBUG] [useDeferredValue] Messages deferred by 1 (53→54)
+2026-03-07T08:32:56.599Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:32:56.705Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:02.618Z [DEBUG] [useDeferredValue] Messages deferred by 2 (54→56)
+2026-03-07T08:33:02.627Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:33:02.628Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:33:02.628Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:02.628Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:02.635Z [DEBUG] [useDeferredValue] Messages deferred by 2 (54→56)
+2026-03-07T08:33:02.657Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:33:02.657Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0b7; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:02.657Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:02.657Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:02.657Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:33:02.657Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:02.657Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:02.657Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:02.659Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:33:02.659Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:33:02.659Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:33:02.659Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:33:02.659Z [DEBUG] autocompact: tokens=40491 threshold=167000 effectiveWindow=180000
+2026-03-07T08:33:02.659Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:33:02.661Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:02.663Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:02.663Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:02.663Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:02.666Z [DEBUG] [useDeferredValue] Messages deferred by 1 (56→57)
+2026-03-07T08:33:02.675Z [DEBUG] High write ratio: blit=0, write=5623 (100.0% writes), screen=153x108
+2026-03-07T08:33:02.886Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:04.940Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:06.780Z [DEBUG] [useDeferredValue] Messages deferred by 1 (57→58)
+2026-03-07T08:33:09.925Z [DEBUG] [useDeferredValue] Messages deferred by 2 (58→60)
+2026-03-07T08:33:09.936Z [DEBUG] executePreToolHooks called for tool: AskUserQuestion
+2026-03-07T08:33:09.936Z [DEBUG] Getting matching hook commands for PreToolUse with query: AskUserQuestion
+2026-03-07T08:33:09.936Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:09.936Z [DEBUG] Matched 0 unique hooks for query "AskUserQuestion" (0 before deduplication)
+2026-03-07T08:33:09.937Z [DEBUG] executePermissionRequestHooks called for tool: AskUserQuestion
+2026-03-07T08:33:09.937Z [DEBUG] Getting matching hook commands for PermissionRequest with query: AskUserQuestion
+2026-03-07T08:33:09.937Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:09.937Z [DEBUG] Matched 0 unique hooks for query "AskUserQuestion" (0 before deduplication)
+2026-03-07T08:33:09.938Z [DEBUG] [useDeferredValue] Messages deferred by 2 (58→60)
+2026-03-07T08:33:09.951Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:33:09.979Z [DEBUG] High write ratio: blit=0, write=5788 (100.0% writes), screen=163x108
+2026-03-07T08:33:13.586Z [DEBUG] Aborting: tool=AskUserQuestion isAbort=undefined hasFeedback=false isSubagent=false
+2026-03-07T08:33:13.586Z [DEBUG] AskUserQuestion tool permission denied
+2026-03-07T08:33:13.588Z [DEBUG] [useDeferredValue] Messages deferred by 2 (60→62)
+2026-03-07T08:33:13.777Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-03-07T08:33:18.884Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:33:18.884Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:33:18.884Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:33:18.884Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:33:18.886Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-07T08:33:18.886Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:18.886Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:33:18.886Z [DEBUG] FileHistory: Making snapshot for message 4e7fe582-b115-480b-9dde-0a906d61b75c
+2026-03-07T08:33:18.886Z [DEBUG] FileHistory: Added snapshot for 4e7fe582-b115-480b-9dde-0a906d61b75c, tracking 0 files
+2026-03-07T08:33:18.887Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-07T08:33:18.896Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-07T08:33:18.900Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.53905.1772872398900
+2026-03-07T08:33:18.900Z [DEBUG] Preserving file permissions: 100600
+2026-03-07T08:33:18.900Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-03-07T08:33:18.900Z [DEBUG] Applied original permissions to temp file
+2026-03-07T08:33:18.900Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.53905.1772872398900 to /Users/comdir/.claude.json
+2026-03-07T08:33:18.900Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-07T08:33:18.901Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:33:18.901Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7b5; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:18.901Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:18.901Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:18.902Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:18.902Z [DEBUG] autocompact: tokens=40755 threshold=167000 effectiveWindow=180000
+2026-03-07T08:33:18.904Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:33:18.907Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:18.909Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:18.909Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:18.909Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:18.912Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-07T08:33:19.640Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:24.083Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-07T08:33:24.090Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:33:24.090Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:33:24.090Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:24.090Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:24.096Z [DEBUG] [useDeferredValue] Messages deferred by 2 (63→65)
+2026-03-07T08:33:24.116Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:33:24.116Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb7; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:24.116Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:24.116Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:24.117Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:33:24.117Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:24.117Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:24.117Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:24.117Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:33:24.117Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:33:24.117Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:33:24.117Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:33:24.118Z [DEBUG] autocompact: tokens=40851 threshold=167000 effectiveWindow=180000
+2026-03-07T08:33:24.118Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:33:24.120Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:24.121Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:24.121Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:24.121Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:24.124Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-03-07T08:33:24.416Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:25.726Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:25.757Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:28.009Z [DEBUG] [useDeferredValue] Messages deferred by 2 (66→68)
+2026-03-07T08:33:28.501Z [DEBUG] [useDeferredValue] Messages deferred by 1 (68→69)
+2026-03-07T08:33:29.141Z [DEBUG] [useDeferredValue] Messages deferred by 1 (69→70)
+2026-03-07T08:33:29.177Z [DEBUG] High write ratio: blit=0, write=5760 (100.0% writes), screen=161x108
+2026-03-07T08:33:29.229Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:33:29.230Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:33:29.231Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:33:29.231Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:29.231Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:33:29.231Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:33:29.231Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:29.231Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:33:29.231Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-07T08:33:29.231Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-07T08:33:29.231Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:29.231Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:29.260Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-07T08:33:29.260Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0b7; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:29.260Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:29.260Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:29.261Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-07T08:33:29.261Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:29.261Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-07T08:33:29.261Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:29.262Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-03-07T08:33:29.285Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:33:29.285Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:29.285Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:33:29.286Z [DEBUG] [useDeferredValue] Messages deferred by 3 (71→74)
+2026-03-07T08:33:29.288Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:33:29.288Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:29.288Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:33:29.288Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:33:29.288Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:33:29.288Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:33:29.288Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:33:29.288Z [DEBUG] autocompact: tokens=41253 threshold=167000 effectiveWindow=180000
+2026-03-07T08:33:29.288Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:33:29.290Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:29.291Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:29.291Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:29.291Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:29.294Z [DEBUG] [useDeferredValue] Messages deferred by 7 (71→78)
+2026-03-07T08:33:29.535Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:29.739Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:33.813Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-07T08:33:33.813Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-07T08:33:33.813Z [DEBUG] Metrics export disabled by organization setting
+2026-03-07T08:33:34.041Z [DEBUG] [useDeferredValue] Messages deferred by 2 (78→80)
+2026-03-07T08:33:34.569Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-07T08:33:34.577Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:33:34.578Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-03-07T08:33:34.578Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:33:34.578Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:34.578Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:33:34.578Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-03-07T08:33:34.578Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:34.578Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-03-07T08:33:34.583Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-07T08:33:34.700Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:33:34.700Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:34.700Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:33:34.701Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-03-07T08:33:34.701Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:33:34.701Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-03-07T08:33:34.701Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:33:34.701Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:33:34.701Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:33:34.701Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:33:34.701Z [DEBUG] autocompact: tokens=41722 threshold=167000 effectiveWindow=180000
+2026-03-07T08:33:34.701Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:33:34.703Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:33:34.704Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:33:34.704Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:33:34.704Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:33:34.708Z [DEBUG] [useDeferredValue] Messages deferred by 6 (81→87)
+2026-03-07T08:33:35.182Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:33:41.639Z [DEBUG] executePreToolHooks called for tool: Grep
+2026-03-07T08:33:41.640Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2026-03-07T08:33:41.640Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:33:41.640Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2026-03-07T08:33:41.644Z [DEBUG] [useDeferredValue] Messages deferred by 2 (87→89)
+2026-03-07T08:34:01.655Z [DEBUG] rg error (signal=SIGKILL, code=null, stderr: rg: /Users/comdir/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Mail: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Safari: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Accounts: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/com.apple.aiml.instrumentation: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/AppleMediaServices: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Caches/com.apple.findmy.fmipcore: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Caches/com.apple.homed: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Trial: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/DuetExpertCenter: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Metadata/CoreSpotlight: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Weather: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Suggestions: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/PersonalizationPortrait: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/ContainerManager: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Family/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DeskCam/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MobileSMS.MessagesActionExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.reminders.quicklookextension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CalendarWidget.IntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Sharing-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ContactsUI.MonogramPosterExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AppleMediaServicesUI.ComposeReviewExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.adattributionkit.AAKPriMLPlugin/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.OSDUIHelper/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CloudSharingUI.CopyLink/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ap.PromotedContentPrediction.APOdmlSearchResultsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.contacts.ContactsAppIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Sharing: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/HomeKit: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Messages: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.messages.pinning.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.mediaanalysisd/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Arabesque/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DiagnosticExtensions.BluetoothHeadset/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.wallpaper.extension.legacy/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.homed.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Notes.QuickLookExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.DateTimeIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.mail.MailNotificationContentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.thumbnail.TextExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.replayKit.RPVideoEditorExtension-macOS/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.MobileSMS.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.contacts.ContactsCoreSpotlightExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.homed.notbackedup.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/3410B158-1610-489B-A7E5-F6BA95A03E04/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.iBooks.BooksNotificationContentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/547BCAEC-CFEF-44D4-9B71-FB7202919AD2/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.calls.PhoneAppIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenTime.ScreenTimeWebExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.AddressBook.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.podcasts.widget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.FileProviderDaemon.diagnostic/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Siri-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.parsec.SafariAssistantWorker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DiagnosticExtensions.AirPlay/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.findmy.FindMyIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.synology.SynologyDrive.FinderHelper.FinderSync/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.VoiceMemos.RecordWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.OFDThumbnail/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.reminders.sharingextension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Preferences/com.apple.MobileSMS.CKDNDList.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CloudDocs.iCloudDriveFileProvider/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.notifications.NotificationsSettingsIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.systempreferences/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.icloud.apps.messages.business.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.OFDPreview/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.gingerlabs.Notability.PreviewExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.ODDIExperimentationExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ActionKit.BundledIntentHandler/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.messages.ReplyExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AirDrop-Handoff-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.voicebankingd/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.openai.chat.Widgets/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.VisualGeneration.inference/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.lighthouse.BiomeLibraryEventUploader/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Calendars: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.PaperKit.extension.ui/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.fskit.exfat/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Notes.SharingExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.fskit.ModuleEnablement/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.GameCenterDiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/A3385958-308F-4C35-BABC-0C9ED309C6DA/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.WorkflowUI.AddShortcutExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.BluetoothSettingsApp.BluetoothSettingsAppIntentsWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.replayKit.RPBroadcastActivityExtension-macOS/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AquaAppearanceHelper/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ibooks.BookLibrary.BooksDiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CalendarUI.SpotlightEventPreview/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.preferences.sharing.SharingPrefsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.inputmethod.TYIM/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/IdentityServices: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Autosave Information: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.GameCenter.Settings.DeviceExpertExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Daemon Containers: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Assistant/SiriVocabulary: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CloudDocs.iCloudDriveFileProviderManaged/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AirPlayUIAgent/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.clock/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.weather.WeatherIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MediaRemoteAppIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Home.HomeWidgetIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.gamecenter.GameCenterUIService.GameCenterMessageExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MailShareExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ax.MauiTTSSupport.MauiAUSP/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Wallpaper-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.docker.docker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Notes.IntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.SiriNCService/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/CallHistoryDB: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/com.apple.avfoundation/Frecents: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AvatarUI.AvatarPickerMemojiPicker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.share.Mail.compose/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AuthKitUI.AKFollowUpServerUIExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ClassKit.ClassKitAppIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siriplugin.FileSearch/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.share.System.add-to-safari-reading-list/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.NetworkExtension.IKEv2Provider/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.UsersGroupsIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.bohemiancoding.sketch3.appstore.QuickLook-Preview-MacAppStore/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.iBooksX.CacheDelete/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.ODDIMetricsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CMViewSrvc/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.OnDeviceAnalytics.SiriAttentionAndInvocationExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.ui.helper/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Internet-Accounts-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/9482D0A5-36F5-4617-8DE8-B3652B3BCF61/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Transfer-Reset-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Print-Scan-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenTimeSwift.ScreenTimeDeviceActivityMonitorExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Safari.WebApp: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Spotlight-Settings.extension.SpotlightSettingsIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.aiml.mlpt.PriML.FedStats.PluginNonDnU/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriSettingsIntents.SettingsIntentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.HeadphoneSettings/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Trackpad-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/C0BCC37F-D4AA-496E-9286-5939C284A4BB/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Safari.SafariLinkExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.vivo.pcsuite.vdfs/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.NetworkEndpointPickerUI.DDUIExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.lighthouse.PnROnDeviceWorker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.VoiceMemos.VoiceMemosIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.RAQLPreviewExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MobileSMS.MessagesPluginNotificationExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.thumbnail.WebExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.TickTick.task.mac.TickTick-Safari-Extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.systempreferences.DisplaysSettingsIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Localization-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AccountsUISettings.AppIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.diagnosticextensions.osx.spotlight/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenSaver.Hello/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.dock.controls/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.lighthouse.IFTelemetrySELFIngestor/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Battery-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Lock-Screen-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.stocks: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.tips.TipsQuicklook/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.HomeAppIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.journal.widgets.secure/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.sogou.SogouInputSwitchHelper/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CryptoTokenKit.ctkcard.ctkcardtoken/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriTimeInternal.TimerIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.UniversalAccess.UASettingsShortcuts/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.synology.CloudStationUI.FileProvider/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.metrics.MetricsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Translation.TranslationAPISupportExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.journal.JournalShareExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.TransparencyUI.SWTFollowUpExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.intelligenceplatform.IntelligencePlatform.IntelligencePlatformDataActionsAppIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.thumbnail.FontExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.wifiqa.NPTKit.NPTWiFiDiagnosticsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.inputmethod.Kotoeri.KanaTyping/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CoreRoutine.helperservice/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Accessibility-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AppStoreDaemon.ASDAskPermissionExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.FamilyExtensionHost.FamilyOutOfProcessUIExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Home.HomeWidget.Interactive/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.tencent.Foxmail/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Flurry/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.kingsoft.wpsoffice.mac.WPSMacShare/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Passwords-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.UsageTrackingAgent/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Profiles-Settings.intents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MobileAddressBook.RemoteCatalystPosterExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.shortcuts/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.TextToSpeechVoiceBankingSupport.VoiceBankingDiagnostics/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.podcasts/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Preview/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.thumbnail.PackageExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriIdentityInternal.IdentityIntentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CoreMotionFoundationModelExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.freeform.sharingextension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.LinkedNotesUIService/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.messages.AssistantExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.priml.PFLMLHostPlugins.FedAutoEvalPlugin/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Safari.SafariWidgetExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.WorkflowUI.CatalystContentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.weather/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenSaver.iLife-Slideshow-Extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.systempreferences.GeneralSettings/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Notes.WidgetExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenTimeWidgetApplication.ScreenTimeWidgetIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AskToExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.stocks.widget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.GarageBand/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.corerecents.recentsd/Data/Library/Recents: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.corerecents.recentsd/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.SiriUI.SiriUISetupXPC/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ImagePlayground.DiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.wallpaper.extension.monterey/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Screen-Time-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.TickTick.task.mac.MainWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.inputmethod.SCIM/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.StoreKit.SKAskPermissionExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.findmy.FindMyWidgetItems/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.routined/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.inputmethod.ChineseHandwriting/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.Developer/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.texttospeech.SiriAUSP/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AVConference.Diagnostic/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.WindowManager.controls/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.calculator.CalculatorWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.BiometricKit.BioLogDiagnostic/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ibooks.BookLibraryCore.BooksAskPermissionExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/BCEF130F-D938-4CEB-8D1C-19003B51AAE8/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.PhotosUIPrivate.PhotosPosterProvider/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.SceneKitQLThumbnailExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CloudSharingUI.CreateiCloudLinkExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Photos.MacMusicPickerExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.batteryui.BatterySettingsIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.family.FamilyIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriPrivateLearningAnalytics.SiriUserSegments.Plugin/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenSaver-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.LoginItems-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.Mail/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.aiml.mlpt.FedStats.MLHostPluginClassA/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.gingerlabs.Notability.IntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings.Storage.StorageSettingsIntentsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DiagnosticExtensions.sysdiagnose/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Animoji.StickersApp.MessagesExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.messages.ShareExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.WiFiVelocity.DiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DifferentialPrivacy.TelemetryAggregator/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.PhotosIntelligence.PhotosStoryDiagnostics/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.inputmethod.VietnameseIM/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.share.AirDrop.send/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.PrinterScannerIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.freeform.USDRendererExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.cloudml.inference.PrivateMLClientInferenceProviderService/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.diagnosticextensions.osx.filevault/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Caches/FamilyCircle: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.bohemiancoding.sketch3.appstore/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.gingerlabs.Notability.NotabilityActionExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.synology.SynologyDrive.FinderHelper/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.UIUnderstanding.diagnosticextension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CaptiveNetworkAssistant/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Safari.SafariQuickLookPreview/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Game-Center-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Software-Update-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.speech.SpeechSynthesisServerXPC/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.TV.TVCacheExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AppleAccountUI.AAUIFollowUpExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.kingsoft.wpsoffice.mac.recentfiles/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.iCal.FaceTimeExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.geod/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Safari.DiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriSuggestionsLightHousePlugin/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.NewDeviceOutreach.NewDeviceOutreachIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Displays-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AppleMediaServices.FollowUpExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Family-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/9D34D752-4292-473E-AFF3-D6BA135989BF/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.diagnosticextensions.osx.systemprofile/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.HostInferenceProviderService/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.amazon.Lassen.SendToKindleExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.mapkit.private.RemoteUI/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.managedcorespotlightd/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Photos.StorageManagementExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.SiriGeo.SiriGeoIntentExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Desktop-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.SystemProfiler.AboutExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Music.MusicStorageExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.LoginItemsIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.omniSearch.SearchToolExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DiagnosticExtensions.ScreenTime/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.generativeassistanttools.GenerativeAssistantExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.shortcuts.Run-Workflow/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.NewDeviceOutreachMac.Extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.fskit.msdos/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.InferenceProviderService/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Startup-Disk-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.windowmanager.ShowDesktopEducation/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.transcriptBackgroundPoster.GradientExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.CryptoTokenKit.pivtoken/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.quicklook.thumbnail.ImageExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.car.PnRCarPlayOnDeviceWorker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/DifferentialPrivacy: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/FaceTime: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/AddressBook: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/FileProvider: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/com.apple.TCC: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/Knowledge: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/CallHistoryTransactions: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/com.apple.sharedfilelist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Application Support/CloudDocs: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.tencent.meeting/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AccessibilitySettingsWidgetExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.TextEdit/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.AppearanceIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.journal.widgets/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.dwarvesv.minimalbar/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.GMSSELFIngestor/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AuthKitUI.AKAppSSOExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.LighthouseBitacoraFramework.LighthouseBitacoraPlugin/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Dictionary/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.kingsoft.wpsoffice.mac.WPSFinderMenu/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ManagedSettings.ManagedSettingsMacOSExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Home.HomeUIUserList/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.helpviewer/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.reminders/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DiagnosticExtensions.ToolKit.shortcuts/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings.Storage/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.PDFKit.PDFImporter/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.metrics.DevicePropertiesExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.DoNotDisturb.Intents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.parsec.HashtagImagesApp.HashtagImagesExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.mlhost.CloudWorker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.Applications/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Home.PrivacySettingsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.AvatarUI.AvatarPickerPosePicker/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/9C069BDE-127D-446C-A7BD-936EC292BF39/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.settings-intents.AirDropHandoffIntents/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.iOSFiles/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.gingerlabs.NotabilityMac/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.ScreenSaver.Drift/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.systempreferences.InternationalSettingsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.NeptuneOneExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MailCacheDelete/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.shortcuts.ThumbnailExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Batteries.BatteriesAvocadoWidgetExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.dwarvesv.LauncherApplication/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MediaMLPluginApp.MediaMLExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.diagnosticextensions.osx.syslog/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.STMExtension.Trash/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.mail.SpotlightIndexExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.MarkupUI.Markup/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Classroom-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.Notifications-Settings.extension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.bot.neotix.doubao.FinderSyncExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.siri.metrics.AssetMetricsExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.HomeKitEvents.HomeKitEventsDiagnosticExtension/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.printcenter.PrintCenterWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Containers/com.apple.shortcuts.ShortcutsWidget/.com.apple.containermanagerd.metadata.plist: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Caches/com.apple.containermanagerd: Operation not permitted (os error 1)
+rg: /Users/comdir/Library/Caches/com.apple.findmy.fmfcore: Operation not permitted (os error 1)
+rg: /Users/comdir/.Trash: Operation not permitted (os error 1)
+), 89 results
+2026-03-07T08:34:01.662Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2026-03-07T08:34:01.662Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:34:01.662Z [DEBUG] Matched 1 unique hooks for query "Grep" (1 before deduplication)
+2026-03-07T08:34:01.664Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:34:01.664Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:34:01.664Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:34:01.664Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:34:01.665Z [DEBUG] autocompact: tokens=42330 threshold=167000 effectiveWindow=180000
+2026-03-07T08:34:01.666Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:34:01.672Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:34:01.673Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:34:01.673Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:34:01.674Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:34:01.686Z [DEBUG] [useDeferredValue] Messages deferred by 3 (89→92)
+2026-03-07T08:34:02.071Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:34:06.794Z [DEBUG] [useDeferredValue] Messages deferred by 1 (92→93)
+2026-03-07T08:34:07.598Z [DEBUG] [useDeferredValue] Messages deferred by 2 (93→95)
+2026-03-07T08:34:08.124Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-03-07T08:34:08.133Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-07T08:34:08.134Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-07T08:34:08.134Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-07T08:34:08.134Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:34:08.134Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-07T08:34:08.134Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-07T08:34:08.134Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:34:08.134Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-07T08:34:08.140Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-07T08:34:08.140Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:34:08.140Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-07T08:34:08.140Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-07T08:34:08.140Z [DEBUG] Found 5 hook matchers in settings
+2026-03-07T08:34:08.140Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-07T08:34:08.140Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-07T08:34:08.140Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-07T08:34:08.140Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-07T08:34:08.140Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-07T08:34:08.150Z [DEBUG] autocompact: tokens=46082 threshold=167000 effectiveWindow=180000
+2026-03-07T08:34:08.150Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:34:08.152Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:34:08.153Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:34:08.153Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:34:08.153Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:34:08.157Z [DEBUG] [useDeferredValue] Messages deferred by 8 (95→103)
+2026-03-07T08:34:08.651Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:34:13.894Z [DEBUG] [useDeferredValue] Messages deferred by 1 (103→104)
+2026-03-07T08:34:30.913Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-07T08:34:30.913Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:34:30.913Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:34:30.914Z [DEBUG] autocompact: tokens=50746 threshold=167000 effectiveWindow=180000
+2026-03-07T08:34:30.917Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-07T08:34:30.920Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-07T08:34:30.923Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-07T08:34:30.923Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-07T08:34:30.923Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-07T08:34:30.928Z [DEBUG] [useDeferredValue] Messages deferred by 2 (104→106)
+2026-03-07T08:34:30.934Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-07T08:34:31.399Z [DEBUG] Stream started - received first chunk
+2026-03-07T08:34:44.952Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:34:45.245Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-07T08:34:45.248Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-07T08:34:45.248Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:34:45.248Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-07T08:34:45.248Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=1073 output=242 cacheRead=49664 cacheCreate=0
+2026-03-07T08:35:30.937Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-03-07T08:35:30.937Z [DEBUG] Found 0 hook matchers in settings
+2026-03-07T08:35:30.937Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-03-07T08:38:33.818Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-07T08:38:33.821Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-07T08:38:33.821Z [DEBUG] Metrics export disabled by organization setting

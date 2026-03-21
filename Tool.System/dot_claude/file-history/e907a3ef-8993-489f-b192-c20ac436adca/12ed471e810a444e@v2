@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; margin-bottom: 10px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    .warning { background: #fff5f5; color: #c53030; padding: 8px 12px; border-radius: 4px; font-size: 13px; margin-top: 10px; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-row:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; word-break: break-all; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-big">85<span style="font-size: 24px;">分</span></div>
+    <div class="score-label">卓越表现区 (Excellent)</div>
+    <div class="summary">
+        一场兼具专业深度与人文温度的精彩主持！不仅所有标准动作颗粒归仓，更展现了作为企业成长陪跑伙伴的高级控场力与同理心。
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、 分项评分</h2>
+    <div class="score-row"><span>高维介绍（5句话逻辑清晰，过渡自然）</span><span>29 / 30</span></div>
+    <div class="score-row"><span>产品介绍（痛点抓得准，工具案例全覆盖）</span><span>28 / 30</span></div>
+    <div class="score-row"><span>团建破冰（指令明确，氛围调节到位）</span><span>14 / 15</span></div>
+    <div class="score-row"><span>邀约课评（利他视角极佳，临场略有波折）</span><span>13 / 15</span></div>
+    <div class="score-row"><span>结尾升华（有行动号召，可更聚焦落点）</span><span>7 / 10</span></div>
+</div>
+
+<div class="card">
+    <h2>二、 高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">【利他主义的赋能型课评邀约】（+3）</div>
+        <div class="bonus-detail">
+            <strong>原稿表达：</strong>强调反馈的重要性，引导填写。<br>
+            <strong>现场金句：</strong>"所有的案例，那些戳到肺管子的痛点...都是过去成百上千的师兄师姐们，提了无数的迭代和改进的建议，才有了今天这一版的课程...让后续每一期创业路上的同行者们，也能有避开这个坑的可能性。"<br>
+            <strong>分析：</strong>极其出彩的升华！你没有把"填课评"当作学堂布置给学员的任务，而是将其定义为"前人栽树后人乘凉"的共创传承。这种利他主义的视角，极大地激发了企业家的贡献欲，在心理层面建立了极强的信任感与共同体意识，这是资深顾问才有的业务理解力。
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、 AI教练建议 (Top 3)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 关于"场域共鸣"的留白艺术</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>痛点引发共鸣时的节奏掌控</p>
+            <p><strong>具体表现：</strong>在描述业务一号位的痛点（"明星变工兵"、"缺爆破手"）时，语速连贯紧凑，一气呵成直接给出了"缺系统方法论"的解决方案。</p>
+            <p><strong>深度洞察：</strong>我非常理解，作为班主任，你希望开场节奏紧凑，尽快把舞台交给老师。但作为成长陪跑伙伴，当我们在台上抛出"戳肺管子"的痛点时，其实是建立专业权威的最佳时机。如果语速过快，企业家大脑还来不及将这些痛点与自家公司的现状对齐，情绪还没顶到高潮，解药就发下来了，吸收效果会打折扣。</p>
+            <p><strong>优化建议：</strong>若能顺势在关键痛点后做一个"战术性停顿"（1-2秒），用眼神环顾全场，捕捉那些点头苦笑的创始人，再用笃定的语气给出解法，能在心理上建立更强的期待感和场域张力。</p>
+            <div class="suggestion">
+                <strong>💡 建议话术：</strong>"明明团队人也不少，但似乎都成了只能做执行的工兵，真正能顶上来的『爆破手』没几个。（停顿2秒，环视全场，眼神确认）我看到前排几位总会心一笑，看来大家感同身受。面对这种无奈，其实并非团队不行，而是我们手里，缺了一套系统的兵法..."
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 关于突发状况的"情绪保鲜"</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>结尾临场突发状况（群链接/二维码问题）的处理</p>
+            <p><strong>具体表现：</strong>第二天结尾邀约课评时，现场似乎出现了群内链接未就绪的小状况（"点点群里那个...面条群里面现在还...好没事，待会发群里头"），导致情绪有些断点。</p>
+            <p><strong>深度洞察：</strong>先假设这是为了确保每一位同学都能拿到链接、生怕大家错过的负责任举动。但在课程结束的最高潮，学员的情绪正处于饱满状态。如果台上因为技术或协同小瑕疵产生了迟疑，会迅速消耗掉好不容易拉满的"能量场"。作为高阶场控，我们的第一要务是"保鲜情绪"，行政动作可以后置。</p>
+            <p><strong>优化建议：</strong>遇到类似情况，无需在台上与助教进行确认或纠结，直接一句话将线上动作顺滑转交给场下，保持你作为主持人的从容，紧接着推向结尾升华，做到气场不断。</p>
+            <div class="suggestion">
+                <strong>💡 建议话术：</strong>"看来我们的小助手正在为大家准备专属的复盘通道，没关系，大家稍后在群内查收链接即可。短暂的停顿不影响我们前行的脚步，正如大家即将..."
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 关于结尾升华的"落点抓手"</div>
+        <div class="feedback-content">
+            <p><strong>问题类型：</strong>结尾行动号召的具象化</p>
+            <p><strong>具体表现：</strong>结尾呼吁是"希望大家带上所有的收获能够马上在周一就能有一个第一个起点的落地"。</p>
+            <p><strong>深度洞察：</strong>提示"周一落地"这个时间锚点非常棒！这是为了催化行动。但"第一个起点"在听感上相对抽象。历经两天高强度的"科学用人/带团队"烧脑后，企业家此刻脑容量已经饱和。作为陪伴者，如果能帮他们指定一个最轻量、最锋利的"第一动作"，能极大降低他们回公司推行的阻力。</p>
+            <p><strong>优化建议：</strong>调用你在开场（Product 5句话）中铺垫过的具体工具名称，首尾呼应。给他们一个具象的"武器"，告诉他们周一早上开早会时第一件事该拿什么出来。</p>
+            <div class="suggestion">
+                <strong>💡 建议话术：</strong>"希望大家下周一回到公司，拿出的第一张王牌，就是咱们这两天打磨的《业务作战计划》。期待大家用这套统一的管理语言，带领团队打赢接下来的每一场关键战役！"
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ending">
+    一次精彩的带班，不仅是完成流程，更是点燃企业家求知与实战的火种。你的从容、温度与利他之心，已经完美诠释了高维班主任的底色。期待下一次，看到你在场域节奏的掌控上更加游刃有余！
+</div>
+
+<div class="footer">
+    <p>File References:</p>
+    <p>/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/高维学堂5句话介绍.md</p>
+    <p>/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/业务管理者养成-主持词.md</p>
+</div>
+
+</body>
+</html>

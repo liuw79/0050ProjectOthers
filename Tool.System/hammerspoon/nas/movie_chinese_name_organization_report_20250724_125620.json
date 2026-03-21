@@ -1,0 +1,3781 @@
+{
+  "timestamp": "20250724_125620",
+  "summary": {
+    "total_processed": 376,
+    "renamed_count": 62,
+    "skipped_count": 314,
+    "error_count": 0,
+    "renamed_movies": [
+      {
+        "original": "2025",
+        "new_name": "十二怒汉 (2025)",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "12 Angry Men (1957)",
+        "new_name": "十二怒汉 (1957)",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "4K.AVC",
+        "new_name": "十二怒汉 4K",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "Alien - Director's Cut (1979)",
+        "new_name": "异形 (1979)",
+        "chinese_title": "异形"
+      },
+      {
+        "original": "Aliens - Special Edition (1986)",
+        "new_name": "异形 (1986)",
+        "chinese_title": "异形"
+      },
+      {
+        "original": "Amadeus (1984)",
+        "new_name": "莫扎特传 (1984)",
+        "chinese_title": "莫扎特传"
+      },
+      {
+        "original": "Apocalypse Now (1979)",
+        "new_name": "现代启示录 (1979)",
+        "chinese_title": "现代启示录"
+      },
+      {
+        "original": "Back to the Future (1985)",
+        "new_name": "回到未来 (1985)",
+        "chinese_title": "回到未来"
+      },
+      {
+        "original": "Beasts of the Southern Wild (2012)",
+        "new_name": "她 (2012)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Casablanca (1942)",
+        "new_name": "卡萨布兰卡 (1942)",
+        "chinese_title": "卡萨布兰卡"
+      },
+      {
+        "original": "Citizen Kane (1941)",
+        "new_name": "公民凯恩 (1941)",
+        "chinese_title": "公民凯恩"
+      },
+      {
+        "original": "A Clockwork Orange (1971)",
+        "new_name": "发条橙 (1971)",
+        "chinese_title": "发条橙"
+      },
+      {
+        "original": "Dune (2021)",
+        "new_name": "沙丘 (2021)",
+        "chinese_title": "沙丘"
+      },
+      {
+        "original": "Everything Everywhere All at Once (2022)",
+        "new_name": "她 (2022)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "The Father (2020)",
+        "new_name": "她 (2020)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Forrest Gump (1994)",
+        "new_name": "阿甘正传 (1994)",
+        "chinese_title": "阿甘正传"
+      },
+      {
+        "original": "Frozen Chosin (2011)",
+        "new_name": "冰雪奇缘 (2011)",
+        "chinese_title": "冰雪奇缘"
+      },
+      {
+        "original": "Gladiator - Extended Edition (2000)",
+        "new_name": "角斗士 (2000)",
+        "chinese_title": "角斗士"
+      },
+      {
+        "original": "The Godfather Part II (1974)",
+        "new_name": "教父 (1974)",
+        "chinese_title": "教父"
+      },
+      {
+        "original": "The Godfather (1972)",
+        "new_name": "教父 (1972)",
+        "chinese_title": "教父"
+      },
+      {
+        "original": "Good Will Hunting (1997)",
+        "new_name": "心灵捕手 (1997)",
+        "chinese_title": "心灵捕手"
+      },
+      {
+        "original": "Goodfellas (1990)",
+        "new_name": "好家伙 (1990)",
+        "chinese_title": "好家伙"
+      },
+      {
+        "original": "The Green Mile (1999)",
+        "new_name": "绿里奇迹 (1999)",
+        "chinese_title": "绿里奇迹"
+      },
+      {
+        "original": "Inception (2010)",
+        "new_name": "盗梦空间 (2010)",
+        "chinese_title": "盗梦空间"
+      },
+      {
+        "original": "Interstellar (2014)",
+        "new_name": "星际穿越 (2014)",
+        "chinese_title": "星际穿越"
+      },
+      {
+        "original": "Joker (2019)",
+        "new_name": "小丑 (2019)",
+        "chinese_title": "小丑"
+      },
+      {
+        "original": "Just Heroes (1989)",
+        "new_name": "她 (1989)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Lawrence of Arabia (1962)",
+        "new_name": "阿拉伯的劳伦斯 (1962)",
+        "chinese_title": "阿拉伯的劳伦斯"
+      },
+      {
+        "original": "Life Is Beautiful (1997)",
+        "new_name": "美丽人生 (1997)",
+        "chinese_title": "美丽人生"
+      },
+      {
+        "original": "The Lion King (1994)",
+        "new_name": "狮子王 (1994)",
+        "chinese_title": "狮子王"
+      },
+      {
+        "original": "The Lives of Others (2006)",
+        "new_name": "她 (2006)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "The Martian (2015)",
+        "new_name": "火星救援 (2015)",
+        "chinese_title": "火星救援"
+      },
+      {
+        "original": "The Matrix (1999)",
+        "new_name": "黑客帝国 (1999)",
+        "chinese_title": "黑客帝国"
+      },
+      {
+        "original": "Once Upon a Time in America (1984)",
+        "new_name": "飞屋环游记 (1984)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Once Upon a Time in the West (1968)",
+        "new_name": "飞屋环游记 (1968)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "One Flew Over the Cuckoo's Nest (1975)",
+        "new_name": "飞越疯人院 (1975)",
+        "chinese_title": "飞越疯人院"
+      },
+      {
+        "original": "The Pianist (2002)",
+        "new_name": "钢琴家 (2002)",
+        "chinese_title": "钢琴家"
+      },
+      {
+        "original": "The Piano Teacher (2001)",
+        "new_name": "她 (2001)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Police.Story.III.Super.Cop (1992)",
+        "new_name": "飞屋环游记 (1992)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Psycho (1960)",
+        "new_name": "惊魂记 (1960)",
+        "chinese_title": "惊魂记"
+      },
+      {
+        "original": "Pulp Fiction (1994)",
+        "new_name": "低俗小说 (1994)",
+        "chinese_title": "低俗小说"
+      },
+      {
+        "original": "The Pursuit of Happyness.HEVC (2006)",
+        "new_name": "当幸福来敲门 (2006)",
+        "chinese_title": "当幸福来敲门"
+      },
+      {
+        "original": "Railway Heroes (2021)",
+        "new_name": "她 (2021)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Remuxed by KAWAiREMUX group @ACM (2006)",
+        "new_name": "飞屋环游记 (2006)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Saving Private Ryan (1998)",
+        "new_name": "拯救大兵瑞恩 (1998)",
+        "chinese_title": "拯救大兵瑞恩"
+      },
+      {
+        "original": "Schindler's List (1993)",
+        "new_name": "辛德勒的名单 (1993)",
+        "chinese_title": "辛德勒的名单"
+      },
+      {
+        "original": "The Shawshank Redemption 1994 1080p BluRay DTS 4Audio x265-10bit-HDS (1994)",
+        "new_name": "肖申克的救赎 (1994) 1080p",
+        "chinese_title": "肖申克的救赎"
+      },
+      {
+        "original": "The Shining (1980)",
+        "new_name": "闪灵 (1980)",
+        "chinese_title": "闪灵"
+      },
+      {
+        "original": "Singin' in the Rain (1952)",
+        "new_name": "雨中曲 (1952)",
+        "chinese_title": "雨中曲"
+      },
+      {
+        "original": "Spirited Away (2001)",
+        "new_name": "千与千寻 (2001)",
+        "chinese_title": "千与千寻"
+      },
+      {
+        "original": "Taxi Driver (1976)",
+        "new_name": "出租车司机 (1976)",
+        "chinese_title": "出租车司机"
+      },
+      {
+        "original": "Up (2009)",
+        "new_name": "飞屋环游记 (2009)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Vertigo (1958)",
+        "new_name": "迷魂记 (1958)",
+        "chinese_title": "迷魂记"
+      },
+      {
+        "original": "Dune 2021 4K HMAX WEB-DL DD+5.1 HDR10 HEVC-cfandora (2021)",
+        "new_name": "沙丘 (2021) 4K",
+        "chinese_title": "沙丘"
+      },
+      {
+        "original": "The Lord of the Rings - The Fellowship of the Ring (2001)",
+        "new_name": "指环王 (2001)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "The Lord of the Rings - The Return of the King (2003)",
+        "new_name": "指环王 (2003)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "The Lord of the Rings - The Two Towers (2002)",
+        "new_name": "指环王 (2002)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "Star Wars - Episode IV - A New Hope (1977)",
+        "new_name": "星球大战 (1977)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Star Wars - Episode V - The Empire Strikes Back (1980)",
+        "new_name": "星球大战 (1980)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Star Wars - Episode VI - Return of the Jedi (1983)",
+        "new_name": "星球大战 (1983)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Toy Story (1995)",
+        "new_name": "玩具总动员 (1995)",
+        "chinese_title": "玩具总动员"
+      },
+      {
+        "original": "Toy Story 3 (2010)",
+        "new_name": "玩具总动员 (2010)",
+        "chinese_title": "玩具总动员"
+      }
+    ],
+    "skipped_movies": [
+      {
+        "folder": "m2ts",
+        "extracted_title": "m2ts",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "100 YEN LOVE (2014)",
+        "extracted_title": "100 YEN LOVE ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1080.AVC",
+        "extracted_title": "1080",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1080p (2016)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1917 (2019)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "2001 - A Space Odyssey (1968)",
+        "extracted_title": "A Space Odyssey ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "21 Grams (2003)",
+        "extracted_title": "21 Grams ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "22 Bullets 2010 (2010)",
+        "extracted_title": "22 Bullets  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "3 Idiots (2009)",
+        "extracted_title": "3 Idiots ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1991)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1992)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1995)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1993)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A.I. Artificial Intelligence 2001 (2001)",
+        "extracted_title": "A I  Artificial Intelligence  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Accountant (2016)",
+        "extracted_title": "The Accountant ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "All for the Winner (1990)",
+        "extracted_title": "All for the Winner ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Amélie (2001)",
+        "extracted_title": "Amélie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Beauty (1999)",
+        "extracted_title": "American Beauty ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American History X (1998)",
+        "extracted_title": "American History X ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Made (2017)",
+        "extracted_title": "American Made ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Woman (2018)",
+        "extracted_title": "American Woman ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American.Experience.The.Battle.of.Chosin",
+        "extracted_title": "American Experience The Battle of Chosin",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Angels & Demons (2009)",
+        "extracted_title": "Angels & Demons ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ao.Der.letzte.Neandertaler (2010)",
+        "extracted_title": "Ao Der letzte Neandertaler ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Apartment (1960)",
+        "extracted_title": "The Apartment ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "ARABIAN NIGHTS (1974)",
+        "extracted_title": "ARABIAN NIGHTS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Argo (2012)",
+        "extracted_title": "Argo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Aviator 2004 (2004)",
+        "extracted_title": "The Aviator  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Babyteeth (2020)",
+        "extracted_title": "Babyteeth ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Barbie (2023)",
+        "extracted_title": "Barbie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Battleship (2012)",
+        "extracted_title": "Battleship ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "BDRip and Montage by Ash61 (2012)",
+        "extracted_title": "and Montage by Ash61 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Before Midnight 2013 (2013)",
+        "extracted_title": "Before Midnight  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bernie the Dolphin 2 (2019)",
+        "extracted_title": "Bernie the Dolphin 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Best Offer (2013)",
+        "extracted_title": "The Best Offer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bicycle Thieves (1948)",
+        "extracted_title": "Bicycle Thieves ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Birdy (1984)",
+        "extracted_title": "Birdy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Blind Side (2009)",
+        "extracted_title": "The Blind Side ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "BluRay REMUX 1080p AVC DTS-HD MA7.1-CHD (2013)",
+        "extracted_title": "REMUX    HD MA7 1 CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Boat (1981)",
+        "extracted_title": "The Boat ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bohemian Rhapsody (2018)",
+        "extracted_title": "Bohemian Rhapsody ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Boss Baby (2017)",
+        "extracted_title": "The Boss Baby ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Braveheart (1995)",
+        "extracted_title": "Braveheart ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Bridges of Madison County (1995)",
+        "extracted_title": "The Bridges of Madison County ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Capernaum (2018)",
+        "extracted_title": "Capernaum ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CCTV6HD.What.A.Family (1979)",
+        "extracted_title": "CCTV6HD What A Family ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Chaser (2008)",
+        "extracted_title": "The Chaser ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Children of Heaven (1997)",
+        "extracted_title": "Children of Heaven ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Cinema Paradiso (1988)",
+        "extracted_title": "Cinema Paradiso ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "City Lights (1931)",
+        "extracted_title": "City Lights ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "City of God (2002)",
+        "extracted_title": "City of God ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CJ7 - Blu-ray™ (2008)",
+        "extracted_title": "CJ7   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CJ7.2008.BDRip.720p.x264.2AUDiO.DTS.-CHD (2008)",
+        "extracted_title": "CJ7 2AUDiO CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Class of 1999 (1990)",
+        "extracted_title": "Class of  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Cloud Atlas (2012)",
+        "extracted_title": "Cloud Atlas ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Coco.2017.1080p.BluRay.REMUX.AVC.DTS-HD.MA.7.1-FGT (2017)",
+        "extracted_title": "Coco REMUX HD MA 7 1 FGT ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Come and See (1985)",
+        "extracted_title": "Come and See ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Corporation (2003)",
+        "extracted_title": "The Corporation ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Croods - A New Age (2020)",
+        "extracted_title": "The Croods   A New Age ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2019)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2020)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2023)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dangal (2016)",
+        "extracted_title": "Dangal ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Deep Impact (1998)",
+        "extracted_title": "Deep Impact ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Departed (2006)",
+        "extracted_title": "The Departed ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dil To Pagal Hai (1997)",
+        "extracted_title": "Dil To Pagal Hai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Django Unchained (2012)",
+        "extracted_title": "Django Unchained ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Double Indemnity (1944)",
+        "extracted_title": "Double Indemnity ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Downton Abbey (2019)",
+        "extracted_title": "Downton Abbey ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dr. Strangelove or - How I Learned to Stop Worrying and Love the Bomb (1964)",
+        "extracted_title": "Dr  Strangelove or   How I Learned to Stop Worrying and Love the Bomb ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Drishyam 2 (2022)",
+        "extracted_title": "Drishyam 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Echoes of the Rainbow (2010)",
+        "extracted_title": "Echoes of the Rainbow ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Embrace Again (2021)",
+        "extracted_title": "Embrace Again ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Encode by CK @ HDChina (2015)",
+        "extracted_title": "Encode by CK @ HDChina ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "ENCODER - 19977 (2015)",
+        "extracted_title": "ENCODER   19977 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Erin Brockovich 2000 1080p - PTH (2000)",
+        "extracted_title": "Erin Brockovich     PTH ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Erzi.kai.dian (1987)",
+        "extracted_title": "Erzi kai dian ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Escape From Mogadishu (2021)",
+        "extracted_title": "Escape From Mogadishu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Eternal Sunshine of the Spotless Mind (2004)",
+        "extracted_title": "Eternal Sunshine of the Spotless Mind ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Eternals (2021)",
+        "extracted_title": "Eternals ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Event Horizon (1997)",
+        "extracted_title": "Event Horizon ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Everything You Always Wanted to Know About Sex But Were Afraid to Ask (1972)",
+        "extracted_title": "Everything You Always Wanted to Know About Sex But Were Afraid to Ask ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "EVO (2021)",
+        "extracted_title": "EVO ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Das Experiment 2001 - HDC (2001)",
+        "extracted_title": "Das Experiment    HDC ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Extended Collector’s Edition Disc 1 (2009)",
+        "extracted_title": "Extended Collector’s Edition Disc 1 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Extinction (2015)",
+        "extracted_title": "Extinction ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fall - Blu-ray™ (2022)",
+        "extracted_title": "Fall   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Farewell (2019)",
+        "extracted_title": "The Farewell ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "FFans@leon (2018)",
+        "extracted_title": "FFans@leon ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fight Club (1999)",
+        "extracted_title": "Fight Club ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Final Justice 1988 (1988)",
+        "extracted_title": "Final Justice  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Final.Justice.1988.Blu-ray.720p.x264.DD51.DualAudio.MySilu (1988)",
+        "extracted_title": "Final Justice Blu ray DD51 DualAudio MySilu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fireflies in the Sun (2021)",
+        "extracted_title": "Fireflies in the Sun ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Flirting Scholar (1993)",
+        "extracted_title": "Flirting Scholar ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "For a Few Dollars More (1965)",
+        "extracted_title": "For a Few Dollars More ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Forbidden.City.Cop.1996.BluRay.720p.AC3.2Audio.x264-CHD (1996)",
+        "extracted_title": "Forbidden City Cop 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Free Guy (2021)",
+        "extracted_title": "Free Guy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "From Beijing with Love (1994)",
+        "extracted_title": "From Beijing with Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Full Metal Jacket (1987)",
+        "extracted_title": "Full Metal Jacket ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Funeral.Family (2022)",
+        "extracted_title": "Funeral Family ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Girls Without Tomorrow (1992)",
+        "extracted_title": "Girls Without Tomorrow ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Good, the Bad and the Ugly (1966)",
+        "extracted_title": "The Good, the Bad and the Ugly ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Good.Bye.Lenin.2003.720p.BluRay.DD5.1.x264-DON (2003)",
+        "extracted_title": "Good Bye Lenin DD5 1 DON ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Grave of the Fireflies (1988)",
+        "extracted_title": "Grave of the Fireflies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Great Dictator (1940)",
+        "extracted_title": "The Great Dictator ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Green Book (2018)",
+        "extracted_title": "Green Book ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Guang (2018)",
+        "extracted_title": "Guang ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Guardians of the Galaxy (2014)",
+        "extracted_title": "Guardians of the Galaxy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hail.the.Judge.1994.720p.BluRay.x264-WiKi (1994)",
+        "extracted_title": "Hail the Judge WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Harakiri (1962)",
+        "extracted_title": "Harakiri ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Heat (1995)",
+        "extracted_title": "Heat ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 fps @ 5222 kbps (2022)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 fps @ 5222 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 10920 kbps (1998)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 10920 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 10974 kbps (2004)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 10974 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 12557 kbps (2018)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 12557 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 4148 kbps (2017)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 4148 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 4751 kbps (2016)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 4751 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 5885 kbps (2014)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 5885 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7184 kbps (1994)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7184 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7685 kbps (2023)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7685 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7834 kbps (2015)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7834 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7855 kbps (2005)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7855 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8302 kbps (2010)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8302 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8591 kbps (2015)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8591 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8687 kbps (2014)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8687 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8997 kbps (2013)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8997 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 9206 kbps (2002)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 9206 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 9852 kbps (2000)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 9852 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 30 1.001 fps @ 13221 kbps (2004)",
+        "extracted_title": ", x265Main10@L5 1@High, 30 1 001 fps @ 13221 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "High and Low (1963)",
+        "extracted_title": "High and Low ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hitman Agent 47 (2015)",
+        "extracted_title": "Hitman Agent 47 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Home Coming (2022)",
+        "extracted_title": "Home Coming ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Homeless to Harvard - The Liz Murray Story (2003)",
+        "extracted_title": "Homeless to Harvard   The Liz Murray Story ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hunter Killer (2018)",
+        "extracted_title": "Hunter Killer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "I Can Only Imagine (2018)",
+        "extracted_title": "I Can Only Imagine ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "If You Are the One (2008)",
+        "extracted_title": "If You Are the One ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ikiru (1952)",
+        "extracted_title": "Ikiru ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "In the Mood for Love (2000)",
+        "extracted_title": "In the Mood for Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Incendies (2010)",
+        "extracted_title": "Incendies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Indiana Jones and the Last Crusade (1989)",
+        "extracted_title": "Indiana Jones and the Last Crusade ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Inglourious Basterds (2009)",
+        "extracted_title": "Inglourious Basterds ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Intouchables (2011)",
+        "extracted_title": "The Intouchables ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Invisible Man (2020)",
+        "extracted_title": "The Invisible Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "It's a Wonderful Life (1946)",
+        "extracted_title": "It's a Wonderful Life ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Journey.to.the.West.The.Demons.Strike.Back.2017.720p.BluRay.x264-WiKi (2017)",
+        "extracted_title": "Journey to the West The Demons Strike Back WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Justice.My.Foot.1992.1080p.BluRay.x264-WiKi (1992)",
+        "extracted_title": "Justice My Foot WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Kid (1921)",
+        "extracted_title": "The Kid ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King of Comedy (1999)",
+        "extracted_title": "King of Comedy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King.of.Beggars.1992.720p.BluRay.x264-WiKi (1992)",
+        "extracted_title": "King of Beggars WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King.of.Comedy.1999.HDTV.720p.AC3.2Audio.x264-CHDTV (1999)",
+        "extracted_title": "King of Comedy HDTV 2Audio CHDTV ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Kis.Uykusu (2014)",
+        "extracted_title": "Kis Uykusu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Klaus (2019)",
+        "extracted_title": "Klaus ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Knockout - Blu-ray™ (2020)",
+        "extracted_title": "Knockout   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Koe.no.katachi (2016)",
+        "extracted_title": "Koe no katachi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "L.A. Confidential (1997)",
+        "extracted_title": "L A  Confidential ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "La.grande.bellezza (2013)",
+        "extracted_title": "La grande bellezza ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ladies Market (2021)",
+        "extracted_title": "Ladies Market ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Late Quartet (2012)",
+        "extracted_title": "A Late Quartet ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Lawyer.Lawyer.1997.720p.HDTV.x264-XXFANS (1997)",
+        "extracted_title": "Lawyer Lawyer HDTV XXFANS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Leap (2020)",
+        "extracted_title": "Leap ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Leap Year 2010 (2010)",
+        "extracted_title": "Leap Year  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Léon - The Professional - Extended Edition (1994)",
+        "extracted_title": "Léon   The Professional   Extended Edition ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Life of Pi (2012)",
+        "extracted_title": "Life of Pi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Look Out, Officer! (1990)",
+        "extracted_title": "Look Out, Officer! ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love on Delivery (1994)",
+        "extracted_title": "Love on Delivery ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love Will Tear Us Apart (2021)",
+        "extracted_title": "Love Will Tear Us Apart ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love, Rosie (2014)",
+        "extracted_title": "Love, Rosie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love.Actually.2003.10th.Anniversary",
+        "extracted_title": "Love Actually 10th Anniversary",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love.is.Love.1990.Blu-ray.720p.x264.DTS.DD51.DualAudio.MySilu (1990)",
+        "extracted_title": "Love is Love Blu ray DD51 DualAudio MySilu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Loving Vincent (2017)",
+        "extracted_title": "Loving Vincent ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Luca (2021)",
+        "extracted_title": "Luca ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Lucky Guy (1998)",
+        "extracted_title": "The Lucky Guy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "THE LUNCHBOX (2013)",
+        "extracted_title": "THE LUNCHBOX ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "M (1931)",
+        "extracted_title": "M ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MADE IN HONG KONG (1997)",
+        "extracted_title": "MADE IN HONG KONG ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Made in Italy (2020)",
+        "extracted_title": "Made in Italy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Man Called Ove 2015 (2015)",
+        "extracted_title": "A Man Called Ove  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Man in Love (2021)",
+        "extracted_title": "Man in Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Memento (2000)",
+        "extracted_title": "Memento ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Mermaid (2016)",
+        "extracted_title": "The Mermaid ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Merry Christmas Mr. Lawrence (1983)",
+        "extracted_title": "Merry Christmas Mr  Lawrence ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Metropolis (1927)",
+        "extracted_title": "Metropolis ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MNHD-FRDS (2019)",
+        "extracted_title": "MNHD FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moana (2016)",
+        "extracted_title": "Moana ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Modern Times (1936)",
+        "extracted_title": "Modern Times ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Monty Python and the Holy Grail (1975)",
+        "extracted_title": "Monty Python and the Holy Grail ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moon Man (2022)",
+        "extracted_title": "Moon Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-4 AVC Video 26934 kbps 1080p 23,976 fps 16-9 High Profile 4.1 (2009)",
+        "extracted_title": "MPEG 4  Video 26934 kbps  23,976 fps 16 9 High Profile 4 1 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-4 x264@High Profile L4.1, 24 fps @ 10800 kbps (2018)",
+        "extracted_title": "MPEG 4 @High Profile L4 1, 24 fps @ 10800 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-H,HEVC x265 Main 10@L5.1@High, 24 1.001 fps @ 12966 kbps (2014)",
+        "extracted_title": "MPEG H,  Main 10@L5 1@High, 24 1 001 fps @ 12966 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Mulan (2020)",
+        "extracted_title": "Mulan ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "My People, My Country (2019)",
+        "extracted_title": "My People, My Country ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Netemo sametemo 2018 (2018)",
+        "extracted_title": "Netemo sametemo  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "New Police Story (2004)",
+        "extracted_title": "New Police Story ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "News of the World 2020 (2020)",
+        "extracted_title": "News of the World  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Nice View (2022)",
+        "extracted_title": "Nice View ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Nightmare Alley (2021) 1080p HDR Encode (2021)",
+        "extracted_title": "Nightmare Alley ()   Encode ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "No Man's Land (2013)",
+        "extracted_title": "No Man's Land ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "North by Northwest (1959)",
+        "extracted_title": "North by Northwest ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Old Guard (2020)",
+        "extracted_title": "The Old Guard ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oldboy (2003)",
+        "extracted_title": "Oldboy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oldboy.2003.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.5.1-hc@PTHome (2003)",
+        "extracted_title": "Oldboy TWN Blu ray HD MA 5 1 hc@PTHome ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Operation Red Sea (2018)",
+        "extracted_title": "Operation Red Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oppenheimer (2023)",
+        "extracted_title": "Oppenheimer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Osaka.Loan.Shark (2021)",
+        "extracted_title": "Osaka Loan Shark ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Paths of Glory (1957)",
+        "extracted_title": "Paths of Glory ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Pegasus (2019)",
+        "extracted_title": "Pegasus ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Perfect World (1993)",
+        "extracted_title": "A Perfect World ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Perfume - The Story of a Murderer (2006)",
+        "extracted_title": "Perfume   The Story of a Murderer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Piano (1993)",
+        "extracted_title": "The Piano ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police Story - Lockdown (2013)",
+        "extracted_title": "Police Story   Lockdown ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.I (1985)",
+        "extracted_title": "Police Story I ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.II (1988)",
+        "extracted_title": "Police Story II ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.IV.First.Strike (1996)",
+        "extracted_title": "Police Story IV First Strike ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Prestige (2006)",
+        "extracted_title": "The Prestige ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Princess Mononoke (1997)",
+        "extracted_title": "Princess Mononoke ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Raiders of the Lost Ark (1981)",
+        "extracted_title": "Raiders of the Lost Ark ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Raiders of the Lost Ark 1981 (1981)",
+        "extracted_title": "Raiders of the Lost Ark  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "RARBG.com",
+        "extracted_title": "RARBG com",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Rear Window (1954)",
+        "extracted_title": "Rear Window ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Redeeming Love (2022)",
+        "extracted_title": "Redeeming Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Requiem for a Dream (2000)",
+        "extracted_title": "Requiem for a Dream ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Reservoir Dogs (1992)",
+        "extracted_title": "Reservoir Dogs ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Royal.Tramp.1992.BluRay.720p.AC3.2Audio.x264-CHD (1992)",
+        "extracted_title": "Royal Tramp 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Royal.Tramp.2.1992.BluRay.720p.AC3.2Audio.x264-CHD (1992)",
+        "extracted_title": "Royal Tramp 2 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "RTHK TV 31.Philharmonic.5.Beethoven.at.teamLab.Tokyo (2020)",
+        "extracted_title": "RTHK TV 31 Philharmonic 5 Beethoven at teamLab Tokyo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Running.on.Empty (1988)",
+        "extracted_title": "Running on Empty ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Rush Hour (1998)",
+        "extracted_title": "Rush Hour ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Salyut-7 (2017)",
+        "extracted_title": "Salyut 7 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scarface (1983)",
+        "extracted_title": "Scarface ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie (2000)",
+        "extracted_title": "Scary Movie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie 2 (2001)",
+        "extracted_title": "Scary Movie 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie 3 (2003)",
+        "extracted_title": "Scary Movie 3 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Scene at the Sea (1991)",
+        "extracted_title": "A Scene at the Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scent.of.a.Woman.1992.1080p.BluRay.x264.DTS-FiDELiO (1992)",
+        "extracted_title": "Scent of a Woman FiDELiO ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Se7en (1995)",
+        "extracted_title": "Se7en ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Separation (2011)",
+        "extracted_title": "A Separation ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Seven Samurai (1954)",
+        "extracted_title": "Seven Samurai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Shaolin Soccer (2001)",
+        "extracted_title": "Shaolin Soccer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Shattered.2021 (2022)",
+        "extracted_title": "Shattered  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sicario - Blu-ray (2015)",
+        "extracted_title": "Sicario   Blu ray ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Silence of the Lambs (1991)",
+        "extracted_title": "The Silence of the Lambs ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sixty.Million.Dollar.Man.1995.720p.BluRay.x264-WiKi (1995)",
+        "extracted_title": "Sixty Million Dollar Man WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Snatch (2000)",
+        "extracted_title": "Snatch ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Song of the Sea (2014)",
+        "extracted_title": "Song of the Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Soul (2020)",
+        "extracted_title": "Soul ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "SoulMate 2016 (2016)",
+        "extracted_title": "SoulMate  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Space Sweepers (2021)",
+        "extracted_title": "Space Sweepers ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.I.The.Motion.Picture (1979)",
+        "extracted_title": "Star Trek I The Motion Picture ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.IX.Insurrection (1998)",
+        "extracted_title": "Star Trek IX Insurrection ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.VII.Generations (1994)",
+        "extracted_title": "Star Trek VII Generations ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.VIII.First.Contact (1996)",
+        "extracted_title": "Star Trek VIII First Contact ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.X.Nemesis (2002)",
+        "extracted_title": "Star Trek X Nemesis ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Sting (1973)",
+        "extracted_title": "The Sting ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Suk.Suk (2020)",
+        "extracted_title": "Suk Suk ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sully (2016)",
+        "extracted_title": "Sully ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Summer Detective 2019 (2019)",
+        "extracted_title": "Summer Detective  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sunset Blvd. (1950)",
+        "extracted_title": "Sunset Blvd  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Swordsman In Double Flag Town - Blu-ray™ (1991)",
+        "extracted_title": "The Swordsman In Double Flag Town   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Systemsprenger 2019 (2019)",
+        "extracted_title": "Systemsprenger  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Talvisota elokuvan kuvaukset Keuruulla (1989)",
+        "extracted_title": "Talvisota elokuvan kuvaukset Keuruulla ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Beach.2000.Open.Matte.1080p.WEB-DL.DD5.1.H.264-spartanec163 (2000)",
+        "extracted_title": "The Beach Open Matte DD5 1 H 264 spartanec163 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.God.of.Cookery.1996.720p.HDTV.x264.2Audio-HDCTV (1996)",
+        "extracted_title": "The God of Cookery HDTV 2Audio HDCTV ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Human.Centipede.2009.BluRay.1080p.DTS.x264-CHD (2009)",
+        "extracted_title": "The Human Centipede CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Kings.Man (2021)",
+        "extracted_title": "The Kings Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.White.Lotus.S02E01.Ciao",
+        "extracted_title": "The White Lotus S02E01 Ciao",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Time of the Gypsies (1988)",
+        "extracted_title": "Time of the Gypsies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "To Kill a Mockingbird (1962)",
+        "extracted_title": "To Kill a Mockingbird ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Togo (2019)",
+        "extracted_title": "Togo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Tomorrowland (2015)",
+        "extracted_title": "Tomorrowland ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Too Cool to Kill (2022)",
+        "extracted_title": "Too Cool to Kill ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Tourist (2010)",
+        "extracted_title": "The Tourist ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Tropic.Thunder.Directors.Cut (2008)",
+        "extracted_title": "Tropic Thunder Directors Cut ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Umibe.no.Etranger (2020)",
+        "extracted_title": "Umibe no Etranger ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Un.sac.de.billes (2017)",
+        "extracted_title": "Un sac de billes ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Under the Open Sky (2021)",
+        "extracted_title": "Under the Open Sky ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Usual Suspects (1995)",
+        "extracted_title": "The Usual Suspects ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vettai (2012)",
+        "extracted_title": "Vettai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vive L'Amour (1995)",
+        "extracted_title": "Vive L'Amour ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vychislitel AKA The Calculator [2014] 1080p BluRay - HJ (2014)",
+        "extracted_title": "Vychislitel AKA The Calculator []     HJ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "WALL·E (2008)",
+        "extracted_title": "WALL·E ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Wandering Earth II (2023)",
+        "extracted_title": "The Wandering Earth II ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Western Stars (2019)",
+        "extracted_title": "Western Stars ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "What a Wonderful Family 2 2017 1080p BluRay DD5.1 x265-10bit-HDS (2017)",
+        "extracted_title": "What a Wonderful Family 2    DD5 1  10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "What a Wonderful Family 3 My Wife My Life 2018 1080p BluRay DTS x264-HDS (2018)",
+        "extracted_title": "What a Wonderful Family 3 My Wife My Life      HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "When.Fortune.Smiles.1990.BluRay.720p.DTS x264-CHD (1990)",
+        "extracted_title": "When Fortune Smiles   CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Whiplash (2014)",
+        "extracted_title": "Whiplash ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Wild Bill (2011)",
+        "extracted_title": "Wild Bill ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Witness for the Prosecution (1957)",
+        "extracted_title": "Witness for the Prosecution ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Wolf of Wall Street (2013)",
+        "extracted_title": "The Wolf of Wall Street ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Yellow Sea 2010 (2010)",
+        "extracted_title": "The Yellow Sea  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Yi Yi (2000) (2000)",
+        "extracted_title": "Yi Yi () ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Your Name. (2016)",
+        "extracted_title": "Your Name  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Your Place or Mine (1998)",
+        "extracted_title": "Your Place or Mine ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sin.City.A.Dame.to.Kill.For.2014.1080p.BluRay.x265.10bit.DTS-PTH",
+        "extracted_title": "Sin City A Dame to Kill For 10bit",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Zack.Snyders.Justice.League.2021.4K.UHD.BluRay.ATMOS.HDR.x265-W4NK3R (2021)",
+        "extracted_title": "Zack Snyders Justice League W4NK3R ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moana.2.2024.4K.BluRay.DoVi.x265.10bit.Atmos.TrueHD7.1-WiKi",
+        "extracted_title": "Moana 2 DoVi 10bit TrueHD7 1",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic World (2015)",
+        "extracted_title": "Jurassic World ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic.Park.1993.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (1993)",
+        "extracted_title": "Jurassic Park 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic.Park.III.2001.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (2001)",
+        "extracted_title": "Jurassic Park III 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Like Stars on Earth (2007)",
+        "extracted_title": "Like Stars on Earth ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Man from Earth - Holocene (2017)",
+        "extracted_title": "The Man from Earth   Holocene ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man - Across The Spider-Verse (2023)",
+        "extracted_title": "Spider Man   Across The Spider Verse ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man - Into the Spider-Verse (2018)",
+        "extracted_title": "Spider Man   Into the Spider Verse ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man.3 (2007)",
+        "extracted_title": "Spider Man 3 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek (2009)",
+        "extracted_title": "Star Trek ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek Beyond (2016)",
+        "extracted_title": "Star Trek Beyond ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek II - The Wrath of Khan (1982)",
+        "extracted_title": "Star Trek II   The Wrath of Khan ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek III - The Search for Spock (1984)",
+        "extracted_title": "Star Trek III   The Search for Spock ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek Into Darkness (2013)",
+        "extracted_title": "Star Trek Into Darkness ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek IV - The Voyage Home (1986)",
+        "extracted_title": "Star Trek IV   The Voyage Home ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek VI - The Undiscovered Country (1991)",
+        "extracted_title": "Star Trek VI   The Undiscovered Country ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Lost.World.Jurassic.Park.1997.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (1997)",
+        "extracted_title": "The Lost World Jurassic Park 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "x264 (2007)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      }
+    ],
+    "errors": []
+  },
+  "details": {
+    "renamed_movies": [
+      {
+        "original": "2025",
+        "new_name": "十二怒汉 (2025)",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "12 Angry Men (1957)",
+        "new_name": "十二怒汉 (1957)",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "4K.AVC",
+        "new_name": "十二怒汉 4K",
+        "chinese_title": "十二怒汉"
+      },
+      {
+        "original": "Alien - Director's Cut (1979)",
+        "new_name": "异形 (1979)",
+        "chinese_title": "异形"
+      },
+      {
+        "original": "Aliens - Special Edition (1986)",
+        "new_name": "异形 (1986)",
+        "chinese_title": "异形"
+      },
+      {
+        "original": "Amadeus (1984)",
+        "new_name": "莫扎特传 (1984)",
+        "chinese_title": "莫扎特传"
+      },
+      {
+        "original": "Apocalypse Now (1979)",
+        "new_name": "现代启示录 (1979)",
+        "chinese_title": "现代启示录"
+      },
+      {
+        "original": "Back to the Future (1985)",
+        "new_name": "回到未来 (1985)",
+        "chinese_title": "回到未来"
+      },
+      {
+        "original": "Beasts of the Southern Wild (2012)",
+        "new_name": "她 (2012)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Casablanca (1942)",
+        "new_name": "卡萨布兰卡 (1942)",
+        "chinese_title": "卡萨布兰卡"
+      },
+      {
+        "original": "Citizen Kane (1941)",
+        "new_name": "公民凯恩 (1941)",
+        "chinese_title": "公民凯恩"
+      },
+      {
+        "original": "A Clockwork Orange (1971)",
+        "new_name": "发条橙 (1971)",
+        "chinese_title": "发条橙"
+      },
+      {
+        "original": "Dune (2021)",
+        "new_name": "沙丘 (2021)",
+        "chinese_title": "沙丘"
+      },
+      {
+        "original": "Everything Everywhere All at Once (2022)",
+        "new_name": "她 (2022)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "The Father (2020)",
+        "new_name": "她 (2020)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Forrest Gump (1994)",
+        "new_name": "阿甘正传 (1994)",
+        "chinese_title": "阿甘正传"
+      },
+      {
+        "original": "Frozen Chosin (2011)",
+        "new_name": "冰雪奇缘 (2011)",
+        "chinese_title": "冰雪奇缘"
+      },
+      {
+        "original": "Gladiator - Extended Edition (2000)",
+        "new_name": "角斗士 (2000)",
+        "chinese_title": "角斗士"
+      },
+      {
+        "original": "The Godfather Part II (1974)",
+        "new_name": "教父 (1974)",
+        "chinese_title": "教父"
+      },
+      {
+        "original": "The Godfather (1972)",
+        "new_name": "教父 (1972)",
+        "chinese_title": "教父"
+      },
+      {
+        "original": "Good Will Hunting (1997)",
+        "new_name": "心灵捕手 (1997)",
+        "chinese_title": "心灵捕手"
+      },
+      {
+        "original": "Goodfellas (1990)",
+        "new_name": "好家伙 (1990)",
+        "chinese_title": "好家伙"
+      },
+      {
+        "original": "The Green Mile (1999)",
+        "new_name": "绿里奇迹 (1999)",
+        "chinese_title": "绿里奇迹"
+      },
+      {
+        "original": "Inception (2010)",
+        "new_name": "盗梦空间 (2010)",
+        "chinese_title": "盗梦空间"
+      },
+      {
+        "original": "Interstellar (2014)",
+        "new_name": "星际穿越 (2014)",
+        "chinese_title": "星际穿越"
+      },
+      {
+        "original": "Joker (2019)",
+        "new_name": "小丑 (2019)",
+        "chinese_title": "小丑"
+      },
+      {
+        "original": "Just Heroes (1989)",
+        "new_name": "她 (1989)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Lawrence of Arabia (1962)",
+        "new_name": "阿拉伯的劳伦斯 (1962)",
+        "chinese_title": "阿拉伯的劳伦斯"
+      },
+      {
+        "original": "Life Is Beautiful (1997)",
+        "new_name": "美丽人生 (1997)",
+        "chinese_title": "美丽人生"
+      },
+      {
+        "original": "The Lion King (1994)",
+        "new_name": "狮子王 (1994)",
+        "chinese_title": "狮子王"
+      },
+      {
+        "original": "The Lives of Others (2006)",
+        "new_name": "她 (2006)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "The Martian (2015)",
+        "new_name": "火星救援 (2015)",
+        "chinese_title": "火星救援"
+      },
+      {
+        "original": "The Matrix (1999)",
+        "new_name": "黑客帝国 (1999)",
+        "chinese_title": "黑客帝国"
+      },
+      {
+        "original": "Once Upon a Time in America (1984)",
+        "new_name": "飞屋环游记 (1984)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Once Upon a Time in the West (1968)",
+        "new_name": "飞屋环游记 (1968)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "One Flew Over the Cuckoo's Nest (1975)",
+        "new_name": "飞越疯人院 (1975)",
+        "chinese_title": "飞越疯人院"
+      },
+      {
+        "original": "The Pianist (2002)",
+        "new_name": "钢琴家 (2002)",
+        "chinese_title": "钢琴家"
+      },
+      {
+        "original": "The Piano Teacher (2001)",
+        "new_name": "她 (2001)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Police.Story.III.Super.Cop (1992)",
+        "new_name": "飞屋环游记 (1992)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Psycho (1960)",
+        "new_name": "惊魂记 (1960)",
+        "chinese_title": "惊魂记"
+      },
+      {
+        "original": "Pulp Fiction (1994)",
+        "new_name": "低俗小说 (1994)",
+        "chinese_title": "低俗小说"
+      },
+      {
+        "original": "The Pursuit of Happyness.HEVC (2006)",
+        "new_name": "当幸福来敲门 (2006)",
+        "chinese_title": "当幸福来敲门"
+      },
+      {
+        "original": "Railway Heroes (2021)",
+        "new_name": "她 (2021)",
+        "chinese_title": "她"
+      },
+      {
+        "original": "Remuxed by KAWAiREMUX group @ACM (2006)",
+        "new_name": "飞屋环游记 (2006)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Saving Private Ryan (1998)",
+        "new_name": "拯救大兵瑞恩 (1998)",
+        "chinese_title": "拯救大兵瑞恩"
+      },
+      {
+        "original": "Schindler's List (1993)",
+        "new_name": "辛德勒的名单 (1993)",
+        "chinese_title": "辛德勒的名单"
+      },
+      {
+        "original": "The Shawshank Redemption 1994 1080p BluRay DTS 4Audio x265-10bit-HDS (1994)",
+        "new_name": "肖申克的救赎 (1994) 1080p",
+        "chinese_title": "肖申克的救赎"
+      },
+      {
+        "original": "The Shining (1980)",
+        "new_name": "闪灵 (1980)",
+        "chinese_title": "闪灵"
+      },
+      {
+        "original": "Singin' in the Rain (1952)",
+        "new_name": "雨中曲 (1952)",
+        "chinese_title": "雨中曲"
+      },
+      {
+        "original": "Spirited Away (2001)",
+        "new_name": "千与千寻 (2001)",
+        "chinese_title": "千与千寻"
+      },
+      {
+        "original": "Taxi Driver (1976)",
+        "new_name": "出租车司机 (1976)",
+        "chinese_title": "出租车司机"
+      },
+      {
+        "original": "Up (2009)",
+        "new_name": "飞屋环游记 (2009)",
+        "chinese_title": "飞屋环游记"
+      },
+      {
+        "original": "Vertigo (1958)",
+        "new_name": "迷魂记 (1958)",
+        "chinese_title": "迷魂记"
+      },
+      {
+        "original": "Dune 2021 4K HMAX WEB-DL DD+5.1 HDR10 HEVC-cfandora (2021)",
+        "new_name": "沙丘 (2021) 4K",
+        "chinese_title": "沙丘"
+      },
+      {
+        "original": "The Lord of the Rings - The Fellowship of the Ring (2001)",
+        "new_name": "指环王 (2001)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "The Lord of the Rings - The Return of the King (2003)",
+        "new_name": "指环王 (2003)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "The Lord of the Rings - The Two Towers (2002)",
+        "new_name": "指环王 (2002)",
+        "chinese_title": "指环王"
+      },
+      {
+        "original": "Star Wars - Episode IV - A New Hope (1977)",
+        "new_name": "星球大战 (1977)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Star Wars - Episode V - The Empire Strikes Back (1980)",
+        "new_name": "星球大战 (1980)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Star Wars - Episode VI - Return of the Jedi (1983)",
+        "new_name": "星球大战 (1983)",
+        "chinese_title": "星球大战"
+      },
+      {
+        "original": "Toy Story (1995)",
+        "new_name": "玩具总动员 (1995)",
+        "chinese_title": "玩具总动员"
+      },
+      {
+        "original": "Toy Story 3 (2010)",
+        "new_name": "玩具总动员 (2010)",
+        "chinese_title": "玩具总动员"
+      }
+    ],
+    "skipped_movies": [
+      {
+        "folder": "m2ts",
+        "extracted_title": "m2ts",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "100 YEN LOVE (2014)",
+        "extracted_title": "100 YEN LOVE ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1080.AVC",
+        "extracted_title": "1080",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1080p (2016)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "1917 (2019)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "2001 - A Space Odyssey (1968)",
+        "extracted_title": "A Space Odyssey ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "21 Grams (2003)",
+        "extracted_title": "21 Grams ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "22 Bullets 2010 (2010)",
+        "extracted_title": "22 Bullets  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "3 Idiots (2009)",
+        "extracted_title": "3 Idiots ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1991)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1992)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1995)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "720p-WiKi (1993)",
+        "extracted_title": "WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A.I. Artificial Intelligence 2001 (2001)",
+        "extracted_title": "A I  Artificial Intelligence  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Accountant (2016)",
+        "extracted_title": "The Accountant ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "All for the Winner (1990)",
+        "extracted_title": "All for the Winner ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Amélie (2001)",
+        "extracted_title": "Amélie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Beauty (1999)",
+        "extracted_title": "American Beauty ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American History X (1998)",
+        "extracted_title": "American History X ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Made (2017)",
+        "extracted_title": "American Made ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American Woman (2018)",
+        "extracted_title": "American Woman ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "American.Experience.The.Battle.of.Chosin",
+        "extracted_title": "American Experience The Battle of Chosin",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Angels & Demons (2009)",
+        "extracted_title": "Angels & Demons ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ao.Der.letzte.Neandertaler (2010)",
+        "extracted_title": "Ao Der letzte Neandertaler ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Apartment (1960)",
+        "extracted_title": "The Apartment ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "ARABIAN NIGHTS (1974)",
+        "extracted_title": "ARABIAN NIGHTS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Argo (2012)",
+        "extracted_title": "Argo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Aviator 2004 (2004)",
+        "extracted_title": "The Aviator  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Babyteeth (2020)",
+        "extracted_title": "Babyteeth ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Barbie (2023)",
+        "extracted_title": "Barbie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Battleship (2012)",
+        "extracted_title": "Battleship ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "BDRip and Montage by Ash61 (2012)",
+        "extracted_title": "and Montage by Ash61 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Before Midnight 2013 (2013)",
+        "extracted_title": "Before Midnight  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bernie the Dolphin 2 (2019)",
+        "extracted_title": "Bernie the Dolphin 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Best Offer (2013)",
+        "extracted_title": "The Best Offer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bicycle Thieves (1948)",
+        "extracted_title": "Bicycle Thieves ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Birdy (1984)",
+        "extracted_title": "Birdy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Blind Side (2009)",
+        "extracted_title": "The Blind Side ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "BluRay REMUX 1080p AVC DTS-HD MA7.1-CHD (2013)",
+        "extracted_title": "REMUX    HD MA7 1 CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Boat (1981)",
+        "extracted_title": "The Boat ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Bohemian Rhapsody (2018)",
+        "extracted_title": "Bohemian Rhapsody ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Boss Baby (2017)",
+        "extracted_title": "The Boss Baby ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Braveheart (1995)",
+        "extracted_title": "Braveheart ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Bridges of Madison County (1995)",
+        "extracted_title": "The Bridges of Madison County ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Capernaum (2018)",
+        "extracted_title": "Capernaum ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CCTV6HD.What.A.Family (1979)",
+        "extracted_title": "CCTV6HD What A Family ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Chaser (2008)",
+        "extracted_title": "The Chaser ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Children of Heaven (1997)",
+        "extracted_title": "Children of Heaven ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Cinema Paradiso (1988)",
+        "extracted_title": "Cinema Paradiso ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "City Lights (1931)",
+        "extracted_title": "City Lights ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "City of God (2002)",
+        "extracted_title": "City of God ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CJ7 - Blu-ray™ (2008)",
+        "extracted_title": "CJ7   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "CJ7.2008.BDRip.720p.x264.2AUDiO.DTS.-CHD (2008)",
+        "extracted_title": "CJ7 2AUDiO CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Class of 1999 (1990)",
+        "extracted_title": "Class of  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Cloud Atlas (2012)",
+        "extracted_title": "Cloud Atlas ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Coco.2017.1080p.BluRay.REMUX.AVC.DTS-HD.MA.7.1-FGT (2017)",
+        "extracted_title": "Coco REMUX HD MA 7 1 FGT ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Come and See (1985)",
+        "extracted_title": "Come and See ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Corporation (2003)",
+        "extracted_title": "The Corporation ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Croods - A New Age (2020)",
+        "extracted_title": "The Croods   A New Age ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2019)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2020)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "cXcY@FRDS (2023)",
+        "extracted_title": "cXcY@FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dangal (2016)",
+        "extracted_title": "Dangal ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Deep Impact (1998)",
+        "extracted_title": "Deep Impact ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Departed (2006)",
+        "extracted_title": "The Departed ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dil To Pagal Hai (1997)",
+        "extracted_title": "Dil To Pagal Hai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Django Unchained (2012)",
+        "extracted_title": "Django Unchained ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Double Indemnity (1944)",
+        "extracted_title": "Double Indemnity ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Downton Abbey (2019)",
+        "extracted_title": "Downton Abbey ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Dr. Strangelove or - How I Learned to Stop Worrying and Love the Bomb (1964)",
+        "extracted_title": "Dr  Strangelove or   How I Learned to Stop Worrying and Love the Bomb ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Drishyam 2 (2022)",
+        "extracted_title": "Drishyam 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Echoes of the Rainbow (2010)",
+        "extracted_title": "Echoes of the Rainbow ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Embrace Again (2021)",
+        "extracted_title": "Embrace Again ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Encode by CK @ HDChina (2015)",
+        "extracted_title": "Encode by CK @ HDChina ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "ENCODER - 19977 (2015)",
+        "extracted_title": "ENCODER   19977 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Erin Brockovich 2000 1080p - PTH (2000)",
+        "extracted_title": "Erin Brockovich     PTH ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Erzi.kai.dian (1987)",
+        "extracted_title": "Erzi kai dian ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Escape From Mogadishu (2021)",
+        "extracted_title": "Escape From Mogadishu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Eternal Sunshine of the Spotless Mind (2004)",
+        "extracted_title": "Eternal Sunshine of the Spotless Mind ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Eternals (2021)",
+        "extracted_title": "Eternals ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Event Horizon (1997)",
+        "extracted_title": "Event Horizon ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Everything You Always Wanted to Know About Sex But Were Afraid to Ask (1972)",
+        "extracted_title": "Everything You Always Wanted to Know About Sex But Were Afraid to Ask ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "EVO (2021)",
+        "extracted_title": "EVO ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Das Experiment 2001 - HDC (2001)",
+        "extracted_title": "Das Experiment    HDC ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Extended Collector’s Edition Disc 1 (2009)",
+        "extracted_title": "Extended Collector’s Edition Disc 1 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Extinction (2015)",
+        "extracted_title": "Extinction ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fall - Blu-ray™ (2022)",
+        "extracted_title": "Fall   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Farewell (2019)",
+        "extracted_title": "The Farewell ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "FFans@leon (2018)",
+        "extracted_title": "FFans@leon ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fight Club (1999)",
+        "extracted_title": "Fight Club ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Final Justice 1988 (1988)",
+        "extracted_title": "Final Justice  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Final.Justice.1988.Blu-ray.720p.x264.DD51.DualAudio.MySilu (1988)",
+        "extracted_title": "Final Justice Blu ray DD51 DualAudio MySilu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Fireflies in the Sun (2021)",
+        "extracted_title": "Fireflies in the Sun ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Flirting Scholar (1993)",
+        "extracted_title": "Flirting Scholar ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "For a Few Dollars More (1965)",
+        "extracted_title": "For a Few Dollars More ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Forbidden.City.Cop.1996.BluRay.720p.AC3.2Audio.x264-CHD (1996)",
+        "extracted_title": "Forbidden City Cop 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Free Guy (2021)",
+        "extracted_title": "Free Guy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "From Beijing with Love (1994)",
+        "extracted_title": "From Beijing with Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Full Metal Jacket (1987)",
+        "extracted_title": "Full Metal Jacket ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Funeral.Family (2022)",
+        "extracted_title": "Funeral Family ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Girls Without Tomorrow (1992)",
+        "extracted_title": "Girls Without Tomorrow ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Good, the Bad and the Ugly (1966)",
+        "extracted_title": "The Good, the Bad and the Ugly ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Good.Bye.Lenin.2003.720p.BluRay.DD5.1.x264-DON (2003)",
+        "extracted_title": "Good Bye Lenin DD5 1 DON ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Grave of the Fireflies (1988)",
+        "extracted_title": "Grave of the Fireflies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Great Dictator (1940)",
+        "extracted_title": "The Great Dictator ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Green Book (2018)",
+        "extracted_title": "Green Book ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Guang (2018)",
+        "extracted_title": "Guang ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Guardians of the Galaxy (2014)",
+        "extracted_title": "Guardians of the Galaxy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hail.the.Judge.1994.720p.BluRay.x264-WiKi (1994)",
+        "extracted_title": "Hail the Judge WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Harakiri (1962)",
+        "extracted_title": "Harakiri ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Heat (1995)",
+        "extracted_title": "Heat ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 fps @ 5222 kbps (2022)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 fps @ 5222 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 10920 kbps (1998)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 10920 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 10974 kbps (2004)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 10974 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 12557 kbps (2018)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 12557 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 4148 kbps (2017)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 4148 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 4751 kbps (2016)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 4751 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 5885 kbps (2014)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 5885 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7184 kbps (1994)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7184 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7685 kbps (2023)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7685 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7834 kbps (2015)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7834 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 7855 kbps (2005)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 7855 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8302 kbps (2010)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8302 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8591 kbps (2015)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8591 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8687 kbps (2014)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8687 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 8997 kbps (2013)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 8997 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 9206 kbps (2002)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 9206 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 24 1.001 fps @ 9852 kbps (2000)",
+        "extracted_title": ", x265Main10@L5 1@High, 24 1 001 fps @ 9852 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "HEVC, x265Main10@L5.1@High, 30 1.001 fps @ 13221 kbps (2004)",
+        "extracted_title": ", x265Main10@L5 1@High, 30 1 001 fps @ 13221 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "High and Low (1963)",
+        "extracted_title": "High and Low ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hitman Agent 47 (2015)",
+        "extracted_title": "Hitman Agent 47 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Home Coming (2022)",
+        "extracted_title": "Home Coming ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Homeless to Harvard - The Liz Murray Story (2003)",
+        "extracted_title": "Homeless to Harvard   The Liz Murray Story ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Hunter Killer (2018)",
+        "extracted_title": "Hunter Killer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "I Can Only Imagine (2018)",
+        "extracted_title": "I Can Only Imagine ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "If You Are the One (2008)",
+        "extracted_title": "If You Are the One ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ikiru (1952)",
+        "extracted_title": "Ikiru ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "In the Mood for Love (2000)",
+        "extracted_title": "In the Mood for Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Incendies (2010)",
+        "extracted_title": "Incendies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Indiana Jones and the Last Crusade (1989)",
+        "extracted_title": "Indiana Jones and the Last Crusade ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Inglourious Basterds (2009)",
+        "extracted_title": "Inglourious Basterds ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Intouchables (2011)",
+        "extracted_title": "The Intouchables ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Invisible Man (2020)",
+        "extracted_title": "The Invisible Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "It's a Wonderful Life (1946)",
+        "extracted_title": "It's a Wonderful Life ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Journey.to.the.West.The.Demons.Strike.Back.2017.720p.BluRay.x264-WiKi (2017)",
+        "extracted_title": "Journey to the West The Demons Strike Back WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Justice.My.Foot.1992.1080p.BluRay.x264-WiKi (1992)",
+        "extracted_title": "Justice My Foot WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Kid (1921)",
+        "extracted_title": "The Kid ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King of Comedy (1999)",
+        "extracted_title": "King of Comedy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King.of.Beggars.1992.720p.BluRay.x264-WiKi (1992)",
+        "extracted_title": "King of Beggars WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "King.of.Comedy.1999.HDTV.720p.AC3.2Audio.x264-CHDTV (1999)",
+        "extracted_title": "King of Comedy HDTV 2Audio CHDTV ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Kis.Uykusu (2014)",
+        "extracted_title": "Kis Uykusu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Klaus (2019)",
+        "extracted_title": "Klaus ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Knockout - Blu-ray™ (2020)",
+        "extracted_title": "Knockout   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Koe.no.katachi (2016)",
+        "extracted_title": "Koe no katachi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "L.A. Confidential (1997)",
+        "extracted_title": "L A  Confidential ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "La.grande.bellezza (2013)",
+        "extracted_title": "La grande bellezza ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Ladies Market (2021)",
+        "extracted_title": "Ladies Market ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Late Quartet (2012)",
+        "extracted_title": "A Late Quartet ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Lawyer.Lawyer.1997.720p.HDTV.x264-XXFANS (1997)",
+        "extracted_title": "Lawyer Lawyer HDTV XXFANS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Leap (2020)",
+        "extracted_title": "Leap ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Leap Year 2010 (2010)",
+        "extracted_title": "Leap Year  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Léon - The Professional - Extended Edition (1994)",
+        "extracted_title": "Léon   The Professional   Extended Edition ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Life of Pi (2012)",
+        "extracted_title": "Life of Pi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Look Out, Officer! (1990)",
+        "extracted_title": "Look Out, Officer! ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love on Delivery (1994)",
+        "extracted_title": "Love on Delivery ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love Will Tear Us Apart (2021)",
+        "extracted_title": "Love Will Tear Us Apart ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love, Rosie (2014)",
+        "extracted_title": "Love, Rosie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love.Actually.2003.10th.Anniversary",
+        "extracted_title": "Love Actually 10th Anniversary",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Love.is.Love.1990.Blu-ray.720p.x264.DTS.DD51.DualAudio.MySilu (1990)",
+        "extracted_title": "Love is Love Blu ray DD51 DualAudio MySilu ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Loving Vincent (2017)",
+        "extracted_title": "Loving Vincent ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Luca (2021)",
+        "extracted_title": "Luca ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Lucky Guy (1998)",
+        "extracted_title": "The Lucky Guy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "THE LUNCHBOX (2013)",
+        "extracted_title": "THE LUNCHBOX ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "M (1931)",
+        "extracted_title": "M ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MADE IN HONG KONG (1997)",
+        "extracted_title": "MADE IN HONG KONG ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Made in Italy (2020)",
+        "extracted_title": "Made in Italy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Man Called Ove 2015 (2015)",
+        "extracted_title": "A Man Called Ove  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Man in Love (2021)",
+        "extracted_title": "Man in Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Memento (2000)",
+        "extracted_title": "Memento ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Mermaid (2016)",
+        "extracted_title": "The Mermaid ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Merry Christmas Mr. Lawrence (1983)",
+        "extracted_title": "Merry Christmas Mr  Lawrence ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Metropolis (1927)",
+        "extracted_title": "Metropolis ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MNHD-FRDS (2019)",
+        "extracted_title": "MNHD FRDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moana (2016)",
+        "extracted_title": "Moana ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Modern Times (1936)",
+        "extracted_title": "Modern Times ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Monty Python and the Holy Grail (1975)",
+        "extracted_title": "Monty Python and the Holy Grail ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moon Man (2022)",
+        "extracted_title": "Moon Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-4 AVC Video 26934 kbps 1080p 23,976 fps 16-9 High Profile 4.1 (2009)",
+        "extracted_title": "MPEG 4  Video 26934 kbps  23,976 fps 16 9 High Profile 4 1 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-4 x264@High Profile L4.1, 24 fps @ 10800 kbps (2018)",
+        "extracted_title": "MPEG 4 @High Profile L4 1, 24 fps @ 10800 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "MPEG-H,HEVC x265 Main 10@L5.1@High, 24 1.001 fps @ 12966 kbps (2014)",
+        "extracted_title": "MPEG H,  Main 10@L5 1@High, 24 1 001 fps @ 12966 kbps ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Mulan (2020)",
+        "extracted_title": "Mulan ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "My People, My Country (2019)",
+        "extracted_title": "My People, My Country ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Netemo sametemo 2018 (2018)",
+        "extracted_title": "Netemo sametemo  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "New Police Story (2004)",
+        "extracted_title": "New Police Story ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "News of the World 2020 (2020)",
+        "extracted_title": "News of the World  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Nice View (2022)",
+        "extracted_title": "Nice View ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Nightmare Alley (2021) 1080p HDR Encode (2021)",
+        "extracted_title": "Nightmare Alley ()   Encode ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "No Man's Land (2013)",
+        "extracted_title": "No Man's Land ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "North by Northwest (1959)",
+        "extracted_title": "North by Northwest ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Old Guard (2020)",
+        "extracted_title": "The Old Guard ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oldboy (2003)",
+        "extracted_title": "Oldboy ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oldboy.2003.1080p.TWN.Blu-ray.AVC.DTS-HD.MA.5.1-hc@PTHome (2003)",
+        "extracted_title": "Oldboy TWN Blu ray HD MA 5 1 hc@PTHome ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Operation Red Sea (2018)",
+        "extracted_title": "Operation Red Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Oppenheimer (2023)",
+        "extracted_title": "Oppenheimer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Osaka.Loan.Shark (2021)",
+        "extracted_title": "Osaka Loan Shark ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Paths of Glory (1957)",
+        "extracted_title": "Paths of Glory ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Pegasus (2019)",
+        "extracted_title": "Pegasus ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Perfect World (1993)",
+        "extracted_title": "A Perfect World ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Perfume - The Story of a Murderer (2006)",
+        "extracted_title": "Perfume   The Story of a Murderer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Piano (1993)",
+        "extracted_title": "The Piano ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police Story - Lockdown (2013)",
+        "extracted_title": "Police Story   Lockdown ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.I (1985)",
+        "extracted_title": "Police Story I ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.II (1988)",
+        "extracted_title": "Police Story II ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Police.Story.IV.First.Strike (1996)",
+        "extracted_title": "Police Story IV First Strike ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Prestige (2006)",
+        "extracted_title": "The Prestige ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Princess Mononoke (1997)",
+        "extracted_title": "Princess Mononoke ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Raiders of the Lost Ark (1981)",
+        "extracted_title": "Raiders of the Lost Ark ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Raiders of the Lost Ark 1981 (1981)",
+        "extracted_title": "Raiders of the Lost Ark  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "RARBG.com",
+        "extracted_title": "RARBG com",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Rear Window (1954)",
+        "extracted_title": "Rear Window ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Redeeming Love (2022)",
+        "extracted_title": "Redeeming Love ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Requiem for a Dream (2000)",
+        "extracted_title": "Requiem for a Dream ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Reservoir Dogs (1992)",
+        "extracted_title": "Reservoir Dogs ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Royal.Tramp.1992.BluRay.720p.AC3.2Audio.x264-CHD (1992)",
+        "extracted_title": "Royal Tramp 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Royal.Tramp.2.1992.BluRay.720p.AC3.2Audio.x264-CHD (1992)",
+        "extracted_title": "Royal Tramp 2 2Audio CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "RTHK TV 31.Philharmonic.5.Beethoven.at.teamLab.Tokyo (2020)",
+        "extracted_title": "RTHK TV 31 Philharmonic 5 Beethoven at teamLab Tokyo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Running.on.Empty (1988)",
+        "extracted_title": "Running on Empty ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Rush Hour (1998)",
+        "extracted_title": "Rush Hour ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Salyut-7 (2017)",
+        "extracted_title": "Salyut 7 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scarface (1983)",
+        "extracted_title": "Scarface ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie (2000)",
+        "extracted_title": "Scary Movie ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie 2 (2001)",
+        "extracted_title": "Scary Movie 2 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scary Movie 3 (2003)",
+        "extracted_title": "Scary Movie 3 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Scene at the Sea (1991)",
+        "extracted_title": "A Scene at the Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Scent.of.a.Woman.1992.1080p.BluRay.x264.DTS-FiDELiO (1992)",
+        "extracted_title": "Scent of a Woman FiDELiO ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Se7en (1995)",
+        "extracted_title": "Se7en ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "A Separation (2011)",
+        "extracted_title": "A Separation ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Seven Samurai (1954)",
+        "extracted_title": "Seven Samurai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Shaolin Soccer (2001)",
+        "extracted_title": "Shaolin Soccer ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Shattered.2021 (2022)",
+        "extracted_title": "Shattered  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sicario - Blu-ray (2015)",
+        "extracted_title": "Sicario   Blu ray ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Silence of the Lambs (1991)",
+        "extracted_title": "The Silence of the Lambs ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sixty.Million.Dollar.Man.1995.720p.BluRay.x264-WiKi (1995)",
+        "extracted_title": "Sixty Million Dollar Man WiKi ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Snatch (2000)",
+        "extracted_title": "Snatch ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Song of the Sea (2014)",
+        "extracted_title": "Song of the Sea ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Soul (2020)",
+        "extracted_title": "Soul ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "SoulMate 2016 (2016)",
+        "extracted_title": "SoulMate  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Space Sweepers (2021)",
+        "extracted_title": "Space Sweepers ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.I.The.Motion.Picture (1979)",
+        "extracted_title": "Star Trek I The Motion Picture ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.IX.Insurrection (1998)",
+        "extracted_title": "Star Trek IX Insurrection ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.VII.Generations (1994)",
+        "extracted_title": "Star Trek VII Generations ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.VIII.First.Contact (1996)",
+        "extracted_title": "Star Trek VIII First Contact ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star.Trek.X.Nemesis (2002)",
+        "extracted_title": "Star Trek X Nemesis ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Sting (1973)",
+        "extracted_title": "The Sting ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Suk.Suk (2020)",
+        "extracted_title": "Suk Suk ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sully (2016)",
+        "extracted_title": "Sully ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Summer Detective 2019 (2019)",
+        "extracted_title": "Summer Detective  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sunset Blvd. (1950)",
+        "extracted_title": "Sunset Blvd  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Swordsman In Double Flag Town - Blu-ray™ (1991)",
+        "extracted_title": "The Swordsman In Double Flag Town   Blu ray™ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Systemsprenger 2019 (2019)",
+        "extracted_title": "Systemsprenger  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Talvisota elokuvan kuvaukset Keuruulla (1989)",
+        "extracted_title": "Talvisota elokuvan kuvaukset Keuruulla ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Beach.2000.Open.Matte.1080p.WEB-DL.DD5.1.H.264-spartanec163 (2000)",
+        "extracted_title": "The Beach Open Matte DD5 1 H 264 spartanec163 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.God.of.Cookery.1996.720p.HDTV.x264.2Audio-HDCTV (1996)",
+        "extracted_title": "The God of Cookery HDTV 2Audio HDCTV ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Human.Centipede.2009.BluRay.1080p.DTS.x264-CHD (2009)",
+        "extracted_title": "The Human Centipede CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Kings.Man (2021)",
+        "extracted_title": "The Kings Man ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.White.Lotus.S02E01.Ciao",
+        "extracted_title": "The White Lotus S02E01 Ciao",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Time of the Gypsies (1988)",
+        "extracted_title": "Time of the Gypsies ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "To Kill a Mockingbird (1962)",
+        "extracted_title": "To Kill a Mockingbird ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Togo (2019)",
+        "extracted_title": "Togo ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Tomorrowland (2015)",
+        "extracted_title": "Tomorrowland ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Too Cool to Kill (2022)",
+        "extracted_title": "Too Cool to Kill ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Tourist (2010)",
+        "extracted_title": "The Tourist ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Tropic.Thunder.Directors.Cut (2008)",
+        "extracted_title": "Tropic Thunder Directors Cut ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Umibe.no.Etranger (2020)",
+        "extracted_title": "Umibe no Etranger ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Un.sac.de.billes (2017)",
+        "extracted_title": "Un sac de billes ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Under the Open Sky (2021)",
+        "extracted_title": "Under the Open Sky ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Usual Suspects (1995)",
+        "extracted_title": "The Usual Suspects ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vettai (2012)",
+        "extracted_title": "Vettai ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vive L'Amour (1995)",
+        "extracted_title": "Vive L'Amour ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Vychislitel AKA The Calculator [2014] 1080p BluRay - HJ (2014)",
+        "extracted_title": "Vychislitel AKA The Calculator []     HJ ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "WALL·E (2008)",
+        "extracted_title": "WALL·E ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Wandering Earth II (2023)",
+        "extracted_title": "The Wandering Earth II ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Western Stars (2019)",
+        "extracted_title": "Western Stars ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "What a Wonderful Family 2 2017 1080p BluRay DD5.1 x265-10bit-HDS (2017)",
+        "extracted_title": "What a Wonderful Family 2    DD5 1  10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "What a Wonderful Family 3 My Wife My Life 2018 1080p BluRay DTS x264-HDS (2018)",
+        "extracted_title": "What a Wonderful Family 3 My Wife My Life      HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "When.Fortune.Smiles.1990.BluRay.720p.DTS x264-CHD (1990)",
+        "extracted_title": "When Fortune Smiles   CHD ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Whiplash (2014)",
+        "extracted_title": "Whiplash ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Wild Bill (2011)",
+        "extracted_title": "Wild Bill ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Witness for the Prosecution (1957)",
+        "extracted_title": "Witness for the Prosecution ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Wolf of Wall Street (2013)",
+        "extracted_title": "The Wolf of Wall Street ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Yellow Sea 2010 (2010)",
+        "extracted_title": "The Yellow Sea  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Yi Yi (2000) (2000)",
+        "extracted_title": "Yi Yi () ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Your Name. (2016)",
+        "extracted_title": "Your Name  ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Your Place or Mine (1998)",
+        "extracted_title": "Your Place or Mine ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Sin.City.A.Dame.to.Kill.For.2014.1080p.BluRay.x265.10bit.DTS-PTH",
+        "extracted_title": "Sin City A Dame to Kill For 10bit",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Zack.Snyders.Justice.League.2021.4K.UHD.BluRay.ATMOS.HDR.x265-W4NK3R (2021)",
+        "extracted_title": "Zack Snyders Justice League W4NK3R ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Moana.2.2024.4K.BluRay.DoVi.x265.10bit.Atmos.TrueHD7.1-WiKi",
+        "extracted_title": "Moana 2 DoVi 10bit TrueHD7 1",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic World (2015)",
+        "extracted_title": "Jurassic World ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic.Park.1993.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (1993)",
+        "extracted_title": "Jurassic Park 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Jurassic.Park.III.2001.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (2001)",
+        "extracted_title": "Jurassic Park III 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Like Stars on Earth (2007)",
+        "extracted_title": "Like Stars on Earth ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The Man from Earth - Holocene (2017)",
+        "extracted_title": "The Man from Earth   Holocene ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man - Across The Spider-Verse (2023)",
+        "extracted_title": "Spider Man   Across The Spider Verse ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man - Into the Spider-Verse (2018)",
+        "extracted_title": "Spider Man   Into the Spider Verse ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Spider-Man.3 (2007)",
+        "extracted_title": "Spider Man 3 ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek (2009)",
+        "extracted_title": "Star Trek ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek Beyond (2016)",
+        "extracted_title": "Star Trek Beyond ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek II - The Wrath of Khan (1982)",
+        "extracted_title": "Star Trek II   The Wrath of Khan ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek III - The Search for Spock (1984)",
+        "extracted_title": "Star Trek III   The Search for Spock ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek Into Darkness (2013)",
+        "extracted_title": "Star Trek Into Darkness ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek IV - The Voyage Home (1986)",
+        "extracted_title": "Star Trek IV   The Voyage Home ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "Star Trek VI - The Undiscovered Country (1991)",
+        "extracted_title": "Star Trek VI   The Undiscovered Country ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "The.Lost.World.Jurassic.Park.1997.1080p.BluRay.DTS.2Aduio.x265-10bit-HDS (1997)",
+        "extracted_title": "The Lost World Jurassic Park 2Aduio 10bit HDS ()",
+        "reason": "未找到中文名映射"
+      },
+      {
+        "folder": "x264 (2007)",
+        "extracted_title": "()",
+        "reason": "未找到中文名映射"
+      }
+    ],
+    "errors": []
+  }
+}

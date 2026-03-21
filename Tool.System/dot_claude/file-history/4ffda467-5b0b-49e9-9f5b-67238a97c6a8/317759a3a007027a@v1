@@ -1,0 +1,12 @@
+# Gemini API 配置
+GEMINI_API_KEY=your-api-key-here
+
+# 可选：使用 OpenAI 兼容格式（如 DeepSeek、通义千问）
+# GEMINI_BASE_URL=https://api.deepseek.com
+# GEMINI_API_KEY=your-deepseek-key
+
+# 飞书配置（课程数据）
+LARK_MATERIALS_APP_TOKEN=
+LARK_MATERIALS_TABLE_ID=
+LARK_COURSES_APP_TOKEN=
+LARK_COURSES_TABLE_ID=

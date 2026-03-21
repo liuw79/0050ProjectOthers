@@ -1,0 +1,76 @@
+# Claude 语音助手
+
+开车时免手操作 Claude 的语音助手。
+
+## 功能
+
+- 🎙️ **唤醒词检测** - 说 "Hey Mycroft" 或 "Jarvis" 唤醒
+- 🗣️ **语音识别** - 本地 Whisper（免费，无需 API）
+- 🤖 **Claude 对话** - 与 Claude 进行语音对话
+- 🔊 **语音播报** - macOS TTS 朗读回复
+
+## 安装
+
+### 1. 安装 Python 依赖
+
+```bash
+pip install anthropic openwakeword sounddevice scipy numpy faster-whisper
+```
+
+### 2. 设置环境变量
+
+```bash
+# 添加到 ~/.zshrc
+export ANTHROPIC_API_KEY="你的-anthropic-api-key"
+
+# 可选：使用代理
+export ANTHROPIC_BASE_URL="https://your-proxy.com/v1"
+```
+
+### 3. 运行
+
+```bash
+cd /Users/comdir/SynologyDrive/0050Project/Tool.System/voice-assistant
+python3 voice_claude.py
+```
+
+## 使用方法
+
+1. 运行脚本后，等待 "语音助手已启动" 提示
+2. 说 **"Hey Mycroft"** 或 **"Jarvis"** 唤醒
+3. 听到 "请说" 后，说出你的问题（5秒内）
+4. Claude 会语音回复
+
+## 开车场景
+
+1. 电脑放副驾，连接电源
+2. 插上车载音频线（或蓝牙音箱）
+3. 启动脚本
+4. 全程语音交互，无需手动操作
+
+## 注意事项
+
+- 首次运行会下载模型：
+  - Whisper small 模型（约 150MB）
+  - openwakeword 模型（约 50MB）
+- macOS 会请求麦克风权限，请允许
+- 建议使用外接麦克风提高识别准确率
+
+## 常见问题
+
+### 麦克风权限
+如果提示没有麦克风权限：
+```
+系统偏好设置 → 安全性与隐私 → 隐私 → 麦克风 → 允许终端
+```
+
+### 唤醒词不灵敏
+- 靠近麦克风
+- 说话清晰
+- 环境安静
+
+### 模型下载慢
+Whisper 模型会自动从 HuggingFace 下载，如果慢可以设置代理：
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+```

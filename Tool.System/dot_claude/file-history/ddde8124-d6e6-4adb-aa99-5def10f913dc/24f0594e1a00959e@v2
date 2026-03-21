@@ -1,0 +1,103 @@
+#!/usr/bin/env node
+/**
+ * 飞书文档发布工具
+ *
+ * 用法：
+ *   node publish-feishu.js --file "报告.md" --title "标题" --share "a@xx.com,b@xx.com"
+ *
+ * 依赖：
+ *   Python 3 + requests 库
+ *   feishu_publish.py（在 GW.KnowledgeBase/04_System/）
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+// Python 脚本路径
+const PYTHON_SCRIPT = '/Users/comdir/SynologyDrive/0050Project/GW.KnowledgeBase/04_System/feishu_publish.py';
+
+function main() {
+  const args = process.argv.slice(2);
+  const params = {};
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--file') params.file = args[++i];
+    else if (args[i] === '--title') params.title = args[++i];
+    else if (args[i] === '--share') params.share = args[++i];
+  }
+
+  if (!params.file) {
+    console.log(`
+飞书文档发布工具
+
+用法：
+  node publish-feishu.js --file "报告.md" --title "标题" --share "email1,email2"
+
+参数：
+  --file    Markdown 文件路径（必填）
+  --title   文档标题（可选，默认使用文件名）
+  --share   分享邮箱，逗号分隔（可选，暂不支持）
+
+输出：
+  飞书文档链接
+
+注意：
+  当前版本不支持自动添加协作者权限
+  发布后需手动在飞书中添加协作者
+`);
+    process.exit(1);
+  }
+
+  // 检查文件
+  if (!fs.existsSync(params.file)) {
+    console.error(`❌ 文件不存在: ${params.file}`);
+    process.exit(1);
+  }
+
+  const title = params.title || path.basename(params.file, '.md');
+  const content = fs.readFileSync(params.file, 'utf-8');
+
+  console.log(`\n发布文档: ${title}`);
+  console.log(`源文件: ${params.file}\n`);
+
+  // 创建临时 Python 脚本
+  const tempPy = path.join(require('os').tmpdir(), `feishu-publish-${Date.now()}.py`);
+  const pyCode = `# -*- coding: utf-8 -*-
+import sys
+sys.path.insert(0, '/Users/comdir/SynologyDrive/0050Project/GW.KnowledgeBase/04_System')
+from feishu_publish import publish
+
+title = """${title.replace(/"/g, '\\"')}"""
+content = """${content.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"""
+
+url = publish(title, content)
+print(f"URL: {url}")
+`;
+
+  try {
+    fs.writeFileSync(tempPy, pyCode, 'utf-8');
+    const result = execSync(`python3 "${tempPy}"`, {
+      encoding: 'utf-8',
+      timeout: 30000
+    });
+    console.log(result);
+
+    // 提取 URL
+    const urlMatch = result.match(/URL: (https:\/\/[^\s]+)/);
+    if (urlMatch) {
+      console.log(`\n✅ 发布完成!`);
+      console.log(`📄 飞书文档: ${urlMatch[1]}`);
+      console.log(`\n⚠️ 请手动添加协作者权限: ${urlMatch[1]}`);
+    }
+  } catch (error) {
+    console.error(`\n❌ 发布失败: ${error.message}`);
+    process.exit(1);
+  } finally {
+    if (fs.existsSync(tempPy)) {
+      fs.unlinkSync(tempPy);
+    }
+  }
+}
+
+main();

@@ -1,0 +1,717 @@
+2026-03-02T00:10:57.828Z [DEBUG] High write ratio: blit=0, write=24901 (100.0% writes), screen=614x90
+2026-03-02T00:10:57.834Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-02T00:10:57.837Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-03-02T00:10:57.837Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:10:57.837Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-02T00:10:57.837Z [DEBUG] Cleared all session hooks for session d003027f-f2fc-4355-beae-868b0f4bd124
+2026-03-02T00:10:57.838Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-03-02T00:10:57.838Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:10:57.838Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-02T00:10:57.861Z [DEBUG] FileHistory: Added snapshot for 0667e5dd-2249-4ceb-aabd-17944eda68a5, tracking 0 files
+2026-03-02T00:10:57.881Z [DEBUG] Full reset (shrink->below): prevHeight=614, nextHeight=25, viewport=73
+2026-03-02T00:10:57.896Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-02T00:10:57.898Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: plugin-not-found
+2026-03-02T00:10:57.898Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: plugin-not-found
+2026-03-02T00:10:57.898Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-02T00:10:57.898Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-03-02T00:10:57.898Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-03-02T00:10:58.505Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-03-02T00:11:02.648Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:02.648Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:02.648Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:02.648Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:02.657Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-02T00:11:02.657Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:02.657Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:11:02.658Z [DEBUG] FileHistory: Making snapshot for message bbf79860-2b53-4cf3-968b-6b5bf8579aea
+2026-03-02T00:11:02.658Z [DEBUG] FileHistory: Added snapshot for bbf79860-2b53-4cf3-968b-6b5bf8579aea, tracking 0 files
+2026-03-02T00:11:02.675Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-02T00:11:02.679Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/liuwei/.claude/skills, project=[]
+2026-03-02T00:11:02.692Z [DEBUG] Plugin loading errors: Plugin superpowers not found in marketplace claude-plugins-official
+2026-03-02T00:11:02.692Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-02T00:11:02.692Z [DEBUG] Total plugin skills loaded: 0
+2026-03-02T00:11:02.692Z [DEBUG] Plugin loading errors: Plugin superpowers not found in marketplace claude-plugins-official
+2026-03-02T00:11:02.692Z [DEBUG] Total plugin commands loaded: 0
+2026-03-02T00:11:02.695Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:02.695Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.db5; cc_entrypoint=cli;
+2026-03-02T00:11:02.695Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:02.695Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:02.695Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:03.015Z [DEBUG] Loaded 17 unique skills (managed: 0, user: 15, project: 0, legacy commands: 2)
+2026-03-02T00:11:03.015Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 1 bundled skills
+2026-03-02T00:11:03.016Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:03.025Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:03.025Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:03.025Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:03.026Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:03.101Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:03.495Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:12.615Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-02T00:11:12.615Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:12.615Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:11:12.625Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-02T00:11:12.628Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:12.629Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:12.630Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:12.630Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:12.630Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:12.673Z [DEBUG] High write ratio: blit=0, write=1382 (100.0% writes), screen=40x90
+2026-03-02T00:11:13.071Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:14.511Z [DEBUG] High write ratio: blit=0, write=1416 (100.0% writes), screen=44x90
+2026-03-02T00:11:14.517Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:14.517Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:14.517Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:14.517Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:14.524Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-02T00:11:14.524Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:14.524Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:11:14.524Z [DEBUG] FileHistory: Making snapshot for message 2ad4c71c-3e07-4aa1-8342-75ee49ff0964
+2026-03-02T00:11:14.525Z [DEBUG] FileHistory: Added snapshot for 2ad4c71c-3e07-4aa1-8342-75ee49ff0964, tracking 0 files
+2026-03-02T00:11:14.531Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-02T00:11:14.536Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:14.536Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.565; cc_entrypoint=cli;
+2026-03-02T00:11:14.536Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:14.536Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:14.536Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:14.568Z [DEBUG] High write ratio: blit=0, write=1416 (100.0% writes), screen=44x90
+2026-03-02T00:11:14.761Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:14.770Z [DEBUG] High write ratio: blit=0, write=1416 (100.0% writes), screen=44x90
+2026-03-02T00:11:14.773Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:14.773Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:14.773Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:14.773Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:14.816Z [DEBUG] High write ratio: blit=0, write=1416 (100.0% writes), screen=44x90
+2026-03-02T00:11:15.083Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:15.291Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:17.646Z [DEBUG] High write ratio: blit=0, write=1427 (100.0% writes), screen=44x90
+2026-03-02T00:11:17.649Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2026-03-02T00:11:17.649Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:17.649Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:11:17.689Z [DEBUG] High write ratio: blit=0, write=1427 (100.0% writes), screen=44x90
+2026-03-02T00:11:18.007Z [DEBUG] High write ratio: blit=0, write=1483 (100.0% writes), screen=49x90
+2026-03-02T00:11:18.011Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:11:18.019Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:11:18.019Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:18.019Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:18.056Z [DEBUG] High write ratio: blit=0, write=1483 (100.0% writes), screen=49x90
+2026-03-02T00:11:20.092Z [DEBUG] High write ratio: blit=0, write=1510 (100.0% writes), screen=50x90
+2026-03-02T00:11:28.988Z [DEBUG] High write ratio: blit=0, write=1857 (100.0% writes), screen=55x90
+2026-03-02T00:11:28.991Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:28.991Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.074; cc_entrypoint=cli;
+2026-03-02T00:11:28.991Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:28.991Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:28.992Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:29.001Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:11:29.001Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:11:29.001Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:29.002Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:29.002Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:29.002Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:29.002Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:29.017Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:29.029Z [DEBUG] High write ratio: blit=0, write=1670 (100.0% writes), screen=52x90
+2026-03-02T00:11:29.033Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:29.033Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:29.033Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:29.033Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:29.084Z [DEBUG] High write ratio: blit=0, write=1670 (100.0% writes), screen=52x90
+2026-03-02T00:11:29.298Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:33.049Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:33.326Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:11:33.332Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:11:33.332Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:33.332Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:33.340Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:33.340Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:11:33.340Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:33.340Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:33.340Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:33.348Z [DEBUG] High write ratio: blit=0, write=1788 (100.0% writes), screen=58x90
+2026-03-02T00:11:33.702Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:33.805Z [DEBUG] High write ratio: blit=0, write=1788 (100.0% writes), screen=58x90
+2026-03-02T00:11:35.818Z [DEBUG] High write ratio: blit=0, write=1815 (100.0% writes), screen=59x90
+2026-03-02T00:11:36.056Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-02T00:11:36.056Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:36.056Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:36.056Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:36.056Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:36.056Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:36.056Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:36.066Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:36.074Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:36.074Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:36.074Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:36.074Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:36.084Z [DEBUG] High write ratio: blit=0, write=1828 (100.0% writes), screen=59x90
+2026-03-02T00:11:36.336Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:38.454Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:11:38.461Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:11:38.461Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:38.461Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:38.477Z [DEBUG] High write ratio: blit=0, write=1862 (100.0% writes), screen=62x90
+2026-03-02T00:11:38.537Z [DEBUG] High write ratio: blit=0, write=1862 (100.0% writes), screen=62x90
+2026-03-02T00:11:40.520Z [DEBUG] High write ratio: blit=0, write=1889 (100.0% writes), screen=63x90
+2026-03-02T00:11:40.668Z [DEBUG] High write ratio: blit=0, write=1889 (100.0% writes), screen=63x90
+2026-03-02T00:11:40.671Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:40.671Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.eb0; cc_entrypoint=cli;
+2026-03-02T00:11:40.671Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:40.671Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:40.671Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:40.681Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:11:40.681Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:11:40.681Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:40.681Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:40.681Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:40.681Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:40.681Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:40.693Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:40.703Z [DEBUG] High write ratio: blit=0, write=1993 (100.0% writes), screen=65x90
+2026-03-02T00:11:40.707Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:40.707Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:40.707Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:40.707Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:40.759Z [DEBUG] High write ratio: blit=0, write=1993 (100.0% writes), screen=65x90
+2026-03-02T00:11:41.075Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:41.182Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:43.494Z [DEBUG] High write ratio: blit=0, write=2051 (100.0% writes), screen=68x90
+2026-03-02T00:11:43.498Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:11:43.505Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:11:43.505Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:43.505Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:43.513Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:43.513Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:11:43.513Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:43.513Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:43.513Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:43.549Z [DEBUG] High write ratio: blit=0, write=2051 (100.0% writes), screen=68x90
+2026-03-02T00:11:43.920Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:44.062Z [DEBUG] High write ratio: blit=0, write=2051 (100.0% writes), screen=68x90
+2026-03-02T00:11:46.046Z [DEBUG] High write ratio: blit=0, write=2098 (100.0% writes), screen=69x90
+2026-03-02T00:11:46.478Z [DEBUG] High write ratio: blit=0, write=2098 (100.0% writes), screen=69x90
+2026-03-02T00:11:46.481Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:46.481Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.eb0; cc_entrypoint=cli;
+2026-03-02T00:11:46.481Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:46.481Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:46.481Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:46.491Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:11:46.491Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:11:46.491Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:46.491Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:46.491Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:46.491Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:46.491Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:46.507Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:46.517Z [DEBUG] High write ratio: blit=0, write=2239 (100.0% writes), screen=72x90
+2026-03-02T00:11:46.521Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:46.521Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:46.521Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:46.521Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:46.570Z [DEBUG] High write ratio: blit=0, write=2239 (100.0% writes), screen=72x90
+2026-03-02T00:11:46.736Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:47.176Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:47.726Z [DEBUG] High write ratio: blit=0, write=2239 (100.0% writes), screen=72x90
+2026-03-02T00:11:55.914Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:11:55.926Z [DEBUG] High write ratio: blit=0, write=2452 (100.0% writes), screen=82x90
+2026-03-02T00:11:55.930Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:11:55.930Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:11:55.930Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:55.966Z [DEBUG] High write ratio: blit=0, write=2452 (100.0% writes), screen=82x90
+2026-03-02T00:11:58.024Z [DEBUG] High write ratio: blit=0, write=2479 (100.0% writes), screen=83x90
+2026-03-02T00:11:58.574Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:11:58.574Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.b1a; cc_entrypoint=cli;
+2026-03-02T00:11:58.574Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:58.574Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:58.575Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:58.585Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:11:58.585Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:11:58.585Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:11:58.585Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:11:58.585Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:11:58.585Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:11:58.585Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:11:58.596Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:11:58.605Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:11:58.605Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:11:58.605Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:11:58.606Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:11:58.615Z [DEBUG] High write ratio: blit=0, write=2564 (100.0% writes), screen=85x90
+2026-03-02T00:11:58.773Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:11:59.027Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:02.771Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:12:02.780Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:12:02.780Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:12:02.780Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:12:02.788Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:02.788Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:02.788Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:02.789Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:12:02.789Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:02.789Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:12:02.789Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:02.789Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:12:02.789Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:02.789Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:02.804Z [DEBUG] High write ratio: blit=0, write=2648 (100.0% writes), screen=88x90
+2026-03-02T00:12:03.272Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:03.357Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:03.476Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:03.632Z [DEBUG] High write ratio: blit=0, write=2648 (100.0% writes), screen=88x90
+2026-03-02T00:12:05.626Z [DEBUG] High write ratio: blit=0, write=2675 (100.0% writes), screen=89x90
+2026-03-02T00:12:16.371Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-02T00:12:16.371Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:12:16.371Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:12:16.371Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:12:16.371Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:12:16.371Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:12:16.371Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:12:16.387Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:12:16.409Z [DEBUG] High write ratio: blit=0, write=3133 (100.0% writes), screen=97x90
+2026-03-02T00:12:16.417Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:12:16.417Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:16.417Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:16.417Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:16.468Z [DEBUG] High write ratio: blit=0, write=3133 (100.0% writes), screen=97x90
+2026-03-02T00:12:17.043Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:19.927Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:12:19.934Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:12:19.934Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:12:19.934Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:12:19.944Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:19.944Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:19.944Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:12:19.944Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:19.944Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:19.944Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:12:19.944Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:19.944Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:19.945Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:19.945Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:19.963Z [DEBUG] High write ratio: blit=0, write=3214 (100.0% writes), screen=100x90
+2026-03-02T00:12:20.309Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:20.557Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:20.599Z [DEBUG] High write ratio: blit=0, write=3214 (100.0% writes), screen=100x90
+2026-03-02T00:12:23.607Z [DEBUG] High write ratio: blit=0, write=3224 (100.0% writes), screen=101x90
+2026-03-02T00:12:50.589Z [DEBUG] High write ratio: blit=0, write=3403 (100.0% writes), screen=106x90
+2026-03-02T00:12:50.593Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:12:50.593Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f59; cc_entrypoint=cli;
+2026-03-02T00:12:50.593Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:50.593Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:50.593Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:50.603Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:12:50.603Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:12:50.603Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:12:50.625Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:12:50.625Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:12:50.625Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:12:50.625Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:12:50.638Z [DEBUG] High write ratio: blit=0, write=3217 (100.0% writes), screen=100x90
+2026-03-02T00:12:50.666Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:12:50.668Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:12:50.669Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:50.669Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:50.669Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:50.683Z [DEBUG] High write ratio: blit=0, write=3217 (100.0% writes), screen=100x90
+2026-03-02T00:12:51.019Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:51.164Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:12:53.341Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-02T00:12:53.351Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-02T00:12:53.351Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:12:53.351Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-02T00:12:53.367Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-02T00:12:53.367Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:12:53.367Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-02T00:12:53.379Z [DEBUG] High write ratio: blit=0, write=3263 (100.0% writes), screen=102x90
+2026-03-02T00:12:53.383Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:12:53.383Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:12:53.383Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:12:53.383Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:12:53.393Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:12:53.403Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:12:53.403Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:12:53.403Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:12:53.403Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:12:53.424Z [DEBUG] High write ratio: blit=0, write=3263 (100.0% writes), screen=102x90
+2026-03-02T00:12:53.686Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:13:00.969Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-02T00:13:00.969Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:13:00.969Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:13:01.000Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:01.003Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-02T00:13:01.018Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:13:01.020Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:13:01.020Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:13:01.020Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:13:01.020Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:13:01.067Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:01.235Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:13:15.410Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:15.414Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2026-03-02T00:13:15.414Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:13:15.414Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:13:15.454Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:24.384Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-02T00:13:24.384Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-02T00:13:24.384Z [DEBUG] Metrics export disabled by organization setting
+2026-03-02T00:13:28.584Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:31.754Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:31.803Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:35.131Z [DEBUG] High write ratio: blit=0, write=3397 (100.0% writes), screen=112x90
+2026-03-02T00:13:42.458Z [DEBUG] High write ratio: blit=0, write=3457 (100.0% writes), screen=116x90
+2026-03-02T00:13:42.463Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:13:42.463Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:13:42.463Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:13:42.463Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:13:42.478Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-02T00:13:42.481Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-02T00:13:42.481Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:13:42.481Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-02T00:13:42.482Z [DEBUG] FileHistory: Making snapshot for message acecb2c1-ed23-4763-8065-1a9c8538469e
+2026-03-02T00:13:42.482Z [DEBUG] FileHistory: Added snapshot for acecb2c1-ed23-4763-8065-1a9c8538469e, tracking 0 files
+2026-03-02T00:13:42.493Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:13:42.493Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.a7c; cc_entrypoint=cli;
+2026-03-02T00:13:42.494Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:13:42.494Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:13:42.494Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:13:42.511Z [DEBUG] High write ratio: blit=0, write=3436 (100.0% writes), screen=116x90
+2026-03-02T00:13:42.723Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:13:42.732Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:13:42.732Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:13:42.732Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:13:42.732Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:13:42.769Z [DEBUG] High write ratio: blit=0, write=3436 (100.0% writes), screen=116x90
+2026-03-02T00:13:43.088Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:13:43.167Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:13:47.043Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:13:47.050Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:13:47.050Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:13:47.050Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:13:47.061Z [DEBUG] High write ratio: blit=0, write=3514 (100.0% writes), screen=121x90
+2026-03-02T00:13:47.107Z [DEBUG] High write ratio: blit=0, write=3514 (100.0% writes), screen=121x90
+2026-03-02T00:13:49.119Z [DEBUG] High write ratio: blit=0, write=3541 (100.0% writes), screen=122x90
+2026-03-02T00:14:06.651Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-02T00:14:06.651Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:14:06.651Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:06.651Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:14:06.651Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:14:06.651Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:14:06.651Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:14:06.678Z [DEBUG] High write ratio: blit=0, write=5078 (100.0% writes), screen=145x90
+2026-03-02T00:14:06.706Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:14:06.709Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:14:06.709Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:14:06.709Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:14:06.709Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:14:06.728Z [DEBUG] High write ratio: blit=0, write=5078 (100.0% writes), screen=145x90
+2026-03-02T00:14:07.210Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:14:10.339Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:14:10.350Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:14:10.350Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:14:10.350Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:10.369Z [DEBUG] High write ratio: blit=0, write=5186 (100.0% writes), screen=150x90
+2026-03-02T00:14:10.422Z [DEBUG] High write ratio: blit=0, write=5186 (100.0% writes), screen=150x90
+2026-03-02T00:14:12.389Z [DEBUG] High write ratio: blit=0, write=5265 (100.0% writes), screen=152x90
+2026-03-02T00:14:32.740Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-02T00:14:32.740Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:14:32.740Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:32.740Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:14:32.740Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:14:32.740Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:14:32.740Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:14:32.757Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:14:32.773Z [DEBUG] High write ratio: blit=0, write=6160 (100.0% writes), screen=164x90
+2026-03-02T00:14:32.779Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:14:32.779Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:14:32.779Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:14:32.779Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:14:32.823Z [DEBUG] High write ratio: blit=0, write=6160 (100.0% writes), screen=164x90
+2026-03-02T00:14:33.329Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:14:38.602Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:14:38.611Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:14:38.611Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:14:38.611Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:38.633Z [DEBUG] High write ratio: blit=0, write=6371 (100.0% writes), screen=171x90
+2026-03-02T00:14:40.237Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:14:40.237Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.53b; cc_entrypoint=cli;
+2026-03-02T00:14:40.237Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:14:40.237Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:14:40.238Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:14:40.249Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:14:40.249Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:14:40.249Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:40.262Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:14:40.262Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:14:40.262Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:14:40.262Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:14:40.272Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:14:40.289Z [DEBUG] High write ratio: blit=0, write=6445 (100.0% writes), screen=172x90
+2026-03-02T00:14:40.293Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:14:40.293Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:14:40.293Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:14:40.293Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:14:40.348Z [DEBUG] High write ratio: blit=0, write=6445 (100.0% writes), screen=172x90
+2026-03-02T00:14:40.605Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:14:41.382Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:14:43.571Z [DEBUG] High write ratio: blit=0, write=6528 (100.0% writes), screen=175x90
+2026-03-02T00:14:43.575Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:14:43.584Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:14:43.584Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:14:43.584Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:14:43.612Z [DEBUG] High write ratio: blit=0, write=6528 (100.0% writes), screen=175x90
+2026-03-02T00:14:45.572Z [DEBUG] High write ratio: blit=0, write=6528 (100.0% writes), screen=175x90
+2026-03-02T00:14:46.628Z [DEBUG] High write ratio: blit=0, write=6555 (100.0% writes), screen=176x90
+2026-03-02T00:16:20.766Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:16:20.766Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0e0; cc_entrypoint=cli;
+2026-03-02T00:16:20.766Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:20.766Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:20.766Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:20.776Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:16:20.776Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:16:20.776Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:20.776Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:16:20.776Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:16:20.776Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:16:20.776Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:16:20.789Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:16:20.808Z [DEBUG] High write ratio: blit=0, write=6611 (100.0% writes), screen=178x90
+2026-03-02T00:16:20.814Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:16:20.814Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:20.814Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:20.815Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:20.866Z [DEBUG] High write ratio: blit=0, write=6611 (100.0% writes), screen=178x90
+2026-03-02T00:16:21.372Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:21.373Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:24.904Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:16:24.920Z [DEBUG] High write ratio: blit=0, write=6728 (100.0% writes), screen=183x90
+2026-03-02T00:16:24.924Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:16:24.924Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:16:24.924Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:24.983Z [DEBUG] High write ratio: blit=0, write=6728 (100.0% writes), screen=183x90
+2026-03-02T00:16:25.034Z [DEBUG] High write ratio: blit=0, write=6740 (100.0% writes), screen=183x90
+2026-03-02T00:16:27.004Z [DEBUG] High write ratio: blit=0, write=6767 (100.0% writes), screen=184x90
+2026-03-02T00:16:27.107Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:16:27.107Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f9a; cc_entrypoint=cli;
+2026-03-02T00:16:27.107Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:27.107Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:27.108Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:27.119Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:16:27.119Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:16:27.119Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:27.119Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:16:27.119Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:16:27.119Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:16:27.119Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:16:27.137Z [DEBUG] High write ratio: blit=0, write=6744 (100.0% writes), screen=183x90
+2026-03-02T00:16:27.143Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:16:27.153Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:16:27.153Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:27.153Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:27.153Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:27.203Z [DEBUG] High write ratio: blit=0, write=6744 (100.0% writes), screen=183x90
+2026-03-02T00:16:27.396Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:27.783Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:29.574Z [DEBUG] High write ratio: blit=0, write=6773 (100.0% writes), screen=186x90
+2026-03-02T00:16:29.578Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:16:29.586Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:16:29.586Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:16:29.586Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:29.638Z [DEBUG] High write ratio: blit=0, write=6773 (100.0% writes), screen=186x90
+2026-03-02T00:16:31.622Z [DEBUG] High write ratio: blit=0, write=6800 (100.0% writes), screen=187x90
+2026-03-02T00:16:53.766Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:16:53.766Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.074; cc_entrypoint=cli;
+2026-03-02T00:16:53.766Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:53.766Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:53.766Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:53.784Z [DEBUG] High write ratio: blit=0, write=6987 (100.0% writes), screen=191x90
+2026-03-02T00:16:53.789Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:16:53.789Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:16:53.789Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:53.789Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:16:53.789Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:16:53.789Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:16:53.789Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:16:53.817Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:16:53.836Z [DEBUG] High write ratio: blit=0, write=6959 (100.0% writes), screen=189x90
+2026-03-02T00:16:53.841Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:16:53.841Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:16:53.841Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:16:53.841Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:16:53.891Z [DEBUG] High write ratio: blit=0, write=6959 (100.0% writes), screen=189x90
+2026-03-02T00:16:54.364Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:54.639Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:16:59.149Z [DEBUG] High write ratio: blit=0, write=7078 (100.0% writes), screen=194x90
+2026-03-02T00:16:59.153Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:16:59.162Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:16:59.162Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:16:59.162Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:16:59.193Z [DEBUG] High write ratio: blit=0, write=7078 (100.0% writes), screen=194x90
+2026-03-02T00:17:01.216Z [DEBUG] High write ratio: blit=0, write=7105 (100.0% writes), screen=195x90
+2026-03-02T00:17:07.565Z [DEBUG] High write ratio: blit=0, write=7218 (100.0% writes), screen=197x90
+2026-03-02T00:17:07.579Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-02T00:17:07.579Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:07.579Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:07.580Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:17:07.580Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:17:07.580Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:17:07.580Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:17:07.595Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:17:07.612Z [DEBUG] High write ratio: blit=0, write=7534 (100.0% writes), screen=201x90
+2026-03-02T00:17:07.619Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:17:07.619Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:07.619Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:07.619Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:07.673Z [DEBUG] High write ratio: blit=0, write=7534 (100.0% writes), screen=201x90
+2026-03-02T00:17:08.171Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:12.102Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:17:12.110Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:17:12.111Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:12.111Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:12.127Z [DEBUG] High write ratio: blit=0, write=7620 (100.0% writes), screen=204x90
+2026-03-02T00:17:12.193Z [DEBUG] High write ratio: blit=0, write=7620 (100.0% writes), screen=204x90
+2026-03-02T00:17:14.168Z [DEBUG] High write ratio: blit=0, write=7647 (100.0% writes), screen=205x90
+2026-03-02T00:17:15.289Z [DEBUG] High write ratio: blit=0, write=7647 (100.0% writes), screen=205x90
+2026-03-02T00:17:15.293Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:15.293Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.d30; cc_entrypoint=cli;
+2026-03-02T00:17:15.293Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:15.293Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:15.294Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:15.303Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:17:15.303Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:17:15.303Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:15.303Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:17:15.303Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:17:15.303Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:17:15.303Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:17:15.318Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:17:15.330Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:17:15.330Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:15.330Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:15.330Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:15.347Z [DEBUG] High write ratio: blit=0, write=7624 (100.0% writes), screen=204x90
+2026-03-02T00:17:15.732Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:15.855Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:18.815Z [DEBUG] High write ratio: blit=0, write=7692 (100.0% writes), screen=207x90
+2026-03-02T00:17:18.821Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:17:18.831Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:17:18.831Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:18.831Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:18.868Z [DEBUG] High write ratio: blit=0, write=7698 (100.0% writes), screen=207x90
+2026-03-02T00:17:18.874Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:18.874Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:18.874Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:17:18.874Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:18.874Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:18.874Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:17:18.874Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:18.874Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:18.874Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:18.874Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:19.356Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:19.356Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:19.512Z [DEBUG] High write ratio: blit=0, write=7698 (100.0% writes), screen=207x90
+2026-03-02T00:17:21.503Z [DEBUG] High write ratio: blit=0, write=7708 (100.0% writes), screen=208x90
+2026-03-02T00:17:34.583Z [DEBUG] High write ratio: blit=0, write=7708 (100.0% writes), screen=208x90
+2026-03-02T00:17:34.587Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:34.587Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.444; cc_entrypoint=cli;
+2026-03-02T00:17:34.587Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:34.587Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:34.587Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:34.599Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:17:34.599Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:17:34.599Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:34.599Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:17:34.599Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:17:34.599Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:17:34.599Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:17:34.613Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:17:34.632Z [DEBUG] High write ratio: blit=0, write=7867 (100.0% writes), screen=210x90
+2026-03-02T00:17:34.636Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:17:34.636Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:34.636Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:34.636Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:34.686Z [DEBUG] High write ratio: blit=0, write=7867 (100.0% writes), screen=210x90
+2026-03-02T00:17:35.155Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:35.304Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:38.866Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:17:38.875Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:17:38.875Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:38.875Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:38.892Z [DEBUG] High write ratio: blit=0, write=7944 (100.0% writes), screen=213x90
+2026-03-02T00:17:38.944Z [DEBUG] High write ratio: blit=0, write=7944 (100.0% writes), screen=213x90
+2026-03-02T00:17:39.070Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:39.070Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.57a; cc_entrypoint=cli;
+2026-03-02T00:17:39.070Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:39.070Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:39.070Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:39.079Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:17:39.079Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:17:39.079Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:39.093Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:17:39.093Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:17:39.093Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:17:39.093Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:17:39.103Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:17:39.120Z [DEBUG] High write ratio: blit=0, write=8118 (100.0% writes), screen=218x90
+2026-03-02T00:17:39.124Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:17:39.124Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:39.124Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:39.124Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:39.175Z [DEBUG] High write ratio: blit=0, write=8118 (100.0% writes), screen=218x90
+2026-03-02T00:17:39.335Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:39.537Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:41.972Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:17:41.986Z [DEBUG] High write ratio: blit=0, write=8185 (100.0% writes), screen=221x90
+2026-03-02T00:17:41.990Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:17:41.990Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:41.990Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:42.008Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:42.008Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:42.008Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:17:42.008Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:42.008Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:42.008Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.f71; cc_entrypoint=cli;
+2026-03-02T00:17:42.008Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:42.008Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:42.008Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:42.008Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:42.048Z [DEBUG] High write ratio: blit=0, write=8184 (100.0% writes), screen=221x90
+2026-03-02T00:17:42.335Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:42.456Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:42.471Z [DEBUG] Restarting caffeinate to maintain sleep prevention
+2026-03-02T00:17:42.471Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-02T00:17:42.473Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-02T00:17:42.561Z [DEBUG] High write ratio: blit=0, write=8184 (100.0% writes), screen=221x90
+2026-03-02T00:17:42.628Z [DEBUG] High write ratio: blit=0, write=8184 (100.0% writes), screen=221x90
+2026-03-02T00:17:44.626Z [DEBUG] High write ratio: blit=0, write=8211 (100.0% writes), screen=222x90
+2026-03-02T00:17:45.353Z [DEBUG] High write ratio: blit=0, write=8211 (100.0% writes), screen=222x90
+2026-03-02T00:17:45.357Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-02T00:17:45.357Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.eb0; cc_entrypoint=cli;
+2026-03-02T00:17:45.357Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:45.357Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:45.357Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:45.370Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-02T00:17:45.370Z [DEBUG] Found 3 hook matchers in settings
+2026-03-02T00:17:45.370Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:45.371Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-02T00:17:45.371Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-02T00:17:45.371Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-02T00:17:45.371Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-02T00:17:45.388Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-02T00:17:45.398Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.21.0ff; cc_entrypoint=cli;
+2026-03-02T00:17:45.398Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-02T00:17:45.398Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-02T00:17:45.398Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-02T00:17:45.416Z [DEBUG] High write ratio: blit=0, write=8426 (100.0% writes), screen=225x90
+2026-03-02T00:17:45.636Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:45.728Z [DEBUG] Stream started - received first chunk
+2026-03-02T00:17:49.653Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-02T00:17:49.661Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-02T00:17:49.661Z [DEBUG] Found 0 hook matchers in settings
+2026-03-02T00:17:49.661Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-02T00:17:49.678Z [DEBUG] High write ratio: blit=0, write=8493 (100.0% writes), screen=228x90
+2026-03-02T00:17:49.727Z [DEBUG] High write ratio: blit=0, write=8493 (100.0% writes), screen=228x90
+2026-03-02T00:17:51.762Z [DEBUG] High write ratio: blit=0, write=8520 (100.0% writes), screen=229x90

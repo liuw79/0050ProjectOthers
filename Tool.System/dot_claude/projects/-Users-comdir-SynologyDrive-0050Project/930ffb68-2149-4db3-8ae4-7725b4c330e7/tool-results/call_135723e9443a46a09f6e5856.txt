@@ -1,0 +1,233 @@
+The file /Users/comdir/SynologyDrive/0050Project/GW.Content/server/src/lark-client.js has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→/**
+     2→ * 飞书 API 统一客户端
+     3→ * 整合多维表格、认证、文档等功能
+     4→ */
+     5→const path = require('path');
+     6→require('dotenv').config({ path: path.join(__dirname, '../.env') });
+     7→
+     8→const FEISHU_BASE_URL = 'https://open.feishu.cn/open-apis';
+     9→
+    10→class LarkClient {
+    11→  constructor() {
+    12→    this.appId = process.env.LARK_APP_ID;
+    13→    this.appSecret = process.env.LARK_APP_SECRET;
+    14→    this.redirectUri = process.env.LARK_REDIRECT_URI || 'http://localhost:3000/auth/callback';
+    15→    this.appAccessToken = null;
+    16→    this.tokenExpireTime = 0;
+    17→  }
+    18→
+    19→  // ==================== Token 管理 ====================
+    20→
+    21→  async getAppAccessToken() {
+    22→    if (this.appAccessToken && Date.now() < this.tokenExpireTime) {
+    23→      return this.appAccessToken;
+    24→    }
+    25→
+    26→    const response = await fetch(`${FEISHU_BASE_URL}/auth/v3/app_access_token/internal`, {
+    27→      method: 'POST',
+    28→      headers: { 'Content-Type': 'application/json' },
+    29→      body: JSON.stringify({
+    30→        app_id: this.appId,
+    31→        app_secret: this.appSecret,
+    32→      }),
+    33→    });
+    34→
+    35→    const data = await response.json();
+    36→    if (data.code !== 0) {
+    37→      throw new Error(`获取飞书token失败: ${data.msg}`);
+    38→    }
+    39→
+    40→    this.appAccessToken = data.app_access_token;
+    41→    this.tokenExpireTime = Date.now() + (data.expire_in - 300) * 1000;
+    42→    return this.appAccessToken;
+    43→  }
+    44→
+    45→  // ==================== 认证相关 ====================
+    46→
+    47→  getAuthUrl() {
+    48→    const params = new URLSearchParams({
+    49→      app_id: this.appId,
+    50→      redirect_uri: this.redirectUri,
+    51→      scope: 'contact:user.base:readonly',
+    52→      state: Math.random().toString(36).substring(7),
+    53→    });
+    54→    return `https://open.feishu.cn/open-apis/authen/v1/authorize?${params.toString()}`;
+    55→  }
+    56→
+    57→  async getUserAccessToken(code) {
+    58→    const appAccessToken = await this.getAppAccessToken();
+    59→
+    60→    const response = await fetch(`${FEISHU_BASE_URL}/authen/v1/access_token`, {
+    61→      method: 'POST',
+    62→      headers: {
+    63→        'Content-Type': 'application/json',
+    64→        'Authorization': `Bearer ${appAccessToken}`,
+    65→      },
+    66→      body: JSON.stringify({
+    67→        grant_type: 'authorization_code',
+    68→        redirect_uri: this.redirectUri,
+    69→        code: code,
+    70→      }),
+    71→    });
+    72→
+    73→    const data = await response.json();
+    74→    if (data.code !== 0) {
+    75→      throw new Error(`获取用户token失败: ${data.msg}`);
+    76→    }
+    77→
+    78→    return {
+    79→      accessToken: data.data.access_token,
+    80→      refreshToken: data.data.refresh_token,
+    81→      expiresIn: data.data.expires_in,
+    82→    };
+    83→  }
+    84→
+    85→  async getUserInfo(accessToken) {
+    86→    const response = await fetch(`${FEISHU_BASE_URL}/authen/v1/user_info`, {
+    87→      method: 'GET',
+    88→      headers: {
+    89→        'Authorization': `Bearer ${accessToken}`,
+    90→        'Content-Type': 'application/json',
+    91→      },
+    92→    });
+    93→
+    94→    const data = await response.json();
+    95→    if (data.code !== 0) {
+    96→      throw new Error(`获取用户信息失败: ${data.msg}`);
+    97→    }
+    98→
+    99→    return {
+   100→      userId: data.data.user_id,
+   101→      openId: data.data.open_id,
+   102→      name: data.data.name,
+   103→      avatar: data.data.avatar_url,
+   104→      email: data.data.email,
+   105→    };
+   106→  }
+   107→
+   108→  // ==================== 多维表格操作 ====================
+   109→
+   110→  async getBitableRecords(appToken, tableId, options = {}) {
+   111→    const { pageSize = 100, pageToken = '' } = options;
+   112→    const token = await this.getAppAccessToken();
+   113→    const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=${pageSize}${pageToken ? `&page_token=${pageToken}` : ''}`;
+   114→
+   115→    const response = await fetch(url, {
+   116→      method: 'GET',
+   117→      headers: {
+   118→        'Authorization': `Bearer ${token}`,
+   119→        'Content-Type': 'application/json',
+   120→      },
+   121→    });
+   122→
+   123→    const data = await response.json();
+   124→    if (data.code !== 0) {
+   125→      throw new Error(`获取多维表格数据失败: ${data.msg}`);
+   126→    }
+   127→
+   128→    return this.normalizeRecords(data.data.items || []);
+   129→  }
+   130→
+   131→  async searchBitableRecords(appToken, tableId, filter) {
+   132→    const token = await this.getAppAccessToken();
+   133→    const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records/search`;
+   134→
+   135→    const response = await fetch(url, {
+   136→      method: 'POST',
+   137→      headers: {
+   138→        'Authorization': `Bearer ${token}`,
+   139→        'Content-Type': 'application/json',
+   140→      },
+   141→      body: JSON.stringify({ filter }),
+   142→    });
+   143→
+   144→    const data = await response.json();
+   145→    if (data.code !== 0) {
+   146→      throw new Error(`查询多维表格失败: ${data.msg}`);
+   147→    }
+   148→
+   149→    return this.normalizeRecords(data.data.items || []);
+   150→  }
+   151→
+   152→  async addBitableRecord(appToken, tableId, fields) {
+   153→    const token = await this.getAppAccessToken();
+   154→    const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records`;
+   155→
+   156→    const response = await fetch(url, {
+   157→      method: 'POST',
+   158→      headers: {
+   159→        'Authorization': `Bearer ${token}`,
+   160→        'Content-Type': 'application/json',
+   161→      },
+   162→      body: JSON.stringify({ fields }),
+   163→    });
+   164→
+   165→    const data = await response.json();
+   166→    if (data.code !== 0) {
+   167→      throw new Error(`添加记录失败: ${data.msg}`);
+   168→    }
+   169→
+   170→    return data.data;
+   171→  }
+   172→
+   173→  async updateBitableRecord(appToken, tableId, recordId, fields) {
+   174→    const token = await this.getAppAccessToken();
+   175→    const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records/${recordId}`;
+   176→
+   177→    const response = await fetch(url, {
+   178→      method: 'PUT',
+   179→      headers: {
+   180→        'Authorization': `Bearer ${token}`,
+   181→        'Content-Type': 'application/json',
+   182→      },
+   183→      body: JSON.stringify({ fields }),
+   184→    });
+   185→
+   186→    const data = await response.json();
+   187→    if (data.code !== 0) {
+   188→      throw new Error(`更新记录失败: ${data.msg}`);
+   189→    }
+   190→
+   191→    return data.data;
+   192→  }
+   193→
+   194→  async deleteBitableRecord(appToken, tableId, recordId) {
+   195→    const token = await this.getAppAccessToken();
+   196→    const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records/${recordId}`;
+   197→
+   198→    const response = await fetch(url, {
+   199→      method: 'DELETE',
+   200→      headers: {
+   201→        'Authorization': `Bearer ${token}`,
+   202→      },
+   203→    });
+   204→
+   205→    const data = await response.json();
+   206→    if (data.code !== 0) {
+   207→      throw new Error(`删除记录失败: ${data.msg}`);
+   208→    }
+   209→
+   210→    return data.data;
+   211→  }
+   212→
+   213→  // ==================== 数据格式化 ====================
+   214→
+   215→  normalizeRecords(records) {
+   216→    return records.map(r => {
+   217→      const fields = {};
+   218→      for (const [key, value] of Object.entries(r.fields || {})) {
+   219→        // search API 返回 [{text, type}] 格式
+   220→        if (Array.isArray(value) && value[0] && typeof value[0] === 'object' && 'text' in value[0]) {
+   221→          fields[key] = value[0].text;
+   222→        } else {
+   223→          fields[key] = value;
+   224→        }
+   225→      }
+   226→      return { ...r, fields };
+   227→    });
+   228→  }
+   229→}
+   230→
+   231→module.exports = LarkClient;
+   232→

@@ -1,0 +1,104 @@
+// server/src/lib/ai.js
+export class AIClient {
+  constructor() {
+    this._apiKey = null;
+    this._baseUrl = null;
+    this._isOpenAIFormat = null;
+  }
+
+  get apiKey() {
+    if (!this._apiKey) this._apiKey = process.env.GEMINI_API_KEY;
+    return this._apiKey;
+  }
+
+  get baseUrl() {
+    if (!this._baseUrl) {
+      this._baseUrl = process.env.GEMINI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/models';
+    }
+    return this._baseUrl;
+  }
+
+  get isOpenAIFormat() {
+    if (this._isOpenAIFormat === null) {
+      this._isOpenAIFormat = !this.baseUrl.includes('generativelanguage.googleapis.com');
+    }
+    return this._isOpenAIFormat;
+  }
+
+  async generate(prompt, options = {}) {
+    const model = options.model || 'gemini-3.1-pro-preview';
+    const maxTokens = options.maxTokens || 8192;
+
+    if (this.isOpenAIFormat) {
+      // OpenAI 兼容格式
+      const url = `${this.baseUrl}/v1/chat/completions`;
+      console.log('AI request:', url);
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: 'user', content: prompt }],
+          max_tokens: maxTokens,
+        }),
+      });
+      const text = await res.text();
+      console.log('AI response status:', res.status, 'body:', text.slice(0, 200));
+      try {
+        const data = JSON.parse(text);
+        return data.choices?.[0]?.message?.content || '';
+      } catch (e) {
+        console.error('AI JSON parse error:', e.message);
+        return '';
+      }
+    } else {
+      // Google 原生格式
+      const res = await fetch(
+        `${this.baseUrl}/${model}:generateContent?key=${this.apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { maxOutputTokens: maxTokens },
+          }),
+        }
+      );
+      const data = await res.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    }
+  }
+
+  async generateJSON(prompt, options = {}) {
+    const text = await this.generate(
+      prompt + '\n\n只输出 JSON，不要 markdown 代码块，不要其他内容。',
+      options
+    );
+    // 尝试多种方式提取 JSON
+    let jsonStr = text;
+
+    // 去除 markdown 代码块
+    const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeBlockMatch) {
+      jsonStr = codeBlockMatch[1].trim();
+    } else {
+      // 提取花括号内容
+      const braceMatch = text.match(/\{[\s\S]*\}/);
+      if (braceMatch) {
+        jsonStr = braceMatch[0];
+      }
+    }
+
+    try {
+      return JSON.parse(jsonStr);
+    } catch (e) {
+      console.error('JSON parse error:', e.message, 'Raw text:', text.slice(0, 200));
+      return null;
+    }
+  }
+}
+
+export const ai = new AIClient();

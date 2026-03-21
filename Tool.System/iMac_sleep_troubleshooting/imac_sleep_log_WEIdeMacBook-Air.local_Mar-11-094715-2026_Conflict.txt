@@ -1,0 +1,175 @@
+[2025-07-01 14:10:53] 未发现睡眠阻止者
+[2025-07-01 14:12:02] 未发现睡眠阻止者
+[2025-07-01 14:12:35] 睡眠被阻止，来源: coreaudiod,UserEventAgent
+[2025-07-01 14:23:31] 睡眠被阻止，来源: bluetoothd,coreaudiod
+检测到 bluetoothd 阻止睡眠，将重启蓝牙服务...
+[2025-07-01 14:23:31] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-01 14:23:31] 错误：蓝牙服务重启失败。
+检测到 coreaudiod 阻止睡眠，将卸载音频服务以允许休眠...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-01 22:24:14] 睡眠被阻止，来源: bluetoothd,coreaudiod
+检测到 bluetoothd 阻止睡眠，将重启蓝牙服务...
+[2025-07-01 22:24:14] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-01 22:24:14] 错误：蓝牙服务重启失败。
+检测到 coreaudiod 阻止睡眠，检查是否为持久性断言...
+将卸载音频服务以允许休眠...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-03 08:48:30] [WARN] 睡眠被阻止，来源: bluetoothd,coreaudiod
+[2025-07-03 08:48:30] [INFO] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-03 08:48:30] [ERROR] 蓝牙服务重启失败。请检查SIP状态或系统日志。
+[2025-07-03 08:48:30] [WARN] 检测到 coreaudiod 阻止睡眠，检查是否为持久性断言...
+[2025-07-03 08:48:30] [INFO] 未发现引用已终止进程的持久性断言。尝试正常卸载音频服务...
+Unload failed: 5: Input/output error
+Try running `launchctl bootout` as root for richer errors.
+[2025-07-03 08:48:38] [INFO] coreaudiod 服务已卸载。
+[2025-07-03 08:48:38] [INFO] HTML报告已成功生成: /Users/liuwei/SynologyDrive/0050Project/Tool.System/iMac_sleep_troubleshooting/sleep_report.html
+[2025-07-03 08:59:16] [WARN] 睡眠被阻止，来源: bluetoothd,coreaudiod
+[2025-07-03 08:59:16] [INFO] 检测到 bluetoothd 阻止睡眠，尝试重启蓝牙服务...
+[2025-07-03 08:59:16] [ERROR] 蓝牙服务重启失败。请检查SIP状态或系统日志。
+[2025-07-03 08:59:16] [WARN] 检测到 coreaudiod 阻止睡眠，将执行强制重启以清除所有音频断言。
+[2025-07-03 08:59:16] [INFO] 正在强制终止 coreaudiod (PID: 193) ...
+[2025-07-03 08:59:51] [ERROR] 无法终止 coreaudiod (PID: 193)。可能需要检查 sudo 权限。
+[2025-07-03 08:59:51] [INFO] HTML报告已成功生成: /Users/liuwei/SynologyDrive/0050Project/Tool.System/iMac_sleep_troubleshooting/sleep_report.html
+[2025-07-03 08:59:59] [WARN] 睡眠被阻止，来源: coreaudiod
+[2025-07-03 08:59:59] [WARN] 检测到 coreaudiod 阻止睡眠，将执行强制重启以清除所有音频断言。
+[2025-07-03 08:59:59] [INFO] 正在强制终止 coreaudiod (PID: 193) ...
+[2025-07-03 09:00:04] [ERROR] 无法终止 coreaudiod (PID: 193)。可能需要检查 sudo 权限。
+[2025-07-03 09:00:04] [INFO] HTML报告已成功生成: /Users/liuwei/SynologyDrive/0050Project/Tool.System/iMac_sleep_troubleshooting/sleep_report.html
+[2025-07-06 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-07-06 00:00:00] coreaudiod 服务已重新加载。
+[2025-07-13 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-07-13 00:00:00] coreaudiod 服务已重新加载。
+[2025-07-27 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-07-27 00:00:00] coreaudiod 服务已重新加载。
+[2025-08-03 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-08-03 00:00:00] coreaudiod 服务已重新加载。
+[2025-08-10 00:00:09] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-08-10 00:00:09] coreaudiod 服务已重新加载。
+[2025-08-17 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-08-17 00:00:00] coreaudiod 服务已重新加载。
+[2025-08-24 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-08-24 00:00:00] coreaudiod 服务已重新加载。
+[2025-08-31 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-08-31 00:00:00] coreaudiod 服务已重新加载。
+[2025-09-07 00:00:01] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-09-07 00:00:01] coreaudiod 服务已重新加载。
+[2025-09-14 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-09-14 00:00:00] coreaudiod 服务已重新加载。
+[2025-09-21 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-09-21 00:00:00] coreaudiod 服务已重新加载。
+[2025-09-28 00:00:11] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-09-28 00:00:11] coreaudiod 服务已重新加载。
+[2025-10-05 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-10-05 00:00:00] coreaudiod 服务已重新加载。
+[2025-10-12 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-10-12 00:00:00] coreaudiod 服务已重新加载。
+[2025-10-19 00:00:06] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-10-19 00:00:06] coreaudiod 服务已重新加载。
+[2025-10-26 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-10-26 00:00:00] coreaudiod 服务已重新加载。
+[2025-11-02 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-11-02 00:00:00] coreaudiod 服务已重新加载。
+[2025-11-09 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-11-09 00:00:00] coreaudiod 服务已重新加载。
+[2025-11-16 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-11-16 00:00:00] coreaudiod 服务已重新加载。
+[2025-11-23 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-11-23 00:00:00] coreaudiod 服务已重新加载。
+[2025-11-30 00:03:02] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-11-30 00:03:02] coreaudiod 服务已重新加载。
+[2025-12-07 00:18:28] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-12-07 00:18:28] coreaudiod 服务已重新加载。
+[2025-12-14 00:18:27] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-12-14 00:18:27] coreaudiod 服务已重新加载。
+[2025-12-21 00:18:29] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-12-21 00:18:29] coreaudiod 服务已重新加载。
+[2025-12-28 00:18:28] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2025-12-28 00:18:28] coreaudiod 服务已重新加载。
+[2026-01-04 00:18:32] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-01-04 00:18:32] coreaudiod 服务已重新加载。
+[2026-01-11 00:18:34] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-01-11 00:18:34] coreaudiod 服务已重新加载。
+[2026-01-18 00:18:28] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-01-18 00:18:28] coreaudiod 服务已重新加载。
+[2026-01-25 00:18:31] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-01-25 00:18:31] coreaudiod 服务已重新加载。
+[2026-02-01 00:13:09] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-02-01 00:13:09] coreaudiod 服务已重新加载。
+[2026-02-08 00:17:05] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-02-08 00:17:05] coreaudiod 服务已重新加载。
+[2026-02-15 00:17:33] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-02-15 00:17:33] coreaudiod 服务已重新加载。
+[2026-02-22 00:00:00] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-02-22 00:00:00] coreaudiod 服务已重新加载。
+[2026-03-01 01:21:34] 系统唤醒，正在重新加载服务...
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+[2026-03-01 01:21:34] coreaudiod 服务已重新加载。

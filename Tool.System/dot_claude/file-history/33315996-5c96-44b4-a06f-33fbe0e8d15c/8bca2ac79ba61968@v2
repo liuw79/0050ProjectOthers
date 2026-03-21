@@ -1,0 +1,601 @@
+#!/usr/bin/env node
+/**
+ * 班主任AI教练评估 V4.3
+ *
+ * 用法：
+ *   node coach.js --course "[课程名称]" --teacher "[班主任姓名]" --date "[日期]"
+ *   node coach.js --course "[课程名称]" --teacher "[班主任姓名]" --date "[日期]" --publish email
+ *   node coach.js --course "[课程名称]" --teacher "[班主任姓名]" --date "[日期]" --publish feishu
+ *   node coach.js --course "[课程名称]" --teacher "[班主任姓名]" --date "[日期]" --publish both
+ *   node coach.js --course "[课程名称]" --teacher "[班主任姓名]" --date "[日期]" --no-email
+ */
+
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+
+// ==================== 配置 ====================
+
+const CONFIG = {
+  // 基础路径
+  basePath: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍',
+
+  // API 配置（支持多模型）
+  api: {
+    baseUrl: process.env.GEMINI_BASE_URL || 'https://api.openai-proxy.org',
+    apiKey: process.env.GEMINI_API_KEY || 'sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI',
+    defaultModel: 'gemini-3.1-pro-preview',  // 默认模型
+    maxTokens: 8192
+  },
+
+  // 可用模型列表（别名 -> 实际模型ID）
+  // 与 multi-model-api skill 保持一致
+  models: {
+    // Gemini 系列（默认）
+    'gemini3.1': 'gemini-3.1-pro-preview',
+    'gemini-3.1-pro-preview': 'gemini-3.1-pro-preview',
+
+    // GPT 系列
+    'gpt5.4': 'gpt-5.4',
+    'gpt-5.4': 'gpt-5.4'
+  },
+
+  // 邮件配置（飞书SMTP）
+  email: {
+    host: 'smtp.feishu.cn',
+    port: 465,
+    user: 'liuwei@gaowei.com',
+    pass: 'AQg6ve0Xpdb3FG87'
+  },
+
+  // 飞书配置
+  feishu: {
+    // 使用 MCP 工具 docx_builtin_import
+    // 无需手动配置 token，由 MCP 自动管理
+  },
+
+  // 默认收件人
+  defaultTo: 'lw@gaowei.com',
+
+  // 发送方式：email, feishu, both
+  defaultPublish: 'email'
+};
+
+// ==================== 工具函数 ====================
+
+function log(msg) {
+  console.log(`[${new Date().toISOString().slice(11, 19)}] ${msg}`);
+}
+
+function readFileSync(filePath) {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`文件不存在: ${filePath}`);
+  }
+  return fs.readFileSync(filePath, 'utf-8');
+}
+
+// ==================== API 调用（支持多模型）====================
+
+function callAPI(prompt, model) {
+  return new Promise((resolve, reject) => {
+    // GPT-5.x 系列需要使用 max_completion_tokens 而不是 max_tokens
+    const isGPT5 = model.startsWith('gpt-5');
+    const maxTokensKey = isGPT5 ? 'max_completion_tokens' : 'max_tokens';
+
+    const payload = {
+      model: model,
+      messages: [{ role: 'user', content: prompt }],
+      [maxTokensKey]: CONFIG.api.maxTokens
+    };
+
+    // 注意：代理服务暂不支持 thinking 参数
+
+    const url = new URL(CONFIG.api.baseUrl + '/v1/chat/completions');
+
+    const reqOptions = {
+      hostname: url.hostname,
+      port: url.port || 443,
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${CONFIG.api.apiKey}`
+      }
+    };
+
+    log(`调用 API (${model})...`);
+
+    const req = https.request(reqOptions, (res) => {
+      // 使用 Buffer 数组收集数据，避免多字节字符截断
+      const chunks = [];
+      res.on('data', chunk => chunks.push(chunk));
+      res.on('end', () => {
+        try {
+          // 合并所有 Buffer 并转为字符串
+          const buffer = Buffer.concat(chunks);
+          const data = buffer.toString('utf-8');
+          const json = JSON.parse(data);
+          if (json.error) {
+            reject(new Error(`API错误: ${json.error.message || JSON.stringify(json.error)}`));
+          } else if (json.choices && json.choices[0]) {
+            log('API 调用成功');
+            resolve(json.choices[0].message.content);
+          } else {
+            reject(new Error('意外的响应格式: ' + data.slice(0, 200)));
+          }
+        } catch (e) {
+          reject(new Error('解析响应失败: ' + e.message));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(JSON.stringify(payload));
+    req.end();
+  });
+}
+
+// 兼容旧函数名
+const callGemini = callAPI;
+
+// ==================== 格式转换：HTML → Markdown ====================
+
+/**
+ * 将 HTML 格式的报告转换为 Markdown 格式
+ * 专门处理 AI 教练评估报告的结构
+ */
+function htmlToMarkdown(html) {
+  let md = html;
+
+  // 1. 提取 HTML 内容（去除可能的 markdown 代码块）
+  const htmlMatch = html.match(/```html\s*([\s\S]*?)```/);
+  if (htmlMatch) {
+    md = htmlMatch[1].trim();
+  }
+
+  // 2. 移除 <style> 标签及其内容
+  md = md.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+
+  // 3. 移除所有 HTML 注释
+  md = md.replace(/<!--[\s\S]*?-->/g, '');
+
+  // 4. 处理标题
+  md = md.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '# $1\n\n');
+  md = md.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '## $1\n\n');
+  md = md.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '### $1\n\n');
+  md = md.replace(/<h4[^>]*>(.*?)<\/h4>/gi, '#### $1\n\n');
+
+  // 5. 处理段落和换行
+  md = md.replace(/<br\s*\/?>/gi, '\n');
+  md = md.replace(/<p[^>]*>(.*?)<\/p>/gis, '$1\n\n');
+
+  // 6. 处理加粗和斜体
+  md = md.replace(/<strong[^>]*>(.*?)<\/strong>/gi, '**$1**');
+  md = md.replace(/<b[^>]*>(.*?)<\/b>/gi, '**$1**');
+  md = md.replace(/<em[^>]*>(.*?)<\/em>/gi, '*$1*');
+  md = md.replace(/<i[^>]*>(.*?)<\/i>/gi, '*$1*');
+
+  // 7. 处理链接
+  md = md.replace(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)');
+
+  // 8. 处理列表
+  md = md.replace(/<ul[^>]*>/gi, '');
+  md = md.replace(/<\/ul>/gi, '\n');
+  md = md.replace(/<ol[^>]*>/gi, '');
+  md = md.replace(/<\/ol>/gi, '\n');
+  md = md.replace(/<li[^>]*>(.*?)<\/li>/gi, '- $1\n');
+
+  // 9. 处理 div - 将带 class 的 div 转为引用块或保留内容
+  md = md.replace(/<div[^>]*class="[^"]*score[^"]*"[^>]*>(.*?)<\/div>/gis, '> **得分: **$1\n\n');
+  md = md.replace(/<div[^>]*>(.*?)<\/div>/gis, '$1\n');
+
+  // 10. 处理 span - 只保留内容
+  md = md.replace(/<span[^>]*>(.*?)<\/span>/gi, '$1');
+
+  // 11. 处理表格（简单处理）
+  md = md.replace(/<table[^>]*>/gi, '\n');
+  md = md.replace(/<\/table>/gi, '\n');
+  md = md.replace(/<tr[^>]*>/gi, '| ');
+  md = md.replace(/<\/tr>/gi, ' |\n');
+  md = md.replace(/<th[^>]*>(.*?)<\/th>/gi, ' $1 |');
+  md = md.replace(/<td[^>]*>(.*?)<\/td>/gi, ' $1 |');
+  md = md.replace(/<thead[^>]*>[\s\S]*?<\/thead>/gi, '');
+  md = md.replace(/<tbody[^>]*>/gi, '');
+  md = md.replace(/<\/tbody>/gi, '');
+
+  // 12. 处理 hr 分隔线
+  md = md.replace(/<hr\s*\/?>/gi, '\n---\n');
+
+  // 13. 处理引用块
+  md = md.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gis, '> $1\n\n');
+
+  // 14. 移除所有剩余的 HTML 标签
+  md = md.replace(/<[^>]+>/g, '');
+
+  // 15. 清理多余空行（保留最多2个连续空行）
+  md = md.replace(/\n{3,}/g, '\n\n');
+
+  // 16. 清理行首行尾空白
+  md = md.split('\n').map(line => line.trim()).join('\n');
+
+  // 17. 添加报告头部（飞书文档格式）
+  const header = `# 班主任AI教练评估报告
+
+> 本报告由 AI 教练系统自动生成
+
+---
+
+`;
+
+  return header + md.trim();
+}
+
+// ==================== 邮件发送 ====================
+
+async function sendEmail(to, subject, html) {
+  // 动态加载 nodemailer
+  const nodemailer = require('nodemailer');
+
+  const transporter = nodemailer.createTransport({
+    host: CONFIG.email.host,
+    port: CONFIG.email.port,
+    secure: true,
+    auth: {
+      user: CONFIG.email.user,
+      pass: CONFIG.email.pass
+    }
+  });
+
+  await transporter.sendMail({
+    from: `"高维AI教练" <${CONFIG.email.user}>`,
+    to: to,
+    subject: subject,
+    html: html
+  });
+
+  log(`邮件已发送到: ${to}`);
+}
+
+// ==================== 飞书发布 ====================
+
+/**
+ * 发布 Markdown 文档到飞书
+ * 注意：这个函数需要在 Claude Code 环境中运行
+ * 因为需要调用 MCP 工具
+ *
+ * 在命令行模式下，我们只保存 Markdown 文件
+ * 实际发布由 Claude Code 通过 MCP 工具完成
+ */
+async function publishToFeishu(markdown, title) {
+  // 在 CLI 模式下，只记录需要发布的文档信息
+  // 实际发布需要由 Claude Code 调用 MCP 工具
+  log(`飞书文档待发布: ${title}`);
+  log(`提示: 请在 Claude Code 中调用 mcp__lark-mcp__docx_builtin_import 发布`);
+
+  // 返回发布信息供 Claude Code 使用
+  return {
+    success: true,
+    title: title,
+    markdown: markdown,
+    mcpTool: 'mcp__lark-mcp__docx_builtin_import',
+    mcpParams: {
+      data: {
+        markdown: markdown,
+        file_name: title
+      },
+      useUAT: false
+    }
+  };
+}
+
+// ==================== 查找文件 ====================
+
+function findTeacherDir(sceneDir, course, teacher) {
+  // 尝试多种可能的文件夹命名格式
+  const possibleNames = [
+    `${course} ${teacher}`,                           // 业务管理者养成 碧容
+    teacher,                                          // 碧容
+  ];
+
+  // 列出所有子目录
+  const entries = fs.readdirSync(sceneDir, { withFileTypes: true });
+  const dirs = entries.filter(e => e.isDirectory()).map(e => e.name);
+
+  // 查找匹配的目录
+  for (const name of possibleNames) {
+    const found = dirs.find(d => d.includes(teacher) || d === name);
+    if (found) {
+      return path.join(sceneDir, found);
+    }
+  }
+
+  throw new Error(`找不到班主任目录: ${sceneDir}/*${teacher}*`);
+}
+
+function findFiles(teacherDir, date, course, teacher) {
+  // 列出目录中所有文件
+  const files = fs.readdirSync(teacherDir);
+
+  // 查找开场录音稿
+  const openingFile = files.find(f =>
+    f.includes(teacher) && !f.includes('结束') && f.endsWith('.txt') && !f.startsWith('prompt')
+  );
+
+  // 查找结束录音稿
+  const endingFile = files.find(f =>
+    f.includes('结束') && f.endsWith('.txt')
+  );
+
+  if (!openingFile) {
+    throw new Error(`找不到开场录音稿: ${teacherDir}`);
+  }
+  if (!endingFile) {
+    throw new Error(`找不到结束录音稿: ${teacherDir}`);
+  }
+
+  return {
+    opening: path.join(teacherDir, openingFile),
+    ending: path.join(teacherDir, endingFile)
+  };
+}
+
+// ==================== 主逻辑 ====================
+
+async function main() {
+  // 解析参数
+  const args = process.argv.slice(2);
+  const params = {};
+  let noEmail = false;
+  let modelAlias = 'gemini3.1';  // 默认使用 gemini3.1
+  let publishMode = CONFIG.defaultPublish;  // 默认发送方式
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--course') params.course = args[++i];
+    else if (args[i] === '--teacher') params.teacher = args[++i];
+    else if (args[i] === '--date') params.date = args[++i];
+    else if (args[i] === '--to') params.to = args[++i];
+    else if (args[i] === '--model') modelAlias = args[++i];
+    else if (args[i] === '--publish') publishMode = args[++i];
+    else if (args[i] === '--no-email') noEmail = true;
+  }
+
+  // --no-email 等同于 --publish none
+  if (noEmail) {
+    publishMode = 'none';
+  }
+
+  // 验证发送方式
+  const validPublishModes = ['email', 'feishu', 'both', 'none'];
+  if (!validPublishModes.includes(publishMode)) {
+    console.error(`❌ 无效的发送方式: ${publishMode}`);
+    console.error(`   有效选项: ${validPublishModes.join(', ')}`);
+    process.exit(1);
+  }
+
+  // 解析模型
+  let model = CONFIG.models[modelAlias] || modelAlias;  // 支持别名或直接传模型ID
+
+  // 验证必填参数
+  if (!params.course || !params.teacher || !params.date) {
+    console.log(`
+班主任AI教练评估 V4.3（多模型 + 多发送方式）
+
+用法：
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]"
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]" --model gpt5.4
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]" --publish feishu
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]" --publish both
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]" --to "[收件人1],[收件人2]"
+  node coach.js --course "课程名" --teacher "班主任名" --date "[日期]" --no-email
+
+参数：
+  --course    课程名称（必填），如 "业务管理者养成"
+  --teacher   班主任姓名（必填），如 "碧容"
+  --date      日期 YYMMDD（必填），如 "260314"
+  --model     模型选择（可选，默认: gemini3.1）
+              别名: gemini3.1, gpt5.4
+  --publish   发送方式（可选，默认: email）
+              email: 发送 HTML 邮件
+              feishu: 发布 Markdown 到飞书
+              both: 两种方式都执行
+              none: 不发送
+  --to        邮件收件人（可选，默认: lw@gaowei.com）
+  --no-email  只生成报告，不发送（等同于 --publish none）
+`);
+    process.exit(1);
+  }
+
+  log(`开始评估: ${params.course} - ${params.teacher} (模型: ${model}, 发送方式: ${publishMode})`);
+
+  try {
+    // ========== Step 1: 准备素材 ==========
+
+    log('Step 1: 准备素材...');
+
+    // 确定场景目录（根据日期格式转换）
+    // 260314 -> 20260313 或直接使用
+    let sceneDir = null;
+
+    if (params.date.length === 6) {
+      // YYMMDD (260314) -> YYYYMMDD (20260314)
+      const yymmdd = params.date;
+      const month = yymmdd.slice(2, 4);  // 03
+      const day = yymmdd.slice(4, 6);    // 14
+      // 先尝试当天目录
+      sceneDir = `${CONFIG.basePath}/现场/2026${month}${day}`;
+      if (!fs.existsSync(sceneDir)) {
+        // 再尝试前一天（如果课程跨天）
+        const prevDay = String(parseInt(day) - 1).padStart(2, '0');
+        sceneDir = `${CONFIG.basePath}/现场/2026${month}${prevDay}`;
+      }
+    }
+
+    if (!sceneDir || !fs.existsSync(sceneDir)) {
+      sceneDir = `${CONFIG.basePath}/现场/${params.date}`;
+    }
+
+    log(`场景目录: ${sceneDir}`);
+
+    // 查找班主任目录
+    const teacherDir = findTeacherDir(sceneDir, params.course, params.teacher);
+    log(`班主任目录: ${teacherDir}`);
+
+    // 固定文件路径
+    const promptTemplatePath = `${CONFIG.basePath}/班主任AI教练 2026年03月16日V4（双触点全流程版）.md`;
+    const gaowei5Path = `${CONFIG.basePath}/高维学堂5句话介绍.md`;
+    const course5Path = `${CONFIG.basePath}/${params.course}-主持词.md`;
+
+    // 检查固定文件
+    if (!fs.existsSync(promptTemplatePath)) {
+      throw new Error(`V4提示词模板不存在: ${promptTemplatePath}`);
+    }
+    if (!fs.existsSync(gaowei5Path)) {
+      throw new Error(`高维5句话不存在: ${gaowei5Path}`);
+    }
+    if (!fs.existsSync(course5Path)) {
+      throw new Error(`课程5句话不存在: ${course5Path}`);
+    }
+
+    log(`  ✓ V4提示词模板`);
+    log(`  ✓ 高维5句话`);
+    log(`  ✓ 课程5句话`);
+
+    // 查找录音稿文件
+    const recordFiles = findFiles(teacherDir, params.date, params.course, params.teacher);
+    log(`  ✓ 开场录音稿: ${path.basename(recordFiles.opening)}`);
+    log(`  ✓ 结束录音稿: ${path.basename(recordFiles.ending)}`);
+
+    // 读取文件内容
+    const promptTemplate = readFileSync(promptTemplatePath);
+    const gaowei5 = readFileSync(gaowei5Path);
+    const course5 = readFileSync(course5Path);
+    const opening = readFileSync(recordFiles.opening);
+    const ending = readFileSync(recordFiles.ending);
+
+    // ========== Step 2: 组装Prompt ==========
+
+    log('Step 2: 组装Prompt...');
+
+    const fullPrompt = `${promptTemplate}
+
+---
+
+# Input Data
+
+**Target Course**: ${params.course}
+
+**Transcript**:
+
+===第一天开场录音===
+
+${opening}
+
+===第二天结束录音===
+
+${ending}
+
+---
+
+===参考：高维学堂5句话介绍===
+
+${gaowei5}
+
+---
+
+===参考：${params.course} 主持词===
+
+${course5}
+`;
+
+    // 保存prompt（用于调试）
+    const promptPath = `${sceneDir}/prompt_${params.teacher}_V4.txt`;
+    fs.writeFileSync(promptPath, fullPrompt, 'utf-8');
+    log(`  ✓ Prompt已保存`);
+
+    // ========== Step 3: 调用API ==========
+
+    log(`Step 3: 调用 API (${model})...`);
+    const htmlContent = await callAPI(fullPrompt, model);
+
+    // ========== Step 4: 保存报告 ==========
+
+    log('Step 4: 保存报告...');
+
+    // 提取HTML内容（去除可能的markdown代码块）
+    let html = htmlContent;
+    const htmlMatch = htmlContent.match(/```html\s*([\s\S]*?)```/);
+    if (htmlMatch) {
+      html = htmlMatch[1].trim();
+    }
+
+    // 保存 HTML 报告
+    const htmlReportPath = `${teacherDir}/${params.teacher}-AI教练报告-V4.html`;
+    fs.writeFileSync(htmlReportPath, html, 'utf-8');
+    log(`  ✓ HTML报告已保存: ${htmlReportPath}`);
+
+    // 如果需要飞书或两者都要，生成并保存 Markdown 报告
+    let mdReportPath = null;
+    let markdownContent = null;
+
+    if (publishMode === 'feishu' || publishMode === 'both') {
+      log('Step 4b: 生成 Markdown 报告...');
+      markdownContent = htmlToMarkdown(html);
+
+      mdReportPath = `${teacherDir}/${params.teacher}-AI教练报告-V4.md`;
+      fs.writeFileSync(mdReportPath, markdownContent, 'utf-8');
+      log(`  ✓ Markdown报告已保存: ${mdReportPath}`);
+    }
+
+    // ========== Step 5: 发送报告 ==========
+
+    if (publishMode === 'none') {
+      log('Step 5: 跳过发送 (--publish none)');
+    } else {
+      log(`Step 5: 发送报告 (方式: ${publishMode})...`);
+
+      // 发送邮件
+      if (publishMode === 'email' || publishMode === 'both') {
+        const to = params.to || CONFIG.defaultTo;
+        const subject = `【V4评估】${params.course} 班主任AI教练评估报告 - ${params.teacher}`;
+        await sendEmail(to, subject, html);
+        log(`  ✓ 邮件已发送到: ${to}`);
+      }
+
+      // 发布到飞书
+      if (publishMode === 'feishu' || publishMode === 'both') {
+        const docTitle = `【AI教练评估】${params.course} - ${params.teacher}`;
+        const feishuResult = await publishToFeishu(markdownContent, docTitle);
+
+        if (feishuResult.success) {
+          log(`  ✓ 飞书文档已准备: ${docTitle}`);
+          // 输出 MCP 调用信息供 Claude Code 使用
+          console.log('\n📋 飞书发布信息（供 Claude Code 调用 MCP）:');
+          console.log(JSON.stringify(feishuResult.mcpParams, null, 2));
+        }
+      }
+    }
+
+    // ========== 完成 ==========
+
+    log('✅ 评估完成!');
+    console.log(`\n📊 报告路径:`);
+    console.log(`   HTML: ${htmlReportPath}`);
+    if (mdReportPath) {
+      console.log(`   MD:   ${mdReportPath}`);
+    }
+
+    if (publishMode === 'email' || publishMode === 'both') {
+      console.log(`\n📧 邮件收件人: ${params.to || CONFIG.defaultTo}`);
+    }
+
+    if (publishMode === 'feishu' || publishMode === 'both') {
+      console.log(`\n📝 飞书文档: 请在 Claude Code 中调用 MCP 发布`);
+    }
+
+  } catch (error) {
+    console.error('❌ 错误:', error.message);
+    process.exit(1);
+  }
+}
+
+main();

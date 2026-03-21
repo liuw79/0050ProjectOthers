@@ -1,0 +1,18 @@
+# 考试系统依赖包
+# 本项目主要使用Python标准库，无需额外安装包
+
+# Python标准库模块（无需安装）:
+# - sqlite3: 数据库操作
+# - tkinter: GUI界面（exam_system.py使用）
+# - json: JSON数据处理
+# - datetime: 时间处理
+# - os: 操作系统接口
+# - sys: 系统相关参数
+
+# 如果需要在某些环境中安装tkinter（通常已预装）:
+# tkinter
+
+# 开发和测试工具（可选）:
+# pytest>=6.0.0
+# black>=21.0.0
+# flake8>=3.8.0

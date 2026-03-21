@@ -1,0 +1,17 @@
+[
+  {
+    "content": "确认 DeepSeek 和第二个项目的路径",
+    "status": "in_progress",
+    "activeForm": "确认新项目路径"
+  },
+  {
+    "content": "更新 projects.json 添加新项目",
+    "status": "pending",
+    "activeForm": "更新项目配置"
+  },
+  {
+    "content": "更新 CLAUDE.md 添加新项目映射",
+    "status": "pending",
+    "activeForm": "更新 CLAUDE.md"
+  }
+]

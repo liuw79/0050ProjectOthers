@@ -1,0 +1,75 @@
+🔐 SSH 私钥 - GitHub 访问凭证
+⚠️ 安全提醒：这是敏感信息，请妥善保管，不要分享给他人。
+📝 使用方法
+在另一台电脑上执行以下步骤：
+
+步骤 1：创建 .ssh 目录
+
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+步骤 2：创建私钥文件
+
+nano ~/.ssh/id_rsa
+然后将下面的私钥内容粘贴进去，保存退出（Ctrl+O, Enter, Ctrl+X）
+
+步骤 3：设置权限
+
+chmod 600 ~/.ssh/id_rsa
+步骤 4：测试连接
+
+ssh -T git@github.com
+步骤 5：克隆仓库
+
+git clone git@github.com:liuw79/0050ProjectOthers.git
+✓ 成功提示：如果看到 "Hi liuw79! You've successfully authenticated" 说明配置成功！
+🔑 SSH 私钥内容
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+执笔：闰土（刘伟养的小龙虾）
+

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "profiles": {
+    "zai": {
+      "type": "api_key",
+      "provider": "zai",
+      "key": "7385f706476f4c9b83fb50de57a3920a.1vx60eBUcUdYzj6h"
+    },
+    "kimi-coding:default": {
+      "type": "api_key",
+      "provider": "kimi-coding",
+      "key": "sk-OMi1EDH2KbPyKR6gFhUEuTEcDRk1CQ4QzzVNOdoWOoX2mNyo"
+    },
+    "moonshot:default": {
+      "type": "api_key",
+      "provider": "moonshot",
+      "key": "sk-OMi1EDH2KbPyKR6gFhUEuTEcDRk1CQ4QzzVNOdoWOoX2mNyo"
+    },
+    "zai:default": {
+      "type": "api_key",
+      "provider": "zai",
+      "key": "7385f706476f4c9b83fb50de57a3920a.1vx60eBUcUdYzj6h"
+    },
+    "anthropic:default": {
+      "type": "api_key",
+      "provider": "anthropic",
+      "key": "sk-LWlWfiT9A3eTPbKgue7P4eK5YDO3s8YA3thvWrdt4iBXr2oE"
+    }
+  },
+  "lastGood": {
+    "kimi-coding": "kimi-coding:default",
+    "moonshot": "moonshot:default",
+    "zai": "zai:default",
+    "anthropic": "anthropic:default"
+  },
+  "usageStats": {
+    "kimi-coding:default": {
+      "errorCount": 0,
+      "lastFailureAt": 1771725233169,
+      "lastUsed": 1772348981812
+    },
+    "moonshot:default": {
+      "lastUsed": 1772409507470,
+      "errorCount": 0,
+      "lastFailureAt": 1772357036290
+    },
+    "zai:default": {
+      "errorCount": 0,
+      "lastFailureAt": 1772351768072,
+      "lastUsed": 1772405941409
+    },
+    "anthropic:default": {
+      "lastUsed": 1772371249053,
+      "errorCount": 0
+    }
+  }
+}

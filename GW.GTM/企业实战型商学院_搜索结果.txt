@@ -1,0 +1,39 @@
+=== 企业实战型商学院 - Google搜索结果 (前10条) ===
+通过Chrome浏览器自动化操控提取 - 2025年9月30日
+
+1. 馒头商学院-为职场人学习和成长提供完整解决方案-互联网实战商学院
+   https://www.mtedu.com/
+
+2. 2022胡润百学·中国商学院教授学术活跃度榜 - MBA智库百科
+   https://wiki.mbalib.com/wiki/2022胡润百学·中国商学院教授学术活跃度榜
+
+3. 经理人网
+   https://www.sino-manager.com/detail/10024
+
+4. 中南大学商学院2022年以"申请-考核"制招收博士研究生招生简章-博士-中南大学商学院
+   https://bs.csu.edu.cn/bos/info/1557/1357.htm
+
+5. 下一个30年，MBA教育的新命题——《2021年度中国商学院最佳MBA项目TOP100》暨系列榜 - MBAChina网
+   https://www.mbachina.com/html/zx/202201/405661.html
+
+6. 【择校 | 实力推荐】全国65所商学院四大认证院校名单汇总
+   http://www.mbaedu.cn/news/view/id/21758.html
+
+7. 美国EMBA 总裁企业家商务研修培训班-中美国际集团-【学费，地址，点评，电话查询】-好学校触屏版
+   https://m.91goodschool.com/course/6504-121607.html
+
+8. 2020秋企业家课堂讲座名称汇总及企业家简介-商学院
+   https://sxy.bwu.edu.cn/info/1015/1353.htm
+
+9. EMBA - 东华大学MBA教育中心
+   https://mba.dhu.edu.cn/content/page/34.html
+
+10. 北大国家发展研究院BiMBA
+    https://www.bimba.pku.edu.cn/glpx/xmys/index.htm
+
+=== 提取信息 ===
+搜索关键词: 企业实战型商学院
+提取时间: 2025年9月30日
+提取方式: Claude AI 通过Chrome DevTools协议自动化操控
+页面来源: Google搜索结果
+状态: ✅ 成功复制到本地文件

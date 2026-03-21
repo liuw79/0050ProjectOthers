@@ -1,0 +1,116 @@
+#!/usr/bin/env node
+/**
+ * 飞书文档发布工具
+ *
+ * 用法：
+ *   node publish.js --file "报告.md" --share "liuwei@gaowei.com,cbr@gaowei.com"
+ *   node publish.js --file "报告.md"  # 使用默认分享列表
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// ==================== 配置 ====================
+
+// 飞书发布邮箱配置（统一管理）
+const FEISHU_EMAILS = {
+  liuwei: 'liuwei@gaowei.com',
+  cbr: 'cbr@gaowei.com',
+};
+
+// 默认分享列表
+const DEFAULT_SHARE_EMAILS = [FEISHU_EMAILS.liuwei, FEISHU_EMAILS.cbr];
+
+// ==================== 工具函数 ====================
+
+function log(msg) {
+  console.log(`[${new Date().toISOString().slice(11, 19)}] ${msg}`);
+}
+
+/**
+ * 发布到飞书（生成 Claude Code 可执行的指令）
+ *
+ * 注意：实际的 MCP 调用需要在 Claude Code 中执行
+ * 此脚本生成标准化的发布指令
+ */
+function main() {
+  const args = process.argv.slice(2);
+  const params = {};
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--file') params.file = args[++i];
+    else if (args[i] === '--share') params.share = args[++i];
+  }
+
+  if (!params.file) {
+    console.log(`
+飞书文档发布工具
+
+用法：
+  node publish.js --file "报告.md" --share "email1,email2"
+  node publish.js --file "报告.md"  # 使用默认分享列表
+
+默认分享列表：
+  ${DEFAULT_SHARE_EMAILS.join(', ')}
+
+在 Claude Code 中执行：
+  1. 读取文件内容
+  2. 调用 mcp__lark-mcp__docx_builtin_import
+  3. 调用 mcp__lark-mcp__drive_v1_permissionMember_create
+`);
+    process.exit(0);
+  }
+
+  const filePath = path.resolve(params.file);
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`❌ 文件不存在: ${filePath}`);
+    process.exit(1);
+  }
+
+  // 解析分享邮箱
+  let shareEmails = DEFAULT_SHARE_EMAILS;
+  if (params.share) {
+    shareEmails = params.share.split(',').map(e => e.trim());
+  }
+
+  // 读取文件内容
+  const content = fs.readFileSync(filePath, 'utf-8');
+
+  // 提取元数据
+  const metaMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  const meta = {};
+  if (metaMatch) {
+    metaMatch[1].split('\n').forEach(line => {
+      const [key, value] = line.split(':').map(s => s.trim());
+      if (key && value) meta[key] = value;
+    });
+  }
+
+  const fileName = `班主任AI教练评估-${meta.course || '未知课程'}-${meta.teacher || '未知班主任'}`;
+
+  // 输出发布指令
+  console.log('\n========================================');
+  console.log('📋 请在 Claude Code 中执行以下操作：');
+  console.log('========================================\n');
+  console.log(`1. 发布文档到飞书`);
+  console.log(`   文件名: ${fileName}`);
+  console.log(`   内容来源: ${path.basename(filePath)}`);
+  console.log(`\n2. 添加协作者权限`);
+  console.log(`   分享给: ${shareEmails.join(', ')}`);
+  console.log('\n========================================');
+  console.log('💡 或者直接说:');
+  console.log('========================================\n');
+  console.log(`"发布到飞书，分享给 ${shareEmails.join(', ')}"\n`);
+
+  // 导出数据供外部使用
+  module.exports = {
+    filePath,
+    fileName,
+    content,
+    shareEmails,
+    meta
+  };
+}
+
+main();

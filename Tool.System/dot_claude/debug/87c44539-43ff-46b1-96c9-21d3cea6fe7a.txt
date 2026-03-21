@@ -1,0 +1,59 @@
+2026-02-20T02:00:11.349Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-20T02:00:11.350Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-20T02:00:11.350Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-20T02:00:11.350Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-20T02:00:11.354Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-20T02:00:11.363Z [DEBUG] Loading plugin superpowers from source: {"source":"url","url":"https://github.com/obra/superpowers.git"}
+2026-02-20T02:00:11.363Z [DEBUG] No version found for superpowers@claude-plugins-official, using 'unknown'
+2026-02-20T02:00:11.363Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/obra/superpowers.git"} to temporary path /Users/comdir/.claude/plugins/cache/temp_git_1771552811363_50t3lv
+2026-02-20T02:00:11.376Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-20T02:00:11.376Z [DEBUG] [STARTUP] Running setup()...
+2026-02-20T02:00:11.379Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-20T02:00:11.390Z [DEBUG] Error log sink initialized
+2026-02-20T02:00:11.393Z [DEBUG] [STARTUP] setup() completed in 17ms
+2026-02-20T02:00:11.393Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-20T02:00:11.430Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-02-20T02:00:11.439Z [DEBUG] Loaded 15 unique skills (15 unconditional, 0 conditional, managed: 0, user: 14, project: 0, additional: 0, legacy commands: 1)
+2026-02-20T02:01:20.397Z [DEBUG] Cloned repository from https://github.com/obra/superpowers.git to /Users/comdir/.claude/plugins/cache/temp_git_1771552811363_50t3lv
+2026-02-20T02:01:20.399Z [DEBUG] Successfully cached plugin superpowers to /Users/comdir/.claude/plugins/cache/superpowers
+2026-02-20T02:01:20.399Z [DEBUG] Using manifest version for superpowers@claude-plugins-official: 4.3.0
+2026-02-20T02:01:20.400Z [DEBUG] Plugin superpowers@claude-plugins-official version 4.3.0 already cached at /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0
+2026-02-20T02:01:20.419Z [DEBUG] Loaded hooks from standard location for plugin superpowers: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/hooks/hooks.json
+2026-02-20T02:01:20.419Z [DEBUG] Found 1 plugins (1 enabled, 0 disabled)
+2026-02-20T02:01:20.419Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-20T02:01:20.419Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-20T02:01:20.419Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-20T02:01:20.426Z [DEBUG] Loading hooks from plugin: superpowers
+2026-02-20T02:01:20.426Z [DEBUG] Registered 1 hooks from 1 plugins
+2026-02-20T02:01:20.427Z [DEBUG] Loaded 1 agents from plugin superpowers default directory
+2026-02-20T02:01:20.427Z [DEBUG] Total plugin agents loaded: 1
+2026-02-20T02:01:20.427Z [DEBUG] Loaded 14 skills from plugin superpowers default directory
+2026-02-20T02:01:20.427Z [DEBUG] Total plugin skills loaded: 14
+2026-02-20T02:01:20.427Z [DEBUG] Loaded 3 commands from plugin superpowers default directory
+2026-02-20T02:01:20.427Z [DEBUG] Total plugin commands loaded: 3
+2026-02-20T02:01:20.428Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-20T02:01:20.428Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-20T02:01:20.428Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-20T02:01:20.428Z [DEBUG] getSkills returning: 15 skill dir commands, 14 plugin skills, 2 bundled skills
+2026-02-20T02:01:20.430Z [DEBUG] [STARTUP] Commands and agents loaded in 69036ms
+2026-02-20T02:01:20.430Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-20T02:01:20.430Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-20T02:01:20.430Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-20T02:01:20.430Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T02:01:20.430Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T02:01:20.455Z [DEBUG] [STARTUP] MCP configs loaded in 69101ms
+2026-02-20T02:01:20.461Z [DEBUG] MCP server "lark-mcp": Starting connection with timeout of 30000ms
+2026-02-20T02:01:20.462Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T02:01:20.472Z [DEBUG] Total LSP servers loaded: 0
+2026-02-20T02:01:20.472Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-20T02:01:20.472Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-20T02:01:20.472Z [DEBUG] LSP server manager initialized successfully
+2026-02-20T02:01:20.472Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-20T02:01:20.509Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-20T02:01:20.511Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a54; cc_entrypoint=sdk-cli; cch=00000;
+2026-02-20T02:01:20.512Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T02:01:20.512Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T02:01:20.513Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T02:01:21.097Z [ERROR] API error (attempt 1/11): 403 403 {"error":{"type":"forbidden","message":"Request not allowed"}}
+2026-02-20T02:01:21.123Z [ERROR] Error in API request: 403 {"error":{"type":"forbidden","message":"Request not allowed"}}
+2026-02-20T02:01:21.126Z [DEBUG] Failed to fetch org penguin mode status, defaulting to disabled

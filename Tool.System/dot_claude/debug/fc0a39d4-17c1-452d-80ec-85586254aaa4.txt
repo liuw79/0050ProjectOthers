@@ -1,0 +1,63 @@
+2026-02-24T05:38:04.125Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-24T05:38:04.126Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-24T05:38:04.126Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-24T05:38:04.126Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-24T05:38:04.131Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-24T05:38:04.140Z [DEBUG] Loading plugin superpowers from source: {"source":"url","url":"https://github.com/obra/superpowers.git"}
+2026-02-24T05:38:04.140Z [DEBUG] No version found for superpowers@claude-plugins-official, using 'unknown'
+2026-02-24T05:38:04.140Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/obra/superpowers.git"} to temporary path /Users/comdir/.claude/plugins/cache/temp_git_1771911484140_n0purq
+2026-02-24T05:38:04.153Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-24T05:38:04.153Z [DEBUG] [STARTUP] Running setup()...
+2026-02-24T05:38:04.156Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-24T05:38:04.170Z [DEBUG] Error log sink initialized
+2026-02-24T05:38:04.173Z [DEBUG] [STARTUP] setup() completed in 20ms
+2026-02-24T05:38:04.173Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-24T05:38:04.211Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-02-24T05:38:04.222Z [DEBUG] Loaded 16 unique skills (16 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 1)
+2026-02-24T05:39:35.103Z [ERROR] Failed to cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771911484140_n0purq'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-24T05:39:35.103Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-02-24T05:39:35.103Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-02-24T05:39:35.103Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771911484140_n0purq'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-24T05:39:35.103Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-02-24T05:39:35.103Z [DEBUG] Total plugin skills loaded: 0
+2026-02-24T05:39:35.103Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771911484140_n0purq'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-24T05:39:35.103Z [DEBUG] Total plugin commands loaded: 0
+2026-02-24T05:39:35.104Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-02-24T05:39:35.104Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1771911484140_n0purq'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Error in the HTTP2 framing layer
+2026-02-24T05:39:35.104Z [DEBUG] Total plugin agents loaded: 0
+2026-02-24T05:39:35.104Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-24T05:39:35.104Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-24T05:39:35.104Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-24T05:39:35.104Z [DEBUG] getSkills returning: 16 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-24T05:39:35.107Z [DEBUG] [STARTUP] Commands and agents loaded in 90934ms
+2026-02-24T05:39:35.107Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-24T05:39:35.107Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-24T05:39:35.107Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-24T05:39:35.108Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-24T05:39:35.108Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-24T05:39:35.139Z [DEBUG] Total LSP servers loaded: 0
+2026-02-24T05:39:35.140Z [DEBUG] [STARTUP] MCP configs loaded in 91009ms
+2026-02-24T05:39:35.145Z [DEBUG] MCP server "lark-mcp": Starting connection with timeout of 30000ms
+2026-02-24T05:39:35.147Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-24T05:39:35.147Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-24T05:39:35.147Z [DEBUG] LSP server manager initialized successfully
+2026-02-24T05:39:35.147Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-24T05:39:35.147Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-24T05:39:35.210Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-24T05:39:35.211Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a54; cc_entrypoint=sdk-cli; cch=00000;
+2026-02-24T05:39:35.212Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-24T05:39:35.212Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-24T05:39:35.213Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-24T05:39:36.351Z [DEBUG] Failed to fetch org penguin mode status, defaulting to disabled
+2026-02-24T05:39:36.352Z [ERROR] API error (attempt 1/11): 403 403 {"error":{"type":"forbidden","message":"Request not allowed"}}
+2026-02-24T05:39:36.352Z [ERROR] Error in API request: 403 {"error":{"type":"forbidden","message":"Request not allowed"}}
+2026-02-24T05:39:36.357Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.92364.1771911576357
+2026-02-24T05:39:36.357Z [DEBUG] Preserving file permissions: 100600
+2026-02-24T05:39:36.357Z [DEBUG] Temp file written successfully, size: 16639 bytes
+2026-02-24T05:39:36.357Z [DEBUG] Applied original permissions to temp file
+2026-02-24T05:39:36.357Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.92364.1771911576357 to /Users/comdir/.claude.json
+2026-02-24T05:39:36.357Z [DEBUG] File /Users/comdir/.claude.json written atomically

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS样式练习</title>
+    <style>
+        /* 基础样式 - 你可以修改这些样式来练习 */
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        
+        /* 练习1: 修改标题样式 */
+        .title {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 练习2: 卡片样式 */
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* 练习3: 按钮样式 */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-success {
+            background-color: #27ae60;
+        }
+        
+        .button-success:hover {
+            background-color: #229954;
+        }
+        
+        .button-warning {
+            background-color: #f39c12;
+        }
+        
+        .button-warning:hover {
+            background-color: #e67e22;
+        }
+        
+        /* 练习4: 列表样式 */
+        .custom-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .custom-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .custom-list li:nth-child(even) {
+            background-color: #d5dbdb;
+        }
+        
+        /* 练习5: 网格布局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background-color: #e8f4fd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+        }
+        
+        /* 练习6: 文字效果 */
+        .text-gradient {
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* 练习7: 动画效果 */
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            margin: 20px auto;
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* 练习提示区域 */
+        .practice-hint {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .practice-hint h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .practice-hint p {
+            color: #856404;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">CSS样式练习场</h1>
+    
+    <div class="card">
+        <h2>欢迎来到CSS练习</h2>
+        <p>这个页面包含了各种CSS样式示例，你可以通过修改CSS代码来练习不同的样式效果。</p>
+        
+        <div class="practice-hint">
+            <h3>练习建议</h3>
+            <p>打开浏览器的开发者工具（F12），在Elements面板中实时修改CSS样式，观察效果变化。</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>按钮样式练习</h2>
+        <p>尝试修改按钮的颜色、大小、圆角等属性：</p>
+        <button class="button">普通按钮</button>
+        <button class="button button-success">成功按钮</button>
+        <button class="button button-warning">警告按钮</button>
+    </div>
+    
+    <div class="card">
+        <h2>列表样式练习</h2>
+        <p>自定义列表样式，每个项目都有不同的背景色：</p>
+        <ul class="custom-list">
+            <li>HTML - 网页结构</li>
+            <li>CSS - 样式设计</li>
+            <li>JavaScript - 交互功能</li>
+            <li>响应式设计 - 适配设备</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2>网格布局练习</h2>
+        <p>使用CSS Grid创建响应式布局：</p>
+        <div class="grid-container">
+            <div class="grid-item">项目 1</div>
+            <div class="grid-item">项目 2</div>
+            <div class="grid-item">项目 3</div>
+            <div class="grid-item">项目 4</div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>文字效果练习</h2>
+        <div class="text-gradient">渐变文字效果</div>
+        <p>尝试修改渐变颜色和方向。</p>
+    </div>
+    
+    <div class="card">
+        <h2>动画效果练习</h2>
+        <p>CSS动画让页面更生动：</p>
+        <div class="animated-box"></div>
+        <p style="text-align: center;">弹跳的圆形</p>
+    </div>
+    
+    <div class="card">
+        <div class="practice-hint">
+            <h3>练习任务</h3>
+            <p>尝试完成以下练习：</p>
+            <ul>
+                <li>修改页面的背景颜色</li>
+                <li>改变卡片的阴影效果</li>
+                <li>调整按钮的悬停效果</li>
+                <li>创建新的动画效果</li>
+                <li>添加更多的颜色和样式</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高维学堂公开课运营复盘</title>
+    <style>
+        :root { --primary-color: #0056b3; --bg-color: #f7f9fc; --text-main: #333; --text-light: #666; --accent-green: #28a745; --accent-red: #dc3545; --card-bg: #fff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; margin: 0; padding: 15px; font-size: 15px; }
+        .container { max-width: 600px; margin: 0 auto; background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 20px; }
+        h1 { font-size: 1.3rem; color: var(--primary-color); text-align: center; border-bottom: 2px solid #edf2f7; padding-bottom: 15px; margin-top: 0; }
+        h2 { font-size: 1.1rem; color: var(--primary-color); margin-top: 25px; border-left: 4px solid var(--primary-color); padding-left: 10px; }
+        .score-box { text-align: center; background: #edf2f7; border-radius: 8px; padding: 15px; margin: 20px 0; }
+        .score { font-size: 2rem; font-weight: bold; color: var(--primary-color); }
+        .highlight { background-color: #e6f2ff; padding: 2px 4px; border-radius: 4px; }
+        .good { color: var(--accent-green); font-weight: 500; }
+        .improve { color: var(--accent-red); font-weight: 500; }
+        ul { padding-left: 20px; margin-bottom: 0; }
+        li { margin-bottom: 10px; }
+        .coach-note { background: #fff8e6; border-left: 4px solid #ffc107; padding: 12px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 0.95rem; color: #555; }
+        .footer { text-align: center; font-size: 12px; color: #999; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📝 公开课运营复盘反馈</h1>
+
+    <p><strong>阿左</strong>，你好呀！我是你的HRBP兼运营教练。听完了你这两天的开场和结尾录音，能深刻感受到你为这次课程做出的精心准备。你的声音极具亲和力，控场也很自然，给同学们营造了一个非常温暖、放松的学习场域。今天我们一起做个复盘，看看哪里还可以打磨得更亮，帮你更好地赋能企业同学。</p>
+
+    <div class="score-box">
+        <div>综合评估得分</div>
+        <div class="score">74分</div>
+        <div style="font-size: 0.85rem; color: var(--text-light);">
+            （教练注：因触碰了"U方法工具/S生动案例缺失"及"邀约不够坚决"的红线，分数遗憾止步于75分基准线之下）
+        </div>
+    </div>
+
+    <h2>🎯 第一天：高维与产品开场</h2>
+    <ul>
+        <li><span class="good">【亮点】高维五句话：</span>你讲述得非常流畅！结构清晰，从我们是谁、实战标准到统一语言，逻辑递进感很好，特别致敬了几家学习型组织，给足了客户情绪价值。</li>
+        <li><span class="good">【亮点】团建破冰：</span>指令非常清晰！"关于自己+关于高维"的双重设置很好，高低年级传帮带的引导非常棒，有效调动了现场氛围。</li>
+        <li><span class="good">【亮点】产品五句话（F/O/C）：</span>F（痛点）、O（背书）和C（价值）部分你讲得极好！非常自然地引出了张鹏老师和课程的核心价值，没有生硬背书的感觉。</li>
+        <li><span class="improve">【需赋能】产品五句话（U/S缺失）：</span>在讲完核心价值后，你直接过渡到了请出老师，<span class="highlight">遗憾遗漏了U（工具：三层业务检视、三中心等）和S（往期学友案例反馈）</span>。工具能给学员"抓手"感，案例能给学员"信心"。</li>
+    </ul>
+
+    <h2>🌅 第二天：结尾升华与邀约</h2>
+    <ul>
+        <li><span class="good">【亮点】结尾总结：</span>你在结尾处很好地串联了老师讲的"三层业务检视"和"三中心作战室"，首尾呼应，知识点提炼做得很用心。</li>
+        <li><span class="improve">【需赋能】课评邀约：</span>你提到"大家还没有提交我们课评的，也诚挚的邀请大家..."，语态偏向<span class="highlight">被动和请求</span>。作为高维的专业班主任，我们要理直气壮地赋能。可以尝试转换语气："请同学们现在拿出手机...你们的真实反馈是我们不断迭代的动力，请务必留下你的智慧声音"，给出明确指令，态度要坚决。</li>
+    </ul>
+
+    <h2>🎵 全局：口语节奏与气场</h2>
+    <ul>
+        <li>你的亲和力是天然优势，节奏感整体是不错的。不过在段落衔接时，"其实"、"然后"、"的话"等口头禅稍显密集。下次可以尝试用<span class="highlight">"停顿"</span>来代替这些词，让你的气场更强大。</li>
+    </ul>
+
+    <div class="coach-note">
+        <strong>💡 教练寄语：</strong><br>
+        做班主任就像是带兵打仗的政委，你已经具备了极好的温度和同理心。接下来，只需要把"产品交付的完整度（FOCUS五要素闭环）"和"关键指令的坚决度（课评邀约）"稍微强化一下，你的场域势能一定会成倍放大。
+    </div>
+
+    <p>期待在下一期的课堂上，看到一个更加自信、更加专业笃定的你，一起加油，<strong>阿左</strong>！</p>
+
+    <div class="footer">Powered by 高维学堂 AI教练系统 | V6 专业洞察+温度称呼版</div>
+</div>
+</body>
+</html>

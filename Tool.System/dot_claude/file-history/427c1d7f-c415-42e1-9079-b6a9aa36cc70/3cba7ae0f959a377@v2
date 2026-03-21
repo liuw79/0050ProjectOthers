@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+    .score-detail { font-size: 13px; color: #666; padding: 10px 0 12px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 8px 10px; border-radius: 4px; display: block; margin-top: 8px; font-style: italic; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-big">45<span style="font-size:24px;color:#888;">/100</span></div>
+    <div class="score-label">业务优化与利润提升 - 主持复盘</div>
+    <div class="summary">
+        <strong>教练寄语：</strong>阿左你好！开场时对"高维五句话"的诠释非常流畅完整，能感受到你对高维理念的深度认同。我理解在开场时，你可能是为了尽快把时间交给老师，让大家直接进入学习状态，从而大幅压缩了对老师和课程内容的铺垫。作为企业成长陪跑伙伴，如果我们能在开场时顺势抛出课程核心价值与老师的实战背景，将极大地拉升同学们对这门课的"信任感与饥渴度"，期待下次看到你更具场域势能的主持！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、 分项评分</h2>
+
+    <div class="score-row">
+        <span>高维介绍 (30%)</span>
+        <strong>28 / 30</strong>
+    </div>
+    <div class="score-detail">
+        表达流畅，逻辑清晰。完整传达了实战商学院、三重标准、通关攻略以及"统一语言"的核心理念，特别致敬学习型组织的动作做得很棒。
+    </div>
+
+    <div class="score-row">
+        <span>产品介绍 (30%)</span>
+        <strong>0 / 30</strong>
+    </div>
+    <div class="score-detail">
+        这里我们做了一个较大的取舍，跳过了对张鹏老师的信任背书以及课程核心价值（5大经营痛点、工具库）的介绍。作为高阶顾问，若能提前为同学们描绘出这两天能拿走的"武器"，能建立更强的学习期待。<br>
+        <div class="suggested-script">
+            【建议话术】：今天这门课，就是帮大家精准定位经营黑洞...我们特别请到结构性降本顶尖高手张鹏老师...他将带大家聚焦5大痛点，交付经营驾驶舱等20多个实战工具，学完带回企业立刻就能落地。
+        </div>
+    </div>
+
+    <div class="score-row">
+        <span>团建破冰 (5%)</span>
+        <strong>2 / 5</strong>
+    </div>
+    <div class="score-detail">
+        介绍了服务团队和周边课程，信息传递准确。若能加上一些对全场同学情绪的调动（例如：请大家和同桌击个掌），场域预热效果会更好。
+    </div>
+
+    <div class="score-row">
+        <span>邀约课评 (15%)</span>
+        <strong>3 / 15</strong>
+    </div>
+    <div class="score-detail">
+        引导了大家在复盘群输出收获，这是一个好动作！但未能明确向大家邀约填写"官方课程评价表"。课评是我们迭代产品的重要数据，若能以"共建者"的视角邀请大家反馈，会让运营闭环更扎实。<br>
+        <div class="suggested-script">
+            【建议话术】：高维的每一门课都在不断迭代，大家的真实反馈就是我们优化的方向。请大家花1分钟时间扫描屏幕上的二维码填写课评，您的每一个建议我们都会认真倾听。
+        </div>
+    </div>
+
+    <div class="score-row">
+        <span>结尾升华 (10%)</span>
+        <strong>4 / 10</strong>
+    </div>
+    <div class="score-detail">
+        总结略显简短（认知升级到落地）。若能紧扣这门课"利润与现金流"的主题进行拔高，更能激发企业家们回去立即行动决心。<br>
+        <div class="suggested-script">
+            【建议话术】：当下的竞争环境下，现金流和利润就是企业的生命线。事实证明，利润不是硬省出来的，而是科学设计出来的，期待大家回去打胜仗！
+        </div>
+    </div>
+
+    <div class="score-row">
+        <span>口语节奏 (10%)</span>
+        <strong>8 / 10</strong>
+    </div>
+    <div class="score-detail">
+        整体语速适中，语气亲切，展现了班主任良好的服务姿态。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、 高阶加分项</h2>
+    <div class="bonus-detail" style="text-align: center; color: #888;">无</div>
+</div>
+
+<div class="card">
+    <h2>三、 AI教练建议 (Top 3)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 补齐产品F-O-C-U-S，做"懂业务"的班主任</div>
+        <div class="feedback-content">
+            企业家不仅看重高维的品牌，更关心"我这两天能解决什么具体问题"。建议下次主持时，务必将【定性开场、信任背书、核心价值、方法工具、生动案例】五句话说透。这不仅是报幕，更是你在客户心中建立"专业陪伴者"人设的关键时刻。
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 强化课评邀约，坚决完成运营动作</div>
+        <div class="feedback-content">
+            私信反馈虽然亲切，但无法替代系统的课评数据。作为懂运营的主持人，要理直气壮且真诚地要求大家填写评估表，将其作为课程结束不可或缺的仪式感。
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 结尾拔高，与企业家的痛点同频</div>
+        <div class="feedback-content">
+            结束语是整场培训留给客户的最后印象。建议结合本堂课"业务优化与利润提升"的核心，用掷地有声的行业洞察或课程金句收尾，让同学们带着满满的力量感走出教室。
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    阿左，你的亲和力和对高维文化的传递已经做得很棒。主持不仅仅是串场，更是班主任向企业家展示专业度的最佳舞台。把产品价值讲透，把收尾做扎实，期待你在下一次开班时，展现出更强大的场域掌控力！加油！
+</div>
+
+<div class="footer">
+    Model: Gaowei AI Coach | Transcript & Standard Alignments applied from: <br>
+    <code>/GW.Content/五句话介绍/高维学堂5句话介绍.md</code><br>
+    <code>/GW.Content/五句话介绍/业务优化与利润提升-主持词.md</code>
+</div>
+
+</body>
+</html>

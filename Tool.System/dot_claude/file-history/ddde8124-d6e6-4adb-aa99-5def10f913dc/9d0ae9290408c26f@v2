@@ -1,0 +1,49 @@
+# Progress - skill-coach
+
+> **规则：** 本文件仅记录最新有效信息。如有版本迭代，只保留最新版本，删除旧版本以避免上下文混乱。
+
+---
+
+## 2026-03-19 优化记录
+
+### 已完成
+
+| 任务 | 文件 | 状态 |
+|------|------|------|
+| 邮箱配置化 | `coach.js` | ✅ 新增 `FEISHU_EMAILS` 常量 |
+| 路径自检测 | `coach.js` | ✅ 自动检测脚本目录 |
+| 错误重试 | `coach.js` | ✅ API 调用失败自动重试 1 次 |
+| 飞书发布封装 | `publish.js` | ✅ 新建 |
+| 提示词优化 | V8 | ✅ 评分改为一行一项 |
+
+### 邮箱配置
+
+```javascript
+const FEISHU_EMAILS = {
+  liuwei: 'liuwei@gaowei.com',
+  cbr: 'cbr@gaowei.com',
+};
+```
+
+### 使用流程
+
+```bash
+# 1. 生成评估报告
+node coach.js --course "业务管理者养成" --teacher "碧容" --date "260314"
+
+# 2. 在 Claude Code 中发布
+> 发布到飞书，分享给 liuwei@gaowei.com, cbr@gaowei.com
+```
+
+---
+
+## 多模型 API（必须带版本号）
+
+| 别名 | 实际模型 |
+|------|----------|
+| `gemini3.1` | gemini-3.1-pro-preview |
+| `gpt5.4` | gpt-5.4 |
+
+---
+
+*更新时间：2026-03-19*

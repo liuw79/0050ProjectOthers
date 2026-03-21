@@ -1,0 +1,10 @@
+Host op.gaowei.com
+    User root
+    IdentityFile ~/.ssh/id_rsa_gw
+    PreferredAuthentications publickey,password
+    PasswordAuthentication yes
+    PubkeyAuthentication yes
+Host git.code.tencent.com
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    IdentityFile ~/.ssh/id_rsa_tencent_2048

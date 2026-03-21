@@ -1,0 +1,638 @@
+/**
+ * H5 课程详情页专用样式
+ * 品牌色：#0099FF 主色 / #F08519 强调色
+ * 可导出供微信端参考
+ */
+
+/* ========== H5 根变量 ========== */
+:root {
+  /* 品牌色 */
+  --h5-primary: #0099FF;
+  --h5-primary-dark: #007ACC;
+  --h5-primary-light: #33AAFF;
+  --h5-accent: #F08519;
+  --h5-accent-dark: #D9730F;
+
+  /* 文字色 */
+  --h5-text-dark: #333333;
+  --h5-text-gray: #666666;
+  --h5-text-light: #999999;
+  --h5-text-white: #FFFFFF;
+
+  /* 背景色 */
+  --h5-bg-white: #FFFFFF;
+  --h5-bg-light: #F5F5F5;
+  --h5-bg-lighter: #FAFAFA;
+
+  /* 边框色 */
+  --h5-border: #E5E5E5;
+  --h5-border-light: #F0F0F0;
+
+  /* 安全区域 */
+  --h5-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --h5-header-height: 44px;
+  --h5-bottom-bar-height: calc(56px + var(--h5-safe-bottom));
+}
+
+/* ========== H5 基础重置 ========== */
+.h5-page {
+  min-height: 100vh;
+  background-color: var(--h5-bg-light);
+  padding-bottom: var(--h5-bottom-bar-height);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 隐藏 PC 端的 Header 和 Footer */
+.h5-page .pc-header,
+.h5-page .pc-footer {
+  display: none !important;
+}
+
+/* ========== H5 渐变背景 ========== */
+.h5-gradient-bg {
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+}
+
+.h5-gradient-accent {
+  background: linear-gradient(135deg, var(--h5-accent) 0%, var(--h5-accent-dark) 100%);
+}
+
+.h5-gradient-text {
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== H5 按钮样式 ========== */
+.h5-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.h5-btn-primary {
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  color: var(--h5-text-white);
+}
+
+.h5-btn-primary:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.h5-btn-accent {
+  background: linear-gradient(135deg, var(--h5-accent) 0%, var(--h5-accent-dark) 100%);
+  color: var(--h5-text-white);
+}
+
+.h5-btn-accent:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.h5-btn-outline {
+  background: transparent;
+  border: 1px solid var(--h5-primary);
+  color: var(--h5-primary);
+}
+
+.h5-btn-outline:active {
+  background: var(--h5-primary);
+  color: var(--h5-text-white);
+}
+
+/* ========== H5 卡片样式 ========== */
+.h5-card {
+  background: var(--h5-bg-white);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.h5-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--h5-text-dark);
+  margin-bottom: 12px;
+}
+
+/* ========== H5 标签样式 ========== */
+.h5-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.h5-tag-primary {
+  background: rgba(0, 153, 255, 0.1);
+  color: var(--h5-primary);
+}
+
+.h5-tag-accent {
+  background: rgba(240, 133, 25, 0.1);
+  color: var(--h5-accent);
+}
+
+.h5-tag-gray {
+  background: var(--h5-bg-light);
+  color: var(--h5-text-gray);
+}
+
+/* ========== H5 分割线 ========== */
+.h5-divider {
+  height: 1px;
+  background: var(--h5-border-light);
+  margin: 16px 0;
+}
+
+.h5-divider-thick {
+  height: 8px;
+  background: var(--h5-bg-light);
+}
+
+/* ========== H5 头部 ========== */
+.h5-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--h5-header-height);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 100;
+}
+
+.h5-header-white {
+  background: var(--h5-bg-white);
+  border-bottom: 1px solid var(--h5-border-light);
+}
+
+.h5-header-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--h5-text-white);
+  transition: background 0.3s ease;
+}
+
+.h5-header-btn:active {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.h5-header-white .h5-header-btn {
+  background: var(--h5-bg-light);
+  color: var(--h5-text-dark);
+}
+
+/* ========== H5 底部操作栏 ========== */
+.h5-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--h5-bottom-bar-height);
+  padding-bottom: var(--h5-safe-bottom);
+  background: var(--h5-bg-white);
+  border-top: 1px solid var(--h5-border-light);
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  z-index: 100;
+}
+
+.h5-bottom-bar-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  color: var(--h5-text-gray);
+  font-size: 10px;
+}
+
+.h5-bottom-bar-action-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.h5-bottom-bar-main {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.h5-bottom-bar-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ========== H5 Tab 导航 ========== */
+.h5-tabs {
+  display: flex;
+  background: var(--h5-bg-white);
+  border-bottom: 1px solid var(--h5-border-light);
+  position: sticky;
+  top: var(--h5-header-height);
+  z-index: 50;
+}
+
+.h5-tab {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.h5-tab-active {
+  color: var(--h5-primary);
+  font-weight: 600;
+}
+
+.h5-tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: var(--h5-primary);
+  border-radius: 2px;
+}
+
+/* ========== H5 价格样式 ========== */
+.h5-price {
+  display: flex;
+  align-items: baseline;
+}
+
+.h5-price-symbol {
+  font-size: 14px;
+  color: var(--h5-accent);
+  font-weight: 500;
+}
+
+.h5-price-value {
+  font-size: 28px;
+  color: var(--h5-accent);
+  font-weight: 700;
+}
+
+.h5-price-unit {
+  font-size: 12px;
+  color: var(--h5-text-light);
+  margin-left: 4px;
+}
+
+/* ========== H5 列表项 ========== */
+.h5-list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--h5-border-light);
+}
+
+.h5-list-item:last-child {
+  border-bottom: none;
+}
+
+.h5-list-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  color: var(--h5-primary);
+}
+
+.h5-list-content {
+  flex: 1;
+}
+
+.h5-list-title {
+  font-size: 14px;
+  color: var(--h5-text-dark);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.h5-list-desc {
+  font-size: 13px;
+  color: var(--h5-text-light);
+  line-height: 1.5;
+}
+
+/* ========== H5 Hero 区域 ========== */
+.h5-hero {
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  padding: calc(var(--h5-header-height) + 20px) 16px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.h5-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.h5-hero-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--h5-text-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.h5-hero-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+}
+
+.h5-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.h5-hero-meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.h5-hero-meta-icon {
+  margin-right: 6px;
+}
+
+/* ========== H5 元信息条 ========== */
+.h5-meta-bar {
+  display: flex;
+  background: var(--h5-bg-white);
+  padding: 12px 16px;
+  gap: 20px;
+}
+
+.h5-meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--h5-text-gray);
+}
+
+.h5-meta-icon {
+  color: var(--h5-primary);
+  margin-right: 6px;
+}
+
+/* ========== H5 内容区块 ========== */
+.h5-section {
+  background: var(--h5-bg-white);
+  margin-bottom: 12px;
+}
+
+.h5-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--h5-border-light);
+}
+
+.h5-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--h5-text-dark);
+}
+
+.h5-section-more {
+  font-size: 13px;
+  color: var(--h5-text-light);
+}
+
+.h5-section-content {
+  padding: 16px;
+}
+
+/* ========== H5 导师卡片 ========== */
+.h5-mentor-card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.h5-mentor-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--h5-text-white);
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.h5-mentor-info {
+  flex: 1;
+}
+
+.h5-mentor-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--h5-text-dark);
+  margin-bottom: 4px;
+}
+
+.h5-mentor-title {
+  font-size: 13px;
+  color: var(--h5-text-gray);
+  margin-bottom: 8px;
+}
+
+.h5-mentor-desc {
+  font-size: 13px;
+  color: var(--h5-text-light);
+  line-height: 1.5;
+}
+
+/* ========== H5 反馈卡片 ========== */
+.h5-feedback-card {
+  background: var(--h5-bg-light);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.h5-feedback-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.h5-feedback-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--h5-border);
+  margin-right: 10px;
+}
+
+.h5-feedback-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--h5-text-dark);
+}
+
+.h5-feedback-company {
+  font-size: 12px;
+  color: var(--h5-text-light);
+}
+
+.h5-feedback-content {
+  font-size: 13px;
+  color: var(--h5-text-gray);
+  line-height: 1.6;
+}
+
+/* ========== H5 模块列表 ========== */
+.h5-module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.h5-module-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.h5-module-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--h5-primary);
+  color: var(--h5-text-white);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.h5-module-content {
+  flex: 1;
+}
+
+.h5-module-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--h5-text-dark);
+  margin-bottom: 4px;
+}
+
+.h5-module-desc {
+  font-size: 13px;
+  color: var(--h5-text-gray);
+  line-height: 1.5;
+}
+
+/* ========== H5 须知列表 ========== */
+.h5-notice-list {
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  line-height: 1.8;
+}
+
+.h5-notice-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.h5-notice-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--h5-primary);
+}
+
+/* ========== 动画 ========== */
+@keyframes h5-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.h5-animate-slide-up {
+  animation: h5-slide-up 0.3s ease-out forwards;
+}
+
+/* ========== 工具类 ========== */
+.h5-text-center { text-align: center; }
+.h5-text-left { text-align: left; }
+.h5-text-right { text-align: right; }
+
+.h5-font-bold { font-weight: 700; }
+.h5-font-medium { font-weight: 500; }
+
+.h5-mt-8 { margin-top: 8px; }
+.h5-mt-12 { margin-top: 12px; }
+.h5-mt-16 { margin-top: 16px; }
+.h5-mb-8 { margin-bottom: 8px; }
+.h5-mb-12 { margin-bottom: 12px; }
+.h5-mb-16 { margin-bottom: 16px; }
+
+.h5-px-16 { padding-left: 16px; padding-right: 16px; }
+.h5-py-16 { padding-top: 16px; padding-bottom: 16px; }
+
+.h5-rounded-8 { border-radius: 8px; }
+.h5-rounded-12 { border-radius: 12px; }
+.h5-rounded-full { border-radius: 9999px; }
+
+.h5-flex { display: flex; }
+.h5-flex-col { flex-direction: column; }
+.h5-items-center { align-items: center; }
+.h5-justify-between { justify-content: space-between; }
+.h5-gap-8 { gap: 8px; }
+.h5-gap-12 { gap: 12px; }
+.h5-gap-16 { gap: 16px; }

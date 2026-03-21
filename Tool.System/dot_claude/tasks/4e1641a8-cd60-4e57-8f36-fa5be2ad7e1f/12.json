@@ -1,0 +1,9 @@
+{
+  "id": "12",
+  "subject": "代理基类和管理器 (Task 6)",
+  "description": "实现 Agent 基类、AgentManager、InitializerAgent 和 CodingAgent",
+  "activeForm": "实现代理基类和代理管理器中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,6 @@
+.docs_tmp
+*.swp
+hammerspoon/
+annotations/
+annotations.json
+**/.DS_Store

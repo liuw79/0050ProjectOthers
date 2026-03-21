@@ -1,0 +1,127 @@
+// 全局样式文件
+@import './variables.scss';
+@import './mixins.scss';
+@import './reset.scss';
+@import './common.scss';
+@import './components.scss';
+@import './utilities.scss';
+
+// NProgress样式覆盖
+#nprogress {
+  .bar {
+    background: var(--el-color-primary) !important;
+    height: 3px !important;
+  }
+  
+  .peg {
+    box-shadow: 0 0 10px var(--el-color-primary), 0 0 5px var(--el-color-primary) !important;
+  }
+  
+  .spinner {
+    display: none !important;
+  }
+}
+
+// Element Plus 样式覆盖
+.el-loading-mask {
+  background-color: rgba(255, 255, 255, 0.8);
+  
+  .dark & {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+// 自定义滚动条
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--el-bg-color-page);
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--el-border-color-light);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--el-border-color);
+    }
+  }
+}
+
+// 响应式布局
+@media (max-width: 768px) {
+  .el-table {
+    font-size: 12px;
+  }
+  
+  .el-form-item__label {
+    font-size: 13px;
+  }
+  
+  .el-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+// 打印样式
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+// 动画效果
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-up-enter-from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.slide-up-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-left-enter-from {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.slide-left-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}

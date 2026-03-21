@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+  <h1>测试页面</h1>
+  <p id="output">点击按钮开始</p>
+  <button onclick="show()">显示句子</button>
+  <div id="content"></div>
+
+  <script>
+    var sentences = [
+      "第一句：我们谁都不能构成在人人眼中都一样的物质的整体。",
+      "第二句：我们的社会人格，其实是别人的思想创造出来的。",
+      "第三句：即使从日常生活中最微不足道的小事来看也是如此。"
+    ];
+    var index = 0;
+
+    function show() {
+      if (index < sentences.length) {
+        var p = document.createElement("p");
+        p.innerText = sentences[index];
+        p.style.fontSize = "20px";
+        p.style.margin = "20px";
+        document.getElementById("content").appendChild(p);
+        document.getElementById("output").innerText = "已显示 " + (index + 1) + " / " + sentences.length;
+        index++;
+      } else {
+        document.getElementById("output").innerText = "全部显示完毕!";
+      }
+    }
+  </script>
+</body>
+</html>

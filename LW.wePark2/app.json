@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3281FF",
+    "navigationBarTitleText": "停车记录",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3281FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "停车",
+        "iconPath": "images/park.png",
+        "selectedIconPath": "images/park-active.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.camera": {
+      "desc": "用于拍摄停车位置照片"
+    }
+  },
+  "__usePrivacyCheck__": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+} 

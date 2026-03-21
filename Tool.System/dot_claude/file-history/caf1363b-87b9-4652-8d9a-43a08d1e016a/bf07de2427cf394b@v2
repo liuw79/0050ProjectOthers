@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+    h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+    .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+    .total-score { font-size: 36px; font-weight: bold; color: #333; }
+    .summary { font-size: 16px; margin-top: 10px; color: #555; }
+    .critical { color: #d9534f; font-weight: bold; }
+    .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .table-scores td:last-child { text-align: right; font-weight: bold; }
+    .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+    .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+    .module { margin-bottom: 25px; }
+    .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+    .label { font-weight: bold; color: #555; margin-right: 5px; }
+    .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+    .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+    .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+    .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>高维AI教练现场主持专属报告</h1>
+<div class="meta">班主任：邬培莹 | 评估课程：超级面试官 | 评估日期：2026-03-13</div>
+
+<div class="score-block">
+    <h2>Section 1: 综合评分</h2>
+    <div class="total-score">58 / 100</div>
+    <div class="summary">
+        培莹，你在开场的互动中展现了极强的亲和力与暖场天分。但正是因为你投入了大量精力在"拉近距离"与"组织互动"上，反而挤占了传递高维核心专业价值的空间。目前的开场更偏向于<span class="critical">"亲切的会议组织者"，而未能完全立住"企业成长陪跑伙伴"的专业气场</span>。当【方法工具】与【案例支撑】双双缺失时，创始人对课程的确定感会大打折扣。
+    </div>
+</div>
+
+<h2>Section 2: 分项评分</h2>
+<div class="meta">说明：这次评分按"标准 5+5 开场主持"口径来打，不按"现场综合表现"宽口径来打。</div>
+<table class="table-scores">
+    <tr><td><strong>课程定性</strong> (权重 20%)</td><td>5 / 10</td></tr>
+    <tr><td><strong>背书与信任感</strong> (权重 15%)</td><td>5 / 10</td></tr>
+    <tr><td><strong>价值表达</strong> (权重 20%)</td><td>4 / 10</td></tr>
+    <tr><td><strong>方法表达</strong> (权重 15%)</td><td>3 / 10</td></tr>
+    <tr><td><strong>案例支撑</strong> (权重 10%)</td><td>1 / 10</td></tr>
+    <tr><td><strong>口语节奏</strong> (权重 10%)</td><td>5 / 10</td></tr>
+    <tr><td><strong>现场表现力</strong> (权重 10%)</td><td>6 / 10</td></tr>
+</table>
+
+<h2>Section 3: ✨ 高光时刻</h2>
+<div class="highlight">
+    <span class="highlight-quote">原稿表达：(常规的破冰欢迎词)</span>
+    <span class="highlight-quote">现场发挥："教大家一个秘诀，如何去了解我们是老伙伴还是新伙伴。大家可以看到桌面上有姓名贴，可以通过年级去有效的分辨出来，我们本组有没有我们的学长学姐..."</span>
+    <strong>分析：</strong>这是一个极佳的场域掌控细节！你没有死板地念稿，而是利用高维特有的"年级"文化作为社交货币，迅速打破了学员间的陌生感。这展现了你作为班主任对现场生态的敏锐洞察。
+</div>
+<div class="highlight">
+    <span class="highlight-quote">原稿表达：一个人学是补充认知，一群人学才能改变组织。特别致敬今天带队共学的几家会员企业...</span>
+    <span class="highlight-quote">现场发挥："在这个过程中，我们认为一个人的学习，它可能只是一个知识和认知的提升。而团队的学习则是我们知识的有效尽快。也非常致敬今天有几家来以我们团队学习的方法来进行学习的，是我们真正的学习型组织的代表。"</span>
+    <strong>分析：</strong>这段你内化得很好，虽然词句有所变动，但"致敬团队学习"的情绪价值给得很满，让带队来学习的企业家感受到了被看见和被尊重。
+</div>
+
+<h2>Section 4: 🔍 AI教练精准纠偏</h2>
+
+<div class="module">
+    <span class="module-title">模块 1: 关于【高维介绍】 (5句话标准)</span>
+    <div><span class="label">问题类型:</span> 核心词汇软化与背书失真</div>
+    <div><span class="label">具体表现:</span> 将"专注服务"说成了"致力于服务"；将"红杉、GGV、天图"说成了"图商资本、GTV天府"；出现了"依赖农人的"这类口误。</div>
+    <div class="insight"><span class="label">深度洞察:</span> 培莹，你的语感很温柔，但商学院的开场需要的是"笃定感"。"专注"是一个带有一票否决权的力量词，改为"致力于"则变成了一般的公关辞令。同时，顶级投资机构的名称是高维最硬的信任背书，读错或者模糊会瞬间削弱底层的专业权威。这就像在介绍奢侈品时念错了品牌名，听众的信任度会迅速流失。</div>
+    <div><span class="label">优化建议:</span> 把"高维5句话"当成你的肌肉记忆，尤其是专有名词，无需临场发挥，只需要像报军规一样坚定地交付出来。</div>
+    <div class="suggestion"><strong>建议话术:</strong> "高维学堂是一家【专注】服务成长型企业的实战商学院。我们是红杉、GGV、天图等12家一线投资机构指定的投后赋能伙伴。"</div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 2: 关于【产品介绍：F/C 定性与核心价值】</span>
+    <div><span class="label">问题类型:</span> 视角未拔高至创始人桌面</div>
+    <div><span class="label">具体表现:</span> 描述了"找人难、碰运气"的痛点，但未点破"拿回人才主权"与"创始人是首席面试官"的课程核心价值。</div>
+    <div class="insight"><span class="label">深度洞察:</span> 你敏锐地抓住了"痛"（招聘头疼），但给出的"药"（脱离运行招聘的方法）不够猛。创始人坐在台下，他们不仅想知道怎么招人，更想知道这门课如何帮他们掌控大局。当你漏掉"首席面试官"这个词时，《超级面试官》就降级成了一门HR的技术课，而非创始人的必修课。</div>
+    <div><span class="label">优化建议:</span> 痛点抛出后，必须要有一次视角的"暴力拉升"，直接击中创始人的战略神经。</div>
+    <div class="suggestion"><strong>建议话术:</strong> "这门课不仅教技术，更是要帮创始人【拿回人才主权】，建立一个核心认知：招聘不是HR的任务，创始人才是企业的【首席面试官】。"</div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 3: 关于【产品介绍：O/U 背书与方法工具】</span>
+    <div><span class="label">问题类型:</span> 工具感缺失，用愿景代替了武器</div>
+    <div><span class="label">具体表现:</span> 在介绍课程将带来什么时，你说的是"想清楚和明白，看得懂"。</div>
+    <div class="insight"><span class="label">深度洞察:</span> 正是因为你极度关注学员的感受，你本能地使用了"想清楚"这种偏向心理状态的词汇。但来高维的企业家是在买"确定性武器"的。"想清楚"是一个美好的愿望，而"人才画像、关键事件解码"才是真刀真枪的武器。没有专业术语的支撑，导师的方法论会显得单薄。</div>
+    <div><span class="label">优化建议:</span> 在介绍工具时，要像展示精密仪器一样，清晰、准确地报出工具的名称。</div>
+    <div class="suggestion"><strong>建议话术:</strong> "接下来两天，川益老师将交付一套闭环技术，从【人才画像】到【关键事件】，再到【行为预判】，帮大家打破面试玄学。"</div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 4: 关于【产品介绍：S 案例支撑】</span>
+    <div><span class="label">问题类型:</span> 结构性缺失</div>
+    <div><span class="label">具体表现:</span> 讲完方法后，直接以"谢谢大家，掌声邀请老师"收尾，完全没有引入学友案例。</div>
+    <div class="insight"><span class="label">深度洞察:</span> 所有的理论都需要一个"替身"来验证。学友的课后感叹，就是为台下学员准备的"心理替身"。当你省略了这一环，前期的渲染就失去了落地生根的土壤，听众的情绪还没推到高潮，就匆匆把麦克风交给了老师，导致场域热度未能达到沸点。</div>
+    <div><span class="label">优化建议:</span> 在请出导师之前，一定要用一个真实学员的"转折（Before/After）"来完成最后的临门一脚。</div>
+    <div class="suggestion"><strong>建议话术:</strong> "就像我们一位学长课后感叹的：以前招人像撞大运，学完才发现，通过业务反推人才画像，才是把人才变成企业的增长资产。让我们掌声有请..."</div>
+</div>
+
+<div class="module">
+    <span class="module-title">模块 5: 关于【现场表现力】</span>
+    <div><span class="label">问题类型:</span> 冗余连接词稀释了专业力量</div>
+    <div><span class="label">具体表现:</span> 全程高频使用了超过10次"然后"，以及大量的"在这个过程中"、"去"。</div>
+    <div class="insight"><span class="label">深度洞察:</span> 培莹，你在台上思考和寻找词汇的过程，全部变成了"然后"脱口而出。虽然这让你看起来不那么紧张、像在聊天，但这是一种"语言的口水化"。主持商学院的开场，停顿（留白）比填满更有力量。过多的连接词会让逻辑变得松散，让听众觉得你只是在"背诵+串词"，而不是一个有着深刻业务理解的陪伴者。</div>
+    <div><span class="label">优化建议:</span> 练习"句号式表达"。一句话说完，果断停住，深呼吸，再讲下一句。把"然后"替换为2秒钟的自信停顿。</div>
+    <div class="suggestion"><strong>建议话术:</strong> (日常训练：录制一段自己的声音，只要听到"然后"，就重来，直到能讲出干脆利落的段落块。)</div>
+</div>
+
+<div class="ending">
+    培莹，你的身上有一种非常难得的"场域亲和力"，你能让冰冷的会场迅速变得有温度，这是很多生硬背稿的班主任做不到的！<br><br>
+    现在的你，就像一位拥有顶级食材却不忍心开大火的厨师。下一次，保留你破冰时的那份灵动，但在切入"高维5句话"和"课程5句话"时，请大胆地换上那副"企业成长教练"的铠甲。用笃定的停顿取代"然后"，用专业的框架取代"碰运气"。当你把温柔与锋利结合时，台下的创始人一定会为你和高维的专业气场折服。期待看到你下一次的蜕变！
+</div>
+
+<div class="footer">
+    注：输入信息来源 /高维学堂5句话标准稿 /超级面试官主持词 /邬培莹-超级面试官-逐字稿
+</div>
+
+</body>
+</html>

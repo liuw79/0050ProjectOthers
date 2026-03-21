@@ -1,0 +1,37 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.feishu.cn',
+  port: 465,
+  secure: true,
+  auth: { user: 'liuwei@gaowei.com', pass: 'AQg6ve0Xpdb3FG87' }
+});
+
+const reports = [
+  { name: '雯祯', course: '情绪驱动产品创新', score: '59', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313情绪驱动产品创新 雯祯/雯祯-AI教练报告-V4-final.html' },
+  { name: '邬培莹', course: '超级面试官', score: '68', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4-final.html' },
+  { name: '丁芹伟', course: '战略解码', score: '85', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314战略解码 丁芹伟/丁芹伟-AI教练报告-V4-final.html' },
+  { name: '阿左', course: '业务优化与利润提升', score: '45', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务优化与利润提升 阿左/阿左-AI教练报告-V4-final.html' },
+  { name: '碧容', course: '业务管理者养成', score: '82', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务管理者养成 碧容/碧容-AI教练报告-V4-final.html' },
+  { name: '黄文静', course: '流程型组织', score: '73', file: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314流程型组织 黄文静/黄文静-AI教练报告-V4-final.html' }
+];
+
+async function sendReports() {
+  console.log('开始发送邮件（每人单独一封，同时发给lw和cbr）...\n');
+
+  for (const r of reports) {
+    const html = fs.readFileSync(r.file, 'utf-8');
+    await transporter.sendMail({
+      from: '"高维AI教练系统" <liuwei@gaowei.com>',
+      to: 'lw@gaowei.com, cbr@gaowei.com',
+      subject: `${r.name} - ${r.course} AI教练评估报告 (${r.score}分)`,
+      html: html
+    });
+    console.log(`✅ 已发送: ${r.name} - ${r.course} (${r.score}分)`);
+  }
+
+  console.log('\n🎉 全部6封邮件发送完成！已发送至 lw@gaowei.com 和 cbr@gaowei.com');
+}
+
+sendReports().catch(console.error);

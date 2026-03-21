@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高维AI教练现场主持专属报告</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+.card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+.score-label { text-align: center; color: #888; font-size: 14px; }
+.summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.score-detail { font-size: 13px; color: #666; padding: 4px 0 8px 10px; border-bottom: 1px solid #f0f0f0; }
+.suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+.score-row:last-child, .score-detail:last-child { border-bottom: none; }
+.bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+.bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+.bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+.feedback-item { margin-bottom: 20px; }
+.feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+.feedback-content { font-size: 14px; color: #444; }
+.feedback-content p { margin: 6px 0; }
+.suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; }
+.ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="score-label">总分</div>
+    <div class="score-big">88<span style="font-size: 24px;">/100</span></div>
+    <div class="summary">
+        <strong>一句话总评：</strong>场域掌控自然从容，核心业务与产品价值传递精准，是一位能与企业家同频共振的优秀成长陪伴者！
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>28/30</span></div>
+    <div class="score-detail">
+        表现非常扎实。完整覆盖了"实战商学院"、"实战三个标准"、"创业路线图定位"以及"统一管理语言"。特别是致敬会员企业带队共学的部分，极大地拉升了现场的场域能量。
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>28/30</span></div>
+    <div class="score-detail">
+        FOCUS结构完整，痛点抓取精准（"工兵"与"爆破手"的对比很生动）。信任背书硬核，核心价值、工具包（作战计划、管理宪章）和实践案例（韶音、奶糖派）全部清晰传达，有效拉满了同学们的听课期待。
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        指令清晰，时间把控精准（3分钟）。要求大家带着"卡点和问题"去交流，直接为两天的实战学习奠定了基调。
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>10/15</span></div>
+    <div class="score-detail">
+        课评意义的升华非常好（"戳到肺管子的痛点"、"避坑经验"），但在执行动作上出现了卡顿（群内链接/二维码未能同步就绪）。虽然你用从容的语气化解了，但在高潮处打断了动作的连贯性。
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>8/10</span></div>
+    <div class="score-detail">
+        点出了"回到公司新的关键战役的开始"，有行动号召力。但由于前面找链接的插曲，导致结尾略显仓促，情感高点还可以再拔高。
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>9/10</span></div>
+    <div class="score-detail">
+        语调亲切且有力量，极具专业度。开场时面条老师不在现场的小插曲处理得很幽默从容（"给面条老师一点时间"），展现了资深班主任的场域掌控力。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、高阶加分项</h2>
+    <div class="bonus-item">
+        <div class="bonus-title">🌟 破冰金句：巧妙化解选组长尴尬（+3分）</div>
+        <div class="bonus-detail">
+            <strong>现场表现：</strong>"当选不出组长的时候，咱们就选颜值最高的那位就对了好吗？...拿出顶呱呱大拇指给组长点个赞。"<br>
+            <strong>加分理由：</strong>国内的课堂往往比较腼腆，你在观察到部分小组互相谦让时，没有生硬地催促，而是用一个幽默且极具操作性的"高维惯例"迅速化解了僵局。这个动作不仅高效完成了建制，还让现场氛围瞬间升温，是非常值得沉淀和复用的高阶运营技巧！
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、AI教练建议（Top 3）</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 课评邀约：场域势能与工具协同（赋能建议）</div>
+        <div class="feedback-content">
+            <p>我注意到第二天结尾时，你讲了一段非常有感染力的课评铺垫（"成百上千师兄师姐的迭代建议"），但刚好群里的评价链接还没发出来。我理解作为主控，你当时是为了保持收尾的热度，主动选择先抛出话术，再等助教发链接。但作为高阶顾问，若能提前确保"动作"与"话术"严丝合缝，能让同学们的情绪顺畅转化为行动。</p>
+            <div class="suggestion">
+                <strong>💡 教练建议：</strong><br>
+                下次可以在课评PPT上直接放上大大的二维码，或者与助教约定"硬核暗号"。<br>
+                <span class="suggested-script">"各位，此时此刻，我们的面条老师已经把评测链接发到了群里（同时手势指向屏幕二维码）。趁着大家手上的'弹药'还有温度，请用一分钟时间……"</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. 痛点共鸣：将"方法论"进一步具象化为"业务场景"</div>
+        <div class="feedback-content">
+            <p>你在开场对"业务一号位"的痛点描述非常棒（没有爆破手）。为了让企业家的代入感更强，我们可以尝试在抛出"方法工具"时，少一点名词堆砌，多一点场景结合，直接告诉他们这套工具解决哪个具体场景的痛。</p>
+            <div class="suggestion">
+                <strong>💡 教练建议：</strong><br>
+                <span class="suggested-script">"比如，每次分派新任务大家就推诿扯皮怎么办？汤老师准备了《团队合作宪章》；再比如，怎么把那个拿单王的能力复制给新人？汤老师会直接教你用《SOC标准操作清单》来抄作业。"</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 结尾升华：强化"陪伴者"的闭环价值</div>
+        <div class="feedback-content">
+            <p>由于最后找链接的小插曲，结尾稍微快了一点。我们常说"一个人学是补充认知，一群人学才能改变组织"，如果能在结尾时呼应开场的这句话，并强调我们作为HRBP在课后的持续陪伴，能给企业留下更深的安全感。</p>
+            <div class="suggestion">
+                <strong>💡 教练建议：</strong><br>
+                <span class="suggested-script">"明天的太阳升起，又是新的战役。希望大家周一回到公司，第一件事就是拉着团队开一场战前动员会。如果在落地的过程中遇到任何卡点，别忘了群里还有我们班主任和教研团队，高维会一直陪跑大家，直到打赢这场仗。科学创业，少走弯路，我们下次见！"</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    碧荣，你的主持气场从容自信，对"科学创业"理念的理解非常透彻！你的金句和控场细节已经具备了资深陪伴者的风范。微调一下结尾工具的协同节奏，你的场域交付将无可挑剔。期待你在下一期继续带大家"打胜仗"！
+</div>
+
+<div class="footer">
+    Model Version: GW-AI-Coach-V4<br>
+    Target: 碧容 - 业务管理者养成
+</div>
+
+</body>
+</html>

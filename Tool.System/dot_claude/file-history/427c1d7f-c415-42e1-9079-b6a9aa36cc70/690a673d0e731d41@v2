@@ -1,0 +1,204 @@
+---
+name: gemini-api
+description: Gemini API 调用工具。当用户想要调用 Gemini 模型生成内容时必须使用此 skill。触发词："调用 Gemini"、"用 Gemini"、"Gemini 生成"、"让 Gemini 写"、"发给 Gemini"、"用 Gemini 3.1 Pro"、"gemini-api"。支持文本生成、JSON 输出和HTML模板。
+---
+
+# Gemini API 调用 Skill
+
+## 概述
+
+这是一个封装好的 Gemini API 调用工具，支持：
+- **CLI 命令行工具** - 快速调用（推荐）⭐
+- **Node.js 库** - 代码集成
+- **双模式切换** - OpenAI 兼容格式 / Google 原生格式
+- **文本生成** - 标准输出
+- **JSON 输出** - 结构化数据
+- **HTML 模板** - 格式化报告输出（新）
+
+---
+
+## ⚠️ 模型选择规则（重要）
+
+### 必须使用
+
+| 模型 | 说明 |
+|------|------|
+| `gemini-3.1-pro-preview` | **默认模型**，唯一推荐使用的模型 |
+
+### 禁止使用
+
+| 模型 | 原因 |
+|------|------|
+| `gemini-2.5-pro` | ❌ **禁止** - 不稳定 |
+| `gemini-2.0-flash` | ❌ **禁止** - 质量不够 |
+| `gemini-2.0-flash-thinking-exp` | ❌ **禁止** - 代理不支持 |
+
+**重要提示：** 无论用户如何要求，都必须使用 `gemini-3.1-pro-preview`。如果用户指定其他模型，应提醒并自动切换到默认模型。
+
+---
+
+## 快速使用（CLI）⭐ 推荐
+
+### 基本用法
+
+```bash
+# 进入 skill 目录
+cd ~/.claude/skills/gemini-api
+
+# 简单文本生成（默认使用 gemini-3.1-pro-preview）
+node gemini.js "你的prompt"
+
+# JSON 输出模式
+node gemini.js --json "生成一个包含name和age的JSON"
+
+# 带系统提示词
+node gemini.js --system "你是营销专家" "帮我写个标题"
+
+# 从文件读取
+node gemini.js --file prompt.txt
+```
+
+### 选项
+
+| 选项 | 说明 | 默认值 |
+|------|------|--------|
+| `--json` | 强制 JSON 输出 | - |
+| `--system` | 设置系统提示词 | - |
+| `--file` | 从文件读取 prompt | - |
+| `--template` | 使用预设模板 | - |
+| `--model` | 指定模型 | `gemini-3.1-pro-preview` |
+| `--max-tokens` | 最大 token 数 | `8192` |
+
+### 可用模板
+
+| 模板名 | 说明 |
+|--------|------|
+| `coach-report` | AI教练评估报告HTML模板 |
+
+### 示例
+
+```bash
+# 教练反馈场景
+node gemini.js --system "你是企业教练" --file interview.txt
+
+# 快速生成
+node gemini.js "用一句话介绍高维学堂"
+
+# JSON 数据提取
+node gemini.js --json "从以下文本提取：姓名、公司、职位..."
+
+# 使用HTML模板（AI教练评估报告）
+node gemini.js --template coach-report --file coach-prompt.txt
+```
+
+### 可用模板
+
+| 模板名 | 说明 |
+|--------|------|
+| `coach-report` | AI教练评估报告HTML模板 |
+
+### 模板使用说明
+
+使用 `--template` 参数可以指定预设的HTML模板。模板会自动加载到系统提示词中，- Prompt 中只需关注业务逻辑
+- 不需要在 prompt 中重复写 HTML/CSS 代码
+- 输出格式统一，便于后续处理
+
+---
+
+## 环境配置
+
+`.env` 文件位置：`~/.claude/skills/gemini-api/.env`
+
+```bash
+# OpenAI 兼容代理接口（当前配置）
+GEMINI_BASE_URL=https://api.openai-proxy.org
+GEMINI_API_KEY=sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI
+
+# 默认模型
+GEMINI_MODEL=gemini-3.1-pro-preview
+```
+
+---
+
+## Node.js 库使用
+
+### 引入
+
+```javascript
+// 方式1：直接运行 CLI（推荐）
+// node gemini.js "prompt"
+
+// 方式2：作为库引入
+import { ai } from './lib/ai.js';
+```
+
+### generate() - 文本生成
+
+```javascript
+const text = await ai.generate('你的prompt', {
+  model: 'gemini-3.1-pro-preview',  // 默认，可省略
+  maxTokens: 8192
+});
+```
+
+### generateJSON() - JSON 输出
+
+```javascript
+const data = await ai.generateJSON('生成一个包含name和age的JSON');
+// 返回: { name: "...", age: ... }
+```
+
+---
+
+## 在其他 Skill 中调用
+
+当其他 skill 需要调用 Gemini API 时：
+
+```javascript
+// 使用 child_process 调用 CLI
+const { execSync } = require('child_process');
+const result = execSync('node ~/.claude/skills/gemini-api/gemini.js --file prompt.txt', {
+  encoding: 'utf-8',
+  maxBuffer: 10 * 1024 * 1024  // 10MB
+});
+```
+
+或者直接使用 HTTP 请求：
+
+```javascript
+const response = await fetch('https://api.openai-proxy.org/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI'
+  },
+  body: JSON.stringify({
+    model: 'gemini-3.1-pro-preview',  // 必须使用此模型
+    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 8192
+  })
+});
+```
+
+---
+
+## 常见问题
+
+### Q: 为什么不能用其他模型？
+
+代理服务（api.openai-proxy.org）目前只稳定支持 `gemini-3.1-pro-preview`。其他模型要么不支持，要么输出质量不稳定。
+
+### Q: 如何确认使用了正确的模型？
+
+检查输出日志，确认模型名称为 `gemini-3.1-pro-preview`。
+
+### Q: 超时怎么办？
+
+```bash
+node --max-old-space-size=4096 gemini.js --file long-prompt.txt
+```
+
+---
+
+*版本：v2.1*
+*更新时间：2026-03-16*

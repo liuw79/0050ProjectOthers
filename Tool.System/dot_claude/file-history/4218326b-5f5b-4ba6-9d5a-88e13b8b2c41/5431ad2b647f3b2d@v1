@@ -1,0 +1,740 @@
+---
+name: publish-feishu
+description: Publish desensitized knowledge assets to Feishu (Lark) knowledge base for internal sharing. Requires lark-mcp configuration and user authorization.
+---
+
+# 发布到飞书知识库 (publish-feishu)
+
+## 目的
+将脱敏后的知识资产发布到飞书知识库，实现知识的组织内共享。
+
+## 前置条件
+- 已配置飞书MCP（lark-mcp）
+- **已获取 user_access_token**（关键！见下方授权流程）
+- 目标知识空间已将应用添加为成员/管理员
+
+---
+
+## 🚨 核心规则（必读！）
+
+这些规则是踩了无数坑总结出来的，**务必遵守**：
+
+### 1. Block类型使用规则
+
+| 内容类型 | block_type | 说明 |
+|----------|------------|------|
+| 普通段落 | **2** (text) | 默认使用 |
+| 标题1 | 3 (heading1) | ✅ 可用 |
+| 标题2 | 4 (heading2) | ✅ 可用 |
+| 标题3 | 5 (heading3) | ✅ 可用 |
+| 引用 | 15 (quote) | ✅ 可用 |
+| **无序列表** | **2 (text)** | ❌ **禁用 block_type 12**！用文本 + `• ` 前缀 |
+| **有序列表** | **2 (text)** | ❌ **禁用 block_type 13**！直接保留原格式如 `1. xxx` |
+| 表格 | **2 (text)** | ❌ **禁用 block_type 23**！用 `│` 文本格式 |
+
+**❌ 不要使用的block类型**：
+- `block_type: 12` (bullet) - 会导致"太多小圆点"，视觉混乱
+- `block_type: 13` (ordered) - 同上
+- `block_type: 23` (table) - **API无法创建**，返回错误 99992402/1770001
+
+### 2. 列表处理规则
+
+```python
+# ✅ 正确做法：转换为文本
+# 无序列表
+"- 项目内容" → {"block_type": 2, "text": {"elements": [{"text_run": {"content": "• 项目内容"}}]}}
+
+# 有序列表
+"1. 第一步" → {"block_type": 2, "text": {"elements": [{"text_run": {"content": "1. 第一步"}}]}}
+
+# ❌ 错误做法：使用bullet block
+"- 项目内容" → {"block_type": 12, "bullet": {...}}  # 禁止！
+```
+
+### 3. 表格处理规则
+
+**原生表格block无法创建，必须用文本格式**：
+
+```python
+# Markdown表格：
+| 字段 | 内容 |
+|------|------|
+| 名称 | 蓝禾 |
+| 行业 | 消费品 |
+
+# 转换为文本格式：
+│ 字段 │ 内容 │
+│ 名称 │ 蓝禾 │
+│ 行业 │ 消费品 │
+
+# 处理 <br> 换行：拆成多行
+| 项目 | 详情 |
+|------|------|
+| 说明 | 第一行<br>第二行 |
+
+# 转换为：
+│ 项目 │ 详情 │
+│ 说明 │ 第一行 │
+│      │ 第二行 │
+```
+
+### 4. 目录结构规则
+
+**必须先创建目录，再发布文件到对应目录**：
+
+```python
+# 1. 先创建分类文件夹
+for folder_name in ["01_客户档案", "02_访谈技术", ...]:
+    create_wiki_node(folder_name, parent_token=root_token)
+
+# 2. 然后发布文件到对应文件夹
+publish_file("客户档案_蓝禾.md", parent_token=folder_tokens["01_客户档案"])
+```
+
+### 5. API限制
+
+- **频率限制**：3请求/秒，需要适当间隔
+- **批量写入**：每批最多50个blocks
+- **Token有效期**：约2小时，过期需重新授权
+
+---
+
+## ⚠️ 关键：用户授权流程
+
+**wiki和docx操作必须使用 user_access_token，不能用 tenant_access_token！**
+
+### 首次授权或权限不足时
+
+```bash
+# 启动授权流程（需要用户在浏览器中授权）
+npx @larksuiteoapi/lark-mcp login \
+  -a "cli_a9f1c604d6b9dbc9" \
+  -s "JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8" \
+  --scope "wiki:wiki docx:document"
+```
+
+然后用浏览器打开输出的URL完成授权。
+
+### 获取Token
+
+```bash
+# 用Node提取已授权的token
+node -e "
+const { authStore } = require('/Users/comdir/.npm/_npx/74dfe5d932228314/node_modules/@larksuiteoapi/lark-mcp/dist/auth/store');
+async function main() {
+    await authStore.initialize();
+    const localTokens = await authStore.getLocalAccessToken('cli_a9f1c604d6b9dbc9');
+    if (localTokens) {
+        const tokenData = await authStore.getToken(localTokens);
+        console.log(tokenData.token);
+    }
+}
+main().catch(console.error);
+setTimeout(() => process.exit(0), 5000);
+"
+```
+
+## 📁 分类规范（必须遵守）
+
+**02_Processing 与 03_Output 目录必须一一对应**：
+
+```
+02_Processing/              →    03_Output/
+├── 01_客户档案/            →    01_客户档案/
+├── 02_访谈技术/            →    02_访谈技术/
+├── 03_方法论/              →    03_方法论/
+├── 04_客户案例/            →    04_客户案例/
+├── 05_高维小故事/          →    05_高维小故事/
+├── 06_持续挖掘/            →    06_持续挖掘/
+└── 07_组织建设/            →    07_组织建设/
+```
+
+---
+
+## 🔄 版本管理规则（重要！）
+
+### 需要更新时
+
+**不要覆盖旧文件，而是创建新版本目录**：
+
+```
+旧目录：07_组织建设          → 用户手动删除
+新目录：07_组织建设_V1.01    → 发布新内容
+```
+
+### 版本号规则
+
+| 版本 | 说明 | 示例 |
+|------|------|------|
+| 无版本号 | 首次发布 | `07_组织建设` |
+| `_V1.01` | 小更新 | `07_组织建设_V1.01` |
+| `_V1.02` | 再次小更新 | `07_组织建设_V1.02` |
+| `_V2.0` | 大版本更新 | `07_组织建设_V2.0` |
+
+### 操作流程
+
+1. **创建新目录**：`[目录名]_V[版本号]`
+2. **发布所有文件到新目录**
+3. **告知用户**：旧目录 `[目录名]` 可手动删除
+4. **更新 skill 配置**：记录新目录的 node_token
+
+### ⚠️ 重要：文档名不加版本号！
+
+**正确做法**：版本号只在目录名，文档名保持原样
+
+```
+07_组织建设_V1.01/           ← 目录带版本号
+├── 人才画像_项目成功经理    ← 文档名不带版本号
+├── 人才画像_企业陪跑顾问
+└── 工具_KA项目评估
+
+❌ 错误：07_组织建设_V1.01/V1.01_人才画像_xxx  ← 文档名加了版本号
+```
+
+### 代码示例：创建父子节点
+
+```python
+def create_wiki_doc(title, parent_token=None):
+    """创建wiki节点，可指定父节点"""
+    url = f"https://open.feishu.cn/open-apis/wiki/v2/spaces/{SPACE_ID}/nodes"
+    data = {
+        "node_type": "origin",
+        "obj_type": "docx",
+        "title": title
+    }
+    if parent_token:
+        data["parent_node_token"] = parent_token
+    resp = requests.post(url, headers=HEADERS, json=data)
+    result = resp.json()
+    if result.get("code") == 0:
+        return result["data"]["node"]["obj_token"], result["data"]["node"]["node_token"]
+    return None, None
+
+def main():
+    # 1. 创建父节点（带版本号）
+    obj_token, parent_token = create_wiki_doc("07_组织建设_V1.01")
+    if not parent_token:
+        print("创建目录失败！")
+        return
+
+    # 2. 发布文档到父节点下（文档名不加版本号）
+    files = ["人才画像_项目成功经理.md", "人才画像_企业陪跑顾问.md", ...]
+    for file_path in files:
+        title = os.path.basename(file_path).replace('.md', '')
+        publish_file(file_path, parent_token)  # 使用parent_token作为父节点
+```
+
+### 好处
+
+- ✅ 避免新旧文件混淆
+- ✅ 用户可以对比新旧版本
+- ✅ 删除旧目录一键搞定
+- ✅ 有问题时可以回滚
+
+### 分类规则
+
+| 目录 | 内容类型 | 文件前缀示例 |
+|------|----------|--------------|
+| 01_客户档案 | KA客户标准化档案 | `客户档案_小野和子` |
+| 02_访谈技术 | 访谈技巧、诊断工具 | `教练式访谈_`、`诊断_` |
+| 03_方法论 | 可复用的方法论资产 | `方法论_`、`SOP_`、`清单_` |
+| 04_客户案例 | 客户服务过程复盘 | `案例_`、`复盘_` |
+| 05_高维小故事 | 信任建立的故事素材 | `故事_`、`信任_` |
+| 06_持续挖掘 | 待深入挖掘的问题清单 | `追问_`、`待挖掘_` |
+| 07_组织建设 | 人才画像、组织管理工具 | `人才画像_`、`评估_`、`能力分层_` |
+
+### ⚠️ 发布前必须检查
+
+1. **确认文件在正确的 Processing 子目录**
+2. **根据文件内容/前缀匹配目标 Output 目录**
+3. **自动发布到对应的飞书目录**
+
+### 自动分类逻辑
+
+```python
+def get_category(file_path, file_name):
+    """根据文件路径和名称自动判断分类"""
+
+    # 优先使用文件所在目录
+    if "01_客户档案" in file_path:
+        return "01_客户档案"
+    elif "02_访谈技术" in file_path:
+        return "02_访谈技术"
+    elif "03_方法论" in file_path:
+        return "03_方法论"
+    elif "04_客户案例" in file_path:
+        return "04_客户案例"
+    elif "05_高维小故事" in file_path:
+        return "05_高维小故事"
+    elif "06_持续挖掘" in file_path:
+        return "06_持续挖掘"
+    elif "07_组织建设" in file_path:
+        return "07_组织建设"
+
+    # 备用：根据文件名前缀判断
+    if file_name.startswith(("客户档案_", "档案_")):
+        return "01_客户档案"
+    elif file_name.startswith(("访谈_", "诊断_", "教练式_")):
+        return "02_访谈技术"
+    elif file_name.startswith(("方法论_", "SOP_", "清单_", "话术_")):
+        return "03_方法论"
+    elif file_name.startswith(("案例_", "复盘_", "深度复盘_")):
+        return "04_客户案例"
+    elif file_name.startswith(("故事_", "信任_")):
+        return "05_高维小故事"
+    elif file_name.startswith(("追问_", "待挖掘_")):
+        return "06_持续挖掘"
+    elif file_name.startswith(("人才画像_", "评估_", "能力_", "组织_")):
+        return "07_组织建设"
+
+    return None  # 需要手动指定
+```
+
+---
+
+## 配置信息
+
+```
+App ID: cli_a9f1c604d6b9dbc9
+App Secret: JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8
+知识空间ID: 7600806729793686488
+知识库链接: https://gaowei1.feishu.cn/wiki/space/7600806729793686488
+
+目录节点Token（2026-02-15更新）:
+- 01_客户档案: ZqT6wcOYOiBXyYkk01Lc2wg0n5s
+- 02_访谈技术: HiwhwQppwiCssVkkt9nc7K3Wnge
+- 03_方法论: ApQuw1UytiKo3Bkazt8cJdWfnSc
+- 04_客户案例: RAdZwTIjYiuWbokfFCgcty0Knnc
+- 05_高维小故事: Edyew70S1i880Ikz5R4cBTkLnkk
+- 06_持续挖掘: FaFnwadHoiSgqqkSsfJcSgPgnJ1
+- 07_组织建设: US8pwmNdHidb7akuvL2chCmVnUf
+```
+
+> ⚠️ **注意**：目录token会因知识库结构变化而失效。如果发布失败，可能需要重新创建目录获取新token。
+
+## 操作流程
+
+### 0. ⚠️ 查重检查（必须执行！）
+
+**发布前必须检查**，防止重复发布：
+
+#### 本地查重
+```bash
+# 检查本地是否已有同名文件
+find . -name "*[关键词]*" -type f
+```
+
+**必须检查的目录**：
+- `02_Processing/01_客户档案/`
+- `03_Output/01_客户档案/`
+- `03_Output/` 下所有子目录
+
+#### 查重索引
+查阅 `04_System/publish_index.md` 确认是否已发布过。
+
+#### 重复处理规则
+
+| 情况 | 处理方式 |
+|------|----------|
+| 本地有同名文件 | 对比内容，合并后发布一个版本 |
+| 飞书已有同名文档 | 告知用户，建议更新而非新建 |
+| 内容有冲突 | 标记冲突，让用户决定如何合并 |
+
+#### 发现重复时的操作
+1. **暂停发布**
+2. **告知用户**：发现重复文件/文档
+3. **展示对比**：列出两个版本的差异
+4. **等待用户决定**：合并/覆盖/取消
+
+### 1. 标题命名规范 ⚠️ 必须执行
+
+**详细规范见 `/naming-convention` skill**
+
+核心规则：
+- 用下划线 `_` 分隔，不用冒号或括号
+- 前缀标识类型：`客户档案_`、`人才画像_`、`方法论_`、`话术_` 等
+- 来源人名放文件内部，不放标题
+
+```python
+# 自动转换
+title = title.replace("：", "_").replace(":", "_").replace("（", "_").replace("）", "")
+```
+
+### 1.5 专有名词校准 ⚠️ 必须执行
+
+**发布前自动校准常见错误**，校准列表详见：
+
+📄 `GW.Content/写作参考/人员档案.md` → 四、常见易混淆/易错字
+
+### 2. 确认文件状态
+检查文件是否满足发布条件（可选检查脱敏标记）。
+
+### 3. 获取User Token
+确认已有包含 `wiki:wiki docx:document` 权限的 user_access_token。
+
+### 4. 发布文档（直接写入wiki方式）
+
+**步骤A：创建wiki节点**
+```bash
+# ⚠️ 标题命名规范：用下划线，不用冒号
+# 正确：客户档案_小野和子
+# 错误：客户档案：小野和子
+curl -X POST "https://open.feishu.cn/open-apis/wiki/v2/spaces/{space_id}/nodes" \
+  -H "Authorization: Bearer {user_token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "node_type": "origin",
+    "obj_type": "docx",
+    "title": "文档标题",
+    "parent_node_token": "父节点token"
+  }'
+# 返回 obj_token 用于写入内容
+```
+
+**步骤B：写入文档内容**
+```bash
+# ⚠️ 注意：不要指定 index，让内容追加到末尾
+curl -X POST "https://open.feishu.cn/open-apis/docx/v1/documents/{obj_token}/blocks/{obj_token}/children" \
+  -H "Authorization: Bearer {user_token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "children": [
+      {"block_type": 2, "text": {"elements": [{"text_run": {"content": "段落内容"}}]}}
+    ]
+  }'
+```
+
+### 5. 批量发布脚本
+
+参考 `/tmp/publish_feishu_final.py` 的Python脚本，支持：
+- 遍历目录下所有md文件
+- 自动匹配目标分类
+- 创建节点并写入内容
+- 正确处理表格、列表格式
+
+---
+
+## 参考代码：Markdown解析器
+
+**这是经过验证的解析器，遵循所有规则**：
+
+```python
+import re
+
+# 专有名词校准列表见：04_System/publish_index.md
+CORRECTIONS = {"蓝河": "蓝禾", "小野禾子": "小野和子"}
+
+def correct_content(content):
+    for wrong, correct in CORRECTIONS.items():
+        content = content.replace(wrong, correct)
+    return content
+
+def normalize_title(title):
+    return title.replace("：", "_").replace(":", "_")
+
+def parse_inline_format(text):
+    """解析行内格式，支持**加粗**"""
+    elements = []
+    pattern = r'\*\*([^*]+)\*\*'
+    last_end = 0
+
+    for match in re.finditer(pattern, text):
+        if match.start() > last_end:
+            plain = text[last_end:match.start()]
+            if plain:
+                elements.append({"text_run": {"content": plain, "text_element_style": {}}})
+        elements.append({"text_run": {"content": match.group(1), "text_element_style": {"bold": True}}})
+        last_end = match.end()
+
+    if last_end < len(text):
+        remaining = text[last_end:]
+        if remaining:
+            elements.append({"text_run": {"content": remaining, "text_element_style": {}}})
+
+    return elements if elements else [{"text_run": {"content": text, "text_element_style": {}}}]
+
+def text_width(s):
+    """计算文本宽度（中文2，英文1）"""
+    return sum(2 if '\u4e00' <= c <= '\u9fff' else 1 for c in s)
+
+def format_table(data):
+    """格式化表格为文本格式，处理<br>换行"""
+    if not data:
+        return []
+
+    cols = max(len(r) for r in data)
+    # 计算每列最大宽度（考虑<br>换行）
+    widths = []
+    for i in range(cols):
+        max_w = 0
+        for row in data:
+            if i < len(row):
+                cell_lines = row[i].split('<br>')
+                max_w = max(max_w, max(text_width(l) for l in cell_lines))
+        widths.append(max_w)
+
+    result = []
+    for row in data:
+        # 每个单元格按<br>分割
+        lines_per_cell = [c.split('<br>') for c in row]
+        max_lines = max(len(l) for l in lines_per_cell)
+
+        for line_idx in range(max_lines):
+            cells = []
+            for col_idx in range(cols):
+                if col_idx < len(row):
+                    cell_lines = row[col_idx].split('<br>')
+                    text = cell_lines[line_idx] if line_idx < len(cell_lines) else ''
+                    # 补齐宽度
+                    padding = ' ' * (widths[col_idx] - text_width(text))
+                    cells.append(text + padding)
+                else:
+                    cells.append(' ' * widths[col_idx])
+            result.append('│ ' + ' │ '.join(cells) + ' │')
+
+    return result
+
+def parse_markdown(content):
+    """Markdown解析为飞书blocks - 遵循核心规则"""
+    blocks = []
+    lines = content.split('\n')
+    in_table = False
+    table_data = []
+
+    for line in lines:
+        stripped = line.strip()
+
+        # 空行：结束表格
+        if not stripped:
+            if in_table and table_data:
+                for row_text in format_table(table_data):
+                    elements = parse_inline_format(row_text)
+                    blocks.append({"block_type": 2, "text": {"elements": elements}})
+                table_data = []
+                in_table = False
+            continue
+
+        # 分隔线
+        if stripped == '---':
+            blocks.append({"block_type": 2, "text": {"elements": [{"text_run": {"content": "─" * 40}}]}})
+            continue
+
+        # 表格（使用文本格式）
+        if stripped.startswith('|') and '|' in stripped[1:]:
+            in_table = True
+            cells = [c.strip() for c in stripped.split('|')[1:-1]]
+            # 跳过分隔行 |---|---|
+            if not all(set(c) <= set('-:| ') for c in cells):
+                table_data.append(cells)
+            continue
+
+        # 标题（heading block可用）
+        if stripped.startswith('### '):
+            elements = parse_inline_format(stripped[4:])
+            blocks.append({"block_type": 5, "heading3": {"elements": elements}})
+        elif stripped.startswith('## '):
+            elements = parse_inline_format(stripped[3:])
+            blocks.append({"block_type": 4, "heading2": {"elements": elements}})
+        elif stripped.startswith('# '):
+            elements = parse_inline_format(stripped[2:])
+            blocks.append({"block_type": 3, "heading1": {"elements": elements}})
+
+        # 引用（quote block可用）
+        elif stripped.startswith('> '):
+            elements = parse_inline_format(stripped[2:])
+            blocks.append({"block_type": 15, "quote": {"elements": elements}})
+
+        # 无序列表 → 转文本（禁用bullet block）
+        elif stripped.startswith('- ') or stripped.startswith('* '):
+            elements = parse_inline_format('• ' + stripped[2:])
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+
+        # 有序列表 → 转文本（禁用ordered block）
+        elif re.match(r'^\d+\.\s', stripped):
+            elements = parse_inline_format(stripped)
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+
+        # 普通文本
+        else:
+            elements = parse_inline_format(stripped)
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+
+    # 处理未结束的表格
+    if table_data:
+        for row_text in format_table(table_data):
+            elements = parse_inline_format(row_text)
+            blocks.append({"block_type": 2, "text": {"elements": elements}})
+
+    return blocks
+```
+
+---
+
+## 输出格式
+
+发布完成后，告知用户：
+1. ✅ 发布状态（成功/失败数量）
+2. 🔗 知识库链接
+3. 📝 发布清单
+
+---
+
+## 常见错误
+
+| 错误代码 | 原因 | 解决方案 |
+|----------|------|----------|
+| 99991668 | Token过期 | 重新授权：`npx @larksuiteoapi/lark-mcp login ...` |
+| 99992402 | block_type不支持 | 检查是否使用了表格(23)等不支持的block |
+| 1770001 | 参数格式错误 | 检查block结构是否符合API要求 |
+| permission denied | 使用了tenant_token | 必须使用user_access_token |
+| 131005 | 父节点不存在 | 目录token失效，需重新创建目录 |
+| required privileges | token缺少权限 | 重新授权，scope加`wiki:wiki docx:document` |
+
+---
+
+## 踩坑记录
+
+### ❌ 坑1：使用bullet block导致"太多小圆点"
+**问题**：使用 `block_type: 12` (bullet) 发布列表，飞书渲染出大量小圆点，视觉混乱
+**解决**：列表转文本，用 `• ` 前缀
+
+### ❌ 坑2：尝试创建表格block
+**问题**：尝试 `block_type: 23` (table)，API返回错误
+**解决**：表格转为 `│` 分隔的文本格式
+
+### ❌ 坑3：发布到根目录而非分类目录
+**问题**：没有指定 `parent_node_token`，所有文件发布到知识库根目录
+**解决**：先创建分类文件夹，发布时指定对应的folder token
+
+### ❌ 坑6：内容顺序颠倒
+**问题**：使用 `"index": 0` 写入内容，每次新内容插入到文档开头，导致顺序颠倒（十→一，而不是一→十）
+**解决**：不指定 `index`，让内容追加到末尾；或使用 `index: -1`
+
+### ❌ 坑5：重复发布导致飞书多个同名文档
+**问题**：没有检查本地是否已有同名文件，直接创建新档案并发布，导致飞书出现多个重复文档
+**解决**：发布前必须执行查重检查（步骤0），对比本地文件和发布索引
+
+---
+
+## 发布索引维护
+
+每次发布后，更新 `04_System/publish_index.md`：
+
+```markdown
+| 文档名称 | 本地路径 | 飞书链接 | 发布时间 | 状态 |
+|----------|----------|----------|----------|------|
+| 话术卡：xxx | 03_Outputs/话术_xxx.md | https://... | 2026-02-16 | ✅ |
+```
+
+---
+
+## 首页更新（更新日志）
+
+**每次发布后必须更新知识库首页的更新日志**，让用户知道最新动态。
+
+### 首页结构
+
+```markdown
+# 高维知识库
+
+> 本知识库用于存储高维咨询的知识资产，包括客户档案、方法论、工具模板等。
+
+---
+
+## 📢 更新日志
+
+### 2026-02-16
+- ✅ 新增：工具_KA项目成功经理评估与识别 → 07_组织建设
+- ✅ 新增：评估_项目成功经理人才画像 → 03_方法论
+- ✅ 新增：清单_高风险项目识别 → 03_方法论
+- ✅ 新增：SOP_项目复盘话术 → 03_方法论
+- ✅ 新增：说明_项目成功经理能力分层 → 03_方法论
+
+### 2026-02-15
+- ✅ 新增：客户档案_小野和子 → 01_客户档案
+- ...
+
+---
+
+## 📁 目录导航
+
+| 目录 | 内容 |
+|------|------|
+| 01_客户档案 | KA客户标准化档案 |
+| 02_访谈技术 | 访谈技巧、诊断工具 |
+| 03_方法论 | 可复用的方法论资产 |
+| 04_客户案例 | 客户服务过程复盘 |
+| 05_高维小故事 | 信任建立的故事素材 |
+| 06_持续挖掘 | 待深入挖掘的问题清单 |
+| 07_组织建设 | 组织管理相关工具 |
+```
+
+### 更新流程
+
+1. **读取本地首页模板**：`04_System/wiki_homepage.md`（如果存在）
+2. **在"更新日志"部分顶部添加新条目**：
+   ```markdown
+   ### YYYY-MM-DD
+   - ✅ 新增：[文档名称] → [目标目录]
+   ```
+3. **更新知识库首页**：
+   - 找到首页节点（通常是知识空间根节点或指定的首页文档）
+   - 使用 API 更新内容
+
+### 首页更新代码示例
+
+**⚠️ 重要：飞书API不支持直接"更新"内容，必须先删除再重写！**
+
+```python
+def update_homepage(user_token, homepage_token, new_blocks):
+    """更新知识库首页（删除旧内容，写入新内容）"""
+
+    # 1. 获取当前所有blocks
+    url = f"https://open.feishu.cn/open-apis/docx/v1/documents/{homepage_token}/blocks/{homepage_token}/children"
+    resp = requests.get(url, headers=headers)
+    result = resp.json()
+
+    if result.get("code") == 0:
+        children = result["data"]["items"]
+
+        # 2. 删除所有子blocks
+        indices = list(range(len(children)))
+        delete_url = f"{url}/batch_delete"
+        requests.delete(delete_url, headers=headers, json={"indices": indices})
+
+    # 3. 写入新内容
+    for batch in chunks(new_blocks, 50):
+        requests.post(url, headers=headers, json={"children": batch})
+        time.sleep(0.3)
+
+def add_update_entry(user_token, homepage_token, name, category, doc_token):
+    """在首页更新日志中添加新条目（带链接）"""
+
+    # 1. 获取当前内容
+    # 2. 解析Markdown
+    # 3. 在"更新日志"部分顶部插入新条目
+    # 4. 删除旧内容
+    # 5. 写入新内容
+
+    link = f"https://gaowei1.feishu.cn/wiki/{doc_token}"
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    # 新条目格式：
+    # • ✅ 新增：{name} → {category}
+    #     链接：{link}
+```
+
+### ❌ 坑4：表格中的<br>换行错乱
+**问题**：表格单元格包含 `<br>` 时，简单替换导致错行
+**解决**：将含 `<br>` 的单元格拆成多行，按列对齐
+
+---
+
+## 注意事项
+
+1. **user_access_token有效期**：约2小时，过期需重新授权
+2. **避免重复发布**：会创建重复节点，需手动清理
+3. **内容分段**：单个block最多1000字符，需分段写入
+4. **API频率限制**：3请求/秒，批量发布时注意间隔
+5. **批量写入限制**：每批最多50个blocks
+6. **弯路参考**：详见 `04_System/飞书文档操控弯路.md`

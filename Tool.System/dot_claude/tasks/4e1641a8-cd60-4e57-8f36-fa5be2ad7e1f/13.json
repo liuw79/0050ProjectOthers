@@ -1,0 +1,9 @@
+{
+  "id": "13",
+  "subject": "CLI 主程序 (Task 7)",
+  "description": "实现 CLI 入口点和基本命令（init、status）",
+  "activeForm": "实现 CLI 主程序中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

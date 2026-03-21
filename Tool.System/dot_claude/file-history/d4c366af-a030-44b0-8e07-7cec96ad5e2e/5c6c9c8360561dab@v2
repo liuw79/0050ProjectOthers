@@ -1,0 +1,165 @@
+"""Playwright 浏览器操作封装"""
+import asyncio
+import re
+from pathlib import Path
+from typing import Optional
+from playwright.async_api import async_playwright, Page, BrowserContext
+
+
+class DeepSeekBrowser:
+    """Deepseek 网页操作封装"""
+
+    BASE_URL = "https://chat.deepseek.com"
+
+    # 选择器（基于 DOM 探索结果）
+    SELECTORS = {
+        "chat_link": "a[href^='/a/chat/s/']",  # 对话链接
+        "message": "[class*='ds-message']",  # 消息容器
+    }
+
+    def __init__(self, user_data_dir: str = "./browser_data", headless: bool = False):
+        self.user_data_dir = Path(user_data_dir)
+        self.headless = headless
+        self.context: Optional[BrowserContext] = None
+        self.page: Optional[Page] = None
+
+    async def __aenter__(self):
+        await self.start()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.close()
+
+    async def start(self):
+        """启动浏览器"""
+        self.user_data_dir.mkdir(parents=True, exist_ok=True)
+        self._playwright = await async_playwright().start()
+        self.context = await self._playwright.chromium.launch_persistent_context(
+            user_data_dir=str(self.user_data_dir),
+            headless=self.headless
+        )
+        self.page = self.context.pages[0] if self.context.pages else await self.context.new_page()
+
+    async def close(self):
+        """关闭浏览器"""
+        if self.context:
+            await self.context.close()
+        if hasattr(self, '_playwright'):
+            await self._playwright.stop()
+
+    async def goto_home(self):
+        """导航到 Deepseek 首页"""
+        await self.page.goto(self.BASE_URL)
+        await self.page.wait_for_load_state("networkidle")
+
+    async def wait_for_login(self) -> bool:
+        """等待用户登录，返回是否登录成功"""
+        try:
+            # 等待对话链接出现（登录后的标志）
+            await self.page.wait_for_selector(self.SELECTORS["chat_link"], timeout=300000)
+            return True
+        except Exception:
+            return False
+
+    async def get_chat_list(self) -> list[dict]:
+        """获取对话列表"""
+        # 先滚动加载所有对话
+        await self._scroll_to_load_all_chats()
+
+        chat_links = await self.page.query_selector_all(self.SELECTORS["chat_link"])
+        chats = []
+        seen_ids = set()
+
+        for link in chat_links:
+            href = await link.get_attribute("href")
+            if not href:
+                continue
+
+            # 提取对话 ID: /a/chat/s/{uuid}
+            match = re.search(r'/a/chat/s/([a-f0-9-]+)', href)
+            if not match:
+                continue
+
+            chat_id = match.group(1)
+            if chat_id in seen_ids:
+                continue
+            seen_ids.add(chat_id)
+
+            # 获取标题
+            title = await link.text_content()
+            title = title.strip() if title else f"untitled-{chat_id[:8]}"
+
+            chats.append({
+                "id": chat_id,
+                "title": title,
+                "url": f"{self.BASE_URL}/a/chat/s/{chat_id}"
+            })
+
+        return chats
+
+    async def _scroll_to_load_all_chats(self):
+        """滚动加载所有对话列表"""
+        # 获取侧边栏滚动容器
+        sidebar = await self.page.query_selector('[class*="ds-scroll-area"]')
+        if not sidebar:
+            return
+
+        # 多次滚动到底部
+        for _ in range(10):
+            await sidebar.evaluate('el => { el.scrollTop = el.scrollHeight; }')
+            await asyncio.sleep(0.5)
+
+    async def open_chat(self, chat_id: str):
+        """打开指定对话"""
+        url = f"{self.BASE_URL}/a/chat/s/{chat_id}"
+        await self.page.goto(url)
+        await self.page.wait_for_load_state("networkidle")
+        # 等待消息加载
+        await asyncio.sleep(1)
+
+    async def get_chat_content(self) -> list[dict]:
+        """获取当前对话内容"""
+        # 先滚动加载所有消息
+        await self._scroll_to_load_all_messages()
+
+        messages = []
+        msg_elements = await self.page.query_selector_all(self.SELECTORS["message"])
+
+        for msg in msg_elements:
+            # 判断是用户还是 AI 消息
+            # AI 消息的父元素 style 属性包含 "assistant"
+            parent = await msg.evaluate_handle('el => el.parentElement')
+            parent_style = await parent.evaluate('el => el.getAttribute("style") || ""')
+
+            is_assistant = "assistant" in parent_style
+            role = "assistant" if is_assistant else "user"
+
+            # 获取消息文本
+            content = await msg.text_content()
+            if content:
+                content = content.strip()
+
+            if content:
+                messages.append({
+                    "role": role,
+                    "content": content
+                })
+
+        return messages
+
+    async def _scroll_to_load_all_messages(self):
+        """滚动加载所有消息"""
+        # 获取消息区域滚动容器
+        scroll_area = await self.page.query_selector('[class*="ds-scroll-area"]')
+        if not scroll_area:
+            return
+
+        # 多次滚动到顶部（历史消息在上面）
+        for _ in range(5):
+            await scroll_area.evaluate('el => { el.scrollTop = 0; }')
+            await asyncio.sleep(0.5)
+
+        # 再滚动到底部确保所有消息加载
+        for _ in range(3):
+            await scroll_area.evaluate('el => { el.scrollTop = el.scrollHeight; }')
+            await asyncio.sleep(0.3)

@@ -1,0 +1,57 @@
+2026-02-26T07:07:59.425Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-26T07:07:59.426Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-26T07:07:59.426Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-26T07:07:59.426Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-26T07:07:59.435Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-26T07:07:59.445Z [DEBUG] Loading plugin superpowers from source: {"source":"url","url":"https://github.com/obra/superpowers.git"}
+2026-02-26T07:07:59.445Z [DEBUG] No version found for superpowers@claude-plugins-official, using 'unknown'
+2026-02-26T07:07:59.445Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/obra/superpowers.git"} to temporary path /Users/comdir/.claude/plugins/cache/temp_git_1772089679445_81nuyl
+2026-02-26T07:07:59.458Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-26T07:07:59.459Z [DEBUG] [STARTUP] Running setup()...
+2026-02-26T07:07:59.462Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-26T07:07:59.477Z [DEBUG] Error log sink initialized
+2026-02-26T07:07:59.481Z [DEBUG] [STARTUP] setup() completed in 22ms
+2026-02-26T07:07:59.481Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-26T07:07:59.497Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/comdir/SynologyDrive/0050Project/Tool.System/local-tools/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2026-02-26T07:07:59.514Z [DEBUG] Loaded 26 unique skills (26 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 11)
+2026-02-26T07:09:14.559Z [ERROR] Failed to cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089679445_81nuyl'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75020 ms: Couldn't connect to server
+2026-02-26T07:09:14.560Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-02-26T07:09:14.560Z [DEBUG] Plugin not available for MCP: superpowers@claude-plugins-official - error type: generic-error
+2026-02-26T07:09:14.561Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089679445_81nuyl'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75020 ms: Couldn't connect to server
+2026-02-26T07:09:14.561Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-02-26T07:09:14.561Z [DEBUG] Total plugin skills loaded: 0
+2026-02-26T07:09:14.561Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089679445_81nuyl'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75020 ms: Couldn't connect to server
+2026-02-26T07:09:14.561Z [DEBUG] Total plugin commands loaded: 0
+2026-02-26T07:09:14.561Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-02-26T07:09:14.561Z [DEBUG] Plugin loading errors: Failed to download/cache plugin superpowers: Failed to clone repository: Cloning into '/Users/comdir/.claude/plugins/cache/temp_git_1772089679445_81nuyl'...
+fatal: unable to access 'https://github.com/obra/superpowers.git/': Failed to connect to github.com port 443 after 75020 ms: Couldn't connect to server
+2026-02-26T07:09:14.561Z [DEBUG] Total plugin agents loaded: 0
+2026-02-26T07:09:14.562Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-26T07:09:14.562Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-26T07:09:14.562Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-26T07:09:14.563Z [DEBUG] getSkills returning: 26 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-26T07:09:14.566Z [DEBUG] [STARTUP] Commands and agents loaded in 75085ms
+2026-02-26T07:09:14.566Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-26T07:09:14.566Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-26T07:09:14.566Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-26T07:09:14.567Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T07:09:14.567Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T07:09:14.599Z [DEBUG] Total LSP servers loaded: 0
+2026-02-26T07:09:14.601Z [DEBUG] [STARTUP] MCP configs loaded in 75166ms
+2026-02-26T07:09:14.607Z [DEBUG] MCP server "lark-mcp": Starting connection with timeout of 30000ms
+2026-02-26T07:09:14.609Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-26T07:09:14.609Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-26T07:09:14.609Z [DEBUG] LSP server manager initialized successfully
+2026-02-26T07:09:14.609Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-26T07:09:14.610Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T07:09:14.663Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-26T07:09:14.664Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.a54; cc_entrypoint=sdk-cli; cch=00000;
+2026-02-26T07:09:14.666Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-26T07:09:14.666Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-26T07:09:14.666Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-26T07:09:15.186Z [DEBUG] Failed to fetch org penguin mode status, defaulting to disabled
+2026-02-26T07:09:15.204Z [ERROR] API error (attempt 1/11): 403 403 {"error":{"type":"forbidden","message":"Request not allowed"}}
+2026-02-26T07:09:15.205Z [ERROR] Error in API request: 403 {"error":{"type":"forbidden","message":"Request not allowed"}}

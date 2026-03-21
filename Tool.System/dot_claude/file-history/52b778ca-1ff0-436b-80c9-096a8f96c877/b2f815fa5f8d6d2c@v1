@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.22",
+    "lastTouchedAt": "2026-02-22T02:26:47.833Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-22T02:22:10.863Z",
+    "lastRunVersion": "2026.2.3",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "moonshot:default": {
+        "provider": "moonshot",
+        "mode": "api_key"
+      },
+      "zai:default": {
+        "provider": "zai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "kimi-coding": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "moonshot": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "apiKey": "sk-CfaXdwQHk37taLehxwLBVGZCoLzkgy5MTJ9pxvl0Gn4WoZX7",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "kimi-k2-0905-preview",
+            "name": "Kimi K2",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "moonshot/kimi-k2.5"
+      },
+      "models": {
+        "kimi-coding/kimi-k2.5": {},
+        "moonshot/kimi-k2.5": {
+          "alias": "Kimi"
+        },
+        "zai/glm-4.7": {
+          "alias": "GLM"
+        },
+        "zai/glm-5": {}
+      },
+      "workspace": "/Users/liuwei/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "accounts": {
+        "main": {
+          "appId": "cli_a913c55ee839dcd2",
+          "appSecret": "oO0CB8flBudXU5SEz2zBOe8GLiY4gdOo"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "9c3d8ccc8ee612fdd2ca4216324058f25b205b9d6ecc27e5"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    }
+  }
+}

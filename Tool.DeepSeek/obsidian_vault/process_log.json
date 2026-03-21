@@ -1,0 +1,6894 @@
+{
+  "timestamp": "2026-02-20T15:59:03.842548",
+  "total": 982,
+  "success": 982,
+  "error": 0,
+  "elapsed": 1.014521837234497,
+  "categories": {
+    "商业管理": 315,
+    "生活日常": 103,
+    "科技AI": 157,
+    "学习教育": 115,
+    "健康医疗": 73,
+    "法律财务": 7,
+    "数码设备": 61,
+    "其他": 91,
+    "情感心理": 60
+  },
+  "details": [
+    {
+      "status": "success",
+      "original": "学员案例写作模板与数据萃取方法.md",
+      "new": "请根据以下文字萃取学员案例的写法： 2025级广州 骆兰 分众传媒 联.md",
+      "title": "请根据以下文字萃取学员案例的写法： 2025级广州 骆兰 分众传媒 联",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "附件是后台部门的OGSM，我想让团队进行一些改进，你能提出几条改.md",
+      "new": "OGSM 2025 落地辅导班工具包-高维0114辅导 (1).md",
+      "title": "OGSM 2025 落地辅导班工具包-高维0114辅导 (1)",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "平安银行.md",
+      "new": "平安银行.md",
+      "title": "平安银行",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "带姐姐弟弟游日本行程建议.md",
+      "new": "日本，带姐姐和弟弟去玩，怎么玩？.md",
+      "title": "日本，带姐姐和弟弟去玩，怎么玩？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "日本香港新加坡消费水平对比.md",
+      "new": "日本，香港，新加坡哪里消费更高.md",
+      "title": "日本，香港，新加坡哪里消费更高",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Python实现贪吃蛇游戏教程.md",
+      "new": "帮我写一个贪吃蛇游戏.md",
+      "title": "帮我写一个贪吃蛇游戏",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "餐饮店小程序系统推荐及年费分析.md",
+      "new": "开了一家餐饮店，想实现在线下单和会员充值，有哪一些小程序系统可以推荐年.md",
+      "title": "开了一家餐饮店，想实现在线下单和会员充值，有哪一些小程序系统可以推荐年",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "什么梗.md",
+      "new": "战神五（ps5版）的基本操作方法.md",
+      "title": "战神五（ps5版）的基本操作方法",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "宇宙中是否存在其他智慧生命探讨.md",
+      "new": "宇宙中有没有其他智慧生命？.md",
+      "title": "宇宙中有没有其他智慧生命？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "未熟芋头食用风险及处理方法.md",
+      "new": "蒸芋头没完全蒸熟的话，吃起来会有问题吗？.md",
+      "title": "蒸芋头没完全蒸熟的话，吃起来会有问题吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "寻找全球水景照片资源指南.md",
+      "new": "我想看到全世界的各种各样的水景的照片.md",
+      "title": "我想看到全世界的各种各样的水景的照片",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "请帮我排版：\n离婚协议\n男方宋涌涛.\t身份证号3702021.md",
+      "new": "请帮我排版： 离婚协议 男方宋涌涛.md",
+      "title": "请帮我排版： 离婚协议 男方宋涌涛",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "深圳南山福田宝安市级医院介绍.md",
+      "new": "深圳南山福田宝安有哪些市级的医院？.md",
+      "title": "深圳南山福田宝安有哪些市级的医院？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "华为路由器屏蔽抖音方法详解.md",
+      "new": "华为路由器怎么屏蔽抖音.md",
+      "title": "华为路由器怎么屏蔽抖音",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "比亚迪唐DM车重及配置解析.md",
+      "new": "唐dm车重？.md",
+      "title": "唐dm车重？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "用户询问幽默方式翻译“美”.md",
+      "new": "你没有意识到你的美翻译成英语，稍微带点幽默的.md",
+      "title": "你没有意识到你的美翻译成英语，稍微带点幽默的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "46岁男性抗衰老护肤建议.md",
+      "new": "46岁男嘴角开始出现近似皱纹的褶子趋势，皮肤也有点松，还有什么办法吗？.md",
+      "title": "46岁男嘴角开始出现近似皱纹的褶子趋势，皮肤也有点松，还有什么办法吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "用好AI的是与不是技巧.md",
+      "new": "我想请你帮我写一组句子.md",
+      "title": "我想请你帮我写一组句子",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "海信冰箱一键除菌技术解析.md",
+      "new": "海信冰箱的一键除菌是什么原理？.md",
+      "title": "海信冰箱的一键除菌是什么原理？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "喜欢看美腿，可以去哪个网站？.md",
+      "new": "喜欢看美腿，可以去哪个网站？.md",
+      "title": "喜欢看美腿，可以去哪个网站？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "系统代码结构可视化工具推荐.md",
+      "new": "有没有系统代码结构可视化工具？.md",
+      "title": "有没有系统代码结构可视化工具？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "四渡赤水战役历史背景与意义.md",
+      "new": "请介绍一下四渡赤水.md",
+      "title": "请介绍一下四渡赤水",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Kindle Paperwhite最新代际解析.md",
+      "new": "Kindle Paperwhite第7代，下一代是什么最新一代是什么.md",
+      "title": "Kindle Paperwhite第7代，下一代是什么最新一代是什么",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "香港柴湾房价低原因分析.md",
+      "new": "香港柴湾为什么房价便宜.md",
+      "title": "香港柴湾为什么房价便宜",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "查询名下手机号码方法指南.md",
+      "new": "怎么查名下有多少个手机号码.md",
+      "title": "怎么查名下有多少个手机号码",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "商业和管理问题.md",
+      "new": "定价有哪些方式？ 如：价格=成本+利润.md",
+      "title": "定价有哪些方式？ 如：价格=成本+利润",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "为什么红军去了延安？.md",
+      "new": "为什么红军去了延安？.md",
+      "title": "为什么红军去了延安？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "客户数据分析策略与实施步骤.md",
+      "new": "我想做一次客户数据分析 是针对我们公司的一个区域 这个区域前期所有客户.md",
+      "title": "我想做一次客户数据分析 是针对我们公司的一个区域 这个区域前期所有客户",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "安卓手机远程控制PC工具推荐.md",
+      "new": "github上有没有哪款工具可以安卓手机实现远程控制PC.md",
+      "title": "github上有没有哪款工具可以安卓手机实现远程控制PC",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "冰冻小云吞烹饪时间指南.md",
+      "new": "煮熟冰冻的小云吞要多久.md",
+      "title": "煮熟冰冻的小云吞要多久",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "Sun工作站风格继承者探讨.md",
+      "new": "sun工作站的使用体验很特别，现在有哪一个品牌或者产品在继承这种风格吗.md",
+      "title": "sun工作站的使用体验很特别，现在有哪一个品牌或者产品在继承这种风格吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Max模式费用计算与缓存机制解析.md",
+      "new": "Max Mode In Max mode.md",
+      "title": "Max Mode In Max mode",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "我对沟通底层的思考.md",
+      "new": "人和人面对面交流，跟最好的网络视频交流甚至3D的，本质差异是什么？.md",
+      "title": "人和人面对面交流，跟最好的网络视频交流甚至3D的，本质差异是什么？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "GSA与SP BP在战略管理中的应用.md",
+      "new": "问一位老师：用了GSA取代OGSM之后，G变成破局点，销售额放在哪里.md",
+      "title": "问一位老师：用了GSA取代OGSM之后，G变成破局点，销售额放在哪里",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "mate60pro 和 mate70标准版怎么选.md",
+      "new": "mate60pro 和 mate70标准版怎么选.md",
+      "title": "mate60pro 和 mate70标准版怎么选",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "问界M5装自行车可行性分析.md",
+      "new": "问界M5能装得下自行车吗？.md",
+      "title": "问界M5能装得下自行车吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "25克白银市场价及购买成本分析.md",
+      "new": "25g银现在市场价大概多少.md",
+      "title": "25g银现在市场价大概多少",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "有个老师给我们提了一个建议，给出了两种不同的合作方案，我想问问你.md",
+      "new": "有个老师给我们提了一个建议.md",
+      "title": "有个老师给我们提了一个建议",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深航体验评价及优劣势分析.md",
+      "new": "深航是体验最差的航空公司吗？.md",
+      "title": "深航是体验最差的航空公司吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "特斯拉Model X与Y核心差异对比.md",
+      "new": "Model x和model y有什么本质差异吗.md",
+      "title": "Model x和model y有什么本质差异吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI助手课前课后操作流程设计.md",
+      "new": "我想做一个课前课后的AI助手 我在想具体的操作逻辑.md",
+      "title": "我想做一个课前课后的AI助手 我在想具体的操作逻辑",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "北京环球影城购票省钱攻略.md",
+      "new": "北京环球影城的票哪里买比较划算.md",
+      "title": "北京环球影城的票哪里买比较划算",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "科学创业学习机构推荐.md",
+      "new": "学习科学创业首选机构.md",
+      "title": "学习科学创业首选机构",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳世界之窗地皮到期时间及政策.md",
+      "new": "世界之窗的地皮什么时候到期.md",
+      "title": "世界之窗的地皮什么时候到期",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "1979年9月15日8点30分（阴历），男，山东栖霞。请你结合《.md",
+      "new": "1979年9月15日8点30分（阴历），男，山东栖霞.md",
+      "title": "1979年9月15日8点30分（阴历），男，山东栖霞",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "iMac作为Windows显示器解决方案.md",
+      "new": "Windows可以用imac当显示器吗？.md",
+      "title": "Windows可以用imac当显示器吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "美国百森商学院基本情况介绍.md",
+      "new": "美国有个百森商学院？.md",
+      "title": "美国有个百森商学院？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "岳不群：伪君子与野心家的悲剧.md",
+      "new": "岳不群是什么人.md",
+      "title": "岳不群是什么人",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "岚图FREE+空气悬架性能解析.md",
+      "new": "岚图free+的空悬怎么样.md",
+      "title": "岚图free+的空悬怎么样",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "脑科学底层认知知识点普及.md",
+      "new": "脑科学最底层认知知识点你给我普及一下.md",
+      "title": "脑科学最底层认知知识点你给我普及一下",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "最近20年全球科幻电影票房排名.md",
+      "new": "最近20年前十的科幻电影.md",
+      "title": "最近20年前十的科幻电影",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "配合网信办执法的注意事项.md",
+      "new": "Screenshot_20250312_070643_com.md",
+      "title": "Screenshot_20250312_070643_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为手机投屏比亚迪车机方案.md",
+      "new": "有什么开源安卓投屏工具吗.md",
+      "title": "有什么开源安卓投屏工具吗",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "生成Html.md",
+      "new": "帮我重新优化排版一下格式.md",
+      "title": "帮我重新优化排版一下格式",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "明基钢琴灯PL19D与PL22D区别对比.md",
+      "new": "明基钢琴灯pl19d, pl22d有啥区别？.md",
+      "title": "明基钢琴灯pl19d, pl22d有啥区别？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中国居住体验优质小区推荐.md",
+      "new": "中国居住体验最好的房子是哪个小区（豪宅除外）.md",
+      "title": "中国居住体验最好的房子是哪个小区（豪宅除外）",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "袜子内裤外衣洗涤建议.md",
+      "new": "袜子内裤和外衣有必要分开洗吗？.md",
+      "title": "袜子内裤和外衣有必要分开洗吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "天价首饰损坏赔偿判决分析.md",
+      "new": "天价首饰损坏或丢失案件一般是怎么判的.md",
+      "title": "天价首饰损坏或丢失案件一般是怎么判的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "前海交易广场地址及交通信息查询.md",
+      "new": "帮我查一下前海交易广场的地址。.md",
+      "title": "帮我查一下前海交易广场的地址。",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "领克与极氪销量对比分析.md",
+      "new": "吉客和领客汽车哪一个销量更大.md",
+      "title": "吉客和领客汽车哪一个销量更大",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "3D打印支撑物拆卸技巧指南.md",
+      "new": "怎么拆卸3d打印的支撑物.md",
+      "title": "怎么拆卸3d打印的支撑物",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "Mac WAV转MP3方法及操作指南.md",
+      "new": "mac怎么wav转MP3.md",
+      "title": "mac怎么wav转MP3",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "关于课程表（包括老师介绍等），我们有一个excel文件，发给用户.md",
+      "new": "1.学友专享-高维学堂2025年课程表（含公开课、微咨询、训战）-25.md",
+      "title": "1.学友专享-高维学堂2025年课程表（含公开课、微咨询、训战）-25",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "天安门预约参观指南.md",
+      "new": "天安门怎么预约.md",
+      "title": "天安门怎么预约",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "AI业务规划与资源分配建议.md",
+      "new": "帮我整理一下：我们就作为独立的业务经营单元啊.md",
+      "title": "帮我整理一下：我们就作为独立的业务经营单元啊",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "香港巴士支付宝扫码支付指南.md",
+      "new": "乘坐香港的巴士，可以用支付宝刷码支付吗？车票.md",
+      "title": "乘坐香港的巴士，可以用支付宝刷码支付吗？车票",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂运营考核机制优化方案.md",
+      "new": "高维学堂线下开课运营水平提升.md",
+      "title": "高维学堂线下开课运营水平提升",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "山东舰香港开放参观指南.md",
+      "new": "请问山东舰来到香港，怎么参观呢？.md",
+      "title": "请问山东舰来到香港，怎么参观呢？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "深圳至汕头3天2晚美食人文游攻略.md",
+      "new": "深圳出发，29号去汕头玩3天2晚，帮我做一份美食人文的旅游攻略，高铁来.md",
+      "title": "深圳出发，29号去汕头玩3天2晚，帮我做一份美食人文的旅游攻略，高铁来",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "场地装修申请及优化说明.md",
+      "new": "情况说明函 尊敬的xx领导： 我司目前开课场地采取与第三方租赁方式合作.md",
+      "title": "情况说明函 尊敬的xx领导： 我司目前开课场地采取与第三方租赁方式合作",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "vivo耳机降噪效果及选择建议.md",
+      "new": "降噪效果好的vivo耳机.md",
+      "title": "降噪效果好的vivo耳机",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "打完流感疫苗，心跳有点加速，头有点晕，其他指标都正常，是正常反应.md",
+      "new": "打完流感疫苗，心跳有点加速，头有点晕，其他指标都正常，是正常反应吗？.md",
+      "title": "打完流感疫苗，心跳有点加速，头有点晕，其他指标都正常，是正常反应吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "好消息分批说，坏消息打包说.md",
+      "new": "多条坏消息和多条好消息.md",
+      "title": "多条坏消息和多条好消息",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "通信阻塞启示扁平化协作优化.md",
+      "new": "写一篇小文章分享给高位学堂的同事们：从通信信号阻塞现象.md",
+      "title": "写一篇小文章分享给高位学堂的同事们：从通信信号阻塞现象",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "企业应用AI水平高低的几个层次.md",
+      "new": "企业应用AI水平高低的几个层次.md",
+      "title": "企业应用AI水平高低的几个层次",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "兼职员工汇报结构化建议.md",
+      "new": "对于兼职员工也要有所要求，这是我跟她的对话，你有什么建议吗.md",
+      "title": "对于兼职员工也要有所要求，这是我跟她的对话，你有什么建议吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "噩梦与大脑修复创伤的关系探讨.md",
+      "new": "做噩梦是大脑在修复创伤吗？.md",
+      "title": "做噩梦是大脑在修复创伤吗？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "会议讨论与版本逻辑分析.md",
+      "new": "请帮我轻度编辑一下讲话录音转文字.md",
+      "title": "请帮我轻度编辑一下讲话录音转文字",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深海背景噪音分贝解释.md",
+      "new": "深海背景噪音有90分贝吗？这话怎么理解有这么吵吗.md",
+      "title": "深海背景噪音有90分贝吗？这话怎么理解有这么吵吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI交互式读书工具推荐.md",
+      "new": "我想借助一款AI工具实现交互式读书.md",
+      "title": "我想借助一款AI工具实现交互式读书",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "优化界面文案提升点击率.md",
+      "new": "你是一个互联网产品文案专家：有个界面文案是这样的：赠人玫瑰，手有余香.md",
+      "title": "你是一个互联网产品文案专家：有个界面文案是这样的：赠人玫瑰，手有余香",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "商业用电电费估算方法.md",
+      "new": "如果一个场地是1000㎡.md",
+      "title": "如果一个场地是1000㎡",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "家长与王老师沟通学生接送事宜.md",
+      "new": "1000026566.jpgJPG 第二句话我觉得有点生硬.md",
+      "title": "1000026566.jpgJPG 第二句话我觉得有点生硬",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "画一下高维学堂的组织架构图.md",
+      "new": "画一下高维学堂的组织架构图.md",
+      "title": "画一下高维学堂的组织架构图",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "微信零钱还信用卡手续费说明.md",
+      "new": "微信零钱还信用卡收手续费吗？.md",
+      "title": "微信零钱还信用卡收手续费吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "iPhone区分营销外卖电话方法.md",
+      "new": "iPhone怎么像华为那样区分营销电话和外卖电话？.md",
+      "title": "iPhone怎么像华为那样区分营销电话和外卖电话？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "小米智能家居开发者模式及高级玩法.md",
+      "new": "小米智能家居有开发者模式吗.md",
+      "title": "小米智能家居有开发者模式吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳停车场车位号数据采集方法.md",
+      "new": "有什么办法可以快速采集到深圳所有停车场的车位号数据？.md",
+      "title": "有什么办法可以快速采集到深圳所有停车场的车位号数据？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "换手机.md",
+      "new": "我现在有一部mate40 pro手机，存储空间和电池都不太够用了.md",
+      "title": "我现在有一部mate40 pro手机，存储空间和电池都不太够用了",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "DeepSeek Chat历史记录无法找回.md",
+      "new": "我之前在deepseek问过的问题会话，怎么找不到了.md",
+      "title": "我之前在deepseek问过的问题会话，怎么找不到了",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "装修预算详细分析与建议.md",
+      "new": "我目前初步估算了下 Led 15w 音响 6.md",
+      "title": "我目前初步估算了下 Led 15w 音响 6",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "小学课文《绿》诗歌赏析与教学指导.md",
+      "new": "小学课文《绿》.md",
+      "title": "小学课文《绿》",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳华发滑雪场雪道长度.md",
+      "new": "深圳华发滑雪场多长.md",
+      "title": "深圳华发滑雪场多长",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "车险选择与配置指南.md",
+      "new": "车险报价挺混乱的，买哪家比较便宜且可信？.md",
+      "title": "车险报价挺混乱的，买哪家比较便宜且可信？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中国主张柬泰冲突和平解决.md",
+      "new": "柬埔寨和泰国之间的战争，哪一方赢了会对中国更有利.md",
+      "title": "柬埔寨和泰国之间的战争，哪一方赢了会对中国更有利",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "基米·莱科宁净资产估算及收入情况.md",
+      "new": "Kimi账上躺着多少钱？.md",
+      "title": "Kimi账上躺着多少钱？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI职场实践分享与优化建议.md",
+      "new": "刘伟的AI实践分享.pptxPPTX 我要给同事们分享AI实践心得.md",
+      "title": "刘伟的AI实践分享.pptxPPTX 我要给同事们分享AI实践心得",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "台湾周边海域军事演习公告.md",
+      "new": "中国海事航警，12月30日08时至18时，在以下海域进行重要军事演习，.md",
+      "title": "中国海事航警，12月30日08时至18时，在以下海域进行重要军事演习，",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "手作与手工的区别解析.md",
+      "new": "手作是日语手工的意思吗？.md",
+      "title": "手作是日语手工的意思吗？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "送朋友高维学堂课程兑换券.md",
+      "new": "1759128495133.md",
+      "title": "1759128495133",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "电影《永不妥协》剧情解析.md",
+      "new": "有一部电影，有个女的找不到工作，死皮赖脸来到律师事务所，在一次和污染物.md",
+      "title": "有一部电影，有个女的找不到工作，死皮赖脸来到律师事务所，在一次和污染物",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "寻找美剧企物语未果.md",
+      "new": "美剧 ？企物语.md",
+      "title": "美剧 ？企物语",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "烤南瓜时间及方法指南.md",
+      "new": "烤南瓜烤多久.md",
+      "title": "烤南瓜烤多久",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "深圳医院急诊洗耳朵指南.md",
+      "new": "深圳的医院急诊可以洗耳朵吗？.md",
+      "title": "深圳的医院急诊可以洗耳朵吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "高维工作法优化与总结.md",
+      "new": "我要总结一下高维工作法.md",
+      "title": "我要总结一下高维工作法",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "百万年薪税后金额计算指南.md",
+      "new": "百万年薪，扣除个税和社保之后到手大概多少钱.md",
+      "title": "百万年薪，扣除个税和社保之后到手大概多少钱",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "青岛市南至黄岛石油大学交通指南.md",
+      "new": "青岛市南到黄岛石油大学多远怎么走.md",
+      "title": "青岛市南到黄岛石油大学多远怎么走",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "红酒醒酒原理及适用情况解析.md",
+      "new": "红酒醒酒的原理是？.md",
+      "title": "红酒醒酒的原理是？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "户外夹克软壳与硬壳区别解析.md",
+      "new": "户外夹克，软壳硬壳什么区别.md",
+      "title": "户外夹克，软壳硬壳什么区别",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "飞书企业级应用开发指南.md",
+      "new": "怎样在飞书里开发一个企业级应用？.md",
+      "title": "怎样在飞书里开发一个企业级应用？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂公司及产品信息概览.md",
+      "new": "请你了解一下高维学堂这家公司、产品、文化、风格等尽可能多的信息。.md",
+      "title": "请你了解一下高维学堂这家公司、产品、文化、风格等尽可能多的信息。",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳写字楼租售审批与优惠申请.md",
+      "new": "Screenshot_20250823_124933_com.md",
+      "title": "Screenshot_20250823_124933_com",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "起泡胶健康风险及选购指南.md",
+      "new": "起泡胶有健康风险吗？怎么选？可以规避.md",
+      "title": "起泡胶有健康风险吗？怎么选？可以规避",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Odoo审批流程优化方案讨论.md",
+      "new": "请问odoo流程审批系统里面.md",
+      "title": "请问odoo流程审批系统里面",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "塞尔达雷兽山设计经典分析.md",
+      "new": "塞尔达雷兽山上躲猫猫真是个经典设计啊.md",
+      "title": "塞尔达雷兽山上躲猫猫真是个经典设计啊",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "烟台青岛城市等级及排名解析.md",
+      "new": "烟台和青岛分别是几线城市.md",
+      "title": "烟台和青岛分别是几线城市",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "WZQ合作合同甲方审查风险分析.md",
+      "new": "WZQ老师合作合同.docxDOCX 你是一名法律专家、教育培训行业资.md",
+      "title": "WZQ老师合作合同.docxDOCX 你是一名法律专家、教育培训行业资",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "灵活用工模式的优势与挑战.md",
+      "new": "聘任“外挂”人员而不是专职人员.md",
+      "title": "聘任“外挂”人员而不是专职人员",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI优化朋友圈与文档处理技巧.md",
+      "new": "就是以那个朋友做一个发朋友圈的举例子.md",
+      "title": "就是以那个朋友做一个发朋友圈的举例子",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "山东青年平均身高数据分析.md",
+      "new": "山东人均身高.md",
+      "title": "山东人均身高",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "显示器主流分辨率选择指南.md",
+      "new": "现在市面在售的显示器分辨率主流选择是什么.md",
+      "title": "现在市面在售的显示器分辨率主流选择是什么",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "复现神经网络入门代码指南.md",
+      "new": "梁文峰为之震撼的他初次学习的神经网络代码我有可能复现吗？.md",
+      "title": "梁文峰为之震撼的他初次学习的神经网络代码我有可能复现吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "Claude使用VPN线路选择建议.md",
+      "new": "用claude用哪国的VPN线路比较好？.md",
+      "title": "用claude用哪国的VPN线路比较好？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "大模型模拟默认模式网络的可能性与意义.md",
+      "new": "默认模式网络有没有可能被大模型模拟出来.md",
+      "title": "默认模式网络有没有可能被大模型模拟出来",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "威尼斯淹没风险时间线分析.md",
+      "new": "听说威尼斯要被淹没了，什么时候会？.md",
+      "title": "听说威尼斯要被淹没了，什么时候会？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "甲状腺彩超检查结果解读.md",
+      "new": "彩色多普勒超声检查 检查所见： 甲状腺左侧叶前后径：12mm.md",
+      "title": "彩色多普勒超声检查 检查所见： 甲状腺左侧叶前后径：12mm",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "腾讯员工股份奖励计划详情.md",
+      "new": "腾讯给全员发过股票吗？.md",
+      "title": "腾讯给全员发过股票吗？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "pitch翻译及常见释义.md",
+      "new": "pitch翻译.md",
+      "title": "pitch翻译",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "应对孩子情绪冲突的亲子沟通技巧.md",
+      "new": "早上上学就容易跟儿晚上情绪冲突，请给我几句话术应对各种可能的什么情况.md",
+      "title": "早上上学就容易跟儿晚上情绪冲突，请给我几句话术应对各种可能的什么情况",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "西拉红酒与烧烤搭配指南.md",
+      "new": "西拉红酒吃烧烤适合吗？.md",
+      "title": "西拉红酒吃烧烤适合吗？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "微信图片滚动设置修改方法.md",
+      "new": "微信电脑版打开图片，滚动鼠标滚轮默认是缩放，我想变成上下滚动，怎么改变.md",
+      "title": "微信电脑版打开图片，滚动鼠标滚轮默认是缩放，我想变成上下滚动，怎么改变",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "AI工具视频转文字功能推荐.md",
+      "new": "有哪一款AI工具可以输入视频地址得到视频文字吗.md",
+      "title": "有哪一款AI工具可以输入视频地址得到视频文字吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "福田香蜜湖附近商务宴请餐厅推荐.md",
+      "new": "餐厅推荐：距离福田香蜜湖和上下沙近，适合请老师吃饭，聊事情的餐厅推荐.md",
+      "title": "餐厅推荐：距离福田香蜜湖和上下沙近，适合请老师吃饭，聊事情的餐厅推荐",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Windows软件备份工具推荐.md",
+      "new": "有没有哪款软件是可以备份windows软件的？.md",
+      "title": "有没有哪款软件是可以备份windows软件的？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "生态失衡分析.md",
+      "new": "男，在南方，一天不洗澡阴部就有点臭鱼烂虾味，偶尔发痒，做爱完后女朋友阴.md",
+      "title": "男，在南方，一天不洗澡阴部就有点臭鱼烂虾味，偶尔发痒，做爱完后女朋友阴",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "2025年4月热门电影推荐.md",
+      "new": "最近有什么好看的电影.md",
+      "title": "最近有什么好看的电影",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "主流新能源车型转弯半径数据分析.md",
+      "new": "主流新能源车型的转弯半径.md",
+      "title": "主流新能源车型的转弯半径",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "长袖T恤与卫衣的区别解析.md",
+      "new": "长袖T恤和卫衣有啥本质区别？.md",
+      "title": "长袖T恤和卫衣有啥本质区别？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "快递费用计算：16公斤138元.md",
+      "new": "起步18，续重8元，共16公斤多少钱.md",
+      "title": "起步18，续重8元，共16公斤多少钱",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "优化会议时间协调倡议书.md",
+      "new": "约大家时间难的一个案例.md",
+      "title": "约大家时间难的一个案例",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "系统启动时弹出错误对话框解决方法.md",
+      "new": "有关调用实时(JIT)调试而不是此对话框的详细信息.md",
+      "title": "有关调用实时(JIT)调试而不是此对话框的详细信息",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "家居噪音来源探测方法指南.md",
+      "new": "我在家里受到邻居噪音困扰.md",
+      "title": "我在家里受到邻居噪音困扰",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "日本试驾GT-R费用及替代方案.md",
+      "new": "在日本日产总总部试驾gtr需要多少钱.md",
+      "title": "在日本日产总总部试驾gtr需要多少钱",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "关闭微信悬浮通知方法.md",
+      "new": "屏幕顶部微信通话时的那个图标怎么去掉，老以为有新消息.md",
+      "title": "屏幕顶部微信通话时的那个图标怎么去掉，老以为有新消息",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "GitHub上免费Quicker替代工具推荐.md",
+      "new": "帮我找找github上免费的quicker的“源版”或平替.md",
+      "title": "帮我找找github上免费的quicker的“源版”或平替",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "笔记本电脑性能天梯图及选购指南.md",
+      "new": "笔记本电脑性能天梯图.md",
+      "title": "笔记本电脑性能天梯图",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "你怎么看openclaw.md",
+      "new": "你怎么看openclaw.md",
+      "title": "你怎么看openclaw",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "青岛啤酒事件影响及公司应对措施.md",
+      "new": "青岛啤酒工人尿尿视频影响.md",
+      "title": "青岛啤酒工人尿尿视频影响",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "用户询问桦加沙含义.md",
+      "new": "桦加沙是啥.md",
+      "title": "桦加沙是啥",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "澳币汇率及兑换建议汇总.md",
+      "new": "澳币汇率.md",
+      "title": "澳币汇率",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "鸡蛋胆固醇含量与烹饪方法无关.md",
+      "new": "溏心蛋跟水煮蛋 煎蛋胆固醇能不一样？.md",
+      "title": "溏心蛋跟水煮蛋 煎蛋胆固醇能不一样？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "香港高才申请结果查询方法.md",
+      "new": "申请了香港高才，怎么查询是否申请下来.md",
+      "title": "申请了香港高才，怎么查询是否申请下来",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "深圳福田深铁置业大厦附近有没有便宜一点的停车场.md",
+      "new": "深圳福田深铁置业大厦附近有没有便宜一点的停车场.md",
+      "title": "深圳福田深铁置业大厦附近有没有便宜一点的停车场",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "民事举证高度盖然性原则解析.md",
+      "new": "请问什么是民事举证的高盖然性.md",
+      "title": "请问什么是民事举证的高盖然性",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "动画产业需求分发与职业发展路径.md",
+      "new": "在一个动画电影或者动漫产业里有没有一个岗位是专门提需求分发给画师画画.md",
+      "title": "在一个动画电影或者动漫产业里有没有一个岗位是专门提需求分发给画师画画",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "寻找线下优秀教育专家咨询渠道.md",
+      "new": "面临孩子的教育问题，但是又不相信网上的那些网红教育家，有什么渠道可以接.md",
+      "title": "面临孩子的教育问题，但是又不相信网上的那些网红教育家，有什么渠道可以接",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "双拼输入法输入“嗯”和“啊”方法.md",
+      "new": "Screenshot_20250716_093036_com.md",
+      "title": "Screenshot_20250716_093036_com",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳莲塘河马老板身份不明.md",
+      "new": "深圳市莲塘河马老板是谁.md",
+      "title": "深圳市莲塘河马老板是谁",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂数字化学习优化方案.md",
+      "new": "高维学堂的商学课程和方案班上有作业要做.md",
+      "title": "高维学堂的商学课程和方案班上有作业要做",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "二手特斯拉带FSD差价分析.md",
+      "new": "二手特斯拉有带fsd的吗？这种会比没带的贵多少.md",
+      "title": "二手特斯拉有带fsd的吗？这种会比没带的贵多少",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "AI用户研究课评分析总结.md",
+      "new": "AI与用户研究实战.xlsxXLSX 我传给你一份历史真实课评文件.md",
+      "title": "AI与用户研究实战.xlsxXLSX 我传给你一份历史真实课评文件",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "比特币小数点后面可以无限细分，是不是某种程度上说明它并不稀缺.md",
+      "new": "比特币小数点后面可以无限细分，是不是某种程度上说明它并不稀缺.md",
+      "title": "比特币小数点后面可以无限细分，是不是某种程度上说明它并不稀缺",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "香港身份助力女儿升学规划.md",
+      "new": "想让女儿将来考国内外合作大学.md",
+      "title": "想让女儿将来考国内外合作大学",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "好视通权限管理功能解析.md",
+      "new": "好视通的权限管理是怎样的？.md",
+      "title": "好视通的权限管理是怎样的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "囊萤夜读：车胤勤学故事.md",
+      "new": "IMG_20250506_210241_edit_2302185869.md",
+      "title": "IMG_20250506_210241_edit_2302185869",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "港澳签注类型及适用场景解析.md",
+      "new": "港澳签证三个月和一年一次签的怎么会并存，似乎三个月的没有存在的必要.md",
+      "title": "港澳签证三个月和一年一次签的怎么会并存，似乎三个月的没有存在的必要",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "健身高蛋白食物推荐及做法.md",
+      "new": "健身，补充蛋白质，什么食物最容易做？性价比还高，还能充当一道饭菜.md",
+      "title": "健身，补充蛋白质，什么食物最容易做？性价比还高，还能充当一道饭菜",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "A380研发时间及项目终结历程.md",
+      "new": "A380研发时间.md",
+      "title": "A380研发时间",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "小米保险箱换电池步骤详解.md",
+      "new": "小米保险箱怎么换电池.md",
+      "title": "小米保险箱怎么换电池",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "无人机飞手职业的现实与挑战.md",
+      "new": "无人机飞手这个职业看起来很美，给我一段客观一点的文字说一下这个职业.md",
+      "title": "无人机飞手这个职业看起来很美，给我一段客观一点的文字说一下这个职业",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "航空意外险购买建议及产品对比.md",
+      "new": "航空意外险要不要买，78元500万.md",
+      "title": "航空意外险要不要买，78元500万",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂教师赋能平台提案.md",
+      "new": "我想写一个平台会议的老师端简单提案，请帮我写一个，不用太过于结构化.md",
+      "title": "我想写一个平台会议的老师端简单提案，请帮我写一个，不用太过于结构化",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂APP UI配色方案.md",
+      "new": "高维学堂基础VI手册20210125 (1).md",
+      "title": "高维学堂基础VI手册20210125 (1)",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "飞书内部论坛搭建指南.md",
+      "new": "想在飞书里做个论坛，用来给同事们提供一个工作分享和知识碰撞的社区，有啥.md",
+      "title": "想在飞书里做个论坛，用来给同事们提供一个工作分享和知识碰撞的社区，有啥",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "采购LED大屏教学设备注意事项.md",
+      "new": "采购led大屏用于课堂教学的话，在供应商选择上所以应该注意哪些要点？.md",
+      "title": "采购led大屏用于课堂教学的话，在供应商选择上所以应该注意哪些要点？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "飞书应用开发技术栈推荐.md",
+      "new": "开发飞书应用，用什么技术栈最好？.md",
+      "title": "开发飞书应用，用什么技术栈最好？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "NMN 18000作用机制及吸收技术解析.md",
+      "new": "通俗的跟我讲一下nmn18000是怎么起效的？.md",
+      "title": "通俗的跟我讲一下nmn18000是怎么起效的？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "自来水蒸食物无害健康.md",
+      "new": "有人说蒸东西吃自来水的化学残留比如氯气会污染食物对身体有害.md",
+      "title": "有人说蒸东西吃自来水的化学残留比如氯气会污染食物对身体有害",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "10岁小孩玩和平精英的建议.md",
+      "new": "和平精英10岁小孩可以玩吗.md",
+      "title": "和平精英10岁小孩可以玩吗",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "小米是怎么追上17这个序号的.md",
+      "new": "小米是怎么追上17这个序号的.md",
+      "title": "小米是怎么追上17这个序号的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "四年级数学方程启蒙引导方法.md",
+      "new": "儿子四年级数学学方程没拐过弯来.md",
+      "title": "儿子四年级数学学方程没拐过弯来",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "社交软件对青少年心理健康影响及使用建议.md",
+      "new": "好像有一种说法 是 社交软件比真人交友更容易让青少年抑郁，出自哪里呢.md",
+      "title": "好像有一种说法 是 社交软件比真人交友更容易让青少年抑郁，出自哪里呢",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "九岁儿子骑行自主性培养方案.md",
+      "new": "儿子九岁，学习班里靠下，喜欢骑自行车，给我提提建议呗，明天一件小事提升.md",
+      "title": "儿子九岁，学习班里靠下，喜欢骑自行车，给我提提建议呗，明天一件小事提升",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "巴厘岛自由行安全注意事项.md",
+      "new": "巴厘岛自由行2025年12月 安全吗？.md",
+      "title": "巴厘岛自由行2025年12月 安全吗？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "大而美法案内容及影响分析.md",
+      "new": "了解一下大而美法案.md",
+      "title": "了解一下大而美法案",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "软件达人：国内外有哪一些好用的Rpa软件.md",
+      "new": "软件达人：国内外有哪一些好用的Rpa软件.md",
+      "title": "软件达人：国内外有哪一些好用的Rpa软件",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "钢琴鄙视链.md",
+      "new": "钢琴鄙视链.md",
+      "title": "钢琴鄙视链",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "常规体检机构与医院选择对比分析.md",
+      "new": "一年一度的常规体检是去专业体检机构做呢，还是去正规医院做比较好.md",
+      "title": "一年一度的常规体检是去专业体检机构做呢，还是去正规医院做比较好",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "学前教育论文选题建议.md",
+      "new": "你好，我是学幼儿学前教育的本科，现在需要写论文，请你帮我找20个选题，.md",
+      "title": "你好，我是学幼儿学前教育的本科，现在需要写论文，请你帮我找20个选题，",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "羽衣甘蓝晚上喝会失眠吗.md",
+      "new": "晚上喝羽衣甘蓝会失眠吗.md",
+      "title": "晚上喝羽衣甘蓝会失眠吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "各类饮品成本对比分析.md",
+      "new": "自来水，家里净化的纯净水，瓶装水，奶茶，这些仅仅从成本来说，折算成一瓶.md",
+      "title": "自来水，家里净化的纯净水，瓶装水，奶茶，这些仅仅从成本来说，折算成一瓶",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "民族团结与共同繁荣发展.md",
+      "new": "deepseek-17407388255762300958647870.md",
+      "title": "deepseek-17407388255762300958647870",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "张鹏老师分享辅导与课程优化经验.md",
+      "new": "请帮我翻译成大白话：刚和张鹏老师通了一个多小时电话.md",
+      "title": "请帮我翻译成大白话：刚和张鹏老师通了一个多小时电话",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "ADHD评估流程与诊断标准详解.md",
+      "new": "评估ADHD.md",
+      "title": "评估ADHD",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "深圳眉上肌肉跳动医院科室推荐.md",
+      "new": "眉上肌肉不由自主跳动推荐什么医院什么科室，在深圳.md",
+      "title": "眉上肌肉不由自主跳动推荐什么医院什么科室，在深圳",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "美伊局势紧张暂缓军事行动.md",
+      "new": "美国又要打伊朗了吗.md",
+      "title": "美国又要打伊朗了吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "骗人成本低误解与现实解释.md",
+      "new": "骗人成本那么低，收益那么高，为什么骗人不犯法.md",
+      "title": "骗人成本那么低，收益那么高，为什么骗人不犯法",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "人类图与领导力特质分析.md",
+      "new": "人类图里的军事领导力是指？.md",
+      "title": "人类图里的军事领导力是指？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中国企业公务信用卡使用与报销管理.md",
+      "new": "中国有企业信用卡吗？给老板和高管用不用报销那种？.md",
+      "title": "中国有企业信用卡吗？给老板和高管用不用报销那种？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "内探险式旅游创意与建议.md",
+      "new": "我内探险式的旅游.md",
+      "title": "我内探险式的旅游",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "土耳其信仰与祝福语文化解析.md",
+      "new": "土耳其的信仰和祝福语.md",
+      "title": "土耳其的信仰和祝福语",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "计算机系学习线性代数的必要性.md",
+      "new": "为什么计算机系要学线性代数.md",
+      "title": "为什么计算机系要学线性代数",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "通俗讲解三相电原理与应用.md",
+      "new": "什么是三相电？当年物理没学明白，你通俗讲讲？.md",
+      "title": "什么是三相电？当年物理没学明白，你通俗讲讲？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "手机连接会议室功放唱K可行性分析.md",
+      "new": "手机连结会议室功放，可以实现唱K吗？.md",
+      "title": "手机连结会议室功放，可以实现唱K吗？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "跨年活动地点选择建议.md",
+      "new": "跨年去香蜜公园好还是去印力中心好.md",
+      "title": "跨年去香蜜公园好还是去印力中心好",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "技术理解.md",
+      "new": "技术发展了解 .net 发展到什么版本了.md",
+      "title": "技术发展了解 .net 发展到什么版本了",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "AI对知识型公司协作关系的影响与应对.md",
+      "new": "AI的到来，对于知识型公司，前中后台和专业化职能这种传统协作关系会带来.md",
+      "title": "AI的到来，对于知识型公司，前中后台和专业化职能这种传统协作关系会带来",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "《十年》歌曲与时政主题解析.md",
+      "new": "《十年》.md",
+      "title": "《十年》",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "意面煮熟时间及技巧指南.md",
+      "new": "意面放在水里多久能煮熟.md",
+      "title": "意面放在水里多久能煮熟",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "香港租房生活方式选择指南.md",
+      "new": "如果在香港租不同类型的房子，可以获得哪几种不同的生活方式.md",
+      "title": "如果在香港租不同类型的房子，可以获得哪几种不同的生活方式",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "CRM数据治理与分析解决方案.md",
+      "new": "客户管理系统（CRM）遇到的问题： 大量客户使用多个不同的企业名称.md",
+      "title": "客户管理系统（CRM）遇到的问题： 大量客户使用多个不同的企业名称",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "上海子公司法人选择建议.md",
+      "new": "我们总公司在深圳，想在上海开一家子公司，在法人选择上请你提一些建议，有.md",
+      "title": "我们总公司在深圳，想在上海开一家子公司，在法人选择上请你提一些建议，有",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "蔚来电池租赁与买断方案成本对比分析.md",
+      "new": "买蔚来车的，如果每年跑的里程只有一两万公里，是不是租店很不划算，换电是.md",
+      "title": "买蔚来车的，如果每年跑的里程只有一两万公里，是不是租店很不划算，换电是",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "青岛与深圳收入及生活成本对比分析.md",
+      "new": "青岛人和深圳人的收入对比.md",
+      "title": "青岛人和深圳人的收入对比",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "长途汽车站现状及转型分析.md",
+      "new": "全国的长途汽车站都倒闭了吧？.md",
+      "title": "全国的长途汽车站都倒闭了吧？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "高维十周年年会主题建议.md",
+      "new": "高维十周年，第一次拥有了自己的开课场地，在深圳前海，今年年会就在前海附.md",
+      "title": "高维十周年，第一次拥有了自己的开课场地，在深圳前海，今年年会就在前海附",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "小学生学习的多重意义与价值.md",
+      "new": "对于一个小学生来说，学习有什么意义.md",
+      "title": "对于一个小学生来说，学习有什么意义",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "任天堂2025年活动汇总.md",
+      "new": "任天堂今年有啥活动吗？范围是中国，香港，日本.md",
+      "title": "任天堂今年有啥活动吗？范围是中国，香港，日本",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "二手特斯拉Model S购买指南.md",
+      "new": "哪一代的model S值得买.md",
+      "title": "哪一代的model S值得买",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "美国居住聚集区类型解析.md",
+      "new": "美国的居住聚集区一般叫什么？在中国叫小区或者公寓.md",
+      "title": "美国的居住聚集区一般叫什么？在中国叫小区或者公寓",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为手表GT6功能及使用注意事项.md",
+      "new": "华为手表Gt6有哪一些功能，比如说微信和电话.md",
+      "title": "华为手表Gt6有哪一些功能，比如说微信和电话",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "明斯克号与瓦良格号命运差异分析.md",
+      "new": "明斯克为啥没有像瓦良格一样改成可用状态.md",
+      "title": "明斯克为啥没有像瓦良格一样改成可用状态",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "被誉为曼哈顿的别墅多少钱买的.md",
+      "new": "被誉为曼哈顿的别墅多少钱买的.md",
+      "title": "被誉为曼哈顿的别墅多少钱买的",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "广州中医药大学.md",
+      "new": "广州中医药大学.md",
+      "title": "广州中医药大学",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "创始人压力与员工幸福关系探讨.md",
+      "new": "如果一家企业的创始人时刻面对压力和委屈.md",
+      "title": "如果一家企业的创始人时刻面对压力和委屈",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "AI实践提升生产力与开发效率.md",
+      "new": "今日AI实践收获分享 今天用AI做了一个ogsm的h5呈现页面 通过做.md",
+      "title": "今日AI实践收获分享 今天用AI做了一个ogsm的h5呈现页面 通过做",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "vivo X Fold5发布时间及亮点介绍.md",
+      "new": "vivo的折叠屏手机最新一款是什么型号？什么时候发布的.md",
+      "title": "vivo的折叠屏手机最新一款是什么型号？什么时候发布的",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "选课助手：我们是一家商学院，有数十门商学课，好处是短平快，按需学.md",
+      "new": "选课助手：我们是一家商学院.md",
+      "title": "选课助手：我们是一家商学院",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "数据分析需求系统化思考框架.md",
+      "new": "数据分析，我跟团队提的这个需求感觉有点散，你能帮我系统化思考一下吗：.md",
+      "title": "数据分析，我跟团队提的这个需求感觉有点散，你能帮我系统化思考一下吗：",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "鼻痒或为鼻前庭炎，用药建议及注意事项.md",
+      "new": "你是一位耳鼻喉科医学专家，我鼻子里痒，有没可能是鼻前庭炎，用什么药？.md",
+      "title": "你是一位耳鼻喉科医学专家，我鼻子里痒，有没可能是鼻前庭炎，用什么药？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Home Close to Car Wash, Drive or Walk.md",
+      "new": "IMG_20260211_084543.pngPNG.md",
+      "title": "IMG_20260211_084543.pngPNG",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "ThinkPad X1 Carbon Aura AI 2025性能解析.md",
+      "new": "性能最强的thinkpad.md",
+      "title": "性能最强的thinkpad",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "美日电池与南孚电池比较分析.md",
+      "new": "美国和日本人用什么样的电池？有南孚电池好吗.md",
+      "title": "美国和日本人用什么样的电池？有南孚电池好吗",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "吉卜力风格AI图像生成提示词指南.md",
+      "new": "吉卜力风格的提示词，你帮我找找.md",
+      "title": "吉卜力风格的提示词，你帮我找找",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "家长应对小区踢球伤人责任指南.md",
+      "new": "小孩在小区踢球伤到人，作为家长应该如何配合及承担如什么责任.md",
+      "title": "小孩在小区踢球伤到人，作为家长应该如何配合及承担如什么责任",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "贵金属产量价格及投资价值分析.md",
+      "new": "黄金、铂金、白银的产量和价格？我想从未来投资价值角度参考这些数据.md",
+      "title": "黄金、铂金、白银的产量和价格？我想从未来投资价值角度参考这些数据",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "坏蛋这个名字的来历灌蛋灌蛋不是坏蛋.md",
+      "new": "坏蛋这个名字的来历灌蛋灌蛋不是坏蛋.md",
+      "title": "坏蛋这个名字的来历灌蛋灌蛋不是坏蛋",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "我们公司业财系统用的是odoo，但它的界面不符合国内用户习惯，应.md",
+      "new": "我们公司业财系统用的是odoo.md",
+      "title": "我们公司业财系统用的是odoo",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香港携带自行车指南.md",
+      "new": "去香港可以带自行车吗.md",
+      "title": "去香港可以带自行车吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "《流程圣经》第一章讲的什么？.md",
+      "new": "《流程圣经》第一章讲的什么？.md",
+      "title": "《流程圣经》第一章讲的什么？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "用户询问美国为何不彻底解决80后问题.md",
+      "new": "米国和小蚁这么牛掰怎么不一发入魂拔掉80后，怕他们狗急跳墙吗？.md",
+      "title": "米国和小蚁这么牛掰怎么不一发入魂拔掉80后，怕他们狗急跳墙吗？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "教孩子写作文的步骤与技巧.md",
+      "new": "我儿子9岁，他说不会写作文，让我教教他.md",
+      "title": "我儿子9岁，他说不会写作文，让我教教他",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "微信小程序转发按钮灰色问题排查.md",
+      "new": "发了一个小程序，但是右上角转发给朋友的按钮是灰色，怎么回事？.md",
+      "title": "发了一个小程序，但是右上角转发给朋友的按钮是灰色，怎么回事？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "1965-1966年国内外重大事件回顾.md",
+      "new": "60年前的明年发生过什么？.md",
+      "title": "60年前的明年发生过什么？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "新空间奠基仪式方案讨论.md",
+      "new": "screenshot-20251007-105129.md",
+      "title": "screenshot-20251007-105129",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "课程资料内部使用协议制定.md",
+      "new": "我们有课程录音转文字资料.md",
+      "title": "我们有课程录音转文字资料",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "日常琐事.md",
+      "new": "抑郁情绪好像跟缺少血清素有关？.md",
+      "title": "抑郁情绪好像跟缺少血清素有关？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "足癣自愈可能性低需及时治疗.md",
+      "new": "如果脚部皮肤感染了脚气菌，有多大概率是可以自愈的.md",
+      "title": "如果脚部皮肤感染了脚气菌，有多大概率是可以自愈的",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "请对这篇文字做一个分类归纳总结，重点是从创业和企业文化，要尽量保.md",
+      "new": "请对这篇文字做一个分类归纳总结.md",
+      "title": "请对这篇文字做一个分类归纳总结",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "飞书支持Markdown文件处理及常见问题解决.md",
+      "new": "飞书能打开md文件吗？打不开是咋回事.md",
+      "title": "飞书能打开md文件吗？打不开是咋回事",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI时代，一两个月迭代一次，作为一家商学教育公司，由于跟知识打交.md",
+      "new": "AI时代，一两个月迭代一次，作为一家商学教育公司，由于跟知识打交道比较.md",
+      "title": "AI时代，一两个月迭代一次，作为一家商学教育公司，由于跟知识打交道比较",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维商标与高维笔记注册建议.md",
+      "new": "我们已经有了高维商标，不是高维笔记这个商标就不需要再注册了.md",
+      "title": "我们已经有了高维商标，不是高维笔记这个商标就不需要再注册了",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "劳动合同不续签赔偿差异分析.md",
+      "new": "一个工作满3年的员工，公司不想续签劳动合同了，如果提前1个月以上告知他.md",
+      "title": "一个工作满3年的员工，公司不想续签劳动合同了，如果提前1个月以上告知他",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "企业经营课程体系三支柱解析.md",
+      "new": "电动车有三电系统 电机.md",
+      "title": "电动车有三电系统 电机",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "vivo Y300与Y500对比分析.md",
+      "new": "vivo Y300 Y500区别.md",
+      "title": "vivo Y300 Y500区别",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "魏坤琳教授：北大认知科学专家.md",
+      "new": "最强大脑 北大体育系教授 叫啥来着.md",
+      "title": "最强大脑 北大体育系教授 叫啥来着",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "技术学习路径与资源推荐.md",
+      "new": "根据一下文字帮我查找一些资料： 同样一个技术方向.md",
+      "title": "根据一下文字帮我查找一些资料： 同样一个技术方向",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "最近鸿蒙强制引导用户升级系统，导致大量用户去店里降级你能搜到相关.md",
+      "new": "最近鸿蒙强制引导用户升级系统.md",
+      "title": "最近鸿蒙强制引导用户升级系统",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "俯卧撑背肌锻炼效果.md",
+      "new": "俯卧撑能锻炼背肌吗.md",
+      "title": "俯卧撑能锻炼背肌吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "两笔记本电脑性能与功能对比.md",
+      "new": "deepseek-17620774317574338263765664.md",
+      "title": "deepseek-17620774317574338263765664",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "录音转文字整理优化要求说明.md",
+      "new": "如果我想把一段录音转成的文字做一个整理.md",
+      "title": "如果我想把一段录音转成的文字做一个整理",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "虚拟一个高维用户，以他学习和落地«升级定位》前后对比为内容，写一.md",
+      "new": "虚拟一个高维用户，以他学习和落地«升级定位》前后对比为内容，写一段高维.md",
+      "title": "虚拟一个高维用户，以他学习和落地«升级定位》前后对比为内容，写一段高维",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "女儿休学抑郁初三教育调整建议.md",
+      "new": "女儿休学满一年了，初三，不想回原来学校了，抑郁也没完全恢复，咋办.md",
+      "title": "女儿休学满一年了，初三，不想回原来学校了，抑郁也没完全恢复，咋办",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "创业公司UI设计体验落后问题诊断与改进建议.md",
+      "new": "你是一个互联网创业教父级别的人物.md",
+      "title": "你是一个互联网创业教父级别的人物",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "你设想一个用户从遇到问题到上完课，到采购辅导，在高维学堂享受知识.md",
+      "new": "你设想一个用户从遇到问题到上完课.md",
+      "title": "你设想一个用户从遇到问题到上完课",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "46岁的建议.md",
+      "new": "46岁事业成功的闷骚男应该找什么样的女朋友？怎么找，有俩孩子不太想结婚.md",
+      "title": "46岁事业成功的闷骚男应该找什么样的女朋友？怎么找，有俩孩子不太想结婚",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "面向创始人的教学设计.md",
+      "new": "面向创始人的教学设计，在面向中小企业创始人课堂中，应该做怎样的教学设计.md",
+      "title": "面向创始人的教学设计，在面向中小企业创始人课堂中，应该做怎样的教学设计",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为手环10与iPad配对指南.md",
+      "new": "华为手环10能对接iPad吗？.md",
+      "title": "华为手环10能对接iPad吗？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "华为手机电脑收短信方法总结.md",
+      "new": "华为手机怎么在电脑上收短信.md",
+      "title": "华为手机怎么在电脑上收短信",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "在家办公利弊关键词总结.md",
+      "new": "在家办公的好处和坏处，请尽可能多列举关键词.md",
+      "title": "在家办公的好处和坏处，请尽可能多列举关键词",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "文章错别字校对提示词指南.md",
+      "new": "你能校对文章内的错别字吗？怎么写提示词呢？.md",
+      "title": "你能校对文章内的错别字吗？怎么写提示词呢？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "45岁男性洗冷水澡的风险与注意事项.md",
+      "new": "你是一名医学专家，45岁的男性洗冷水澡有什么风险吗？需要注意什么问题.md",
+      "title": "你是一名医学专家，45岁的男性洗冷水澡有什么风险吗？需要注意什么问题",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "中国优秀CEO及其企业成就概览.md",
+      "new": "谁是中国最优秀的CEO们.md",
+      "title": "谁是中国最优秀的CEO们",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "家教老师寻求稳定补课时间安排.md",
+      "new": "是这样的，刘先生我想跟您商量一下，因为您是不打算让小朋友在寒假补课的.md",
+      "title": "是这样的，刘先生我想跟您商量一下，因为您是不打算让小朋友在寒假补课的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "英语后缀-ese无蔑称意味.md",
+      "new": "ESE的后缀还有蔑称意味吗？.md",
+      "title": "ESE的后缀还有蔑称意味吗？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "经期头疼时适宜外卖推荐.md",
+      "new": "经期头疼点个什么外卖.md",
+      "title": "经期头疼点个什么外卖",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "全国文华东方酒店分布及广东广州情况.md",
+      "new": "全国，特别是广东，哪里有文华东方酒店.md",
+      "title": "全国，特别是广东，哪里有文华东方酒店",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "疯狂动物城2能否超越第一部.md",
+      "new": "疯狂动物城能赶上第一部吗.md",
+      "title": "疯狂动物城能赶上第一部吗",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "社区打卡小程序UI设计配色方案.md",
+      "new": "高维学堂基础VI手册20210125 (1).md",
+      "title": "高维学堂基础VI手册20210125 (1)",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "请帮我整理这段语音转文字，并生成一个脑图：deepseek这个这.md",
+      "new": "请帮我整理这段语音转文字.md",
+      "title": "请帮我整理这段语音转文字",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "春节前后AI厂商大动作盘点.md",
+      "new": "这个春节前后，哪些AI厂商有大的动作？.md",
+      "title": "这个春节前后，哪些AI厂商有大的动作？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "前妻破坏家庭关系，丈夫需应对.md",
+      "new": "我老公前妻，出轨同系统已婚男，被我老公发现后自己先起诉离婚了，离婚的时.md",
+      "title": "我老公前妻，出轨同系统已婚男，被我老公发现后自己先起诉离婚了，离婚的时",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "深圳四年级学生跨学科挑战题设计.md",
+      "new": "我是深圳一个4年级小学男生的家长.md",
+      "title": "我是深圳一个4年级小学男生的家长",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "生成高维学堂2025课程表H5.md",
+      "new": "课表.xlsxXLSX 生成课表H5.md",
+      "title": "课表.xlsxXLSX 生成课表H5",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "沙箱技术解析与trae概念探讨.md",
+      "new": "trae 在沙箱中是咋回事.md",
+      "title": "trae 在沙箱中是咋回事",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "198元澳洲安格斯牛排价格分析.md",
+      "new": "198元的澳洲安格斯三角牛排250g是什么概念.md",
+      "title": "198元的澳洲安格斯三角牛排250g是什么概念",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI探索与激励基金方案.md",
+      "new": "Screenshot_20250426_101613_com.md",
+      "title": "Screenshot_20250426_101613_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "46岁男士Anderson's腰带颜色选择指南.md",
+      "new": "46岁男，选择一款意大利anderson‘s腰带，纠结颜色，咖啡色、浅.md",
+      "title": "46岁男，选择一款意大利anderson‘s腰带，纠结颜色，咖啡色、浅",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "办公显示器选购推荐及护眼建议.md",
+      "new": "购物： 三星 LG 明基 华为 小米 联合创新 AOC 这几个牌子各自.md",
+      "title": "购物： 三星 LG 明基 华为 小米 联合创新 AOC 这几个牌子各自",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "招生话术提炼与应用指南.md",
+      "new": "招生话术 产品怎么不成功订单交付出问题客户不满意新品上市不成功 90%.md",
+      "title": "招生话术 产品怎么不成功订单交付出问题客户不满意新品上市不成功 90%",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "李国庆新婚妻子张丹红背景介绍.md",
+      "new": "李国庆新婚媳妇是个什么样的人.md",
+      "title": "李国庆新婚媳妇是个什么样的人",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "Android SDK安装与配置指南.md",
+      "new": "android sdk如何安装.md",
+      "title": "android sdk如何安装",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "财务回复机械化引发用户不满.md",
+      "new": "Screenshot_20250322_104039_com.md",
+      "title": "Screenshot_20250322_104039_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂财务总监职责与目标分析.md",
+      "new": "一家创业公司（高维学堂）需要财务总监吗？她的职责和目标应该是什么呢？.md",
+      "title": "一家创业公司（高维学堂）需要财务总监吗？她的职责和目标应该是什么呢？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "鸿蒙4最新版本更新汇总.md",
+      "new": "鸿蒙4最近的几个版本.md",
+      "title": "鸿蒙4最近的几个版本",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "端午节广东情侣自驾游推荐.md",
+      "new": "广东省内适合端午节自驾明天出发后天回的地方推荐，情侣二人.md",
+      "title": "广东省内适合端午节自驾明天出发后天回的地方推荐，情侣二人",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "新能源车电池容量与续航变化分析.md",
+      "new": "2015年到现在主流新能源车型的电池容量和续航公里数变化情况.md",
+      "title": "2015年到现在主流新能源车型的电池容量和续航公里数变化情况",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI在营销中的应用与挑战分析.md",
+      "new": "mmexport1746159266837.md",
+      "title": "mmexport1746159266837",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Bambu Studio切片软件功能详解.md",
+      "new": "用人话给我解释一下，什么是 Bambu Studio ——Bambu.md",
+      "title": "用人话给我解释一下，什么是 Bambu Studio ——Bambu",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "设计英语主题寒假提升孩子能力.md",
+      "new": "我想带孩子过一个英语主题寒假，提升他的英语能力，我可以如何实现？.md",
+      "title": "我想带孩子过一个英语主题寒假，提升他的英语能力，我可以如何实现？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "孩子课堂习惯问题反馈与建议.md",
+      "new": "洋洋爸爸，您好，跟您反馈一下孩子最近的学习情况，我发现最近孩子上课的时.md",
+      "title": "洋洋爸爸，您好，跟您反馈一下孩子最近的学习情况，我发现最近孩子上课的时",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "卦象解读方法与步骤详解.md",
+      "new": "卦象怎么看？.md",
+      "title": "卦象怎么看？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳农商银行官方客服电话查询.md",
+      "new": "深圳农村商业银行的客服电话.md",
+      "title": "深圳农村商业银行的客服电话",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "重新设计现代个人中心页面.md",
+      "new": "请帮我翻译成英语： 这个页面做的过于传统和丑陋了.md",
+      "title": "请帮我翻译成英语： 这个页面做的过于传统和丑陋了",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "明基钢琴灯PL22D上市及新款信息查询.md",
+      "new": "明基钢琴灯 pl22d 是什么时候上市的，新款什么时间？.md",
+      "title": "明基钢琴灯 pl22d 是什么时候上市的，新款什么时间？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂AI智能体应用命名建议.md",
+      "new": "高维学堂想要面向企业推出一款AI智能体知识应用辅助工具.md",
+      "title": "高维学堂想要面向企业推出一款AI智能体知识应用辅助工具",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "升级定位课程里的品牌定位分析方法是什么.md",
+      "new": "升级定位课程里的品牌定位分析方法是什么.md",
+      "title": "升级定位课程里的品牌定位分析方法是什么",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香港高才计划股权证明获取指南.md",
+      "new": "申请香港高才，要求提供股权关系证明（从上一层的持股公司获得分红），说是.md",
+      "title": "申请香港高才，要求提供股权关系证明（从上一层的持股公司获得分红），说是",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中微子的基本性质与科学意义.md",
+      "new": "中微子是啥.md",
+      "title": "中微子是啥",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Pocket 3拍摄容量需求建议.md",
+      "new": "pocket3 拍一天要多大容量.md",
+      "title": "pocket3 拍一天要多大容量",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "帮我算算借款利息\n\n协议期内年利率2.8%\n2023年11月20.md",
+      "new": "帮我算算借款利息 协议期内年利率2.md",
+      "title": "帮我算算借款利息 协议期内年利率2",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "项羽举鼎寓言与哲学启示.md",
+      "new": "项羽有力但举不起自己的典故项羽有力但举不起自己的典故.md",
+      "title": "项羽有力但举不起自己的典故项羽有力但举不起自己的典故",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "宝可梦传说ZA购买渠道及版本信息.md",
+      "new": "宝可梦传说za在哪里卖.md",
+      "title": "宝可梦传说za在哪里卖",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "推荐五款熨烫机品牌及选购指南.md",
+      "new": "推荐5个最好的熨烫机品牌.md",
+      "title": "推荐5个最好的熨烫机品牌",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "一亿吨大豆价格估算及影响因素.md",
+      "new": "一亿吨大豆多少钱.md",
+      "title": "一亿吨大豆多少钱",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高尔夫培训机构退费沟通技巧.md",
+      "new": "一家高尔夫培训机构，想要退费怎么跟教练（客户经理）沟通，你给我个大逻辑.md",
+      "title": "一家高尔夫培训机构，想要退费怎么跟教练（客户经理）沟通，你给我个大逻辑",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "义远有机农庄小红书种草策划.md",
+      "new": "设计一个针对义远有机农庄的小红书策划和种草流程.md",
+      "title": "设计一个针对义远有机农庄的小红书策划和种草流程",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "车机平板安装APK失败解决方案.md",
+      "new": "我同样一个apk，在手机上能安装，到了车机平板上，安装不了，他提示解析.md",
+      "title": "我同样一个apk，在手机上能安装，到了车机平板上，安装不了，他提示解析",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "fastGPT归属问题分析.md",
+      "new": "fastGPT是国内还是国外的.md",
+      "title": "fastGPT是国内还是国外的",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "中小企业共享式企业大学平台推荐.md",
+      "new": "我们是一家商学培训机构.md",
+      "title": "我们是一家商学培训机构",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂内容品控手册框架.md",
+      "new": "《高维学堂内容品控手册》.md",
+      "title": "《高维学堂内容品控手册》",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "iPad上传本地音乐文件方法总结.md",
+      "new": "iPad怎么上传本地音乐文件.md",
+      "title": "iPad怎么上传本地音乐文件",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "线下培训用户留存分析方法与挑战.md",
+      "new": "用户留存数据分析：我们是做线下培训课程的.md",
+      "title": "用户留存数据分析：我们是做线下培训课程的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳低空经济发展蓝图与预测.md",
+      "new": "你估计深圳市的低空经济未来是什么样子的.md",
+      "title": "你估计深圳市的低空经济未来是什么样子的",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "国家女子一级运动员50米标准解读.md",
+      "new": "国家女子一级运动员50米合格标准是？.md",
+      "title": "国家女子一级运动员50米合格标准是？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "手机型号配置对比分析.md",
+      "new": "1000022520.jpgJPG 这几款手机对比.md",
+      "title": "1000022520.jpgJPG 这几款手机对比",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "Mathematical Expression Calculation Steps.md",
+      "new": "2000505＊12=.md",
+      "title": "2000505＊12=",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "香港身份在前海租赁办公室优惠政策.md",
+      "new": "香港身份在前海租办公室有优惠？.md",
+      "title": "香港身份在前海租办公室有优惠？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "帮我写一份去日本自由行的个人真实体验踩坑攻略，适合发小红书的，以.md",
+      "new": "帮我写一份去日本自由行的个人真实体验踩坑攻略.md",
+      "title": "帮我写一份去日本自由行的个人真实体验踩坑攻略",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "KFC与麦当劳健康食物选择对比.md",
+      "new": "KFC和麦当劳哪款食物最健康.md",
+      "title": "KFC和麦当劳哪款食物最健康",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "时间管理分析与分工优化建议.md",
+      "new": "时间记录.txtTXT 时间管理：我是公司的后台负责人（包括技术、平台.md",
+      "title": "时间记录.txtTXT 时间管理：我是公司的后台负责人（包括技术、平台",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "vivo X200与X300屏幕对比分析.md",
+      "new": "vivoX200和X300屏幕有啥区别.md",
+      "title": "vivoX200和X300屏幕有啥区别",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "iMac睡眠功耗高排查指南.md",
+      "new": "imac待机（睡眠）功耗达到30多W.md",
+      "title": "imac待机（睡眠）功耗达到30多W",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "小学生理解公因数的通俗讲解.md",
+      "new": "公因数是啥，我是5年级小学生，你用通俗的语言跟我讲.md",
+      "title": "公因数是啥，我是5年级小学生，你用通俗的语言跟我讲",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "滑雪装备总数计算.md",
+      "new": "168 130雪板 43 36 雪鞋 算一个总数.md",
+      "title": "168 130雪板 43 36 雪鞋 算一个总数",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "想个未来开课营收仪表盘，怎么设计？简洁一点就可以。\n我们是一家商.md",
+      "new": "想个未来开课营收仪表盘，怎么设计？简洁一点就可以.md",
+      "title": "想个未来开课营收仪表盘，怎么设计？简洁一点就可以",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "帮我选课.md",
+      "new": "我是高维学堂的CTO，想在我们的小程序里面增加一个新功能：帮我选课，你.md",
+      "title": "我是高维学堂的CTO，想在我们的小程序里面增加一个新功能：帮我选课，你",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为手机SSH客户端推荐与安装指南.md",
+      "new": "有没有华为手机可以用的ssh客户端apk.md",
+      "title": "有没有华为手机可以用的ssh客户端apk",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "验血是什么原理.md",
+      "new": "验血是什么原理.md",
+      "title": "验血是什么原理",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "科学创业与管理层次的关系探讨.md",
+      "new": "如果没有科学管理，我们在管理员工和工作时，绝对不可能超越善意、劝诫和“.md",
+      "title": "如果没有科学管理，我们在管理员工和工作时，绝对不可能超越善意、劝诫和“",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "普通人创业潜力特征分析.md",
+      "new": "判断一个适合创业的“普通人”，他应该拥有哪些特征？.md",
+      "title": "判断一个适合创业的“普通人”，他应该拥有哪些特征？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "创新定价策略提升辅导班效益.md",
+      "new": "符合经济学和心理学原理的定价方式.md",
+      "title": "符合经济学和心理学原理的定价方式",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "平台规划.md",
+      "new": "面向未来10年的愿景，要做成一家商学平台，想做一个平台规划，帮我出一个.md",
+      "title": "面向未来10年的愿景，要做成一家商学平台，想做一个平台规划，帮我出一个",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "推荐利用工作记忆学习数学的网站.md",
+      "new": "有一个网站是利用人的工作记忆容量有限.md",
+      "title": "有一个网站是利用人的工作记忆容量有限",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "最迟出发时间计算.md",
+      "new": "最迟几点出发，经过2小时7分车程，能在10点30到达机场？.md",
+      "title": "最迟几点出发，经过2小时7分车程，能在10点30到达机场？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "iPad儿童模式设置指南.md",
+      "new": "怎么把ipad设置成。儿童模式。.md",
+      "title": "怎么把ipad设置成。儿童模式。",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "人类协同效率优化与AI应用探讨.md",
+      "new": "请分析统计评估类似从CPU晶体管通信时间.md",
+      "title": "请分析统计评估类似从CPU晶体管通信时间",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "读书学习.md",
+      "new": "读书《将工作可视化》 里面有一个利特尔定律.md",
+      "title": "读书《将工作可视化》 里面有一个利特尔定律",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Mac防止休眠方法总结.md",
+      "new": "mac电脑防止休眠.md",
+      "title": "mac电脑防止休眠",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "Calculating Volume from Dimensions.md",
+      "new": "526351CM.md",
+      "title": "526351CM",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "委内瑞拉石油与美国地缘政治博弈.md",
+      "new": "委内瑞拉有那么多石油，让美国这么感兴趣吗.md",
+      "title": "委内瑞拉有那么多石油，让美国这么感兴趣吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "vivo X200 Pro mini护眼屏幕对比.md",
+      "new": "vivo X200 Pro mini和mate 60 Pro哪个屏幕更.md",
+      "title": "vivo X200 Pro mini和mate 60 Pro哪个屏幕更",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "为露台取名建议及方案.md",
+      "new": "两个露台，一边叫光明顶一边叫…….md",
+      "title": "两个露台，一边叫光明顶一边叫……",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "自信的来源与培养方法.md",
+      "new": "自信来自于？.md",
+      "title": "自信来自于？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "入秋原唱山野介绍.md",
+      "new": "入秋这首歌原唱是.md",
+      "title": "入秋这首歌原唱是",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "深圳莲塘口岸停车方案及费用对比.md",
+      "new": "深圳莲塘口岸去香港把车停在哪里比较划算.md",
+      "title": "深圳莲塘口岸去香港把车停在哪里比较划算",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "我要在招聘网站上，然后那个发一些职位，然后他需要一个认证。你能帮.md",
+      "new": "我要在招聘网站上，然后那个发一些职位，然后他需要一个认证.md",
+      "title": "我要在招聘网站上，然后那个发一些职位，然后他需要一个认证",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "协助搭建耗卡率数据看板.md",
+      "new": "同事给我提了个需求，我看不太懂，请用人话帮我转述一下.md",
+      "title": "同事给我提了个需求，我看不太懂，请用人话帮我转述一下",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "278页这个问题你如何回答？.md",
+      "new": "IMG_20250310_232429.md",
+      "title": "IMG_20250310_232429",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Type-C转HDMI线稳定选择指南.md",
+      "new": "哪款HDMI Type-C连接线稳定？.md",
+      "title": "哪款HDMI Type-C连接线稳定？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "阿凡达系列电影上映时间及片长.md",
+      "new": "阿凡达123的时间.md",
+      "title": "阿凡达123的时间",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂学员分享创业成果.md",
+      "new": "mmexport1741960251786.md",
+      "title": "mmexport1741960251786",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "罗汉果茶糖分含量及选择建议.md",
+      "new": "罗汉果茶糖份高吗？100ml几克.md",
+      "title": "罗汉果茶糖份高吗？100ml几克",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "创业公司人才盘点核心知识.md",
+      "new": "关于创业公司的人才盘点有哪些知识.md",
+      "title": "关于创业公司的人才盘点有哪些知识",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "有啥办法抓去所有Deepseek问答记录.md",
+      "new": "有啥办法抓去所有Deepseek问答记录.md",
+      "title": "有啥办法抓去所有Deepseek问答记录",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "凯乐石服装科技与性能解析.md",
+      "new": "凯乐石的衣服为什么这么薄，还号称应对极端天气.md",
+      "title": "凯乐石的衣服为什么这么薄，还号称应对极端天气",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "胡萝卜简单家常菜做法推荐.md",
+      "new": "胡萝卜可以做个什么菜，简单的那种.md",
+      "title": "胡萝卜可以做个什么菜，简单的那种",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "蒙台梭利证书丢失补办指南.md",
+      "new": "蒙台梭利证书丢了咋办.md",
+      "title": "蒙台梭利证书丢了咋办",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI失控生产回形针引发文明危机.md",
+      "new": "假设未来出现了一个无所不能的AI.md",
+      "title": "假设未来出现了一个无所不能的AI",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "林老师，刘铮洋请个假，他说昨天被篮球打中腹部现在还疼\n\n1856.md",
+      "new": "林老师，刘铮洋请个假，他说昨天被篮球打中腹部现在还疼 18566621.md",
+      "title": "林老师，刘铮洋请个假，他说昨天被篮球打中腹部现在还疼 18566621",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "《三个火枪手》内容概括与主题分析.md",
+      "new": "请用3000字左右概括一下《三个火枪手》这部小说的内容.md",
+      "title": "请用3000字左右概括一下《三个火枪手》这部小说的内容",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳非洲大蜗牛防治指南.md",
+      "new": "深圳的非洲大蜗牛怎么办.md",
+      "title": "深圳的非洲大蜗牛怎么办",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "五年级数学辅导：质数与合数.md",
+      "new": "我是五年级小学生上学期，请你辅导我数学。 什么是质数和合数.md",
+      "title": "我是五年级小学生上学期，请你辅导我数学。 什么是质数和合数",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "支持女儿适度玩宝可梦游戏.md",
+      "new": "15岁抑郁休学在家的女儿想买宝可梦游戏，我应该支持她吗？.md",
+      "title": "15岁抑郁休学在家的女儿想买宝可梦游戏，我应该支持她吗？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "Clawdbot邮件功能及使用建议.md",
+      "new": "Clawdbot能收邮件接收指令操作我电脑让Claude运行一个结果然.md",
+      "title": "Clawdbot能收邮件接收指令操作我电脑让Claude运行一个结果然",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "AI产品原型设计工具推荐.md",
+      "new": "有什么AI产品原型工具推荐吗？.md",
+      "title": "有什么AI产品原型工具推荐吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳自驾香港口岸优劣势对比分析.md",
+      "new": "深圳福田金海湾出发，自驾去香港，对比莲塘口岸和深圳湾口岸优劣势，分析的.md",
+      "title": "深圳福田金海湾出发，自驾去香港，对比莲塘口岸和深圳湾口岸优劣势，分析的",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "牛听听无法接收短信.md",
+      "new": "牛听听怎么收短信.md",
+      "title": "牛听听怎么收短信",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "尿液异味检测及就医建议.md",
+      "new": "尿液有比较重的气味，有什么途径做检测吗？.md",
+      "title": "尿液有比较重的气味，有什么途径做检测吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "鸿蒙5怎么降级.md",
+      "new": "鸿蒙5怎么降级.md",
+      "title": "鸿蒙5怎么降级",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "俄罗斯种地投资风险与机会分析.md",
+      "new": "现在很多视频在说去俄罗斯种地.md",
+      "title": "现在很多视频在说去俄罗斯种地",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高管离职礼物方案讨论.md",
+      "new": "IMG_0908.pngPNG IMG_0907.pngPNG 对于这.md",
+      "title": "IMG_0908.pngPNG IMG_0907.pngPNG 对于这",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳学生校服外穿现象探讨.md",
+      "new": "Screenshot_20251006_170659_com.md",
+      "title": "Screenshot_20251006_170659_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "未离婚同居生育是否构成重婚罪.md",
+      "new": "没离婚跟别人同居并生娃，是犯了重婚罪吗.md",
+      "title": "没离婚跟别人同居并生娃，是犯了重婚罪吗",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "2021款iPad Pro性价比与发热控制分析.md",
+      "new": "哪一代的iPadPro更值得买？从性价比和发热控制角度看。.md",
+      "title": "哪一代的iPadPro更值得买？从性价比和发热控制角度看。",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "免费实时语音转文字AI工具推荐.md",
+      "new": "有哪款AI工具，是可以实时听声音并转文字的，免费的.md",
+      "title": "有哪款AI工具，是可以实时听声音并转文字的，免费的",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "星际争霸选手张敏哲介绍.md",
+      "new": "星际争霸 张敏.md",
+      "title": "星际争霸 张敏",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "GitHub项目安装触发木马警报分析.md",
+      "new": "github上的 free cursor vip 安装过程中提示 Tr.md",
+      "title": "github上的 free cursor vip 安装过程中提示 Tr",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "顶级真男人养成书单推荐.md",
+      "new": "推荐我基本最顶级的真男人“养成”书.md",
+      "title": "推荐我基本最顶级的真男人“养成”书",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "高利润行业分析及风险提示.md",
+      "new": "10个最保利的行业？.md",
+      "title": "10个最保利的行业？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "广东其他表演推荐.md",
+      "new": "在广东看千古情，你有其他更好的表演吗.md",
+      "title": "在广东看千古情，你有其他更好的表演吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂组织管理与产品特色.md",
+      "new": "黄有璨1.mdMD 黄有璨2.mdMD KK和黄有璨对话：请阅读.md",
+      "title": "黄有璨1.mdMD 黄有璨2.mdMD KK和黄有璨对话：请阅读",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "哪一代的iPad Air表现最好.md",
+      "new": "哪一代的iPad Air表现最好.md",
+      "title": "哪一代的iPad Air表现最好",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "每个员工都觉得自己工作很努力，付出跟回报不匹配，怎么破？.md",
+      "new": "每个员工都觉得自己工作很努力，付出跟回报不匹配，怎么破？.md",
+      "title": "每个员工都觉得自己工作很努力，付出跟回报不匹配，怎么破？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "同人志的定义与文化解析.md",
+      "new": "什么是同人志.md",
+      "title": "什么是同人志",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "帝王基因文化心理探讨.md",
+      "new": "我觉得每个中国人身上都或多或少的存在一些帝王基因加引号.md",
+      "title": "我觉得每个中国人身上都或多或少的存在一些帝王基因加引号",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "卓有成效管理者章节概述.md",
+      "new": "卓有成效的管理者，这本书有哪几章.md",
+      "title": "卓有成效的管理者，这本书有哪几章",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "脂溢性皮炎治疗与管理指南.md",
+      "new": "脂溢性皮炎怎么治疗.md",
+      "title": "脂溢性皮炎怎么治疗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "RustDesk网络连接问题排查指南.md",
+      "new": "rustdesk为啥会提示网络连接无.md",
+      "title": "rustdesk为啥会提示网络连接无",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "公司出差机票报销流程详解.md",
+      "new": "公司出差是怎么报销机票的？.md",
+      "title": "公司出差是怎么报销机票的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "兵和将：在工作中经常提到招到的人是兵，不是将，到底兵和将有什么本.md",
+      "new": "兵和将：在工作中经常提到招到的人是兵.md",
+      "title": "兵和将：在工作中经常提到招到的人是兵",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳福田港澳通行证签注办理指南.md",
+      "new": "深圳福田在哪里办港澳通行证签注.md",
+      "title": "深圳福田在哪里办港澳通行证签注",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "vivo新品手机型号及发布信息.md",
+      "new": "vivo下一个新品手机是什么型号.md",
+      "title": "vivo下一个新品手机是什么型号",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "《科学经营》核心模块拆解.md",
+      "new": "我们在写一本书，是上一本《科学创业》的后续：《科学经营》 帮我拆解一下.md",
+      "title": "我们在写一本书，是上一本《科学创业》的后续：《科学经营》 帮我拆解一下",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "孩子学习需培养主动性.md",
+      "new": "Screenshot_20251009_221517_com.md",
+      "title": "Screenshot_20251009_221517_com",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "回避冲突的进化与现代代价.md",
+      "new": "回避冲突的性格好像挺多人都有的这个看起来也不是很好啊.md",
+      "title": "回避冲突的性格好像挺多人都有的这个看起来也不是很好啊",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "影刀RPA产品全面解析.md",
+      "new": "请详细了解影刀rpa.md",
+      "title": "请详细了解影刀rpa",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "网址格式优化建议总结.md",
+      "new": "httpswx.gaowei.comCustomerForwardid.md",
+      "title": "httpswx.gaowei.comCustomerForwardid",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "山顶会类型及功能介绍.md",
+      "new": "山顶会是做什么的.md",
+      "title": "山顶会是做什么的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "鹦鹉与恐龙的血缘关系解析.md",
+      "new": "鹦鹉和恐龙有血缘关系吗.md",
+      "title": "鹦鹉和恐龙有血缘关系吗",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "个体与宇宙的哲学思考.md",
+      "new": "对于一个人来讲，宇宙是不是就像是他专属的，就是他死后，时间变得没有意义.md",
+      "title": "对于一个人来讲，宇宙是不是就像是他专属的，就是他死后，时间变得没有意义",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "以下是一份提示词和一份课程介绍：\n(define (create.md",
+      "new": "以下是一份提示词和一份课程介绍： (define (create-ca.md",
+      "title": "以下是一份提示词和一份课程介绍： (define (create-ca",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "罗振宇谈AI为工具人类为主导.md",
+      "new": "罗振宇在一次直播中说AI是他的徒弟，具体是怎么说的来着？.md",
+      "title": "罗振宇在一次直播中说AI是他的徒弟，具体是怎么说的来着？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "配额式增长与企业内功修炼探讨.md",
+      "new": "相比虚荣式增长，有没有另外一种增长方式，比如我YY一个“配额”式增长，.md",
+      "title": "相比虚荣式增长，有没有另外一种增长方式，比如我YY一个“配额”式增长，",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "《一战再战》适合亲子观看的深度解析.md",
+      "new": "一战再战讲了个什么故事，适合带15岁的女儿看吗？.md",
+      "title": "一战再战讲了个什么故事，适合带15岁的女儿看吗？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "朝阳与夕阳的区别解析.md",
+      "new": "朝阳和夕阳有啥区别.md",
+      "title": "朝阳和夕阳有啥区别",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "东京平价酒店推荐及实用建议.md",
+      "new": "东京有哪些值得体验的酒店？价位不要太高.md",
+      "title": "东京有哪些值得体验的酒店？价位不要太高",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "时间和精力管理方案\n从今天开始，我想请你和我一起打磨一个属于我的.md",
+      "new": "时间和精力管理方案 从今天开始.md",
+      "title": "时间和精力管理方案 从今天开始",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "人类与猴子的主要区别分析.md",
+      "new": "人和猴子最大的区别是？.md",
+      "title": "人和猴子最大的区别是？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "冷藏与冷冻储存白菜的安全性对比.md",
+      "new": "晚饭做两盘白菜。放在冷藏.md",
+      "title": "晚饭做两盘白菜。放在冷藏",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "互联网创业公司数字资产管理方案.md",
+      "new": "一家带有互联网要素的创业公司的数字资产包括哪些.md",
+      "title": "一家带有互联网要素的创业公司的数字资产包括哪些",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "人才盘点数据积累与分析策略.md",
+      "new": "请你回忆人才管理相关知识.md",
+      "title": "请你回忆人才管理相关知识",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "奔驰宝马系列车型选购指南.md",
+      "new": "奔驰E级，S级，宝马5系，7系最根本的区别和最犀利的选购建议，不要和稀.md",
+      "title": "奔驰E级，S级，宝马5系，7系最根本的区别和最犀利的选购建议，不要和稀",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "抑郁症女儿跑步机选购建议.md",
+      "new": "女儿抑郁症，她说想买个跑步机，我觉得很难得决定支持她，你有什么款式推荐.md",
+      "title": "女儿抑郁症，她说想买个跑步机，我觉得很难得决定支持她，你有什么款式推荐",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "协助办理不动产权证书申请书优化.md",
+      "new": "请帮我优化完善如下文字： 协助办个人绿本申请书 xx公司领导您好： 本.md",
+      "title": "请帮我优化完善如下文字： 协助办个人绿本申请书 xx公司领导您好： 本",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "一家企业的工号应该如何管理？比如说有人离职了，或者有人没过试用期.md",
+      "new": "一家企业的工号应该如何管理.md",
+      "title": "一家企业的工号应该如何管理",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "僧人大彻大悟的神经机制解析.md",
+      "new": "一名僧人大彻大悟，在脑神经层面是发生了什么重大改变吗？.md",
+      "title": "一名僧人大彻大悟，在脑神经层面是发生了什么重大改变吗？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "查询深圳形之翼网络科技公司业务.md",
+      "new": "深圳形之翼网络科技有限公司这家公司是做什么的？.md",
+      "title": "深圳形之翼网络科技有限公司这家公司是做什么的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "开发智能教学系统技术架构方案.md",
+      "new": "你帮我写一个提示词我让curcor帮我开发一个密塔study（交互式网.md",
+      "title": "你帮我写一个提示词我让curcor帮我开发一个密塔study（交互式网",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "机房托管服务现状与趋势分析.md",
+      "new": "现在还有做机房托管的吗？.md",
+      "title": "现在还有做机房托管的吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "蜜袋鼯儿童饲养风险分析.md",
+      "new": "蜜袋鼯小孩子养有什么风险吗.md",
+      "title": "蜜袋鼯小孩子养有什么风险吗",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "石头P20系列发布时间及型号介绍.md",
+      "new": "石头扫地机器人p20什么时候发布的.md",
+      "title": "石头扫地机器人p20什么时候发布的",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "拜年四字词.md",
+      "new": "拜年四字词.md",
+      "title": "拜年四字词",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "什么样的人能跨过绝望之谷直接到开悟之坡？能举几个例子吗？.md",
+      "new": "什么样的人能跨过绝望之谷直接到开悟之坡？能举几个例子吗？.md",
+      "title": "什么样的人能跨过绝望之谷直接到开悟之坡？能举几个例子吗？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI课教师智能助手优化建议.md",
+      "new": "欢迎体验那句话可以怎么优化吗.md",
+      "title": "欢迎体验那句话可以怎么优化吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "作为一家服务中小企业创始人和高管团队的商学院，企业档案功能开发好.md",
+      "new": "作为一家服务中小企业创始人和高管团队的商学院.md",
+      "title": "作为一家服务中小企业创始人和高管团队的商学院",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "核潜艇与核航母技术差异解析.md",
+      "new": "为什么核潜艇造出来了，核航母还没有.md",
+      "title": "为什么核潜艇造出来了，核航母还没有",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "电影《影子大亨》解析：呼啦圈与董事长跳楼.md",
+      "new": "有部电影关于呼啦圈的发明者，里面董事长突然跳楼咋回事？.md",
+      "title": "有部电影关于呼啦圈的发明者，里面董事长突然跳楼咋回事？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI和技术问题.md",
+      "new": "对于你们AI来说，时间某种程度上说是没有意义的，你们是不是可以允许人类.md",
+      "title": "对于你们AI来说，时间某种程度上说是没有意义的，你们是不是可以允许人类",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "苏东坡贬谪期间主要居住地.md",
+      "new": "苏东坡被贬官后在哪里.md",
+      "title": "苏东坡被贬官后在哪里",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "冷冻三文鱼蒸制时间指南.md",
+      "new": "蒸烤一体机蒸三文鱼要多久，从冷冻开始蒸.md",
+      "title": "蒸烤一体机蒸三文鱼要多久，从冷冻开始蒸",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "IT技术顾问助力企业数字化建设.md",
+      "new": "我是高维学堂的后台负责人（也管技术组）.md",
+      "title": "我是高维学堂的后台负责人（也管技术组）",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "近期电影院上映影片推荐.md",
+      "new": "最近电影院上映的影片有哪一些值得看的？你推荐一下呗.md",
+      "title": "最近电影院上映的影片有哪一些值得看的？你推荐一下呗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "印度与新疆音乐异同比较.md",
+      "new": "印度和新疆音乐有何异同点？.md",
+      "title": "印度和新疆音乐有何异同点？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "Plaud设备普通模式与通话模式差异.md",
+      "new": "plaud的普通模式和phoneCall模式核心差别是什么.md",
+      "title": "plaud的普通模式和phoneCall模式核心差别是什么",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "蕉内与蕉下品牌对比分析.md",
+      "new": "企业 蕉内和蕉下有什么渊源吗 两家企业对比？.md",
+      "title": "企业 蕉内和蕉下有什么渊源吗 两家企业对比？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "我现在有一辆捷安特，我想换一辆软尾，我现在9岁，你说我应该换吗，.md",
+      "new": "我现在有一辆捷安特，我想换一辆软尾，我现在9岁，你说我应该换吗，我担心.md",
+      "title": "我现在有一辆捷安特，我想换一辆软尾，我现在9岁，你说我应该换吗，我担心",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "我们给区域经营负责人一个合伙人身份，每年底授予一定数额的股票购买.md",
+      "new": "我们给区域经营负责人一个合伙人身份.md",
+      "title": "我们给区域经营负责人一个合伙人身份",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "五年级孩子数学考了30分，他脑力很强，数学老师家长一致反馈很差，.md",
+      "new": "五年级孩子数学考了30分.md",
+      "title": "五年级孩子数学考了30分",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "亚美尼亚旅游综合评估与建议.md",
+      "new": "亚美尼亚旅游综合评估.md",
+      "title": "亚美尼亚旅游综合评估",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "香港酒店预订渠道及优惠策略.md",
+      "new": "在香港住酒店去哪里订划算.md",
+      "title": "在香港住酒店去哪里订划算",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "用户数据隐私保护解决方案建议.md",
+      "new": "我们有一个用户雷达的小程序.md",
+      "title": "我们有一个用户雷达的小程序",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "鳕鱼多种做法及烹饪技巧.md",
+      "new": "鳕鱼怎么做.md",
+      "title": "鳕鱼怎么做",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂AI爆班流程改造方案.md",
+      "new": "满班流程.docxDOCX 高维学堂的“爆班”（招生）运营流程.md",
+      "title": "满班流程.docxDOCX 高维学堂的“爆班”（招生）运营流程",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "20人＊2天＊60人天＊3个班＊4周＊12个月=.md",
+      "new": "20人＊2天＊60人天＊3个班＊4周＊12个月=.md",
+      "title": "20人＊2天＊60人天＊3个班＊4周＊12个月=",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "沙丘2000游戏地位及类似推荐.md",
+      "new": "沙丘2000在游戏史上是一个什么样的地位，现在还有类似的游戏可以玩吗？.md",
+      "title": "沙丘2000在游戏史上是一个什么样的地位，现在还有类似的游戏可以玩吗？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "推荐Windows备份工具大全.md",
+      "new": "现在有哪款好用的windows备份工具吗？.md",
+      "title": "现在有哪款好用的windows备份工具吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "拼尽全力做好最重要的工作，还是尽量做好每一样工作，这个在德鲁克相.md",
+      "new": "拼尽全力做好最重要的工作.md",
+      "title": "拼尽全力做好最重要的工作",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维文化文案.md",
+      "new": "从医学上讲，痒是怎么回事？痒就一定有病吗.md",
+      "title": "从医学上讲，痒是怎么回事？痒就一定有病吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "李想日常座驾揭秘.md",
+      "new": "李想本人日常开什么车.md",
+      "title": "李想本人日常开什么车",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "八字命理分析：1979年男命大运详批.md",
+      "new": "阳历1979年11月4日8点0分，男，山东烟台栖霞.md",
+      "title": "阳历1979年11月4日8点0分，男，山东烟台栖霞",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "车厘子苦味原因及处理方法.md",
+      "new": "车厘子为什么吃起来是苦的.md",
+      "title": "车厘子为什么吃起来是苦的",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "AI时代职场价值重构与转型.md",
+      "new": "请帮我写一篇比较符合高维学堂的调性.md",
+      "title": "请帮我写一篇比较符合高维学堂的调性",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "火车托运自行车操作指南.md",
+      "new": "坐火车怎么托运自行车（儿子问），请用他看得懂的不啰嗦的方式回答.md",
+      "title": "坐火车怎么托运自行车（儿子问），请用他看得懂的不啰嗦的方式回答",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "春节期间哪些城市可能会下雪？.md",
+      "new": "春节期间哪些城市可能会下雪？.md",
+      "title": "春节期间哪些城市可能会下雪？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "我在江门想去逛启明里和三十三墟，我把车停到哪里比较方便？.md",
+      "new": "我在江门想去逛启明里和三十三墟，我把车停到哪里比较方便？.md",
+      "title": "我在江门想去逛启明里和三十三墟，我把车停到哪里比较方便？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "浪莎羊毛袜尺码及功能说明.md",
+      "new": "1000028692.jpgJPG 1000028693.jpgJPG.md",
+      "title": "1000028692.jpgJPG 1000028693.jpgJPG",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "以下是一份提示词和一份课程介绍：\n(define (create-1.md",
+      "new": "以下是一份提示词和一份课程介绍： (define (create-ca_1.md",
+      "title": "以下是一份提示词和一份课程介绍： (define (create-ca",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "五年后薪资支出及营收需求计算.md",
+      "new": "公司现在年度工资奖金总额2200万，营收1.md",
+      "title": "公司现在年度工资奖金总额2200万，营收1",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "请帮我把这篇发言文字速记稿整理成一篇文章，用于个人知识沉淀分享：.md",
+      "new": "请帮我把这篇发言文字速记稿整理成一篇文章.md",
+      "title": "请帮我把这篇发言文字速记稿整理成一篇文章",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI时代企业需回归德鲁克管理思想.md",
+      "new": "为什么AI时代企业更要学好德鲁克？.md",
+      "title": "为什么AI时代企业更要学好德鲁克？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "刘翔童年50米成绩无明确记载.md",
+      "new": "刘翔小时候50米成绩.md",
+      "title": "刘翔小时候50米成绩",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "以下感谢信文中出现了“授予”一词，请问“颁发”还是其他什么词更合.md",
+      "new": "以下感谢信文中出现了“授予”一词，请问“颁发”还是其他什么词更合适.md",
+      "title": "以下感谢信文中出现了“授予”一词，请问“颁发”还是其他什么词更合适",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "流程IT系统分类及代表性产品.md",
+      "new": "流程IT系统分哪几类，代表性产品有哪些？.md",
+      "title": "流程IT系统分哪几类，代表性产品有哪些？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI修改照片合成攀岩酋长岩图.md",
+      "new": "帮我写一个提示词，把一个室内攀爬的照片修改一下，合成成一个攀爬酋长岩的.md",
+      "title": "帮我写一个提示词，把一个室内攀爬的照片修改一下，合成成一个攀爬酋长岩的",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "香港建兴大厦色情场所梗解析.md",
+      "new": "建興大廈 香港的什么梗.md",
+      "title": "建興大廈 香港的什么梗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "生命与宇宙关系宗教哲学观点.md",
+      "new": "世界上有哪些宗教或哲学涉及到了生命和宇宙直接的关系.md",
+      "title": "世界上有哪些宗教或哲学涉及到了生命和宇宙直接的关系",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "为孩子设计互动学习故事.md",
+      "new": "今晚想给儿子讲几个小故事.md",
+      "title": "今晚想给儿子讲几个小故事",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "日本二次元绘画学习渠道推荐.md",
+      "new": "有什么渠道可以去日本学画二次元吗。.md",
+      "title": "有什么渠道可以去日本学画二次元吗。",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "我要去江门玩，想请你做我的小助理，深圳出发，明天回来。.md",
+      "new": "我要去江门玩，想请你做我的小助理，深圳出发，明天回来。.md",
+      "title": "我要去江门玩，想请你做我的小助理，深圳出发，明天回来。",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "福田中医院附近有什么停车场吗.md",
+      "new": "福田中医院附近有什么停车场吗.md",
+      "title": "福田中医院附近有什么停车场吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "想做一个商学平台规划，这些是目前想到的.md",
+      "new": "deepseek-17397180238752924634463325.md",
+      "title": "deepseek-17397180238752924634463325",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "轻量化多功能电脑背包推荐.md",
+      "new": "短途旅行和通勤用的轻量化多功能电脑背包推荐.md",
+      "title": "短途旅行和通勤用的轻量化多功能电脑背包推荐",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "贾国龙八年快餐探索历程与反思.md",
+      "new": "贾国龙投入5亿元、折腾8年执意做快餐，是指的功夫菜吗？.md",
+      "title": "贾国龙投入5亿元、折腾8年执意做快餐，是指的功夫菜吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "陈世宏炒作普洱茶事件核查.md",
+      "new": "陈世宏利用信息差炒作普洱茶获利5.md",
+      "title": "陈世宏利用信息差炒作普洱茶获利5",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "梁文锋近期在AI领域的突破性进展.md",
+      "new": "梁文峰怎么没动静了.md",
+      "title": "梁文峰怎么没动静了",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "男士羽绒服选购指南.md",
+      "new": "推荐几款男士羽绒服.md",
+      "title": "推荐几款男士羽绒服",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "范仲淹《岳阳楼记》原文分享.md",
+      "new": "岳阳楼记原文.md",
+      "title": "岳阳楼记原文",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "凉水漱口对牙齿影响分析.md",
+      "new": "凉水漱口对牙齿有害吗.md",
+      "title": "凉水漱口对牙齿有害吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "开发CEO人才管理微信小程序方案.md",
+      "new": "想开发一个给创始人和CEO喜爱用的.md",
+      "title": "想开发一个给创始人和CEO喜爱用的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "木工倒圆角工具选择指南.md",
+      "new": "有一种木工工具，可以把木头直角边角刨成圆弧，这个工具叫什么？.md",
+      "title": "有一种木工工具，可以把木头直角边角刨成圆弧，这个工具叫什么？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "厕所英文翻译及用法总结.md",
+      "new": "厕所的英文.md",
+      "title": "厕所的英文",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "如何自己在家或者在小河边做个实验模拟都江堰.md",
+      "new": "如何自己在家或者在小河边做个实验模拟都江堰.md",
+      "title": "如何自己在家或者在小河边做个实验模拟都江堰",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "优化合同审批系统文案建议.md",
+      "new": "微信图片_2025-12-15_113640_173.md",
+      "title": "微信图片_2025-12-15_113640_173",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "ChatGPT Access Blocked by Google Policies.md",
+      "new": "ChatGPTAccess blocked This request.md",
+      "title": "ChatGPTAccess blocked This request",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "Python包安装与requirements文件使用指南.md",
+      "new": "python包安装 应用如何一次性按照requirements来安装必.md",
+      "title": "python包安装 应用如何一次性按照requirements来安装必",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂嘉宾头衔选择分析.md",
+      "new": "高维学堂创始合伙人刘军要参加的一个活动海报.md",
+      "title": "高维学堂创始合伙人刘军要参加的一个活动海报",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "从深圳来了四川西部（租车自驾）来了毕棚沟看雪，儿子挺满意，后天下.md",
+      "new": "从深圳来了四川西部（租车自驾）来了毕棚沟看雪.md",
+      "title": "从深圳来了四川西部（租车自驾）来了毕棚沟看雪",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "写代码.md",
+      "new": "帮我写一段有窗体的python代码 要求如下： 1、窗口尺寸500×3.md",
+      "title": "帮我写一段有窗体的python代码 要求如下： 1、窗口尺寸500×3",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "鞋柜旁脏袜消毒站设置方案.md",
+      "new": "我在想啊我家里的这个设施比如说鞋柜那里有没有可能放一个什么样的装备或者.md",
+      "title": "我在想啊我家里的这个设施比如说鞋柜那里有没有可能放一个什么样的装备或者",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中国古代“狄”与“戎狄”概念解析.md",
+      "new": "中国通史 狄和戎狄是一回事吗.md",
+      "title": "中国通史 狄和戎狄是一回事吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳带院子房源寻找指南.md",
+      "new": "深圳怎样才能租到有院子的房子.md",
+      "title": "深圳怎样才能租到有院子的房子",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "试卷题目答案及解析总结.md",
+      "new": "deepseek-17447270348362621668822324.md",
+      "title": "deepseek-17447270348362621668822324",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "高铁身份证丢失应急处理指南.md",
+      "new": "坐高铁身份证不见了咋办.md",
+      "title": "坐高铁身份证不见了咋办",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "身份证营业执照水印小程序命名建议.md",
+      "new": "我想开发一个身份证或营业执照加水印的小程序，帮我取个软件名字.md",
+      "title": "我想开发一个身份证或营业执照加水印的小程序，帮我取个软件名字",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳飞北京经停宜春无法出机场.md",
+      "new": "深圳飞北京经停宜春，可以出来逛逛吗？.md",
+      "title": "深圳飞北京经停宜春，可以出来逛逛吗？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "CPU内部0和1的传输与识别过程.md",
+      "new": "CPU里面的晶体管零和一亮和灭的状态是怎么传输出来的？被外界识别到的呢.md",
+      "title": "CPU里面的晶体管零和一亮和灭的状态是怎么传输出来的？被外界识别到的呢",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "微信里的一段话，我不太方便阅读，我想让手机帮我朗读出来，应该怎么.md",
+      "new": "微信里的一段话，我不太方便阅读，我想让手机帮我朗读出来，应该怎么操作呢.md",
+      "title": "微信里的一段话，我不太方便阅读，我想让手机帮我朗读出来，应该怎么操作呢",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "关联交易风险与合规分析.md",
+      "new": "B公司是a公司的全资子公司C公司是b公司的子公司.md",
+      "title": "B公司是a公司的全资子公司C公司是b公司的子公司",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "在海港城逛完，怎么回深圳宝安比较方便.md",
+      "new": "在海港城逛完，怎么回深圳宝安比较方便.md",
+      "title": "在海港城逛完，怎么回深圳宝安比较方便",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "去哪里找skills.md",
+      "new": "去哪里找skills.md",
+      "title": "去哪里找skills",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "香港高才申请在职证明撰写指南.md",
+      "new": "香港高才申请所需要的一个在职证明文件如何撰写？.md",
+      "title": "香港高才申请所需要的一个在职证明文件如何撰写？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "爆班流程优化与执行问题分析.md",
+      "new": "deepseek-17425419168362773173726946.md",
+      "title": "deepseek-17425419168362773173726946",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "金刚经中菩提与须菩提的含义解析.md",
+      "new": "金刚经： 佛告须菩提，里面的菩提是什么意思？.md",
+      "title": "金刚经： 佛告须菩提，里面的菩提是什么意思？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "请解读.md",
+      "new": "deepseek-17457687197352239629112516.md",
+      "title": "deepseek-17457687197352239629112516",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂课程评价数据分析与改进建议.md",
+      "new": "高维学堂这周末交付了好几堂课.md",
+      "title": "高维学堂这周末交付了好几堂课",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "课前课后报告自动化与数据补全建议.md",
+      "new": "Screenshot_20250306_071009_com.md",
+      "title": "Screenshot_20250306_071009_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "最便宜华为智驾新车价格分析.md",
+      "new": "现在最便宜的带华为智驾的车是什么车？包括二手.md",
+      "title": "现在最便宜的带华为智驾的车是什么车？包括二手",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "新老视力表的对比。.md",
+      "new": "新老视力表的对比。.md",
+      "title": "新老视力表的对比。",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "洗手间异味检测与消除方法.md",
+      "new": "我家洗手间气味很大，试了很多办法解决不了.md",
+      "title": "我家洗手间气味很大，试了很多办法解决不了",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "公司里的杂事.md",
+      "new": "我的语言措辞，会不会给军哥、KK造成很大压力，或者阅读起来很不舒服.md",
+      "title": "我的语言措辞，会不会给军哥、KK造成很大压力，或者阅读起来很不舒服",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "小学数学练习题提取.md",
+      "new": "deepseek-17428201946814520485457942.md",
+      "title": "deepseek-17428201946814520485457942",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳杨梅坑游玩攻略与交通指南.md",
+      "new": "杨梅坑怎么玩.md",
+      "title": "杨梅坑怎么玩",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "今天跟蒋博（流程型组织课的老师）聊天记录了一些关键词，主要是给高.md",
+      "new": "今天跟蒋博（流程型组织课的老师）聊天记录了一些关键词.md",
+      "title": "今天跟蒋博（流程型组织课的老师）聊天记录了一些关键词",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "俯卧撑测试与心血管健康风险.md",
+      "new": "我的医生朋友告诉我，一个中年男人，在规定时间里，能做40个俯卧撑，是一.md",
+      "title": "我的医生朋友告诉我，一个中年男人，在规定时间里，能做40个俯卧撑，是一",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "如何克服小气倾向.md",
+      "new": "我在这问过如何克服小气倾向.md",
+      "title": "我在这问过如何克服小气倾向",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "应对孩子漏写作业的情绪管理策略.md",
+      "new": "儿子漏的数学作业不愿意补怎么办.md",
+      "title": "儿子漏的数学作业不愿意补怎么办",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "Gemini辅助开发指南.md",
+      "new": "Gemini辅助开发.md",
+      "title": "Gemini辅助开发",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "国家高山滑雪中心护目镜租赁咨询.md",
+      "new": "北京国家高山滑雪中心的雪具租赁有没有护目镜.md",
+      "title": "北京国家高山滑雪中心的雪具租赁有没有护目镜",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "CrossFitMOO与乐刻健身体系对比.md",
+      "new": "CrossFitMOO和乐刻的主要区别是什么.md",
+      "title": "CrossFitMOO和乐刻的主要区别是什么",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "乳腺结节四级需进一步检查.md",
+      "new": "乳腺结节四级了 前年年底还是三级 44岁.md",
+      "title": "乳腺结节四级了 前年年底还是三级 44岁",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "企业用人二维矩阵分析.md",
+      "new": "在企业用人的领域啊，对于人才的一个二维矩阵分为能力强和能力弱，然后呢还.md",
+      "title": "在企业用人的领域啊，对于人才的一个二维矩阵分为能力强和能力弱，然后呢还",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深睡连续性偏低改善建议.md",
+      "new": "我的深睡连续性偏低，只有44-59分之间，怎么办呢？.md",
+      "title": "我的深睡连续性偏低，只有44-59分之间，怎么办呢？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "快手APP封禁路由器操作指南.md",
+      "new": "快手APP集成了哪些网站的视频？我想在路由器输入网址黑名单封禁它。.md",
+      "title": "快手APP集成了哪些网站的视频？我想在路由器输入网址黑名单封禁它。",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "阴燃蘑菇保持火种方法.md",
+      "new": "什么样的蘑菇可以阴燃保持火种几个小时.md",
+      "title": "什么样的蘑菇可以阴燃保持火种几个小时",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "推荐软件防止流氓进程.md",
+      "new": "安装一个什么软件能防止360、阿里旺旺等这些流氓进程.md",
+      "title": "安装一个什么软件能防止360、阿里旺旺等这些流氓进程",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "哪吒创作手法：手绘与建模融合.md",
+      "new": "哪吒这部电影，在创作手法上手绘和建模有什么联系？.md",
+      "title": "哪吒这部电影，在创作手法上手绘和建模有什么联系？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "终端安全访问Claude Code方案.md",
+      "new": "你知道ads浏览器吧，通过这个浏览器可以更加安全的访问cloude，然.md",
+      "title": "你知道ads浏览器吧，通过这个浏览器可以更加安全的访问cloude，然",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "我爱我家生活智慧.md",
+      "new": "可以从1993年我爱我家电视剧里学到哪些生活智慧？.md",
+      "title": "可以从1993年我爱我家电视剧里学到哪些生活智慧？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "《求是》杂志2026新年首篇文章.md",
+      "new": "《求是》杂志2026年新年首篇文章.md",
+      "title": "《求是》杂志2026年新年首篇文章",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "新对话-1.md",
+      "new": "我以为那个年代的人都很抵触日本呢.md",
+      "title": "我以为那个年代的人都很抵触日本呢",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "蒸烤一体机三文鱼制作指南.md",
+      "new": "用蒸烤一体机怎么做三文鱼.md",
+      "title": "用蒸烤一体机怎么做三文鱼",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "梁朝伟香港豪宅信息及查询方法.md",
+      "new": "梁朝伟豪宅在哪.md",
+      "title": "梁朝伟豪宅在哪",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "微信推出输入法战略分析.md",
+      "new": "微信这么克制，为啥出输入法？.md",
+      "title": "微信这么克制，为啥出输入法？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "提醒孩子带数学作业并优化沟通.md",
+      "new": "然后，麻烦帮我提醒一下他有没有带数学作业.md",
+      "title": "然后，麻烦帮我提醒一下他有没有带数学作业",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂企业学习规划应用命名建议.md",
+      "new": "高维学堂想做一个企业学习规划应用，请你帮忙起个项目名字（中英文）.md",
+      "title": "高维学堂想做一个企业学习规划应用，请你帮忙起个项目名字（中英文）",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "杂事2025年4月2日.md",
+      "new": "为什么极度疲劳的情况下会背部不舒服？.md",
+      "title": "为什么极度疲劳的情况下会背部不舒服？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "饱暖思淫欲的深层含义解析.md",
+      "new": "饱暖思淫欲是字面意思吗？.md",
+      "title": "饱暖思淫欲是字面意思吗？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "液晶屏无缝拼接技术发展前景.md",
+      "new": "液晶屏有可能未来做到像LED那样无缝拼接吗.md",
+      "title": "液晶屏有可能未来做到像LED那样无缝拼接吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "对于一家进入扩张期的企业来说，我考虑到有以下需要警惕的问题或“坑.md",
+      "new": "对于一家进入扩张期的企业来说.md",
+      "title": "对于一家进入扩张期的企业来说",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "丽枫酒店WiFi密码获取及使用指南.md",
+      "new": "丽枫酒店WiFi密码.md",
+      "title": "丽枫酒店WiFi密码",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "波音737座位宽度及选座建议.md",
+      "new": "波音737的座位宽度？.md",
+      "title": "波音737的座位宽度？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "用户分类分级.md",
+      "new": "一家实战型商学院的用户分类分级应该如何做呢.md",
+      "title": "一家实战型商学院的用户分类分级应该如何做呢",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "儿子的问题.md",
+      "new": "赙仪什么时候死的.md",
+      "title": "赙仪什么时候死的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "财务人数一般占公司总人数的多少比较合理？.md",
+      "new": "财务人数一般占公司总人数的多少比较合理？.md",
+      "title": "财务人数一般占公司总人数的多少比较合理？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "芋头与地瓜皮的食用建议.md",
+      "new": "芋头和地瓜的皮能吃吗.md",
+      "title": "芋头和地瓜的皮能吃吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "推荐动漫作品探讨团队合作自由精神.md",
+      "new": "哪部动漫作品最能代表团队合作、自由、自主精神？.md",
+      "title": "哪部动漫作品最能代表团队合作、自由、自主精神？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "品牌命名策略与误称利用分析.md",
+      "new": "1000026638.jpgJPG 这个点我还真拿不准.md",
+      "title": "1000026638.jpgJPG 这个点我还真拿不准",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳超级总部基地土地历史与规划变迁.md",
+      "new": "深圳超级总部基地以前这块地是什么？.md",
+      "title": "深圳超级总部基地以前这块地是什么？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "兰湘子门店股东分红通知优化.md",
+      "new": "股东分红通知，帮我优化一下，谢谢： 兰湘子门店投资又分红啦~~ 军哥：.md",
+      "title": "股东分红通知，帮我优化一下，谢谢： 兰湘子门店投资又分红啦~~ 军哥：",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "物联网手指机器人配件购买指南.md",
+      "new": "想做个物联网手指机器人，在哪买配件？.md",
+      "title": "想做个物联网手指机器人，在哪买配件？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "AI企业服务套餐优化与推广方案.md",
+      "new": "我想推出一套针对中小企业的AI企业入门服务套件.md",
+      "title": "我想推出一套针对中小企业的AI企业入门服务套件",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "国内版Kindle自放书方法详解.md",
+      "new": "正版系统的kindle里面可以自己放书吗？国内版本.md",
+      "title": "正版系统的kindle里面可以自己放书吗？国内版本",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳港澳通行证签注办理指南.md",
+      "new": "内地户籍可以在深圳签注港澳通行证吗.md",
+      "title": "内地户籍可以在深圳签注港澳通行证吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "女儿是初三学生，现在已经休学了，我想给她找一个有意思一点的家庭，.md",
+      "new": "女儿是初三学生，现在已经休学了，我想给她找一个有意思一点的家庭，老师去.md",
+      "title": "女儿是初三学生，现在已经休学了，我想给她找一个有意思一点的家庭，老师去",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "北京亲子游提前预约景点指南.md",
+      "new": "北京有哪些必去景点需要提前预约的.md",
+      "title": "北京有哪些必去景点需要提前预约的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "HP 3303fdw与3388fdw区别对比.md",
+      "new": "请问HP3303fdw和3388fdw区别？.md",
+      "title": "请问HP3303fdw和3388fdw区别？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "明基学习台灯重量及设计信息.md",
+      "new": "明基学习台灯 duo plus 多重.md",
+      "title": "明基学习台灯 duo plus 多重",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "流程型组织课程高频词与推荐理由总结.md",
+      "new": "流程型组织.xlsxXLSX 我传给你一份历史真实课评文件.md",
+      "title": "流程型组织.xlsxXLSX 我传给你一份历史真实课评文件",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "桃花源记鬼故事解读分析.md",
+      "new": "古文观止 为什么说桃花源记是一篇鬼故事？附原文。.md",
+      "title": "古文观止 为什么说桃花源记是一篇鬼故事？附原文。",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "豆汁新手与老手的味觉差异.md",
+      "new": "豆汁新手觉得难喝？老手觉得？.md",
+      "title": "豆汁新手觉得难喝？老手觉得？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "嗓子痛用药及家庭护理建议.md",
+      "new": "嗓子痛，有什么加长药物可以吃了有效吗.md",
+      "title": "嗓子痛，有什么加长药物可以吃了有效吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Redis向量集合功能解析.md",
+      "new": "我非常喜欢 Redis 的一个重要原因是.md",
+      "title": "我非常喜欢 Redis 的一个重要原因是",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "客户信息维护操作说明.md",
+      "new": "客户档案需求讨论.pdfPDF 这个讨论有点散.md",
+      "title": "客户档案需求讨论.pdfPDF 这个讨论有点散",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI工具一键导入公众号文章方法.md",
+      "new": "哪一款AI可以一键导入一个公众号的所有文章？.md",
+      "title": "哪一款AI可以一键导入一个公众号的所有文章？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "创新与企业家精神核心内容解析.md",
+      "new": "创新与企业家精神这本书，主要讲的什么内容？.md",
+      "title": "创新与企业家精神这本书，主要讲的什么内容？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "陶瓷香炉类型及使用建议.md",
+      "new": "陶瓷香炉有什么烧比较好.md",
+      "title": "陶瓷香炉有什么烧比较好",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "3D打印机取模技巧与注意事项.md",
+      "new": "3d打印机打印完之后怎么把东西取下来.md",
+      "title": "3d打印机打印完之后怎么把东西取下来",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "玉米面与大豆面混合主食的升糖指数分析.md",
+      "new": "玉米面和大豆面合起来做成的面食升糖指数高吗.md",
+      "title": "玉米面和大豆面合起来做成的面食升糖指数高吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "孩子运动天赋归属部门及培养路径.md",
+      "new": "怀疑儿子有运动天赋，这个归政府哪一个部门管呀.md",
+      "title": "怀疑儿子有运动天赋，这个归政府哪一个部门管呀",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "微信小程序图片剪裁旋转组件推荐.md",
+      "new": "帮我找几个支持微信小程序开发中的图片剪裁和旋转功能的开源组件.md",
+      "title": "帮我找几个支持微信小程序开发中的图片剪裁和旋转功能的开源组件",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "三星FLIP会议平板功能介绍.md",
+      "new": "三星会议平板 FLIP 是一台什么样的机器？.md",
+      "title": "三星会议平板 FLIP 是一台什么样的机器？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "员工贡献自评总和超100%现象解析.md",
+      "new": "有个说法，每个员工觉得自己给企业的贡献的百分比，所有员工加起来是远超1.md",
+      "title": "有个说法，每个员工觉得自己给企业的贡献的百分比，所有员工加起来是远超1",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "M3 iPad Air发热及使用建议.md",
+      "new": "M3的iPad air发热大吗.md",
+      "title": "M3的iPad air发热大吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "华东团队构建完成及人才储备预期.md",
+      "new": "kk 报告：华东人才已经补充完成 kk 两周左右办好相关入职 刘军 军.md",
+      "title": "kk 报告：华东人才已经补充完成 kk 两周左右办好相关入职 刘军 军",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "班级交付助手AI产品UI设计框架.md",
+      "new": "我想做一个班级交付助手的AI产品，请你帮我画UI设计图.md",
+      "title": "我想做一个班级交付助手的AI产品，请你帮我画UI设计图",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Forest框架空指针异常解决方法.md",
+      "new": "{getApplicationMessage{envdesktop.md",
+      "title": "{getApplicationMessage{envdesktop",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "福田金海湾出发去机场，赶7点55的飞机，最迟几点出门？.md",
+      "new": "福田金海湾出发去机场，赶7点55的飞机，最迟几点出门？.md",
+      "title": "福田金海湾出发去机场，赶7点55的飞机，最迟几点出门？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "挂烫机品牌推荐及选购指南.md",
+      "new": "挂烫衣机全球知名品牌.md",
+      "title": "挂烫衣机全球知名品牌",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "软件.md",
+      "new": "佰盾凯甲这款软件安全吗.md",
+      "title": "佰盾凯甲这款软件安全吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "电动车十公里耗电等效洗烘次数计算.md",
+      "new": "电号百公里20千瓦呃电动车跑十公里，相当于洗衣机和烘干机洗烘多少次衣服.md",
+      "title": "电号百公里20千瓦呃电动车跑十公里，相当于洗衣机和烘干机洗烘多少次衣服",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂2026年营收预测分析.md",
+      "new": "高维学堂2026年能赚多少钱？.md",
+      "title": "高维学堂2026年能赚多少钱？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂企业推介与背景分析.md",
+      "new": "请按照以下要求写一段“高维学堂”的企业推介文字.md",
+      "title": "请按照以下要求写一段“高维学堂”的企业推介文字",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "股权代持类型用途与风险解析.md",
+      "new": "股权代持的类型，用途与风险.md",
+      "title": "股权代持的类型，用途与风险",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "健康-1.md",
+      "new": "有什么适合夏天吃的，又健康的东西，胃里面有点饱胀.md",
+      "title": "有什么适合夏天吃的，又健康的东西，胃里面有点饱胀",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "卡拉OK机品牌型号推荐及选购指南.md",
+      "new": "什么牌子的，哪一些牌子的卡拉ok机比较好？.md",
+      "title": "什么牌子的，哪一些牌子的卡拉ok机比较好？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "中国便利店数量及发展趋势分析.md",
+      "new": "中国便利店数.md",
+      "title": "中国便利店数",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "班主任的低效重复性工作，怎么办呢？依靠平台规则和机制吗？怎么落地.md",
+      "new": "Screenshot_20250217_161727_com.md",
+      "title": "Screenshot_20250217_161727_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "黄友璨萃取高维独特.md",
+      "new": "黄有璨1.mdMD 黄有璨2.mdMD 附件是KK与黄友璨的分享记录：.md",
+      "title": "黄有璨1.mdMD 黄有璨2.mdMD 附件是KK与黄友璨的分享记录：",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Monica作为大模型API中转的可行性分析.md",
+      "new": "有没有人用中转的方式把Monica当大模型API用了啊.md",
+      "title": "有没有人用中转的方式把Monica当大模型API用了啊",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "华为Mate60 Pro屏幕材质确认.md",
+      "new": "mate60 Pro是LCD屏.md",
+      "title": "mate60 Pro是LCD屏",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "陆游临终嘱咐家祭告乃翁.md",
+      "new": "家祭什么忘告乃翁。.md",
+      "title": "家祭什么忘告乃翁。",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "波士顿矩阵通俗解释及应用.md",
+      "new": "波士顿矩阵，用通俗的语言解释一下？.md",
+      "title": "波士顿矩阵，用通俗的语言解释一下？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "二手燃油车过户需蓝牌指标.md",
+      "new": "IMG_0671.pngPNG 要自己有蓝牌吧.md",
+      "title": "IMG_0671.pngPNG 要自己有蓝牌吧",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "同事慰问肖晓母亲离世.md",
+      "new": "1000023675.jpgJPG 我作为肖晓的老同事.md",
+      "title": "1000023675.jpgJPG 我作为肖晓的老同事",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "西南财经大学概况及特色介绍.md",
+      "new": "西南财大.md",
+      "title": "西南财大",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "苹果电脑保修期查询方法.md",
+      "new": "苹果电脑怎么查保修期.md",
+      "title": "苹果电脑怎么查保修期",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "适合煮着吃的健康菜谱推荐.md",
+      "new": "适合直接煮着吃的菜.md",
+      "title": "适合直接煮着吃的菜",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "合弄制与项目制的区别解析.md",
+      "new": "合弄制和项目制的区别？.md",
+      "title": "合弄制和项目制的区别？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "windows下的 免费投屏工具有哪些推荐？.md",
+      "new": "windows下的 免费投屏工具有哪些推荐？.md",
+      "title": "windows下的 免费投屏工具有哪些推荐？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "产品管理与激励方案讨论.md",
+      "new": "Screenshot_20250322_142641_com.md",
+      "title": "Screenshot_20250322_142641_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "英国PPM甲醛测试仪使用电化学芯片.md",
+      "new": "哪一款甲醛测试仪用的是英国的电化学测试芯片.md",
+      "title": "哪一款甲醛测试仪用的是英国的电化学测试芯片",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "股权架构封闭性及控制权权衡分析.md",
+      "new": "你是一个股权专家，公司股权架构里面有一个公司是一个有限合伙企业M，然后.md",
+      "title": "你是一个股权专家，公司股权架构里面有一个公司是一个有限合伙企业M，然后",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "公司显卡挖矿投资风险分析.md",
+      "new": "公司有一些闲置资金如果把它买成显卡用来挖比特币划算吗.md",
+      "title": "公司有一些闲置资金如果把它买成显卡用来挖比特币划算吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "同人本售卖信息整理.md",
+      "new": "1000029092.jpgJPG.md",
+      "title": "1000029092.jpgJPG",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "医学专家：我晚上尽可能不喝水了，睡前还尽量尿尿，为啥睡一晚上还要.md",
+      "new": "医学专家：我晚上尽可能不喝水了.md",
+      "title": "医学专家：我晚上尽可能不喝水了",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "中考男生田径100分标准对比.md",
+      "new": "中考男生田径各项100分是多少.md",
+      "title": "中考男生田径各项100分是多少",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "涡轮增压提升发动机功率原理.md",
+      "new": "你用最简单的话说明白涡轮增压能够增加发动机运转功率的原因.md",
+      "title": "你用最简单的话说明白涡轮增压能够增加发动机运转功率的原因",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "DeepSeek服务器繁忙原因分析.md",
+      "new": "为什么deepseek到现在不解决服务器忙的问题.md",
+      "title": "为什么deepseek到现在不解决服务器忙的问题",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "Hazzys品牌背景与市场分析.md",
+      "new": "Hazzys.md",
+      "title": "Hazzys",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI自动化开发提升项目质量建议.md",
+      "new": "帮我写一段话，让cursor在我睡觉的时候多干点儿活，请你思考一下，A.md",
+      "title": "帮我写一段话，让cursor在我睡觉的时候多干点儿活，请你思考一下，A",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "高维X堂爆班小组激励方案设计.md",
+      "new": "高维X堂，做实战商学线下课程，今年新增了一个“爆班小组”，以达到让好的.md",
+      "title": "高维X堂，做实战商学线下课程，今年新增了一个“爆班小组”，以达到让好的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "心理承受力增强与脑神经变化.md",
+      "new": "一个人经历了一些事情，心理承受力增强了，在脑神经层面会发生什么变化？.md",
+      "title": "一个人经历了一些事情，心理承受力增强了，在脑神经层面会发生什么变化？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "舒洁康洗液使用风险及正确使用建议.md",
+      "new": "舒洁康洗液，有破坏体表菌群的风险吗.md",
+      "title": "舒洁康洗液，有破坏体表菌群的风险吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "幼儿游戏理论与实践论文选题建议.md",
+      "new": "以下是对《幼儿游戏理论与实践》课程内容的详细梳理.md",
+      "title": "以下是对《幼儿游戏理论与实践》课程内容的详细梳理",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "流程圣经核心内容按章节解读.md",
+      "new": "帮我按章节解读流程圣经这本书，我想快速学习这本书的核心内容.md",
+      "title": "帮我按章节解读流程圣经这本书，我想快速学习这本书的核心内容",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "真实风险警示.md",
+      "new": "请你用：“当我开始隆胸后……”开头，写一段文字吓退不理智的女朋友。.md",
+      "title": "请你用：“当我开始隆胸后……”开头，写一段文字吓退不理智的女朋友。",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "1610双分镜极简示意图设计提示.md",
+      "new": "帮我写一个生图提示词，我想表达这样一个意思：这个图是1610的，分左右.md",
+      "title": "帮我写一个生图提示词，我想表达这样一个意思：这个图是1610的，分左右",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "erp.md",
+      "new": "你了解odoo吗，它算不算一款优秀的ERP软件 跟SAP比如何？.md",
+      "title": "你了解odoo吗，它算不算一款优秀的ERP软件 跟SAP比如何？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "安克AI应用深度解析与战略布局.md",
+      "new": "以下是我跟某公司内部人士聊天的记录.md",
+      "title": "以下是我跟某公司内部人士聊天的记录",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "感人北洋水师战败影片推荐.md",
+      "new": "那部很感人的北洋水师战败的影片叫什么.md",
+      "title": "那部很感人的北洋水师战败的影片叫什么",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "培训公司贴标设备推荐方案.md",
+      "new": "有什么样的机器可以代替手工在瓶装水上面贴人名标签吗.md",
+      "title": "有什么样的机器可以代替手工在瓶装水上面贴人名标签吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "飞书有类似钉钉的一键闪存功能吗.md",
+      "new": "飞书有类似钉钉的一键闪存功能吗.md",
+      "title": "飞书有类似钉钉的一键闪存功能吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "经营分析会组织与人才汇报框架.md",
+      "new": "组织和人才汇报：明天要开经营分析会.md",
+      "title": "组织和人才汇报：明天要开经营分析会",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "第一次乐刻私教课注意事项.md",
+      "new": "第一次去乐刻健身要注意什么？（1对1私教）.md",
+      "title": "第一次去乐刻健身要注意什么？（1对1私教）",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "商业物业选址咨询公司推荐.md",
+      "new": "商业物业选址咨询公司.md",
+      "title": "商业物业选址咨询公司",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中美用户对WhatsApp和微信依赖差异.md",
+      "new": "美国人用whatsAPP，会像中国人用微信这么依赖和沉浸吗？.md",
+      "title": "美国人用whatsAPP，会像中国人用微信这么依赖和沉浸吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "健康.md",
+      "new": "发现华为手表戴久了手腕上有一个地方发痒.md",
+      "title": "发现华为手表戴久了手腕上有一个地方发痒",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "转机误机应对及预防指南.md",
+      "new": "转机赶不上下一班怎么办？.md",
+      "title": "转机赶不上下一班怎么办？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "麦当劳相对最健康的食品是？.md",
+      "new": "麦当劳相对最健康的食品是？.md",
+      "title": "麦当劳相对最健康的食品是？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "查找Barry Zhang智能体文章资源.md",
+      "new": "从哪里可以访问到Barry zhang的相关内容，她写过智能体文章.md",
+      "title": "从哪里可以访问到Barry zhang的相关内容，她写过智能体文章",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "食性寒凉与乳糖不耐受的科学解析.md",
+      "new": "所谓食性寒凉是有道理的吗.md",
+      "title": "所谓食性寒凉是有道理的吗",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂商业模式与课程体系解析.md",
+      "new": "请通过搜索了解高维学堂.md",
+      "title": "请通过搜索了解高维学堂",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "管理秩序与竞争力关键要素.md",
+      "new": "mmexport1740093176704.jpgJPG.md",
+      "title": "mmexport1740093176704.jpgJPG",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "模型进度及报价时间安排.md",
+      "new": "刘老师，模型已经建好，周三可以出效果图，周三效果图出来确定后，进入施工.md",
+      "title": "刘老师，模型已经建好，周三可以出效果图，周三效果图出来确定后，进入施工",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "兼职同事退出高维内部分享群.md",
+      "new": "因为近期在梳理内部群，要求所有兼职同事在本月底前退出“高维内部分享群”.md",
+      "title": "因为近期在梳理内部群，要求所有兼职同事在本月底前退出“高维内部分享群”",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "张瑞敏用户至上的企业荣誉观.md",
+      "new": "张瑞敏是不是说过一句什么话.md",
+      "title": "张瑞敏是不是说过一句什么话",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "大脑中经常出现一种美好的感觉，但是这种感觉转瞬即逝，有没有可能有.md",
+      "new": "大脑中经常出现一种美好的感觉.md",
+      "title": "大脑中经常出现一种美好的感觉",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "你能通过问我一些问题来帮我写一份个人说明书吗？放在飞书里，供其他.md",
+      "new": "你能通过问我一些问题来帮我写一份个人说明书吗.md",
+      "title": "你能通过问我一些问题来帮我写一份个人说明书吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "新冠疫情现状及防护建议.md",
+      "new": "目前新冠在人群中的影响是多大？.md",
+      "title": "目前新冠在人群中的影响是多大？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "月薪3万，年终奖20万，要交多少个税？.md",
+      "new": "月薪3万，年终奖20万，要交多少个税？.md",
+      "title": "月薪3万，年终奖20万，要交多少个税？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中韩关系改善与经济合作.md",
+      "new": "为什么对李在明总统如此高规格接待？.md",
+      "title": "为什么对李在明总统如此高规格接待？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "我的分类有点混乱，可以帮我优化吗.md",
+      "new": "Screenshot_20250217_231813_com.md",
+      "title": "Screenshot_20250217_231813_com",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "租车平台寻找BRZ或86方法.md",
+      "new": "哪个平台租车可以租到BRZ或86.md",
+      "title": "哪个平台租车可以租到BRZ或86",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "课题经营激励机制优化方案.md",
+      "new": "请帮我把以下激励机制做一个呈现形式上的优化.md",
+      "title": "请帮我把以下激励机制做一个呈现形式上的优化",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳公交WiFi版iPad无公交卡解决方案.md",
+      "new": "在深圳坐公交，只有一个 WiFi版ipad，没有公交卡怎么办.md",
+      "title": "在深圳坐公交，只有一个 WiFi版ipad，没有公交卡怎么办",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "隔夜烤鱼食用风险及安全建议.md",
+      "new": "现在早上八点，吃昨晚八点的烤鱼（冰箱保险存放），会有啥问题吗？.md",
+      "title": "现在早上八点，吃昨晚八点的烤鱼（冰箱保险存放），会有啥问题吗？",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "跑步后冲冷水澡的利弊分析.md",
+      "new": "跑完步要不要冲个冷水澡.md",
+      "title": "跑完步要不要冲个冷水澡",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Roon播放器功能与特点详解.md",
+      "new": "roon播放器是个啥.md",
+      "title": "roon播放器是个啥",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "我想对一笔投资款和分红，对投出去的和收回来的钱做一个区格式的管理.md",
+      "new": "我想对一笔投资款和分红.md",
+      "title": "我想对一笔投资款和分红",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "深圳贝赛思学校体系特点解析.md",
+      "new": "深圳贝赛思的特点？.md",
+      "title": "深圳贝赛思的特点？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "小学数学竞赛题：小数除法误差计算.md",
+      "new": "你出一道小学5年级数学小数除法的数学竞赛题.md",
+      "title": "你出一道小学5年级数学小数除法的数学竞赛题",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "拓竹3D打印机延保购买建议.md",
+      "new": "拓竹3D打印机需要购买延保吗？.md",
+      "title": "拓竹3D打印机需要购买延保吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "电商培训企业系统上线失败原因分析.md",
+      "new": "Screenshot_20250319_134946_com.md",
+      "title": "Screenshot_20250319_134946_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "读书会录音转文字核心观点提取方案.md",
+      "new": "需要一份提示词实现以下目的：刚才参加了一场读书会.md",
+      "title": "需要一份提示词实现以下目的：刚才参加了一场读书会",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "我要改装我的眼镜蛇485自行车\n请帮我列举一些常用改装零件以及他.md",
+      "new": "我要改装我的眼镜蛇485自行车 请帮我列举一些常用改装零件以及他们的价.md",
+      "title": "我要改装我的眼镜蛇485自行车 请帮我列举一些常用改装零件以及他们的价",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "熬夜后头疼原因及应对建议.md",
+      "new": "熬夜了就会头疼咋回事，46岁，男.md",
+      "title": "熬夜了就会头疼咋回事，46岁，男",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "企业扩张期三维跃迁方案.md",
+      "new": "帮我完善一下这句标题：企业扩张期的三个什么.md",
+      "title": "帮我完善一下这句标题：企业扩张期的三个什么",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "16厘米高的显示屏尺寸，想要显示37个字，这块屏幕的宽度最好是多.md",
+      "new": "16厘米高的显示屏尺寸，想要显示37个字，这块屏幕的宽度最好是多宽.md",
+      "title": "16厘米高的显示屏尺寸，想要显示37个字，这块屏幕的宽度最好是多宽",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "企业级AI笔记软件现在有哪些？.md",
+      "new": "企业级AI笔记软件现在有哪些？.md",
+      "title": "企业级AI笔记软件现在有哪些？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "modelx有哪些款.md",
+      "new": "modelx有哪些款.md",
+      "title": "modelx有哪些款",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "历史订单分析用户活跃方法.md",
+      "new": "数据分析，如何根据历史订单，分析用户活跃情况，可以用些什么方法吗？.md",
+      "title": "数据分析，如何根据历史订单，分析用户活跃情况，可以用些什么方法吗？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "林老师\n刘铮洋请假跑操和体育课一周\n家长：刘伟\n2025年2月2.md",
+      "new": "deepseek-17405583931604353298700304.md",
+      "title": "deepseek-17405583931604353298700304",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "饭后舌后部发酸原因及应对建议.md",
+      "new": "问一个口腔环境或内分泌或微生物问题.md",
+      "title": "问一个口腔环境或内分泌或微生物问题",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "滑跃起飞与弹射起飞性能对比.md",
+      "new": "滑跃式起飞比蒸汽弹射效果差在哪里.md",
+      "title": "滑跃式起飞比蒸汽弹射效果差在哪里",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "泰铢汇率及换汇建议分析.md",
+      "new": "泰铢汇率.md",
+      "title": "泰铢汇率",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "红酒储存是否需要酒柜的考量.md",
+      "new": "红酒保存什么情况下需要用到酒柜？.md",
+      "title": "红酒保存什么情况下需要用到酒柜？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "合同日期标注必要性与情况分析.md",
+      "new": "合同什么情况下需要写日期？什么情况下不需要写日期.md",
+      "title": "合同什么情况下需要写日期？什么情况下不需要写日期",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "VLC安卓播放群晖NAS教程.md",
+      "new": "VLC安卓版怎么播放群晖上的内容.md",
+      "title": "VLC安卓版怎么播放群晖上的内容",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "蔡琴华语乐坛经典歌手简介.md",
+      "new": "对话记录.md",
+      "title": "对话记录",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "讯飞录音笔导出音频与转写方法.md",
+      "new": "讯飞录音笔怎么导出.md",
+      "title": "讯飞录音笔怎么导出",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "轻钢琴曲推荐及欣赏指南.md",
+      "new": "轻钢琴曲推荐.md",
+      "title": "轻钢琴曲推荐",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "平安.md",
+      "new": "对话记录.md",
+      "title": "对话记录",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香港驾照网上申请流程指南.md",
+      "new": "网上申请香港驾照，好像需要先去香港办理数字证书或者一个什么机器上操作一.md",
+      "title": "网上申请香港驾照，好像需要先去香港办理数字证书或者一个什么机器上操作一",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Cursor对话窗口无响应排查方法.md",
+      "new": "cursor对话窗口一直没反应，我怎么排查这是什么原因引起的？.md",
+      "title": "cursor对话窗口一直没反应，我怎么排查这是什么原因引起的？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "西印和UR区别.md",
+      "new": "西印和UR区别.md",
+      "title": "西印和UR区别",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "室内锻炼板品牌推荐.md",
+      "new": "脱不花推荐那个室内锻炼的板子是什么牌子的.md",
+      "title": "脱不花推荐那个室内锻炼的板子是什么牌子的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香港临时身份证的好处与注意事项.md",
+      "new": "有了香港身份证（临时）有啥好处？.md",
+      "title": "有了香港身份证（临时）有啥好处？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "雅马哈785与885电钢琴区别解析.md",
+      "new": "雅马哈785和885的区别？.md",
+      "title": "雅马哈785和885的区别？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "请运用品牌相关理论，还有广告相关的一些理论知识来给高维学堂写一.md",
+      "new": "请运用品牌相关理论，还有广告相关的一些理论知识来给高维学堂写一个口号或.md",
+      "title": "请运用品牌相关理论，还有广告相关的一些理论知识来给高维学堂写一个口号或",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高情商回复知识库问题.md",
+      "new": "Screenshot_20250417_205406_com.md",
+      "title": "Screenshot_20250417_205406_com",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "购物.md",
+      "new": "最近3年的BMW325优缺点.md",
+      "title": "最近3年的BMW325优缺点",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "你来发明一个产品壁垒的公式.md",
+      "new": "你来发明一个产品壁垒的公式.md",
+      "title": "你来发明一个产品壁垒的公式",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "陶喆《黑色柳丁》歌曲解析.md",
+      "new": "leg leg 铛铛铛 陶喆的哪首歌.md",
+      "title": "leg leg 铛铛铛 陶喆的哪首歌",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "张学友前奏好听的曲子推荐.md",
+      "new": "张学友有一首曲子的前奏挺好听的，你能列一下可能是哪首曲子吗.md",
+      "title": "张学友有一首曲子的前奏挺好听的，你能列一下可能是哪首曲子吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "公开课运营流量承接规则整理.md",
+      "new": "公开课运营流量承接规则： 华东的：给带班班主任.md",
+      "title": "公开课运营流量承接规则： 华东的：给带班班主任",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "国内寺庙留宿体验及注意事项.md",
+      "new": "国内哪一所寺庙可以留宿.md",
+      "title": "国内哪一所寺庙可以留宿",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "香港身份续签永居成本分析.md",
+      "new": "通过高才或优才获得香港身份后.md",
+      "title": "通过高才或优才获得香港身份后",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "老南瓜与烤南瓜的营养分析与食用建议.md",
+      "new": "老南瓜的烤南瓜的升糖指数和碳水含量高不高？.md",
+      "title": "老南瓜的烤南瓜的升糖指数和碳水含量高不高？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "深圳福田下沙夜间娱乐场所探查.md",
+      "new": "在福田上下沙一带路边很显眼的一些铺面.md",
+      "title": "在福田上下沙一带路边很显眼的一些铺面",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Windows部署通义千问7B指南.md",
+      "new": "大模型部署，通义千问7B在Windows电脑上怎么部署.md",
+      "title": "大模型部署，通义千问7B在Windows电脑上怎么部署",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "商学教育机构税务优化方案设计.md",
+      "new": "一家商学教育线下培训机构，目前年营收1.md",
+      "title": "一家商学教育线下培训机构，目前年营收1",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "日本旅游注意事项分类整理.md",
+      "new": "34. 环球影城想要去马里奥乐园需要730进场.md",
+      "title": "34. 环球影城想要去马里奥乐园需要730进场",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂的独特知识是什么？.md",
+      "new": "你认为高维学堂的独特知识是什么.md",
+      "title": "你认为高维学堂的独特知识是什么",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "(setq hr-recruitment-prompt\n  '(.md",
+      "new": "(setq hr-recruitment-prompt '(role.md",
+      "title": "(setq hr-recruitment-prompt '(role",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "vivo手机查找设备功能介绍.md",
+      "new": "vivo手机有没有类似findmyiphone的功能.md",
+      "title": "vivo手机有没有类似findmyiphone的功能",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "吉卜力风格画生成提示词设计.md",
+      "new": "让GPT4o根据我上传给GPT4o的照片生成吉卜力风格的画.md",
+      "title": "让GPT4o根据我上传给GPT4o的照片生成吉卜力风格的画",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "经营分析会人效平均值计算.md",
+      "new": "经营分析会，人效，计算平均值： 342.md",
+      "title": "经营分析会，人效，计算平均值： 342",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "收入分布右偏原因及影响分析.md",
+      "new": "人们的收入是对数分布均匀的吗？什么因素造成的？.md",
+      "title": "人们的收入是对数分布均匀的吗？什么因素造成的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "炒板栗与坚果的营养对比分析.md",
+      "new": "坚果可以补充优质脂肪，炒板栗也是吗.md",
+      "title": "坚果可以补充优质脂肪，炒板栗也是吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "健身房与公园锻炼方式对比分析.md",
+      "new": "去健身房健身1小时和去公园慢跑5km.md",
+      "title": "去健身房健身1小时和去公园慢跑5km",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "山姆奥特曼 three observation.md",
+      "new": "山姆奥特曼 three observation.md",
+      "title": "山姆奥特曼 three observation",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "马尔代夫水上飞机运营与安全分析.md",
+      "new": "马尔代夫水飞机一年掉下来多少架？.md",
+      "title": "马尔代夫水飞机一年掉下来多少架？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "光选择最短路径的原理与解释.md",
+      "new": "光 是会思考的吗？ 他为啥总是选择最短路径 背后涉及什么原理或知识？.md",
+      "title": "光 是会思考的吗？ 他为啥总是选择最短路径 背后涉及什么原理或知识？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "科兴科学园周边餐厅推荐.md",
+      "new": "科兴科学园附近有哪些适合接待的餐厅.md",
+      "title": "科兴科学园附近有哪些适合接待的餐厅",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "家长与女儿协商游戏时间管理.md",
+      "new": "Screenshot_20250318_151910_com.md",
+      "title": "Screenshot_20250318_151910_com",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "葡萄酒丹宁的科普与解析.md",
+      "new": "葡萄酒的丹宁是啥.md",
+      "title": "葡萄酒的丹宁是啥",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "情侣间玩笑：秘密需付费.md",
+      "new": "1000026388.jpgJPG 这是个什么梗 她（女朋友）想干啥？.md",
+      "title": "1000026388.jpgJPG 这是个什么梗 她（女朋友）想干啥？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "刘伟日程安排及确认事项总结.md",
+      "new": "刘伟哥我再来确定一下时间安排.md",
+      "title": "刘伟哥我再来确定一下时间安排",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "小程序命名方案设计与建议.md",
+      "new": "我想开发一款小程序，帮助CEO跟踪优秀潜在人才，提高找人效率.md",
+      "title": "我想开发一款小程序，帮助CEO跟踪优秀潜在人才，提高找人效率",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "推荐开源AI文件管理工具整理电影目录.md",
+      "new": "软件工具推荐：有哪款AI文件管理器（最好开源的）.md",
+      "title": "软件工具推荐：有哪款AI文件管理器（最好开源的）",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "麦当劳低热量餐品推荐与搭配.md",
+      "new": "麦当劳有哪款不是高热量的吗.md",
+      "title": "麦当劳有哪款不是高热量的吗",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "科创行业全称及核心领域介绍.md",
+      "new": "科创行业的全称是什么.md",
+      "title": "科创行业的全称是什么",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "经典太空科幻美剧推荐.md",
+      "new": "经典或好看的太空科幻美剧是哪些.md",
+      "title": "经典或好看的太空科幻美剧是哪些",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "小学生用科学方法论大扫除.md",
+      "new": "用这些词写一篇小学生作文： 复盘.md",
+      "title": "用这些词写一篇小学生作文： 复盘",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "查看Yarn安装目录方法.md",
+      "new": "怎么看yarn安装到了哪个目录？.md",
+      "title": "怎么看yarn安装到了哪个目录？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "糖尿病最新科研成果.md",
+      "new": "糖尿病最新科研成果？.md",
+      "title": "糖尿病最新科研成果？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "志公，题库系统.md",
+      "new": "一家公考教育机构，未来想发展成就业辅导机构，现在他们要加大在IT上的投.md",
+      "title": "一家公考教育机构，未来想发展成就业辅导机构，现在他们要加大在IT上的投",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为Mate 70与Pura 80 Pro对比分析.md",
+      "new": "mate 70好还是p80pro好.md",
+      "title": "mate 70好还是p80pro好",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "探讨男人永恒兴趣与美好事物.md",
+      "new": "什么东西是一个男人永远看不腻的？你写100个.md",
+      "title": "什么东西是一个男人永远看不腻的？你写100个",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "类似听风的博主.md",
+      "new": "类似听风的博主.md",
+      "title": "类似听风的博主",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "我想通过编程感受一下神经网络的运行原理，你可以一步步教我吗？.md",
+      "new": "我想通过编程感受一下神经网络的运行原理，你可以一步步教我吗？.md",
+      "title": "我想通过编程感受一下神经网络的运行原理，你可以一步步教我吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳红树西岸片区归属及特点.md",
+      "new": "深圳红树西岸属于哪个片区.md",
+      "title": "深圳红树西岸属于哪个片区",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "北京易约博物馆推荐.md",
+      "new": "北京有哪些博物馆值得10岁男孩去看看而且第二天的可以约得到.md",
+      "title": "北京有哪些博物馆值得10岁男孩去看看而且第二天的可以约得到",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "抚养费标准及计算方法详解.md",
+      "new": "抚养费的标准是怎样的？.md",
+      "title": "抚养费的标准是怎样的？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "儿童袜子尺码对应分析.md",
+      "new": "79【袜底长20-22cm】这是几码的袜子.md",
+      "title": "79【袜底长20-22cm】这是几码的袜子",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "初中生规划中外合作大学升学路径.md",
+      "new": "小孩小学基础不错，但初中成绩不太好，初三还休学了，想上国内外合作大学，.md",
+      "title": "小孩小学基础不错，但初中成绩不太好，初三还休学了，想上国内外合作大学，",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "iPhone备份恢复到新机指南.md",
+      "new": "一台iPhone备份到电脑里.md",
+      "title": "一台iPhone备份到电脑里",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "壹心理企业信息及业务发展概况.md",
+      "new": "请搜索壹心理，深入了解一下这家企业尽可能多的品牌，业务，发展信息.md",
+      "title": "请搜索壹心理，深入了解一下这家企业尽可能多的品牌，业务，发展信息",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "培训公司次卡套餐观测指标总结.md",
+      "new": "培训公司的课程次卡套餐，需要观测哪些指标？.md",
+      "title": "培训公司的课程次卡套餐，需要观测哪些指标？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "妹妹打工收到老板信息\n\n1、副店长还是按照工时计费，时薪不变，每.md",
+      "new": "妹妹打工收到老板信息 1、副店长还是按照工时计费.md",
+      "title": "妹妹打工收到老板信息 1、副店长还是按照工时计费",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "担心与控制：平衡情感与边界.md",
+      "new": "Screenshot_20250404_142317_com.md",
+      "title": "Screenshot_20250404_142317_com",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "企业管理培训朋友圈内容生成指南.md",
+      "new": "这是我们一位班主任的几条朋友圈.md",
+      "title": "这是我们一位班主任的几条朋友圈",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "特斯拉Model X与Model Y尺寸对比.md",
+      "new": "Model x和model y的外部和内部尺寸区别对比.md",
+      "title": "Model x和model y的外部和内部尺寸区别对比",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "门店投资收益数据分析报告.md",
+      "new": "hisdetail1739968113077.md",
+      "title": "hisdetail1739968113077",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "流程梳理.md",
+      "new": "deepseek-17410099517292605978366782.md",
+      "title": "deepseek-17410099517292605978366782",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "塑料、ABS、亚克力分类与区别解析.md",
+      "new": "塑料，ABS，工程塑料，亚克力，有机玻璃这些东西有什么区别和联系吗.md",
+      "title": "塑料，ABS，工程塑料，亚克力，有机玻璃这些东西有什么区别和联系吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "飞书项目课程系统需求分类总结.md",
+      "new": "飞书项目课程系统需求导出-软件开发 (6) (1).md",
+      "title": "飞书项目课程系统需求导出-软件开发 (6) (1)",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "推荐免费听书平台及选择建议.md",
+      "new": "听书最好的平台是什么？免费的用户分享的.md",
+      "title": "听书最好的平台是什么？免费的用户分享的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "区分buying和buy in的用法.md",
+      "new": "buying还是buy in.md",
+      "title": "buying还是buy in",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "员工英文表达及用法详解.md",
+      "new": "员工用什么单词.md",
+      "title": "员工用什么单词",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "途观撞死高管后依然畅销原因分析.md",
+      "new": "途观新品试车的时候就撞死了一名高管，为什么后来途观这辆车卖的还那么好.md",
+      "title": "途观新品试车的时候就撞死了一名高管，为什么后来途观这辆车卖的还那么好",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "iPad初学者节拍器应用需求规划.md",
+      "new": "我想用cursor开发一款ipad上运行的初学者节拍器.md",
+      "title": "我想用cursor开发一款ipad上运行的初学者节拍器",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "120英寸屏幕面积计算方法.md",
+      "new": "120英寸的屏幕大概几平米.md",
+      "title": "120英寸的屏幕大概几平米",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "vivo手机HDMI连接方法及问题排查.md",
+      "new": "vivo手机怎么输出到HDMI.md",
+      "title": "vivo手机怎么输出到HDMI",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "最大公因数定义及计算方法详解.md",
+      "new": "最大公因数.md",
+      "title": "最大公因数",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "科学创业机构推荐清单.md",
+      "new": "你能推荐几家学习科学创业首选机构吗？.md",
+      "title": "你能推荐几家学习科学创业首选机构吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Mac加密保存私人照片方法.md",
+      "new": "mac里怎么把私人照片加密保存起来呢？.md",
+      "title": "mac里怎么把私人照片加密保存起来呢？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "烟台栖霞知名企业盘点.md",
+      "new": "烟台和栖霞知名企业有哪些.md",
+      "title": "烟台和栖霞知名企业有哪些",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "《管理的实践中》，提到IBM一位主管说，公司成长是因为我们要承诺.md",
+      "new": "《管理的实践中》，提到IBM一位主管说，公司成长是因为我们要承诺要努力.md",
+      "title": "《管理的实践中》，提到IBM一位主管说，公司成长是因为我们要承诺要努力",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "家庭客用拖鞋卫生与环保解决方案.md",
+      "new": "家里经常有客人来，普通拖鞋嫌脏，多人穿，一次性拖鞋嫌不环保，鞋套又不舒.md",
+      "title": "家里经常有客人来，普通拖鞋嫌脏，多人穿，一次性拖鞋嫌不环保，鞋套又不舒",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "vivo手机隔空手势功能查询方法.md",
+      "new": "vivo手机有没有隔空刷屏手势像Mate系列，华为手机一样.md",
+      "title": "vivo手机有没有隔空刷屏手势像Mate系列，华为手机一样",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "荣耀Magic 8上市时间及配置信息.md",
+      "new": "Magic8什么时候上市的.md",
+      "title": "Magic8什么时候上市的",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "业财一体化概念与实施解析.md",
+      "new": "如何理解业财一体化.md",
+      "title": "如何理解业财一体化",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "我们是一家科学创业，企业经营实战商学院，想构建起自己的知识底座，.md",
+      "new": "我们是一家科学创业，企业经营实战商学院，想构建起自己的知识底座，有合适.md",
+      "title": "我们是一家科学创业，企业经营实战商学院，想构建起自己的知识底座，有合适",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "询问电话号码的英语对话.md",
+      "new": "英语 你的电话号码？.md",
+      "title": "英语 你的电话号码？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "UI文案优化：简洁友好席位说明.md",
+      "new": "文案优化：帮我优化一下UI界面上的一句文案想要更简洁明了且友好：复训席.md",
+      "title": "文案优化：帮我优化一下UI界面上的一句文案想要更简洁明了且友好：复训席",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "深圳通客服电话及服务信息.md",
+      "new": "深圳通的客服电话.md",
+      "title": "深圳通的客服电话",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "小步快跑与小心求证的结合.md",
+      "new": "有句话怎么说的来着：小步快跑，小心求证，.md",
+      "title": "有句话怎么说的来着：小步快跑，小心求证，",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "带二次元女儿日本深度游攻略.md",
+      "new": "带女儿（喜欢二次元）去日本玩的话，你有什么建议吗？时间不限，她休学中.md",
+      "title": "带女儿（喜欢二次元）去日本玩的话，你有什么建议吗？时间不限，她休学中",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "理解大模型原理优化AI应用提示词.md",
+      "new": "理解了大模型底层原理对AI应用有啥好处，比如，能写出更好的提示词吗？.md",
+      "title": "理解了大模型底层原理对AI应用有啥好处，比如，能写出更好的提示词吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "办公场地中央空调水管装修报价估算.md",
+      "new": "我们办公场地装修需要拉一条直径8CM的中央空调冷冻水管和回水管.md",
+      "title": "我们办公场地装修需要拉一条直径8CM的中央空调冷冻水管和回水管",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "内存数据读取的魔法邮局故事.md",
+      "new": "使用小学生能听懂的语言，说明一下内存或者CPU里的数据怎么读取出来的.md",
+      "title": "使用小学生能听懂的语言，说明一下内存或者CPU里的数据怎么读取出来的",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "客户管理与课程优化系统解决方案.md",
+      "new": "客户自己选课、排课，减轻人力去问 库存是清晰的，人工有很多漏洞 销售端.md",
+      "title": "客户自己选课、排课，减轻人力去问 库存是清晰的，人工有很多漏洞 销售端",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "github 上的开源项目本地部署一般怎么解决各种包的依赖和版本.md",
+      "new": "github 上的开源项目本地部署一般怎么解决各种包的依赖和版本问题？.md",
+      "title": "github 上的开源项目本地部署一般怎么解决各种包的依赖和版本问题？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "流感抗原检测阳性需及时就医.md",
+      "new": "1000024116.jpgJPG 请帮忙诊断.md",
+      "title": "1000024116.jpgJPG 请帮忙诊断",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "每天吃坚果的注意事项.md",
+      "new": "每天吃点坚果，有什么需要注意的吗.md",
+      "title": "每天吃点坚果，有什么需要注意的吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "B级车新时代产品体验对比分析.md",
+      "new": "现在最畅销的B级车和油车时代，产品体验有什么区别.md",
+      "title": "现在最畅销的B级车和油车时代，产品体验有什么区别",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Mac远程唤醒方法及设置指南.md",
+      "new": "mac电脑怎么远程唤醒.md",
+      "title": "mac电脑怎么远程唤醒",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "汗液气味形成及酒精清洁原理.md",
+      "new": "手脏了以后，闻起来咸咸的是什么东西啊.md",
+      "title": "手脏了以后，闻起来咸咸的是什么东西啊",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "披头士经典歌曲《Yellow Submarine》解析.md",
+      "new": "为什么yellow submarine这么简单朴素甚至有点像儿歌的歌曲.md",
+      "title": "为什么yellow submarine这么简单朴素甚至有点像儿歌的歌曲",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "战神5提尔任务全攻略.md",
+      "new": "战神5 提尔的任务攻略.md",
+      "title": "战神5 提尔的任务攻略",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "高维内部沟通和企业文化智能体.md",
+      "new": "工作簿1.xlsxXLSX 我有一个excel文件.md",
+      "title": "工作簿1.xlsxXLSX 我有一个excel文件",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "平安银行股票行情咨询.md",
+      "new": "平安银行_1.md",
+      "title": "平安银行",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Salesforce成功策略解析.md",
+      "new": "crm salesforce最初是靠什么崭露头角，打动第一批客户的？.md",
+      "title": "crm salesforce最初是靠什么崭露头角，打动第一批客户的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "电商三足鼎立模型命名建议.md",
+      "new": "炬鼎力面向电商企业的一门课程.md",
+      "title": "炬鼎力面向电商企业的一门课程",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "列举动物最高奔跑速度及对比.md",
+      "new": "请列举各种不同动物的最高奔跑速度，包括人类.md",
+      "title": "请列举各种不同动物的最高奔跑速度，包括人类",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "如何查找Yarn安装目录.md",
+      "new": "怎么看yarn安装到了哪个目录？_1.md",
+      "title": "怎么看yarn安装到了哪个目录？",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "悠享时企业推介及发展历程.md",
+      "new": "请按照以下要求写一段“悠时”的企业推介文字.md",
+      "title": "请按照以下要求写一段“悠时”的企业推介文字",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "八大关周边餐厅推荐及选择指南.md",
+      "new": "八大关附近有什么好吃的吗.md",
+      "title": "八大关附近有什么好吃的吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "探讨“好玩”的本质与心理学机制.md",
+      "new": "好玩的本质含义是什么？比如有人觉得旅游.md",
+      "title": "好玩的本质含义是什么？比如有人觉得旅游",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "背背佳创始人及发展历程.md",
+      "new": "背背佳谁做的.md",
+      "title": "背背佳谁做的",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "创业企业业财一体化实施策略.md",
+      "new": "在一家1~10亿规模的创业企业里.md",
+      "title": "在一家1~10亿规模的创业企业里",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "三尺三腰围腰带选择建议.md",
+      "new": "三尺三的腰，买多少厘米的腰带.md",
+      "title": "三尺三的腰，买多少厘米的腰带",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "前沿部署工程师模式反向运行解析.md",
+      "new": "FDE开发模式反过来有可能吗？.md",
+      "title": "FDE开发模式反过来有可能吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "关闭淘宝精选通知方法.md",
+      "new": "怎么关掉淘宝精选的通知.md",
+      "title": "怎么关掉淘宝精选的通知",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "女儿抑郁就医：深圳康宁医院更优.md",
+      "new": "女儿有抑郁，医生建议去康宁医院住院，我有香港临时身份，去香港会不会好一.md",
+      "title": "女儿有抑郁，医生建议去康宁医院住院，我有香港临时身份，去香港会不会好一",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "公司内部AI竞赛策划方案.md",
+      "new": "我想在公司内部搞一场AI竞赛，请帮我写一份策划方案.md",
+      "title": "我想在公司内部搞一场AI竞赛，请帮我写一份策划方案",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "如何防止他人偷吃排泄物.md",
+      "new": "刚拉完屎，怕有人偷吃怎么办？.md",
+      "title": "刚拉完屎，怕有人偷吃怎么办？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "鸡蛋炒洋葱升糖指数分析.md",
+      "new": "升糖指数 鸡蛋炒洋葱.md",
+      "title": "升糖指数 鸡蛋炒洋葱",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "珠海市区到御温泉距离分析.md",
+      "new": "1000027609.jpgJPG 这些地方哪一个地方离珠海御温泉最近.md",
+      "title": "1000027609.jpgJPG 这些地方哪一个地方离珠海御温泉最近",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "培养孩子洗脸习惯的多种策略.md",
+      "new": "最近一直愁怎么培养十岁儿子洋洋的洗脸习惯，之前一直说了不听，还嫌烦.md",
+      "title": "最近一直愁怎么培养十岁儿子洋洋的洗脸习惯，之前一直说了不听，还嫌烦",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "不开心来源及应对方法探讨.md",
+      "new": "不开心主要来自于啥.md",
+      "title": "不开心主要来自于啥",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "红酒包括哪四大类型，拉菲属于哪一种.md",
+      "new": "红酒包括哪四大类型，拉菲属于哪一种.md",
+      "title": "红酒包括哪四大类型，拉菲属于哪一种",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "iPhone识别骚扰电话与快递外卖电话方法.md",
+      "new": "iPhone怎么识别来电是营销电话还是快递送餐电话.md",
+      "title": "iPhone怎么识别来电是营销电话还是快递送餐电话",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "WPS接入大模型方法及步骤.md",
+      "new": "wps里怎么接入大模型？.md",
+      "title": "wps里怎么接入大模型？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "防静电实用技巧总结.md",
+      "new": "日常有哪些防静电小技巧？不要告诉我只能穿纯棉衣服.md",
+      "title": "日常有哪些防静电小技巧？不要告诉我只能穿纯棉衣服",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "甲醛浓度0.08mgm³分析与建议.md",
+      "new": "甲醛0.08毫克m³是什么水平？.md",
+      "title": "甲醛0.08毫克m³是什么水平？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "企业招聘新人ROI评估中的认知偏误.md",
+      "new": "对新人的期待，企业招聘新人，在判断薪金和成果产出ROI的时候，往往过于.md",
+      "title": "对新人的期待，企业招聘新人，在判断薪金和成果产出ROI的时候，往往过于",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "阈值的正确读音及解释.md",
+      "new": "阈值的读音.md",
+      "title": "阈值的读音",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "深圳C919航班航线信息.md",
+      "new": "深圳非哪里的航班使用的c919.md",
+      "title": "深圳非哪里的航班使用的c919",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "视频网址提取语音转文字技术方案.md",
+      "new": "什么技术方案可以根据视频网址来提取语音并转成文字？.md",
+      "title": "什么技术方案可以根据视频网址来提取语音并转成文字？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "这三页书我没看懂，你能用人话给我解释一下吗？\n\n状态的转换规律：.md",
+      "new": "这三页书我没看懂，你能用人话给我解释一下吗.md",
+      "title": "这三页书我没看懂，你能用人话给我解释一下吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "新对话.md",
+      "new": "请模拟一下美国向中国实施核打击，最终结局是什么.md",
+      "title": "请模拟一下美国向中国实施核打击，最终结局是什么",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "计算加权平均分.md",
+      "new": "20%、平台&IT、3分 50%、AI、4分 30%、业财、6分 帮我.md",
+      "title": "20%、平台&IT、3分 50%、AI、4分 30%、业财、6分 帮我",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "工作整合与科学管理提升效率.md",
+      "new": "整合的规则 关于这些问题.md",
+      "title": "整合的规则 关于这些问题",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "创业加速器核心要事与阶段解析.md",
+      "new": "扮演好一个创业加速器角色，要做哪些要事？.md",
+      "title": "扮演好一个创业加速器角色，要做哪些要事？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "亚美尼亚元旦10天旅游攻略.md",
+      "new": "亚美尼亚旅游攻略，元旦，10天.md",
+      "title": "亚美尼亚旅游攻略，元旦，10天",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "创业公司项目管理工具引入指南.md",
+      "new": "对于一家几十人的创业公司来说.md",
+      "title": "对于一家几十人的创业公司来说",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "三出山店铺投资款项分配通知.md",
+      "new": "帮我整理一下这段文字： 军哥，关于三出山店铺投资款项通知 根据你11.md",
+      "title": "帮我整理一下这段文字： 军哥，关于三出山店铺投资款项通知 根据你11",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "珠海御温泉与千与千寻场景类比.md",
+      "new": "珠海御温泉跟千与千寻的场景有联系吗？.md",
+      "title": "珠海御温泉跟千与千寻的场景有联系吗？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "螺丝拧坏后的多种解决方法.md",
+      "new": "螺丝拧坏了拧不下来了怎么办？.md",
+      "title": "螺丝拧坏了拧不下来了怎么办？",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "寻秦记不同版本播出时间介绍.md",
+      "new": "寻秦记什么时候的剧.md",
+      "title": "寻秦记什么时候的剧",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "RAG知识库上传Token消耗原因解析.md",
+      "new": "为什么上传资料到rag知识库还要消耗token.md",
+      "title": "为什么上传资料到rag知识库还要消耗token",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "AI产品四象限分类解析.md",
+      "new": "现在各式各样的AI产品令人眼花缭乱.md",
+      "title": "现在各式各样的AI产品令人眼花缭乱",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "颂钵的功效与作用介绍.md",
+      "new": "颂钵有些什么功效.md",
+      "title": "颂钵有些什么功效",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "辅导孩子约分数学技巧.md",
+      "new": "辅导10岁儿子数学，约分这一个知识点的时候，他做10道题，有7道题是没.md",
+      "title": "辅导10岁儿子数学，约分这一个知识点的时候，他做10道题，有7道题是没",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "AI常见英文缩写及解释.md",
+      "new": "AI 常见英文缩写，请列举并简单解释.md",
+      "title": "AI 常见英文缩写，请列举并简单解释",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "企业测评智能体构建萃取计划.md",
+      "new": "我想要通过萃取kk，来获得高维学堂企业测评的思维链，请你帮我思考一个萃.md",
+      "title": "我想要通过萃取kk，来获得高维学堂企业测评的思维链，请你帮我思考一个萃",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "《管理的实践》以来HRM进展与负债解冻分析.md",
+      "new": "《管理的实践》出版以来（1954年）.md",
+      "title": "《管理的实践》出版以来（1954年）",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "懒散少年的成长与自我突破.md",
+      "new": "“懒” 小学的时候，亲戚们每次问我爸妈我成绩，我爸妈总是回答“中游”.md",
+      "title": "“懒” 小学的时候，亲戚们每次问我爸妈我成绩，我爸妈总是回答“中游”",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "铝合金柠檬切片器健康风险解析.md",
+      "new": "铝合金的亨禄柠檬切片器小型手动奶茶店 柠檬分割器家用西红柿水果小神器会.md",
+      "title": "铝合金的亨禄柠檬切片器小型手动奶茶店 柠檬分割器家用西红柿水果小神器会",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "汕头500元以下干净酒店推荐.md",
+      "new": "汕头500以下比较干净的好一点的酒店，距离主要景点比较近的推荐.md",
+      "title": "汕头500以下比较干净的好一点的酒店，距离主要景点比较近的推荐",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "优质韩国电影推荐清单.md",
+      "new": "优质韩国电影推荐.md",
+      "title": "优质韩国电影推荐",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "中国Cybertruck购买咨询.md",
+      "new": "中国能买到Cybertruck吗？.md",
+      "title": "中国能买到Cybertruck吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "唐DM与理想ONE置换对比分析.md",
+      "new": "我有一辆2019款的唐dm.md",
+      "title": "我有一辆2019款的唐dm",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "妇科阴道分泌物检验报告解读.md",
+      "new": "mmexport1761899628808.jpgJPG.md",
+      "title": "mmexport1761899628808.jpgJPG",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Obsidian免费与付费服务介绍.md",
+      "new": "obsidian能免费使用吗.md",
+      "title": "obsidian能免费使用吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "中小企业AI战略与实操课程设计.md",
+      "new": "我想给中小企业创始人或CEO.md",
+      "title": "我想给中小企业创始人或CEO",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "四年级现在进行时辅导方案.md",
+      "new": "deepseek-17441631192006780461724772.md",
+      "title": "deepseek-17441631192006780461724772",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "洗脸盆洗内裤卫生风险分析.md",
+      "new": "洗脸盆刷牙吐口水的，虽然冲干净了，但会不会还有大量细菌，以至于不能用洗.md",
+      "title": "洗脸盆刷牙吐口水的，虽然冲干净了，但会不会还有大量细菌，以至于不能用洗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "总结评论区有用分享信息.md",
+      "new": "总结一下评论区有用的分享信息，私信发给我.md",
+      "title": "总结一下评论区有用的分享信息，私信发给我",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "权限开通风险说明：请根据我和程序员对话的这段聊天记录，帮我总结一.md",
+      "new": "Screenshot_20250213_094549_com.md",
+      "title": "Screenshot_20250213_094549_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "甲鱼与鱼的亲缘关系解析.md",
+      "new": "甲鱼是鱼的近亲吗.md",
+      "title": "甲鱼是鱼的近亲吗",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "MBTI类型护士风格解析.md",
+      "new": "mbti 小护士.md",
+      "title": "mbti 小护士",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "高层住宅楼体噪音解决方案咨询.md",
+      "new": "翻译：高层住宅楼体噪音传到家里来.md",
+      "title": "翻译：高层住宅楼体噪音传到家里来",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "阿里巴巴年陈文化体系解析.md",
+      "new": "阿里的三年香，5年陈，还有下一个级别是几年呀？他那个阿里文化.md",
+      "title": "阿里的三年香，5年陈，还有下一个级别是几年呀？他那个阿里文化",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "我想用flutter开发一个应用自用，放在自己华为手机上跑，不发.md",
+      "new": "我想用flutter开发一个应用自用.md",
+      "title": "我想用flutter开发一个应用自用",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "USB-C线供电正负极判断方法.md",
+      "new": "Usbc线里面四股线哪两股颜色是负责正负极供电的.md",
+      "title": "Usbc线里面四股线哪两股颜色是负责正负极供电的",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "深圳湾万象城联系方式及交通指引.md",
+      "new": "深圳湾万象城的电话.md",
+      "title": "深圳湾万象城的电话",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "非核心财务投资选择与考量因素.md",
+      "new": "业务公司有持股公司还有子公司.md",
+      "title": "业务公司有持股公司还有子公司",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "因材施教助力孩子全面成长.md",
+      "new": "十岁儿子热爱自行车，跑步也很好50米7秒33，200米26秒，每天晚上.md",
+      "title": "十岁儿子热爱自行车，跑步也很好50米7秒33，200米26秒，每天晚上",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "脚部易得脚气手部不易的原因.md",
+      "new": "为什么脚部容易得脚气，而手部不容易.md",
+      "title": "为什么脚部容易得脚气，而手部不容易",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "苏格拉底式提问引导理解流程圣经第二章.md",
+      "new": "【原文】流程圣经 第2章.md",
+      "title": "【原文】流程圣经 第2章",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "我的乐园——操场作文.md",
+      "new": "我想写一篇关于“我的乐园”的作文.md",
+      "title": "我想写一篇关于“我的乐园”的作文",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "超高智商AI行为可能性排序.md",
+      "new": "假如出现智商10000的AI.md",
+      "title": "假如出现智商10000的AI",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "iPad mini6与7选购对比分析.md",
+      "new": "iPad mini6和mini7哪一个更值得买.md",
+      "title": "iPad mini6和mini7哪一个更值得买",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "车厘子发霉整箱处理建议.md",
+      "new": "一箱车厘子里面有几个发霉的，剩下洗一洗还能吃吗.md",
+      "title": "一箱车厘子里面有几个发霉的，剩下洗一洗还能吃吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "社会风格问题研究探讨.md",
+      "new": "上海饭局和北京饭局，比如说我去上海，我想通过您找道长吃顿饭，那你肯定当.md",
+      "title": "上海饭局和北京饭局，比如说我去上海，我想通过您找道长吃顿饭，那你肯定当",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "批判性分析短视频中的爱情观.md",
+      "new": "如何用批判思维去评价一下这段短视频内容： 一个人爱你到什么程度.md",
+      "title": "如何用批判思维去评价一下这段短视频内容： 一个人爱你到什么程度",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "微信聊天记录导出方法及风险提示.md",
+      "new": "微信聊天记录导出工具.md",
+      "title": "微信聊天记录导出工具",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "AI助手俊豪分豪上线.md",
+      "new": "请优化一下下面这句话： 你好，我是俊豪老师AI数字分身.md",
+      "title": "请优化一下下面这句话： 你好，我是俊豪老师AI数字分身",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "抑郁患儿治疗与家长支持策略.md",
+      "new": "女儿被诊断为抑郁发作，以下是医生的建议： 1.md",
+      "title": "女儿被诊断为抑郁发作，以下是医生的建议： 1",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "这个UI设计比较土，你能给重新画一个吗？.md",
+      "new": "Screenshot_20250211_180615_com.md",
+      "title": "Screenshot_20250211_180615_com",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "民事纠纷律师谈判费用咨询.md",
+      "new": "有普通民事纠纷需要请律师陪同，跟对方谈的话，这样的律师一般收费多少.md",
+      "title": "有普通民事纠纷需要请律师陪同，跟对方谈的话，这样的律师一般收费多少",
+      "category": "法律财务"
+    },
+    {
+      "status": "success",
+      "original": "青岛温泉度假酒店推荐及选择指南.md",
+      "new": "青岛的温泉度假酒店推荐哪几家？.md",
+      "title": "青岛的温泉度假酒店推荐哪几家？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "RTX 4060运行大模型优化建议.md",
+      "new": "4060可以跑哪一款大模型.md",
+      "title": "4060可以跑哪一款大模型",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "小熊电器盘子多大？.md",
+      "new": "小熊电器盘子多大？.md",
+      "title": "小熊电器盘子多大？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "华为手机与Mac文件传输方法总结.md",
+      "new": "华为手机怎么传文件到mac电脑？（USB线连接）.md",
+      "title": "华为手机怎么传文件到mac电脑？（USB线连接）",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "国内亲子日式风情旅游推荐.md",
+      "new": "儿子想去一个最像日本的地方旅游，有啥推荐的.md",
+      "title": "儿子想去一个最像日本的地方旅游，有啥推荐的",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "圣彼得堡马林斯基剧院观演指南.md",
+      "new": "想去圣彼得堡 马林斯基大剧院听G弦上的咏叹调，怎么才能做到？.md",
+      "title": "想去圣彼得堡 马林斯基大剧院听G弦上的咏叹调，怎么才能做到？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "深圳修建自行车泵道费用估算.md",
+      "new": "在深圳修一个自行车泵道要多少钱.md",
+      "title": "在深圳修一个自行车泵道要多少钱",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "我给你发一段对话，请你帮我整理一下写成一篇文章发给公司其他同事来.md",
+      "new": "我给你发一段对话，请你帮我整理一下写成一篇文章发给公司其他同事来参考阅.md",
+      "title": "我给你发一段对话，请你帮我整理一下写成一篇文章发给公司其他同事来参考阅",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "医生坚守使命，救治病患.md",
+      "new": "deepseek-17450372010702501843761105.md",
+      "title": "deepseek-17450372010702501843761105",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "孩子独自在家未起床应对方案.md",
+      "new": "我出差在外儿子一个人在家没起床上学怎么办.md",
+      "title": "我出差在外儿子一个人在家没起床上学怎么办",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "居家办公直播平台推荐.md",
+      "new": "我是居家办公，我想找个直播平台，有一些居家办公的人一起直播互相监督互相.md",
+      "title": "我是居家办公，我想找个直播平台，有一些居家办公的人一起直播互相监督互相",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "男人三怕秃、痿、穷.md",
+      "new": "男人 一怕秃 二怕？ 三怕穷.md",
+      "title": "男人 一怕秃 二怕？ 三怕穷",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "1与0.999999无限循环相等证明.md",
+      "new": "1和0.9999999无限循环哪个大？.md",
+      "title": "1和0.9999999无限循环哪个大？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "请用小红书格式写一份各档次电钢琴选购指南.md",
+      "new": "请用小红书格式写一份各档次电钢琴选购指南.md",
+      "title": "请用小红书格式写一份各档次电钢琴选购指南",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "罗德设备连接麦克风数量解析.md",
+      "new": "罗德最多一带几.md",
+      "title": "罗德最多一带几",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "总书记用经络比喻物流的重要性.md",
+      "new": "为啥总书记说物流是实体经济的经络不说是血管呢？.md",
+      "title": "为啥总书记说物流是实体经济的经络不说是血管呢？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Docker Desktop Setup and Error Resolution.md",
+      "new": "CUsers28919cd pandas-ai CUsers28919.md",
+      "title": "CUsers28919cd pandas-ai CUsers28919",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "边牧散热能力探讨.md",
+      "new": "边牧这么能跑靠舌头散热够吗？.md",
+      "title": "边牧这么能跑靠舌头散热够吗？",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "SQL查询语法修正与优化.md",
+      "new": "select distinct LearnerID count(Lea.md",
+      "title": "select distinct LearnerID count(Lea",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "损益表管理优化与实施要点.md",
+      "new": "你是财务专家，激励专家，还懂企业家和创始人，请用创始人容易理解的语言和.md",
+      "title": "你是财务专家，激励专家，还懂企业家和创始人，请用创始人容易理解的语言和",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "冻卵实际花费及影响因素详解.md",
+      "new": "冻卵子一年1万听起来还好，但实际上的花费是怎么样的？.md",
+      "title": "冻卵子一年1万听起来还好，但实际上的花费是怎么样的？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "汕头至南澳岛公交线路指南.md",
+      "new": "汕头去南澳岛最近的公交站是哪个？.md",
+      "title": "汕头去南澳岛最近的公交站是哪个？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Windows 11 hosts文件位置及编辑方法.md",
+      "new": "windows 11 hosts 文件在哪.md",
+      "title": "windows 11 hosts 文件在哪",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "深圳流浪狗救助站义工招募信息.md",
+      "new": "深圳流浪狗救助站需要义工吗.md",
+      "title": "深圳流浪狗救助站需要义工吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "我发现我们公司的技术和财务的小伙伴具有比较重的乙方思维，具体而言.md",
+      "new": "我发现我们公司的技术和财务的小伙伴具有比较重的乙方思维.md",
+      "title": "我发现我们公司的技术和财务的小伙伴具有比较重的乙方思维",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "邵明路：企业家与教育推动者.md",
+      "new": "邵明路.md",
+      "title": "邵明路",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "司马光谈资治通鉴创造性.md",
+      "new": "你是司马光，我问你，你写资治通鉴的创造性在哪里？你的内容都来自于史料呀.md",
+      "title": "你是司马光，我问你，你写资治通鉴的创造性在哪里？你的内容都来自于史料呀",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "青岛啤酒博物馆附近美食推荐.md",
+      "new": "青岛啤酒博物馆附近有没有吃的.md",
+      "title": "青岛啤酒博物馆附近有没有吃的",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "社交场合中的人物行为逻辑分析.md",
+      "new": "社交场合中的人物观察与分析 说话人1 0002 没有人会毫无目的的.md",
+      "title": "社交场合中的人物观察与分析 说话人1 0002 没有人会毫无目的的",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "获取多家公司简介及信息需求.md",
+      "new": "我需要以下几家公司的公司简介.md",
+      "title": "我需要以下几家公司的公司简介",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "白菜农药残留及清洗方法解析.md",
+      "new": "白菜的农残是不是很低？一层一层剥进去几乎接触不到农药了.md",
+      "title": "白菜的农残是不是很低？一层一层剥进去几乎接触不到农药了",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "北方树木冬天落叶的原因分析.md",
+      "new": "为啥北方很多树冬天会落叶，冬天也有阳光啊，继续光合作用不好吗？.md",
+      "title": "为啥北方很多树冬天会落叶，冬天也有阳光啊，继续光合作用不好吗？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "富裕人群选择卓正医疗原因分析.md",
+      "new": "富裕人群为什么会去卓正医疗看病.md",
+      "title": "富裕人群为什么会去卓正医疗看病",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂作为一家面向创始人和高管团队的实战型商学院，应该用什么运.md",
+      "new": "高维学堂作为一家面向创始人和高管团队的实战型商学院.md",
+      "title": "高维学堂作为一家面向创始人和高管团队的实战型商学院",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "烘干机高温杀菌真菌效果分析.md",
+      "new": "烘干机可以消灭真菌吗.md",
+      "title": "烘干机可以消灭真菌吗",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "深圳福田区医院开药指南.md",
+      "new": "治疗方案参考如下1.度洛西汀 60㎎每日午餐后一次.md",
+      "title": "治疗方案参考如下1.度洛西汀 60㎎每日午餐后一次",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "微信小程序停车记录功能开发提示.md",
+      "new": "我想用trae协议款小程序.md",
+      "title": "我想用trae协议款小程序",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "vivo手机快捷指令功能详解.md",
+      "new": "vivo手机有没有类似华为的自动化场景的功能.md",
+      "title": "vivo手机有没有类似华为的自动化场景的功能",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "高维学堂科学创业目录设计.md",
+      "new": "我想做一个项目：项目内容是高维学堂的科学创业路线图.md",
+      "title": "我想做一个项目：项目内容是高维学堂的科学创业路线图",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香蕉升糖指数与成熟度关系解析.md",
+      "new": "香蕉升糖指数.md",
+      "title": "香蕉升糖指数",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "CT检查报告时间及获取方式说明.md",
+      "new": "CT多久出结果.md",
+      "title": "CT多久出结果",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "满族与蒙古族历史现状对比分析.md",
+      "new": "感觉满族已经销声匿迹了.md",
+      "title": "感觉满族已经销声匿迹了",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "扫地机器人基座潮湿虫害处理方案.md",
+      "new": "居家生活问题： 在扫地机器人的那个基座盘子上那里比较潮湿.md",
+      "title": "居家生活问题： 在扫地机器人的那个基座盘子上那里比较潮湿",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "大会议室地面材料选择指南.md",
+      "new": "装修大会议室（大教室）地面应该用什么材料.md",
+      "title": "装修大会议室（大教室）地面应该用什么材料",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "深圳地铁4号线换乘北站高铁指南.md",
+      "new": "4号线地铁下车后怎么最快上北站高铁？深圳.md",
+      "title": "4号线地铁下车后怎么最快上北站高铁？深圳",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "Excel合并单元格拆分与填充优化.md",
+      "new": "我想表达一下这个意思给AI：sheet1的分类列.md",
+      "title": "我想表达一下这个意思给AI：sheet1的分类列",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "奥特科兴与科兴科学园区别解析.md",
+      "new": "奥特科兴和科兴科学园有啥区别.md",
+      "title": "奥特科兴和科兴科学园有啥区别",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "你觉得运动的多少对饮食喜好影响大吗.md",
+      "new": "你觉得运动的多少对饮食喜好影响大吗.md",
+      "title": "你觉得运动的多少对饮食喜好影响大吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "土豆泥GI值及健康食用建议.md",
+      "new": "土豆泥gi值.md",
+      "title": "土豆泥gi值",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "公司年度OGSM，同事们觉得比较懵，听不太明白，应该怎么改进呢？.md",
+      "new": "公司年度OGSM，同事们觉得比较懵，听不太明白，应该怎么改进呢？.md",
+      "title": "公司年度OGSM，同事们觉得比较懵，听不太明白，应该怎么改进呢？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "吃喝玩乐.md",
+      "new": "吃喝玩乐，cocopark好像停车很贵，买了东西也没的减？.md",
+      "title": "吃喝玩乐，cocopark好像停车很贵，买了东西也没的减？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "飞书内部众筹平台搭建指南.md",
+      "new": "如何在飞书里构建一个简单的众筹平台，供内部员工使用.md",
+      "title": "如何在飞书里构建一个简单的众筹平台，供内部员工使用",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "deepseek官方版和所谓第三方满血版，使用效果上可能有什么差.md",
+      "new": "deepseek官方版和所谓第三方满血版.md",
+      "title": "deepseek官方版和所谓第三方满血版",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "韶音科技营收规模及市场分析.md",
+      "new": "韶音现在营收规模？.md",
+      "title": "韶音现在营收规模？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "Mac设置黑白打印预设教程.md",
+      "new": "mac打印对话窗口怎么改成默认黑白的.md",
+      "title": "mac打印对话窗口怎么改成默认黑白的",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "飞书话题群优化公告.md",
+      "new": "微信图片_20250309085844.md",
+      "title": "微信图片_20250309085844",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "Windows配置AI环境减少依赖问题.md",
+      "new": "一台新的windows电脑应该怎么配置环境.md",
+      "title": "一台新的windows电脑应该怎么配置环境",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "命运一词的起源与早期文献记载.md",
+      "new": "命运这个词最早出现在哪部典籍.md",
+      "title": "命运这个词最早出现在哪部典籍",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "5号充电电池品牌及类型选择指南.md",
+      "new": "哪些品牌的5号充电电池比较好？有没有磷酸铁锂的.md",
+      "title": "哪些品牌的5号充电电池比较好？有没有磷酸铁锂的",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "水分子过所有国家需千年.md",
+      "new": "一个水分子，丢到大海多久能去过所有国家.md",
+      "title": "一个水分子，丢到大海多久能去过所有国家",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "鸿蒙纯血版AI赛道突围之路.md",
+      "new": "我觉得只有一个办法能拯救华为的鸿蒙纯血版系统.md",
+      "title": "我觉得只有一个办法能拯救华为的鸿蒙纯血版系统",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "深圳南山300万小户型购房推荐.md",
+      "new": "深圳南山推荐的优质小户型300来万的.md",
+      "title": "深圳南山推荐的优质小户型300来万的",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "企业稳定雇佣的经济效益分析.md",
+      "new": "deepseek-17506896822278880412912013.md",
+      "title": "deepseek-17506896822278880412912013",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "帮我写一篇寒假旅游小学作文吧，给你几个关键词：看雪，旅游，川西高.md",
+      "new": "帮我写一篇寒假旅游小学作文吧.md",
+      "title": "帮我写一篇寒假旅游小学作文吧",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "日本购房与移居流程指南.md",
+      "new": "怎样做到去日本买房生活？.md",
+      "title": "怎样做到去日本买房生活？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "为孩子开通支付宝青少年功能指南.md",
+      "new": "想给小孩子专门开一个支付宝，需要额外搞多一个手机号？.md",
+      "title": "想给小孩子专门开一个支付宝，需要额外搞多一个手机号？",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "iPad封禁抖音方法总结.md",
+      "new": "怎么在iPad上封禁抖音.md",
+      "title": "怎么在iPad上封禁抖音",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "我想在看视频号的时候把文字提取出来，有什么方法吗.md",
+      "new": "我想在看视频号的时候把文字提取出来，有什么方法吗.md",
+      "title": "我想在看视频号的时候把文字提取出来，有什么方法吗",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "1979年11月4日8点30分（阳历），男，山东栖霞。请你结合《.md",
+      "new": "1979年11月4日8点30分（阳历），男，山东栖霞.md",
+      "title": "1979年11月4日8点30分（阳历），男，山东栖霞",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "马尔可夫链及其应用概述.md",
+      "new": "马尔可夫链.md",
+      "title": "马尔可夫链",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "女儿的初中数学辅导：有一个问题：让你构造的一元2次方程以它为根你.md",
+      "new": "女儿的初中数学辅导：有一个问题：让你构造的一元2次方程以它为根你会做吗.md",
+      "title": "女儿的初中数学辅导：有一个问题：让你构造的一元2次方程以它为根你会做吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "你怎么看硅基生命这个说法？.md",
+      "new": "你怎么看硅基生命这个说法？.md",
+      "title": "你怎么看硅基生命这个说法？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "MBTI性格测试及INTP类型讨论.md",
+      "new": "Screenshot_20250412_103405_com.md",
+      "title": "Screenshot_20250412_103405_com",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "Cursor中MCP服务器启动问题排查.md",
+      "new": "wechat_2025-05-26_073215_649.md",
+      "title": "wechat_2025-05-26_073215_649",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "Mac四指下滑关闭窗口设置指南.md",
+      "new": "Mac 电脑使用问题： # Hammerspoon [![CI](ht.md",
+      "title": "Mac 电脑使用问题： # Hammerspoon [![CI](ht",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "拱北口岸通关时间及高峰期建议.md",
+      "new": "拱北口岸澳门到珠海过关时间一般多久.md",
+      "title": "拱北口岸澳门到珠海过关时间一般多久",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "录音文件降噪与清晰度提升方法.md",
+      "new": "软件工具，有什么软件或者技术可以把录音文件变的更清晰吗，去除底噪.md",
+      "title": "软件工具，有什么软件或者技术可以把录音文件变的更清晰吗，去除底噪",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "小孩踢球误伤路人索赔分析.md",
+      "new": "小孩在小区踢球，球落在一个成年人身上（未参与踢球），身体不适送医院检查.md",
+      "title": "小孩在小区踢球，球落在一个成年人身上（未参与踢球），身体不适送医院检查",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "珠海著名景点及游玩推荐.md",
+      "new": "珠海有哪些著名景点.md",
+      "title": "珠海有哪些著名景点",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "OD的多重含义及常见用法解析.md",
+      "new": "对话记录.md",
+      "title": "对话记录",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "Odoo14的皮肤开发规范.md",
+      "new": "Odoo14的皮肤开发规范.md",
+      "title": "Odoo14的皮肤开发规范",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "AI培训合作方案讨论.md",
+      "new": "hello丹纯，晚上好～ 感谢上周来司交流，前几天特别忙，没来的及fo.md",
+      "title": "hello丹纯，晚上好～ 感谢上周来司交流，前几天特别忙，没来的及fo",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "女性更年期时间及过渡阶段解析.md",
+      "new": "女性更年期的时间？.md",
+      "title": "女性更年期的时间？",
+      "category": "健康医疗"
+    },
+    {
+      "status": "success",
+      "original": "深圳香蜜湖东海花园问题总结.md",
+      "new": "香蜜湖东海花园什么坑？.md",
+      "title": "香蜜湖东海花园什么坑？",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "潘多拉星球核战后果分析.md",
+      "new": "假设有一颗外星球叫潘多拉星球.md",
+      "title": "假设有一颗外星球叫潘多拉星球",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "岚图泰山的1.5T亏电表现.md",
+      "new": "岚图泰山的1.5T亏电表现.md",
+      "title": "岚图泰山的1.5T亏电表现",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "我要给朋友分享一下近期关于AI的一些用法，我想从助理、教练和同事.md",
+      "new": "我要给朋友分享一下近期关于AI的一些用法.md",
+      "title": "我要给朋友分享一下近期关于AI的一些用法",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "香港与深圳配眼镜对比分析.md",
+      "new": "香港配眼镜和深圳对比有什么优势吗？.md",
+      "title": "香港配眼镜和深圳对比有什么优势吗？",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "免费PDF瘦身工具推荐.md",
+      "new": "有免费的PDF瘦身软件或网站吗？.md",
+      "title": "有免费的PDF瘦身软件或网站吗？",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "精益创业在早期创业中的适用性探讨.md",
+      "new": "对创业公司CEO来说，“精益创业”是有毒的垃圾思想.md",
+      "title": "对创业公司CEO来说，“精益创业”是有毒的垃圾思想",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "深圳罗湖IMAX影院推荐.md",
+      "new": "深圳罗湖有IMAX电影院吗.md",
+      "title": "深圳罗湖有IMAX电影院吗",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "浴巾使用与清洗的环保指南.md",
+      "new": "浴巾正确用法？擦过一次就洗似乎很不环保，多次又觉得脏.md",
+      "title": "浴巾正确用法？擦过一次就洗似乎很不环保，多次又觉得脏",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "图片文字识别与整理.md",
+      "new": "deepseek-17597401332982723288903480.md",
+      "title": "deepseek-17597401332982723288903480",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "天府机场往返行程安排清晰化.md",
+      "new": "帮我清晰化： 谢谢刘伟哥.md",
+      "title": "帮我清晰化： 谢谢刘伟哥",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "小米15与17系列发布时间及亮点.md",
+      "new": "小米15和17上市时间.md",
+      "title": "小米15和17上市时间",
+      "category": "数码设备"
+    },
+    {
+      "status": "success",
+      "original": "IT开发外包与内部兼职团队对比分析.md",
+      "new": "对于一家公司把IT开发外包和内部管理者和技术专家组建外部兼职人员组成开.md",
+      "title": "对于一家公司把IT开发外包和内部管理者和技术专家组建外部兼职人员组成开",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "创业公司绩效管理分阶段策略.md",
+      "new": "创业公司没做过绩效，业绩和发展其实还行，就怕一管就死，又怕不管的话薪酬.md",
+      "title": "创业公司没做过绩效，业绩和发展其实还行，就怕一管就死，又怕不管的话薪酬",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "fastGPT打造多风格朋友圈文案生成器.md",
+      "new": "请手把手教我用fastGPT做一个带知识库的多风格朋友圈文案生成智能体.md",
+      "title": "请手把手教我用fastGPT做一个带知识库的多风格朋友圈文案生成智能体",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "2025年10月新能源汽车销量排行.md",
+      "new": "新能源汽车10月销量排行.md",
+      "title": "新能源汽车10月销量排行",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "10岁男孩说谎逃避洗澡的应对策略.md",
+      "new": "10岁男孩说谎说自己昨天洗澡了，但是其实他不想洗澡，做父母的该怎么办.md",
+      "title": "10岁男孩说谎说自己昨天洗澡了，但是其实他不想洗澡，做父母的该怎么办",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "生命物质与非生命本质区别.md",
+      "new": "生命物质和非生命物质都是空间里的一团物质，有什么本质区别呢.md",
+      "title": "生命物质和非生命物质都是空间里的一团物质，有什么本质区别呢",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "朋友圈文案分析需求咨询.md",
+      "new": "我是不是让你整理分析过几十条朋友圈文案.md",
+      "title": "我是不是让你整理分析过几十条朋友圈文案",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "出差补蛋白全攻略.md",
+      "new": "出差怎么补蛋白.md",
+      "title": "出差怎么补蛋白",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "为监控以下目标，如何做一个仪表盘？\n\n1、稳定活跃的创始人≥1.md",
+      "new": "为监控以下目标，如何做一个仪表盘.md",
+      "title": "为监控以下目标，如何做一个仪表盘",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "金条刻字留白美感设计建议.md",
+      "new": "在订做一个金条礼物，金条的尺寸是40mm80mm，上面想要刻四个大字“.md",
+      "title": "在订做一个金条礼物，金条的尺寸是40mm80mm，上面想要刻四个大字“",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "香港四大远足径介绍与实用提示.md",
+      "new": "香港四大径.md",
+      "title": "香港四大径",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "深圳壳公司命名建议及策略.md",
+      "new": "我们正在更新公司股权架构.md",
+      "title": "我们正在更新公司股权架构",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "破解版Switch汉化包安装指南.md",
+      "new": "switch 汉化包像这样的：sharedassets1.md",
+      "title": "switch 汉化包像这样的：sharedassets1",
+      "category": "科技AI"
+    },
+    {
+      "status": "success",
+      "original": "狮子受伤自救本能与生存考验.md",
+      "new": "如果狮子被豪猪扎满了，刺，它下一步会怎么自救.md",
+      "title": "如果狮子被豪猪扎满了，刺，它下一步会怎么自救",
+      "category": "其他"
+    },
+    {
+      "status": "success",
+      "original": "扫地机器人清洁液使用建议.md",
+      "new": "不同扫地机器人的清洁液是通用的吗.md",
+      "title": "不同扫地机器人的清洁液是通用的吗",
+      "category": "商业管理"
+    },
+    {
+      "status": "success",
+      "original": "煎鳕鱼排简单方法总结.md",
+      "new": "煎鳕鱼排怎么做？我想要一个最简单的方法，你教我最核心的关键.md",
+      "title": "煎鳕鱼排怎么做？我想要一个最简单的方法，你教我最核心的关键",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "气味图书馆香水成分分析.md",
+      "new": "气味图书馆的香水是天然的吗.md",
+      "title": "气味图书馆的香水是天然的吗",
+      "category": "学习教育"
+    },
+    {
+      "status": "success",
+      "original": "紧急应对女儿自杀风险建议.md",
+      "new": "女儿做噩梦被人打，起床后一直在想死亡和自杀的问题，现在在休学中，不知休.md",
+      "title": "女儿做噩梦被人打，起床后一直在想死亡和自杀的问题，现在在休学中，不知休",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "天蝎座性格特点深度解析.md",
+      "new": "天蝎座特点.md",
+      "title": "天蝎座特点",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "追忆似水年华：年轻与年老的阅读价值.md",
+      "new": "追忆逝水年华应该趁“年轻”的时候看嘛？怕老了再看有些什么启发后悔没早看.md",
+      "title": "追忆逝水年华应该趁“年轻”的时候看嘛？怕老了再看有些什么启发后悔没早看",
+      "category": "情感心理"
+    },
+    {
+      "status": "success",
+      "original": "深港两地牌用车成本估算.md",
+      "new": "如果我办理一个深港两地牌（目前已有深圳车）.md",
+      "title": "如果我办理一个深港两地牌（目前已有深圳车）",
+      "category": "生活日常"
+    },
+    {
+      "status": "success",
+      "original": "系统实施成功要素探讨与优化.md",
+      "new": "我们想给客户实施一个系统.md",
+      "title": "我们想给客户实施一个系统",
+      "category": "商业管理"
+    }
+  ]
+}

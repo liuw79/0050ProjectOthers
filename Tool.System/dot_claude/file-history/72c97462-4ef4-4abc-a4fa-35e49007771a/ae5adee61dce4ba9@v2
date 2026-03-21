@@ -1,0 +1,165 @@
+/**
+ * H5 工具函数
+ */
+import { ref, onMounted, onUnmounted } from 'vue'
+import type { H5TabKey, H5ShareConfig } from '@/types/h5'
+
+/**
+ * 判断是否为移动端
+ */
+export function isMobile(): boolean {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
+
+/**
+ * 获取安全区域高度
+ */
+export function getSafeAreaBottom(): number {
+  const style = getComputedStyle(document.documentElement)
+  const value = style.getPropertyValue('--h5-safe-bottom')
+  return parseFloat(value) || 0
+}
+
+/**
+ * 滚动到指定 Tab 内容区域
+ */
+export function scrollToSection(tabKey: H5TabKey) {
+  const element = document.getElementById(tabKey)
+  if (element) {
+    const headerHeight = 44
+    const tabsHeight = 45
+    const offset = headerHeight + tabsHeight + 10
+    const top = element.offsetTop - offset
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    })
+  }
+}
+
+/**
+ * 滚动监听 Hook - 用于 Tab 高亮
+ */
+export function useScrollSpy(tabKeys: H5TabKey[]) {
+  const activeTab = ref<H5TabKey>(tabKeys[0])
+
+  const handleScroll = () => {
+    const headerHeight = 44
+    const tabsHeight = 45
+    const offset = headerHeight + tabsHeight + 20
+
+    for (let i = tabKeys.length - 1; i >= 0; i--) {
+      const element = document.getElementById(tabKeys[i])
+      if (element) {
+        const rect = element.getBoundingClientRect()
+        if (rect.top <= offset) {
+          activeTab.value = tabKeys[i]
+          break
+        }
+      }
+    }
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
+
+  return { activeTab }
+}
+
+/**
+ * 分享功能 Hook
+ */
+export function useShare() {
+  const isSharing = ref(false)
+
+  const share = async (config: H5ShareConfig) => {
+    isSharing.value = true
+
+    try {
+      // 优先使用微信分享 API
+      if (typeof (window as any).wx !== 'undefined') {
+        const wx = (window as any).wx
+        wx.ready(() => {
+          wx.onMenuShareTimeline({
+            title: config.title,
+            link: config.link,
+            imgUrl: config.imgUrl,
+            success: () => console.log('分享到朋友圈成功'),
+            cancel: () => console.log('取消分享到朋友圈')
+          })
+          wx.onMenuShareAppMessage({
+            title: config.title,
+            desc: config.desc,
+            link: config.link,
+            imgUrl: config.imgUrl,
+            success: () => console.log('分享给朋友成功'),
+            cancel: () => console.log('取消分享给朋友')
+          })
+        })
+      }
+
+      // 使用 Web Share API（如果支持）
+      if (navigator.share) {
+        await navigator.share({
+          title: config.title,
+          text: config.desc,
+          url: config.link
+        })
+      }
+    } catch (error) {
+      console.error('分享失败:', error)
+    } finally {
+      isSharing.value = false
+    }
+  }
+
+  return { share, isSharing }
+}
+
+/**
+ * 复制到剪贴板
+ */
+export async function copyToClipboard(text: string): Promise<boolean> {
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text)
+      return true
+    }
+    // 降级方案
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.select()
+    const result = document.execCommand('copy')
+    document.body.removeChild(textarea)
+    return result
+  } catch (error) {
+    console.error('复制失败:', error)
+    return false
+  }
+}
+
+/**
+ * 格式化价格
+ */
+export function formatPrice(price: number, unit: string = '人'): string {
+  if (price === 0) return '咨询'
+  return `¥${price.toLocaleString()}/${unit}`
+}
+
+/**
+ * 格式化人数
+ */
+export function formatCount(count: number): string {
+  if (count >= 10000) {
+    return `${(count / 10000).toFixed(1)}万`
+  }
+  return String(count)
+}

@@ -1,0 +1,131 @@
+---
+name: update-wiki-homepage
+description: 更新飞书知识库首页的更新日志。每次发布文档后调用，记录最新动态。
+---
+
+# 更新飞书知识库首页
+
+## 目的
+维护知识库首页的更新日志，让团队成员了解最新发布的知识资产。
+
+## 触发时机
+- 使用 `/publish-feishu` 发布文档后
+- 有重要知识资产更新时
+
+---
+
+## 配置信息
+
+```
+知识空间ID: 7600806729793686488
+知识库名称: 高维作战地图
+```
+
+---
+
+## 操作流程
+
+### 1. 获取/创建首页文档
+
+**检查首页是否存在**：
+```bash
+curl -X GET "https://open.feishu.cn/open-apis/wiki/v2/spaces/7600806729793686488/nodes?page_size=50" \
+  -H "Authorization: Bearer {user_token}"
+```
+
+**如果没有首页，创建一个**：
+```bash
+curl -X POST "https://open.feishu.cn/open-apis/wiki/v2/spaces/7600806729793686488/nodes" \
+  -H "Authorization: Bearer {user_token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "node_type": "origin",
+    "obj_type": "docx",
+    "title": "高维知识库首页"
+  }'
+```
+
+### 2. 更新日志格式
+
+每次更新在"更新日志"部分顶部添加：
+
+```markdown
+### YYYY-MM-DD
+• ✅ 新增：[文档名称] → [目标目录]
+• ✅ 迁移：[文档名称] → [新目录]（从[旧目录]迁移）
+• ✅ 更新：[文档名称] - [更新说明]
+• ✅ 规范：[规范说明]
+```
+
+### 3. 首页内容模板
+
+```markdown
+# 高维知识库
+
+> 本知识库存储高维咨询的知识资产，包括客户档案、方法论、工具模板等。
+
+## 📢 更新日志
+
+### YYYY-MM-DD
+• ✅ 新增：xxx → 0x_xxx
+
+## 📁 目录导航
+
+│ 目录 │ 内容 │
+│ 01_客户档案 │ KA客户标准化档案 │
+│ 02_访谈技术 │ 访谈技巧、诊断工具 │
+│ 03_方法论 │ 可复用的方法论资产 │
+│ 04_客户案例 │ 客户服务过程复盘 │
+│ 05_高维小故事 │ 信任建立的故事素材 │
+│ 06_持续挖掘 │ 待深入挖掘的问题清单 │
+│ 07_组织建设 │ 人才画像、组织管理工具 │
+```
+
+---
+
+## 飞书API限制
+
+⚠️ **重要**：飞书API不支持"部分更新"，必须：
+1. 获取当前所有blocks
+2. 删除所有blocks
+3. 写入新内容（包含更新）
+
+---
+
+## Python代码示例
+
+```python
+def update_homepage(user_token, homepage_token, update_entry):
+    """更新首页更新日志"""
+
+    headers = {
+        "Authorization": f"Bearer {user_token}",
+        "Content-Type": "application/json"
+    }
+
+    # 1. 获取当前内容
+    url = f"https://open.feishu.cn/open-apis/docx/v1/documents/{homepage_token}/blocks/{homepage_token}/children"
+    resp = requests.get(url, headers=headers)
+    children = resp.json()["data"]["items"]
+
+    # 2. 删除所有blocks
+    delete_url = f"{url}/batch_delete"
+    requests.delete(delete_url, headers=headers, json={"indices": list(range(len(children)))})
+
+    # 3. 构建新内容（在更新日志顶部插入新条目）
+    new_blocks = build_homepage_blocks(update_entry)
+
+    # 4. 写入新内容
+    for batch in chunks(new_blocks, 50):
+        requests.post(url, headers=headers, json={"children": batch})
+        time.sleep(0.3)
+```
+
+---
+
+## 注意事项
+
+1. **Token有效期**：user_access_token 约2小时，过期需重新授权
+2. **频率限制**：3请求/秒，批量操作需间隔
+3. **首页位置**：通常作为知识库根节点的第一个子节点
+4. **备份**：更新前建议先读取当前内容备份

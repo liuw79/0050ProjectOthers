@@ -1,0 +1,262 @@
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import H5Header from '@/components/h5/layout/H5Header.vue'
+import H5BottomBar from '@/components/h5/layout/H5BottomBar.vue'
+import H5CourseHero from '@/components/h5/course/H5CourseHero.vue'
+import H5CourseMeta from '@/components/h5/course/H5CourseMeta.vue'
+import H5CourseTabs from '@/components/h5/course/H5CourseTabs.vue'
+import H5CourseIntro from '@/components/h5/course/H5CourseIntro.vue'
+import H5CourseModules from '@/components/h5/course/H5CourseModules.vue'
+import H5CourseMentor from '@/components/h5/course/H5CourseMentor.vue'
+import H5CourseFeedback from '@/components/h5/course/H5CourseFeedback.vue'
+import H5CourseNotice from '@/components/h5/course/H5CourseNotice.vue'
+import type { H5CourseDetail, H5TabKey, H5Mentor } from '@/types/h5'
+import { useScrollSpy, useShare, copyToClipboard } from '@/composables/useH5'
+import '@/styles/h5.css'
+
+const router = useRouter()
+
+// Tab keys
+const tabKeys: H5TabKey[] = ['intro', 'modules', 'mentor', 'feedback', 'notice']
+
+// 当前激活的 Tab
+const activeTab = ref<H5TabKey>('intro')
+
+// 滚动监听
+useScrollSpy(tabKeys)
+
+// 分享功能
+const { share } = useShare()
+
+// 课程数据
+const course = ref<H5CourseDetail>({
+  id: 303,
+  name: 'AI+高效招聘',
+  subtitle: '3小时！用AI重构招聘工作流，既快又好',
+  description: `现场手把手带教定制，带走你企业能干活的招聘智能体 Skills！
+
+3小时，只教落地实操，拿走即用！
+
+AI已经飞速进化到工作流时代，你公司的招聘却还困在传统人工模式里。
+
+今天的AI，已经不只是"会生成"，而是开始"会执行"—能够理解任务、拆解流程、协同完成具体工作。
+
+而很多企业的招聘，依然停留在传统人工模式：需求靠开会对，JD靠手动改，简历靠肉眼筛，判断靠经验做。
+
+一边是AI开始接管重复性、结构化、可拆解的工作，一边是招聘团队还在靠经验、靠体力、靠反复沟通来把流程一环一环推下去。
+
+这门课，3小时，不讲空概念，现场手把手带教，带你实操，把招聘从传统人工模式，升级为真正能跑起来的AI招聘工作流。`,
+  price: 2920,
+  priceUnit: '人',
+  originalPrice: 3980,
+  duration: '3小时',
+  category: 'AI干活系列',
+  enrolledCount: 156,
+  nextSession: {
+    date: '2026年4月开课',
+    location: '线上直播',
+    address: '小班实操，限额50人'
+  },
+  mentor: {
+    id: 1,
+    name: '余杰丰 Hector',
+    title: '百万HR学习平台创始人兼CEO',
+    company: '蜜蜂学堂',
+    description: '从绩效专员到HRD，10年甲方HR实战经验。为全球上万名HR提供AI+HR赋能，微软&领英生成式AI职业官方认证，英伟达GenAI官方认证。',
+    experience: [
+      '10年甲方HR实战经验',
+      '微软&领英GenAI认证',
+      '英伟达GenAI官方认证',
+      '服务上万名HR'
+    ]
+  } as H5Mentor,
+  modules: [
+    {
+      id: 1,
+      title: '看懂趋势：AI进化从DeepSeek到OpenClaw',
+      description: '理解AI从"生成式"到"执行式"的演进脉络',
+      duration: '30分钟',
+      points: [
+        '从"生成式AI"到"执行式AI"的演进脉络',
+        'AI智能体如何让HR从"救火队长"变成"人才战略官"'
+      ]
+    },
+    {
+      id: 2,
+      title: '上手实操：AI解决招聘全链路痛点',
+      description: '从人工招聘到智能招聘工作流设计',
+      duration: '2小时',
+      points: [
+        'AI重构招聘的整体工作逻辑',
+        '精准岗位画像与需求匹配',
+        '岗位画像智能体Skills构建',
+        '简历自动化筛选与推荐智能体构建',
+        'AI生成情景化面试问题',
+        '面试官智能体Skills构建'
+      ]
+    },
+    {
+      id: 3,
+      title: '进化升级：打造"HR招聘智能军团"',
+      description: '从"单点智能体"进化成自动化的协同工作流',
+      duration: '30分钟',
+      points: [
+        '岗位画像智能体+简历筛选智能体+面试官智能体的协同工作流',
+        '现场演示完整AI招聘流程'
+      ]
+    }
+  ],
+  feedbacks: [
+    {
+      id: 1,
+      name: '某品牌电商学友',
+      company: 'HRD',
+      content: '我们现场跑下来觉得余老师的这套工具方法对于一些战略性的岗，人才画像不清晰的岗位，非常有价值。对比日常使用的豆包和GPT，更有效便利和高标准。我们在课上也感受到要让更有能力的人员去写skill，这样会有助于我们把团队最优质的招聘水平做标准化落地。',
+      rating: 5
+    },
+    {
+      id: 2,
+      name: '某教育机构学友',
+      company: '创始人',
+      content: '挺好的，两位听课的小伙伴也都反馈说学的东西能实际运用到我们的招聘流程当中，大家都在喊AI，但是AI在业务中的运用实际都还在探索中，余老师的实操经验很丰富，我们也能直接拿来就用。',
+      rating: 5
+    },
+    {
+      id: 3,
+      name: '某电商学友',
+      company: 'HR',
+      content: '之前都是在B站、小红书自己学，没什么体系，实操遇到问题基本就卡住了，很难推行下去。余老师的课相当于找了个带教老师，带着一步步的操作，过程中及时调整，省去了不少时间和弯路。',
+      rating: 5
+    },
+    {
+      id: 4,
+      name: '某供应链学友',
+      company: '总经理助理',
+      content: '老师教的都是干货，学到了7个skill，课后会在招聘板块、简历筛选、简历评估板块进行落地应用。整体听下来感觉还需要自己不断摸索和实践，下次有AI主题的课程还要继续来听。',
+      rating: 5
+    }
+  ],
+  notice: [
+    '学习费用：非会员2920元/人，会员0.5卡次/人、1卡次3人',
+    '团队实操课，不享复训权益',
+    '核心保障：现场带教，现场实操，所有实操工具、资料全部打包赠送',
+    '适合谁来学：企业创始人、HR负责人、HRBP、企业IT负责人、招聘负责人、招聘专员等',
+    '企业组团学习，效果更佳'
+  ],
+  tags: ['AI', '招聘', '智能体', '实操'],
+  highlights: ['3小时实操', '现场带教', '带走7个智能体Skills', '拿走即用']
+})
+
+// 页面标题
+const pageTitle = computed(() => `${course.value.name} - 高维学堂`)
+
+// 分享配置
+const shareConfig = computed(() => ({
+  title: course.value.name,
+  desc: course.value.subtitle,
+  link: window.location.href,
+  imgUrl: '',
+}))
+
+// 切换 Tab
+const handleTabChange = (key: H5TabKey) => {
+  activeTab.value = key
+  const element = document.getElementById(key)
+  if (element) {
+    const headerHeight = 44
+    const tabsHeight = 45
+    const offset = headerHeight + tabsHeight + 10
+    const top = element.offsetTop - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+}
+
+// 分享
+const handleShare = async () => {
+  await share(shareConfig.value)
+  // 降级方案：复制链接
+  const copied = await copyToClipboard(window.location.href)
+  if (copied) {
+    alert('链接已复制到剪贴板')
+  }
+}
+
+// 回到首页
+const goHome = () => {
+  router.push('/')
+}
+
+// 关注
+const handleFollow = () => {
+  console.log('关注/取消关注')
+}
+
+// 立即报名
+const handleEnroll = () => {
+  // TODO: 跳转到报名页面或打开报名弹窗
+  alert('报名功能开发中...')
+}
+
+onMounted(() => {
+  // 设置页面标题
+  document.title = pageTitle.value
+})
+</script>
+
+<template>
+  <div class="h5-page">
+    <!-- 头部 -->
+    <H5Header :transparent="true" @share="handleShare" />
+
+    <!-- Hero 区域 -->
+    <H5CourseHero :course="course" />
+
+    <!-- 元信息条 -->
+    <H5CourseMeta :course="course" />
+
+    <!-- Tab 导航 -->
+    <H5CourseTabs :active-key="activeTab" @update:active-key="handleTabChange" />
+
+    <!-- 内容区域 -->
+    <div class="h5-content">
+      <!-- 课程介绍 -->
+      <H5CourseIntro :course="course" />
+
+      <!-- 核心模块 -->
+      <H5CourseModules :modules="course.modules" />
+
+      <!-- 导师介绍 -->
+      <H5CourseMentor :mentor="course.mentor" />
+
+      <!-- 学友反馈 -->
+      <H5CourseFeedback :feedbacks="course.feedbacks" />
+
+      <!-- 报名须知 -->
+      <H5CourseNotice :notice="course.notice" />
+    </div>
+
+    <!-- 底部操作栏 -->
+    <H5BottomBar
+      :price="course.price"
+      :price-unit="course.priceUnit"
+      :enrolled-count="course.enrolledCount"
+      @home="goHome"
+      @follow="handleFollow"
+      @enroll="handleEnroll"
+    />
+  </div>
+</template>
+
+<style scoped>
+.h5-page {
+  min-height: 100vh;
+  background-color: var(--h5-bg-light);
+  padding-bottom: calc(56px + var(--h5-safe-bottom));
+  -webkit-overflow-scrolling: touch;
+}
+
+.h5-content {
+  padding-bottom: 20px;
+}
+</style>

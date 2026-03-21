@@ -1,0 +1,7 @@
+"""浏览器模块测试 - 需要实际 DOM 结构后完善"""
+import pytest
+
+
+def test_placeholder():
+    """占位测试，DOM 探索后完善"""
+    assert True

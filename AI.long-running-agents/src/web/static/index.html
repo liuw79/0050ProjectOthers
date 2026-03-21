@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>长运行代理 Dashboard</title>
+</head>
+<body>
+    <h1>长运行代理 Dashboard</h1>
+    <div id="status"></div>
+    <script>
+        fetch('/api/status').then(r => r.json()).then(data => {
+            document.getElementById('status').textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>

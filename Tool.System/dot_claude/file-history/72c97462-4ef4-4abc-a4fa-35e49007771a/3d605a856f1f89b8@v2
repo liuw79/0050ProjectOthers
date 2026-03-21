@@ -1,0 +1,127 @@
+<script setup lang="ts">
+import type { H5CourseModule } from '@/types/h5'
+
+interface Props {
+  modules: H5CourseModule[]
+}
+
+defineProps<Props>()
+</script>
+
+<template>
+  <div class="h5-section" id="modules">
+    <div class="h5-section-header">
+      <h2 class="h5-section-title">核心实操模块</h2>
+      <span class="h5-section-more">共{{ modules.length }}个模块</span>
+    </div>
+    <div class="h5-section-content">
+      <div class="h5-module-list">
+        <div v-for="(module, index) in modules" :key="module.id" class="h5-module-card">
+          <!-- 模块序号 -->
+          <div class="h5-module-num">{{ index + 1 }}</div>
+
+          <!-- 模块内容 -->
+          <div class="h5-module-content">
+            <div class="h5-module-header">
+              <h3 class="h5-module-title">{{ module.title }}</h3>
+              <span v-if="module.duration" class="h5-module-duration">{{ module.duration }}</span>
+            </div>
+            <p v-if="module.description" class="h5-module-desc">{{ module.description }}</p>
+
+            <!-- 模块要点 -->
+            <ul v-if="module.points?.length" class="h5-module-points">
+              <li v-for="(point, pIndex) in module.points" :key="pIndex" class="h5-module-point">
+                {{ point }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-module-card {
+  display: flex;
+  padding: 16px;
+  background: var(--h5-bg-light);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.h5-module-card:last-child {
+  margin-bottom: 0;
+}
+
+.h5-module-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  color: var(--h5-text-white);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.h5-module-content {
+  flex: 1;
+}
+
+.h5-module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.h5-module-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--h5-text-dark);
+}
+
+.h5-module-duration {
+  font-size: 12px;
+  color: var(--h5-text-light);
+  background: var(--h5-bg-white);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.h5-module-desc {
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.h5-module-points {
+  padding-left: 0;
+  margin: 0;
+}
+
+.h5-module-point {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  color: var(--h5-text-gray);
+  line-height: 1.8;
+}
+
+.h5-module-point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  background: var(--h5-primary);
+  border-radius: 50%;
+}
+</style>

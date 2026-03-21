@@ -1,0 +1,380 @@
+<template>
+  <div class="max-w-3xl mx-auto">
+    <!-- Step 指示器 -->
+    <div class="flex items-center mb-8">
+      <template v-for="(s, i) in currentSteps" :key="i">
+        <div :class="stepClass(i)">{{ s.label }}</div>
+        <div v-if="i < currentSteps.length - 1" class="flex-1 h-1 mx-4" :class="step > i ? 'bg-blue-500' : 'bg-gray-200'"></div>
+      </template>
+    </div>
+
+    <!-- Step 0: 需求收集 -->
+    <StepBrief v-if="step === 0" :type="projectType" @next="handleBriefNext" />
+
+    <!-- Step 1: 准备素材（选择课程 + 素材展示） -->
+    <div v-if="step === 1" class="bg-white rounded-lg p-6 shadow-sm">
+      <h2 class="text-xl font-bold mb-4">准备素材</h2>
+      <p class="text-gray-500 mb-6">先选择相关课程，AI 会帮你准备写作素材</p>
+
+      <!-- 选择课程 -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-2">和哪些课程相关？</label>
+        <div class="flex flex-wrap gap-2">
+          <button
+            v-for="course in courses"
+            :key="course.id"
+            @click="toggleCourse(course.id)"
+            :class="selectedCourses.includes(course.id) ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'"
+            class="px-4 py-2 rounded-lg hover:opacity-80"
+          >
+            {{ course.name }}
+          </button>
+        </div>
+      </div>
+
+      <!-- 加载素材按钮 -->
+      <button
+        @click="loadMaterials"
+        :disabled="selectedCourses.length === 0 || loadingMaterials"
+        class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 disabled:opacity-50"
+      >
+        {{ loadingMaterials ? 'AI 正在准备素材...' : '准备素材 →' }}
+      </button>
+
+      <!-- 素材展示 -->
+      <div v-if="materials.course.length > 0" class="mt-6 space-y-4">
+        <MaterialSection title="📦 课程素材" :materials="materials.course" v-model:selected="selectedMaterials" />
+        <MaterialSection title="👤 用户画像" :materials="materials.profile" v-model:selected="selectedMaterials" />
+        <MaterialSection title="🏢 高维品牌" :materials="materials.brand" v-model:selected="selectedMaterials" />
+        <MaterialSection title="📝 参考标题" :materials="materials.reference" v-model:selected="selectedMaterials" />
+
+        <div class="mt-6 flex gap-4">
+          <button @click="step = 0" class="flex-1 border py-3 rounded-lg hover:bg-gray-50">上一步</button>
+          <button
+            @click="step = 2"
+            :disabled="selectedMaterials.length === 0"
+            class="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 disabled:opacity-50"
+          >
+            下一步：确定选题 →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: 确定选题（从素材中找灵感） -->
+    <div v-if="step === 2" class="bg-white rounded-lg p-6 shadow-sm">
+      <h2 class="text-xl font-bold mb-4">确定选题</h2>
+      <p class="text-gray-500 mb-6">基于素材，确定你的写作角度</p>
+
+      <!-- AI 推荐选题 -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-2">有什么初步想法或关键词？</label>
+        <textarea
+          v-model="keywords"
+          placeholder="输入你的想法，AI 会结合素材推荐选题..."
+          class="w-full border rounded-lg p-3 h-24"
+        ></textarea>
+      </div>
+
+      <button
+        @click="suggestTopics"
+        :disabled="loading"
+        class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 disabled:opacity-50"
+      >
+        {{ loading ? 'AI 分析中...' : 'AI 帮我找选题 →' }}
+      </button>
+
+      <!-- 推荐选题列表 -->
+      <div v-if="suggestedTopics.length > 0" class="mt-6">
+        <h3 class="font-medium mb-3">📋 推荐选题（点击选择）</h3>
+        <div class="space-y-2">
+          <button
+            v-for="(topic, i) in suggestedTopics"
+            :key="i"
+            @click="selectedTopic = topic.title"
+            :class="selectedTopic === topic.title ? 'border-blue-500 bg-blue-50' : 'border-gray-200'"
+            class="w-full text-left border rounded-lg p-3 hover:border-blue-300"
+          >
+            <div class="font-medium">{{ topic.title }}</div>
+            <div class="text-sm text-gray-500">{{ topic.angle }}</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 自定义选题 -->
+      <div class="mt-6">
+        <label class="block text-sm font-medium text-gray-700 mb-2">或者自己写一个：</label>
+        <input v-model="customTopic" type="text" placeholder="输入你的选题..." class="w-full border rounded-lg p-3" />
+      </div>
+
+      <div class="mt-6 flex gap-4">
+        <button @click="step = 1" class="flex-1 border py-3 rounded-lg hover:bg-gray-50">上一步</button>
+        <button
+          @click="confirmTopic"
+          :disabled="!selectedTopic && !customTopic"
+          class="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 disabled:opacity-50"
+        >
+          确认选题 →
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: 撰写文章 -->
+    <div v-if="step === 3" class="bg-white rounded-lg p-6 shadow-sm">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-xl font-bold">撰写文章</h2>
+          <p class="text-gray-500 text-sm mt-1">选题：{{ finalTopic }}</p>
+        </div>
+        <div v-if="generatedContent" class="flex gap-2">
+          <button @click="viewMode = 'preview'" :class="viewMode === 'preview' ? 'bg-blue-500 text-white' : 'bg-gray-100'" class="px-3 py-1 rounded text-sm">预览</button>
+          <button @click="viewMode = 'source'" :class="viewMode === 'source' ? 'bg-blue-500 text-white' : 'bg-gray-100'" class="px-3 py-1 rounded text-sm">源码</button>
+        </div>
+      </div>
+
+      <div v-if="!generatedContent" class="text-center py-12">
+        <button @click="generateContent" :disabled="generating" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 disabled:opacity-50">
+          {{ generating ? 'AI 写作中...' : '生成文章' }}
+        </button>
+        <p v-if="generating" class="text-gray-500 mt-3 text-sm">正在生成，请稍候...</p>
+      </div>
+
+      <div v-else>
+        <div class="flex items-center gap-6 text-sm text-gray-500 mb-4 pb-4 border-b">
+          <span>📄 {{ contentStats.chars }} 字</span>
+          <span>📝 {{ contentStats.paragraphs }} 段</span>
+          <span>⏱️ {{ contentStats.readTime }} 分钟阅读</span>
+        </div>
+
+        <div class="mb-6">
+          <div v-if="viewMode === 'preview'" class="prose max-w-none" v-html="renderedContent"></div>
+          <pre v-else class="bg-gray-50 p-4 rounded-lg text-sm overflow-auto max-h-[60vh] whitespace-pre-wrap">{{ generatedContent }}</pre>
+        </div>
+
+        <div class="flex gap-3">
+          <button @click="copyContent" class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50">
+            <span>📋</span><span>{{ copySuccess ? '已复制!' : '复制' }}</span>
+          </button>
+          <button @click="regenerate" :disabled="generating" class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+            <span>🔄</span><span>重新生成</span>
+          </button>
+          <button @click="downloadMarkdown" class="flex-1 flex items-center justify-center gap-2 border py-2.5 rounded-lg hover:bg-gray-50">
+            <span>💾</span><span>下载</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6 flex gap-4">
+        <button @click="step = 2" class="flex-1 border py-3 rounded-lg hover:bg-gray-50">上一步</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import StepBrief from '../components/steps/StepBrief.vue';
+import MaterialSection from '../components/MaterialSection.vue';
+
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000';
+const route = useRoute();
+
+// 项目类型
+const projectType = ref('article');
+
+// 步骤配置（优化后：目的先行 → 素材 → 选题 → 撰写）
+const stepsConfig = {
+  article: [
+    { key: 'brief', label: '写作目的' },
+    { key: 'materials', label: '准备素材' },
+    { key: 'topic', label: '确定选题' },
+    { key: 'write', label: '撰写文章' }
+  ],
+  host: [
+    { key: 'brief', label: '主持背景' },
+    { key: 'course', label: '学习课程' },
+    { key: 'write', label: '撰写主持词' },
+    { key: 'review', label: '审校优化' }
+  ],
+  intro: [
+    { key: 'brief', label: '介绍背景' },
+    { key: 'course', label: '学习课程' },
+    { key: 'write', label: '生成版本' },
+    { key: 'review', label: '选择定稿' }
+  ]
+};
+
+const currentSteps = computed(() => stepsConfig[projectType.value] || stepsConfig.article);
+
+const step = ref(0);
+const briefData = ref({});
+
+// 课程相关
+const courses = ref([]);
+const selectedCourses = ref([]);
+
+// 素材相关
+const loadingMaterials = ref(false);
+const materials = ref({ course: [], profile: [], brand: [], reference: [] });
+const selectedMaterials = ref([]);
+
+// 选题相关
+const keywords = ref('');
+const loading = ref(false);
+const suggestedTopics = ref([]);
+const selectedTopic = ref('');
+const customTopic = ref('');
+const finalTopic = ref('');
+
+// 生成相关
+const generating = ref(false);
+const generatedContent = ref('');
+const viewMode = ref('preview');
+const copySuccess = ref(false);
+
+const stepClass = (n) => `px-4 py-2 rounded-full text-sm ${step.value >= n ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-500'}`;
+
+// 需求收集完成
+function handleBriefNext(data) {
+  briefData.value = data.brief;
+  step.value = 1;
+}
+
+// 加载课程
+async function loadCoursesData() {
+  try {
+    const res = await fetch(`${API_BASE}/api/courses`);
+    const data = await res.json();
+    if (data.success) courses.value = data.courses;
+  } catch (e) {
+    console.error('加载课程失败', e);
+  }
+}
+
+function toggleCourse(id) {
+  const idx = selectedCourses.value.indexOf(id);
+  if (idx >= 0) selectedCourses.value.splice(idx, 1);
+  else selectedCourses.value.push(id);
+}
+
+// 准备素材
+async function loadMaterials() {
+  loadingMaterials.value = true;
+  try {
+    const res = await fetch(`${API_BASE}/api/suggest-materials`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: briefData.value.topic || '',
+        courseIds: selectedCourses.value,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      materials.value = data.materials;
+      selectedMaterials.value = [
+        ...data.materials.profile.map(m => m.id),
+        ...data.materials.brand.map(m => m.id),
+        ...data.materials.reference.map(m => m.id),
+        ...data.materials.course.map(m => m.id),
+      ];
+    }
+  } finally {
+    loadingMaterials.value = false;
+  }
+}
+
+// AI 推荐选题
+async function suggestTopics() {
+  loading.value = true;
+  try {
+    const res = await fetch(`${API_BASE}/api/topics/suggest`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        courseIds: selectedCourses.value,
+        keywords: keywords.value,
+        materialIds: selectedMaterials.value,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) suggestedTopics.value = data.topics;
+  } finally {
+    loading.value = false;
+  }
+}
+
+// 确认选题
+function confirmTopic() {
+  finalTopic.value = customTopic.value || selectedTopic.value;
+  step.value = 3;
+}
+
+// 生成内容
+async function generateContent() {
+  generating.value = true;
+  try {
+    const res = await fetch(`${API_BASE}/api/write/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        title: finalTopic.value,
+        materialIds: selectedMaterials.value,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) generatedContent.value = data.content;
+  } finally {
+    generating.value = false;
+  }
+}
+
+const renderedContent = computed(() => {
+  if (!generatedContent.value) return '';
+  let content = generatedContent.value.replace(/^```markdown\n?/gm, '').replace(/\n?```$/gm, '');
+  return content
+    .replace(/^## (.+)$/gm, '<h2 class="text-xl font-bold mt-6 mb-2">$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '</p><p class="my-3">')
+    .replace(/\n/g, '<br>');
+});
+
+const contentStats = computed(() => {
+  if (!generatedContent.value) return { chars: 0, paragraphs: 0, readTime: 0 };
+  const text = generatedContent.value.replace(/^```markdown\n?/gm, '').replace(/\n?```$/gm, '').replace(/[#*\n]/g, '');
+  const chars = text.length;
+  const paragraphs = generatedContent.value.split(/\n\n+/).filter(p => p.trim()).length;
+  const readTime = Math.max(1, Math.ceil(chars / 500));
+  return { chars, paragraphs, readTime };
+});
+
+async function copyContent() {
+  const cleanContent = generatedContent.value.replace(/^```markdown\n?/gm, '').replace(/\n?```$/gm, '');
+  await navigator.clipboard.writeText(cleanContent);
+  copySuccess.value = true;
+  setTimeout(() => { copySuccess.value = false; }, 2000);
+}
+
+async function regenerate() {
+  generatedContent.value = '';
+  await generateContent();
+}
+
+function downloadMarkdown() {
+  const cleanContent = generatedContent.value.replace(/^```markdown\n?/gm, '').replace(/\n?```$/gm, '');
+  const blob = new Blob([cleanContent], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${(finalTopic.value || '文章').slice(0, 30)}.md`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+onMounted(() => {
+  projectType.value = route.query.type || 'article';
+  loadCoursesData();
+});
+</script>

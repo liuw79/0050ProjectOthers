@@ -1,0 +1,134 @@
+{
+    "view_orders_cache": {
+        "chinese_name": "报名、订单相关数据的综合信息表",
+        "description": "综合了报名、订单、课程、班级、学友、推荐人、渠道、企业等多种信息，是查询订单相关数据的核心视图。",
+        "notes": "这是一个视图，数据来源于多个表。其中包含中文字段名，查询时需要用方括号括起来，例如 `[品牌名]`。",
+        "columns": [
+            {"name": "orderID", "chinese_name": "订单表的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "tranactivitybuyer表的id"},
+            {"name": "LearnerID", "chinese_name": "上课人的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "consumer表的id"},
+            {"name": "CourseID", "chinese_name": "课程id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "course表的id"},
+            {"name": "课程", "chinese_name": "课程名称", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "activityid", "chinese_name": "班级表的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "tranactivity表的id"},
+            {"name": "排期", "chinese_name": "班级（排期的名称）", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "团号", "chinese_name": "排期号", "data_type": "int", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "开课日期", "chinese_name": "开课日期", "data_type": "datetime", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "结束日期", "chinese_name": "结束日期", "data_type": "datetime", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "城市", "chinese_name": "开课的城市", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "上课人", "chinese_name": "上课人的姓名", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "年级", "chinese_name": "年级", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "上课人公司", "chinese_name": "上课人公司", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "上课人职务", "chinese_name": "上课人职务", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "接触人", "chinese_name": "接触人", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "接触人id", "chinese_name": "接触人id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "consumer表的id"},
+            {"name": "推荐人", "chinese_name": "推荐人姓名", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "recommender", "chinese_name": "推荐人consumer表的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "渠道", "chinese_name": "渠道", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "下单时间", "chinese_name": "报名时间", "data_type": "datetime", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "班主任", "chinese_name": "班主任", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "是否创始人", "chinese_name": "创始人=1，非创始人=0", "data_type": "int", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "OrganizationId", "chinese_name": "上课人绑定的企业的id", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": "organizations表的id"},
+            {"name": "receiveOrgID", "chinese_name": "订单绑定的企业的id", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": "organizations表的id"}
+        ]
+    },
+    "Consumer": {
+        "chinese_name": "学友表",
+        "description": "存储学友的基本信息。",
+        "notes": "此表没有 `DeleteFlag` 字段，不要使用。",
+        "columns": [
+            {"name": "ID", "chinese_name": "ID", "data_type": "uniqueidentifier", "is_primary_key": true, "nullable": false, "description": "主键"},
+            {"name": "Name", "chinese_name": "学友姓名", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Duty", "chinese_name": "职务", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "NickName", "chinese_name": "昵称", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Image", "chinese_name": "头像", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "CompanyName", "chinese_name": "公司名称", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "CreateTime", "chinese_name": "创建时间", "data_type": "datetime", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Grade", "chinese_name": "年级", "data_type": "int", "is_primary_key": false, "nullable": true, "description": "学前班=0,一年级=1,...博士生=20,学生会主席>=21"},
+            {"name": "Coin", "chinese_name": "高维学分", "data_type": "decimal", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "FollowUp", "chinese_name": "跟进人", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "consumer表的id"},
+            {"name": "IsCurrentWechat", "chinese_name": "是否当前公众号成员", "data_type": "int", "is_primary_key": false, "nullable": true, "description": "1是 0否"},
+            {"name": "IsSubscribed", "chinese_name": "是否关注", "data_type": "int", "is_primary_key": false, "nullable": true, "description": "1是 0否"},
+            {"name": "SubscribeFrom", "chinese_name": "关注渠道", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Region", "chinese_name": "区域", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "AccountState", "chinese_name": "账号状态", "data_type": "int", "is_primary_key": false, "nullable": true, "description": "0正常 -1注销"}
+        ]
+    },
+    "UserShareRpItem": {
+        "chinese_name": "订单推荐记录",
+        "description": "记录学友之间的推荐关系和推荐奖励。",
+        "notes": "注意字段名大小写，例如 `ID` 而不是 `Id`。",
+        "columns": [
+            {"name": "ID", "chinese_name": "ID", "data_type": "uniqueidentifier", "is_primary_key": true, "nullable": false, "description": "主键"},
+            {"name": "SourceID", "chinese_name": "推荐人ID", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": "推荐人的id（consumer表的id或channels表的coid），不是 SharePersonId"},
+            {"name": "ChildID", "chinese_name": "被推荐人ID", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": "被推荐用户的id（consumer表的id），不是 SignUpPersonId"},
+            {"name": "CreateTime", "chinese_name": "创建时间", "data_type": "datetime", "is_primary_key": false, "nullable": false, "description": "不是 CreateDate"},
+            {"name": "UserShareRp_ID", "chinese_name": "关联ID", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "用户推荐编号，不是 CourseId"},
+            {"name": "BuyID", "chinese_name": "购买ID", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "订单id（tranactivitybuyer表的id）"},
+            {"name": "Type", "chinese_name": "推荐者的身份类型", "data_type": "int", "is_primary_key": false, "nullable": true, "description": "用户=1, 渠道=2"},
+            {"name": "Flower", "chinese_name": "花朵数", "data_type": "int", "is_primary_key": false, "nullable": true, "description": ""}
+        ]
+    },
+    "Organizations": {
+        "chinese_name": "企业账户表",
+        "description": "存储企业账户信息，包括企业名称、品牌名等。",
+        "notes": "品牌名需要通过 `view_orders_cache` 视图与学友关联。",
+        "columns": [
+            {"name": "Id", "chinese_name": "机构标识", "data_type": "varchar", "is_primary_key": true, "nullable": false, "description": "主键"},
+            {"name": "Name", "chinese_name": "企业名称", "data_type": "varchar", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "Introduce", "chinese_name": "企业简介", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Type", "chinese_name": "企业类型", "data_type": "int", "is_primary_key": false, "nullable": false, "description": "企业=0,个人=1"},
+            {"name": "Address", "chinese_name": "企业地址", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "PhoneNO", "chinese_name": "企业电话", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "TaxNO", "chinese_name": "企业税号", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "InvoiceTitle", "chinese_name": "企业发票抬头", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "InvoiceType", "chinese_name": "发票类型", "data_type": "int", "is_primary_key": false, "nullable": false, "description": "增值税普通发票=0,增值税专用发票=1,不需要发票=2,电子发票=3"},
+            {"name": "Coin", "chinese_name": "企业高维学分", "data_type": "decimal", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "Money", "chinese_name": "企业账户金额", "data_type": "decimal", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "CreatedTime", "chinese_name": "创建时间", "data_type": "datetime", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "Follow", "chinese_name": "接触人id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "consumer表的id"},
+            {"name": "BrandName", "chinese_name": "品牌名称", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "Mark", "chinese_name": "备注", "data_type": "nvarchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "VirtualCoins", "chinese_name": "虚拟币", "data_type": "int", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "ParentID", "chinese_name": "母企业Id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "organizations表的id"},
+            {"name": "Region", "chinese_name": "企业区域", "data_type": "int", "is_primary_key": false, "nullable": false, "description": ""}
+        ]
+    },
+    "UserPropDefine": {
+        "chinese_name": "标签定义表",
+        "description": "定义了各种用户属性标签的类型和名称。",
+        "notes": "重要属性ID：`Ta的行业` 为 `7195ACDC-5CDB-4E8E-BCB5-1C3FA6E6F6C0`。",
+        "columns": [
+            {"name": "ID", "chinese_name": "ID", "data_type": "uniqueidentifier", "is_primary_key": true, "nullable": false, "description": ""},
+            {"name": "UserPropType", "chinese_name": "类型", "data_type": "int", "is_primary_key": false, "nullable": false, "description": "班主任搜集=0, 系统表单=1, 标签=2, 备注=3, 过滤=4, 推荐课程=5, 评级=6, 应该上的课题=7, 专业素养=8, 班主任书写=10, 学习官填报课程=11, odoo同步数据=100"},
+            {"name": "UserPropGroupCode", "chinese_name": "分组代码", "data_type": "int", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "UserPropName", "chinese_name": "名称", "data_type": "varchar", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "ReferenceID", "chinese_name": "引用编号", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "SortOrder", "chinese_name": "排序序号", "data_type": "int", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "DeleteFlag", "chinese_name": "删除标示位", "data_type": "bit", "is_primary_key": false, "nullable": false, "description": ""}
+        ]
+    },
+    "UserPropOption": {
+        "chinese_name": "标签下的项目表",
+        "description": "存储了每个标签定义下的具体选项值。",
+        "columns": [
+            {"name": "ID", "chinese_name": "编号", "data_type": "uniqueidentifier", "is_primary_key": true, "nullable": false, "description": ""},
+            {"name": "UserPropDefineID", "chinese_name": "标签表Id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": "UserPropDefine表的id"},
+            {"name": "Text", "chinese_name": "选项内容", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "UserPropOptionName", "chinese_name": "选项名", "data_type": "varchar", "is_primary_key": false, "nullable": true, "description": ""},
+            {"name": "UserPropOptionValue", "chinese_name": "选项值", "data_type": "varchar", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "SortOrder", "chinese_name": "排序序号", "data_type": "int", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "DeleteFlag", "chinese_name": "是否删除了", "data_type": "bit", "is_primary_key": false, "nullable": false, "description": ""}
+        ]
+    },
+    "UserPropInstanceBZR": {
+        "chinese_name": "用户的标签（系统设置）",
+        "description": "记录了系统为用户设置的标签实例。",
+        "columns": [
+            {"name": "ID", "chinese_name": "编号", "data_type": "uniqueidentifier", "is_primary_key": true, "nullable": false, "description": ""},
+            {"name": "UserID", "chinese_name": "学友的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": "consumer表的id"},
+            {"name": "UserPropDefineID", "chinese_name": "标签表的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": false, "description": "UserPropDefine表的id"},
+            {"name": "UserPropOptionID", "chinese_name": "标签选项的id", "data_type": "uniqueidentifier", "is_primary_key": false, "nullable": true, "description": "UserPropOption表的id"},
+            {"name": "UserPropValue", "chinese_name": "用户属性值", "data_type": "varchar", "is_primary_key": false, "nullable": false, "description": ""},
+            {"name": "CreateTime", "chinese_name": "创建时间", "data_type": "datetime", "is_primary_key": false, "nullable": false, "description": ""}
+        ]
+    }
+}

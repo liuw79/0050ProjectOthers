@@ -1,0 +1,108 @@
+/**
+ * H5 课程详情页类型定义
+ */
+
+// 课程详情数据类型
+export interface H5CourseDetail {
+  id: number
+  name: string
+  subtitle: string
+  description: string
+  // 价格信息
+  price: number
+  priceUnit?: string // 如 "人"、"组"，默认 "人"
+  originalPrice?: number
+  // 课程信息
+  duration: string // 如 "2天1夜"
+  category: string
+  // 时间地点
+  nextSession?: {
+    date: string
+    location: string
+    address: string
+  }
+  // 报名信息
+  enrolledCount: number
+  maxCount?: number
+  // 导师信息
+  mentor: H5Mentor
+  // 课程模块
+  modules: H5CourseModule[]
+  // 学友反馈
+  feedbacks: H5Feedback[]
+  // 报名须知
+  notice: string[]
+  // 标签
+  tags: string[]
+  // 亮点
+  highlights: string[]
+}
+
+// 兼容旧字段名（逐步迁移）
+export type H5CourseSession = H5CourseDetail['nextSession']
+
+// 导师类型
+export interface H5Mentor {
+  id: number
+  name: string
+  title: string
+  company?: string
+  avatar?: string
+  description: string
+  experience?: string[]
+}
+
+// 课程模块类型
+export interface H5CourseModule {
+  id: number
+  title: string
+  description?: string
+  duration?: string
+  points?: string[]
+}
+
+// 学友反馈类型
+export interface H5Feedback {
+  id: number
+  name: string
+  company: string
+  position?: string
+  avatar?: string
+  content: string
+  rating?: number
+}
+
+// Tab 类型
+export type H5TabKey = 'intro' | 'modules' | 'mentor' | 'feedback' | 'notice'
+
+export interface H5Tab {
+  key: H5TabKey
+  label: string
+}
+
+// 底部栏操作类型
+export interface H5BottomAction {
+  icon: string
+  label: string
+  action: () => void
+}
+
+// 分享配置类型
+export interface H5ShareConfig {
+  title: string
+  desc: string
+  link: string
+  imgUrl?: string
+}
+
+// 路由参数类型
+export interface H5CourseRouteParams {
+  id: string
+}
+
+// API 响应类型（课程详情）
+export interface H5CourseDetailResponse {
+  code: number
+  message: string
+  data: H5CourseDetail
+}

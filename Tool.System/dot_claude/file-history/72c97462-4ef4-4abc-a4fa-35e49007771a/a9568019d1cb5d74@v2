@@ -1,0 +1,235 @@
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import H5Header from '@/components/h5/layout/H5Header.vue'
+import H5BottomBar from '@/components/h5/layout/H5BottomBar.vue'
+import H5CourseHero from '@/components/h5/course/H5CourseHero.vue'
+import H5CourseMeta from '@/components/h5/course/H5CourseMeta.vue'
+import H5CourseTabs from '@/components/h5/course/H5CourseTabs.vue'
+import H5CourseIntro from '@/components/h5/course/H5CourseIntro.vue'
+import H5CourseModules from '@/components/h5/course/H5CourseModules.vue'
+import H5CourseMentor from '@/components/h5/course/H5CourseMentor.vue'
+import H5CourseFeedback from '@/components/h5/course/H5CourseFeedback.vue'
+import H5CourseNotice from '@/components/h5/course/H5CourseNotice.vue'
+import type { H5CourseDetail, H5TabKey, H5Mentor } from '@/types/h5'
+import { useScrollSpy, useShare, copyToClipboard } from '@/composables/useH5'
+import '@/styles/h5.css'
+
+const router = useRouter()
+
+// Tab keys
+const tabKeys: H5TabKey[] = ['intro', 'modules', 'mentor', 'feedback', 'notice']
+
+// 当前激活的 Tab
+const activeTab = ref<H5TabKey>('intro')
+
+// 滚动监听
+useScrollSpy(tabKeys)
+
+// 分享功能
+const { share } = useShare()
+
+// 课程数据（Mock，实际应从 API 获取）
+const course = ref<H5CourseDetail>({
+  id: 303,
+  name: '战略设计总纲',
+  subtitle: '科学创业必修课',
+  description: '这是一门面向创业者和核心管理层的战略设计课程，帮助企业从0到1构建科学战略体系。课程融合了定位理论、商业模式设计和组织能力建设的核心方法论，通过案例拆解、实战演练和现场诊断，帮助企业找到自己的战略定位和发展路径。',
+  price: 12800,
+  priceUnit: '人',
+  originalPrice: 16800,
+  duration: '2天1夜',
+  category: '战略定位',
+  enrolledCount: 328,
+  nextSession: {
+    date: '2026年4月15-16日',
+    location: '深圳',
+    address: '深圳市南山区科技园'
+  },
+  mentor: {
+    id: 1,
+    name: '冯卫东',
+    title: '天图投资CEO',
+    company: '天图投资',
+    description: '天图投资创始合伙人、CEO，专注消费投资20年，投资案例包括周黑鸭、百果园、小红书等知名企业。定位理论实践者和传播者，帮助多家企业完成品牌定位升级。',
+    experience: ['天图投资CEO', '定位理论专家', '20年投资经验']
+  } as H5Mentor,
+  modules: [
+    {
+      id: 1,
+      title: '战略定位基础',
+      description: '理解定位理论的底层逻辑，掌握品牌定位的核心方法',
+      duration: '3小时',
+      points: ['定位理论三大定律', '心智定位法则', '品牌命名策略']
+    },
+    {
+      id: 2,
+      title: '商业模式设计',
+      description: '从商业模式画布到价值主张设计，系统构建商业模式',
+      duration: '3小时',
+      points: ['商业模式画布工具', '价值主张设计', '盈利模式分析']
+    },
+    {
+      id: 3,
+      title: '组织能力建设',
+      description: '将战略落地到组织，打造支撑战略的组织能力',
+      duration: '2小时',
+      points: ['组织能力三支柱', '人才盘点与配置', '激励机制设计']
+    },
+    {
+      id: 4,
+      title: '现场诊断辅导',
+      description: '带着企业实际问题，现场获得导师诊断和建议',
+      duration: '4小时',
+      points: ['企业案例分享', '导师现场诊断', '同学互助讨论']
+    }
+  ],
+  feedbacks: [
+    {
+      id: 1,
+      name: '张总',
+      company: '某科技公司',
+      position: '创始人',
+      content: '课程内容非常实战，学完后直接应用到公司，对战略方向更清晰了。',
+      rating: 5
+    },
+    {
+      id: 2,
+      name: '李总',
+      company: '某消费品公司',
+      position: 'CEO',
+      content: '冯老师的定位方法论让我对品牌有了全新的认识，值得反复学习。',
+      rating: 5
+    },
+    {
+      id: 3,
+      name: '王总',
+      company: '某制造企业',
+      position: '总经理',
+      content: '案例拆解很有启发，现场诊断环节直接帮我们解决了困惑很久的问题。',
+      rating: 5
+    }
+  ],
+  notice: [
+    '课程费用包含：课程资料、两天午餐、茶歇、结业证书',
+    '不含：往返交通费、住宿费（可协助预订协议酒店）',
+    '开课前7天可全额退款，7天内退款扣除20%手续费',
+    '开课后不支持退款，可申请延期到下一期',
+    '请携带名片和电脑，便于课堂互动和案例演练'
+  ],
+  tags: ['战略', '定位', '商业模式', '组织能力'],
+  highlights: ['科学定位方法论', '真实案例拆解', '现场诊断辅导', '同学互助社群']
+})
+
+// 页面标题
+const pageTitle = computed(() => `${course.value.name} - 高维学堂`)
+
+// 分享配置
+const shareConfig = computed(() => ({
+  title: course.value.name,
+  desc: course.value.subtitle,
+  link: window.location.href,
+  imgUrl: '',
+}))
+
+// 切换 Tab
+const handleTabChange = (key: H5TabKey) => {
+  activeTab.value = key
+  const element = document.getElementById(key)
+  if (element) {
+    const headerHeight = 44
+    const tabsHeight = 45
+    const offset = headerHeight + tabsHeight + 10
+    const top = element.offsetTop - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+}
+
+// 分享
+const handleShare = async () => {
+  await share(shareConfig.value)
+  // 降级方案：复制链接
+  const copied = await copyToClipboard(window.location.href)
+  if (copied) {
+    alert('链接已复制到剪贴板')
+  }
+}
+
+// 回到首页
+const goHome = () => {
+  router.push('/')
+}
+
+// 关注
+const handleFollow = () => {
+  console.log('关注/取消关注')
+}
+
+// 立即报名
+const handleEnroll = () => {
+  // TODO: 跳转到报名页面或打开报名弹窗
+  alert('报名功能开发中...')
+}
+
+onMounted(() => {
+  // 设置页面标题
+  document.title = pageTitle.value
+})
+</script>
+
+<template>
+  <div class="h5-page">
+    <!-- 头部 -->
+    <H5Header :transparent="true" @share="handleShare" />
+
+    <!-- Hero 区域 -->
+    <H5CourseHero :course="course" />
+
+    <!-- 元信息条 -->
+    <H5CourseMeta :course="course" />
+
+    <!-- Tab 导航 -->
+    <H5CourseTabs :active-key="activeTab" @update:active-key="handleTabChange" />
+
+    <!-- 内容区域 -->
+    <div class="h5-content">
+      <!-- 课程介绍 -->
+      <H5CourseIntro :course="course" />
+
+      <!-- 核心模块 -->
+      <H5CourseModules :modules="course.modules" />
+
+      <!-- 导师介绍 -->
+      <H5CourseMentor :mentor="course.mentor" />
+
+      <!-- 学友反馈 -->
+      <H5CourseFeedback :feedbacks="course.feedbacks" />
+
+      <!-- 报名须知 -->
+      <H5CourseNotice :notice="course.notice" />
+    </div>
+
+    <!-- 底部操作栏 -->
+    <H5BottomBar
+      :price="course.price"
+      :price-unit="course.priceUnit"
+      :enrolled-count="course.enrolledCount"
+      @home="goHome"
+      @follow="handleFollow"
+      @enroll="handleEnroll"
+    />
+  </div>
+</template>
+
+<style scoped>
+.h5-page {
+  min-height: 100vh;
+  background-color: var(--h5-bg-light);
+  padding-bottom: calc(56px + var(--h5-safe-bottom));
+  -webkit-overflow-scrolling: touch;
+}
+
+.h5-content {
+  padding-bottom: 20px;
+}
+</style>

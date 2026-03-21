@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 顶部摄像头预览区域 -->
+  <view class="camera-area" style="height: {{cameraActive ? '260rpx' : '0'}}">
+    <view class="camera-wrapper" wx:if="{{cameraActive}}">
+      <!-- 相机组件：仅在激活且无错误时渲染 -->
+      <camera 
+        device-position="back" 
+        flash="auto" 
+        class="camera-preview" 
+        binderror="handleCameraError" 
+        wx:if="{{!cameraErrorOccurred}}">
+      </camera>
+      
+      <!-- 覆盖层：相机错误 -->
+      <!-- 移除 "相机初始化中..." 的覆盖层，因为 context 创建成功但可能渲染有问题 -->
+      <view class="camera-state-overlay camera-error" wx:if="{{cameraErrorOccurred}}">
+        <text>相机加载失败</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrapper">
+    <!-- 楼层选择 -->
+    <view class="large-buttons">
+      <block wx:for="{{floors}}" wx:key="value" wx:if="{{item.type === 'large'}}">
+        <view 
+          class="btn-large {{selectedFloor.value === item.value ? 'btn-active' : ''}}" 
+          data-index="{{index}}" 
+          bindtap="selectFloor">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+    <view class="small-btn-container">
+      <block wx:for="{{floors}}" wx:key="value" wx:if="{{item.type === 'small'}}">
+        <view 
+          class="btn-small {{selectedFloor.value === item.value ? 'btn-active' : ''}}" 
+          data-index="{{index}}" 
+          bindtap="selectFloor">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+
+  </view>
+  
+  <!-- 摄像头设置区域 -->
+  <view class="settings-area">
+    <view class="camera-switch">
+      <text>启用摄像头</text>
+      <switch checked="{{cameraEnabled}}" bindchange="toggleCamera" color="#3281FF"/>
+    </view>
+  </view>
+  
+  <!-- 时间信息区域 -->
+  <view class="time-info-container">
+    <view class="time-info">
+      <text wx:if="{{selectedFloor}}">停车时间：{{parkingTime}} {{dayText}}</text>
+      <text wx:else class="invisible-placeholder">请选择楼层</text>
+      <image wx:if="{{photoSrc}}" src="{{photoSrc}}" class="photo-preview-thumb" mode="aspectFill" bindtap="previewCurrentImage"/>
+    </view>
+  </view>
+</view> 

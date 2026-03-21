@@ -1,0 +1,29 @@
+# GW.Website
+
+高维学堂网站项目
+
+## 目录结构
+
+```
+GW.Website/
+├── README.md
+└── ...
+```
+
+## 快速开始
+
+```bash
+# 克隆项目
+git clone git@git.code.tencent.com:18566621188/GW.Web2026.git
+
+# 进入目录
+cd GW.Web2026
+```
+
+## 开发指南
+
+待补充...
+
+---
+
+*创建时间: 2026-02-28*

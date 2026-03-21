@@ -1,0 +1,151 @@
+---
+name: feishu-doc-create
+description: 创建飞书文档并自动添加协作者权限。调用方式：用户说"创建飞书文档"、"发到飞书"、"转成飞书文档"、"做成飞书"。
+---
+
+# 飞书文档创建 Skill
+
+## 功能
+
+一键创建飞书文档，自动完成：
+1. 创建空白文档
+2. 添加内容（自动分批，避免 API 限制）
+3. 添加协作者权限（默认给 liuwei@gaowei.com）
+4. 返回可访问的文档链接
+
+## 使用方式
+
+```
+用户：把这个内容创建成飞书文档，标题是"XXX"
+AI：执行 skill，返回文档链接
+```
+
+## 执行脚本
+
+```bash
+node .claude/skills/feishu-doc-create/create-doc.mjs --title "文档标题" --content "内容"
+```
+
+### 参数
+
+| 参数 | 必需 | 说明 |
+|------|------|------|
+| `--title` | 是 | 文档标题 |
+| `--content` | 是 | 文档内容（纯文本，用 `\n` 换行） |
+| `--share` | 否 | 分享给谁，默认 `liuwei@gaowei.com` |
+| `--perm` | 否 | 权限级别，默认 `full_access` |
+
+### 权限级别
+
+| perm | 说明 |
+|------|------|
+| `view` | 可阅读 |
+| `edit` | 可编辑 |
+| `full_access` | 完全控制（默认） |
+
+---
+
+## API 调用流程（内部实现）
+
+### 1. 获取 Token
+```bash
+POST https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal
+Body: {"app_id":"xxx","app_secret":"xxx"}
+返回: {"tenant_access_token":"t-xxx"}
+```
+
+### 2. 创建空文档
+```bash
+POST https://open.feishu.cn/open-apis/docx/v1/documents
+Headers: Authorization: Bearer {token}
+Body: {"title":"文档标题"}
+返回: {"document":{"document_id":"xxx"}}
+```
+
+### 3. 添加内容（分批添加）
+```bash
+POST https://open.feishu.cn/open-apis/docx/v1/documents/{doc_id}/blocks/{doc_id}/children
+Headers: Authorization: Bearer {token}
+Body: {
+  "children": [
+    {"block_type": 2, "text": {"elements": [{"text_run": {"content": "段落内容"}}]}}
+  ],
+  "index": 0
+}
+```
+
+**关键格式要点**：
+- 必须用 `text_run` 而不是 `text`
+- `elements` 是数组
+- 每次最多添加约 30 个 block（避免 API 限制）
+
+### 4. 添加协作者
+```bash
+POST https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_id}/members?type=docx
+Headers: Authorization: Bearer {token}
+Body: {
+  "member_type": "email",
+  "member_id": "xxx@xxx.com",
+  "perm": "full_access"
+}
+```
+
+**关键点**：
+- URL 参数用 `?type=docx`
+- `member_type` 必须是 `"email"`（不是 `"openid"` 或 `"user"`）
+- 不要加 `type: "user"` 字段（这是错误格式！）
+
+---
+
+## 常见错误及解决方案
+
+| 错误码/信息 | 原因 | 解决方案 |
+|------------|------|---------|
+| `99991668` | Token 无效或过期 | 重新获取 token |
+| `1770001` | Block 格式错误 | 用 `{"text_run":{"content":"xxx"}}` 而不是 `{"text":"xxx"}` |
+| `99992402` | 参数格式错误 | URL 用 `?type=docx`，body 用 `member_type:"email"` |
+| `99992402 type is required` | 分享 API 格式错 | 不要在 body 里加 `type` 字段 |
+| 文档创建成功但无权限 | 忘记添加协作者 | 步骤 4 必须执行 |
+
+---
+
+## 凭证配置（三选一）
+
+### 方式 1：环境变量（推荐，最通用）
+```bash
+export FEISHU_APP_ID="cli_xxx"
+export FEISHU_APP_SECRET="xxx"
+```
+
+### 方式 2：本地配置文件
+```bash
+mkdir -p ~/.claude/skills/feishu-doc-create
+echo '{"appId":"cli_xxx","appSecret":"xxx"}' > ~/.claude/skills/feishu-doc-create/credentials.json
+```
+
+### 方式 3：OpenClaw 配置（如果有）
+- 位置：`~/.openclaw/openclaw.json`
+- 字段：`channels.feishu.accounts.default`
+
+**优先级**：环境变量 > 本地配置 > OpenClaw 配置
+
+---
+
+## 文档链接格式
+
+```
+https://feishu.cn/docx/{document_id}
+```
+
+---
+
+## 执行清单
+
+创建飞书文档时，AI 必须按顺序执行：
+
+1. [ ] 获取凭证（从 OpenClaw 配置）
+2. [ ] 获取 tenant_access_token
+3. [ ] 创建空文档，获取 document_id
+4. [ ] 分批添加内容（每批 ≤ 30 个 block）
+5. [ ] 添加协作者权限
+6. [ ] 返回文档链接 `https://feishu.cn/docx/{document_id}`

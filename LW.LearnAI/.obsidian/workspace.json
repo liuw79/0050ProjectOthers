@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "b57de4891ce6254f",
+    "type": "split",
+    "children": [
+      {
+        "id": "82e737609b99b0d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b51bd0c2fea91e08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07-Skills构建/Skills-Building-Guide/content.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "content"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "58de6136715c9375",
+    "type": "split",
+    "children": [
+      {
+        "id": "edf8b42851682c6c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0423d32e4fc8b468",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "7abecd17d521c276",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "3373841175554cd3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "105268fe08954c6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed51bb3f219c0a13",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15666f9fc7dde9c6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "07-Skills构建/Skills-Building-Guide/content.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "content 的反向链接列表"
+            }
+          },
+          {
+            "id": "b111dcac60e15e4a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "07-Skills构建/Skills-Building-Guide/content.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "content 的出链列表"
+            }
+          },
+          {
+            "id": "43d501ff9596bde5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "16281a159daff4ec",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "16587c66e4de7143",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "07-Skills构建/Skills-Building-Guide/content.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "content 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "b51bd0c2fea91e08",
+  "lastOpenFiles": [
+    "03-Prompt工程/Be-Clear-and-Direct/content.md",
+    "02-模型概览/Models-Overview/content.md"
+  ]
+}

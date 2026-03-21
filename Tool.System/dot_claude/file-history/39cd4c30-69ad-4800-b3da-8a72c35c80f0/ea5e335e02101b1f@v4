@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+"""
+公司净利分配计算器
+GW.ShareMoney
+"""
+
+import json
+from datetime import datetime
+from pathlib import Path
+
+# ============ 配置区 ============
+CONFIG = {
+    "year": 2025,
+    "net_profit": 1900000,  # 年度净利润 190万
+
+    # 净利分配比例（股东分红:管理合伙人激励:储备金）
+    "profit_split": {
+        "shareholder": 0.4,      # 股东分红 40%
+        "partner_bonus": 0.3,    # 管理合伙人激励 30%
+        "reserve": 0.3           # 储备金 30%
+    },
+
+    # ===== 股权结构 =====
+    # 投资人
+    "investors": {
+        "东哥": 0.049,
+        "慧余": 0.1704,
+    },
+
+    # 管理合伙人（股东分红用）
+    "partner_shares": {
+        "刘军": 0.13,
+        "刘伟": 0.16,
+        "KK": 0.395,  # 37.3% + 2.2%
+        "股权池": 0.0456,  # 9.56% - 5%（划给员工后）
+    },
+
+    # 员工股权（总股本2亿股，员工约800-1000万股 ≈ 4-5%）
+    "employee_share_total": 0.05,  # 约5%
+    "employees_detail": {},  # 待填入明细
+
+    # 管理合伙人激励分配比例（KK:刘军:刘伟 = 1.5:1:1）
+    "partner_bonus_ratio": {
+        "KK": 1.5,
+        "刘军": 1.0,
+        "刘伟": 1.0
+    },
+
+    # 年化定存利率
+    "deposit_rate": 0.025  # 2.5%
+}
+
+
+def calc_shareholder_pool_split(total: float, config: dict) -> dict:
+    """
+    按股权比例分配股东分红池
+    """
+    result = {}
+
+    # 投资人
+    investor_total = sum(config["investors"].values())
+    for name, share in config["investors"].items():
+        result[f"投资人-{name}"] = total * (share / (investor_total + sum(config["partner_shares"].values()) + config["employee_share_total"]))
+
+    # 管理合伙人（股东分红部分）
+    partner_total = sum(config["partner_shares"].values())
+    for name, share in config["partner_shares"].items():
+        result[f"管理合伙人-{name}"] = total * (share / (investor_total + partner_total + config["employee_share_total"]))
+
+    # 员工
+    result["员工合伙人"] = total * (config["employee_share_total"] / (investor_total + partner_total + config["employee_share_total"]))
+
+    return result
+
+
+def calc_partner_bonus(total: float, partner_ratio: dict) -> dict:
+    """计算管理合伙人激励分配"""
+    ratio_sum = sum(partner_ratio.values())
+    return {
+        name: total * (ratio / ratio_sum)
+        for name, ratio in partner_ratio.items()
+    }
+
+
+def calculate_distribution(config: dict) -> dict:
+    """计算完整的利润分配"""
+    net_profit = config["net_profit"]
+    profit_split = config["profit_split"]
+
+    # 计算总股权
+    total_equity = (
+        sum(config["investors"].values()) +
+        sum(config["partner_shares"].values()) +
+        config["employee_share_total"]
+    )
+
+    # 1. 净利三大部分
+    shareholder_total = net_profit * profit_split["shareholder"]
+    partner_bonus_total = net_profit * profit_split["partner_bonus"]
+    reserve_total = net_profit * profit_split["reserve"]
+
+    # 2. 股东分红分配
+    shareholder_result = {}
+
+    # 2.1 投资人按股权比例分
+    for name, share in config["investors"].items():
+        shareholder_result[f"投资人-{name}"] = shareholder_total * (share / total_equity)
+
+    # 2.2 员工按股权比例分
+    shareholder_result["员工合伙人"] = shareholder_total * (config["employee_share_total"] / total_equity)
+
+    # 2.3 管理合伙人（含股权池）按 1.5:1:1 分配，不是按股权比例
+    partner_pool = shareholder_total * (sum(config["partner_shares"].values()) / total_equity)
+    partner_share_result = calc_partner_bonus(partner_pool, config["partner_bonus_ratio"])
+    for name, amount in partner_share_result.items():
+        shareholder_result[f"管理合伙人-{name}"] = amount
+
+    # 3. 管理合伙人激励（仅KK、刘军、刘伟参与）
+    partner_bonus_result = calc_partner_bonus(partner_bonus_total, config["partner_bonus_ratio"])
+
+    # 4. 管理合伙人合计
+    partner_total = {}
+    for name in ["KK", "刘军", "刘伟"]:
+        partner_total[name] = shareholder_result.get(f"管理合伙人-{name}", 0) + partner_bonus_result.get(name, 0)
+
+    return {
+        "year": config["year"],
+        "net_profit": net_profit,
+        "profit_split": profit_split,
+        "total_equity": total_equity,
+        "summary": {
+            "股东分红总额": shareholder_total,
+            "管理合伙人激励总额": partner_bonus_total,
+            "储备金": reserve_total
+        },
+        "shareholder_result": shareholder_result,
+        "partner_bonus_result": partner_bonus_result,
+        "partner_total": partner_total,
+        "reserve": reserve_total
+    }
+
+
+def format_money(amount: float) -> str:
+    """格式化金额"""
+    if amount >= 10000:
+        return f"{amount/10000:.2f}万"
+    return f"{amount:.2f}"
+
+
+def generate_markdown(result: dict, config: dict) -> str:
+    """生成Markdown报告"""
+    lines = [
+        f"# {result['year']}年度净利分配报告",
+        "",
+        f"**年度净利润**: {format_money(result['net_profit'])}（假设）",
+        "",
+        "## 一、分配总览",
+        "",
+        "| 项目 | 比例 | 金额 |",
+        "|------|------|------|",
+    ]
+
+    name_map = {"shareholder": "股东分红", "partner_bonus": "管理合伙人激励", "reserve": "储备金"}
+    for key, ratio in result["profit_split"].items():
+        amount = result["net_profit"] * ratio
+        lines.append(f"| {name_map[key]} | {ratio*100:.0f}% | {format_money(amount)} |")
+
+    lines.extend([
+        "",
+        "## 二、股东分红明细（按股权比例）",
+        "",
+        f"股东分红总额: **{format_money(result['summary']['股东分红总额'])}**",
+        "",
+        "### 2.1 投资人分红",
+        "",
+        "| 姓名 | 股权比例 | 分红金额 |",
+        "|------|----------|----------|",
+    ])
+
+    for name, share in config["investors"].items():
+        key = f"投资人-{name}"
+        amount = result["shareholder_result"][key]
+        lines.append(f"| {name} | {share*100:.2f}% | {format_money(amount)} |")
+
+    lines.extend([
+        "",
+        "### 2.2 管理合伙人分红（1.5:1:1，含股权池）",
+        "",
+        "| 姓名 | 比例 | 分红金额 |",
+        "|------|------|----------|",
+    ])
+
+    ratio_sum = sum(config["partner_bonus_ratio"].values())
+    for name in ["KK", "刘军", "刘伟"]:
+        key = f"管理合伙人-{name}"
+        amount = result["shareholder_result"][key]
+        ratio = config["partner_bonus_ratio"][name]
+        lines.append(f"| {name} | {ratio/ratio_sum*100:.1f}% | {format_money(amount)} |")
+
+    lines.extend([
+        "",
+        "### 2.3 员工合伙人分红",
+        "",
+        "| 项目 | 股权比例 | 分红金额 | 备注 |",
+        "|------|----------|----------|------|",
+    ])
+
+    emp_amount = result["shareholder_result"]["员工合伙人"]
+    lines.append(f"| 员工持股池 | {config['employee_share_total']*100:.1f}% | {format_money(emp_amount)} | 明细待补充 |")
+
+    lines.extend([
+        "",
+        "## 三、管理合伙人激励（KK:刘军:刘伟 = 1.5:1:1）",
+        "",
+        "| 姓名 | 比例 | 激励金额 |",
+        "|------|------|----------|",
+    ])
+
+    ratio_sum = sum(config["partner_bonus_ratio"].values())
+    for name, amount in result["partner_bonus_result"].items():
+        ratio = config["partner_bonus_ratio"][name]
+        lines.append(f"| {name} | {ratio/ratio_sum*100:.1f}% | {format_money(amount)} |")
+
+    lines.extend([
+        "",
+        "## 四、管理合伙人合计（股东分红 + 激励）",
+        "",
+        "| 姓名 | 股东分红 | 激励 | **合计** |",
+        "|------|----------|------|----------|",
+    ])
+
+    for name, total in result["partner_total"].items():
+        share = result["shareholder_result"].get(f"管理合伙人-{name}", 0)
+        bonus = result["partner_bonus_result"].get(name, 0)
+        lines.append(f"| {name} | {format_money(share)} | {format_money(bonus)} | **{format_money(total)}** |")
+
+    lines.extend([
+        "",
+        "## 五、储备金",
+        "",
+        f"储备金留存: **{format_money(result['reserve'])}**",
+        "",
+        "---",
+        f"*生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*",
+        "",
+        "## 附：股权结构",
+        "",
+        "| 类别 | 姓名/项目 | 股权比例 |",
+        "|------|-----------|----------|",
+    ])
+
+    for name, share in config["investors"].items():
+        lines.append(f"| 投资人 | {name} | {share*100:.2f}% |")
+    lines.append(f"| 管理合伙人 | KK+刘军+刘伟+股权池 | {sum(config['partner_shares'].values())*100:.2f}% |")
+    lines.append(f"| _（分红按1.5:1:1）_ | | |")
+    lines.append(f"| 员工 | 员工持股池 | {config['employee_share_total']*100:.1f}% |")
+
+    total_eq = sum(config["investors"].values()) + sum(config["partner_shares"].values()) + config["employee_share_total"]
+    lines.append(f"| **合计** | | **{total_eq*100:.2f}%** |")
+
+    return "\n".join(lines)
+
+
+def main():
+    """主函数"""
+    result = calculate_distribution(CONFIG)
+    md_content = generate_markdown(result, CONFIG)
+
+    # 保存Markdown
+    output_path = Path(__file__).parent / f"净利分配_{CONFIG['year']}.md"
+    output_path.write_text(md_content, encoding="utf-8")
+    print(f"报告已生成: {output_path}")
+
+    # 同时打印到控制台
+    print("\n" + md_content)
+
+
+if __name__ == "__main__":
+    main()

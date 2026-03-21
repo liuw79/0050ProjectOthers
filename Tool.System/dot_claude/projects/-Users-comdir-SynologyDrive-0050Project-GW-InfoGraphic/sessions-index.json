@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "16d6df23-6a2e-4534-a8cf-42bac46fdf6a",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-InfoGraphic/16d6df23-6a2e-4534-a8cf-42bac46fdf6a.jsonl",
+      "fileMtime": 1768522146528,
+      "firstPrompt": "<ide_opened_file>The user opened the file /Users/comdir/SynologyDrive/0050Project/GW.InfoGraphic/班主任经历信息图/需求整理.md in the IDE. This may or may not be related to the current task.</ide_opened_file>",
+      "messageCount": 5,
+      "created": "2026-01-16T00:08:29.522Z",
+      "modified": "2026-01-16T00:09:06.513Z",
+      "gitBranch": "",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.InfoGraphic",
+      "isSidechain": false
+    }
+  ]
+}

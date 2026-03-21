@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #f4f6f9;
+  }
+  .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  h1 {
+    color: #1a202c;
+    font-size: 26px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  h2 {
+    color: #2b6cb0;
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3182ce;
+    padding-left: 12px;
+  }
+  .score-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebf8ff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #bee3f8;
+  }
+  .total-score {
+    text-align: center;
+    min-width: 120px;
+  }
+  .total-score .num {
+    font-size: 48px;
+    color: #e53e3e;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .total-score .label {
+    font-size: 14px;
+    color: #4a5568;
+    margin-top: 5px;
+  }
+  .summary-text {
+    flex: 1;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #2d3748;
+  }
+  .warning-badge {
+    display: inline-block;
+    background-color: #fed7d7;
+    color: #c53030;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  .metric-item {
+    background: #f7fafc;
+    padding: 12px 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border: 1px solid #edf2f7;
+  }
+  .metric-name { color: #4a5568; font-weight: 600; }
+  .metric-score { color: #2b6cb0; font-weight: bold; }
+  .highlight-box {
+    background-color: #f0fff4;
+    border-left: 4px solid #48bb78;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 6px 6px 0;
+  }
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2d3748;
+  }
+  .tag {
+    font-size: 12px;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-left: 12px;
+    font-weight: normal;
+  }
+  .tag-deep { background-color: #ed8936; }
+  .tag-brief { background-color: #4299e1; }
+  .feedback p { margin: 8px 0; font-size: 14.5px; }
+  .pros { color: #38a169; }
+  .pros::before { content: "✅ 肯定："; font-weight: bold; }
+  .cons { color: #dd6b20; }
+  .cons::before { content: "🎯 提升："; font-weight: bold; }
+  .vision {
+    margin-top: 40px;
+    padding: 25px;
+    background: #2b6cb0;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #a0aec0;
+    text-align: center;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>班主任AI教练评估报告</h1>
+
+  <div style="margin-bottom: 25px; color: #4a5568; font-size: 15px;">
+    <strong>评估对象：</strong> 邬培莹 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>课程：</strong> 《超级面试官》
+  </div>
+
+  <!-- 总分与总评 -->
+  <div class="score-board">
+    <div class="total-score">
+      <div class="num">65</div>
+      <div class="label">综合得分</div>
+    </div>
+    <div class="summary-text">
+      <strong>教练总评：</strong>培莹，你在场域互动和业务关联上的敏锐度，让我看到了一个成熟陪跑伙伴的坚实底子。但本次主持存在关键流程断点，必须警惕流程完整性是做好一切服务的前提。<br>
+      <span class="warning-badge">⚠️ 触发硬约束：邀约课评动作完全缺失，总分限制在75分及以下。</span>
+    </div>
+  </div>
+
+  <!-- 分项评分 -->
+  <h2>📊 分项评分 (6大维度)</h2>
+  <div class="metrics-grid">
+    <div class="metric-item"><span class="metric-name">团建破冰</span><span class="metric-score">90 / 100</span></div>
+    <div class="metric-item"><span class="metric-name">结尾升华</span><span class="metric-score">95 / 100</span></div>
+    <div class="metric-item"><span class="metric-name">高维五句话</span><span class="metric-score">80 / 100</span></div>
+    <div class="metric-item"><span class="metric-name">综合业务素养</span><span class="metric-score">85 / 100</span></div>
+    <div class="metric-item"><span class="metric-name">产品五句话</span><span class="metric-score">65 / 100</span></div>
+    <div class="metric-item"><span class="metric-name" style="color:#e53e3e;">邀约课评</span><span class="metric-score" style="color:#e53e3e;">0 / 100</span></div>
+  </div>
+
+  <!-- 高阶亮点 -->
+  <div class="highlight-box">
+    <strong>💡 高阶亮点与可复用经验：</strong><br>
+    结尾的价值升华与课程矩阵关联做得极其出色！用"不是一纸简历而是回归业务场景"提炼金句，并极其顺畅地根据企业人才梯队建设需求，向学员推荐了《流程型组织》和《教练式领导力》，展现了你作为陪跑伙伴极强的全景业务常识，这一段可以直接作为内部高阶串讲的标杆。
+  </div>
+
+  <!-- 全流程深度反馈 -->
+  <h2>🔍 全流程深度反馈</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. 邀约课评 <span class="tag tag-deep">Top 1 深度剖析</span></div>
+    </div>
+    <div class="feedback">
+      <p class="pros">此处必须指出核心缺失，以凸显流程严谨性的重要。</p>
+      <p class="cons">培莹，在第二天结课的录音中，我完全没有听到关于"填写课评"的引导。课评是我们回收真实学习反馈、优化课程质量的唯一客观抓手。作为班主任，无论时间多紧、场域多赶，坚决且清晰地邀约课评是不可妥协的底线动作。这也是本次评估触发硬性扣分的原因，下次请务必牢记补上这一环。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. 产品五句话 (FOCUS) <span class="tag tag-deep">Top 2 深度剖析</span></div>
+    </div>
+    <div class="feedback">
+      <p class="pros">你对 F（定性痛点）和 O（信任背书）的切入非常准，点透了创始人"招人靠玄学碰运气"的困境，有效调动了听众的共鸣。</p>
+      <p class="cons">在后续展开中，遗漏了至关重要的 U（具体的方法工具，如行为预判解码技术）和 S（生动案例）。作为陪跑伙伴，我们不仅要抛出痛点，更要用实实在在的工具预期和真实的学友改变来给予他们"通关"的信心。补齐这两块拼图，你的产品介绍会更具说服力。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. 团建破冰 <span class="tag tag-deep">Top 3 深度剖析</span></div>
+    </div>
+    <div class="feedback">
+      <p class="pros">场域互动设计非常有巧思！利用"姓名贴看年级"巧妙引导新老学员破冰，再用"找头发最长的同学"推选发言，极其生动地打破了早晨的沉闷，迅速拉近了大家的距离。</p>
+      <p class="cons">虽然互动环节很出彩，但在多轮对话和调侃后，向正式课程内容的转折稍显跳跃。建议在欢乐的破冰之后，增加一句有力的场域收拢话术，帮助学员更平滑地进入深度学习心流。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">4. 结尾升华 <span class="tag tag-brief">简要点评</span></div>
+    </div>
+    <div class="feedback">
+      <p class="pros">全场最高光时刻！不仅完美总结了当天的金句，还能自然串联多门组织发展相关课程。这种不经意间流露出的体系化业务认知，正是企业家最看重的专业感。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">5. 高维五句话 <span class="tag tag-brief">简要点评</span></div>
+    </div>
+    <div class="feedback">
+      <p class="pros">对"实战标准"和"统一语言"等品牌理念吃得很透，表达坚定有底气。唯一的小建议是，由于"通关路线图"被放在了破冰之后，导致五句话的逻辑连贯性稍有些割裂，下次可以尝试将其一气呵成讲完。</p>
+    </div>
+  </div>
+
+  <!-- 愿景结束语 -->
+  <div class="vision">
+    培莹，优秀的陪跑伙伴不仅要有灵动的场域把控力和敏锐的业务触觉，更要兼具死磕标准化流程的严密操守。<br>你对业务深度的理解令人印象深刻，期待你在未来的班级里，把基础框架打磨得如你的业务连结一样无懈可击。稳扎稳打，继续闪耀！
+  </div>
+
+  <div class="footer">
+    文件路径: /五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4.html<br>
+    生成时间: 2026-03-16 | 评估模型: Gemini 3.1 Pro (V4双触点版)
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+     1→const path = require('path');
+     2→require('dotenv').config({ path: path.join(__dirname, '../.env') });
+     3→const express = require('express');
+     4→const cors = require('cors');
+     5→const AIClient = require('./ai-client');
+     6→const LarkClient = require('./lark-client');
+     7→const FeishuAuthClient = require('./auth-client');
+     8→
+     9→const app = express();
+    10→const PORT = process.env.PORT || 3000;
+    11→const aiClient = new AIClient();
+    12→const larkClient = new LarkClient();
+    13→const authClient = new FeishuAuthClient();
+    14→
+    15→// 多维表格配置（临时，实际需要从飞书获取）
+    16→const BITABLE_CONFIG = {
+    17→  users: {
+    18→    app_token: process.env.LARK_USERS_APP_TOKEN || '',
+    19→    table_id: process.env.LARK_USERS_TABLE_ID || '',
+    20→  },
+    21→  materials: {
+    22→    app_token: process.env.LARK_MATERIALS_APP_TOKEN || 'placeholder_materials_table_token',
+    23→    table_id: process.env.LARK_MATERIALS_TABLE_ID || 'placeholder_materials_table_id',
+    24→  },
+    25→  knowledge: {
+    26→    app_token: process.env.LARK_KNOWLEDGE_APP_TOKEN || '',
+    27→    table_id: process.env.LARK_KNOWLEDGE_TABLE_ID || '',
+    28→  },
+    29→  skills: {
+    30→    app_token: process.env.LARK_SKILLS_APP_TOKEN || '',
+    31→    table_id: process.env.LARK_SKILLS_TABLE_ID || '',
+    32→  }
+    33→};
+    34→
+    35→app.use(cors());
+    36→app.use(express.json());
+    37→
+    38→// 静态文件服务
+    39→app.use(express.static(path.join(__dirname, '../../frontend/src')));
+    40→
+    41→// 健康检查接口
+    42→app.get('/health', (req, res) => {
+    43→  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+    44→});
+    45→
+    46→// ========== 飞书OAuth认证 ==========
+    47→
+    48→// 开发模式：直接模拟登录（跳过飞书认证）
+    49→app.get('/auth/dev', (req, res) => {
+    50→  const mockUser = {
+    51→    userId: 'dev_user_' + Date.now(),
+    52→    openId: 'dev_open_id',
+    53→    name: '开发测试用户',
+    54→    avatar: '',
+    55→    email: 'dev@example.com',
+    56→  };
+    57→
+    58→  // 返回用户信息给前端
+    59→  res.json({
+    60→    success: true,
+    61→    user: mockUser,
+    62→    accessToken: 'dev_token_' + Date.now(),
+    63→  });
+    64→});
+    65→
+    66→// 生成授权URL
+    67→app.get('/auth/feishu', (req, res) => {
+    68→  const authUrl = authClient.getAuthUrl();
+    69→  res.redirect(authUrl);
+    70→});
+    71→
+    72→// 处理OAuth回调
+    73→app.get('/auth/callback', async (req, res) => {
+    74→  try {
+    75→    const { code } = req.query;
+    76→    if (!code) {
+    77→      return res.status(400).json({ success: false, error: '缺少授权码' });
+    78→    }
+    79→
+    80→    // 获取用户access token
+    81→    const tokenResponse = await authClient.getUserAccessToken(code);
+    82→
+    83→    // 获取用户信息
+    84→    const userInfo = await authClient.getUserInfo(tokenResponse.accessToken);
+    85→
+    86→    // 检查用户是否已存在（如果用户表已配置）
+    87→    if (BITABLE_CONFIG.users.app_token && BITABLE_CONFIG.users.table_id) {
+    88→      const existingUsers = await larkClient.queryBitableRecords(
+    89→        BITABLE_CONFIG.users.app_token,
+    90→        BITABLE_CONFIG.users.table_id,
+    91→        { conjunction: 'and', conditions: [{ field_name: 'user_id', operator: 'is', value: [userInfo.userId] }] }
+    92→      );
+    93→
+    94→      // 如果用户不存在，创建用户记录
+    95→      if (existingUsers.length === 0) {
+    96→        await larkClient.addBitableRecord(
+    97→          BITABLE_CONFIG.users.app_token,
+    98→          BITABLE_CONFIG.users.table_id,
+    99→          {
+   100→            user_id: userInfo.userId,
+   101→            open_id: userInfo.openId,
+   102→            name: userInfo.name,
+   103→            avatar: userInfo.avatar,
+   104→            email: userInfo.email || '',
+   105→            role: 'user',
+   106→            created_at: new Date().toISOString(),
+   107→          }
+   108→        );
+   109→      }
+   110→    }
+   111→
+   112→    // 返回用户信息给前端（实际应该使用JWT）
+   113→    // 使用 HTML 页面来处理回调，保存用户信息到 localStorage
+   114→    const html = `
+   115→      <!DOCTYPE html>
+   116→      <html>
+   117→      <head>
+   118→        <meta charset="UTF-8">
+   119→        <title>登录成功</title>
+   120→      </head>
+   121→      <body>
+   122→        <script>
+   123→          const user = ${JSON.stringify(userInfo)};
+   124→          const accessToken = "${tokenResponse.accessToken}";
+   125→          localStorage.setItem('currentUser', JSON.stringify(user));
+   126→          localStorage.setItem('accessToken', accessToken);
+   127→          window.location.href = '/dashboard.html';
+   128→        </script>
+   129→        <p>登录成功，正在跳转...</p>
+   130→      </body>
+   131→      </html>
+   132→    `;
+   133→    res.send(html);
+   134→  } catch (error) {
+   135→    res.status(500).json({ success: false, error: error.message });
+   136→  }
+   137→});
+   138→
+   139→// ========== 用户数据API ==========
+   140→
+   141→// 获取用户信息
+   142→app.get('/api/users/:userId', async (req, res) => {
+   143→  try {
+   144→    const { userId } = req.params;
+   145→    const records = await larkClient.queryBitableRecords(
+   146→      BITABLE_CONFIG.users.app_token,
+   147→      BITABLE_CONFIG.users.table_id,
+   148→      { filter: { conditions: [{ field_name: 'user_id', operator: 'is', value: [userId] }] } }
+   149→    );
+   150→    if (records.length === 0) {
+   151→      return res.status(404).json({ success: false, error: '用户不存在' });
+   152→    }
+   153→    res.json({ success: true, user: records[0].fields });
+   154→  } catch (error) {
+   155→    res.status(500).json({ success: false, error: error.message });
+   156→  }
+   157→});
+   158→
+   159→// 创建用户
+   160→app.post('/api/users', async (req, res) => {
+   161→  try {
+   162→    const { userId, name, role } = req.body;
+   163→    const result = await larkClient.addBitableRecord(
+   164→      BITABLE_CONFIG.users.app_token,
+   165→      BITABLE_CONFIG.users.table_id,
+   166→      {
+   167→        user_id: userId,
+   168→        name: name,
+   169→        role: role || 'user',
+   170→        created_at: new Date().toISOString(),
+   171→      }
+   172→    );
+   173→    res.json({ success: true, user: result.fields });
+   174→  } catch (error) {
+   175→    res.status(500).json({ success: false, error: error.message });
+   176→  }
+   177→});
+   178→
+   179→// ========== 素材库API ==========
+   180→
+   181→// 添加素材
+   182→app.post('/api/materials', async (req, res) => {
+   183→  try {
+   184→    const { userId, title, content, tags, category } = req.body;
+   185→    if (!userId || !title || !content) {
+   186→      return res.status(400).json({ success: false, error: '缺少必填字段: userId, title, content' });
+   187→    }
+   188→
+   189→    // 如果多维表格已配置，则写入飞书
+   190→    if (BITABLE_CONFIG.materials.app_token && BITABLE_CONFIG.materials.table_id) {
+   191→      const result = await larkClient.addBitableRecord(
+   192→        BITABLE_CONFIG.materials.app_token,
+   193→        BITABLE_CONFIG.materials.table_id,
+   194→        {
+   195→          user_id: userId,
+   196→          title: title,
+   197→          content: content,
+   198→          tags: tags || [],
+   199→          category: category || 'default',
+   200→          created_at: new Date().toISOString(),
+   201→        }
+   202→      );
+   203→      res.json({ success: true, material: result.fields });
+   204→    } else {
+   205→      // 多维表格未配置，临时返回成功（实际应该提示配置）
+   206→      console.log('添加素材（多维表格未配置）:', { userId, title, content, tags, category });
+   207→      res.json({
+   208→        success: true,
+   209→        material: {
+   210→          user_id: userId,
+   211→          title: title,
+   212→          content: content,
+   213→          tags: tags || [],
+   214→          category: category || 'default',
+   215→          created_at: new Date().toISOString(),
+   216→        }
+   217→      });
+   218→    }
+   219→  } catch (error) {
+   220→    res.status(500).json({ success: false, error: error.message });
+   221→  }
+   222→});
+   223→
+   224→// 获取素材列表
+   225→app.get('/api/materials', async (req, res) => {
+   226→  try {
+   227→    const { userId, tag, category } = req.query;
+   228→    const filter = { conjunction: 'and', conditions: [] };
+   229→    if (userId) {
+   230→      filter.conditions.push({
+   231→        field_name: 'user_id',
+   232→        operator: 'is',
+   233→        value: [userId]
+   234→      });
+   235→    }
+   236→    if (tag) {
+   237→      filter.conditions.push({
+   238→        field_name: 'tags',
+   239→        operator: 'contains',
+   240→        value: [tag]
+   241→      });
+   242→    }
+   243→    if (category) {
+   244→      filter.conditions.push({
+   245→        field_name: 'category',
+   246→        operator: 'is',
+   247→        value: [category]
+   248→      });
+   249→    }
+   250→
+   251→    let records;
+   252→    if (filter.conditions.length > 0) {
+   253→      // 有过滤条件，使用search API
+   254→      records = await larkClient.queryBitableRecords(
+   255→        BITABLE_CONFIG.materials.app_token,
+   256→        BITABLE_CONFIG.materials.table_id,
+   257→        filter
+   258→      );
+   259→    } else {
+   260→      // 无过滤条件，直接获取所有记录
+   261→      records = await larkClient.getBitableData(
+   262→        BITABLE_CONFIG.materials.app_token,
+   263→        BITABLE_CONFIG.materials.table_id
+   264→      );
+   265→    }
+   266→
+   267→    // normalize字段格式 - search API返回[{text, type}]格式，需要转换为字符串
+   268→    const normalizedMaterials = records.map(r => {
+   269→      const fields = {};
+   270→      Object.entries(r.fields).forEach(([key, value]) => {
+   271→        if (Array.isArray(value) && value[0] && typeof value[0] === 'object' && 'text' in value[0]) {
+   272→          // search API格式: [{text: "xxx", type: "text"}]
+   273→          fields[key] = value[0].text;
+   274→        } else {
+   275→          // 普通格式: 直接使用值
+   276→          fields[key] = value;
+   277→        }
+   278→      });
+   279→      return fields;
+   280→    });
+   281→
+   282→    res.json({ success: true, materials: normalizedMaterials });
+   283→  } catch (error) {
+   284→    res.status(500).json({ success: false, error: error.message });
+   285→  }
+   286→});
+   287→
+   288→// ========== 知识点API ==========
+   289→
+   290→// 添加知识点
+   291→app.post('/api/knowledge-points', async (req, res) => {
+   292→  try {
+   293→    const { title, content, tags, category, relatedMaterialIds } = req.body;
+   294→    if (!title || !content) {
+   295→      return res.status(400).json({ success: false, error: '缺少必填字段: title, content' });
+   296→    }
+   297→    if (!BITABLE_CONFIG.knowledge?.app_token || !BITABLE_CONFIG.knowledge?.table_id) {
+   298→      return res.status(501).json({ success: false, error: '知识点表格未配置，请在.env中设置LARK_KNOWLEDGE_APP_TOKEN和LARK_KNOWLEDGE_TABLE_ID' });
+   299→    }
+   300→    const result = await larkClient.addBitableRecord(
+   301→      BITABLE_CONFIG.knowledge.app_token,
+   302→      BITABLE_CONFIG.knowledge.table_id,
+   303→      {
+   304→        title: title,
+   305→        content: content,
+   306→        tags: tags || [],
+   307→        category: category || 'default',
+   308→        related_material_ids: relatedMaterialIds || [],
+   309→        created_at: new Date().toISOString(),
+   310→      }
+   311→    );
+   312→    res.json({ success: true, knowledgePoint: result.fields });
+   313→  } catch (error) {
+   314→    res.status(500).json({ success: false, error: error.message });
+   315→  }
+   316→});
+   317→
+   318→// 获取知识点列表
+   319→app.get('/api/knowledge-points', async (req, res) => {
+   320→  try {
+   321→    const { tag, category, materialId } = req.query;
+   322→    const filter = { conjunction: 'and', conditions: [] };
+   323→
+   324→    if (tag) {
+   325→      filter.conditions.push({
+   326→        field_name: 'tags',
+   327→        operator: 'contains',
+   328→        value: [tag]
+   329→      });
+   330→    }
+   331→    if (category) {
+   332→      filter.conditions.push({
+   333→        field_name: 'category',
+   334→        operator: 'is',
+   335→        value: [category]
+   336→      });
+   337→    }
+   338→    if (materialId) {
+   339→      filter.conditions.push({
+   340→        field_name: 'related_material_ids',
+   341→        operator: 'contains',
+   342→        value: [materialId]
+   343→      });
+   344→    }
+   345→
+   346→    if (!BITABLE_CONFIG.knowledge?.app_token || !BITABLE_CONFIG.knowledge?.table_id) {
+   347→      return res.status(501).json({ success: false, error: '知识点表格未配置，请在.env中设置LARK_KNOWLEDGE_APP_TOKEN和LARK_KNOWLEDGE_TABLE_ID' });
+   348→    }
+   349→
+   350→    let records;
+   351→    if (filter.conditions.length > 0) {
+   352→      // 有过滤条件，使用search API
+   353→      records = await larkClient.queryBitableRecords(
+   354→        BITABLE_CONFIG.knowledge.app_token,
+   355→        BITABLE_CONFIG.knowledge.table_id,
+   356→        filter
+   357→      );
+   358→    } else {
+   359→      // 无过滤条件，直接获取所有记录
+   360→      records = await larkClient.getBitableData(
+   361→        BITABLE_CONFIG.knowledge.app_token,
+   362→        BITABLE_CONFIG.knowledge.table_id
+   363→      );
+   364→    }
+   365→
+   366→    // normalize字段格式
+   367→    const normalizedPoints = records.map(r => {
+   368→      const fields = {};
+   369→      Object.entries(r.fields).forEach(([key, value]) => {
+   370→        if (Array.isArray(value) && value[0] && typeof value[0] === 'object' && 'text' in value[0]) {
+   371→          fields[key] = value[0].text;
+   372→        } else {
+   373→          fields[key] = value;
+   374→        }
+   375→      });
+   376→      return fields;
+   377→    });
+   378→
+   379→    res.json({ success: true, knowledgePoints: normalizedPoints });
+   380→  } catch (error) {
+   381→    res.status(500).json({ success: false, error: error.message });
+   382→  }
+   383→});
+   384→
+   385→// ========== Skills API ==========
+   386→
+   387→// 创建/更新Skill
+   388→app.post('/api/skills', async (req, res) => {
+   389→  try {
+   390→    const { name, description, promptTemplate, version, parentVersionId, status } = req.body;
+   391→    if (!name) {
+   392→      return res.status(400).json({ success: false, error: '缺少必填字段: name' });
+   393→    }
+   394→    if (!BITABLE_CONFIG.skills?.app_token || !BITABLE_CONFIG.skills?.table_id) {
+   395→      return res.status(501).json({ success: false, error: 'Skills表格未配置，请在.env中设置LARK_SKILLS_APP_TOKEN和LARK_SKILLS_TABLE_ID' });
+   396→    }
+   397→
+   398→    const skillData = {
+   399→      name: name,
+   400→      description: description || '',
+   401→      prompt_template: promptTemplate || '',
+   402→      version: version || '1.0',
+   403→      parent_version_id: parentVersionId || '',
+   404→      status: status || 'draft',
+   405→      created_at: new Date().toISOString(),
+   406→    };
+   407→
+   408→    const result = await larkClient.addBitableRecord(
+   409→      BITABLE_CONFIG.skills.app_token,
+   410→      BITABLE_CONFIG.skills.table_id,
+   411→      skillData
+   412→    );
+   413→
+   414→    res.json({ success: true, skill: result.fields });
+   415→  } catch (error) {
+   416→    res.status(500).json({ success: false, error: error.message });
+   417→  }
+   418→});
+   419→
+   420→// 获取Skills列表
+   421→app.get('/api/skills', async (req, res) => {
+   422→  try {
+   423→    const { status, version, parentId } = req.query;
+   424→    const filter = { conjunction: 'and', conditions: [] };
+   425→
+   426→    if (status) {
+   427→      filter.conditions.push({
+   428→        field_name: 'status',
+   429→        operator: 'is',
+   430→        value: [status]
+   431→      });
+   432→    }
+   433→    if (version) {
+   434→      filter.conditions.push({
+   435→        field_name: 'version',
+   436→        operator: 'is',
+   437→        value: [version]
+   438→      });
+   439→    }
+   440→    if (parentId) {
+   441→      filter.conditions.push({
+   442→        field_name: 'parent_version_id',
+   443→        operator: 'is',
+   444→        value: [parentId]
+   445→      });
+   446→    }
+   447→
+   448→    if (!BITABLE_CONFIG.skills?.app_token || !BITABLE_CONFIG.skills?.table_id) {
+   449→      return res.status(501).json({ success: false, error: 'Skills表格未配置，请在.env中设置LARK_SKILLS_APP_TOKEN和LARK_SKILLS_TABLE_ID' });
+   450→    }
+   451→
+   452→    let records;
+   453→    if (filter.conditions.length > 0) {
+   454→      records = await larkClient.queryBitableRecords(
+   455→        BITABLE_CONFIG.skills.app_token,
+   456→        BITABLE_CONFIG.skills.table_id,
+   457→        filter
+   458→      );
+   459→    } else {
+   460→      records = await larkClient.getBitableData(
+   461→        BITABLE_CONFIG.skills.app_token,
+   462→        BITABLE_CONFIG.skills.table_id
+   463→      );
+   464→    }
+   465→
+   466→    // normalize字段格式
+   467→    const normalizedSkills = records.map(r => {
+   468→      const fields = {};
+   469→      Object.entries(r.fields).forEach(([key, value]) => {
+   470→        if (Array.isArray(value) && value[0] && typeof value[0] === 'object' && 'text' in value[0]) {
+   471→          fields[key] = value[0].text;
+   472→        } else {
+   473→          fields[key] = value;
+   474→        }
+   475→      });
+   476→      return fields;
+   477→    });
+   478→
+   479→    res.json({ success: true, skills: normalizedSkills });
+   480→  } catch (error) {
+   481→    res.status(500).json({ success: false, error: error.message });
+   482→  }
+   483→});
+   484→
+   485→// 获取Skill版本历史
+   486→app.get('/api/skills/:skillId/versions', async (req, res) => {
+   487→  try {
+   488→    const { skillId } = req.params;
+   489→
+   490→    if (!BITABLE_CONFIG.skills?.app_token || !BITABLE_CONFIG.skills?.table_id) {
+   491→      return res.status(501).json({ success: false, error: 'Skills表格未配置，请在.env中设置LARK_SKILLS_APP_TOKEN和LARK_SKILLS_TABLE_ID' });
+   492→    }
+   493→
+   494→    const records = await larkClient.queryBitableRecords(
+   495→      BITABLE_CONFIG.skills.app_token,
+   496→      BITABLE_CONFIG.skills.table_id,
+   497→      { conjunction: 'and', conditions: [{ field_name: 'id', operator: 'is', value: [skillId] }] }
+   498→    );
+   499→
+   500→    if (records.length === 0) {
+   501→      return res.status(404).json({ success: false, error: 'Skill不存在' });
+   502→    }
+   503→
+   504→    // 获取该skill的所有版本（通过name匹配）
+   505→    const skillName = records[0].fields.name;
+   506→    const allVersions = await larkClient.queryBitableRecords(
+   507→      BITABLE_CONFIG.skills.app_token,
+   508→      BITABLE_CONFIG.skills.table_id,
+   509→      { conjunction: 'and', conditions: [{ field_name: 'name', operator: 'is', value: [skillName] }] }
+   510→    );
+   511→
+   512→    // normalize并按版本排序
+   513→    const normalizedVersions = allVersions.map(r => {
+   514→      const fields = {};
+   515→      Object.entries(r.fields).forEach(([key, value]) => {
+   516→        if (Array.isArray(value) && value[0] && typeof value[0] === 'object' && 'text' in value[0]) {
+   517→          fields[key] = value[0].text;
+   518→        } else {
+   519→          fields[key] = value;
+   520→        }
+   521→      });
+   522→      return fields;
+   523→    }).sort((a, b) => {
+   524→      const vA = parseFloat(a.version) || 0;
+   525→      const vB = parseFloat(b.version) || 0;
+   526→      return vA - vB;
+   527→    });
+   528→
+   529→    res.json({ success: true, versions: normalizedVersions });
+   530→  } catch (error) {
+   531→    res.status(500).json({ success: false, error: error.message });
+   532→  }
+   533→});
+   534→
+   535→// ========== AI API ==========
+   536→
+   537→// 调用Claude API
+   538→app.post('/api/ai/claude', async (req, res) => {
+   539→  try {
+   540→    const { prompt, model, maxTokens } = req.body;
+   541→    const result = await aiClient.callClaude(prompt, { model, maxTokens });
+   542→    res.json({ success: true, result, model: model || 'claude-sonnet-4-5' });
+   543→  } catch (error) {
+   544→    res.status(500).json({ success: false, error: error.message });
+   545→  }
+   546→});
+   547→
+   548→// 调用Gemini API
+   549→app.post('/api/ai/gemini', async (req, res) => {
+   550→  try {
+   551→    const { prompt, model, maxTokens } = req.body;
+   552→    const result = await aiClient.callGemini(prompt, { model, maxTokens });
+   553→    res.json({ success: true, result, model: model || 'gemini-2.0-flash' });
+   554→  } catch (error) {
+   555→    res.status(500).json({ success: false, error: error.message });
+   556→  }
+   557→});
+   558→
+   559→// 调用GLM API
+   560→app.post('/api/ai/glm', async (req, res) => {
+   561→  try {
+   562→    const { prompt, model, maxTokens } = req.body;
+   563→    const result = await aiClient.callGLM(prompt, { model, maxTokens });
+   564→    res.json({ success: true, result, model: model || 'glm-5' });
+   565→  } catch (error) {
+   566→    res.status(500).json({ success: false, error: error.message });
+   567→  }
+   568→});
+   569→
+   570→// 统一AI调用接口 - 根据任务类型自动选择模型
+   571→app.post('/api/ai/generate', async (req, res) => {
+   572→  try {
+   573→    const { taskType, prompt, model, maxTokens } = req.body;
+   574→    const result = await aiClient.callModel(taskType, prompt, { model, maxTokens });
+   575→    const usedModel = model || aiClient.selectModelByTask(taskType);
+   576→    res.json({ success: true, result, model: usedModel, taskType });
+   577→  } catch (error) {
+   578→    res.status(500).json({ success: false, error: error.message });
+   579→  }
+   580→});
+   581→
+   582→app.listen(PORT, () => {
+   583→  console.log(`Server running on port ${PORT}`);
+   584→  console.log(`Available endpoints:`);
+   585→  console.log(`  GET  /health`);
+   586→  console.log(`  GET  /api/users/:userId`);
+   587→  console.log(`  POST /api/users`);
+   588→  console.log(`  GET  /api/materials`);
+   589→  console.log(`  POST /api/materials`);
+   590→  console.log(`  POST /api/ai/claude`);
+   591→  console.log(`  POST /api/ai/gemini`);
+   592→  console.log(`  POST /api/ai/glm`);
+   593→  console.log(`  POST /api/ai/generate`);
+   594→});
+   595→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

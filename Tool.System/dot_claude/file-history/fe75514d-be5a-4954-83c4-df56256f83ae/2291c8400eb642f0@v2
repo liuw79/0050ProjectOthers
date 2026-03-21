@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""为飞书文档设置权限 - 让所有人可查看"""
+
+import requests
+import json
+
+# 配置
+APP_ID = "cli_a9f1c604d6b9dbc9"
+APP_SECRET = "JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8"
+
+# 文档token列表
+DOC_TOKENS = [
+    ("雯祯", "WcD1deIu4ob7qXxbTlJcgPSXnNe"),
+    ("邬培莹", "YuG1d5M2BoJGJuxrqirc1eXCnme"),
+    ("碧容", "NCuvdVouIoEzs5xSyrYcfas8n7c"),
+    ("阿左", "Kay4d0pJ2oL6wux1KnjcJOBynnd"),
+    ("丁芹伟", "OCZadv5Z0oIVrIxkTbPc7JJWnLh"),
+    ("黄文静", "GvaQdBxqyotGabxKeCacN3OCnAh"),
+]
+
+def get_tenant_token():
+    """获取tenant_access_token"""
+    url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal"
+    data = {
+        "app_id": APP_ID,
+        "app_secret": APP_SECRET
+    }
+    resp = requests.post(url, json=data)
+    result = resp.json()
+    if result.get("code") == 0:
+        return result["tenant_access_token"]
+    else:
+        print(f"获取token失败: {result}")
+        return None
+
+def set_permission(token, doc_token, name):
+    """设置文档权限 - 让组织内所有人可查看"""
+    url = f"https://open.feishu.cn/open-apis/drive/v1/permissions/{doc_token}/members"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+
+    # 尝试设置组织内所有人可查看
+    data = {
+        "member_type": "userid",
+        "member_id": "all",  # 组织内所有人
+        "perm": "view"
+    }
+
+    print(f"\n尝试为 {name} 设置权限...")
+
+    # 方法1: 使用permissions API
+    resp = requests.post(url, headers=headers, json=data)
+    result = resp.json()
+    print(f"  方法1结果: {result}")
+
+    # 如果失败，尝试方法2: 使用permissionMember_create
+    if result.get("code") != 0:
+        url2 = f"https://open.feishu.cn/open-apis/drive/v1/permissionMembers?token={doc_token}&type=docx"
+        data2 = {
+            "member_type": "openid",
+            "member_id": "ou_xxxxx",  # 需要用户的open_id
+            "perm": "view"
+        }
+        resp2 = requests.post(url2, headers=headers, json=data2)
+        result2 = resp2.json()
+        print(f"  方法2结果: {result2}")
+
+    return result
+
+def main():
+    print("=" * 50)
+    print("设置飞书文档权限")
+    print("=" * 50)
+
+    # 获取token
+    token = get_tenant_token()
+    if not token:
+        print("无法获取token，退出")
+        return
+
+    print(f"Token获取成功: {token[:20]}...")
+
+    # 为每个文档设置权限
+    for name, doc_token in DOC_TOKENS:
+        set_permission(token, doc_token, name)
+
+    print("\n" + "=" * 50)
+    print("如果以上方法都失败，需要:")
+    print("1. 在飞书开放平台给应用添加 'drive:drive' 权限")
+    print("2. 或者手动在飞书中将文档移动到共享空间")
+    print("=" * 50)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 高维学堂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "阿里巴巴普惠体", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #EFEFEF;
+            min-height: 100vh;
+            color: #231815;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* 顶部用户信息区域 */
+        .header {
+            background: linear-gradient(135deg, #00A0EB 0%, #0090d5 100%);
+            padding: 36px 20px 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        .settings-btn {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .settings-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-container {
+            position: relative;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #C3E7F4 0%, #91D6F2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 4px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border-radius: 50%;
+            border: 3px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .user-info h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .user-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .user-level {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        /* 统计数据区域 */
+        .stats-section {
+            background: white;
+            margin: -20px 20px 0;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00A0EB;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* 功能菜单区域 */
+        .menu-section {
+            padding: 20px;
+            background: #EFEFEF;
+        }
+
+        .menu-group {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #f5f5f5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background: #f8f9fa;
+            transform: translateX(4px);
+        }
+
+        .menu-item:active {
+            background: #e9ecef;
+        }
+
+        .menu-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .menu-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #231815;
+            margin-bottom: 2px;
+        }
+
+        .menu-subtitle {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .menu-badge {
+            background: #FF4757;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .menu-arrow {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* 不同图标的背景色 */
+        .icon-blue { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); color: #1976D2; }
+        .icon-orange { background: linear-gradient(135deg, #FFF3E0 0%, #FFCC80 100%); color: #F57C00; }
+        .icon-purple { background: linear-gradient(135deg, #F3E5F5 0%, #CE93D8 100%); color: #7B1FA2; }
+        .icon-green { background: linear-gradient(135deg, #E8F5E8 0%, #A5D6A7 100%); color: #388E3C; }
+        .icon-red { background: linear-gradient(135deg, #FFEBEE 0%, #EF9A9A 100%); color: #D32F2F; }
+        .icon-teal { background: linear-gradient(135deg, #E0F2F1 0%, #80CBC4 100%); color: #00695C; }
+        .icon-pink { background: linear-gradient(135deg, #FCE4EC 0%, #F48FB1 100%); color: #C2185B; }
+        .icon-amber { background: linear-gradient(135deg, #FFF8E1 0%, #FFD54F 100%); color: #FF8F00; }
+
+        /* 底部间距 */
+        .bottom-space {
+            height: 20px;
+        }
+
+        /* 动画效果 */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-group {
+            animation: slideInUp 0.6s ease forwards;
+        }
+
+        .menu-group:nth-child(1) { animation-delay: 0.1s; }
+        .menu-group:nth-child(2) { animation-delay: 0.2s; }
+        .menu-group:nth-child(3) { animation-delay: 0.3s; }
+        .menu-group:nth-child(4) { animation-delay: 0.4s; }
+
+        /* 响应式优化 */
+        @media (max-width: 375px) {
+            .container {
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 32px 16px 26px;
+            }
+            
+            .menu-section {
+                padding: 16px;
+            }
+            
+            .stats-section {
+                margin: -16px 16px 0;
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部用户信息区域 -->
+        <div class="header">
+            <div class="header-top">
+                <div class="back-btn">←</div>
+                <div class="settings-btn">⚙️</div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="avatar-container">
+                    <div class="avatar">👤</div>
+                    <div class="status-badge">✓</div>
+                </div>
+                <div class="user-info">
+                    <h2>刘伟</h2>
+                    <div class="user-subtitle">高维学堂 · 三年级</div>
+                    <div class="user-level">🌟 VIP会员</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 统计数据区域 -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1413</div>
+                    <div class="stat-label">🌺花</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">上课</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">评价</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">关注</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 功能菜单区域 -->
+        <div class="menu-section">
+            <!-- 学习相关 -->
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon icon-blue">📚</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">已报名待上课</div>
+                            <div class="menu-subtitle">1门即将开课</div>
+                        </div>
+                        <div>
+                            <span class="menu-badge">1</span>
+                            <span class="menu-arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-orange">📝</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">我的学习记录</div>
+                            <div class="menu-subtitle">查看学习进度</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-purple">🎓</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">我的听课凭证</div>
+                            <div class="menu-subtitle">证书与认证</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-green">🎫</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">我的学习券</div>
+                            <div class="menu-subtitle">优惠券管理</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 评价与社交 -->
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon icon-red">⭐</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">课后评价</div>
+                            <div class="menu-subtitle">分享学习体验</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-teal">🏆</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">我要复训</div>
+                            <div class="menu-subtitle">巩固学习成果</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-pink">🎁</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">开具发票</div>
+                            <div class="menu-subtitle">财务报销</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 社交功能 -->
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon icon-amber">👥</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">邀请好友</div>
+                            <div class="menu-subtitle">分享学习乐趣</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-blue">🤝</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">我的好友</div>
+                            <div class="menu-subtitle">好友数: 7</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 特权与服务 -->
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon icon-purple">🌺</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">小红花商城</div>
+                            <div class="menu-subtitle">兑换精美礼品</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-orange">🔒</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">已兑换特权</div>
+                            <div class="menu-subtitle">查看特权状态</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-green">📋</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">全部订单</div>
+                            <div class="menu-subtitle">订单管理</div>
+                        </div>
+                        <div>
+                            <span class="menu-badge">3</span>
+                            <span class="menu-arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-icon icon-teal">💼</div>
+                    <div class="menu-content">
+                        <div class="menu-text">
+                            <div class="menu-title">企业学习卡管理</div>
+                            <div class="menu-subtitle">企业账户</div>
+                        </div>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-space"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 返回按钮
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('返回上一页');
+            }, 150);
+        });
+        
+        // 设置按钮
+        document.querySelector('.settings-btn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('打开设置');
+            }, 150);
+        });
+        
+        // 统计数据点击
+        document.querySelectorAll('.stat-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+        
+        // 菜单项点击效果
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('.menu-title').textContent;
+                
+                // 添加点击动画
+                this.style.transform = 'translateX(8px)';
+                this.style.background = '#e3f2fd';
+                
+                setTimeout(() => {
+                    this.style.transform = '';
+                    this.style.background = '';
+                    
+                    // 根据不同菜单项执行不同操作
+                    if (title === '小红花商城') {
+                        window.location.href = 'xiaohonghua_mall_v2.html';
+                    } else {
+                        alert(`点击了: ${title}`);
+                    }
+                }, 200);
+            });
+        });
+        
+        // 头像点击
+        document.querySelector('.avatar').addEventListener('click', function() {
+            this.style.transform = 'scale(1.1) rotate(5deg)';
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('编辑头像');
+            }, 300);
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // 添加触摸反馈
+        document.querySelectorAll('.menu-item, .stat-item, .back-btn, .settings-btn').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            });
+            
+            element.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>

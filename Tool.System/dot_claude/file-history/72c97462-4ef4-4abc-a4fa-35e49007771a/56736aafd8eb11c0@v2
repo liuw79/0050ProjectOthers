@@ -1,0 +1,130 @@
+<script setup lang="ts">
+import type { H5Feedback } from '@/types/h5'
+
+interface Props {
+  feedbacks: H5Feedback[]
+}
+
+defineProps<Props>()
+
+// 获取头像文字
+const getAvatarText = (name: string) => {
+  return name.charAt(0)
+}
+</script>
+
+<template>
+  <div class="h5-section" id="feedback">
+    <div class="h5-section-header">
+      <h2 class="h5-section-title">学友反馈</h2>
+      <span class="h5-section-more">{{ feedbacks.length }}条反馈</span>
+    </div>
+    <div class="h5-section-content">
+      <div v-if="feedbacks.length === 0" class="h5-feedback-empty">
+        暂无学友反馈
+      </div>
+      <div v-else class="h5-feedback-list">
+        <div v-for="feedback in feedbacks" :key="feedback.id" class="h5-feedback-card">
+          <!-- 头部 -->
+          <div class="h5-feedback-header">
+            <div class="h5-feedback-avatar">
+              <span v-if="!feedback.avatar">{{ getAvatarText(feedback.name) }}</span>
+              <img v-else :src="feedback.avatar" :alt="feedback.name" />
+            </div>
+            <div class="h5-feedback-user">
+              <span class="h5-feedback-name">{{ feedback.name }}</span>
+              <span class="h5-feedback-company">{{ feedback.company }}{{ feedback.position ? ` · ${feedback.position}` : '' }}</span>
+            </div>
+            <!-- 评分 -->
+            <div v-if="feedback.rating" class="h5-feedback-rating">
+              <svg v-for="i in 5" :key="i" width="12" height="12" viewBox="0 0 24 24" :fill="i <= (feedback.rating || 0) ? '#F08519' : '#E5E5E5'">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- 内容 -->
+          <p class="h5-feedback-content">"{{ feedback.content }}"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-feedback-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--h5-text-light);
+  font-size: 14px;
+}
+
+.h5-feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.h5-feedback-card {
+  background: var(--h5-bg-light);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.h5-feedback-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.h5-feedback-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--h5-text-white);
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.h5-feedback-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h5-feedback-user {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.h5-feedback-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--h5-text-dark);
+}
+
+.h5-feedback-company {
+  font-size: 12px;
+  color: var(--h5-text-light);
+  margin-top: 2px;
+}
+
+.h5-feedback-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.h5-feedback-content {
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  line-height: 1.7;
+}
+</style>

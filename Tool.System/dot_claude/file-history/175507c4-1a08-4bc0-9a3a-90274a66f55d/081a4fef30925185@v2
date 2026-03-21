@@ -1,0 +1,44 @@
+# 飞书应用配置
+LARK_APP_ID=cli_a90590cbbdb8dcd5
+LARK_APP_SECRET=usjMVVhp5XS8RlplsBpWedSKAIYDDk6U
+LARK_VERIFICATION_TOKEN=
+LARK_ENCRYPT_KEY=
+LARK_REDIRECT_URI=http://localhost:3000/auth/callback
+
+# 多维表格配置
+LARK_USERS_APP_TOKEN=
+LARK_USERS_TABLE_ID=
+LARK_MATERIALS_APP_TOKEN=VoZabSB3NawsUUslR3ycKNa1nzg
+LARK_MATERIALS_TABLE_ID=tbl3lkLFcjnbqcWv
+LARK_COURSES_APP_TOKEN=VoZabSB3NawsUUslR3ycKNa1nzg
+LARK_COURSES_TABLE_ID=tblq3f0DvlaMrcll
+LARK_KNOWLEDGE_APP_TOKEN=
+LARK_KNOWLEDGE_TABLE_ID=
+LARK_SKILLS_APP_TOKEN=
+LARK_SKILLS_TABLE_ID=
+
+# 课程段落表配置
+LARK_SEGMENTS_APP_TOKEN=VoZabSB3NawsUUslR3ycKNa1nzg
+LARK_SEGMENTS_TABLE_ID=tblisnJgNwYsqqmf
+
+# ========================================
+# 多模型 API 配置（v3.0）
+# ========================================
+
+# API 代理接口
+API_BASE_URL=https://api.openai-proxy.org
+API_KEY=sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI
+
+# 支持的模型（只支持这两个）
+MODEL_GEMINI=gemini-3.1-pro-preview
+MODEL_GPT=gpt-5.4
+
+# ========================================
+# 旧配置（保留兼容）
+# ========================================
+GEMINI_API_KEY=sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI
+GEMINI_BASE_URL=https://api.openai-proxy.org
+ZHIPUAI_API_KEY=01a5ce785b5f48d6bf0ee2db3b3662f2.DExK9YQTXrjBxFlB
+
+# 服务器配置
+PORT=3000

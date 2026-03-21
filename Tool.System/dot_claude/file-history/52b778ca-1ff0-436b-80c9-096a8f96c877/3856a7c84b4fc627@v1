@@ -1,0 +1,39 @@
+#!/bin/bash
+# OpenClaw 模型切换脚本
+# 用法: ./switch-model.sh [opus-4.5|opus-4.6|kimi|glm-5|glm-4.7]
+
+CONFIG_FILE="$HOME/.openclaw/openclaw.json"
+
+case "$1" in
+  opus-4.5)
+    MODEL="anthropic/claude-opus-4-5"
+    ;;
+  opus-4.6)
+    MODEL="anthropic/claude-opus-4-6"
+    ;;
+  kimi)
+    MODEL="moonshot/kimi-k2.5"
+    ;;
+  glm-5)
+    MODEL="zai/glm-5"
+    ;;
+  glm-4.7)
+    MODEL="zai/glm-4.7"
+    ;;
+  *)
+    echo "用法: $0 [opus-4.5|opus-4.6|kimi|glm-5|glm-4.7]"
+    echo ""
+    echo "当前模型:"
+    jq -r '.agents.defaults.model.primary' "$CONFIG_FILE" 2>/dev/null || echo "无法读取配置"
+    exit 1
+    ;;
+esac
+
+echo "切换到: $MODEL"
+jq --arg m "$MODEL" '.agents.defaults.model.primary = $m' "$CONFIG_FILE" > /tmp/oc.json && mv /tmp/oc.json "$CONFIG_FILE"
+
+echo "等待热重载..."
+sleep 2
+
+echo "验证:"
+tail -3 ~/.openclaw/logs/gateway.log 2>/dev/null | grep -E "reload|agent model" || echo "检查日志: tail -f ~/.openclaw/logs/gateway.log"

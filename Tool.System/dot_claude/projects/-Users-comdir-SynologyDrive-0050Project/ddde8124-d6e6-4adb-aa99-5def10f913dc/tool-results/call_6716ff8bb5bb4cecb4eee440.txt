@@ -1,0 +1,871 @@
+md2html.js:1:#!/usr/bin/env node
+md2html.js:2:/**
+md2html.js:3: * Markdown 转 HTML 转换器
+md2html.js:4: *
+md2html.js:5: * 用法：
+md2html.js:6: *   node md2html.js input.md output.html
+md2html.js:7: *   node md2html.js input.md  # 输出到同名 .html 文件
+md2html.js:8: *
+md2html.js:9: * 专门为 AI 教练评估报告设计，保留原有邮件样式。
+md2html.js:10: */
+md2html.js:11:
+md2html.js:12:const fs = require('fs');
+md2html.js:13:const path = require('path');
+md2html.js:14:
+md2html.js:15:// ==================== 样式模板 ====================
+md2html.js:16:
+md2html.js:17:const HTML_TEMPLATE = `<!DOCTYPE html>
+md2html.js:18:<html lang="zh-CN">
+md2html.js:19:<head>
+md2html.js:20:  <meta charset="UTF-8">
+md2html.js:21:  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+md2html.js:22:  <title>AI教练评估报告</title>
+md2html.js:23:  <style>
+md2html.js:24:    * {
+md2html.js:25:      margin: 0;
+md2html.js:26:      padding: 0;
+md2html.js:27:      box-sizing: border-box;
+md2html.js:28:    }
+md2html.js:29:
+md2html.js:30:    body {
+md2html.js:31:      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+md2html.js:32:      line-height: 1.8;
+md2html.js:33:      color: #333;
+md2html.js:34:      background: #f5f5f5;
+md2html.js:35:      padding: 20px;
+md2html.js:36:    }
+md2html.js:37:
+md2html.js:38:    .container {
+md2html.js:39:      max-width: 800px;
+md2html.js:40:      margin: 0 auto;
+md2html.js:41:      background: #fff;
+md2html.js:42:      border-radius: 12px;
+md2html.js:43:      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+md2html.js:44:      overflow: hidden;
+md2html.js:45:    }
+md2html.js:46:
+md2html.js:47:    .header {
+md2html.js:48:      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+md2html.js:49:      color: #fff;
+md2html.js:50:      padding: 30px;
+md2html.js:51:      text-align: center;
+md2html.js:52:    }
+md2html.js:53:
+md2html.js:54:    .header h1 {
+md2html.js:55:      font-size: 24px;
+md2html.js:56:      margin-bottom: 8px;
+md2html.js:57:    }
+md2html.js:58:
+md2html.js:59:    .header .subtitle {
+md2html.js:60:      opacity: 0.9;
+md2html.js:61:      font-size: 14px;
+md2html.js:62:    }
+md2html.js:63:
+md2html.js:64:    .content {
+md2html.js:65:      padding: 30px;
+md2html.js:66:    }
+md2html.js:67:
+md2html.js:68:    h1 { font-size: 22px; margin: 25px 0 15px; color: #333; border-bottom: 2px solid #667eea; padding-bottom: 8px; }
+md2html.js:69:    h2 { font-size: 18px; margin: 20px 0 12px; color: #444; }
+md2html.js:70:    h3 { font-size: 16px; margin: 15px 0 10px; color: #555; }
+md2html.js:71:    h4 { font-size: 15px; margin: 12px 0 8px; color: #666; }
+md2html.js:72:
+md2html.js:73:    p { margin: 10px 0; }
+md2html.js:74:
+md2html.js:75:    strong { color: #333; }
+md2html.js:76:    em { color: #666; }
+md2html.js:77:
+md2html.js:78:    blockquote {
+md2html.js:79:      border-left: 4px solid #667eea;
+md2html.js:80:      margin: 15px 0;
+md2html.js:81:      padding: 10px 20px;
+md2html.js:82:      background: #f8f9ff;
+md2html.js:83:      color: #555;
+md2html.js:84:    }
+md2html.js:85:
+md2html.js:86:    blockquote p { margin: 5px 0; }
+md2html.js:87:
+md2html.js:88:    ul, ol {
+md2html.js:89:      margin: 10px 0;
+md2html.js:90:      padding-left: 25px;
+md2html.js:91:    }
+md2html.js:92:
+md2html.js:93:    li {
+md2html.js:94:      margin: 5px 0;
+md2html.js:95:    }
+md2html.js:96:
+md2html.js:97:    code {
+md2html.js:98:      background: #f5f5f5;
+md2html.js:99:      padding: 2px 6px;
+md2html.js:100:      border-radius: 3px;
+md2html.js:101:      font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+md2html.js:102:      font-size: 0.9em;
+md2html.js:103:    }
+md2html.js:104:
+md2html.js:105:    pre {
+md2html.js:106:      background: #2d2d2d;
+md2html.js:107:      color: #f8f8f2;
+md2html.js:108:      padding: 15px;
+md2html.js:109:      border-radius: 8px;
+md2html.js:110:      overflow-x: auto;
+md2html.js:111:      margin: 15px 0;
+md2html.js:112:    }
+md2html.js:113:
+md2html.js:114:    pre code {
+md2html.js:115:      background: none;
+md2html.js:116:      padding: 0;
+md2html.js:117:      color: inherit;
+md2html.js:118:    }
+md2html.js:119:
+md2html.js:120:    hr {
+md2html.js:121:      border: none;
+md2html.js:122:      height: 1px;
+md2html.js:123:      background: #e0e0e0;
+md2html.js:124:      margin: 25px 0;
+md2html.js:125:    }
+md2html.js:126:
+md2html.js:127:    table {
+md2html.js:128:      width: 100%;
+md2html.js:129:      border-collapse: collapse;
+md2html.js:130:      margin: 15px 0;
+md2html.js:131:    }
+md2html.js:132:
+md2html.js:133:    th, td {
+md2html.js:134:      border: 1px solid #e0e0e0;
+md2html.js:135:      padding: 10px 12px;
+md2html.js:136:      text-align: left;
+md2html.js:137:    }
+md2html.js:138:
+md2html.js:139:    th {
+md2html.js:140:      background: #f8f9ff;
+md2html.js:141:      font-weight: 600;
+md2html.js:142:    }
+md2html.js:143:
+md2html.js:144:    tr:nth-child(even) {
+md2html.js:145:      background: #fafafa;
+md2html.js:146:    }
+md2html.js:147:
+md2html.js:148:    .score-box {
+md2html.js:149:      display: inline-block;
+md2html.js:150:      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+md2html.js:151:      color: #fff;
+md2html.js:152:      font-size: 28px;
+md2html.js:153:      font-weight: bold;
+md2html.js:154:      padding: 15px 30px;
+md2html.js:155:      border-radius: 10px;
+md2html.js:156:      margin: 15px 0;
+md2html.js:157:    }
+md2html.js:158:
+md2html.js:159:    .highlight {
+md2html.js:160:      background: #fff3cd;
+md2html.js:161:      padding: 2px 6px;
+md2html.js:162:      border-radius: 3px;
+md2html.js:163:    }
+md2html.js:164:
+md2html.js:165:    .footer {
+md2html.js:166:      background: #f8f9ff;
+md2html.js:167:      padding: 20px 30px;
+md2html.js:168:      text-align: center;
+md2html.js:169:      color: #888;
+md2html.js:170:      font-size: 13px;
+md2html.js:171:      border-top: 1px solid #e0e0e0;
+md2html.js:172:    }
+md2html.js:173:
+md2html.js:174:    .footer a {
+md2html.js:175:      color: #667eea;
+md2html.js:176:      text-decoration: none;
+md2html.js:177:    }
+md2html.js:178:
+md2html.js:179:    @media (max-width: 600px) {
+md2html.js:180:      body { padding: 10px; }
+md2html.js:181:      .content { padding: 20px; }
+md2html.js:182:      .header { padding: 20px; }
+md2html.js:183:      h1 { font-size: 18px; }
+md2html.js:184:      h2 { font-size: 16px; }
+md2html.js:185:    }
+md2html.js:186:  </style>
+md2html.js:187:</head>
+md2html.js:188:<body>
+md2html.js:189:  <div class="container">
+md2html.js:190:    <div class="header">
+md2html.js:191:      <h1>🎯 AI教练评估报告</h1>
+md2html.js:192:      <div class="subtitle">高维学堂 · 班主任能力提升系统</div>
+md2html.js:193:    </div>
+md2html.js:194:    <div class="content">
+md2html.js:195:{{CONTENT}}
+md2html.js:196:    </div>
+md2html.js:197:    <div class="footer">
+md2html.js:198:      本报告由 <a href="https://gaowei.com">高维学堂 AI教练</a> 自动生成<br>
+md2html.js:199:      如有疑问，请联系班主任团队
+md2html.js:200:    </div>
+md2html.js:201:  </div>
+md2html.js:202:</body>
+md2html.js:203:</html>`;
+md2html.js:204:
+md2html.js:205:// ==================== Markdown 转 HTML ====================
+md2html.js:206:
+md2html.js:207:function markdownToHtml(md) {
+md2html.js:208:  let html = md;
+md2html.js:209:
+md2html.js:210:  // 移除 YAML frontmatter
+md2html.js:211:  html = html.replace(/^---[\s\S]*?---\n*/, '');
+md2html.js:212:
+md2html.js:213:  // 移除文档标题（已在 header 中显示）
+md2html.js:214:  html = html.replace(/^# 班主任AI教练评估报告\n*/i, '');
+md2html.js:215:  html = html.replace(/^> 本报告由.*?\n\n?/s, '');
+md2html.js:216:  html = html.replace(/^---\n*/, '');
+md2html.js:217:
+md2html.js:218:  // 处理标题
+md2html.js:219:  html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
+md2html.js:220:  html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+md2html.js:221:  html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+md2html.js:222:  html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+md2html.js:223:
+md2html.js:224:  // 处理分数显示 (如 **85分** → 特殊样式)
+md2html.js:225:  html = html.replace(/\*\*(\d{1,3})分?\*\*/g, '<span class="score-box">$1分</span>');
+md2html.js:226:
+md2html.js:227:  // 处理加粗和斜体
+md2html.js:228:  html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+md2html.js:229:  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+md2html.js:230:  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+md2html.js:231:
+md2html.js:232:  // 处理引用块
+md2html.js:233:  html = html.replace(/^&gt; (.*?)$/gm, '<blockquote><p>$1</p></blockquote>');
+md2html.js:234:  // 合并连续的引用块
+md2html.js:235:  html = html.replace(/<\/blockquote>\n<blockquote>/g, '\n');
+md2html.js:236:
+md2html.js:237:  // 处理无序列表
+md2html.js:238:  html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+md2html.js:239:  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+md2html.js:240:
+md2html.js:241:  // 处理有序列表
+md2html.js:242:  html = html.replace(/^\d+\. (.*?)$/gm, '<li>$1</li>');
+md2html.js:243:  // 注意：有序列表也可能被上面的无序列表处理覆盖，这里简化处理
+md2html.js:244:
+md2html.js:245:  // 处理行内代码
+md2html.js:246:  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+md2html.js:247:
+md2html.js:248:  // 处理代码块
+md2html.js:249:  html = html.replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+md2html.js:250:
+md2html.js:251:  // 处理水平线
+md2html.js:252:  html = html.replace(/^---$/gm, '<hr>');
+md2html.js:253:
+md2html.js:254:  // 处理表格（简化处理）
+md2html.js:255:  html = html.replace(/^\| (.*) \|$/gm, function(match, content) {
+md2html.js:256:    const cells = content.split(' | ').map(c => c.trim());
+md2html.js:257:    const isHeader = cells.every(c => /^[-:]+$/.test(c));
+md2html.js:258:    if (isHeader) return ''; // 跳过分隔行
+md2html.js:259:
+md2html.js:260:    const cellTag = 'td';
+md2html.js:261:    return '<tr>' + cells.map(c => `<${cellTag}>${c}</${cellTag}>`).join('') + '</tr>\n';
+md2html.js:262:  });
+md2html.js:263:
+md2html.js:264:  // 包装表格
+md2html.js:265:  html = html.replace(/(<tr>.*<\/tr>\n?)+/g, '<table>$&</table>');
+md2html.js:266:
+md2html.js:267:  // 处理段落（不在其他标签中的文本）
+md2html.js:268:  html = html.split('\n\n').map(para => {
+md2html.js:269:    para = para.trim();
+md2html.js:270:    if (!para) return '';
+md2html.js:271:    // 如果已经是 HTML 块级元素，不再包装
+md2html.js:272:    if (/^<(h[1-4]|ul|ol|li|blockquote|pre|table|hr|div|p)/.test(para)) {
+md2html.js:273:      return para;
+md2html.js:274:    }
+md2html.js:275:    // 如果以 HTML 块级元素结尾
+md2html.js:276:    if (/<\/(h[1-4]|ul|ol|li|blockquote|pre|table|div|p)>$/.test(para)) {
+md2html.js:277:      return para;
+md2html.js:278:    }
+md2html.js:279:    return `<p>${para.replace(/\n/g, '<br>')}</p>`;
+md2html.js:280:  }).join('\n');
+md2html.js:281:
+md2html.js:282:  // 清理多余空行
+md2html.js:283:  html = html.replace(/\n{3,}/g, '\n\n');
+md2html.js:284:
+md2html.js:285:  return html;
+md2html.js:286:}
+md2html.js:287:
+md2html.js:288:// ==================== 主函数 ====================
+md2html.js:289:
+md2html.js:290:function main() {
+md2html.js:291:  const args = process.argv.slice(2);
+md2html.js:292:
+md2html.js:293:  if (args.length === 0) {
+md2html.js:294:    console.log(`
+md2html.js:295:Markdown 转 HTML 转换器
+md2html.js:296:
+md2html.js:297:用法：
+md2html.js:298:  node md2html.js input.md [output.html]
+md2html.js:299:  node md2html.js input.md  # 输出到 input.html
+md2html.js:300:
+md2html.js:301:参数：
+md2html.js:302:  input.md    输入的 Markdown 文件
+md2html.js:303:  output.html 输出的 HTML 文件（可选，默认同名）
+md2html.js:304:`);
+md2html.js:305:    process.exit(0);
+md2html.js:306:  }
+md2html.js:307:
+md2html.js:308:  const inputPath = args[0];
+md2html.js:309:  let outputPath = args[1];
+md2html.js:310:
+md2html.js:311:  if (!fs.existsSync(inputPath)) {
+md2html.js:312:    console.error(`❌ 文件不存在: ${inputPath}`);
+md2html.js:313:    process.exit(1);
+md2html.js:314:  }
+md2html.js:315:
+md2html.js:316:  // 默认输出路径
+md2html.js:317:  if (!outputPath) {
+md2html.js:318:    outputPath = inputPath.replace(/\.md$/i, '.html');
+md2html.js:319:  }
+md2html.js:320:
+md2html.js:321:  // 读取 MD 文件
+md2html.js:322:  const mdContent = fs.readFileSync(inputPath, 'utf-8');
+md2html.js:323:
+md2html.js:324:  // 转换
+md2html.js:325:  const htmlContent = markdownToHtml(mdContent);
+md2html.js:326:
+md2html.js:327:  // 填充模板
+md2html.js:328:  const finalHtml = HTML_TEMPLATE.replace('{{CONTENT}}', htmlContent);
+md2html.js:329:
+md2html.js:330:  // 写入 HTML 文件
+md2html.js:331:  fs.writeFileSync(outputPath, finalHtml, 'utf-8');
+md2html.js:332:
+md2html.js:333:  console.log(`✅ 转换完成`);
+md2html.js:334:  console.log(`   输入: ${inputPath}`);
+md2html.js:335:  console.log(`   输出: ${outputPath}`);
+md2html.js:336:}
+md2html.js:337:
+md2html.js:338:main();
+SKILL.md:1:---
+SKILL.md:2:name: coach-banzhuren-v4
+SKILL.md:3:description: 班主任AI教练评估系统。当用户需要评估班主任主持录音、生成评估报告时使用。触发词："评估班主任"、"AI教练评估"、"coach班主任"、"教练班主任"。**执行流程：1.自动扫描最新数据 2.展示多选选单 3.用户选择后逐个评估 4.选择发送方式 5.发送报告**
+SKILL.md:4:---
+SKILL.md:5:
+SKILL.md:6:# 班主任AI教练评估（精简版）
+SKILL.md:7:
+SKILL.md:8:## 设计原则（Gemini 方案）
+SKILL.md:9:
+SKILL.md:10:```
+SKILL.md:11:┌─────────────────────────────────────────────────────────────────┐
+SKILL.md:12:│  统一输出 Markdown → 按需转换 HTML → 交给 skill 发送            │
+SKILL.md:13:└─────────────────────────────────────────────────────────────────┘
+SKILL.md:14:
+SKILL.md:15:  coach.js                    md2html.js              skill
+SKILL.md:16:      │                            │                     │
+SKILL.md:17:      ▼                            ▼                     ▼
+SKILL.md:18:  录音稿 ──→ Markdown报告 ──→ ┌─→ HTML ──→ send-email
+SKILL.md:19:                            │
+SKILL.md:20:                            └─→ MD ──→ publish-feishu
+SKILL.md:21:```
+SKILL.md:22:
+SKILL.md:23:**核心改进：**
+SKILL.md:24:- ✅ coach.js 只负责生成 Markdown（不发送）
+SKILL.md:25:- ✅ 提示词版本自动扫描（不再硬编码）
+SKILL.md:26:- ✅ 发送工作完全交给 skill 处理
+SKILL.md:27:
+SKILL.md:28:---
+SKILL.md:29:
+SKILL.md:30:## 触发词
+SKILL.md:31:
+SKILL.md:32:- "评估班主任"
+SKILL.md:33:- "AI教练评估"
+SKILL.md:34:- "coach班主任"
+SKILL.md:35:- "教练班主任"
+SKILL.md:36:
+SKILL.md:37:---
+SKILL.md:38:
+SKILL.md:39:## 执行流程
+SKILL.md:40:
+SKILL.md:41:### Step 1: 自动扫描数据
+SKILL.md:42:
+SKILL.md:43:1. 扫描 `./现场/` 目录，找到最新日期文件夹
+SKILL.md:44:2. 解析该日期下所有课程文件夹
+SKILL.md:45:3. 提取：日期、课程名、班主任名、录音文件路径
+SKILL.md:46:
+SKILL.md:47:### Step 2: 展示多选选单
+SKILL.md:48:
+SKILL.md:49:使用 AskUserQuestion 工具：
+SKILL.md:50:
+SKILL.md:51:```
+SKILL.md:52:📋 最新一批数据：2026-03-13 ~ 03-14
+SKILL.md:53:
+SKILL.md:54:请选择要评估的班主任（可多选）：
+SKILL.md:55:
+SKILL.md:56:| # | 日期 | 课程 | 班主任 | 状态 |
+SKILL.md:57:|---|------|------|--------|------|
+SKILL.md:58:| 1 | 0313 | 情绪驱动产品创新 | 雯祯 | 待评估 |
+SKILL.md:59:| 2 | 0313 | 超级面试官 | 邬培莹 | 待评估 |
+SKILL.md:60:| 3 | 0314 | 超级转化率 | 杨哲 | 待评估 |
+SKILL.md:61:
+SKILL.md:62:默认：全部
+SKILL.md:63:```
+SKILL.md:64:
+SKILL.md:65:### Step 3: 确认参数
+SKILL.md:66:
+SKILL.md:67:| 问题 | 默认值 | 可选项 |
+SKILL.md:68:|------|--------|--------|
+SKILL.md:69:| 模型？ | `gemini3.1` | `gemini3.1` / `gpt5.4` |
+SKILL.md:70:
+SKILL.md:71:### Step 4: 逐个生成报告
+SKILL.md:72:
+SKILL.md:73:```
+SKILL.md:74:[1/3] 雯祯 → 生成 Markdown 报告 ✓
+SKILL.md:75:[2/3] 碧容 → 生成 Markdown 报告 ✓
+SKILL.md:76:[3/3] 丁芹伟 → 生成 Markdown 报告 ✓
+SKILL.md:77:```
+SKILL.md:78:
+SKILL.md:79:**每个报告生成后：**
+SKILL.md:80:
+SKILL.md:81:1. 读取报告前 500 字展示预览
+SKILL.md:82:2. 询问发送方式：
+SKILL.md:83:
+SKILL.md:84:```
+SKILL.md:85:📧 请选择发送方式：
+SKILL.md:86:
+SKILL.md:87:A. 只发邮件（HTML格式）
+SKILL.md:88:B. 只发飞书（Markdown格式）
+SKILL.md:89:C. 两者都发
+SKILL.md:90:D. 暂不发送（仅保存）
+SKILL.md:91:```
+SKILL.md:92:
+SKILL.md:93:### Step 5: 发送报告
+SKILL.md:94:
+SKILL.md:95:**A. 邮件发送：**
+SKILL.md:96:```bash
+SKILL.md:97:# 1. 转换格式
+SKILL.md:98:node ./skill-coach/md2html.js "[MD报告路径]"
+SKILL.md:99:
+SKILL.md:100:# 2. 调用 send-email skill 发送 HTML
+SKILL.md:101:```
+SKILL.md:102:
+SKILL.md:103:**B. 飞书发布：**
+SKILL.md:104:```
+SKILL.md:105:# 直接调用 publish-feishu skill 发送 Markdown
+SKILL.md:106:```
+SKILL.md:107:
+SKILL.md:108:**C. 两者都发：**
+SKILL.md:109:```
+SKILL.md:110:# 先转 HTML 发邮件，再发飞书
+SKILL.md:111:```
+SKILL.md:112:
+SKILL.md:113:---
+SKILL.md:114:
+SKILL.md:115:## 文件结构
+SKILL.md:116:
+SKILL.md:117:```
+SKILL.md:118:GW.Content/五句话介绍/
+SKILL.md:119:├── skill-coach/                    # 技能脚本目录（本目录）
+SKILL.md:120:│   ├── SKILL.md                    # 本文档
+SKILL.md:121:│   ├── coach.js                    # 核心引擎：生成 Markdown 报告
+SKILL.md:122:│   └── md2html.js                  # 格式转换：MD → HTML
+SKILL.md:123:├── 班主任AI教练 V*.md              # 提示词（自动扫描最高版本）
+SKILL.md:124:├── 高维学堂5句话介绍.md            # 评估基准
+SKILL.md:125:├── [课程名]-主持词.md              # 课程5句话
+SKILL.md:126:└── 现场/
+SKILL.md:127:    └── [日期]/
+SKILL.md:128:        └── [课程] [班主任]/
+SKILL.md:129:            ├── [班主任]开场.txt           # 开场录音稿
+SKILL.md:130:            ├── [班主任]结束.txt           # 结束录音稿
+SKILL.md:131:            ├── prompt_[班主任]_V*.txt     # 保存的 prompt
+SKILL.md:132:            └── [班主任]-AI教练报告.md     # 生成的报告
+SKILL.md:133:```
+SKILL.md:134:
+SKILL.md:135:---
+SKILL.md:136:
+SKILL.md:137:## 命令行用法
+SKILL.md:138:
+SKILL.md:139:```bash
+SKILL.md:140:# 基本用法（在 GW.Content/五句话介绍 目录下执行）
+SKILL.md:141:cd GW.Content/五句话介绍
+SKILL.md:142:node skill-coach/coach.js --course "业务管理者养成" --teacher "碧容" --date "260314"
+SKILL.md:143:
+SKILL.md:144:# 指定模型
+SKILL.md:145:node skill-coach/coach.js --course "业务管理者养成" --teacher "碧容" --date "260314" --model gpt5.4
+SKILL.md:146:
+SKILL.md:147:# 格式转换（MD → HTML）
+SKILL.md:148:node skill-coach/md2html.js "[报告路径].md" "[输出路径].html"
+SKILL.md:149:node skill-coach/md2html.js report.md  # 输出到 report.html
+SKILL.md:150:```
+SKILL.md:151:
+SKILL.md:152:---
+SKILL.md:153:
+SKILL.md:154:## 三维度评估
+SKILL.md:155:
+SKILL.md:156:| 维度 | 改进前 | 改进后 |
+SKILL.md:157:|------|--------|--------|
+SKILL.md:158:| **便利度** | ★★☆☆☆ | ★★★★★ |
+SKILL.md:159:| | 飞书需手动操作 | 一条指令完成 |
+SKILL.md:160:| **易维护度** | ★★☆☆☆ | ★★★★★ |
+SKILL.md:161:| | 逻辑分散，硬编码 | 职责清晰，自动扫描 |
+SKILL.md:162:| **洞察力** | ★★★☆☆ | ★★★★★ |
+SKILL.md:163:| | 发送失败难定位 | 每步有产物可检查 |
+SKILL.md:164:
+SKILL.md:165:---
+SKILL.md:166:
+SKILL.md:167:## 依赖
+SKILL.md:168:
+SKILL.md:169:- `multi-model-api` skill - 调用 AI 模型（由 coach.js 内部实现）
+SKILL.md:170:- `send-email` skill - 发送 HTML 邮件
+SKILL.md:171:- `publish-feishu` skill - 发布到飞书知识库
+SKILL.md:172:
+SKILL.md:173:---
+SKILL.md:174:
+SKILL.md:175:*更新时间：2026-03-19*
+SKILL.md:176:*更新内容：采用 Gemini 方案精简架构，统一输出 Markdown，发送交给 skill 处理*
+coach.js:1:#!/usr/bin/env node
+coach.js:2:/**
+coach.js:3: * 班主任AI教练评估（精简版）
+coach.js:4: *
+coach.js:5: * 设计原则：
+coach.js:6: * - 统一输出 Markdown 格式
+coach.js:7: * - 发布工作交给 Claude Code MCP 工具
+coach.js:8: * - 提示词版本自动扫描
+coach.js:9: * - API 调用委托给 multi-model-api skill
+coach.js:10: *
+coach.js:11: * 用法：
+coach.js:12: *   node coach.js --course "[课程名]" --teacher "[班主任名]" --date "[日期]"
+coach.js:13: *   node coach.js --course "[课程名]" --teacher "[班主任名]" --date "[日期]" --model gpt5.4
+coach.js:14: *
+coach.js:15: * 发布到飞书：
+coach.js:16: *   评估完成后在 Claude Code 中说 "发布到飞书" 或使用 /feishu-doc
+coach.js:17: */
+coach.js:18:
+coach.js:19:const { execSync } = require('child_process');
+coach.js:20:const fs = require('fs');
+coach.js:21:const path = require('path');
+coach.js:22:const os = require('os');
+coach.js:23:
+coach.js:24:// ==================== 配置 ====================
+coach.js:25:
+coach.js:26:const CONFIG = {
+coach.js:27:  // 基础路径
+coach.js:28:  basePath: '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍',
+coach.js:29:
+coach.js:30:  // 默认模型（别名，由 multi-model-api 负责映射）
+coach.js:31:  defaultModel: 'gemini3.1'
+coach.js:32:};
+coach.js:33:
+coach.js:34:// ==================== 工具函数 ====================
+coach.js:35:
+coach.js:36:function log(msg) {
+coach.js:37:  console.log(`[${new Date().toISOString().slice(11, 19)}] ${msg}`);
+coach.js:38:}
+coach.js:39:
+coach.js:40:function readFileSync(filePath) {
+coach.js:41:  if (!fs.existsSync(filePath)) {
+coach.js:42:    throw new Error(`文件不存在: ${filePath}`);
+coach.js:43:  }
+coach.js:44:  return fs.readFileSync(filePath, 'utf-8');
+coach.js:45:}
+coach.js:46:
+coach.js:47:// ==================== 提示词版本扫描 ====================
+coach.js:48:
+coach.js:49:/**
+coach.js:50: * 自动扫描最高版本的提示词文件
+coach.js:51: * 文件命名格式：班主任AI教练 *V*.md 或 班主任AI教练 *V*（*）.md
+coach.js:52: */
+coach.js:53:function findLatestPromptVersion(basePath) {
+coach.js:54:  const files = fs.readdirSync(basePath);
+coach.js:55:
+coach.js:56:  // 匹配提示词文件
+coach.js:57:  const promptFiles = files.filter(f => {
+coach.js:58:    return f.includes('班主任AI教练') && f.includes('V') && f.endsWith('.md');
+coach.js:59:  });
+coach.js:60:
+coach.js:61:  if (promptFiles.length === 0) {
+coach.js:62:    throw new Error('找不到提示词文件，请检查目录');
+coach.js:63:  }
+coach.js:64:
+coach.js:65:  // 提取版本号并排序
+coach.js:66:  const versioned = promptFiles.map(f => {
+coach.js:67:    const match = f.match(/V(\d+(?:\.\d+)?)/i);
+coach.js:68:    return {
+coach.js:69:      file: f,
+coach.js:70:      version: match ? parseFloat(match[1]) : 0,
+coach.js:71:      path: path.join(basePath, f)
+coach.js:72:    };
+coach.js:73:  });
+coach.js:74:
+coach.js:75:  // 按版本号降序排序
+coach.js:76:  versioned.sort((a, b) => b.version - a.version);
+coach.js:77:
+coach.js:78:  log(`扫描到 ${promptFiles.length} 个提示词文件，最高版本: V${versioned[0].version}`);
+coach.js:79:
+coach.js:80:  return versioned[0];
+coach.js:81:}
+coach.js:82:
+coach.js:83:// ==================== API 调用（委托给 multi-model-api）====================
+coach.js:84:
+coach.js:85:/**
+coach.js:86: * 调用 multi-model-api skill 的 ai.js
+coach.js:87: * @param {string} prompt - 完整的 prompt 内容
+coach.js:88: * @param {string} modelAlias - 模型别名（如 gemini3.1, gpt5.4）
+coach.js:89: * @returns {string} AI 返回的内容
+coach.js:90: */
+coach.js:91:function callAPI(prompt, modelAlias) {
+coach.js:92:  const aiPath = path.join(os.homedir(), '.claude/skills/multi-model-api/ai.js');
+coach.js:93:
+coach.js:94:  if (!fs.existsSync(aiPath)) {
+coach.js:95:    throw new Error(`multi-model-api skill 未安装: ${aiPath}`);
+coach.js:96:  }
+coach.js:97:
+coach.js:98:  // 写入临时文件
+coach.js:99:  const tempFile = path.join(os.tmpdir(), `coach-prompt-${Date.now()}.txt`);
+coach.js:100:  fs.writeFileSync(tempFile, prompt, 'utf-8');
+coach.js:101:
+coach.js:102:  log(`调用 multi-model-api (${modelAlias})...`);
+coach.js:103:
+coach.js:104:  try {
+coach.js:105:    // 调用 ai.js
+coach.js:106:    const result = execSync(
+coach.js:107:      `node "${aiPath}" --model ${modelAlias} --file "${tempFile}"`,
+coach.js:108:      {
+coach.js:109:        encoding: 'utf-8',
+coach.js:110:        maxBuffer: 50 * 1024 * 1024  // 50MB buffer
+coach.js:111:      }
+coach.js:112:    );
+coach.js:113:
+coach.js:114:    log('API 调用成功');
+coach.js:115:    return result;
+coach.js:116:  } finally {
+coach.js:117:    // 清理临时文件
+coach.js:118:    if (fs.existsSync(tempFile)) {
+coach.js:119:      fs.unlinkSync(tempFile);
+coach.js:120:    }
+coach.js:121:  }
+coach.js:122:}
+coach.js:123:
+coach.js:124:// ==================== 查找文件 ====================
+coach.js:125:
+coach.js:126:function findTeacherDir(sceneDir, course, teacher) {
+coach.js:127:  const possibleNames = [
+coach.js:128:    `${course} ${teacher}`,
+coach.js:129:    teacher,
+coach.js:130:  ];
+coach.js:131:
+coach.js:132:  const entries = fs.readdirSync(sceneDir, { withFileTypes: true });
+coach.js:133:  const dirs = entries.filter(e => e.isDirectory()).map(e => e.name);
+coach.js:134:
+coach.js:135:  for (const name of possibleNames) {
+coach.js:136:    const found = dirs.find(d => d.includes(teacher) || d === name);
+coach.js:137:    if (found) {
+coach.js:138:      return path.join(sceneDir, found);
+coach.js:139:    }
+coach.js:140:  }
+coach.js:141:
+coach.js:142:  throw new Error(`找不到班主任目录: ${sceneDir}/*${teacher}*`);
+coach.js:143:}
+coach.js:144:
+coach.js:145:function findFiles(teacherDir, date, course, teacher) {
+coach.js:146:  const files = fs.readdirSync(teacherDir);
+coach.js:147:
+coach.js:148:  const openingFile = files.find(f =>
+coach.js:149:    f.includes(teacher) && !f.includes('结束') && f.endsWith('.txt') && !f.startsWith('prompt')
+coach.js:150:  );
+coach.js:151:
+coach.js:152:  const endingFile = files.find(f =>
+coach.js:153:    f.includes('结束') && f.endsWith('.txt')
+coach.js:154:  );
+coach.js:155:
+coach.js:156:  if (!openingFile) {
+coach.js:157:    throw new Error(`找不到开场录音稿: ${teacherDir}`);
+coach.js:158:  }
+coach.js:159:  if (!endingFile) {
+coach.js:160:    throw new Error(`找不到结束录音稿: ${teacherDir}`);
+coach.js:161:  }
+coach.js:162:
+coach.js:163:  return {
+coach.js:164:    opening: path.join(teacherDir, openingFile),
+coach.js:165:    ending: path.join(teacherDir, endingFile)
+coach.js:166:  };
+coach.js:167:}
+coach.js:168:
+coach.js:169:// ==================== 主逻辑 ====================
+coach.js:170:
+coach.js:171:async function main() {
+coach.js:172:  // 解析参数
+coach.js:173:  const args = process.argv.slice(2);
+coach.js:174:  const params = {};
+coach.js:175:  let modelAlias = CONFIG.defaultModel;
+coach.js:176:
+coach.js:177:  for (let i = 0; i < args.length; i++) {
+coach.js:178:    if (args[i] === '--course') params.course = args[++i];
+coach.js:179:    else if (args[i] === '--teacher') params.teacher = args[++i];
+coach.js:180:    else if (args[i] === '--date') params.date = args[++i];
+coach.js:181:    else if (args[i] === '--model') modelAlias = args[++i];
+coach.js:182:  }
+coach.js:183:
+coach.js:184:  // 验证必填参数
+coach.js:185:  if (!params.course || !params.teacher || !params.date) {
+coach.js:186:    console.log(`
+coach.js:187:班主任AI教练评估（精简版）
+coach.js:188:
+coach.js:189:用法：
+coach.js:190:  node coach.js --course "课程名" --teacher "班主任名" --date "YYMMDD"
+coach.js:191:  node coach.js --course "课程名" --teacher "班主任名" --date "YYMMDD" --model gpt5.4
+coach.js:192:
+coach.js:193:参数：
+coach.js:194:  --course    课程名称（必填），如 "业务管理者养成"
+coach.js:195:  --teacher   班主任姓名（必填），如 "碧容"
+coach.js:196:  --date      日期 YYMMDD（必填），如 "260314"
+coach.js:197:  --model     模型选择（可选，默认: gemini3.1）
+coach.js:198:
+coach.js:199:输出：
+coach.js:200:  Markdown 报告保存到 ./现场/[日期]/[课程] [班主任]/[班主任]-AI教练报告.md
+coach.js:201:
+coach.js:202:后续操作：
+coach.js:203:  发布飞书：在 Claude Code 中说 "发布到飞书" 或使用 /feishu-doc
+coach.js:204:`);
+coach.js:205:    process.exit(1);
+coach.js:206:  }
+coach.js:207:
+coach.js:208:  log(`开始评估: ${params.course} - ${params.teacher} (模型: ${modelAlias})`);
+coach.js:209:
+coach.js:210:  try {
+coach.js:211:    // ========== Step 1: 扫描提示词版本 ==========
+coach.js:212:
+coach.js:213:    log('Step 1: 扫描提示词版本...');
+coach.js:214:    const promptInfo = findLatestPromptVersion(CONFIG.basePath);
+coach.js:215:    log(`  ✓ 使用提示词: ${promptInfo.file} (V${promptInfo.version})`);
+coach.js:216:
+coach.js:217:    // ========== Step 2: 准备素材 ==========
+coach.js:218:
+coach.js:219:    log('Step 2: 准备素材...');
+coach.js:220:
+coach.js:221:    let sceneDir = null;
+coach.js:222:
+coach.js:223:    if (params.date.length === 6) {
+coach.js:224:      const yymmdd = params.date;
+coach.js:225:      const month = yymmdd.slice(2, 4);
+coach.js:226:      const day = yymmdd.slice(4, 6);
+coach.js:227:      sceneDir = `${CONFIG.basePath}/现场/2026${month}${day}`;
+coach.js:228:      if (!fs.existsSync(sceneDir)) {
+coach.js:229:        const prevDay = String(parseInt(day) - 1).padStart(2, '0');
+coach.js:230:        sceneDir = `${CONFIG.basePath}/现场/2026${month}${prevDay}`;
+coach.js:231:      }
+coach.js:232:    }
+coach.js:233:
+coach.js:234:    if (!sceneDir || !fs.existsSync(sceneDir)) {
+coach.js:235:      sceneDir = `${CONFIG.basePath}/现场/${params.date}`;
+coach.js:236:    }
+coach.js:237:
+coach.js:238:    log(`场景目录: ${sceneDir}`);
+coach.js:239:
+coach.js:240:    const teacherDir = findTeacherDir(sceneDir, params.course, params.teacher);
+coach.js:241:    log(`班主任目录: ${teacherDir}`);
+coach.js:242:
+coach.js:243:    const gaowei5Path = `${CONFIG.basePath}/高维学堂5句话介绍.md`;
+coach.js:244:    const course5Path = `${CONFIG.basePath}/${params.course}-主持词.md`;
+coach.js:245:
+coach.js:246:    if (!fs.existsSync(gaowei5Path)) {
+coach.js:247:      throw new Error(`高维5句话不存在: ${gaowei5Path}`);
+coach.js:248:    }
+coach.js:249:    if (!fs.existsSync(course5Path)) {
+coach.js:250:      throw new Error(`课程5句话不存在: ${course5Path}`);
+coach.js:251:    }
+coach.js:252:
+coach.js:253:    log(`  ✓ 高维5句话`);
+coach.js:254:    log(`  ✓ 课程5句话`);
+coach.js:255:
+coach.js:256:    const recordFiles = findFiles(teacherDir, params.date, params.course, params.teacher);
+coach.js:257:    log(`  ✓ 开场录音稿: ${path.basename(recordFiles.opening)}`);
+coach.js:258:    log(`  ✓ 结束录音稿: ${path.basename(recordFiles.ending)}`);
+coach.js:259:
+coach.js:260:    // 读取文件
+coach.js:261:    const promptTemplate = readFileSync(promptInfo.path);
+coach.js:262:    const gaowei5 = readFileSync(gaowei5Path);
+coach.js:263:    const course5 = readFileSync(course5Path);
+coach.js:264:    const opening = readFileSync(recordFiles.opening);
+coach.js:265:    const ending = readFileSync(recordFiles.ending);
+coach.js:266:
+coach.js:267:    // ========== Step 3: 组装Prompt ==========
+coach.js:268:
+coach.js:269:    log('Step 3: 组装Prompt...');
+coach.js:270:
+coach.js:271:    const fullPrompt = `${promptTemplate}
+coach.js:272:
+coach.js:273:---
+coach.js:274:
+coach.js:275:# Input Data
+coach.js:276:
+coach.js:277:**Target Course**: ${params.course}
+coach.js:278:**Prompt Version**: V${promptInfo.version}
+coach.js:279:
+coach.js:280:**Transcript**:
+coach.js:281:
+coach.js:282:===第一天开场录音===
+coach.js:283:
+coach.js:284:${opening}
+coach.js:285:
+coach.js:286:===第二天结束录音===
+coach.js:287:
+coach.js:288:${ending}
+coach.js:289:
+coach.js:290:---
+coach.js:291:
+coach.js:292:===参考：高维学堂5句话介绍===
+coach.js:293:
+coach.js:294:${gaowei5}
+coach.js:295:
+coach.js:296:---
+coach.js:297:
+coach.js:298:===参考：${params.course} 主持词===
+coach.js:299:
+coach.js:300:${course5}
+coach.js:301:`;
+coach.js:302:
+coach.js:303:    // 保存 prompt
+coach.js:304:    const promptPath = `${teacherDir}/prompt_${params.teacher}_V${promptInfo.version}.txt`;
+coach.js:305:    fs.writeFileSync(promptPath, fullPrompt, 'utf-8');
+coach.js:306:    log(`  ✓ Prompt已保存`);
+coach.js:307:
+coach.js:308:    // ========== Step 4: 调用API ==========
+coach.js:309:
+coach.js:310:    log(`Step 4: 调用 API (${modelAlias})...`);
+coach.js:311:    const rawContent = callAPI(fullPrompt, modelAlias);
+coach.js:312:
+coach.js:313:    // ========== Step 5: 保存 Markdown 报告 ==========
+coach.js:314:
+coach.js:315:    log('Step 5: 保存 Markdown 报告...');
+coach.js:316:
+coach.js:317:    // 清理可能的代码块包裹
+coach.js:318:    let mdContent = rawContent;
+coach.js:319:    const mdMatch = rawContent.match(/```(?:markdown|md)?\s*([\s\S]*?)```/);
+coach.js:320:    if (mdMatch) {
+coach.js:321:      mdContent = mdMatch[1].trim();
+coach.js:322:    }
+coach.js:323:
+coach.js:324:    // 添加元数据头
+coach.js:325:    const metaHeader = `---
+coach.js:326:title: 班主任AI教练评估报告
+coach.js:327:course: ${params.course}
+coach.js:328:teacher: ${params.teacher}
+coach.js:329:date: ${params.date}
+coach.js:330:model: ${modelAlias}
+coach.js:331:prompt_version: V${promptInfo.version}
+coach.js:332:generated_at: ${new Date().toISOString()}
+coach.js:333:---
+coach.js:334:
+coach.js:335:`;
+coach.js:336:
+coach.js:337:    const finalMd = metaHeader + mdContent;
+coach.js:338:
+coach.js:339:    // 保存 MD 文件
+coach.js:340:    const mdReportPath = `${teacherDir}/${params.teacher}-AI教练报告.md`;
+coach.js:341:    fs.writeFileSync(mdReportPath, finalMd, 'utf-8');
+coach.js:342:    log(`  ✓ Markdown 报告已保存: ${mdReportPath}`);
+coach.js:343:
+coach.js:344:    // ========== 完成 ==========
+coach.js:345:
+coach.js:346:    log('✅ 评估完成!');
+coach.js:347:    console.log(`\n📄 报告路径: ${mdReportPath}`);
+coach.js:348:    console.log(`\n后续操作:`);
+coach.js:349:    console.log(`  发布飞书：在 Claude Code 中说 "发布到飞书" 或使用 /feishu-doc`);
+coach.js:350:
+coach.js:351:  } catch (error) {
+coach.js:352:    console.error('❌ 错误:', error.message);
+coach.js:353:    process.exit(1);
+coach.js:354:  }
+coach.js:355:}
+coach.js:356:
+coach.js:357:main();

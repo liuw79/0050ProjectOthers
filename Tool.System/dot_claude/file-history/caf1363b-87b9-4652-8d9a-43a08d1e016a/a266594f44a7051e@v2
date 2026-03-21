@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>高维AI教练现场主持专属报告 - 丁芹伟</title>
+<style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+    h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+    h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+    .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+    .total-score { font-size: 36px; font-weight: bold; color: #333; }
+    .summary { font-size: 16px; margin-top: 10px; color: #555; }
+    .critical { color: #d9534f; font-weight: bold; }
+    .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .table-scores td:last-child { text-align: right; font-weight: bold; }
+    .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+    .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+    .module { margin-bottom: 25px; }
+    .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+    .label { font-weight: bold; color: #555; margin-right: 5px; }
+    .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+    .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+    .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+    .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>高维AI教练现场主持专属报告</h1>
+<div class="meta">
+    评估对象：丁芹伟（班主任） | 课程：战略解码到战略承接 | 日期：2026-03-14
+</div>
+
+<div class="score-block">
+    <div class="total-score">85 / 100</div>
+    <div class="summary">
+        芹伟，听完你的开场，我最大的感受是——你不仅是在"报幕"，而是真的把这几家企业装在了心里。你极强的同理心和对企业业务的熟悉度，让你天然具备了与企业家对话的亲和底色。
+        <br><br>
+        <span class="critical">【核心杠杆点】：正是因为你极其渴望与同学们建立"拉家常"般的亲切连接，这种过度饱满的亲和力，在一定程度上挤占了作为"场域主导者"应有的专业锐度与压倒性的控场势能（特别是收尾的压轴仪式感略显仓促）。</span>
+    </div>
+</div>
+
+<h2>一、 场域胜任力分项洞察</h2>
+<table class="table-scores">
+    <tr><td>品牌理念传递度（高维5句话的精准度）</td><td>8.5 / 10</td></tr>
+    <tr><td>痛点场景共情力（对企业战略卡点的体感）</td><td>9.5 / 10</td></tr>
+    <tr><td>讲师专业推崇感（信任背书的能量锚定）</td><td>8.0 / 10</td></tr>
+    <tr><td>训战预期管理力（对演练强度的心理建设）</td><td>8.5 / 10</td></tr>
+    <tr><td>主持场域掌控力（流程闭环与高光收尾）</td><td>7.0 / 10</td></tr>
+    <tr><td>商务语言精炼度（"脱水"表达与气场）</td><td>7.5 / 10</td></tr>
+    <tr><td>企业学情洞察力（连接实际业务的能力）</td><td>10 / 10</td></tr>
+</table>
+
+<h2>二、 ✨ 你的高光时刻 (Highlights)</h2>
+
+<div class="highlight">
+    <span class="highlight-quote">"大家可以看一下这个小红旗，我们是在创业扩张期的，这个叫备粮草这一关..."</span>
+    <span class="label">教练洞察：</span>优秀的业务体感！你没有死记硬背"高维地图"的通用话术，而是精准定位到了现场企业的生命周期（扩张期），这让"科学创业路线图"瞬间和台下老板们的当下处境产生了强链接，极大地增强了开场的实用价值。
+</div>
+
+<div class="highlight">
+    <span class="highlight-quote">"在开课之前我有让大家做那个调研，请创始人们都看了一下团队成员之间对战略到底是怎么认为的..."</span>
+    <span class="label">教练洞察：</span>这个动作太棒了！这是真正"企业成长陪跑伙伴"才会做的事情。你巧妙地将课前动作与【核心价值：四大困局之共识难】结合在一起，用真实数据直接击中了创始人的痛点，比任何华丽的辞藻都更有说服力。
+</div>
+
+<div class="highlight">
+    <span class="highlight-quote">"从战略拆解的落地，像跳楼机一样，中间缺了梯子..."</span>
+    <span class="label">教练洞察：</span>绝佳的隐喻表达！"跳楼机"这个词生动且充满画面感，瞬间将"战略承接断层"这种枯燥的管理学概念翻译成了企业家秒懂的痛点语言，这说明你对课程内容的消化非常透彻。
+</div>
+
+<h2>三、 🔍 AI教练精准纠偏与赋能</h2>
+
+<div class="module">
+    <span class="module-title">1. 【品牌介绍：极简表达与专业气场】</span>
+    <div><span class="label">你的原声：</span>"好的，欢迎来到这个高维学堂... 然后在开课之前我会花8到10分钟的时间..."</div>
+    <div class="insight">深度洞察：因为你非常想营造轻松的氛围，导致口语化的赘字（"好的"、"这个"、"然后"）自然滑落。在企业家的心理认知中，过多的口语化连接词会稀释掉信息的密度。作为班主任，站在台上，你就是"科学创业"的代言人，你的语言越干净，品牌的势能就越高级。</div>
+    <div class="suggestion">
+        <span class="label">刻意练习建议：</span>尝试做"语言脱水"。站定，直视台下，使用笃定的句式。
+        <br><i>示范话术：</i>"各位同学早上好：科学创业，不走弯路。欢迎来到高维学堂。作为科学创业的倡导者，我们的使命只有一个：帮大家从依赖能人的经验主义，进化为有章可循的科学经营。"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">2. 【讲师推崇：信任背书的能量停顿】</span>
+    <div><span class="label">你的原声：</span>"他既有在欧莱雅一线操盘过，也亲自创过业。这么多年他既服务过像阿里字节这样的巨头企业..."</div>
+    <div class="insight">深度洞察：你把老师的履历讲得很全，但因为语速过于匀速，"阿里、字节、欧莱雅"这些极具含金量的词汇像流水账一样滑过了。推崇讲师不仅是念履历，更是要为接下来的两天建立"绝对的专业臣服感"。没有轻重缓急的铺陈，会导致台下对老师的敬畏感打折扣。</div>
+    <div class="suggestion">
+        <span class="label">刻意练习建议：</span>在核心背书词前后，运用"黄金三秒停顿"法。
+        <br><i>示范话术：</i>"杨冰老师不仅辅导过阿里、字节这样的超巨头企业（停顿1秒），更深度陪跑了半亩花田等一众新锐品牌（停顿1秒）。他最厉害的杀手锏是——（加重语气）能把挂在墙上的复杂战略，转化为你们今天能直接拿走落地的打法。"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">3. 【课程价值：预期管理与痛点定性】</span>
+    <div><span class="label">你的原声：</span>"第一个困局是共识难... 第二个是什么呢？路径散... 第三个就是承接弱... 第四个就是协同也比较弱..."</div>
+    <div class="insight">深度洞察：你准确抓住了四大困局，但因为你在陈述时过多使用了商榷和回忆的语气（"是什么呢"、"就是"），削弱了这四大痛点"如手术刀般精准"的诊断感。我们要让企业家觉得，高维的框架不仅懂他们，而且能降维解决他们的问题。</div>
+    <div class="suggestion">
+        <span class="label">刻意练习建议：</span>用排比句式强化力量感，把"困局"直接和"破局"绑定。
+        <br><i>示范话术：</i>"这门课的核心价值，就是帮大家击穿四大困局：第一，破共识难；第二，破路径散；第三，破承接断；第四，破协同弱。我们要把这四个痛点，在接下来的两天彻底打穿。"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">4. 【方法工具：训战强度的愿景反转】</span>
+    <div><span class="label">你的原声：</span>"我们很多学友企业过去可能搞到10点11点都是常态，所以大家就是要做好这个准备...要把时间给拿出来。"</div>
+    <div class="insight">深度洞察：提前告知熬夜是非常必要的预期管理。但当前的表述稍显"诉苦"意味。真正的陪伴者，会把"辛苦"包装成"战利品"。我们要让同学们明白，熬夜不是为了受罪，而是为了拿到那张极具价值的"作战地图"。</div>
+    <div class="suggestion">
+        <span class="label">刻意练习建议：</span>先给痛感，再给终极获得感，完成心理上的升华。
+        <br><i>示范话术：</i>"先给大家做一个高能预告，这两天会非常酸爽，奋战到深夜是常态。但为什么学长们都说痛并快乐着？因为只要你们全情投入，明天结课时，你们就能直接带走专属于你们团队的、能立刻打胜仗的年度战略作战地图！"
+    </div>
+</div>
+
+<div class="module">
+    <span class="module-title">5. 【场域闭环：移交麦克风的绝对仪式感】</span>
+    <div><span class="label">你的原声：</span>"到了今年年底...希望都有不一样的成果。好，接下来我们就有一个任务，这两天因为我们要做的事情非常多，我们做一个小组的热身..."</div>
+    <div class="insight">深度洞察：这是一个关键的场域掌控流失点！主持人的终极使命，是把全场期待值推向最高潮时，隆重请出讲师。而你在做完愿景升华后，突然自己切入了"小组热身"，不仅打断了情绪的巅峰，甚至忘记了【邀请讲师上台】这一核心动作。这会让场子瞬间"泄气"，老师出场时也失去了最热烈的烘托。</div>
+    <div class="suggestion">
+        <span class="label">刻意练习建议：</span>将热身环节前置，确保开场白最后的落脚点，绝对是引爆全场的掌声并邀请导师。
+        <br><i>示范话术：</i>"战略的价值不在于制定，在于落地。各位同学，准备好迎接这两天一夜的烧脑之旅了吗？现在，让我们用高维最热烈的掌声，有请高维实战派导师——杨冰老师，闪亮登场！"
+    </div>
+</div>
+
+<div class="ending">
+    芹伟，你对学友企业的用心和洞察，是你身上最宝贵的财富，这也是一家企业"陪跑伙伴"最核心的底色。<br><br>
+    下一次登台，试着把"亲和力"收起 20%，转化为干脆利落的"力量感"与无懈可击的"控场仪式感"。<br>当你能用最温暖的心，说出最笃定、最锋利的话语时，你站在那里，就是一座不可撼动的专业灯塔！期待你下一次的完美绽放！
+</div>
+
+<div class="footer">
+    Generated by 高维AI教练 | Focus on Professional Growth & Field Energy
+</div>
+
+</body>
+</html>

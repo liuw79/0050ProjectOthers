@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- WeChat / Social Share Metadata -->
+    <meta property="og:title" content="伍悦 · 拾光 | 3099天的见证" />
+    <meta property="og:description" content="3099个日夜的守望，从2016到2025。生命会远去，爱不会。" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" />
+    <meta property="og:type" content="article" />
+    <title>伍悦 · 拾光 | 3099天的见证</title>
+    <link rel="stylesheet" href="https://wx.gaowei.com/html/wyweb/style.css?v=9" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" /><!-- Hidden image for WeChat Share thumbnail fallback -->
+</head>
+<body>
+    <div style="display:none; width: 0; height: 0; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="WeChat Share Image" />
+    </div><div class="container">
+        <!-- Header Section --><header class="hero">
+            <div class="hero-content">
+                <h1 class="title">伍悦 · 拾光</h1><p class="subtitle">3099个日夜的守望，从2016到2025</p><div class="quote-container"><p class="quote-text">“生命会远去，爱不会。<br />生活会老去，少年不会。”</p></div><!-- Music Player (Embedded) --><div class="player-wrapper">
+                    <div class="vintage-player" id="music-control">
+                        <div class="turntable-base"><div class="vinyl-disc"><div class="vinyl-grooves"></div><div class="vinyl-label"></div></div><div class="tone-arm"><div class="arm-counterweight"></div><div class="arm-rod"></div><div class="arm-head"></div></div></div><div class="player-controls">
+                            <span class="play-hint">点击播放 · 许巍《家》</span>
+                        </div>
+                    </div><audio id="bgm" loop="" preload="auto"><source src="https://wx.gaowei.com/html/wyweb/jia.mp3" type="audio/mpeg" /></audio>
+                </div>
+            </div>
+        </header><section class="prologue">
+            <div class="prologue-content">
+                <span class="prologue-icon">⚓️</span>
+                <p class="prologue-date">2016年12月10日</p><p class="prologue-text">
+                    故事的序章，在那个微冷的上海冬日悄然写下。<br />
+                    当《升级定位》的教室大门第一次推开，<br />
+                    属于你的 <strong>3099</strong> 天高维旅程，<br />
+                    便开始了热气腾腾的第一页。
+                </p>
+            </div>
+        </section><!-- Summary Metrics Section -->
+        <!-- Timeline / Narrative Section --><section class="narrative"><div class="section-title"><h2>岁月 · 足迹</h2><p>3099个日夜，你的每一步都算数</p></div><div class="timeline-container" id="timeline-container"><!-- Timeline events injected by JS --></div></section><!-- New Courses (Artistic View) --><section class="new-courses"><div class="section-title"><h2>见证 · 新生</h2><p>见证了 <span id="new-course-count" class="highlight"></span> 门课程的诞生</p></div><div class="new-course-grid" id="new-course-grid"><!-- New courses injected by JS --></div></section><!-- Term Milestones --><section class="term-milestones"><div class="section-title"><h2>里程碑 · 时刻</h2><p>那些值得铭记的整数期</p></div><div class="milestone-grid" id="term-milestone-grid"><!-- Term Milestones injected by JS --></div></section><!-- Teachers Section --><section class="teachers"><div class="section-title"><h2>同行 · 师友</h2><p>你与 <span id="teacher-count" class="highlight"></span> 位导师并肩作战</p></div><div class="teacher-grid" id="teacher-grid"><!-- Teachers injected by JS --></div></section><!-- Summary Metrics Section (Moved to end) --><section class="metrics-section"><div class="section-title"><h2>硕果 · 份量</h2><p>这些数字，是你 3099 天沉甸甸的爱</p></div><div class="metrics" id="metrics-container"><!-- Content will be injected by JS --></div></section><!-- Footer --><footer class="footer"><p>凡是过往，皆为序章</p><p>谢谢你，伍悦</p><p class="copyright">Generated with ❤️ by 伟哥哥×Trae</p></footer>
+    </div>
+    <script src="https://wx.gaowei.com/html/wyweb/script.js?v=4"></script><!--!doctype-->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://wx.gaowei.com/Scripts/jquery-1.10.2.js"></script>
+    <script src="https://wx.gaowei.com/Scripts/wechat-config.js"></script>
+    <script src="https://wx.gaowei.com/Scripts/wechat-share.js"></script>
+    <script>
+        var wechat_config = new WechatConfig(window.location.href);
+        var share = new WechatShare();
+
+        /**/
+        document.title = "伍悦 · 拾光 | 3099天的见证";
+        /**/
+        function setshare() {
+            wechat_config.init(function () {
+                share.set_config({
+                    "title": "伍悦 · 拾光 | 3099天的见证",
+                    "desc": "3099个日夜的守望，从2016到2025。",
+                    "imgUrl": "https://wx.gaowei.com/Upload/20260116/o_1jf2atiuf1t9r1t1811ff1se718f27.png",
+                    "link": "",
+                });
+                share.share();
+            });
+        }
+        setTimeout(setshare(), 500)
+    </script>
+</body>
+</html>

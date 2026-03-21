@@ -1,0 +1,44 @@
+[
+  {
+    "category": "core",
+    "description": "H5 页面基础结构 - 响应式布局、移动端适配",
+    "steps": ["创建 HTML 基础结构", "添加 CSS 样式", "移动端适配"],
+    "passes": false
+  },
+  {
+    "category": "core",
+    "description": "图片上传功能 - 支持拍照和相册选择",
+    "steps": ["文件输入组件", "图片预览", "多页支持"],
+    "passes": false
+  },
+  {
+    "category": "api",
+    "description": "OCR 文字识别 - 从图片提取文字",
+    "steps": ["集成 OCR API", "处理识别结果", "错误处理"],
+    "passes": false
+  },
+  {
+    "category": "api",
+    "description": "AI 句子分析 - 按理解逻辑重排序句子",
+    "steps": ["调用 LLM 分析句子", "提取核心意思", "生成排序后的展示顺序"],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "逐句展示动画 - 花开般展开效果",
+    "steps": ["空格键监听", "淡入动画", "过渡效果"],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "进度指示 - 显示当前阅读进度",
+    "steps": ["进度条组件", "句子计数", "已完成标记"],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "控制面板 - 重置、调整速度等",
+    "steps": ["控制按钮", "速度调节", "重新开始"],
+    "passes": false
+  }
+]

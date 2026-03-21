@@ -1,0 +1,44 @@
+#!/bin/bash
+
+BASE_DIR="/Users/comdir/SynologyDrive/0050Project/GW.Content"
+OUTPUT_DIR="${BASE_DIR}/五句话介绍/现场/20260307/GTM产品市场协同作战 辰辰"
+
+# 读取 Prompt
+PROMPT=$(cat "${OUTPUT_DIR}/debug-prompt.txt")
+
+# 调用 API
+echo "正在调用 Gemini API..."
+RESPONSE=$(curl -s "https://api.openai-proxy.org/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI" \
+  -d "$(jq -n --arg prompt "$PROMPT" --argjson max_tokens 16384 '{
+    "model": "gemini-2.5-pro-preview-06-05",
+    "messages": [{"role": "user", "content": $prompt}],
+    "max_tokens": $max_tokens
+  }')")
+
+# 检查错误
+if echo "$RESPONSE" | jq -e '.error' > /dev/null 2>&1; then
+  echo "API 错误:"
+  echo "$RESPONSE" | jq '.error'
+  exit 1
+fi
+
+# 提取内容
+CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+
+if [ -z "$CONTENT" ] || [ "$CONTENT" = "null" ]; then
+  echo "生成失败，响应:"
+  echo "$RESPONSE" | head -c 1000
+  exit 1
+fi
+
+# 保存报告
+echo "$CONTENT" > "${OUTPUT_DIR}/辰辰-AI教练报告.html"
+echo "报告已保存: ${OUTPUT_DIR}/辰辰-AI教练报告.html"
+echo "报告长度: ${#CONTENT} 字符"
+
+# 显示前 2000 字符
+echo ""
+echo "--- 报告预览 ---"
+echo "$CONTENT" | head -c 2000

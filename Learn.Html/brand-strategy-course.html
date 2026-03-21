@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>升级定位与品牌战略 - 全套品牌打法，赢在品类第一</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Alibaba PuHuiTi', Arial, sans-serif;
+            line-height: 1.6;
+            color: #231815;
+            background: #EFEFEF;
+            touch-action: manipulation;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00A0EB 0%, #004960 100%);
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 160, 235, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #00A0EB 0%, #004960 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 160, 235, 0.3);
+        }
+
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .question-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00A0EB;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 160, 235, 0.1);
+        }
+
+        .question-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 160, 235, 0.2);
+            border-left-color: #91D6F2;
+        }
+
+        .question-item::before {
+            content: "▶";
+            color: #00A0EB;
+            font-size: 0.8em;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-item {
+            background: linear-gradient(135deg, white 0%, #C3E7F4 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .highlight-item:hover {
+            border-color: #00A0EB;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 160, 235, 0.2);
+        }
+
+        .highlight-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #00A0EB;
+        }
+
+        .highlight-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #231815;
+        }
+
+        .instructor-section {
+            background: linear-gradient(135deg, #004960 0%, #002733 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .instructors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .instructor-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .instructor-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .instructor-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .instructor-title {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .instructor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2D459A 0%, #ECC2AD 100%);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background: #00A0EB;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: #91D6F2;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 160, 235, 0.3);
+        }
+
+
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 5px;
+            }
+
+            .header {
+                padding: 20px 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .questions-grid,
+            .highlights-grid,
+            .instructors-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .instructor-section {
+                padding: 15px;
+            }
+
+            .cta-section {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .section-title {
+                font-size: 1.1em;
+                padding: 10px 15px;
+            }
+
+            .question-item,
+            .highlight-item {
+                padding: 12px;
+            }
+
+            .instructor-card {
+                padding: 15px;
+            }
+
+            .instructor-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2em;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .question-item:nth-child(1) { animation-delay: 0.1s; }
+        .question-item:nth-child(2) { animation-delay: 0.2s; }
+        .question-item:nth-child(3) { animation-delay: 0.3s; }
+        .question-item:nth-child(4) { animation-delay: 0.4s; }
+        .question-item:nth-child(5) { animation-delay: 0.5s; }
+        .question-item:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <div class="header">
+            <h1>升级定位与品牌战略</h1>
+            <p class="subtitle">全套品牌打法，赢在品类第一</p>
+        </div>
+
+        <!-- 课程问题部分 -->
+        <div class="section">
+            <div class="section-title">🤔 课程解决问题</div>
+            <div class="questions-grid">
+                <div class="question-item">
+                    你是否正在为如何做品牌营销，品牌定位而苦恼？是否文案的威力不够？
+                </div>
+                <div class="question-item">
+                    你是否了解品类创新法，如何自建护城河，赢得品类保护？
+                </div>
+                <div class="question-item">
+                    是否企业发展基本停滞，如何构建新的会议框架？
+                </div>
+                <div class="question-item">
+                    小众品牌如何做品牌营销，提升科学布局，打开推广文化？
+                </div>
+                <div class="question-item">
+                    是否是无文化品牌会全部力投资，如何构建营销体系？
+                </div>
+                <div class="question-item">
+                    是否了解品牌进程，营销如何少走弯路，怎么构建营销力？
+                </div>
+                <div class="question-item">
+                    是否了解出版投资，如何构建品类美誉度的理解，开拓推广文化？
+                </div>
+                <div class="question-item">
+                    是否构建出版投资，如何构建品类美誉度的理解，开拓推广文化？
+                </div>
+                <div class="question-item">
+                    是否构建出版投资，如何构建品类美誉度的理解，开拓推广文化？
+                </div>
+            </div>
+        </div>
+
+        <!-- 课程亮点部分 -->
+        <div class="section">
+            <div class="section-title">✨ 课程特色亮点</div>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎯</div>
+                    <div class="highlight-title">双师联袂</div>
+                    <p>资深品牌专家与实战营销大师联合授课，理论与实践完美结合</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">💡</div>
+                    <div class="highlight-title">案例教学</div>
+                    <p>真实企业案例分析，从失败到成功的品牌转型全过程解析</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🚀</div>
+                    <div class="highlight-title">实战支持</div>
+                    <p>提供品牌诊断工具，课后一对一指导，确保学以致用</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 讲师介绍部分 -->
+        <div class="instructor-section">
+            <div class="section-title">👨‍🏫 讲师团队介绍</div>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <div class="instructor-avatar">👨‍💼</div>
+                    <div class="instructor-name">温立东 老师</div>
+                    <div class="instructor-title">高级营销策略专家</div>
+                    <p style="margin-bottom: 15px;">大陆知名（1973年）明星企业人，曾任多家知名企业营销总监，拥有20年品牌营销实战经验。</p>
+                    <div class="instructor-tags">
+                        <span class="tag">品牌战略</span>
+                        <span class="tag">营销策划</span>
+                        <span class="tag">市场定位</span>
+                        <span class="tag">品类创新</span>
+                        <span class="tag">消费洞察</span>
+                        <span class="tag">品牌传播</span>
+                        <span class="tag">数字营销</span>
+                        <span class="tag">渠道管理</span>
+                        <span class="tag">客户关系</span>
+                        <span class="tag">品牌价值</span>
+                        <span class="tag">市场研究</span>
+                        <span class="tag">竞争分析</span>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-avatar">
+                        <img src="/upload/20250626/6388653364513126559023084.png" alt="钱力刚老师" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div class="instructor-name">钱力刚 老师</div>
+                    <div class="instructor-title">资深品牌顾问专家</div>
+                    <p style="margin-bottom: 15px;">资深品牌战略顾问专家，服务过众多知名企业，在品牌定位和营销策略方面有独到见解。</p>
+                    <div class="instructor-tags">
+                        <span class="tag">品牌咨询</span>
+                        <span class="tag">战略规划</span>
+                        <span class="tag">品牌重塑</span>
+                        <span class="tag">市场拓展</span>
+                        <span class="tag">品牌管理</span>
+                        <span class="tag">营销创新</span>
+                        <span class="tag">品牌传播</span>
+                        <span class="tag">用户体验</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行动召唤部分 -->
+        <div class="cta-section">
+            <h2>🎓 立即开启品牌升级之旅</h2>
+            <p>掌握品牌战略核心方法，让您的品牌在竞争中脱颖而出</p>
+            <button class="cta-button" onclick="alert('感谢您的关注！请联系客服了解详细课程信息。')">立即报名</button>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.6s ease-out';
+                observer.observe(section);
+            });
+
+            // 添加交互效果
+            const questionItems = document.querySelectorAll('.question-item');
+            questionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-3px)';
+                    }, 200);
+                });
+            });
+
+            const highlightItems = document.querySelectorAll('.highlight-item');
+            highlightItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.querySelector('.highlight-icon').style.transform = 'scale(1.2) rotate(10deg)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.querySelector('.highlight-icon').style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+        });
+
+        // 平滑滚动效果
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

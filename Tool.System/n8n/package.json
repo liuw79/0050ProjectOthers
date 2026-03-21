@@ -1,0 +1,28 @@
+{
+  "name": "n8n-local",
+  "version": "1.0.0",
+  "description": "本地 N8N 工作流自动化平台",
+  "scripts": {
+    "start": "n8n start",
+    "start:dev": "n8n start --tunnel",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f n8n",
+    "docker:restart": "docker-compose restart",
+    "docker:update": "docker-compose pull && docker-compose up -d",
+    "backup": "tar -czf n8n_backup_$(date +%Y%m%d_%H%M%S).tar.gz n8n_data/",
+    "install": "npm install -g n8n"
+  },
+  "keywords": [
+    "n8n",
+    "workflow",
+    "automation",
+    "integration"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+
+

@@ -1,0 +1,1354 @@
+
+                    <html 
+                        xmlns:o='urn:schemas-microsoft-com:office:office' 
+                        xmlns:w='urn:schemas-microsoft-com:office:word' 
+                        xmlns='http://www.w3.org/TR/REC-html40'>
+                        <head><head><meta charset="UTF-8"><title>DeepSeek - 探索未至之境</title><meta name="viewport" content="initial-scale=1.0,maximum-scale=1,width=device-width,viewport-fit=cover"><meta name="commit-id" content="8f528d75"><meta name="description" content="Chat with DeepSeek AI – your intelligent assistant for coding, content creation, file reading, and more. Upload documents, engage in long-context conversations, and get expert help in AI, natural language processing, and beyond. | 深度求索（DeepSeek）助力编程代码开发、创意写作、文件处理等任务，支持文件上传及长文本对话，随时为您提供高效的AI支持。"><meta name="keywords" content="DeepSeek,DeepSeek AI,DeepSeek Chat,AI assistant,coding assistant,long-context LLM,Open Source LLM,natural language processing,AI chatbot,AI long text,AI content creation,large language model,深度求索,大语言模型,自然语言处理,AI聊天机器人,代码开发,创意写作,AI助手,长文本对话,文件处理AI,大模型公司,人工智能,AI开发助手"><meta property="og:url" content="https://chat.deepseek.com"><meta property="og:type" content="website"><meta property="og:title" content="DeepSeek"><meta property="og:description" content="Chat with DeepSeek AI."><meta property="og:image" content="https://chat.deepseek.com/deepseek-chat.jpeg"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="deepseek.com"><meta property="twitter:url" content="https://chat.deepseek.com"><meta name="twitter:title" content="DeepSeek"><meta name="twitter:description" content="Chat with DeepSeek AI."><meta name="twitter:image" content="https://chat.deepseek.com/deepseek-chat.jpeg"><meta name="google" content="notranslate"><meta name="ip" content="27.38.197.7"><meta name="region" content="CN"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="apple-touch-icon" href="https://cdn.deepseek.com/chat/icon.png"><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet" media="all" onload="this.media=&quot;all&quot;"><link rel="icon" type="image/x-icon" href="/favicon.svg"><script type="text/javascript" async="" id="_intercom_npm_loader" src="https://widget.intercom.io/widget/guh50jw4"></script><script>!function(n,t){if(n.LogAnalyticsObject=t,!n[t]){var c=function(){c.q.push(arguments)};c.q=c.q||[],n[t]=c}n[t].l=+new Date}(window,"collectEvent")</script><script async="" src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.2.1.js"></script><script defer="" src="/static/default-vendors.c086762b4d.js"></script><script defer="" src="/static/main.5abe3ef0a3.js"></script><link href="/static/main.7526829b58.css" rel="stylesheet"><style>
+body.change-theme * {
+  transition: none !important;
+}
+
+body.change-theme *::before {
+  transition: none !important;
+}
+
+body.change-theme *::after {
+  transition: none !important;
+}
+</style><link data-webpack="@deepseek/chat:chunk-945" rel="stylesheet" href="/static/katex.3ea1e62ca7.css"><script data-smcp="true" src="https://castatic.fengkongcloud.cn/pr/v1.0.4/smcp.min.js"></script><style>@font-face {
+  font-family: 'quote-cjk-patch';
+  src: local('PingFangSC-Regular');
+  unicode-range: U+201C-201D, U+2018-2019;
+}</style><style>
+        .alert {
+            box-sizing: content-box;
+            font-family: Arial, sans-serif;
+            position: fixed;
+            left: 50%;
+            top: 3%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            width: 162px;
+            height: 24px;
+            border-radius: 10px;
+            color: #404040;
+            background-color: #fff;
+            box-shadow: 0px 9px 28px 8px rgba(0,0,0,0.05), 0px 6px 16px 0px rgba(0,0,0,0.08), 0px 3px 6px -4px rgba(0,0,0,0.12);
+            transform: translateX(-50%) scale(0);
+            transition: transform 0.2s ease;
+            z-index: 2000;
+        }
+        .icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+        }
+        .message {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+        .close {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+        }
+    </style><style>
+        #toolTip {
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            white-space: nowrap;
+            padding: 6px 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 99;
+            min-width: 70px;
+            text-align: center;
+        }
+        #toolTip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px; /* 调整居中 */
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #333;
+        }
+    </style><style>
+        .dropdownMenu0 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu0:hover {
+            opacity: 1;
+        }
+        .dropdownMenu0 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu0 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu0 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu0 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu1 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu1:hover {
+            opacity: 1;
+        }
+        .dropdownMenu1 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu1 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu1 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu1 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu2 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu2:hover {
+            opacity: 1;
+        }
+        .dropdownMenu2 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu2 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu2 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu2 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu3 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu3:hover {
+            opacity: 1;
+        }
+        .dropdownMenu3 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu3 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu3 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu3 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu4 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu4:hover {
+            opacity: 1;
+        }
+        .dropdownMenu4 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu4 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu4 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu4 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu5 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu5:hover {
+            opacity: 1;
+        }
+        .dropdownMenu5 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu5 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu5 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu5 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu6 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu6:hover {
+            opacity: 1;
+        }
+        .dropdownMenu6 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu6 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu6 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu6 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu7 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu7:hover {
+            opacity: 1;
+        }
+        .dropdownMenu7 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu7 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu7 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu7 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu8 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu8:hover {
+            opacity: 1;
+        }
+        .dropdownMenu8 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu8 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu8 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu8 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu9 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu9:hover {
+            opacity: 1;
+        }
+        .dropdownMenu9 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu9 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu9 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu9 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.immersive-translate-attach-loading::after {
+  content: " ";
+
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2000%, -50%);
+  z-index: 100;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color),
+      100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color),
+      110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color),
+      120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.immersive-translate-toast {
+  display: flex;
+  position: fixed;
+  z-index: 2147483647;
+  left: 0;
+  right: 0;
+  top: 1%;
+  width: fit-content;
+  padding: 12px 20px;
+  margin: auto;
+  overflow: auto;
+  background: #fef6f9;
+  box-shadow: 0px 4px 10px 0px rgba(0, 10, 30, 0.06);
+  font-size: 15px;
+  border-radius: 8px;
+  color: #333;
+}
+
+.immersive-translate-toast-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.immersive-translate-toast-hidden {
+  margin: 0 20px 0 72px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.immersive-translate-toast-close {
+  color: #666666;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-toast {
+    top: 0;
+    padding: 12px 0px 0 10px;
+  }
+  .immersive-translate-toast-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .immersive-translate-toast-hidden {
+    margin: 10px auto;
+  }
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 2147483647;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 40px 24px 24px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 270px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-modal-content {
+    margin: 50% auto !important;
+  }
+}
+
+.immersive-translate-modal .immersive-translate-modal-content-in-input {
+  max-width: 500px;
+}
+.immersive-translate-modal-content-in-input .immersive-translate-modal-body {
+  text-align: left;
+  max-height: unset;
+}
+
+.immersive-translate-modal-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.immersive-translate-modal-body {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  word-break: break-all;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-modal-body {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
+
+.immersive-translate-close {
+  color: #666666;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 16px;
+  margin: 0 8px;
+  padding: 9px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.immersive-translate-btn:disabled:hover {
+  background-color: #ea4c89;
+}
+
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-action-btn {
+  background-color: transparent;
+  color: #ea4c89;
+  border: 1px solid #ea4c89;
+}
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.imt-image-status {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+}
+.imt-image-status img,
+.imt-image-status svg,
+.imt-img-loading {
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 0 8px 0 !important;
+  min-height: 28px !important;
+  min-width: 28px !important;
+  position: relative !important;
+}
+.imt-img-loading {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAtFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////oK74hAAAAPHRSTlMABBMIDyQXHwyBfFdDMSw+OjXCb+5RG51IvV/k0rOqlGRM6KKMhdvNyZBz9MaupmxpWyj437iYd/yJVNZeuUC7AAACt0lEQVRIx53T2XKiUBCA4QYOiyCbiAsuuGBcYtxiYtT3f6/pbqoYHVFO5r+iivpo6DpAWYpqeoFfr9f90DsYAuRSWkFnPO50OgR9PwiCUFcl2GEcx+N/YBh6pvKaefHlUgZd1zVe0NbYcQjGBfzrPE8Xz8aF+71D8gG6DHFPpc4a7xFiCDuhaWgKgGIJQ3d5IMGDrpS4S5KgpIm+en9f6PlAhKby4JwEIxlYJV9h5k5nee9GoxHJ2IDSNB0dwdad1NAxDJ/uXDHYmebdk4PdbkS58CIVHdYSUHTYYRWOJblWSyu2lmy3KNFVJNBhxcuGW4YBVCbYGRZwIooipHsNqjM4FbgOQqQqSKQQU9V8xmi1QlgHqQQ6DDBvRUVCDirs+EzGDGOQTCATgtYTnbCVLgsVgRE0T1QE0qHCFAht2z6dLvJQs3Lo2FQoDxWNUiBhaP4eRgwNkI+dAjVOA/kUrIDwf3CG8NfNOE0eiFotSuo+rBiq8tD9oY4Qzc6YJw99hl1wzpQvD7ef2M8QgnOGJfJw+EltQc+oX2yn907QB22WZcvlUpd143dqQu+8pCJZuGE4xCuPXJqqcs5sNpsI93Rmzym1k4Npk+oD1SH3/a3LOK/JpUBpWfqNySxWzCfNCUITuDG5dtuphrUJ1myeIE9bIsPiKrfqTai5WZxbhtNphYx6GEIHihyGFTI69lje/rxajdh0s0msZ0zYxyPLhYCb1CyHm9Qsd2H37Y3lugVwL9kNh8Ot8cha6fUNQ8nuXi5z9/ExsAO4zQrb/ev1yrCB7lGyQzgYDGuxq1toDN/JGvN+HyWNHKB7zEoK+PX11e12G431erGYzwmytAWU56fkMHY5JJnDRR2eZji3AwtIcrEV8Cojat/BdQ7XOwGV1e1hDjGGjXbdArm8uJZtCH5MbcctVX8A1WpqumJHwckAAAAASUVORK5CYII=");
+  background-size: 28px 28px;
+  animation: image-loading-rotate 1s linear infinite !important;
+}
+
+.imt-image-status span {
+  color: var(--bg-2, #fff) !important;
+  font-size: 14px !important;
+  line-height: 14px !important;
+  font-weight: 500 !important;
+  font-family: "PingFang SC", Arial, sans-serif !important;
+}
+
+@keyframes image-loading-rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+</style><style>
+        .dropdownMenu10 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu10:hover {
+            opacity: 1;
+        }
+        .dropdownMenu10 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu10 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu10 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu10 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu0 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu0:hover {
+            opacity: 1;
+        }
+        .dropdownMenu0 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu0 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu0 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu0 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu1 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu1:hover {
+            opacity: 1;
+        }
+        .dropdownMenu1 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu1 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu1 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu1 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu2 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu2:hover {
+            opacity: 1;
+        }
+        .dropdownMenu2 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu2 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu2 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu2 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu3 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu3:hover {
+            opacity: 1;
+        }
+        .dropdownMenu3 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu3 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu3 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu3 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu4 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu4:hover {
+            opacity: 1;
+        }
+        .dropdownMenu4 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu4 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu4 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu4 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu5 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu5:hover {
+            opacity: 1;
+        }
+        .dropdownMenu5 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu5 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu5 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu5 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu6 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu6:hover {
+            opacity: 1;
+        }
+        .dropdownMenu6 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu6 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu6 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu6 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu7 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu7:hover {
+            opacity: 1;
+        }
+        .dropdownMenu7 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu7 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu7 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu7 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu8 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu8:hover {
+            opacity: 1;
+        }
+        .dropdownMenu8 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu8 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu8 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu8 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><style>
+        .dropdownMenu0 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu0:hover {
+            opacity: 1;
+        }
+        .dropdownMenu0 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu0 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu0 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu0 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style><link data-webpack="@deepseek/chat:chunk-531" rel="stylesheet" href="/static/mermaidRender.49df1a1d07.css"><style>
+        .dropdownMenu1 {
+            display: none;
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            width: 128px;
+            height: 132px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            z-index: 999;
+        }
+        .dropdownMenu1:hover {
+            opacity: 1;
+        }
+        .dropdownMenu1 div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+            height: 40px
+        }
+        .dropdownMenu1 div:hover {
+            background-color: #f5f5f5;
+            opcity: 1;
+        }
+        .dropdownMenu1 div img {
+            display: inline-block;
+            width:16px;
+            height:16px;
+            padding: 8px 12px 8px 8px;
+        }
+        .dropdownMenu1 div span {
+            flex: 1;
+            padding: 8px 8px 8px 0;
+        }
+    </style></head></head>
+                        <body><div class="ds-markdown ds-markdown--block" style="--ds-md-zoom: 1.143; color: rgb(0, 0, 0);"><p class="ds-markdown-paragraph">基于每德科技案例和提升学习规划效率的需求，我为您设计了一个“企业学习规划智能支持系统”框架，重点解决顾问效率与输出质量问题：</p><h3>系统核心架构</h3><p class="ds-markdown-paragraph"><strong>1. 智能诊断引擎（提效关键）</strong></p><ul><li>痛点：顾问需从零分析企业录音/文本</li><li>解决方案：<ul><li>上传会议录音 → 自动转写+关键词提取（如文中“品牌能力弱”“抖音机会”“关键人才缺口”）</li><li>生成<strong>三维诊断报告</strong>：<div class="md-code-block md-code-block-dark"><style>.kvfysmfp{overflow:hidden;touch-action:none}.ufhsfnkm{transform-origin: 0 0}</style><div class="kvfysmfp _6213ab4"><svg role="graphics-document document" viewBox="0 0 1206.390625 174" class="flowchart mermaid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-svg-15" style="max-width: 1206.39px; transform-origin: 0px 0px; user-select: none; transform: translate(0px, 49.7265px) scale(0.999999);"><style>#mermaid-svg-15{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#ccc;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-svg-15 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-svg-15 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-svg-15 .error-icon{fill:#a44141;}#mermaid-svg-15 .error-text{fill:#ddd;stroke:#ddd;}#mermaid-svg-15 .edge-thickness-normal{stroke-width:1px;}#mermaid-svg-15 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-15 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-15 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-svg-15 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-15 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-15 .marker{fill:lightgrey;stroke:lightgrey;}#mermaid-svg-15 .marker.cross{stroke:lightgrey;}#mermaid-svg-15 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-15 p{margin:0;}#mermaid-svg-15 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#ccc;}#mermaid-svg-15 .cluster-label text{fill:#F9FFFE;}#mermaid-svg-15 .cluster-label span{color:#F9FFFE;}#mermaid-svg-15 .cluster-label span p{background-color:transparent;}#mermaid-svg-15 .label text,#mermaid-svg-15 span{fill:#ccc;color:#ccc;}#mermaid-svg-15 .node rect,#mermaid-svg-15 .node circle,#mermaid-svg-15 .node ellipse,#mermaid-svg-15 .node polygon,#mermaid-svg-15 .node path{fill:#1f2020;stroke:#ccc;stroke-width:1px;}#mermaid-svg-15 .rough-node .label text,#mermaid-svg-15 .node .label text,#mermaid-svg-15 .image-shape .label,#mermaid-svg-15 .icon-shape .label{text-anchor:middle;}#mermaid-svg-15 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-svg-15 .rough-node .label,#mermaid-svg-15 .node .label,#mermaid-svg-15 .image-shape .label,#mermaid-svg-15 .icon-shape .label{text-align:center;}#mermaid-svg-15 .node.clickable{cursor:pointer;}#mermaid-svg-15 .root .anchor path{fill:lightgrey!important;stroke-width:0;stroke:lightgrey;}#mermaid-svg-15 .arrowheadPath{fill:lightgrey;}#mermaid-svg-15 .edgePath .path{stroke:lightgrey;stroke-width:2.0px;}#mermaid-svg-15 .flowchart-link{stroke:lightgrey;fill:none;}#mermaid-svg-15 .edgeLabel{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg-15 .edgeLabel p{background-color:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-15 .edgeLabel rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-15 .labelBkg{background-color:rgba(87.75, 87.75, 87.75, 0.5);}#mermaid-svg-15 .cluster rect{fill:hsl(180, 1.5873015873%, 28.3529411765%);stroke:rgba(255, 255, 255, 0.25);stroke-width:1px;}#mermaid-svg-15 .cluster text{fill:#F9FFFE;}#mermaid-svg-15 .cluster span{color:#F9FFFE;}#mermaid-svg-15 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(20, 1.5873015873%, 12.3529411765%);border:1px solid rgba(255, 255, 255, 0.25);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-15 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#ccc;}#mermaid-svg-15 rect.text{fill:none;stroke-width:0;}#mermaid-svg-15 .icon-shape,#mermaid-svg-15 .image-shape{background-color:hsl(0, 0%, 34.4117647059%);text-align:center;}#mermaid-svg-15 .icon-shape p,#mermaid-svg-15 .image-shape p{background-color:hsl(0, 0%, 34.4117647059%);padding:2px;}#mermaid-svg-15 .icon-shape rect,#mermaid-svg-15 .image-shape rect{opacity:0.5;background-color:hsl(0, 0%, 34.4117647059%);fill:hsl(0, 0%, 34.4117647059%);}#mermaid-svg-15 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-15_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="8" markerWidth="8" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-15_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-15_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart-v2" id="mermaid-svg-15_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-svg-15_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-svg-15_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_A_A1_0" d="M118.511,62L111.292,66.167C104.073,70.333,89.634,78.667,82.415,86.333C75.195,94,75.195,101,75.195,104.5L75.195,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_A_A2_0" d="M212.074,62L219.294,66.167C226.513,70.333,240.952,78.667,248.171,86.333C255.391,94,255.391,101,255.391,104.5L255.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_B1_0" d="M497.391,57.389L483.724,62.324C470.057,67.259,442.724,77.13,429.057,85.565C415.391,94,415.391,101,415.391,104.5L415.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_B2_0" d="M559.391,62L559.391,66.167C559.391,70.333,559.391,78.667,559.391,86.333C559.391,94,559.391,101,559.391,104.5L559.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_B3_0" d="M621.391,56.211L636.391,61.342C651.391,66.474,681.391,76.737,696.391,85.368C711.391,94,711.391,101,711.391,104.5L711.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_C1_0" d="M945.391,57.389L931.724,62.324C918.057,67.259,890.724,77.13,877.057,85.565C863.391,94,863.391,101,863.391,104.5L863.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_C2_0" d="M1007.391,62L1007.391,66.167C1007.391,70.333,1007.391,78.667,1007.391,86.333C1007.391,94,1007.391,101,1007.391,104.5L1007.391,108"></path><path marker-end="url(#mermaid-svg-15_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_C3_0" d="M1069.391,57.389L1083.057,62.324C1096.724,67.259,1124.057,77.13,1137.724,85.565C1151.391,94,1151.391,101,1151.391,104.5L1151.391,108"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" class="labelBkg" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(165.29296875, 35)" id="flowchart-A-0" class="node default"><rect height="54" width="124" y="-27" x="-62" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">经营机会</span></div></foreignObject></g></g><g transform="translate(75.1953125, 139)" id="flowchart-A1-1" class="node default"><rect height="54" width="134.390625" y="-27" x="-67.1953125" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-52.1953125, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="104.390625"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">抖音/海外红利</span></div></foreignObject></g></g><g transform="translate(255.390625, 139)" id="flowchart-A2-3" class="node default"><rect height="54" width="126" y="-27" x="-63" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-48, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="96"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">小红书未开发</span></div></foreignObject></g></g><g transform="translate(559.390625, 35)" id="flowchart-B-4" class="node default"><rect height="54" width="124" y="-27" x="-62" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">能力短板</span></div></foreignObject></g></g><g transform="translate(415.390625, 139)" id="flowchart-B1-5" class="node default"><rect height="54" width="94" y="-27" x="-47" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">品牌营销</span></div></foreignObject></g></g><g transform="translate(559.390625, 139)" id="flowchart-B2-7" class="node default"><rect height="54" width="94" y="-27" x="-47" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">产品定义</span></div></foreignObject></g></g><g transform="translate(711.390625, 139)" id="flowchart-B3-9" class="node default"><rect height="54" width="110" y="-27" x="-55" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-40, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="80"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">跨部门协同</span></div></foreignObject></g></g><g transform="translate(1007.390625, 35)" id="flowchart-C-10" class="node default"><rect height="54" width="124" y="-27" x="-62" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">管理基础</span></div></foreignObject></g></g><g transform="translate(863.390625, 139)" id="flowchart-C1-11" class="node default"><rect height="54" width="94" y="-27" x="-47" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">目标缺失</span></div></foreignObject></g></g><g transform="translate(1007.390625, 139)" id="flowchart-C2-13" class="node default"><rect height="54" width="94" y="-27" x="-47" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">绩效粗放</span></div></foreignObject></g></g><g transform="translate(1151.390625, 139)" id="flowchart-C3-15" class="node default"><rect height="54" width="94" y="-27" x="-47" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">流程空白</span></div></foreignObject></g></g></g></g></g></svg></div></div></li></ul></li></ul><p class="ds-markdown-paragraph"><strong>2. 策略匹配库（质量保障）</strong></p><ul><li>动态知识图谱：<ul><li>关联案例策略（如文中“华宝新能源外挂顾问”“南河合伙制”）</li><li>智能推荐方案：<div class="md-code-block md-code-block-dark"><pre>[每德需求] 品牌能力建设 → 
+[匹配方案] 分阶段实施：
+阶段1：刀哥团队国内陪跑（0-6个月）
+阶段2：搭建内容中台（6-12个月）
+阶段3：GTM体系（张磊课程）</pre></div></li></ul></li></ul><p class="ds-markdown-paragraph"><strong>3. 资源连接器</strong></p><ul><li>智能师资匹配：<div class="md-code-block md-code-block-dark"><pre><span class="token comment"># 伪代码示例</span>
+<span class="token keyword">def</span> <span class="token function">match_teacher</span><span class="token punctuation">(</span>enterprise_type<span class="token punctuation">,</span> stage<span class="token punctuation">,</span> pain_point<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">if</span> enterprise_type <span class="token operator">==</span> <span class="token string">"消费品牌"</span> <span class="token keyword">and</span> pain_point <span class="token operator">==</span> <span class="token string">"品效合一"</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">"徐薇"</span><span class="token punctuation">,</span> <span class="token string">"李科"</span><span class="token punctuation">,</span> <span class="token string">"刀哥团队"</span><span class="token punctuation">]</span> 
+  <span class="token keyword">elif</span> stage <span class="token operator">==</span> <span class="token string">"0-1扩张"</span> <span class="token keyword">and</span> pain_point <span class="token operator">==</span> <span class="token string">"关键人才"</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">"张磊（战略级挖猎）"</span><span class="token punctuation">,</span> <span class="token string">"川老师（实操陪跑）"</span><span class="token punctuation">]</span></pre></div></li></ul><p class="ds-markdown-paragraph"><strong>4. 实施路线图生成</strong></p><ul><li>自动输出带风险提示的规划：<blockquote><strong>关键风险预警</strong>：<ul><li>品牌建设需12个月见效，与抖音红利期存在时间冲突</li><li>空降高管失败率＞50%（见历史案例库No.CT203）</li></ul></blockquote></li></ul><h3>提升效率的3大创新点</h3><ol start="1"><li><strong>对话洞察强化</strong><ul><li>自动标记决策节点（如文中“先经营后管理”原则）</li><li>识别未明需求（例：检测到7次“组织”讨论但0次具体动作 → 提示避免过早体系化）</li></ul></li><li><strong>动态知识沉淀</strong><ul><li>顾问新增方案自动生成「策略卡片」：<div class="md-code-block md-code-block-dark"><pre>[策略ID] M03-2025 
+[场景] 百人企业快速扩张期 
+[核心] 外挂顾问+内部委员会过渡机制 
+[来源] 每德科技案例（2025.06）</pre></div></li></ul></li><li><strong>质量校验系统</strong><ul><li>方案完整性检查（必含项：机会窗口期/能力建设路径/资源投入ROI）</li><li>冲突检测（例：当同时选择“强绩效导向”+“创意型团队”时触发警告）</li></ul></li></ol><h3>系统操作流程</h3><div class="md-code-block md-code-block-dark"><pre><span class="token keyword">sequenceDiagram</span>
+   顾问<span class="token arrow operator">-&gt;&gt;</span>+系统： 上传访谈录音/文本
+   系统<span class="token arrow operator">--&gt;&gt;</span>-AI引擎： 自动提取关键词
+   AI引擎<span class="token arrow operator">--&gt;&gt;</span>知识库： 匹配相似案例
+   知识库<span class="token arrow operator">--&gt;&gt;</span>-系统： 返回策略包
+   系统<span class="token arrow operator">-&gt;&gt;</span>顾问： 生成诊断报告+方案草案
+   顾问<span class="token arrow operator">-&gt;&gt;</span>系统： 调整方案细节
+   系统<span class="token arrow operator">-&gt;&gt;</span>企业端： 输出可视化路线图</pre></div><h3>预期效果</h3><div class="markdown-table-wrapper"><table><thead><tr><th>指标</th><th>当前状态</th><th>系统上线目标</th></tr></thead><tbody><tr><td>方案产出时间</td><td>3-5天/企业</td><td>≤4小时</td></tr><tr><td>关键策略遗漏</td><td>平均2.3项/案</td><td>0项</td></tr><tr><td>资源匹配精度</td><td>依赖个人经验</td><td>90%+推荐准确率</td></tr></tbody></table></div><p class="ds-markdown-paragraph"><strong>实施建议</strong>：首期聚焦「消费企业增长期」场景开发，复用每德案例中的策略逻辑（先抓红利→补关键人→缓建体系），后续扩展制造业/科技企业模块。系统命名为<strong>PathFinder智航系统</strong>（中：智航企业学习规划平台），体现“智能导航+业务领航”双重价值。</p></div></body>
+                    </html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兰湘子 2025年2月 第3次分红通知</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .date-info {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .dividend-round {
+            font-size: 14px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 25px 30px;
+        }
+        
+        .overview-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .overview-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .overview-item {
+            text-align: center;
+        }
+        
+        .overview-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+        
+        .overview-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .amount-highlight {
+            color: #e74c3c;
+        }
+        
+        .rate-highlight {
+            color: #27ae60;
+        }
+        
+        .dividend-description {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .description-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #856404;
+            margin-top: 10px;
+        }
+        
+        .shareholders-section {
+            margin-top: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        .shareholders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .shareholder-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .shareholder-card:hover {
+            border-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+        }
+        
+        .shareholder-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .shareholder-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .shareholder-ratio {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        
+        .shareholder-amount {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer-text {
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .total-amount {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .total-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .total-value {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .overview-section {
+                padding: 20px;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .shareholders-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="project-title">兰XZ投资项目</div>
+            <div class="date-info">2025年2月分红通知</div>
+            <div class="dividend-round">第3次分红</div>
+        </div>
+        
+        <div class="content">
+            <div class="overview-section">
+                <div class="overview-title">📊 项目收益概况</div>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <div class="overview-label">累计收益总额</div>
+                        <div class="overview-value amount-highlight">1,222,837.05元</div>
+                    </div>
+                    <div class="overview-item">
+                        <div class="overview-label">项目总投资</div>
+                        <div class="overview-value">1,467,707.00元</div>
+                    </div>
+                    <div class="overview-item">
+                        <div class="overview-label">项目收益率</div>
+                        <div class="overview-value rate-highlight">83.32%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total-amount">
+                <div class="total-label">本次分红总额</div>
+                <div class="total-value">564,442.07元</div>
+            </div>
+            
+            <div class="dividend-description">
+                <div class="section-title">📋 分红说明</div>
+                <div class="description-text">
+                    自2023年8月30日投入投资款至今，共收到累计分红款及退回本金1,222,837.05元，于2024年2月进行了第一次分配114,388.32元，于2025年2月进行了第二次分配544,006.66元，本次按照大家的投资比例分配564,442.07元，由刘伟转入大家的指定账号；本次分红后，分红款无余额。请知悉。
+                </div>
+            </div>
+            
+            <div class="shareholders-section">
+                <div class="section-title">💰 股东分红明细</div>
+                <div class="shareholders-grid">
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">传科</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">18.75%</div>
+                            <div class="shareholder-amount">105,832.89元</div>
+                        </div>
+                    </div>
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">军哥</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">18.75%</div>
+                            <div class="shareholder-amount">105,832.89元</div>
+                        </div>
+                    </div>
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">慧余</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">18.75%</div>
+                            <div class="shareholder-amount">105,832.89元</div>
+                        </div>
+                    </div>
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">刘伟</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">18.75%</div>
+                            <div class="shareholder-amount">105,832.89元</div>
+                        </div>
+                    </div>
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">延琴</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">5.00%</div>
+                            <div class="shareholder-amount">28,222.10元</div>
+                        </div>
+                    </div>
+                    <div class="shareholder-card">
+                        <div class="shareholder-name">东哥</div>
+                        <div class="shareholder-details">
+                            <div class="shareholder-ratio">20.00%</div>
+                            <div class="shareholder-amount">112,888.41元</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                投资起始日：2023年8月30日<br>
+                分红周期：2024年2月24日 - 2024年12月31日<br>
+                转账负责人：刘伟
+            </div>
+        </div>
+    </div>
+</body>
+</html>

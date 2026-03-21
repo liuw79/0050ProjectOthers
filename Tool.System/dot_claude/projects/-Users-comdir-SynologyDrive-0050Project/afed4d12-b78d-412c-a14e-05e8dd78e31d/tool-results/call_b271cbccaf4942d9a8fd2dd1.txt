@@ -1,0 +1,1999 @@
+--- 段落 1 ---
+title: [{"text":"=== 1号找人官01.txt ===...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 2 ---
+title: [{"text":"**说话人 2 52:54**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 3 ---
+title: [{"text":"**说话人 2 01:53:34**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 4 ---
+title: [{"text":"**说话人 5 02:58:41**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 5 ---
+title: [{"text":"**说话人 2 41:36**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 6 ---
+title: [{"text":"**说话人 5 01:29:01**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 7 ---
+title: [{"text":"**说话人 2 02:14:09**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 8 ---
+title: [{"text":"=== GTM1.txt ===...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 9 ---
+title: [{"text":"**说话人 4 49:33**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 10 ---
+title: [{"text":"**说话人 4 01:38:57**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 11 ---
+title: [{"text":"**说话人 12 02:40:56**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 12 ---
+title: [{"text":"**说话人 2 37:26**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 13 ---
+title: [{"text":"**说话人 4 01:25:21**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 14 ---
+title: [{"text":"**说话人 2 02:22:38**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 15 ---
+title: [{"text":"**说话人 8 21:06**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 16 ---
+title: [{"text":"在安克公司，我们非常强调胜利团队中会涌现出“将军”","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 17 ---
+title: [{"text":"以上是我们的选品流程及 IPD 和 IPMS 的整","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 18 ---
+title: [{"text":"操委会和PCT都是两层会议体系的一部分。操委会由老","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 19 ---
+title: [{"text":"**说话人 5 01:17:52**...","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 20 ---
+title: [{"text":"=== 流程型组织01（已去广告）.txt ===","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 21 ---
+title: [{"text":"那么，哈佛给了我们什么引领呢？它重新颠覆了一切的商","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 22 ---
+title: [{"text":"**人力资源部的角色**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 23 ---
+title: [{"text":"**说话人 1 01:57**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 24 ---
+title: [{"text":"#### 开工会的案例...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 25 ---
+title: [{"text":"**门店开店成功流程**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 26 ---
+title: [{"text":"**发言人 1 03:05:11**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 27 ---
+title: [{"text":"**说话人 2 30:13**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 28 ---
+title: [{"text":"请各组在组长的带领下开始还原现状，用大纸呈现流程。","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 29 ---
+title: [{"text":"**发言人 4 23:26**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 30 ---
+title: [{"text":"**马斯克的五步法**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 31 ---
+title: [{"text":"**发言人 4 02:42:09**...","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 32 ---
+title: [{"text":"团队需要共同成长。一个人可以走得很快，但一群人可以","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 33 ---
+title: [{"text":"请大家花点时间填写自测表，带着课堂上的疑问进入我们","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 34 ---
+title: [{"text":"什么是关键人才？### 整理后的会话稿","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 35 ---
+title: [{"text":"对，目标是否达成也是关键。","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 36 ---
+title: [{"text":"做对股权激励(251 第5段","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 37 ---
+title: [{"text":"决定其中的五成作为银股。我们来看一下这个推演过程和","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 38 ---
+title: [{"text":"进行对比和调整，找出问题。","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 39 ---
+title: [{"text":"希望这份整理后的对话稿符合您的要求。如果有任何进一","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 40 ---
+title: [{"text":"不存在节约成本的问题，而是改变整个分配结构。","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 41 ---
+title: [{"text":"一切红利都是认知红利。对很多企业来说，创始人的天花","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 42 ---
+title: [{"text":"人们在某些方面是正确的。","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 43 ---
+title: [{"text":"2. **大客户**：要求高，流程复杂，需要专门的","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 44 ---
+title: [{"text":"这个职位非常重要，负责产品需求管理的布局。希望各位","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 45 ---
+title: [{"text":"希望这份整理后的会话稿能够更好地传达原意，同时保持","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 46 ---
+title: [{"text":"希望这些内容能为大家提供有价值的参考。谢谢。###","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 47 ---
+title: [{"text":"流程是一种方法论，它提供了一条清晰的路径，指导我们","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 48 ---
+title: [{"text":"模板包括以下几部分：","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 49 ---
+title: [{"text":"必须形成一条龙，否则团队无法有效集成。","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 50 ---
+title: [{"text":"希望这份整理后的会话稿能帮助你更好地传达信息。##","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 51 ---
+title: [{"text":"马斯克是一位伟大的企业家，他经常睡在车间里，非常接","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 52 ---
+title: [{"text":"不用等到明年，我本月25、26号还有课程。做个广告","type":"text"}]
+course: {"link_record_ids":["recvbrwO7bg2hu"]}
+
+--- 段落 53 ---
+title: [{"text":"2. 价值主张：产品的核心卖点和购买理由是什么？","type":"text"}]
+course: {"link_record_ids":["recvbrwMc3lp9F"]}
+
+--- 段落 54 ---
+title: [{"text":"带领大家讨论一下。讨论完之后休息10分钟，因为早上","type":"text"}]
+course: {"link_record_ids":["recvbrwMc3lp9F"]}
+
+--- 段落 55 ---
+title: [{"text":"4. **渠道策略**：制定渠道策略。","type":"text"}]
+course: {"link_record_ids":["recvbrwMc3lp9F"]}
+
+--- 段落 56 ---
+title: [{"text":"面试官必备：企业招聘关键技能解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 57 ---
+title: [{"text":"超级面试官：高效求职技巧解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 58 ---
+title: [{"text":"面试官必备：角色匹配与人才筛选策略","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 59 ---
+title: [{"text":"面试官必备：精准定位关键能力","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 60 ---
+title: [{"text":"超级面试官：选拔与评估技巧解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 61 ---
+title: [{"text":"超级面试官：面试技巧与逻辑思维解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 62 ---
+title: [{"text":"1. 面试官选择标准解析2. 面试选择中的学习要素","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 63 ---
+title: [{"text":"超级面试官：高效沟通与组织人才选拔策略","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 64 ---
+title: [{"text":"超级面试官：职业定位与面试技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 65 ---
+title: [{"text":"超级面试官：精准识别候选人特质与需求","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 66 ---
+title: [{"text":"面试官核心技能提升攻略","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 67 ---
+title: [{"text":"超级面试官：掌握关键技能，打造卓越面试策略","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 68 ---
+title: [{"text":"超级面试官：企业面试技巧与心理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 69 ---
+title: [{"text":"1. 平台变化对面试官的影响2. 提升组织效率的面","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 70 ---
+title: [{"text":"《超级面试官：高效求职成功法则》","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 71 ---
+title: [{"text":"超级面试官：揭秘成功面试秘诀","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 72 ---
+title: [{"text":"超级面试官：HR专业素养提升之道","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 73 ---
+title: [{"text":"面试技巧与STAR法则解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 74 ---
+title: [{"text":"面试技巧解析与角色认知","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 75 ---
+title: [{"text":"超级面试官：客户关系处理与价值识别技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 76 ---
+title: [{"text":"面试官评分技巧解析","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 77 ---
+title: [{"text":"超级面试官：打造高效招聘与面试技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwR9Etq5b"]}
+
+--- 段落 78 ---
+title: [{"text":"高维学堂2185期：人才战略与决策课程启动","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 79 ---
+title: [{"text":"内部人才挖掘与高效团队建设策略","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 80 ---
+title: [{"text":"课程休息与人才招聘策略","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 81 ---
+title: [{"text":"**人事调整与领导力培养策略**","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 82 ---
+title: [{"text":"人才评估与背景调查的重要性","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 83 ---
+title: [{"text":"张飞劝请孔明，兄弟争执卧龙岗","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 84 ---
+title: [{"text":"高管招聘的“55模式”与选拔策略","type":"text"}]
+course: {"link_record_ids":["recvbrwFtADWM1"]}
+
+--- 段落 85 ---
+title: [{"text":"GTM战略：创业扩张期的市场与供应链策略","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 86 ---
+title: [{"text":"GTM与IPMS集成作战策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 87 ---
+title: [{"text":"华为GTM操盘流程解析与启示","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 88 ---
+title: [{"text":"GTM项目复盘：立项与上市流程解析","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 89 ---
+title: [{"text":"企业高层责任与GTM策略实践","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 90 ---
+title: [{"text":"1. GTM团队角色分配与职责2. 不同团队GTM","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 91 ---
+title: [{"text":"GTM课程：目标共识与营销指标优化","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 92 ---
+title: [{"text":"1. GTM团队协作困境分析2. 企业IPMS实施","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 93 ---
+title: [{"text":"**安克GTM激励机制与团队成长**","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 94 ---
+title: [{"text":"GTM选品流程与IPD/IPMS操盘阶段总结","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 95 ---
+title: [{"text":"操委会与PCT：战略决策与执行引擎","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 96 ---
+title: [{"text":"**GTM阶段策略制定与执行概述**","type":"text"}]
+course: {"link_record_ids":["recvbrwFPZ4Sex"]}
+
+--- 段落 97 ---
+title: [{"text":"OGSM业务规划与执行策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 98 ---
+title: [{"text":"OGSM战略规划与客户关系管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 99 ---
+title: [{"text":"OGSM战略规划与执行","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 100 ---
+title: [{"text":"OGSM目标设定与执行方法","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 101 ---
+title: [{"text":"OGSM目标管理与战略实施","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 102 ---
+title: [{"text":"1. SMART目标原理解读与实施要点2. 设定高","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 103 ---
+title: [{"text":"1. 平衡计分卡：有效管理工具2. 直接管理员工的","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 104 ---
+title: [{"text":"1. 沟通技巧在OGSM中的应用2. 内部沟通与团","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 105 ---
+title: [{"text":"1. OGSM实战演练与效果评估2. OGSM目标","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 106 ---
+title: [{"text":"1. OGSM：识别增长机会与挑战2. 战略规划：","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 107 ---
+title: [{"text":"1. OGSM：明确项目目标及成功标准2. OGS","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 108 ---
+title: [{"text":"1. OGSM目标与指标对应策略2. OGSM计划","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 109 ---
+title: [{"text":"1. 组织结构优化的重要性2. 强调目标导向的指引","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 110 ---
+title: [{"text":"1. 小组合作的重要性及作用2. 目标实现的关键评","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 111 ---
+title: [{"text":"1. 企业战略执行中的影响因素分析2. 预算管理中","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 112 ---
+title: [{"text":"OGSM预测效益与资源规划","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 113 ---
+title: [{"text":"OGSM资源优化与配置策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 114 ---
+title: [{"text":"1. OGSM系统与目标协议实施2. OGSM项目","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 115 ---
+title: [{"text":"1. OGSM：团队目标实现与个人参与2. OGS","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 116 ---
+title: [{"text":"1. OGSM平台与资源整合协议2. 实施细节与全","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 117 ---
+title: [{"text":"OGSM课程：预策管理与企业运营策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 118 ---
+title: [{"text":"OGSM：高效决策与目标达成策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 119 ---
+title: [{"text":"OGSM成功实施策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 120 ---
+title: [{"text":"OGSM实战：如何有效制定与执行战略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 121 ---
+title: [{"text":"OGSM：构建高效团队与企业战略实施","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 122 ---
+title: [{"text":"OGSM：企业经营活动分析与策略制定","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 123 ---
+title: [{"text":"OGSM：企业外部洞察与业务战略优化","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 124 ---
+title: [{"text":"OGSM战略规划与产品管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 125 ---
+title: [{"text":"OGSM框架：战略实施与目标管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 126 ---
+title: [{"text":"1. OGSMD沟通技巧提升2. 信息版权与沟通路","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 127 ---
+title: [{"text":"OGSM策略规划与执行关键要点","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 128 ---
+title: [{"text":"OGSM策略制定与执行技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 129 ---
+title: [{"text":"1. OGSM内部执行：有效目标与措施2. OGS","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 130 ---
+title: [{"text":"1. OGSM中如何提升沟通效果2. OGSM中的","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 131 ---
+title: [{"text":"OGSM计划制定与团队目标达成","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 132 ---
+title: [{"text":"OGSM模型解析与应用","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 133 ---
+title: [{"text":"1. 项目信息同步与执行效率2. 项目管理中的角色","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 134 ---
+title: [{"text":"OGSM战略规划与执行策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 135 ---
+title: [{"text":"1. 将业务需求转化为现实执行2. 企业目标需明确","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 136 ---
+title: [{"text":"1. OGSM课程：战略执行中的体系化挑战2. O","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 137 ---
+title: [{"text":"OGSM课程：设定与衡量健康目标","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 138 ---
+title: [{"text":"1. 中国企业环境中的SMART目标调整2. 大数","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 139 ---
+title: [{"text":"1. 结构性表达：高效沟通的艺术2. “多指导，少","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 140 ---
+title: [{"text":"1. 业务负责人主导战略规划优势2. 共创会提升战","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 141 ---
+title: [{"text":"1. 两线发展：提升员工综合能力之道2. 项目管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 142 ---
+title: [{"text":"1. 目标与方向：避免方法误选2. 策略提升效率：","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 143 ---
+title: [{"text":"1. 组织策略重要性解析2. 增强策略指引性方法3","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 144 ---
+title: [{"text":"OGSM策略有效性检验与优化","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 145 ---
+title: [{"text":"预算制与效用制区别解析","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 146 ---
+title: [{"text":"1. 跨部门协作优化企业资源管理策略2. 资源分配","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 147 ---
+title: [{"text":"1. 激励机制与团队目标实现2. 真实需求与激励方","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 148 ---
+title: [{"text":"1. OGSM目标评审会：审批与协调策略2. 目标","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 149 ---
+title: [{"text":"OGSM战略：从一线洞察到产品创新","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 150 ---
+title: [{"text":"OGSM课程：假设验证与MVP测试策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 151 ---
+title: [{"text":"OGSM策略制定：5个为什么分析法识别根因","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 152 ---
+title: [{"text":"OGSM策略：从内部拓展到外部视角","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 153 ---
+title: [{"text":"OGSM课程：跨部门协作与策略执行有效性评估","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 154 ---
+title: [{"text":"1. 仪式感活动：提升团队士气新策略2. 通达会信","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 155 ---
+title: [{"text":"1. 正反馈在策略执行中的应用2. 负面反馈在策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 156 ---
+title: [{"text":"1. 提升员工绩效的面谈技巧2. 黄金三讲法：高效","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 157 ---
+title: [{"text":"1. 双向沟通与信息准确性2. 提升团队合作的沟通","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 158 ---
+title: [{"text":"1. 项目管理工具：责任落实与进度可视化2. 复盘","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 159 ---
+title: [{"text":"1. 绩效管理中团队协作的重要性2. 绩效排名设计","type":"text"}]
+course: {"link_record_ids":["recvbrwGe0z5m8"]}
+
+--- 段落 160 ---
+title: [{"text":"OGSM规划与执行关键要素解析","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 161 ---
+title: [{"text":"OGSM关系建立与企业发展策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 162 ---
+title: [{"text":"OGSM战略规划与执行技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 163 ---
+title: [{"text":"OGSM课程：目标设定与计划执行技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 164 ---
+title: [{"text":"OGSM目标设定与执行策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 165 ---
+title: [{"text":"1. SMART目标原理与我国企业管理2. 目标设","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 166 ---
+title: [{"text":"1. 平衡计分卡：高效目标管理工具2. 直接评估员","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 167 ---
+title: [{"text":"1. 沟通技巧与自我表达2. 团队沟通与协作3. ","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 168 ---
+title: [{"text":"1. OGSM实战：目标设定与执行策略2. OGS","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 169 ---
+title: [{"text":"1. OGSM：识别机遇与拓展策略2. 为什么要强","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 170 ---
+title: [{"text":"1. 项目目标设定与成功标准2. 指标选择与价值导","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 171 ---
+title: [{"text":"1. OGSM目标与计划对应策略2. OGSM计划","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 172 ---
+title: [{"text":"1. 组织战略制定的重要性2. 强调目标指引与战略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 173 ---
+title: [{"text":"1. OGS-M：小目标设定的重要性与指引2. O","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 174 ---
+title: [{"text":"1. 项目经理时间管理影响分析2. 企业预算执行与","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 175 ---
+title: [{"text":"OGSM预测与资源优化策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 176 ---
+title: [{"text":"1. 优化资源配置策略2. 预测客户需求与资源配比","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 177 ---
+title: [{"text":"1. 企业目标管理系统与绩效协议2. 项目目标设定","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 178 ---
+title: [{"text":"1. 项目实施：通过成员参与实现目标2. 关注成员","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 179 ---
+title: [{"text":"1. OGSM平台与项目资源协同策略2. 项目实施","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 180 ---
+title: [{"text":"OGSM：撰写预测与运营计划策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 181 ---
+title: [{"text":"OGSM课程：实效性文本分析与评估","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 182 ---
+title: [{"text":"OGSM策略：精准实施与成功实践","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 183 ---
+title: [{"text":"标题：OGSM课程：原始文本解读与实际应用探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 184 ---
+title: [{"text":"OGSM课程：构建高效学习与个人成长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 185 ---
+title: [{"text":"OGSM：运营活动策略与执行思考","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 186 ---
+title: [{"text":"OGSM战略管理与外部环境适应","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 187 ---
+title: [{"text":"OGSM策略制定与执行要点","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 188 ---
+title: [{"text":"OGSM战略规划与实施要点","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 189 ---
+title: [{"text":"1. OGSM课程：团队沟通与信息传递技巧2. O","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 190 ---
+title: [{"text":"OGSM战略规划与执行要点","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 191 ---
+title: [{"text":"OGSM计划与团队协作技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 192 ---
+title: [{"text":"1. 内部执行中确保有效管理方案2. 内部执行为何","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 193 ---
+title: [{"text":"1. 如何通过沟通提升团队执行力2. 平衡计分卡的","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 194 ---
+title: [{"text":"OGSM计划制定与团队协作要点","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 195 ---
+title: [{"text":"OGSM模型：动机、能力与提示指引","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 196 ---
+title: [{"text":"1. 项目协同：实时信息同步提升效率2. 项目管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 197 ---
+title: [{"text":"OGSM策略规划与执行优化","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 198 ---
+title: [{"text":"1. OGSM：将战略转化为实际行动2. 企业目标","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 199 ---
+title: [{"text":"OGSM战略执行：体系化与标准化挑战","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 200 ---
+title: [{"text":"OGSM课程：体重目标设定与减重策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 201 ---
+title: [{"text":"1. 中国企业SMART目标调整：从“可实现”到“","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 202 ---
+title: [{"text":"1. 结构性表达在沟通中的应用2. 多指导少指令：","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 203 ---
+title: [{"text":"1. 业务负责人引领战略规划，CEO决策优化的优势","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 204 ---
+title: [{"text":"1. 两线发展：提升员工综合能力之道2. 项目管理","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 205 ---
+title: [{"text":"1. 目标与方向：员工行动差异分析2. 策略提升效","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 206 ---
+title: [{"text":"1. 组织策略：团队建设与业务发展同步2. 增强策","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 207 ---
+title: [{"text":"策略有效性检验与优化","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 208 ---
+title: [{"text":"全面预算制与效用制解析","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 209 ---
+title: [{"text":"1. 跨部门协作优化企业资源管理策略2. 处理资源","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 210 ---
+title: [{"text":"1. 激励机制与团队目标实现2. 关注员工需求与激","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 211 ---
+title: [{"text":"1. 目标评审会：审批与协调的艺术2. 管理策略：","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 212 ---
+title: [{"text":"标题：从一线反馈到产品创新：OGSM战略实施案例","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 213 ---
+title: [{"text":"OGSM实验步骤：假设、验证与执行策略","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 214 ---
+title: [{"text":"OGSM策略：5个为什么分析法识别营销问题根因","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 215 ---
+title: [{"text":"OGSM课程：预期与外部视角的重要性","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 216 ---
+title: [{"text":"OGSM策略执行与评估分享","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 217 ---
+title: [{"text":"1. 仪式感活动提升团队士气策略2. 避免通达会信","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 218 ---
+title: [{"text":"1. 策略执行中的正反馈运用技巧2. 负面反馈在策","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 219 ---
+title: [{"text":"1. 提升员工绩效的面谈技巧2. 黄金三讲法沟通技","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 220 ---
+title: [{"text":"1. 双向沟通的重要性2. 提升团队合作的沟通技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 221 ---
+title: [{"text":"1. 项目管理工具：责任与进度可视化2. 复盘机制","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 222 ---
+title: [{"text":"1. 绩效管理中团队协作的重要性2. 设计激励性绩","type":"text"}]
+course: {"link_record_ids":["recvbrwGIpKSM5"]}
+
+--- 段落 223 ---
+title: [{"text":"高维学堂OGSM课程：战略规划与团队协作","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 224 ---
+title: [{"text":"OGSM策略抓手五部曲解析","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 225 ---
+title: [{"text":"MECE原则在人群分析中的应用","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 226 ---
+title: [{"text":"标题：OGSM关键步骤：聚焦核心行动与目标评估","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 227 ---
+title: [{"text":"OGSM一页纸：聚焦战略与行动提炼","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 228 ---
+title: [{"text":"OGSM模型与积分卡管理实践","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 229 ---
+title: [{"text":"优化会议地点与个人计划制定方法","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 230 ---
+title: [{"text":"评估员工表现与激励方案优化","type":"text"}]
+course: {"link_record_ids":["recvbrwH5e0C7u"]}
+
+--- 段落 231 ---
+title: [{"text":"业务优化与利润提升策略探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwHpbL51X"]}
+
+--- 段落 232 ---
+title: [{"text":"1. 盈利模型优化与价值动因分析2. 业务特点与成","type":"text"}]
+course: {"link_record_ids":["recvbrwHpbL51X"]}
+
+--- 段落 233 ---
+title: [{"text":"**融资需求与预算合理性分析**","type":"text"}]
+course: {"link_record_ids":["recvbrwHpbL51X"]}
+
+--- 段落 234 ---
+title: [{"text":"后台部门痛点与业务优化策略","type":"text"}]
+course: {"link_record_ids":["recvbrwHpbL51X"]}
+
+--- 段落 235 ---
+title: [{"text":"业务优化：快速决策与现金流管理","type":"text"}]
+course: {"link_record_ids":["recvbrwHpbL51X"]}
+
+--- 段落 236 ---
+title: [{"text":"打造流程型组织，提升客户响应速度","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 237 ---
+title: [{"text":"商业模式设计与创业股权风险规避","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 238 ---
+title: [{"text":"1. 企业各部门协同作战之道2. 阶段性战略与部门","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 239 ---
+title: [{"text":"电商物流成本控制与增长战略","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 240 ---
+title: [{"text":"标题：提升转化率：业务管理者卡点突破策略","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 241 ---
+title: [{"text":"CEO亲临用户洞察：信息传递失真防范之道","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 242 ---
+title: [{"text":"直播达人孵化策略与团队激励技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 243 ---
+title: [{"text":"项目组管理：设定期望与真实挑战","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 244 ---
+title: [{"text":"1. 全面人才规划与未来竞争优势2. 科学创业与认","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 245 ---
+title: [{"text":"从“要我学”到“我要学”：激发团队学习动力","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 246 ---
+title: [{"text":"1. 业务规模与员工成长关系探讨2. 新员工成长路","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 247 ---
+title: [{"text":"业务管理者薪酬与KPI设定探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 248 ---
+title: [{"text":"业务漏斗模型与招聘经理能力评估","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 249 ---
+title: [{"text":"高管招聘与价值观契合的重要性","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 250 ---
+title: [{"text":"巩固培训成果的有效方法","type":"text"}]
+course: {"link_record_ids":["recvbrwHLoysxu"]}
+
+--- 段落 251 ---
+title: [{"text":"业务领先战略：华为战略实践解析","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 252 ---
+title: [{"text":"“华为ToC战略：心智占领与客户成长之道”","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 253 ---
+title: [{"text":"构建业务领先战略的七个关键要素","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 254 ---
+title: [{"text":"1. 富裕家庭消费潜力与市场机会2. 挖掘资金潜力","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 255 ---
+title: [{"text":"发现行业机会点与资金流动趋势","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 256 ---
+title: [{"text":"牧原：重塑猪肉价值链的领先战略","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 257 ---
+title: [{"text":"立邦案例：市场结构分析与增长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 258 ---
+title: [{"text":"捕捉印尼商机：需求驱动与战略布局","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 259 ---
+title: [{"text":"电动车豪华市场策略与超越竞争对手之道","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 260 ---
+title: [{"text":"《借鉴顶尖策略：投资银行在业务领先中的应用》","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 261 ---
+title: [{"text":"收入质量与客户选择：羊群效应与客户分级策略","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 262 ---
+title: [{"text":"**客户需求与万华护肤服务案例**","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 263 ---
+title: [{"text":"建立客户深度绑定与长期战略伙伴关系","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 264 ---
+title: [{"text":"儿童市场战略案例分析：乐可萨生日会策略","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 265 ---
+title: [{"text":"业务领先战略：目标分解与产品开发价值创造","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 266 ---
+title: [{"text":"从客户一线到战略规划的实践案例","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 267 ---
+title: [{"text":"华为产品经理考核机制与组织能力转化","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 268 ---
+title: [{"text":"业务领先战略：CMF体系构建与外部资源利用","type":"text"}]
+course: {"link_record_ids":["recvbrwI5SrGyI"]}
+
+--- 段落 269 ---
+title: [{"text":"事业战略：邓良课程要点解析","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 270 ---
+title: [{"text":"事业战略：精准定位与市场变化应对","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 271 ---
+title: [{"text":"事业战略：构建企业关系与目标达成","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 272 ---
+title: [{"text":"事业战略：应对平战时态转变策略","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 273 ---
+title: [{"text":"顾客关系与业务战略深化","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 274 ---
+title: [{"text":"事业战略：设定公司决策标准与执行策略","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 275 ---
+title: [{"text":"事业战略：构建企业核心知识与拓展策略","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 276 ---
+title: [{"text":"事业战略：适应变化，把握机遇","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 277 ---
+title: [{"text":"《企业战略定位：把握行业边界与产品创新》","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 278 ---
+title: [{"text":"事业战略：构建企业竞争优势之道","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 279 ---
+title: [{"text":"事业战略：价值识别与财富积累之道","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 280 ---
+title: [{"text":"事业战略：选择与评估商业模式","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 281 ---
+title: [{"text":"客户满意度与事业战略优化","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 282 ---
+title: [{"text":"知识转化与事业战略构建","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 283 ---
+title: [{"text":"企业转型与战略定位","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 284 ---
+title: [{"text":"事业战略：构建精准业务蓝图与动态调整策略","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 285 ---
+title: [{"text":"客户价值与事业战略的关系","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 286 ---
+title: [{"text":"事业战略：匹配个人目标，实现职业飞跃","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 287 ---
+title: [{"text":"事业战略：从角色定位到企业发展","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 288 ---
+title: [{"text":"事业战略：目标设定与公司引航策略","type":"text"}]
+course: {"link_record_ids":["recvbrwIpx6mmy"]}
+
+--- 段落 289 ---
+title: [{"text":"《创业者的自我管理之道：人人都是CEO》","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 290 ---
+title: [{"text":"德鲁克理念：笨办法的智慧与实践","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 291 ---
+title: [{"text":"标题：打造顾客首选：领导力与“要事第一”艺术","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 292 ---
+title: [{"text":"管理者五项基本活动：提升管理效能的关键","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 293 ---
+title: [{"text":"标题：聚焦未来：要事评估与业务线选择","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 294 ---
+title: [{"text":"1. 游戏思维提升员工积极性2. 极值分析激发团队","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 295 ---
+title: [{"text":"1. 企业经营的三位一体法则2. 百年企业的知识体","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 296 ---
+title: [{"text":"待办事项应用：养成高效任务管理习惯","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 297 ---
+title: [{"text":"人人CEO：任务优先与自我管理艺术","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 298 ---
+title: [{"text":"从三无青年到卓越人才：蜕变与成长之路","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 299 ---
+title: [{"text":"发现潜能：人人皆可成CEO","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 300 ---
+title: [{"text":"沟通驱动自我管理：打造高效团队之道","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 301 ---
+title: [{"text":"人人自我评估实验：揭秘CEO特质","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 302 ---
+title: [{"text":"1. **改革开放重大决策解析**2. **国企改","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 303 ---
+title: [{"text":"标题：提升决策力：解析CEO思维与意见管理","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 304 ---
+title: [{"text":"德鲁克：大师中的大师，管理智慧启示录","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 305 ---
+title: [{"text":"德鲁克思想：构建个人管理体系的五要素","type":"text"}]
+course: {"link_record_ids":["recvbrwIK2j2Ij"]}
+
+--- 段落 306 ---
+title: [{"text":"高维学堂供应链管理课程启动","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 307 ---
+title: [{"text":"1. 供应链定义与国家定性解析2. 公司协同能力与","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 308 ---
+title: [{"text":"供应链管理：VSM分析与物料交期优化","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 309 ---
+title: [{"text":"供应链计划分层与战略定位","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 310 ---
+title: [{"text":"呆滞库存定义与处理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 311 ---
+title: [{"text":"供应链管理：品类规划与产品多样性优化","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 312 ---
+title: [{"text":"构建供应链管理体系：从零到一的关键步骤","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 313 ---
+title: [{"text":"**跨境电商预测偏差分析与供应链决策流程**","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 314 ---
+title: [{"text":"供应链成本核算与供应商分类","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 315 ---
+title: [{"text":"1. 铜价上涨对供应链影响及风险防范2. 提前备货","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 316 ---
+title: [{"text":"供应链组织架构与品类分工策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJ5e9zII"]}
+
+--- 段落 317 ---
+title: [{"text":"做实企业文化：构建与组织融合的深层理念","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 318 ---
+title: [{"text":"企业文化实践与HR角色深化","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 319 ---
+title: [{"text":"企业文化与团队建设：塑造成功的企业精神","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 320 ---
+title: [{"text":"企业文化建设要点解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 321 ---
+title: [{"text":"企业文化建设核心要素解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 322 ---
+title: [{"text":"企业文化建设：内化外显，价值定位与价值实现","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 323 ---
+title: [{"text":"打造企业文化建设与价值提升","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 324 ---
+title: [{"text":"打造企业文化的重要性与策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 325 ---
+title: [{"text":"1. 实施企业文化：产品定价与实际应用2. 企业更","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 326 ---
+title: [{"text":"企业文化成功关键要素解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 327 ---
+title: [{"text":"企业文化建设关键步骤解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 328 ---
+title: [{"text":"做实企业文化：强化内涵，提升价值","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 329 ---
+title: [{"text":"企业文化压力管理的重要性","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 330 ---
+title: [{"text":"企业文化建设与员工激励策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 331 ---
+title: [{"text":"企业文化招聘策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 332 ---
+title: [{"text":"做实企业文化：价值观内化与外化实践","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 333 ---
+title: [{"text":"打造企业文化核心价值与员工职业规划","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 334 ---
+title: [{"text":"打造企业文化实践策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 335 ---
+title: [{"text":"企业文化实践策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 336 ---
+title: [{"text":"企业文化组织意义与作用","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 337 ---
+title: [{"text":"1. 企业文化价值塑造之道2. 队伍价值观与团队目","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 338 ---
+title: [{"text":"做实企业文化：27天高强度培训与转变","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 339 ---
+title: [{"text":"强化企业文化建设实践与体验","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 340 ---
+title: [{"text":"企业文化建设的重要性与实施路径","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 341 ---
+title: [{"text":"打造企业文化实践与团队协作课程","type":"text"}]
+course: {"link_record_ids":["recvbrwJuvsf8u"]}
+
+--- 段落 342 ---
+title: [{"text":"股权激励：企业战略与人才激励之道","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 343 ---
+title: [{"text":"股权激励设计与实施探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 344 ---
+title: [{"text":"股权激励：聚焦核心人才与指数型回报","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 345 ---
+title: [{"text":"标题：安克股权激励：营收目标与上市策略分析","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 346 ---
+title: [{"text":"股权激励机制构建与优化","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 347 ---
+title: [{"text":"股权激励估值与定价策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 348 ---
+title: [{"text":"股权激励：从业务结合到价值评估","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 349 ---
+title: [{"text":"1. 股权激励：沟通与案例内化2. 股权激励回报：","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 350 ---
+title: [{"text":"借鉴成熟机制：跨境电商与股权激励策略","type":"text"}]
+course: {"link_record_ids":["recvbrwJOpi9jS"]}
+
+--- 段落 351 ---
+title: [{"text":"创始人财务报表编制与解读","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 352 ---
+title: [{"text":"创始人财务进阶：企业资金管理与增长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 353 ---
+title: [{"text":"创始人财务进阶：精准预测与资金管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 354 ---
+title: [{"text":"创始人财务进阶：揭秘3000万融资之道","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 355 ---
+title: [{"text":"创始人财务进阶：提升企业财务支持与业绩评估","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 356 ---
+title: [{"text":"创始人财务进阶：产品定价策略与盈利模式分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 357 ---
+title: [{"text":"创始人财务进阶：项目投资决策与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 358 ---
+title: [{"text":"创始人财务进阶：企业融资与成长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 359 ---
+title: [{"text":"创始人财务进阶：企业经营与风险控制策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 360 ---
+title: [{"text":"创始人财务进阶：应收账款管理与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 361 ---
+title: [{"text":"创始人财务进阶：系统整合与数据管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 362 ---
+title: [{"text":"创始人财务进阶：企业资金管理与盈利策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 363 ---
+title: [{"text":"创始人财务进阶实战策略与平台操作","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 364 ---
+title: [{"text":"创始人财务风险识别与控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 365 ---
+title: [{"text":"创始人财务进阶：企业融资策略与估值分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 366 ---
+title: [{"text":"创始人财务进阶：CFO角色与战略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 367 ---
+title: [{"text":"创始人财务进阶：资金管理与决策优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 368 ---
+title: [{"text":"创始人财务进阶：解码融资与财务系统构建","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 369 ---
+title: [{"text":"创始人财务进阶策略与思维模式","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 370 ---
+title: [{"text":"创始人财务进阶：低成本策略与利润增长","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 371 ---
+title: [{"text":"创始人财务进阶：应对财务困境与战略调整","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 372 ---
+title: [{"text":"创始人财务进阶：提升客户体验与效率策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 373 ---
+title: [{"text":"创始人财务进阶：企业成长与融资策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 374 ---
+title: [{"text":"创始人财务进阶：解析股权激励与融资策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 375 ---
+title: [{"text":"创始人财务进阶：平台客户分析与盈利模式探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 376 ---
+title: [{"text":"创始人财务进阶：揭秘融资策略与增长模式","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 377 ---
+title: [{"text":"创始人财务进阶：深入剖析融资策略与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 378 ---
+title: [{"text":"创始人财务进阶：破解财务压力与增长之道","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 379 ---
+title: [{"text":"创始人财务进阶：合同谈判与风险控制策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 380 ---
+title: [{"text":"创始人财务进阶：项目预测与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 381 ---
+title: [{"text":"创始人财务进阶：实战投资理财策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 382 ---
+title: [{"text":"创始人财务进阶：盈利策略与资金管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 383 ---
+title: [{"text":"创始人财务进阶：解析企业价值与投资决策","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 384 ---
+title: [{"text":"创始人财务进阶：企业税务管理与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 385 ---
+title: [{"text":"创始人财务进阶：企业财务规划与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 386 ---
+title: [{"text":"创始人财务进阶：企业原始投资与ROI预测","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 387 ---
+title: [{"text":"创始人财务进阶：数据驱动增长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 388 ---
+title: [{"text":"创始人财务进阶：资金筹集与资源优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 389 ---
+title: [{"text":"1. 关键策略与财务操作技巧2. 应对财务困境的实","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 390 ---
+title: [{"text":"创始人财务进阶：提升中小企业财务能力","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 391 ---
+title: [{"text":"创始人财务进阶：企业财务规划与BP构建","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 392 ---
+title: [{"text":"创始人财务进阶：盈利模式与实战技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 393 ---
+title: [{"text":"1. BP支持项目融资策略2. 优质BP助力企业招","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 394 ---
+title: [{"text":"创始人财务进阶：企业现金流管理与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 395 ---
+title: [{"text":"创始人财务进阶：报表解读与业务分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 396 ---
+title: [{"text":"1. 资金管理要点与创业盈利2. 融资风险与企业发","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 397 ---
+title: [{"text":"创始人财务报表编制与解读","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 398 ---
+title: [{"text":"创始人财务进阶：提升经营效益与ROI策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 399 ---
+title: [{"text":"创始人财务进阶：财务关键指标分析与预测策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 400 ---
+title: [{"text":"创始人财务进阶：融资策略与风险评估","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 401 ---
+title: [{"text":"1. 企业融资细节重要性分析2. 选择创业导师注意","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 402 ---
+title: [{"text":"创始人财务进阶：盈利模式与资金管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 403 ---
+title: [{"text":"创始人财务进阶：税务优化与资金管理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 404 ---
+title: [{"text":"创始人财务进阶：盈利模式与预测分析策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 405 ---
+title: [{"text":"创始人财务进阶：优化产品结构，提升盈利能力","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 406 ---
+title: [{"text":"创始人财务进阶：产品定价与维护策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 407 ---
+title: [{"text":"创始人财务风险识别与应对策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 408 ---
+title: [{"text":"创始人财务进阶：提升组织管理与盈利能力","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 409 ---
+title: [{"text":"创始人财务风险规避之道","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 410 ---
+title: [{"text":"创始人财务进阶：原理解析与实操技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 411 ---
+title: [{"text":"创始人财务进阶：解析企业融资与成长策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 412 ---
+title: [{"text":"1. 压力识别与应对策略2. 企业压力管理与员工支","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 413 ---
+title: [{"text":"创始人财务进阶：企业估值与资本运作策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 414 ---
+title: [{"text":"创始人财务进阶：成本优化与盈利模式解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 415 ---
+title: [{"text":"创始人财务进阶：IP价值评估与预测策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 416 ---
+title: [{"text":"创始人财务进阶：盈利模式与成本控制策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 417 ---
+title: [{"text":"1. 优化客户满意度，提升销售效率2. 预测预算支","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 418 ---
+title: [{"text":"创始人财务进阶：目标管理与现金流优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 419 ---
+title: [{"text":"创始人财务进阶：掌控现金流，提升企业价值","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 420 ---
+title: [{"text":"创始人财务预测与风险控制策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 421 ---
+title: [{"text":"1. 应对客户满意度与财务绩效的关系2. 客户满意","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 422 ---
+title: [{"text":"创始人财务进阶：实战解析与策略提升","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 423 ---
+title: [{"text":"创始人财务进阶：识别与应对企业盈利周期","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 424 ---
+title: [{"text":"创始人财务进阶：盈利预测与资金管理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 425 ---
+title: [{"text":"创始人财务进阶：构建与优化个人及企业财务结构","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 426 ---
+title: [{"text":"创始人财务进阶：盈利模式与风险管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 427 ---
+title: [{"text":"创始人财务进阶：应收账款管理与客户合作","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 428 ---
+title: [{"text":"创始人财务进阶：企业成长与资金管理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 429 ---
+title: [{"text":"创始人财务进阶：税务规划与风险评估策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 430 ---
+title: [{"text":"创始人财务进阶：融资与资金管理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 431 ---
+title: [{"text":"创始人财务进阶：Excel高效分析与风险控制","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 432 ---
+title: [{"text":"创始人财务进阶：提升KPI与业务模式优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 433 ---
+title: [{"text":"创始人GMV转化与资金管理策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 434 ---
+title: [{"text":"创始人财务进阶：从认知到实操，提升企业价值","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 435 ---
+title: [{"text":"创始人财务进阶：信息管理提升企业效益","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 436 ---
+title: [{"text":"创始人财务进阶：打造高效盈利模式","type":"text"}]
+course: {"link_record_ids":["recvbrwKdsL5rD"]}
+
+--- 段落 437 ---
+title: [{"text":"创始人财务进阶：解码企业财务关键","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 438 ---
+title: [{"text":"直营加盟供应链利润解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 439 ---
+title: [{"text":"流动资产与库存管理要点","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 440 ---
+title: [{"text":"初创企业财务管理与经营分析优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 441 ---
+title: [{"text":"创始人财务进阶：IP营销策略与案例分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 442 ---
+title: [{"text":"创始人财务沟通与内控挑战","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 443 ---
+title: [{"text":"财务团队规模与业务思维培养","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 444 ---
+title: [{"text":"亚朵酒店：成本优化与财务增长案例分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 445 ---
+title: [{"text":"创始人财务进阶：企业生命周期与财务策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 446 ---
+title: [{"text":"创始人财务进阶：业务优先，财务预算与管控策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 447 ---
+title: [{"text":"**特定公司应收账款与财务风险应对策略**","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 448 ---
+title: [{"text":"合同收款节点与财务风险管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 449 ---
+title: [{"text":"里程碑管理与资金安全策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 450 ---
+title: [{"text":"1. 私域营销与品牌展示的财务测算2. 泡泡玛特案","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 451 ---
+title: [{"text":"应付账款账期与现金流优化策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 452 ---
+title: [{"text":"校友活跃度与课程满意度提升策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKB7HetD"]}
+
+--- 段落 453 ---
+title: [{"text":"课程：提升课程定位与活动管理","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 454 ---
+title: [{"text":"1. 成功定位与效果应用确认2. 学生产品竞品分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 455 ---
+title: [{"text":"《提升信息传达效率的定位策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 456 ---
+title: [{"text":"《提升产品定位：知识组织与市场策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 457 ---
+title: [{"text":"客户满意度预测与提升策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 458 ---
+title: [{"text":"升级定位：价值驱动的产品选择与品牌策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 459 ---
+title: [{"text":"1. 升级定位：企业战略与目标设定2. 战略定位：","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 460 ---
+title: [{"text":"1. 升级定位：专业定位与市场拓展2. 精准定位：","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 461 ---
+title: [{"text":"升级定位：产品信息传递与市场策略优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 462 ---
+title: [{"text":"专业运动鞋定位与市场分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 463 ---
+title: [{"text":"企业升级定位：策略选择与模式转型","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 464 ---
+title: [{"text":"产品定位与评估技巧","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 465 ---
+title: [{"text":"统计战中失守阵地的原因与应对策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 466 ---
+title: [{"text":"企业融资与定位策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 467 ---
+title: [{"text":"产品定位与顾客价值认知策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 468 ---
+title: [{"text":"产品定位与市场转型策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 469 ---
+title: [{"text":"产品定位策略与市场拓展","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 470 ---
+title: [{"text":"产品识别与品牌定位策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 471 ---
+title: [{"text":"产品定位与市场策略提升","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 472 ---
+title: [{"text":"产品定位与市场转化策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 473 ---
+title: [{"text":"产品定位与价值提升策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 474 ---
+title: [{"text":"产品定位与营销策略优化","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 475 ---
+title: [{"text":"《提升产品认知度：有效营销策略解析》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 476 ---
+title: [{"text":"1. 会员优惠与产品定价策略2. 网络效应与品牌推","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 477 ---
+title: [{"text":"产品定位与价值提升策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 478 ---
+title: [{"text":"产品定位与品牌发展策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 479 ---
+title: [{"text":"2024年1月项目查询与升级定位策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 480 ---
+title: [{"text":"《产品定位：如何提升顾客选择价值》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 481 ---
+title: [{"text":"升级定位：产品定位与市场策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 482 ---
+title: [{"text":"课程定位：产品推荐与顾客心理洞察","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 483 ---
+title: [{"text":"产品定位Q&A解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 484 ---
+title: [{"text":"《企业定位与产品推广策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 485 ---
+title: [{"text":"产品定位与客户流失分析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 486 ---
+title: [{"text":"《企业定位与个人发展提升策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 487 ---
+title: [{"text":"《提升定位：打造高效企业运营策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 488 ---
+title: [{"text":"AI赋能产品定位：重塑商业结构与思维模式","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 489 ---
+title: [{"text":"《团队定位与战略发展策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 490 ---
+title: [{"text":"《企业定位：产品升级与市场策略》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 491 ---
+title: [{"text":"产品定位与升级策略探讨","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 492 ---
+title: [{"text":"《视频编辑技巧：提升客户选择与品牌影响力》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 493 ---
+title: [{"text":"升级定位：打造高效产品竞争策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 494 ---
+title: [{"text":"《产品规划与市场定位策略解析》","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 495 ---
+title: [{"text":"定位升级：打造企业一线领袖之途","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 496 ---
+title: [{"text":"标题：企业WiFi营销定位与专业品牌塑造","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 497 ---
+title: [{"text":"企业升级定位策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 498 ---
+title: [{"text":"产品定位与价值评估策略","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 499 ---
+title: [{"text":"产品定位与市场成功之道","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}
+
+--- 段落 500 ---
+title: [{"text":"产品定位与营销策略解析","type":"text"}]
+course: {"link_record_ids":["recvbrwKW2a5AC"]}

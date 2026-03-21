@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BloomReader - 追忆逝水年华</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Serif SC", serif;
+      background: linear-gradient(135deg, #fef9f3 0%, #fdf2e9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+      border-bottom: 1px solid #e8d5c4;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #8b5a2b;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    header .subtitle {
+      color: #a0826d;
+      font-size: 0.95rem;
+    }
+
+    header .author {
+      color: #b8977a;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .reading-area {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      min-height: 400px;
+    }
+
+    .sentence {
+      font-size: 1.35rem;
+      line-height: 2.2;
+      opacity: 0;
+      transform: translateY(20px);
+      margin-bottom: 8px;
+      color: #5a5a5a;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sentence.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sentence.theme {
+      color: #8b5a2b;
+      font-weight: 500;
+      font-size: 1.45rem;
+    }
+
+    .sentence.example {
+      color: #6a6a6a;
+    }
+
+    .sentence.detail {
+      color: #7a7a7a;
+      font-size: 1.25rem;
+    }
+
+    .sentence.poetic {
+      color: #8b7355;
+      font-style: italic;
+    }
+
+    .progress-bar {
+      height: 3px;
+      background: #f0e6dc;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar .fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4a574, #8b5a2b);
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #a0826d;
+      margin-bottom: 30px;
+      padding: 0 4px;
+    }
+
+    .hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hint kbd {
+      background: #f5ebe0;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      border: 1px solid #e8d5c4;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #f0e6dc;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d4a574, #8b5a2b);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(139, 90, 43, 0.25);
+    }
+
+    .btn-secondary {
+      background: #f8f3ed;
+      color: #8b5a2b;
+      border: 1px solid #e8d5c4;
+    }
+
+    .btn-secondary:hover {
+      background: #f5ebe0;
+    }
+
+    .page-indicator {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #c4a882;
+    }
+
+    /* 花朵绽放动画 */
+    @keyframes bloom {
+      0% {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+      }
+      60% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .sentence.visible {
+      animation: bloom 0.8s ease-out forwards;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 600px) {
+      .container {
+        padding: 16px;
+      }
+      .reading-area {
+        padding: 24px 20px;
+      }
+      .sentence {
+        font-size: 1.2rem;
+        line-height: 2;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌸 追忆逝水年华</h1>
+      <p class="subtitle">斯万 —— 我们眼中的他</p>
+      <p class="author">马塞尔·普鲁斯特</p>
+    </header>
+
+    <div class="reading-area">
+      <div class="progress-bar">
+        <div class="fill" id="progressFill" style="width: 0%"></div>
+      </div>
+      <div class="progress-info">
+        <span id="progressText">0 / 17 句</span>
+        <div class="hint">
+          <kbd>空格</kbd> 下一句
+        </div>
+      </div>
+
+      <div id="sentences"></div>
+
+      <div class="controls">
+        <button class="btn btn-secondary" id="resetBtn">重新开始</button>
+        <button class="btn btn-primary" id="autoBtn">自动播放</button>
+      </div>
+
+      <div class="page-indicator">
+        原文共 3 页 · 已按理解逻辑重新排序
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 句子数据 - 按理解逻辑排序
+    // 结构：主题句 -> 具体例子 -> 细节描写 -> 诗意升华
+    const sentences = [
+      // 【核心主题】先理解这段话在说什么
+      {
+        text: "我们谁都不能构成在人人眼中都一样的物质的整体，总是仁者见仁，智者见智。",
+        type: "theme"
+      },
+      {
+        text: "我们的社会人格，其实是别人的思想创造出来的。",
+        type: "theme"
+      },
+      {
+        text: "即使从我们日常生活中最微不足道的小事来看，我们用我们所掌握的有关他的一切概念，来充实我们所见到的这个人的音容笑貌。",
+        type: "theme"
+      },
+
+      // 【具体例子】斯万在不同人眼中的形象
+      {
+        text: "晚上，在贡布雷的小花园中，铃铛怯怯地响了两声之后，我的姨祖母便用她所知道的有关斯万家的一切轶事掌故，来充实她所创造的那个默默无闻的人。",
+        type: "example"
+      },
+      {
+        text: "她认为，我们请他来作客，是给他面子；夏天，他每回来我们家，总提着一筐自己园子里出产的桃子和覆盆子，这些，我的姨祖母认为都是理所当然的。",
+        type: "example"
+      },
+      {
+        text: "遇到要大摆筵席的日子，偏偏手头又没有制作风味酱汁或凤梨色拉的配方，我的姨祖母就托他想办法弄，但又不请他来赴宴；她居然不觉得这么做有什么不妥，反而认为他还不够体面。",
+        type: "example"
+      },
+      {
+        text: "如果谈话的内容涉及到法兰西王室的几位亲王，我的姨祖母就对斯万说："这几位大贵人，您跟我一样，咱们都永远高攀不上，还是不谈算了，您说是不是？"",
+        type: "example"
+      },
+      {
+        text: "她哪里知道，也许当时斯万的口袋里正装着一封从特威克汉姆寄来的信呢。",
+        type: "example"
+      },
+
+      // 【对比揭示】姨祖母不知道的真相
+      {
+        text: "她那种不知深浅的粗放做法，就象是不识货的孩子，拿着古董当不值钱的东西玩，根本不知道爱惜。",
+        type: "detail"
+      },
+      {
+        text: "当时在俱乐部会员中那样赫赫有名的斯万，同我的姨祖母心目中所创造出来的斯万，说不定有天壤之别。",
+        type: "detail"
+      },
+      {
+        text: "别人看来，他的眉宇间充满了一股风流倜傥的英俊气息，只是这股潇洒之气，遇到他的鹰钩鼻，就象遇到了天然屏障那样驻足留连。",
+        type: "detail"
+      },
+
+      // 【深化】记忆如何塑造人
+      {
+        text: "他们的心目中有关他的全貌，不用说大部分包含了上述的概念。最终，那些概念使他的面颊丰满起来，而且贴切地勾画出他鼻梁的轮廓。",
+        type: "detail"
+      },
+      {
+        text: "那些概念把音量区分得那样纤毫不差，好似音量只是一层透明的外罩，我们每次看到这张脸庞，听到这种声音，我们就又遇上那些概念，并听从那些概念。",
+        type: "detail"
+      },
+      {
+        text: "我们的朋友的体态外貌，于是象有关他的父母的记忆一样，变得十分充实，当年的斯万成了一位完整的、生动的人。",
+        type: "detail"
+      },
+
+      // 【诗意升华】时间与记忆
+      {
+        text: "今天，当我在回忆中由我后来认识得相当准确的斯万，进而联想到早年的斯万，我简直好象是离开了一个人，去接近另一个完全不同的人。",
+        type: "poetic"
+      },
+      {
+        text: "人的一生无非同博物馆一样，其中同一个时代的肖像都具有一种家庭特征，一种相同的色调。",
+        type: "poetic"
+      },
+      {
+        text: "早年的斯万，整日闲暇，散发出大栗树、覆盆果和蒿草叶的芳香。",
+        type: "poetic"
+      }
+    ];
+
+    // 状态管理
+    const state = {
+      currentIndex: 0,
+      autoPlaying: false,
+      autoInterval: null
+    };
+
+    // DOM 元素 - 在 DOMContentLoaded 后初始化
+    let sentencesContainer, progressFill, progressText, resetBtn, autoBtn;
+
+    // 初始化渲染
+    function init() {
+      sentencesContainer.innerHTML = '';
+      sentences.forEach((s, i) => {
+        const div = document.createElement('div');
+        div.className = `sentence ${s.type}`;
+        div.textContent = s.text;
+        div.dataset.index = i;
+        sentencesContainer.appendChild(div);
+      });
+      updateProgress();
+    }
+
+    // 页面加载完成后初始化
+    function setupApp() {
+      sentencesContainer = document.getElementById('sentences');
+      progressFill = document.getElementById('progressFill');
+      progressText = document.getElementById('progressText');
+      resetBtn = document.getElementById('resetBtn');
+      autoBtn = document.getElementById('autoBtn');
+
+      // 绑定按钮事件
+      resetBtn.addEventListener('click', reset);
+      autoBtn.addEventListener('click', toggleAutoPlay);
+
+      // 初始化并显示第一句
+      init();
+      setTimeout(() => showNextSentence(), 800);
+    }
+
+    // 显示下一句
+    function showNextSentence() {
+      if (state.currentIndex >= sentences.length) {
+        stopAutoPlay();
+        return false;
+      }
+
+      const sentence = sentencesContainer.querySelector(`[data-index="${state.currentIndex}"]`);
+      if (sentence) {
+        sentence.classList.add('visible');
+        state.currentIndex++;
+        updateProgress();
+
+        // 滚动到可见区域
+        setTimeout(() => {
+          sentence.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+      return true;
+    }
+
+    // 更新进度
+    function updateProgress() {
+      const total = sentences.length;
+      const current = state.currentIndex;
+      const percent = (current / total * 100).toFixed(0);
+
+      progressFill.style.width = percent + '%';
+      progressText.textContent = `${current} / ${total} 句`;
+    }
+
+    // 自动播放
+    function toggleAutoPlay() {
+      if (state.autoPlaying) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    }
+
+    function startAutoPlay() {
+      state.autoPlaying = true;
+      autoBtn.textContent = '暂停';
+      autoBtn.classList.remove('btn-primary');
+      autoBtn.classList.add('btn-secondary');
+
+      state.autoInterval = setInterval(() => {
+        if (!showNextSentence()) {
+          stopAutoPlay();
+        }
+      }, 2500);
+    }
+
+    function stopAutoPlay() {
+      state.autoPlaying = false;
+      autoBtn.textContent = '自动播放';
+      autoBtn.classList.remove('btn-secondary');
+      autoBtn.classList.add('btn-primary');
+
+      if (state.autoInterval) {
+        clearInterval(state.autoInterval);
+        state.autoInterval = null;
+      }
+    }
+
+    // 重置
+    function reset() {
+      stopAutoPlay();
+      state.currentIndex = 0;
+      const allSentences = sentencesContainer.querySelectorAll('.sentence');
+      allSentences.forEach(s => s.classList.remove('visible'));
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // 自动显示第一句
+      setTimeout(() => showNextSentence(), 500);
+    }
+
+    // 键盘事件
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (state.autoPlaying) {
+          stopAutoPlay();
+        } else {
+          showNextSentence();
+        }
+      }
+    });
+
+    // 点击阅读区域也可以显示下一句
+    document.querySelector('.reading-area').addEventListener('click', (e) => {
+      if (!e.target.closest('.controls')) {
+        showNextSentence();
+      }
+    });
+
+    // 页面加载完成后启动应用
+    document.addEventListener('DOMContentLoaded', setupApp);
+  </script>
+</body>
+</html>

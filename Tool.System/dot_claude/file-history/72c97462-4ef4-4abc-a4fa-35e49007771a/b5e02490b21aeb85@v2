@@ -1,0 +1,27 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
+
+const route = useRoute()
+
+// 判断是否为 H5 页面
+const isH5Page = computed(() => route.meta?.isH5 === true)
+</script>
+
+<template>
+  <div class="min-h-screen flex flex-col">
+    <!-- PC 端 Header，H5 页面隐藏 -->
+    <TheHeader v-if="!isH5Page" class="pc-header" />
+    <main class="flex-1">
+      <router-view v-slot="{ Component }">
+        <transition name="page" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </main>
+    <!-- PC 端 Footer，H5 页面隐藏 -->
+    <TheFooter v-if="!isH5Page" class="pc-footer" />
+  </div>
+</template>

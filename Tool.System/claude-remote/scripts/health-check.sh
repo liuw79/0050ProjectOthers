@@ -1,0 +1,50 @@
+#!/bin/bash
+# Claude Remote 健康检查脚本
+# 用法: 定期运行此脚本（如每分钟）检查服务状态
+
+PLIST_PATH="$HOME/SynologyDrive/0050Project/others/Tool.System/claude-remote/com.claude-remote.plist"
+LOG_FILE="/tmp/claude-remote.log"
+SERVICE_NAME="com.claude-remote"
+
+# 检查网络连接
+check_network() {
+    # 尝试解析飞书域名
+    if nslookup open.feishu.cn > /dev/null 2>&1; then
+        return 0
+    else
+        echo "[$(date)] 网络不可用，跳过检查"
+        return 1
+    fi
+}
+
+# 检查服务状态
+check_service() {
+    local status=$(launchctl list | grep "$SERVICE_NAME" | awk '{print $2}' | head -1)
+    if [ -z "$status" ]; then
+        echo "[$(date)] 服务未运行，尝试启动..."
+        launchctl load "$PLIST_PATH" 2>/dev/null
+        return $?
+    elif [ "$status" != "0" ]; then
+        echo "[$(date)] 服务异常 (状态码: $status)，尝试重启..."
+        launchctl unload "$PLIST_PATH" 2>/dev/null
+        sleep 1
+        launchctl load "$PLIST_PATH" 2>/dev/null
+        return $?
+    else
+        # 状态码 0，检查最近日志是否有重连错误
+        if tail -20 "$LOG_FILE" 2>/dev/null | grep -q "ENOTFOUND"; then
+            echo "[$(date)] 检测到 DNS 错误，重启服务..."
+            launchctl unload "$PLIST_PATH" 2>/dev/null
+            sleep 1
+            launchctl load "$PLIST_PATH" 2>/dev/null
+            return $?
+        fi
+        echo "[$(date)] 服务正常"
+        return 0
+    fi
+}
+
+# 主逻辑
+if check_network; then
+    check_service
+fi

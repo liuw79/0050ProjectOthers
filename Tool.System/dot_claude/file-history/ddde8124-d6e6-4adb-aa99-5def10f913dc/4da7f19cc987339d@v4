@@ -1,0 +1,311 @@
+#!/usr/bin/env node
+/**
+ * 班主任AI教练评估
+ *
+ * 用法：
+ *   node coach.js --course "课程名" --teacher "班主任名" --date "260314"
+ *   node coach.js --course "课程名" --teacher "班主任名" --date "260314" --model gpt5.4
+ */
+
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+
+// ==================== 配置 ====================
+
+// 自动检测基础路径
+const BASE_PATH = (() => {
+  // 1. 优先用脚本所在目录的上级目录
+  const scriptDir = path.dirname(__filename);
+  const parentDir = path.dirname(scriptDir);
+  if (fs.existsSync(path.join(parentDir, '现场'))) {
+    return parentDir;
+  }
+  // 2. 回退到硬编码路径
+  return '/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍';
+})();
+
+// 飞书发布邮箱配置（统一管理，杜绝手写错误）
+const FEISHU_EMAILS = {
+  liuwei: 'liuwei@gaowei.com',
+  // 添加更多班主任邮箱...
+};
+
+// 默认分享列表
+const DEFAULT_SHARE_EMAILS = [FEISHU_EMAILS.liuwei];
+
+const CONFIG = {
+  basePath: BASE_PATH,
+  defaultModel: 'gemini3.1',
+  defaultShareEmails: DEFAULT_SHARE_EMAILS,
+  apiRetryCount: 1  // API 调用失败重试次数
+};
+
+// ==================== 工具函数 ====================
+
+function log(msg) {
+  console.log(`[${new Date().toISOString().slice(11, 19)}] ${msg}`);
+}
+
+function readFileSync(filePath) {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`文件不存在: ${filePath}`);
+  }
+  return fs.readFileSync(filePath, 'utf-8');
+}
+
+// ==================== 提示词版本扫描 ====================
+
+function findLatestPromptVersion(basePath) {
+  const files = fs.readdirSync(basePath);
+  const promptFiles = files.filter(f => {
+    return f.includes('班主任AI教练') && f.includes('V') && f.endsWith('.md');
+  });
+
+  if (promptFiles.length === 0) {
+    throw new Error('找不到提示词文件，请检查目录');
+  }
+
+  const versioned = promptFiles.map(f => {
+    const match = f.match(/V(\d+(?:\.\d+)?)/i);
+    return {
+      file: f,
+      version: match ? parseFloat(match[1]) : 0,
+      path: path.join(basePath, f)
+    };
+  });
+
+  versioned.sort((a, b) => b.version - a.version);
+  log(`扫描到 ${promptFiles.length} 个提示词文件，最高版本: V${versioned[0].version}`);
+  return versioned[0];
+}
+
+// ==================== API 调用（带重试）====================
+
+function callAPI(prompt, modelAlias, retryCount = CONFIG.apiRetryCount) {
+  const aiPath = path.join(os.homedir(), '.claude/skills/multi-model-api/ai.js');
+
+  if (!fs.existsSync(aiPath)) {
+    throw new Error(`multi-model-api skill 未安装: ${aiPath}`);
+  }
+
+  const tempFile = path.join(os.tmpdir(), `coach-prompt-${Date.now()}.txt`);
+  fs.writeFileSync(tempFile, prompt, 'utf-8');
+
+  let lastError = null;
+
+  for (let attempt = 0; attempt <= retryCount; attempt++) {
+    if (attempt > 0) {
+      log(`  重试第 ${attempt} 次...`);
+    }
+
+    try {
+      log(`调用 API (${modelAlias})...`);
+      const result = execSync(
+        `node "${aiPath}" --model ${modelAlias} --file "${tempFile}"`,
+        { encoding: 'utf-8', maxBuffer: 50 * 1024 * 1024 }
+      );
+      log('API 调用成功');
+      fs.unlinkSync(tempFile);
+      return result;
+    } catch (error) {
+      lastError = error;
+      log(`  ⚠️ 调用失败: ${error.message}`);
+    }
+  }
+
+  fs.unlinkSync(tempFile);
+  throw new Error(`API 调用失败（重试 ${retryCount} 次后）: ${lastError.message}`);
+}
+
+// ==================== 查找文件 ====================
+
+function findTeacherDir(sceneDir, course, teacher) {
+  const entries = fs.readdirSync(sceneDir, { withFileTypes: true });
+  const dirs = entries.filter(e => e.isDirectory()).map(e => e.name);
+
+  const found = dirs.find(d => d.includes(teacher));
+  if (found) {
+    return path.join(sceneDir, found);
+  }
+
+  throw new Error(`找不到班主任目录: ${sceneDir}/*${teacher}*`);
+}
+
+function findFiles(teacherDir, teacher) {
+  const files = fs.readdirSync(teacherDir);
+
+  const openingFile = files.find(f =>
+    f.includes(teacher) && !f.includes('结束') && f.endsWith('.txt') && !f.startsWith('prompt')
+  );
+
+  const endingFile = files.find(f =>
+    f.includes('结束') && f.endsWith('.txt')
+  );
+
+  if (!openingFile) {
+    throw new Error(`找不到开场录音稿: ${teacherDir}`);
+  }
+  if (!endingFile) {
+    throw new Error(`找不到结束录音稿: ${teacherDir}`);
+  }
+
+  return {
+    opening: path.join(teacherDir, openingFile),
+    ending: path.join(teacherDir, endingFile)
+  };
+}
+
+// ==================== 主逻辑 ====================
+
+async function main() {
+  const args = process.argv.slice(2);
+  const params = {};
+  let modelAlias = CONFIG.defaultModel;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--course') params.course = args[++i];
+    else if (args[i] === '--teacher') params.teacher = args[++i];
+    else if (args[i] === '--date') params.date = args[++i];
+    else if (args[i] === '--model') modelAlias = args[++i];
+  }
+
+  if (!params.course || !params.teacher || !params.date) {
+    console.log(`
+班主任AI教练评估
+
+用法：
+  node coach.js --course "课程名" --teacher "班主任名" --date "260314"
+  node coach.js --course "课程名" --teacher "班主任名" --date "260314" --model gpt5.4
+
+参数：
+  --course    课程名称（必填）
+  --teacher   班主任姓名（必填）
+  --date      日期 YYMMDD（必填）
+  --model     模型选择（可选，默认: gemini3.1）
+
+发布到飞书：
+  评估完成后说 "发布到飞书"
+`);
+    process.exit(1);
+  }
+
+  log(`开始评估: ${params.course} - ${params.teacher} (模型: ${modelAlias})`);
+  log(`基础路径: ${CONFIG.basePath}`);
+
+  try {
+    // Step 1: 扫描提示词
+    log('Step 1: 扫描提示词版本...');
+    const promptInfo = findLatestPromptVersion(CONFIG.basePath);
+    log(`  ✓ ${promptInfo.file} (V${promptInfo.version})`);
+
+    // Step 2: 准备素材
+    log('Step 2: 准备素材...');
+
+    let sceneDir;
+    if (params.date.length === 6) {
+      const month = params.date.slice(2, 4);
+      const day = params.date.slice(4, 6);
+      sceneDir = `${CONFIG.basePath}/现场/2026${month}${day}`;
+      if (!fs.existsSync(sceneDir)) {
+        const prevDay = String(parseInt(day) - 1).padStart(2, '0');
+        sceneDir = `${CONFIG.basePath}/现场/2026${month}${prevDay}`;
+      }
+    } else {
+      sceneDir = `${CONFIG.basePath}/现场/${params.date}`;
+    }
+
+    const teacherDir = findTeacherDir(sceneDir, params.course, params.teacher);
+    const gaowei5Path = `${CONFIG.basePath}/高维学堂5句话介绍.md`;
+    const course5Path = `${CONFIG.basePath}/${params.course}-主持词.md`;
+    const recordFiles = findFiles(teacherDir, params.teacher);
+
+    log(`  ✓ 场景目录: ${path.basename(sceneDir)}`);
+    log(`  ✓ 开场: ${path.basename(recordFiles.opening)}`);
+    log(`  ✓ 结束: ${path.basename(recordFiles.ending)}`);
+
+    // Step 3: 组装 Prompt
+    log('Step 3: 组装 Prompt...');
+    const promptTemplate = readFileSync(promptInfo.path);
+    const gaowei5 = readFileSync(gaowei5Path);
+    const course5 = readFileSync(course5Path);
+    const opening = readFileSync(recordFiles.opening);
+    const ending = readFileSync(recordFiles.ending);
+
+    const fullPrompt = `${promptTemplate}
+
+---
+
+# Input Data
+
+**Target Course**: ${params.course}
+**Prompt Version**: V${promptInfo.version}
+
+**Transcript**:
+
+===第一天开场录音===
+
+${opening}
+
+===第二天结束录音===
+
+${ending}
+
+---
+
+===参考：高维学堂5句话介绍===
+
+${gaowei5}
+
+---
+
+===参考：${params.course} 主持词===
+
+${course5}
+`;
+
+    const promptPath = `${teacherDir}/prompt_${params.teacher}_V${promptInfo.version}.txt`;
+    fs.writeFileSync(promptPath, fullPrompt, 'utf-8');
+    log(`  ✓ Prompt 已保存`);
+
+    // Step 4: 调用 API
+    log('Step 4: 调用 API...');
+    const rawContent = callAPI(fullPrompt, modelAlias);
+
+    // Step 5: 保存报告
+    log('Step 5: 保存报告...');
+
+    let mdContent = rawContent;
+    const mdMatch = rawContent.match(/```(?:markdown|md)?\s*([\s\S]*?)```/);
+    if (mdMatch) {
+      mdContent = mdMatch[1].trim();
+    }
+
+    const metaHeader = `---
+title: 班主任AI教练评估报告
+course: ${params.course}
+teacher: ${params.teacher}
+date: ${params.date}
+model: ${modelAlias}
+prompt_version: V${promptInfo.version}
+generated_at: ${new Date().toISOString()}
+---
+
+`;
+
+    const mdReportPath = `${teacherDir}/${params.teacher}-AI教练报告.md`;
+    fs.writeFileSync(mdReportPath, metaHeader + mdContent, 'utf-8');
+
+    // 完成
+    log('✅ 评估完成!');
+    console.log(`\n📄 报告: ${mdReportPath}`);
+    console.log(`\n发布飞书：在 Claude Code 中说 "发布到飞书，分享给 ${CONFIG.defaultShareEmails.join(', ')}"`);
+
+  } catch (error) {
+    console.error('❌ 错误:', error.message);
+    process.exit(1);
+  }
+}
+
+main();

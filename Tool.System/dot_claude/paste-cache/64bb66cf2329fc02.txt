@@ -1,0 +1,67 @@
+Anthropic兼容接口
+协议选择
+CloseAI平台的Claude模型支持原生的Anthropic协议，也支持OpenAI的兼容协议，模型名相同，但是调用方式不一样，推荐无特殊需求优先使用原生协议，更加稳定，功能更加丰富，支持思维链、原生插件等高级功能，OpenAI兼容格式兼容有限，仅建议使用在比如Cursor等只支持自定义OpenAI接口时使用。
+
+TIP
+
+OpenAI兼容协议无法保证稳定性，建议尽量使用原生Anthropic SDK协议，Dify、Chatbox等大部分开源软件均支持原生协议。
+
+协议类型    域名    备注
+Anthropic协议    https://api.openai-proxy.org/anthropic    添加/anthropic后缀
+OpenAI协议    https://api.openai-proxy.org/v1    一般需要加/v1
+WARNING
+
+很多用户不懂如何区分协议，前面选择了OpenAI格式，然后后面域名处又写了/anthropic这种anthropic专用地址，造成请求404，这种纯属配置问题。使用claude模型一般软件比如ChatBox，都有专门的claude一项，不要在OpenAI的位置填claude模型的配置。
+
+接口示例
+所有请求主需要替换域名，然后增加一个额外的/anthropic前缀即可，以下为示例
+
+Claude原生协议
+
+
+curl --location 'https://api.openai-proxy.org/anthropic/v1/messages' \
+--header 'x-api-key: sk-xxxx' \
+--header 'anthropic-version: 2023-06-01' \
+--header 'content-type: application/json' \
+--data '{
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 1024,
+    "stream":false,
+    "messages": [
+        {"role": "user", "content": "hi"}
+    ]
+}'
+OpenAI兼容协议
+
+
+curl https://api.openai-proxy.org/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer sk-xxxxx" \
+-d '{
+"model": "claude-sonnet-4-20250514",
+"messages": [{"role": "user", "content": "Hello!"}]
+}'
+Python使用
+
+from anthropic import Anthropic
+
+if __name__ == '__main__':
+    client = Anthropic(
+        base_url='https://api.openai-proxy.org/anthropic',
+        api_key='sk-xxxx',
+    )
+
+    message = client.messages.create(
+        max_tokens=1024,
+        messages=[
+            {
+                "role": "user",
+                "content": "Hello, Claude",
+            }
+        ],
+        model="claude-sonnet-4-20250514",
+    )
+    print(message.content)
+客户端使用
+支持Anthropic的客户端都可以直接使用我们的兼容接口，配置方式如下：
+

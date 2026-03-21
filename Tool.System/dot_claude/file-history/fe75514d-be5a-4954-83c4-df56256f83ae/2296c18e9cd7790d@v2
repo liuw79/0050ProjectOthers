@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""将HTML报告转换为Markdown格式"""
+
+import os
+import re
+from bs4 import BeautifulSoup
+
+def html_to_markdown(html_file, output_file):
+    """将HTML报告转换为Markdown格式"""
+    with open(html_file, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    md_lines = []
+
+    # 提取分数
+    score_big = soup.find('div', class_='score-big')
+    if score_big:
+        score_text = score_big.get_text(strip=True)
+        md_lines.append(f"**总分：{score_text}**")
+        md_lines.append("")
+
+    # 提取总评
+    summary = soup.find('div', class_='summary')
+    if summary:
+        summary_text = summary.get_text(strip=True)
+        md_lines.append(f"**一句话总评：** {summary_text}")
+        md_lines.append("")
+        md_lines.append("---")
+        md_lines.append("")
+
+    # 处理每个卡片
+    for card in soup.find_all('div', class_='card'):
+        # 章节标题
+        for h2 in card.find_all('h2'):
+            h2_text = h2.get_text(strip=True)
+            md_lines.append(f"## {h2_text}")
+            md_lines.append("")
+
+        # 评分行
+        for row in card.find_all('div', class_='score-row'):
+            row_text = row.get_text(strip=True)
+            md_lines.append(f"- **{row_text}**")
+
+        # 评分详情
+        for detail in card.find_all('div', class_='score-detail'):
+            detail_text = detail.get_text(strip=True)
+            # 提取建议话术
+            suggested = detail.find('span', class_='suggested-script')
+            if suggested:
+                suggested_text = suggested.get_text(strip=True)
+                # 移除建议话术部分
+                detail_text = detail_text.replace(suggested_text, '').strip()
+                md_lines.append(f"  {detail_text}")
+                md_lines.append(f"  💡 **建议话术：** {suggested_text}")
+            else:
+                md_lines.append(f"  {detail_text}")
+            md_lines.append("")
+
+        # 加分项
+        for bonus in card.find_all('div', class_='bonus-item'):
+            title = bonus.find('div', class_='bonus-title')
+            if title:
+                md_lines.append(f"### {title.get_text(strip=True)}")
+
+            for detail in bonus.find_all('div', class_='bonus-detail'):
+                detail_text = detail.get_text(strip=True)
+                # 处理<br>换行
+                detail_text = detail_text.replace('<br>', '\n  ')
+                md_lines.append(f"  {detail_text}")
+
+            md_lines.append("")
+
+        # 反馈项
+        for item in card.find_all('div', class_='feedback-item'):
+            title = item.find('div', class_='feedback-title')
+            if title:
+                md_lines.append(f"### {title.get_text(strip=True)}")
+
+            content = item.find('div', class_='feedback-content')
+            if content:
+                for p in content.find_all('p'):
+                    p_text = p.get_text(strip=True)
+                    md_lines.append(f"{p_text}")
+
+                # 处理建议
+                suggestion = content.find('div', class_='suggestion')
+                if suggestion:
+                    suggestion_text = suggestion.get_text(strip=True)
+                    suggestion_text = suggestion_text.replace('<br>', '\n')
+                    md_lines.append(f"  💡 **建议：**")
+                    md_lines.append(f"  {suggestion_text}")
+
+            md_lines.append("")
+
+    # 结尾
+    ending = soup.find('div', class_='ending')
+    if ending:
+        ending_text = ending.get_text(strip=True)
+        md_lines.append("---")
+        md_lines.append("")
+        md_lines.append(f"**{ending_text}**")
+        md_lines.append("")
+
+    # Footer
+    footer = soup.find('div', class_='footer')
+    if footer:
+        footer_text = footer.get_text(strip=True).replace('<br>', ' | ')
+        md_lines.append(f"*{footer_text}*")
+
+    # 写入文件
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(md_lines))
+
+    print(f"转换完成: {output_file}")
+
+
+# 报告文件列表
+REPORTS = [
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313情绪驱动产品创新 雯祯/雯祯-AI教练报告-V4-final.html", "/tmp/雯祯-AI教练报告.md"),
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4-final.html", "/tmp/邬培莹-AI教练报告.md"),
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务管理者养成 碧容/碧容-AI教练报告-V4-final.html", "/tmp/碧容-AI教练报告.md"),
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314业务优化与利润提升 阿左/阿左-AI教练报告-V4-final.html", "/tmp/阿左-AI教练报告.md"),
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314战略解码 丁芹伟/丁芹伟-AI教练报告-V4-final.html", "/tmp/丁芹伟-AI教练报告.md"),
+    ("/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314流程型组织 黄文静/黄文静-AI教练报告-V4-final.html", "/tmp/黄文静-AI教练报告.md"),
+]
+
+# 转换所有报告
+for html_file, output_file in REPORTS:
+    try:
+        html_to_markdown(html_file, output_file)
+    except Exception as e:
+        print(f"转换失败 {html_file}: {e}")
+
+print("\n所有报告转换完成！")

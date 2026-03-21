@@ -1,0 +1,72 @@
+PS D:\> powershell -ExecutionPolicy Bypass -File "D:\网络诊断.ps1\网络诊断.ps1"
+========== Network Diagnostic Script ==========
+
+[1] Basic Network Connectivity Test
+--------------------------------
+  Ping 8.8.8.8 : [OK] Success
+  Ping 223.5.5.5 : [OK] Success
+  Ping www.baidu.com : [OK] Success
+  Ping www.qq.com : [OK] Success
+
+[2] DNS Resolution Test
+--------------------------------
+  www.baidu.com -> 183.2.172.177
+  www.qq.com -> 121.14.77.221
+  www.taobao.com -> 183.60.205.75
+
+  Current DNS Servers:
+    WLAN: 114.114.114.114
+
+[3] Proxy Settings Check
+--------------------------------
+  System Proxy: ENABLED
+  Proxy Address: 127.0.0.1:10080
+  [!] Suggestion: Disable proxy if not in use
+  Auto-detect Settings: Disabled
+
+[4] Network Adapter Status
+--------------------------------
+  WLAN: Up
+    IP: 192.168.112.47
+    Gateway: 192.168.112.1
+
+[5] Firewall Status
+--------------------------------
+  Domain: Enabled
+  Private: Enabled
+  Public: Enabled
+
+[6] System Time Check
+--------------------------------
+  Local Time: 03/18/2026 15:11:19
+  Cannot reach NTP server for time comparison
+
+[7] HTTP/HTTPS Connectivity Test
+--------------------------------
+  http://www.baidu.com -> FAILED
+  https://www.baidu.com -> FAILED
+  http://www.qq.com -> FAILED
+  https://www.qq.com -> FAILED
+
+[8] Hosts File Custom Entries
+--------------------------------
+  No custom entries in Hosts file
+
+========== Diagnosis Complete ==========
+
+Common Solutions:
+1. DNS Issue: netsh interface ip set dns "Ethernet" static 223.5.5.5
+2. Reset Proxy: Settings -> Network -> Proxy -> Turn off all proxies
+3. Reset Winsock: netsh winsock reset
+4. Flush DNS: ipconfig /flushdns
+5. Sync Time: w32tm /resync
+
+Run auto-fix? (y/n): y
+
+Running fixes...
+  Flushing DNS cache... Done
+  Resetting Winsock... Done
+  Resetting IP stack... Done
+  Clearing ARP cache... Done
+
+Fix complete! Please restart your computer.

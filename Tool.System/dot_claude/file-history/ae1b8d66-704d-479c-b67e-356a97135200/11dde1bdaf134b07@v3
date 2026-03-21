@@ -1,0 +1,125 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useTypewriter } from '@/composables/useAnimations'
+
+const typingTexts = [
+  '科学创业\n少走弯路',
+  '创始人\n实战教育平台',
+  '只教\n可落地的方法',
+  '15000+学友\n的共同选择'
+]
+
+const { displayText, start } = useTypewriter(typingTexts, 120, 60, 2500)
+
+onMounted(() => {
+  start()
+})
+</script>
+
+<template>
+  <section class="relative overflow-hidden pt-8 pb-16 md:pt-12 md:pb-20">
+    <!-- 动态背景 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-accent/5"></div>
+
+    <!-- 浮动装饰元素 -->
+    <div class="absolute top-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- 左侧内容 -->
+        <div class="text-center md:text-left">
+          <div class="animate-fade-in-down">
+            <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span class="font-bold">高维学堂</span>
+              <span class="w-1 h-1 bg-primary rounded-full"></span>
+              <span>10年专注 · 53位导师 · 15000+学友</span>
+            </span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6 animate-fade-in-up whitespace-pre-line">
+            <span class="gradient-text">{{ displayText }}</span><span class="typing-cursor"></span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-gray-dark mb-8 mt-4 leading-relaxed animate-fade-in-up delay-200" style="min-height: 3em;">
+            提出并拥有"科学创业"理论及落地体系的实战型商学院，以"推动中国高质量创业"为己任
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in-up delay-400">
+            <a href="#contact" class="btn-accent text-center group">
+              <span class="relative z-10">免费咨询课程</span>
+              <svg class="inline-block w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <router-link to="/courses" class="btn-secondary text-center group">
+              浏览全部课程
+              <svg class="inline-block w-5 h-5 ml-2 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </router-link>
+          </div>
+
+          <!-- 信任标识 -->
+          <div class="mt-10 animate-fade-in-up delay-600">
+            <p class="text-gray text-sm mb-4">92.7%学友来自口碑推荐</p>
+            <div class="flex flex-wrap justify-center md:justify-start items-center gap-4">
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">北京</span>
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">上海</span>
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">广州</span>
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">深圳</span>
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">厦门</span>
+              <span class="bg-white shadow-sm px-4 py-2 rounded-lg text-gray font-medium text-sm">杭州</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧图片 -->
+        <div class="relative hidden md:block">
+          <div class="relative animate-fade-in-right delay-300">
+            <!-- 装饰背景 -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl animate-pulse-slow"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl transform rotate-3"></div>
+
+            <!-- 主图片 -->
+            <img
+              src="https://picsum.photos/seed/gaowei-hero/600/450"
+              alt="高维学堂"
+              class="relative rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+            />
+
+            <!-- 浮动卡片 1 -->
+            <div class="absolute -left-8 top-1/4 bg-white p-4 rounded-2xl shadow-xl animate-float card-shine">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray">累计开课</div>
+                  <div class="text-xl font-bold text-dark">1000+ 期</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 浮动卡片 2 -->
+            <div class="absolute -right-4 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl animate-float card-shine" style="animation-delay: -2s;">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm text-gray">实战导师</div>
+                  <div class="text-xl font-bold text-dark">53 位</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

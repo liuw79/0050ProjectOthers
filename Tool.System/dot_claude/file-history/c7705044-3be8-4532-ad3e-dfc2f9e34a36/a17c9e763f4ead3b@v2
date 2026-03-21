@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Claude Remote 启动脚本
+# 同时启动本地服务和 cloudflared 内网穿透
+
+cd "$(dirname "$0")/.."
+
+echo "🚀 启动 Claude Remote 服务..."
+
+# 启动 cloudflared tunnel（后台运行）
+echo "📡 启动内网穿透..."
+/opt/homebrew/bin/cloudflared tunnel --url http://localhost:3000 > /tmp/cloudflared.log 2>&1 &
+CLOUDFLARED_PID=$!
+
+# 等待 cloudflared 启动并获取公网 URL
+sleep 3
+
+# 提取公网 URL
+PUBLIC_URL=$(grep -o 'https://[^.]*\.trycloudflare\.com' /tmp/cloudflared.log | head -1)
+
+if [ -z "$PUBLIC_URL" ]; then
+    echo "⏳ 等待内网穿透建立..."
+    sleep 3
+    PUBLIC_URL=$(grep -o 'https://[^.]*\.trycloudflare\.com' /tmp/cloudflared.log | head -1)
+fi
+
+if [ -n "$PUBLIC_URL" ]; then
+    echo ""
+    echo "✅ 内网穿透已建立!"
+    echo "🌐 公网地址: $PUBLIC_URL"
+    echo ""
+    echo "📝 请将以下地址配置到飞书应用的事件订阅:"
+    echo "   ${PUBLIC_URL}/webhook"
+    echo ""
+    echo "📝 IP 白名单需要添加（如需）:"
+    curl -s https://www.cloudflare.com/ips-v4/ | head -5
+    echo "   ... 及其他 Cloudflare IP"
+    echo ""
+else
+    echo "⚠️  未能获取公网地址，请检查 /tmp/cloudflared.log"
+fi
+
+# 保存 PID 以便后续停止
+echo $CLOUDFLARED_PID > /tmp/claude-remote-cloudflared.pid
+
+# 启动主服务
+echo "🤖 启动 Claude Remote 主服务..."
+node src/index.js

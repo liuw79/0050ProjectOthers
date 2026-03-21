@@ -1,0 +1,79 @@
+# 🚨 出门回来后必读
+
+## 当前状态
+
+✅ **服务已启动并运行中**（长连接模式）
+
+### 服务状态
+```
+[WebSocket] ✅ 长连接已启动，等待飞书消息...
+[info]: [ '[ws]', 'ws client ready' ]
+```
+
+---
+
+## ⚠️ 你需要完成的配置
+
+### 1. 飞书应用配置
+
+打开：https://open.feishu.cn/app/cli_a91c59780ff89ced
+
+#### 1.1 启用机器人能力
+- 左侧菜单 → 应用功能 → 机器人
+- 启用机器人
+- 设置名称：`Claude Remote`
+
+#### 1.2 配置权限
+- 左侧菜单 → 权限管理
+- 开通：
+  - `im:message` - 获取消息
+  - `im:message:send_as_bot` - 发送消息
+
+#### 1.3 配置事件订阅 ⭐ 重要
+- 左侧菜单 → 事件订阅
+- **订阅方式**：选择 **「使用长连接接收事件」**（不是Webhook！）
+- 添加事件：`im.message.receive_v1`
+
+#### 1.4 发布版本
+- 左侧菜单 → 版本管理与发布
+- 创建版本 → 发布
+
+---
+
+## 使用方法
+
+1. 在飞书中搜索你的机器人
+2. 发送消息：
+   - `/status` - 查看当前项目
+   - `/projects` - 列出所有项目
+   - `/kb` - 切换到知识库
+   - 直接发文字 - 和 Claude 对话
+
+---
+
+## 重启服务
+
+如果服务停止了（电脑重启后）：
+
+```bash
+cd /Users/comdir/SynologyDrive/0050Project/Tool.System/claude-remote
+./scripts/start.sh
+```
+
+或者双击 `启动服务.command`
+
+> 注意：长连接模式不需要公网地址，比Webhook模式更简单稳定！
+
+---
+
+## 文件位置
+
+```
+/Users/comdir/SynologyDrive/0050Project/Tool.System/claude-remote/
+```
+
+## 技术说明
+
+- 使用飞书官方SDK `@larksuiteoapi/node-sdk`
+- WebSocket长连接模式
+- 无需内网穿透、无需公网地址

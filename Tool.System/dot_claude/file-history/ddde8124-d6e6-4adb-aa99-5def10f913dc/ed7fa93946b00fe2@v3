@@ -1,0 +1,336 @@
+---
+name: feishu-doc
+description: 飞书文档增删改查操作。用于：(1) 创建飞书文档 (2) 读取文档内容 (3) 更新文档 (4) 删除文档 (5) 列出文件。需要 lark-mcp 配置。
+---
+
+# 飞书文档管理 (feishu-doc)
+
+## 目的
+
+提供飞书文档的完整 CRUD 操作能力，支持无人参与的自动化文档管理。
+
+## 前置条件
+
+- 已配置飞书 MCP（lark-mcp）✓ 已配置
+- 应用已获得相关权限（docs:doc、drive:drive 等）
+- 凭证：`FEISHU_APP_ID` 和 `FEISHU_APP_SECRET`
+
+## 可用操作
+
+### 1. 创建文档 (Create)
+
+**MCP 工具**：`mcp__lark-mcp__docx_builtin_import`
+
+**参数**：
+```json
+{
+  "data": {
+    "markdown": "# 文档标题\n\n文档内容...",
+    "file_name": "文档标题"
+  },
+  "useUAT": false
+}
+```
+
+**特点**：
+- 直接从 Markdown 创建飞书文档
+- 自动转换格式
+- 返回文档 token 和链接
+- 文档创建在「我的空间」
+
+**使用示例**：
+```
+用户：帮我创建一个飞书文档，标题是"产品规划"
+AI：
+1. 调用 mcp__lark-mcp__docx_builtin_import
+2. 返回文档链接
+```
+
+### 2. 读取文档 (Read)
+
+**步骤**：
+
+1. **获取文档信息**：
+```
+mcp__lark-mcp__docx_v1_document_get
+参数: path.document_id = "文档Token"
+```
+
+2. **获取文档 Block**：
+```
+mcp__lark-mcp__docx_v1_document_block_get
+参数: path.document_id, path.block_id = document_id
+```
+
+3. **获取子 Block**：
+```
+mcp__lark-mcp__docx_v1_document_block_children_list
+参数: path.document_id, path.block_id
+```
+
+**Block 类型对照表**：
+| block_type | 类型 | 说明 |
+|------------|------|------|
+| 1 | page | 页面（根节点） |
+| 2 | text | 文本段落 |
+| 3 | bullet | 无序列表 |
+| 4 | heading1 | 一级标题 |
+| 5 | heading2 | 二级标题 |
+| 6 | heading3 | 三级标题 |
+| 8 | quote | 引用 |
+| 10 | code | 代码块 |
+| 11 | todo | 待办事项 |
+| 12 | ordered | 有序列表 |
+| 13 | divider | 分割线 |
+
+### 3. 更新文档 (Update)
+
+**写入 Block**：
+```
+mcp__lark-mcp__docx_v1_document_block_children_create
+参数:
+- path.document_id = "文档Token"
+- path.block_id = "父BlockID"（通常用 document_id）
+- data.children = [{ block_type: 2, text: {...} }]
+- data.index = 0（插入位置）
+```
+
+**Block 数据结构**：
+```json
+{
+  "block_type": 2,
+  "text": {
+    "elements": [
+      { "text_run": { "content": "段落文本" } }
+    ]
+  }
+}
+```
+
+**标题 Block**：
+```json
+{
+  "block_type": 4,
+  "heading1": {
+    "elements": [
+      { "text_run": { "content": "标题文本" } }
+    ]
+  }
+}
+```
+
+**列表 Block**：
+```json
+{
+  "block_type": 3,
+  "bullet": {
+    "elements": [
+      { "text_run": { "content": "列表项" } }
+    ]
+  }
+}
+```
+
+### 4. 删除文档 (Delete)
+
+**移动到回收站**：
+```
+mcp__lark-mcp__drive_v1_file_delete
+参数: path.file_token = "文档Token"
+```
+
+**永久删除**：需要用户手动在回收站操作
+
+### 5. 列出文件 (List)
+
+**获取云空间文件列表**：
+```
+mcp__lark-mcp__drive_v1_file_list
+参数:
+- path.file_token = "文件夹Token"（空或"root"表示根目录）
+- data.page_size = 20
+- data.file_type = "docx"（可选过滤）
+```
+
+**文件类型**：
+| file_type | 说明 |
+|-----------|------|
+| docx | 飞书文档 |
+| sheet | 电子表格 |
+| bitable | 多维表格 |
+| folder | 文件夹 |
+| mindnote | 思维笔记 |
+| file | 普通文件 |
+
+### 6. 添加协作者 (Share) ⭐
+
+**添加文档访问权限**：
+```
+mcp__lark-mcp__drive_v1_permissionMember_create
+参数:
+- path.token = "文档Token"
+- params.type = "docx"
+- data.member_type = "email"（推荐）
+- data.member_id = "邮箱地址"
+- data.perm = "view" | "edit" | "full_access"
+- data.type = "user"
+```
+
+**权限级别**：
+| perm | 说明 |
+|------|------|
+| view | 可阅读 |
+| edit | 可编辑 |
+| full_access | 完全控制 |
+
+**正确示例**：
+```json
+{
+  "path": {"token": "DoPwd7NmyobEMYxZLzGcfqOonyf"},
+  "params": {"type": "docx"},
+  "data": {
+    "member_type": "email",
+    "member_id": "liuwei@gaowei.com",
+    "perm": "full_access",
+    "type": "user"
+  }
+}
+```
+
+**注意事项**：
+- `member_type` 必须是 `"email"`（不是 `"openid"`）
+- `params.type` 必须是 `"docx"`
+- 批量分享需要逐个调用
+
+**批量分享示例**：
+```javascript
+const emails = ["a@gaowei.com", "b@gaowei.com"];
+for (const email of emails) {
+  await drive_v1_permissionMember_create({
+    path: { token: "xxx" },
+    params: { type: "docx" },
+    data: { member_type: "email", member_id: email, perm: "view", type: "user" }
+  });
+}
+```
+
+## 完整工作流示例
+
+### 场景1：创建并写入文档
+
+```
+用户：帮我创建一个飞书文档"会议纪要"，内容包括今天的讨论要点
+
+AI 执行步骤：
+1. 准备 Markdown 内容
+2. 调用 mcp__lark-mcp__docx_builtin_import
+3. 返回文档链接
+```
+
+### 场景2：读取并总结文档
+
+```
+用户：帮我看看这个文档 https://feishu.cn/docx/xxx 的主要内容
+
+AI 执行步骤：
+1. 从 URL 提取 document_id
+2. 调用 mcp__lark-mcp__docx_v1_document_get 获取基本信息
+3. 调用 mcp__lark-mcp__docx_v1_document_block_children_list 获取内容
+4. 解析 Block 结构，生成摘要
+```
+
+### 场景3：追加内容到文档
+
+```
+用户：在这个文档末尾添加一段总结
+
+AI 执行步骤：
+1. 获取文档 Block 结构
+2. 找到最后一个 Block 的位置
+3. 调用 mcp__lark-mcp__docx_v1_document_block_children_create
+4. 确认添加成功
+```
+
+## MCP 工具速查表
+
+### 文档操作
+| 工具名 | 用途 |
+|--------|------|
+| `mcp__lark-mcp__docx_builtin_import` | Markdown 导入创建文档 |
+| `mcp__lark-mcp__docx_v1_document_create` | 创建空文档 |
+| `mcp__lark-mcp__docx_v1_document_get` | 获取文档信息 |
+| `mcp__lark-mcp__docx_v1_document_block_get` | 获取 Block 详情 |
+| `mcp__lark-mcp__docx_v1_document_block_children_list` | 列出子 Block |
+| `mcp__lark-mcp__docx_v1_document_block_children_create` | 创建子 Block |
+
+### 云空间操作
+| 工具名 | 用途 |
+|--------|------|
+| `mcp__lark-mcp__drive_v1_file_list` | 列出文件 |
+| `mcp__lark-mcp__drive_v1_file_get` | 获取文件信息 |
+| `mcp__lark-mcp__drive_v1_file_delete` | 删除文件 |
+| `mcp__lark-mcp__drive_v1_file_copy` | 复制文件 |
+| `mcp__lark-mcp__drive_v1_file_move` | 移动文件 |
+
+### 知识库操作
+| 工具名 | 用途 |
+|--------|------|
+| `mcp__lark-mcp__wiki_v2_space_list` | 获取知识空间列表 |
+| `mcp__lark-mcp__wiki_v2_spaceNode_create` | 创建知识库节点 |
+| `mcp__lark-mcp__wiki_v2_spaceNode_moveDocsToWiki` | 移动文档到知识库 |
+
+## 错误处理
+
+| 错误码 | 说明 | 解决方案 |
+|--------|------|----------|
+| 99991663 | Token 过期 | MCP 自动刷新，重试即可 |
+| 230001 | 权限不足 | 检查应用权限配置 |
+| 230002 | 文档不存在 | 确认文档 Token 正确 |
+| 230003 | 文件夹不存在 | 确认文件夹 Token 正确 |
+
+## 权限要求
+
+确保飞书应用已开通以下权限：
+
+- `docx:doc` - 文档基础权限
+- `docx:doc:readonly` - 读取文档
+- `docx:doc:write` - 编辑文档
+- `drive:drive` - 云空间基础权限
+- `drive:file:read` - 读取文件
+- `drive:file:write` - 写入文件
+
+## 配置信息
+
+**飞书应用凭证**（已配置在 OpenClaw）：
+- APP_ID: `cli_a913c55ee839dcd2`
+
+**默认知识库**（如需归档）：
+- 知识空间 ID: `7600806729793686488`
+- 根节点 Token: `Q0MIwp15Si27cjk3QqecxH10nVf`
+
+## 注意事项
+
+1. **Token 有效期**：tenant_access_token 有效期 2 小时，MCP 会自动刷新
+2. **API 频率限制**：注意调用频率，避免触发限流
+3. **文档大小限制**：单文档最大 20MB
+4. **Block 层级**：Block 支持嵌套，但层级不宜过深
+5. **Markdown 兼容性**：大部分标准 Markdown 语法都能正确转换
+
+## 快速参考
+
+```bash
+# 创建文档
+mcp__lark-mcp__docx_builtin_import(data: { markdown: "...", file_name: "..." })
+
+# 读取文档
+mcp__lark-mcp__docx_v1_document_get(path: { document_id: "..." })
+
+# 写入内容
+mcp__lark-mcp__docx_v1_document_block_children_create(
+  path: { document_id: "...", block_id: "..." },
+  data: { children: [{ block_type: 2, text: {...} }] }
+)
+
+# 列出文件
+mcp__lark-mcp__drive_v1_file_list(path: { file_token: "root" })
+```

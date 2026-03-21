@@ -1,0 +1,190 @@
+<template>
+  <div class="bg-white rounded-lg shadow-sm flex flex-col" style="height: 70vh; min-height: 500px;">
+    <!-- 对话区域 -->
+    <div ref="chatContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <div v-for="(msg, i) in messages" :key="i" :class="msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'">
+        <div :class="msg.role === 'user'
+          ? 'bg-blue-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]'
+          : 'bg-gray-100 text-gray-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]'">
+          <div class="whitespace-pre-wrap text-sm leading-relaxed" v-html="formatMessage(msg.content)"></div>
+        </div>
+      </div>
+
+      <!-- AI 思考中 -->
+      <div v-if="thinking" class="flex justify-start">
+        <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3">
+          <div class="flex items-center gap-1 text-gray-400">
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms;"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms;"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 已提取需求展示 -->
+    <div v-if="hasExtractedInfo" class="border-t px-6 py-3 bg-gray-50">
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span v-if="brief.topic" class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full">
+          <span class="text-xs">主题</span>
+          <span class="font-medium">{{ brief.topic }}</span>
+        </span>
+        <span v-if="brief.audience" class="inline-flex items-center gap-1 bg-green-50 text-green-700 px-2.5 py-1 rounded-full">
+          <span class="text-xs">受众</span>
+          <span class="font-medium">{{ brief.audience }}</span>
+        </span>
+        <span v-if="brief.wordCount" class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full">
+          <span class="text-xs">字数</span>
+          <span class="font-medium">{{ brief.wordCount }}</span>
+        </span>
+        <span v-if="brief.requirements" class="inline-flex items-center gap-1 bg-orange-50 text-orange-700 px-2.5 py-1 rounded-full">
+          <span class="text-xs">要求</span>
+          <span class="font-medium truncate max-w-[200px]">{{ brief.requirements }}</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- 输入区域 -->
+    <div class="border-t p-4">
+      <div class="flex gap-3">
+        <input
+          v-model="userInput"
+          @keyup.enter="sendMessage"
+          :disabled="thinking"
+          type="text"
+          :placeholder="inputPlaceholder"
+          class="flex-1 border rounded-full px-4 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+        />
+        <button
+          @click="sendMessage"
+          :disabled="thinking || !userInput.trim()"
+          class="bg-blue-500 text-white px-6 py-2.5 rounded-full hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          发送
+        </button>
+      </div>
+
+      <!-- 确认按钮 -->
+      <button
+        v-if="brief.complete"
+        @click="handleNext"
+        class="w-full mt-3 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600"
+      >
+        确认需求，开始准备素材 →
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, onMounted, nextTick, watch } from 'vue';
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'article'
+  }
+});
+
+const emit = defineEmits(['next']);
+
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000';
+
+// 对话状态
+const messages = ref([]);
+const userInput = ref('');
+const thinking = ref(false);
+
+// 提取的需求
+const brief = ref({
+  topic: '',
+  audience: '',
+  wordCount: '',
+  requirements: '',
+  complete: false
+});
+
+const chatContainer = ref(null);
+
+// 是否有提取的信息
+const hasExtractedInfo = computed(() =>
+  brief.value.topic || brief.value.audience || brief.value.wordCount || brief.value.requirements
+);
+
+// 输入框提示
+const inputPlaceholder = computed(() => {
+  if (messages.value.length === 0) return '说说你想写什么...';
+  if (!brief.value.topic) return '说说你想写的主题...';
+  if (!brief.value.audience) return '这篇文章是给谁看的？';
+  return '继续聊聊...';
+});
+
+// 格式化消息（简单的 markdown）
+function formatMessage(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+}
+
+// 滚动到底部
+function scrollToBottom() {
+  nextTick(() => {
+    if (chatContainer.value) {
+      chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
+    }
+  });
+}
+
+// 发送消息
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text || thinking.value) return;
+
+  // 添加用户消息
+  messages.value.push({ role: 'user', content: text });
+  userInput.value = '';
+  scrollToBottom();
+
+  // 调用 API
+  thinking.value = true;
+  try {
+    const res = await fetch(`${API_BASE}/api/brief/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: props.type,
+        messages: messages.value
+      })
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      messages.value.push({ role: 'assistant', content: data.reply });
+      brief.value = data.brief;
+    } else {
+      messages.value.push({ role: 'assistant', content: '抱歉，出了点问题，请再说一次？' });
+    }
+  } catch (e) {
+    console.error('Chat error:', e);
+    messages.value.push({ role: 'assistant', content: '网络有点问题，请检查一下？' });
+  } finally {
+    thinking.value = false;
+    scrollToBottom();
+  }
+}
+
+// 下一步
+function handleNext() {
+  emit('next', { brief: brief.value });
+}
+
+// 初始化：发送开场白
+onMounted(async () => {
+  // 添加 AI 开场白
+  messages.value.push({
+    role: 'assistant',
+    content: '咱们来聊聊你想写什么吧。最近有什么想表达的主题吗？'
+  });
+  scrollToBottom();
+});
+</script>

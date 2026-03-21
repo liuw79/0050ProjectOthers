@@ -1,0 +1,148 @@
+---
+name: send-email
+description: 发送邮件工具。使用飞书SMTP发送HTML邮件。调用方式：用户说"发邮件"、"发送邮件"、"email"或"邮件"。
+---
+
+# 发送邮件 Skill
+
+## 概述
+
+使用飞书 SMTP 服务发送 HTML 邮件，支持：
+- **HTML 邮件**：支持富文本格式
+- **多收件人**：支持群发
+- **中文支持**：UTF-8 编码
+
+---
+
+## 环境配置
+
+```bash
+SMTP_SERVER=smtp.feishu.cn
+SMTP_PORT=465
+SMTP_USER=liuwei@gaowei.com
+SMTP_PASS=AQg6ve0Xpdb3FG87
+```
+
+---
+
+## 使用方式
+
+### Node.js (nodemailer)
+
+```javascript
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.feishu.cn',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'liuwei@gaowei.com',
+    pass: 'AQg6ve0Xpdb3FG87'
+  }
+});
+
+await transporter.sendMail({
+  from: '"发件人名称" <liuwei@gaowei.com>',
+  to: 'recipient1@example.com, recipient2@example.com',
+  subject: '邮件主题',
+  html: '<h1>HTML内容</h1>'
+});
+```
+
+### Python (smtplib)
+
+```python
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
+
+smtp_server = "smtp.feishu.cn"
+smtp_port = 465
+sender_email = "liuwei@gaowei.com"
+password = "AQg6ve0Xpdb3FG87"
+
+msg = MIMEMultipart('alternative')
+msg['From'] = Header(f"发件人名称 <{sender_email}>", 'utf-8')
+msg['To'] = Header("recipient@example.com", 'utf-8')
+msg['Subject'] = Header("邮件主题", 'utf-8')
+msg.attach(MIMEText('<h1>HTML内容</h1>', 'html', 'utf-8'))
+
+with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+    server.login(sender_email, password)
+    server.sendmail(sender_email, ["recipient@example.com"], msg.as_string())
+```
+
+---
+
+## 常用收件人
+
+| 名称 | 邮箱 |
+|------|------|
+| 刘伟 | lw@gaowei.com |
+| 陈柏儒 | cbr@gaowei.com |
+
+---
+
+## 示例场景
+
+### 场景1：发送简单文本邮件
+
+```javascript
+await transporter.sendMail({
+  from: '"高维学堂" <liuwei@gaowei.com>',
+  to: 'lw@gaowei.com',
+  subject: '通知',
+  html: '<p>这是一封测试邮件</p>'
+});
+```
+
+### 场景2：群发多人
+
+```javascript
+await transporter.sendMail({
+  from: '"高维学堂" <liuwei@gaowei.com>',
+  to: 'lw@gaowei.com, cbr@gaowei.com',
+  subject: '报告',
+  html: '<h1>周报</h1><p>本周完成了...</p>'
+});
+```
+
+### 场景3：发送富HTML报告
+
+```javascript
+const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family: sans-serif;">
+  <h1 style="color: #3b82f6;">报告标题</h1>
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr><td>内容</td></tr>
+  </table>
+</body>
+</html>
+`;
+
+await transporter.sendMail({
+  from: '"高维学堂教练系统" <liuwei@gaowei.com>',
+  to: 'lw@gaowei.com, cbr@gaowei.com',
+  subject: '教练反馈报告 - 2026-03-10',
+  html: html
+});
+```
+
+---
+
+## 注意事项
+
+1. **端口**：必须使用 465 (SSL)
+2. **编码**：HTML 内容使用 UTF-8
+3. **发件人**：必须与 SMTP 认证用户一致 (liuwei@gaowei.com)
+4. **频率**：避免短时间内大量发送
+
+---
+
+*版本：v1.0*
+*更新时间：2026-03-10*

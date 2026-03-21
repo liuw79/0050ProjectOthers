@@ -1,0 +1,226 @@
+# 飞书文档操控弯路记录
+
+> 记录在飞书知识库发布过程中遇到的坑和解决方案
+
+---
+
+## 弯路1：权限类型混淆
+
+### 问题描述
+- 使用 `tenant_access_token` 调用 wiki API 返回 `permission denied`
+- 错误信息：`wiki space permission denied`
+
+### 根本原因
+飞书API有两种身份：
+- `tenant_access_token`：应用身份，只能操作应用自己的资源
+- `user_access_token`：用户身份，可以操作用户有权限的资源
+
+**wiki操作需要用户身份！**
+
+### 解决方案
+```bash
+# 使用lark-mcp登录获取user_access_token
+npx @larksuiteoapi/lark-mcp login -a "cli_xxx" -s "xxx" --scope "wiki:wiki"
+```
+
+登录后token存储位置：
+```
+~/Library/Application Support/lark-mcp-nodejs/storage.json
+```
+
+---
+
+## 弯路2：Scope格式错误
+
+### 问题描述
+登录时使用 `docs:doc:edit` 返回错误码 20043
+
+### 解决方案
+正确的scope格式是 `wiki:wiki`，不是 `docs:doc:edit`
+
+```bash
+# 正确
+--scope "wiki:wiki"
+
+# 错误
+--scope "docs:doc:edit"
+```
+
+---
+
+## 弯路3：docx权限缺失
+
+### 问题描述
+- 成功创建wiki节点后，尝试写入文档内容
+- 返回错误：`required one of these privileges: [docx:document, docx:document:write_only]`
+
+### 根本原因
+登录时只请求了 `wiki:wiki` scope，没有请求 `docx:document` scope
+
+### 解决方案
+需要重新登录并请求完整权限：
+```bash
+npx @larksuiteoapi/lark-mcp login -a "cli_xxx" -s "xxx" --scope "wiki:wiki docx:document"
+```
+
+⚠️ 这需要用户在浏览器中手动授权
+
+---
+
+## 弯路4：根节点Token失效
+
+### 问题描述
+使用之前记录的根节点token创建子节点失败
+
+### 根本原因
+用户清空了飞书知识库内容，根节点被删除
+
+### 解决方案
+不传 `parent_node_token` 参数，直接在知识空间根目录创建新节点
+
+---
+
+## 弯路5：docx_builtin_import API路径
+
+### 问题描述
+尝试直接HTTP调用 `/open-apis/docx/builtin/import` 返回 404
+
+### 根本原因
+这个API不是公开的HTTP端点，只能通过MCP工具调用
+
+### 尝试过的路径（都失败）
+- `/open-apis/docx/builtin/import`
+- `/open-apis/docx/v1/builtin/import`
+- `/open-apis/docx/v1/documents/import`
+
+---
+
+## 正确的工作流程
+
+### 1. 获取完整权限的user_access_token
+```bash
+npx @larksuiteoapi/lark-mcp login \
+  -a "cli_a9f1c604d6b9dbc9" \
+  -s "JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8" \
+  --scope "wiki:wiki docx:document"
+```
+
+### 2. 提取token
+```javascript
+const { authStore } = require('@larksuiteoapi/lark-mcp/dist/auth/store');
+async function getToken() {
+    await authStore.initialize();
+    const localTokens = await authStore.getLocalAccessToken('cli_a9f1c604d6b9dbc9');
+    const tokenData = await authStore.getToken(localTokens);
+    console.log(tokenData.token);
+}
+getToken();
+```
+
+### 3. 创建wiki节点
+```bash
+curl -X POST "https://open.feishu.cn/open-apis/wiki/v2/spaces/{space_id}/nodes" \
+  -H "Authorization: Bearer {user_token}" \
+  -d '{"node_type":"origin","obj_type":"docx","title":"文档标题"}'
+```
+
+### 4. 写入文档内容（需要docx:document权限）
+```bash
+curl -X POST "https://open.feishu.cn/open-apis/docx/v1/documents/{doc_id}/blocks/{doc_id}/children" \
+  -H "Authorization: Bearer {user_token}" \
+  -d '{"children":[{"block_type":2,"text":{"elements":[{"text_run":{"content":"内容"}}]}}]}'
+```
+
+---
+
+## 应用配置信息
+
+```
+App ID: cli_a9f1c604d6b9dbc9
+App Secret: JcjgjdYhvQSb7MNBnspA7pgWEUvjVvG8
+知识空间ID: 7600806729793686488
+知识库链接: https://gaowei1.feishu.cn/wiki/space/7600806729793686488
+权限管理: https://open.feishu.cn/app/cli_a9f1c604d6b9dbc9/auth
+```
+
+---
+
+## 当前状态
+
+| 操作 | 所需权限 | 状态 |
+|------|----------|------|
+| 创建wiki节点 | wiki:wiki | ✅ 成功 |
+| 写入文档内容 | docx:document | ❌ 需要重新授权 |
+
+**待解决**：需要用户重新运行登录命令并授权 `docx:document` 权限
+
+---
+
+---
+
+## 弯路6：标题块格式报错（2026-03-20）
+
+### 问题描述
+调用 docx API 添加 heading1/heading2/heading3 块时，返回 `invalid param`
+
+### 尝试过的格式（都失败）
+```javascript
+// 格式1：不带 style
+{"block_type": 4, "heading1": {"elements": [{"text_run": {"content": "标题"}}]}}
+
+// 格式2：带空 style
+{"block_type": 4, "heading1": {"elements": [{"text_run": {"content": "标题"}}], "style": {}}}
+```
+
+### 解决方案
+**方案A（推荐）**：用 MCP 的 `docx_builtin_import` 工具，原生支持 Markdown，格式完美
+
+**方案B（兜底）**：全部用普通文本块，用符号区分标题
+```javascript
+// 一级标题
+{"block_type": 2, "text": {"elements": [{"text_run": {"content": "【标题】"}}]}}
+
+// 二级标题
+{"block_type": 2, "text": {"elements": [{"text_run": {"content": "▎标题"}}]}}
+```
+
+---
+
+## 弯路7：分享权限 API 格式错误（2026-03-20）
+
+### 问题描述
+调用 `drive_v1_permissionMember_create` 分享文档时失败
+
+### 正确格式
+```json
+{
+  "path": { "token": "文档ID" },
+  "params": { "type": "docx" },
+  "data": {
+    "member_type": "email",
+    "member_id": "xxx@xxx.com",
+    "perm": "full_access"
+  }
+}
+```
+
+### 常见错误
+| 错误 | 正确 |
+|------|------|
+| `member_type: "openid"` | `member_type: "email"` |
+| 缺少 `params.type` | 必须加 `"type": "docx"` |
+| body 里加 `type: "user"` | 不要加这个字段 |
+
+---
+
+## 推荐方案总结
+
+| 操作 | 推荐方案 |
+|------|----------|
+| 创建文档 | 自建脚本 POST `/open-apis/docx/v1/documents` |
+| 添加内容 | **MCP `docx_builtin_import`**（原生 Markdown） |
+| 分享权限 | 自建脚本（用 email 类型） |
+
+---
+
+*最后更新：2026-03-20*

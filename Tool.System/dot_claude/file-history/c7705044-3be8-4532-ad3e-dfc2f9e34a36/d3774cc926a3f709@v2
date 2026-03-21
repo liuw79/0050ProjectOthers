@@ -1,0 +1,9 @@
+# 飞书应用配置
+LARK_APP_ID=your_app_id
+LARK_APP_SECRET=your_app_secret
+
+# 服务配置
+PORT=3000
+
+# 当前会话
+CURRENT_PROJECT=sys

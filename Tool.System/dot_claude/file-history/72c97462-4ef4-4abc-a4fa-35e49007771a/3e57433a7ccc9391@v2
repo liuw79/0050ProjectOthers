@@ -1,0 +1,215 @@
+---
+name: h5-page-update
+description: H5课程详情页更新工具。用于更新高维学堂后台的H5页面内容，支持图片上传、HTML修改、CSS调整等功能。调用方式：用户说"更新H5页面"、"修改H5"、"后台更新"或提供H5页面ID。
+---
+
+# H5 页面更新 Skill
+
+## 概述
+
+使用 Playwright 自动化操作高维学堂后台，更新 H5 课程详情页面。支持：
+- **图片上传**：自动上传本地图片到 CDN
+- **HTML 修改**：通过 JavaScript 更新 textarea 中的 HTML 内容
+- **CSS 调整**：修改内联样式
+- **实时预览**：更新后自动打开预览页面验证
+
+---
+
+## 环境配置
+
+### 后台信息
+- **后台地址**: https://dev.gaowei.com/admin/forwardedit?id=[页面ID]
+- **账号**: 18566621188
+- **密码**: 1188
+
+### 常用页面 ID
+
+| 课程名称 | 页面 ID |
+|---------|---------|
+| AI+高效招聘 | a63cce6a-6705-4a46-966f-707a00d9fa59 |
+
+### 预览地址格式
+```
+https://dev.gaowei.com/customer/forward/[页面ID]
+```
+
+---
+
+## 使用方式
+
+### 1. 登录后台并导航到编辑页面
+
+```javascript
+// 使用 Playwright 导航
+await page.goto('https://dev.gaowei.com/admin/forwardedit?id=a63cce6a-6705-4a46-966f-707a00d9fa59');
+```
+
+### 2. 上传图片到 CDN
+
+```javascript
+// 读取本地图片，自动上传并获取 CDN URL
+// 使用 Read 工具读取图片文件
+// 系统会自动返回 CDN URL
+```
+
+### 3. 更新 HTML 内容
+
+```javascript
+// 使用 browser_evaluate 更新 textarea
+await page.evaluate(() => {
+  const textarea = document.querySelector('textarea');
+  if (!textarea) return 'Textarea not found';
+
+  let html = textarea.value;
+
+  // 替换图片 URL
+  html = html.replace(/旧URL/g, '新CDN_URL');
+
+  // 修改 CSS
+  html = html.replace(/\.class-name {[^}]+}/, '.class-name { 新CSS }');
+
+  textarea.value = html;
+  return 'HTML updated';
+});
+```
+
+### 4. 保存并验证
+
+```javascript
+// 点击保存按钮
+await page.getByRole('button', { name: '保存' }).click();
+
+// 导航到预览页面验证
+await page.goto('https://dev.gaowei.com/customer/forward/[页面ID]');
+```
+
+---
+
+## 常见修改场景
+
+### 场景1: 替换图片
+
+```javascript
+// 1. 先用 Read 工具上传图片获取 CDN URL
+// 2. 然后更新 HTML
+await page.evaluate(() => {
+  const textarea = document.querySelector('textarea');
+  let html = textarea.value;
+  html = html.replace(/旧图片URL/g, '新CDN_URL');
+  textarea.value = html;
+});
+```
+
+### 场景2: 修改 CSS 样式
+
+```javascript
+await page.evaluate(() => {
+  const textarea = document.querySelector('textarea');
+  let html = textarea.value;
+
+  // 修改类样式
+  html = html.replace(
+    /\.gw-h5-hero-logo {[^}]+}/,
+    `.gw-h5-hero-logo { position: absolute; top: 16px; right: 16px; height: 28px; }`
+  );
+
+  textarea.value = html;
+});
+```
+
+### 场景3: 批量修改多个元素
+
+```javascript
+await page.evaluate(() => {
+  const textarea = document.querySelector('textarea');
+  let html = textarea.value;
+
+  // 多个替换
+  const replacements = [
+    { from: /pattern1/g, to: 'replacement1' },
+    { from: /pattern2/g, to: 'replacement2' },
+    { from: /pattern3/g, to: 'replacement3' }
+  ];
+
+  replacements.forEach(({ from, to }) => {
+    html = html.replace(from, to);
+  });
+
+  textarea.value = html;
+});
+```
+
+---
+
+## CSS 常用修改
+
+### LOGO 移到右上角
+
+```css
+.gw-h5-hero-logo {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 28px;
+  opacity: 0.9;
+  z-index: 2;
+}
+```
+
+### 减少 Hero 顶部高度
+
+```css
+/* 原: padding: 20px 16px 24px; */
+/* 改: padding: 16px; */
+.gw-h5-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+```
+
+### 模块时长不换行
+
+```css
+.gw-h5-module-duration {
+  font-size: 12px;
+  color: var(--text-light);
+  background: var(--bg-white);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+```
+
+---
+
+## 注意事项
+
+1. **图片上传**: 先用 Read 工具上传图片，获取 CDN URL 后再更新 HTML
+2. **正则表达式**: 使用正则替换时要确保匹配准确，避免误改
+3. **保存验证**: 每次修改后务必保存并打开预览页面验证效果
+4. **浏览器缓存**: 如果预览没有更新，可能需要强制刷新 (Ctrl+Shift+R)
+
+---
+
+## 工作流程
+
+```
+1. 用户提出修改需求
+2. 确认页面 ID (默认: AI+高效招聘)
+3. 如果涉及图片:
+   - 用 Read 工具读取本地图片
+   - 获取 CDN URL
+4. 导航到后台编辑页面
+5. 使用 browser_evaluate 更新 HTML
+6. 点击保存按钮
+7. 导航到预览页面验证
+8. 向用户确认修改完成
+```
+
+---
+
+*版本: v1.0*
+*更新时间: 2026-03-14*

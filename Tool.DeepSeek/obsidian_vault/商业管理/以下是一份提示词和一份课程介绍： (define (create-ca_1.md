@@ -1,0 +1,602 @@
+---
+title: 以下是一份提示词和一份课程介绍： (define (create-ca
+category: 商业管理
+tags: [商业管理, 教程, 推荐, 问题, 对比]
+source: DeepSeek
+messages: unknown
+processed: 2026-02-20
+---
+(define (create
+
+---
+messages: 34
+---
+
+## User
+
+以下是一份提示词和一份课程介绍：
+(define (create-case-study product-description)
+  "Main function to create the case study for a product/service description"
+  (let* (
+         ;; Step 1: Extract Product Value
+         (product-value (extract-product-value product-description))
+
+         ;; Step 2: Define Target User Groups based on needs or pain points
+         (target-user-groups (define-target-user-groups product-description))
+
+         ;; Step 3: Select the most relevant target user group
+         (best-user-group (select-best-user-group target-user-groups product-value))
+
+         ;; Step 4: Create a character based on the best user group
+         (character (create-character best-user-group))
+
+         ;; Step 5: Construct the case study story based on the character and product value
+         (story (create-story character product-value))
+
+         ;; Return the final case study
+         story
+        )
+)
+
+;; Step 1: Extract Product Value
+(define (extract-product-value product-description)
+  "Extracts the core value of the product based on the description"
+  (let* (
+         (keywords (extract-keywords product-description))
+         (features (extract-features product-description))
+         (product-value (analyze-product-value keywords features))
+        )
+    product-value
+  )
+)
+
+(define (extract-keywords description)
+  "Extract key selling points or themes from the product description"
+  ;; This function can be enhanced with NLP techniques to pull keywords from the description
+  (list "innovation" "user-centric" "easy-to-use"))  ;; Placeholder
+
+(define (extract-features description)
+  "Extract specific features or functionalities described"
+  ;; Similar to keyword extraction, but focusing on features
+  (list "cloud-sync" "real-time collaboration"))  ;; Placeholder
+
+(define (analyze-product-value keywords features)
+  "Analyze how keywords and features combine to define the product’s core value"
+  ;; Combine the extracted features and keywords into a unified value proposition
+  (string-append "The product is innovative, user-centric, and offers features like " 
+                 (string-join features ", ") 
+                 " to streamline processes."))  ;; Placeholder
+
+;; Step 2: Define Target User Groups based on needs or pain points
+(define (define-target-user-groups product-description)
+  "Defines target user groups based on pain points or needs"
+  (let* (
+         (group1 (create-user-group "Tech Enthusiasts" "Need for cutting-edge features"))
+         (group2 (create-user-group "Small Business Owners" "Need for affordable, easy-to-integrate tools"))
+         (group3 (create-user-group "Freelancers" "Need for efficient, remote collaboration solutions"))
+        )
+    (list group1 group2 group3)  ;; List of user groups with unique needs
+  )
+)
+
+(define (create-user-group group-name pain-point)
+  "Creates a user group with a specific name and associated pain point"
+  (list group-name pain-point))
+
+;; Step 3: Select the most relevant target user group based on product value
+(define (select-best-user-group user-groups product-value)
+  "Selects the most relevant user group based on how well they align with the product value"
+  (let* (
+         (group-scores (map (lambda (group)
+                              (calculate-group-score group product-value))
+                            user-groups))
+         (best-group (find-best-group group-scores))
+        )
+    best-group
+  )
+)
+
+(define (calculate-group-score user-group product-value)
+  "Calculates how well a user group aligns with the product value"
+  ;; For simplicity, assume a static scoring function for now, though this can be dynamic
+  (let ((pain-point (cadr user-group)))
+    (if (string-contains product-value pain-point)
+        10
+        5)))
+
+(define (find-best-group group-scores)
+  "Finds the user group with the highest score"
+  ;; Sort groups by score and select the top group
+  (car (sort group-scores (lambda (x y) (> (cadr x) (cadr y))))))  ;; Placeholder: sort by score
+
+;; Step 4: Create a character based on the best user group
+(define (create-character user-group)
+  "Creates a realistic character based on the best user group"
+  (let* (
+         (group-name (car user-group))
+         (pain-point (cadr user-group))
+         (character (generate-character group-name pain-point))
+        )
+    character
+  )
+)
+
+(define (generate-character group-name pain-point)
+  "Generates a character that embodies the traits of the user group"
+  (let* (
+         (name (generate-name group-name))
+         (background (generate-background group-name))
+         (goal (generate-goal group-name))
+        )
+    (list name background pain-point goal)
+  )
+)
+
+(define (generate-name group-name)
+  "Generates a name based on the group"
+  (if (string= group-name "Tech Enthusiasts")
+      "Evan"
+      (if (string= group-name "Small Business Owners")
+          "Rachel"
+          "Sophia")))
+
+(define (generate-background group-name)
+  "Generates a background story based on the group"
+  (if (string= group-name "Tech Enthusiasts")
+      "A software engineer always seeking the next big innovation."
+      (if (string= group-name "Small Business Owners")
+          "Runs a small but growing retail business in the local area."
+          "A freelancer who works on multiple projects and values efficiency.")))
+
+(define (generate-goal group-name)
+  "Generates the character's goal based on the group"
+  (if (string= group-name "Tech Enthusiasts")
+      "To find the most innovative products that push the boundaries of technology."
+      (if (string= group-name "Small Business Owners")
+          "To find affordable tools that help streamline their business."
+          "To find seamless ways to collaborate with clients remotely.")))
+
+;; Step 5: Create the Case Study Story
+(define (create-story character product-value)
+  "Creates the story based on the character and product value"
+  (let* (
+         (exposition (format "Meet %s, a person who struggles with %s." (car character) (cadr character)))
+         (rising-action (format "Despite trying various solutions, %s was frustrated with the lack of tools that truly address %s." (car character) (cadr character)))
+         (climax (format "Then %s discovered the product, which promised to solve their challenge of %s." (car character) (cadr character)))
+         (falling-action (format "They tried the product and saw immediate improvements in their work-life balance.")))
+    (string-append exposition "\n" rising-action "\n" climax "\n" falling-action "\n" "Resolution: With the product, they achieved a breakthrough in productivity.")))
+
+;; Example execution: 
+(create-case-study "Sample Product Description")
+
+以下是高维学堂和刘绍荣老师独家课程《战略设计总纲》介绍：
+
+95%的企业做的所谓的“年度战略规划”，实质上，仅仅只是增长计划！
+真正的战略年度规划远不止于此。
+它需要深入内核的洞见，展望未来的想象力，结合差异化的自身禀赋，对企业昨天惯性的摆脱，更要核心团队的有效共创和共识。
+
+马上要着手2025年的战略规划，在带团队动手时，建议创始人提前思考以下6个问题：
+1. 从高增长到0增长的周期假设，战略应如何调？
+2. 越是大变量，越考究你战略方向感，该怎么判断？
+3. 你企业砥定不动的异质化战略内核，应是什么？
+4. 你企业不可回撤的中长期循序投资，应如何投？
+5. 战略的稳定深远，战术的灵活敏捷，如何平衡？
+6. 企业要持续发展，战略系统的缺陷应如何检测？
+
+带着6个问题的思考，进入我们专门定制研发的《战略设计总纲课》课堂。在课中， 每家企业核心团队不仅能够对企业自身和市场、行业做全方位的扫描和诊断，检视战略现状，还能据此并结合自身的战略内核、路径和节奏，相对简洁轻便地制定出自己企业的年度战略规划，真正打造企业的差异化竞争力，穿越周期，走出自己的路。
+
+课程收获：
+- 明确的战略内核： 找到驱动企业发展的核心力量，并将其转化为清晰的战略路径。
+- 定制化战略路径：明确企业战略的两个关键点——起点和终点，规划出一条符合企业特质的发展路径。
+- 战略形态的深度匹配： 深入分析差异化战略、竞争战略等多种战略形态，帮助您找到与企业基因匹配的最佳战略，最大化成功的可能性。
+- 掌握战略节奏：从宏观布局到微观执行，帮助你设计出适合自己企业的“战略地图”，精准掌控每个阶段的节奏与步伐。
+- 年度战略地图：制定匹配自己的年度战略规划，确保每一步都在正确的踩点上。
+
+【导师介绍】
+
+
+
+
+刘绍荣	
+波士顿BCG（世界领先的商业战略咨询机构）前高级战略顾问及高级合伙人
+100多家中国著名企业集团的变革顾问、战略顾问
+著有《平台型组织一数字化时代的全新组织形态》、《产业赋能平台-产业互联网时代的平台战略升级》、《商业物种演进-产业互联时代的战略形态进化》等多部著作。
+陪跑服务过的企业包括:贝壳、海尔、蚂蚁金服、三一重工、九牧王、左右沙发、七匹狼、
+龙湖、中梁、中央总台、三峡等
+
+【课程大纲】
+一、越是不确定周期，越需要穿越周期的中长期战略
+1 五大周期叠加下的危与机
+2 周期转型下,企业需从机遇性成长向战略性成长蜕变
+
+二、95%的企业，实质只有增长计划，缺乏真正的战略规划
+1 浅层增长作业:定目标、找机会、配策略
+2 系统性战略缺失:思维局限、系统性缺陷
+3 从领导人控制到战略驱动:形成深度共识,中长期投资,结构性创新
+
+三、找到战略内核，驱动长期增长
+1 战略内核的三大特征 : 中长期、不可撤销、全局视角
+2 战略内核的三大标准 : 量身定制、清晰可行、与众不同
+
+四、五步法：设计你的战略地图
+1 第一步:确立使命愿景,构筑战略基点
+- 使命：找到信仰的核心,塑造直击人心的使命
+- 愿景：分阶段规划愿景，引领目标实现
+
+2 第二步:设计业务组合,搭建成长阶梯
+- 识别单一业务的四大风险:增长天花板、赛道红海化、用户分化、破坏式创新
+- 运用"5+1"方法论,做透核心业务,延展三种增长路径
+
+3 第三步:创新价值定位,实现特立独行
+- 洞察产业趋势,描绘未来战略集群图谱
+- 辨识企业独特基因:领袖特质、组织基因、环节能力
+- 选择最佳战略集群:吸引力排序 vs 能力匹配度排序
+- 打造独特价值组合:增加、创造、减少、消除
+
+4 第四步:重构价值活动,建立竞争优势
+- 创新设计:差异化再造,打造护城河
+- 纵向一致:与战略方向、价值定位保持一致
+- 横向协同:各价值环节相互配合,形成合力
+
+5 第五步:形成战略地图,构建量化战略
+- 有战略：基于使命愿景,将业务组合、价值定位、价值活动整合
+- 有目标：设定清晰目标,制定分阶段实现的战略举措
+- 有故事：渗透情感、激情与洞察力，用60秒讲清楚你的战略
+注: 注：精品课持续迭代中，讲义以实际授课为准，感谢理解
+
+适合学友：
+- 适用企业
+期待战略驱动、计划业务创新的企业
+- 适合岗位：
+创始人、高管团队
+- 特别建议
+创始人带高管团队共学，快速同频和行动
+
+## Assistant
+
+以下是基于《战略设计总纲》课程设计的案例研究，采用用户提供的框架构建：
+
+案例研究：传统制造企业的战略蜕变之路
+
+### Step 1: 提取课程核心价值
+
+核心命题"从浅层增长计划到穿透周期的战略系统设计，通过五步法构建差异化战略内核，实现从机会驱动到战略驱动的组织进化"
+
+关键词战略内核 | 周期穿越 | 业务组合设计 | 价值定位创新 | 战略地图
+
+功能亮点
+
+- 独创"战略五步法"框架
+
+独创"战略五步法"框架
+
+- 战略内核诊断工具包
+
+战略内核诊断工具包
+
+- 行业集群图谱分析法
+
+行业集群图谱分析法
+
+- 价值活动协同矩阵
+
+价值活动协同矩阵
+
+价值提炼"本课程通过诊断企业战略基因，帮助核心团队建立包含使命愿景、业务组合、价值定位、价值活动、战略地图的系统框架，在不确定周期中打造不可复制的战略护城河。"
+
+### Step 2: 定义目标用户群体
+
+### Step 3: 最佳适配群体选择
+
+胜出群体：年营收5-50亿的转型期传统制造企业决策依据：
+
+- 痛点与课程价值高度匹配：课程"业务组合设计"模块可破解单一业务风险
+
+痛点与课程价值高度匹配：课程"业务组合设计"模块可破解单一业务风险
+
+- 战略五步法与制造企业转型升级路径契合度达92%（模拟数据）
+
+战略五步法与制造企业转型升级路径契合度达92%（模拟数据）
+
+- "价值活动重构"方法论可直接应用于供应链再造
+
+"价值活动重构"方法论可直接应用于供应链再造
+
+### Step 4: 典型用户画像
+
+人物档案
+
+- 姓名：陈启明（某卫浴设备制造商创始人）
+
+姓名：陈启明（某卫浴设备制造商创始人）
+
+- 背景：二代接班人，企业年营收28亿但增长停滞3年
+
+背景：二代接班人，企业年营收28亿但增长停滞3年
+
+- 战略困局：陷入价格战，毛利率跌破15%警戒线海外订单骤减30%，传统渠道效能衰减数字化转型投入超千万未达预期
+
+战略困局：
+
+- 陷入价格战，毛利率跌破15%警戒线
+
+陷入价格战，毛利率跌破15%警戒线
+
+- 海外订单骤减30%，传统渠道效能衰减
+
+海外订单骤减30%，传统渠道效能衰减
+
+- 数字化转型投入超千万未达预期
+
+数字化转型投入超千万未达预期
+
+- 深层焦虑："每年做战略规划就像在赌场下注，既看不清牌面也读不懂规则"
+
+深层焦虑："每年做战略规划就像在赌场下注，既看不清牌面也读不懂规则"
+
+### Step 5: 战略蜕变叙事
+
+破局之旅
+
+- 战略觉醒（课程模块一）在"五大周期叠加"分析中，识别出：行业技术周期进入平台期消费升级周期带来场景化需求数字化周期催生服务化转型机遇
+
+战略觉醒（课程模块一）在"五大周期叠加"分析中，识别出：
+
+- 行业技术周期进入平台期
+
+行业技术周期进入平台期
+
+- 消费升级周期带来场景化需求
+
+消费升级周期带来场景化需求
+
+- 数字化周期催生服务化转型机遇
+
+数字化周期催生服务化转型机遇
+
+- 内核重构（课程模块三）通过"战略内核三标准"诊断：保留：供应链深度整合能力（不可撤销资产）升级：从"卫浴设备商"到"智能水系统服务商"剔除：低毛利OEM业务（占比从45%压缩至15%）
+
+内核重构（课程模块三）通过"战略内核三标准"诊断：
+
+- 保留：供应链深度整合能力（不可撤销资产）
+
+保留：供应链深度整合能力（不可撤销资产）
+
+- 升级：从"卫浴设备商"到"智能水系统服务商"
+
+升级：从"卫浴设备商"到"智能水系统服务商"
+
+- 剔除：低毛利OEM业务（占比从45%压缩至15%）
+
+剔除：低毛利OEM业务（占比从45%压缩至15%）
+
+- 地图绘制（课程模块四&五）应用"价值定位四象限"：text复制下载[增加] 物联网数据服务
+[创造] 用水健康监测系统
+[减少] 标准化SKU数量（从380→120）
+[消除] 经销商加价环节构建"三步走"战略地图：text复制下载2024：打造智慧卫浴样板间（3大场景）
+2025：建立水系统SaaS平台
+2026：输出行业解决方案
+
+地图绘制（课程模块四&五）应用"价值定位四象限"：
+
+构建"三步走"战略地图：
+
+- 战略协同（课程模块四）重构价值链条：纵向：研发投入占比从3%提升至8%横向：建立"产品+数据+服务"铁三角架构
+
+战略协同（课程模块四）重构价值链条：
+
+- 纵向：研发投入占比从3%提升至8%
+
+纵向：研发投入占比从3%提升至8%
+
+- 横向：建立"产品+数据+服务"铁三角架构
+
+横向：建立"产品+数据+服务"铁三角架构
+
+### 转型成效
+
+- 12个月内实现战略转身：服务收入占比从5%提升至32%
+
+12个月内实现战略转身：服务收入占比从5%提升至32%
+
+- 客户LTV提升2.7倍，净推荐值(NPS)达行业top10%
+
+客户LTV提升2.7倍，净推荐值(NPS)达行业top10%
+
+- 获得战略投资机构估值溢价40%
+
+获得战略投资机构估值溢价40%
+
+### 课程差异化价值验证
+
+该案例验证了课程三大独特价值：
+
+- 系统穿透力：将零散战略动作整合为有机系统
+
+系统穿透力：将零散战略动作整合为有机系统
+
+- 周期适配性：在经济VUCA期实现逆势布局
+
+周期适配性：在经济VUCA期实现逆势布局
+
+- 共识构建力：通过"战略工作坊"实现核心团队认知同频
+
+共识构建力：通过"战略工作坊"实现核心团队认知同频
+
+战略箴言"真正的战略规划不是预测未来，而是构建让未来必然发生的机制——这正是《战略设计总纲》赋予企业的元能力。"
+
+## User
+
+请直接把故事写出来
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+请直接把故事写出来
+
+## Assistant
+
+### 破局者陈启明：一个传统制造企业的战略觉醒
+
+凌晨两点的办公室，陈启明盯着电脑屏幕上那条刺眼的红色曲线——企业营收连续第三年持平在28亿，而毛利率却像漏了气的皮球，一路跌破15%的警戒线。窗外的工业园区零星亮着几盏灯，像极了这个老牌卫浴设备制造商的处境：明明还在运转，却透着股力不从心的疲惫。
+
+第一章：困局中的赌徒"陈总，印尼客户又要求降价10%。"海外事业部总监的声音从电话里传来时，陈启明正翻看着堆积如山的转型方案：从智能马桶研发到直播电商布局，三年来砸进去的1200万像打水漂般不见成效。父亲三十年前创办企业时那句"质量就是生命"的厂训，在价格战的血海里显得愈发苍白。
+
+董事会上的争吵已成常态。"要不砍掉研发线保利润？""还是学同行转做代工？"股东们的声音在会议室回荡。陈启明望着墙上"中国卫浴十强"的铜牌，突然想起咨询公司那句扎心的诊断："贵司的战略，本质上是在赌场下注。"
+
+第二章：五步法破迷雾转机出现在那个飘着细雨的深秋。在《战略设计总纲》的课堂上，当刘绍荣老师展示"五大周期叠加分析模型"时，陈启明的钢笔突然在笔记本上划出长长的一道——原来行业技术周期已进入平台期，而自己却还在用增量时代的打法拼命挣扎。
+
+三天的工作坊里，高管团队经历了前所未有的认知地震：
+
+- 用"战略内核三标准"筛查，发现企业真正的底牌不是厂房设备，而是深耕二十年的供应链整合能力；
+
+用"战略内核三标准"筛查，发现企业真正的底牌不是厂房设备，而是深耕二十年的供应链整合能力；
+
+- 在"行业集群图谱"上，财务总监第一次意识到，隔壁建材企业打造的智能家居生态，正在鲸吞他们的终端客户；
+
+在"行业集群图谱"上，财务总监第一次意识到，隔壁建材企业打造的智能家居生态，正在鲸吞他们的终端客户；
+
+- 当用"价值定位四象限"重构业务时，那个总唱反调的销售老将突然拍案而起："早该砍掉这些赔钱赚吆喝的OEM订单！"
+
+当用"价值定位四象限"重构业务时，那个总唱反调的销售老将突然拍案而起："早该砍掉这些赔钱赚吆喝的OEM订单！"
+
+第三章：重绘战略地图深夜的会议室飘着咖啡香，战略地图雏形渐显：
+
+- 断臂求生：三个月内砍掉45%的低毛利代工业务，腾出的产能转向智慧水务系统；
+
+断臂求生：三个月内砍掉45%的低毛利代工业务，腾出的产能转向智慧水务系统；
+
+- 场景革命：与地产龙头合作打造"健康用水样板间"，把马桶变成水质监测终端；
+
+场景革命：与地产龙头合作打造"健康用水样板间"，把马桶变成水质监测终端；
+
+- 铁三角架构：打破产销研部门墙，组建"产品经理+数据工程师+服务顾问"的突击队。
+
+铁三角架构：打破产销研部门墙，组建"产品经理+数据工程师+服务顾问"的突击队。
+
+转型的阵痛比预想更剧烈。当第一批搭载物联网芯片的智能马桶下线时，生产线老师傅对着触摸屏直摇头；砍掉经销商层级那天，合作二十年的渠道商老周摔门而去。但陈启明记得课堂上的那句话："战略投资不可撤销，就像破釜沉舟的船。"
+
+第四章：静水流深十八个月后的行业展会上，陈启明站在"启明星智慧水务云平台"的展台前。大屏上跳动的数字讲述着新故事：服务收入占比突破32%，客户留存率91%，甚至某海外度假村为他们的用水健康监测系统多付了15%的溢价。
+
+最让他感慨的，是上周那位曾愤然离去的渠道商老周，主动回来洽谈成为服务合作伙伴。展览馆的灯光下，那枚尘封已久的"十强"铜牌，正在新制的"产业互联网创新标杆"奖杯旁隐隐发亮。
+
+### 深夜战略室的灯光
+
+如今每到深夜，陈启明办公室的灯光依然常亮。但电脑屏幕上的不再是杂乱无章的报表，而是一张持续迭代的"三年战略地图"。最新版本上，一行小字注解道："真正的战略不是预测风暴，而是学会在风雨中建造方舟。"
+
+某个加班的深夜，他在课程笔记扉页写下新的注脚："去年今日，我们在赌场下注；而今夜，我们正在改写赌场的规则。"
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。
+
+## User
+
+再重新写一个吧，马桶监测水质这个例子感觉怪怪的。
+
+## Assistant
+
+服务器繁忙，请稍后再试。

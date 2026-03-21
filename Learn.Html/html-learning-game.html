@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML互动学习游戏 - 边玩边学</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .score-board {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .score {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .level {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .progress-bar {
+            flex: 1;
+            margin: 0 20px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .game-area {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .game-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* 拖拽游戏样式 */
+        .drag-game {
+            display: none;
+        }
+
+        .drag-game.active {
+            display: block;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            min-height: 80px;
+        }
+
+        .html-tag {
+            background: #FF6B6B;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: grab;
+            user-select: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .html-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+
+        .html-tag.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .drop-zone.drag-over {
+            border-color: #4CAF50;
+            background: #e8f5e8;
+            transform: scale(1.02);
+        }
+
+        .drop-zone.correct {
+            border-color: #4CAF50;
+            background: #e8f5e8;
+            color: #4CAF50;
+        }
+
+        .drop-zone.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+            color: #f44336;
+        }
+
+        /* 选择题样式 */
+        .quiz-game {
+            display: none;
+        }
+
+        .quiz-game.active {
+            display: block;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .option:hover {
+            border-color: #2196F3;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #2196F3;
+            background: #e3f2fd;
+        }
+
+        .option.correct {
+            border-color: #4CAF50;
+            background: #e8f5e8;
+            color: #4CAF50;
+        }
+
+        .option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+            color: #f44336;
+        }
+
+        /* 代码填空样式 */
+        .code-game {
+            display: none;
+        }
+
+        .code-game.active {
+            display: block;
+        }
+
+        .code-editor {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .code-blank {
+            background: #4a5568;
+            color: #ffd700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 2px dashed #ffd700;
+            min-width: 60px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .code-input {
+            background: #4a5568;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            min-width: 60px;
+        }
+
+        .code-input:focus {
+            outline: none;
+            box-shadow: 0 0 5px #ffd700;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #2196F3;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .btn-warning {
+            background: #FF9800;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #F57C00;
+            transform: translateY(-2px);
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .feedback.success {
+            background: #e8f5e8;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+
+        .feedback.error {
+            background: #ffebee;
+            color: #f44336;
+            border: 2px solid #f44336;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .game-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .game-card.active {
+            border: 3px solid #2196F3;
+            background: #e3f2fd;
+        }
+
+        /* 学习模块样式 */
+        .learning-module {
+            display: none;
+        }
+
+        .learning-module.active {
+            display: block;
+        }
+
+        .lesson-progress {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .lesson-step {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #f5f5f5;
+            color: #666;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-step.active {
+            background: #2196F3;
+            color: white;
+        }
+
+        .lesson-step.completed {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .lesson-content {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            min-height: 400px;
+        }
+
+        .lesson-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .lesson-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .lesson-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .lesson-highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .game-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .score-board {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .progress-bar {
+                margin: 0;
+                width: 100%;
+            }
+
+            .drop-zones {
+                grid-template-columns: 1fr;
+            }
+
+            .game-menu {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 HTML互动学习游戏</h1>
+            <p>边玩边学，轻松掌握HTML知识！</p>
+        </div>
+
+        <div class="score-board">
+            <div class="score">得分: <span id="score">0</span></div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="level">等级: <span id="level">1</span></div>
+        </div>
+
+        <div class="game-menu" id="gameMenu">
+            <div class="game-card" onclick="startLearning()">
+                <div class="game-icon">📚</div>
+                <h3>开始学习</h3>
+                <p>先学习HTML基础知识，然后进行测试</p>
+            </div>
+            <div class="game-card" onclick="showGameMenu()">
+                <div class="game-icon">🎮</div>
+                <h3>直接游戏</h3>
+                <p>跳过教学，直接开始游戏挑战</p>
+            </div>
+        </div>
+
+        <div class="game-menu" id="gameSubMenu" style="display: none;">
+            <div class="game-card" onclick="startGame('drag')">
+                <div class="game-icon">🏷️</div>
+                <h3>标签拖拽游戏</h3>
+                <p>将HTML标签拖拽到正确的位置</p>
+            </div>
+            <div class="game-card" onclick="startGame('quiz')">
+                <div class="game-icon">❓</div>
+                <h3>HTML知识问答</h3>
+                <p>测试你的HTML基础知识</p>
+            </div>
+            <div class="game-card" onclick="startGame('code')">
+                <div class="game-icon">💻</div>
+                <h3>代码填空挑战</h3>
+                <p>完成HTML代码片段</p>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <!-- 学习模块 -->
+            <div class="learning-module" id="learningModule">
+                <h2 class="game-title">📚 HTML基础知识学习</h2>
+                <div class="lesson-container" id="lessonContainer">
+                    <div class="lesson-progress">
+                        <div class="lesson-step active" data-lesson="0">1. HTML基础</div>
+                        <div class="lesson-step" data-lesson="1">2. 常用标签</div>
+                        <div class="lesson-step" data-lesson="2">3. 文档结构</div>
+                    </div>
+                    <div class="lesson-content" id="lessonContent">
+                        <!-- 课程内容将通过JavaScript动态加载 -->
+                    </div>
+                    <div class="lesson-navigation">
+                        <button class="btn btn-warning" onclick="showMenu()">返回菜单</button>
+                        <button class="btn btn-primary" id="prevBtn" onclick="prevLesson()" style="display: none;">上一课</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextLesson()">下一课</button>
+                        <button class="btn btn-success" id="testBtn" onclick="startTest()" style="display: none;">开始测试</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 拖拽游戏 -->
+            <div class="drag-game" id="dragGame">
+                <h2 class="game-title">🏷️ 将HTML标签拖拽到正确的描述区域</h2>
+                <div class="tags-container" id="tagsContainer">
+                    <div class="html-tag" draggable="true" data-tag="h1">&lt;h1&gt;</div>
+                    <div class="html-tag" draggable="true" data-tag="p">&lt;p&gt;</div>
+                    <div class="html-tag" draggable="true" data-tag="img">&lt;img&gt;</div>
+                    <div class="html-tag" draggable="true" data-tag="a">&lt;a&gt;</div>
+                    <div class="html-tag" draggable="true" data-tag="div">&lt;div&gt;</div>
+                    <div class="html-tag" draggable="true" data-tag="ul">&lt;ul&gt;</div>
+                </div>
+                <div class="drop-zones">
+                    <div class="drop-zone" data-accept="h1">
+                        <span>用于显示页面主标题</span>
+                    </div>
+                    <div class="drop-zone" data-accept="p">
+                        <span>用于显示段落文本</span>
+                    </div>
+                    <div class="drop-zone" data-accept="img">
+                        <span>用于显示图片</span>
+                    </div>
+                    <div class="drop-zone" data-accept="a">
+                        <span>用于创建超链接</span>
+                    </div>
+                    <div class="drop-zone" data-accept="div">
+                        <span>用于创建容器区块</span>
+                    </div>
+                    <div class="drop-zone" data-accept="ul">
+                        <span>用于创建无序列表</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="btn btn-warning" onclick="resetDragGame()">重置</button>
+                    <button class="btn btn-primary" onclick="checkDragGame()">检查答案</button>
+                </div>
+            </div>
+
+            <!-- 选择题游戏 -->
+            <div class="quiz-game" id="quizGame">
+                <h2 class="game-title">❓ HTML知识问答</h2>
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="submitAnswer()">提交答案</button>
+                    <button class="btn btn-success" onclick="nextQuestion()">下一题</button>
+                </div>
+            </div>
+
+            <!-- 代码填空游戏 -->
+            <div class="code-game" id="codeGame">
+                <h2 class="game-title">💻 完成HTML代码</h2>
+                <div class="code-editor" id="codeEditor"></div>
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="checkCode()">检查代码</button>
+                    <button class="btn btn-success" onclick="nextCodeChallenge()">下一题</button>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-warning" onclick="showMenu()">返回菜单</button>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration"></div>
+
+    <script>
+        // 游戏状态
+        let gameState = {
+            score: 0,
+            level: 1,
+            currentGame: null,
+            currentQuestion: 0,
+            currentCodeChallenge: 0,
+            currentLesson: 0,
+            lessonsCompleted: []
+        };
+
+        // 课程内容
+        const lessons = [
+            {
+                title: "HTML基础知识",
+                content: `
+                    <div class="lesson-title">🌟 什么是HTML？</div>
+                    <div class="lesson-text">
+                        HTML（HyperText Markup Language）是超文本标记语言，是创建网页的标准标记语言。
+                        它使用标签来描述网页的结构和内容。
+                    </div>
+                    <div class="lesson-highlight">
+                        <strong>💡 重点：</strong> HTML不是编程语言，而是标记语言，用来结构化网页内容。
+                    </div>
+                    <div class="lesson-text">
+                        HTML文档由一系列元素组成，每个元素由开始标签、内容和结束标签组成：
+                    </div>
+                    <div class="lesson-example">
+&lt;标签名&gt;内容&lt;/标签名&gt;
+
+例如：
+&lt;h1&gt;这是一个标题&lt;/h1&gt;
+&lt;p&gt;这是一个段落&lt;/p&gt;
+                    </div>
+                    <div class="lesson-text">
+                        HTML标签不区分大小写，但推荐使用小写。大部分标签都有开始和结束标签，
+                        但也有一些自闭合标签，如 &lt;img&gt;、&lt;br&gt;、&lt;hr&gt; 等。
+                    </div>
+                `
+            },
+            {
+                title: "常用HTML标签",
+                content: `
+                    <div class="lesson-title">🏷️ 常用HTML标签介绍</div>
+                    <div class="lesson-text">
+                        让我们学习一些最常用的HTML标签及其用途：
+                    </div>
+                    <div class="lesson-example">
+&lt;!-- 标题标签 --&gt;
+&lt;h1&gt;最大的标题&lt;/h1&gt;
+&lt;h2&gt;二级标题&lt;/h2&gt;
+&lt;h3&gt;三级标题&lt;/h3&gt;
+
+&lt;!-- 段落标签 --&gt;
+&lt;p&gt;这是一个段落&lt;/p&gt;
+
+&lt;!-- 链接标签 --&gt;
+&lt;a href="https://example.com"&gt;这是一个链接&lt;/a&gt;
+
+&lt;!-- 图片标签 --&gt;
+&lt;img src="image.jpg" alt="图片描述"&gt;
+
+&lt;!-- 容器标签 --&gt;
+&lt;div&gt;这是一个容器&lt;/div&gt;
+
+&lt;!-- 列表标签 --&gt;
+&lt;ul&gt;
+    &lt;li&gt;列表项1&lt;/li&gt;
+    &lt;li&gt;列表项2&lt;/li&gt;
+&lt;/ul&gt;
+                    </div>
+                    <div class="lesson-highlight">
+                        <strong>📝 记住：</strong>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li>&lt;h1&gt;-&lt;h6&gt;：标题标签，数字越小标题越大</li>
+                            <li>&lt;p&gt;：段落标签，用于文本段落</li>
+                            <li>&lt;a&gt;：链接标签，href属性指定链接地址</li>
+                            <li>&lt;img&gt;：图片标签，src属性指定图片路径</li>
+                            <li>&lt;div&gt;：容器标签，用于布局和分组</li>
+                            <li>&lt;ul&gt;和&lt;li&gt;：无序列表和列表项</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                title: "HTML文档结构",
+                content: `
+                    <div class="lesson-title">🏗️ HTML文档的基本结构</div>
+                    <div class="lesson-text">
+                        每个HTML文档都有固定的基本结构，这个结构是创建网页的基础：
+                    </div>
+                    <div class="lesson-example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;网页标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;欢迎来到我的网站&lt;/h1&gt;
+    &lt;p&gt;这是网页的内容&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </div>
+                    <div class="lesson-highlight">
+                        <strong>🔍 结构解析：</strong>
+                        <ul style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>&lt;!DOCTYPE html&gt;</strong>：声明文档类型为HTML5</li>
+                            <li><strong>&lt;html&gt;</strong>：根元素，包含整个网页</li>
+                            <li><strong>&lt;head&gt;</strong>：头部，包含网页的元信息</li>
+                            <li><strong>&lt;title&gt;</strong>：网页标题，显示在浏览器标签页</li>
+                            <li><strong>&lt;body&gt;</strong>：主体，包含网页的可见内容</li>
+                        </ul>
+                    </div>
+                    <div class="lesson-text">
+                        现在你已经学完了HTML的基础知识！接下来可以通过游戏来测试你的学习成果。
+                        记住这些基础概念，它们是创建网页的基石。
+                    </div>
+                `
+            }
+        ];
+
+        // 问答题库
+        const quizQuestions = [
+            {
+                question: "HTML代表什么？",
+                options: ["超文本标记语言", "高级文本语言", "超链接文本语言", "混合文本语言"],
+                correct: 0
+            },
+            {
+                question: "哪个标签用于创建最大的标题？",
+                options: ["&lt;h6&gt;", "&lt;h1&gt;", "&lt;header&gt;", "&lt;title&gt;"],
+                correct: 1
+            },
+            {
+                question: "哪个属性用于指定图片的替代文本？",
+                options: ["title", "src", "alt", "href"],
+                correct: 2
+            },
+            {
+                question: "HTML文档的根元素是什么？",
+                options: ["&lt;body&gt;", "&lt;head&gt;", "&lt;html&gt;", "&lt;document&gt;"],
+                correct: 2
+            },
+            {
+                question: "哪个标签用于创建超链接？",
+                options: ["&lt;link&gt;", "&lt;a&gt;", "&lt;href&gt;", "&lt;url&gt;"],
+                correct: 1
+            }
+        ];
+
+        // 代码填空题库
+        const codeQuestions = [
+            {
+                template: `&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;<input class="code-input" data-answer="我的网页">&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;<input class="code-input" data-answer="h1">&gt;欢迎来到我的网站&lt;/h1&gt;\n&lt;/body&gt;\n&lt;/html&gt;`,
+                description: "完成一个基本的HTML页面结构"
+            },
+            {
+                template: `&lt;img <input class="code-input" data-answer="src">="image.jpg" <input class="code-input" data-answer="alt">="描述图片"&gt;\n&lt;<input class="code-input" data-answer="a"> href="https://example.com"&gt;点击这里&lt;/a&gt;`,
+                description: "完成图片和链接标签"
+            },
+            {
+                template: `&lt;<input class="code-input" data-answer="ul">&gt;\n    &lt;<input class="code-input" data-answer="li">&gt;第一项&lt;/li&gt;\n    &lt;li&gt;第二项&lt;/li&gt;\n    &lt;li&gt;第三项&lt;/li&gt;\n&lt;/ul&gt;`,
+                description: "完成无序列表结构"
+            }
+        ];
+
+        // 初始化游戏
+        function initGame() {
+            updateScoreBoard();
+            showMenu();
+        }
+
+        // 显示主菜单
+        function showMenu() {
+            document.getElementById('gameMenu').style.display = 'grid';
+            document.getElementById('gameSubMenu').style.display = 'none';
+            document.querySelectorAll('.drag-game, .quiz-game, .code-game, .learning-module').forEach(game => {
+                game.classList.remove('active');
+            });
+            document.getElementById('feedback').style.display = 'none';
+        }
+
+        // 显示游戏子菜单
+        function showGameMenu() {
+            document.getElementById('gameMenu').style.display = 'none';
+            document.getElementById('gameSubMenu').style.display = 'grid';
+        }
+
+        // 开始学习模式
+        function startLearning() {
+            document.getElementById('gameMenu').style.display = 'none';
+            document.getElementById('gameSubMenu').style.display = 'none';
+            document.getElementById('learningModule').classList.add('active');
+            gameState.currentLesson = 0;
+            showLesson();
+        }
+
+        // 显示课程
+        function showLesson() {
+            const lesson = lessons[gameState.currentLesson];
+            document.getElementById('lessonContent').innerHTML = lesson.content;
+            
+            // 更新进度指示器
+            document.querySelectorAll('.lesson-step').forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index === gameState.currentLesson) {
+                    step.classList.add('active');
+                } else if (gameState.lessonsCompleted.includes(index)) {
+                    step.classList.add('completed');
+                }
+            });
+            
+            // 更新导航按钮
+            document.getElementById('prevBtn').style.display = gameState.currentLesson > 0 ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').style.display = gameState.currentLesson < lessons.length - 1 ? 'inline-block' : 'none';
+            document.getElementById('testBtn').style.display = gameState.currentLesson === lessons.length - 1 ? 'inline-block' : 'none';
+        }
+
+        // 上一课
+        function prevLesson() {
+            if (gameState.currentLesson > 0) {
+                gameState.currentLesson--;
+                showLesson();
+            }
+        }
+
+        // 下一课
+        function nextLesson() {
+            if (gameState.currentLesson < lessons.length - 1) {
+                if (!gameState.lessonsCompleted.includes(gameState.currentLesson)) {
+                    gameState.lessonsCompleted.push(gameState.currentLesson);
+                }
+                gameState.currentLesson++;
+                showLesson();
+            }
+        }
+
+        // 开始测试
+        function startTest() {
+            if (!gameState.lessonsCompleted.includes(gameState.currentLesson)) {
+                gameState.lessonsCompleted.push(gameState.currentLesson);
+            }
+            document.getElementById('learningModule').classList.remove('active');
+            showGameMenu();
+            
+            // 显示完成学习的提示
+            showFeedback('success', '🎉 恭喜完成所有课程学习！现在可以选择游戏来测试你的知识了！');
+        }
+
+        // 开始游戏
+        function startGame(gameType) {
+            document.getElementById('gameMenu').style.display = 'none';
+            document.querySelectorAll('.drag-game, .quiz-game, .code-game').forEach(game => {
+                game.classList.remove('active');
+            });
+            
+            gameState.currentGame = gameType;
+            
+            switch(gameType) {
+                case 'drag':
+                    document.getElementById('dragGame').classList.add('active');
+                    initDragGame();
+                    break;
+                case 'quiz':
+                    document.getElementById('quizGame').classList.add('active');
+                    initQuizGame();
+                    break;
+                case 'code':
+                    document.getElementById('codeGame').classList.add('active');
+                    initCodeGame();
+                    break;
+            }
+        }
+
+        // 拖拽游戏初始化
+        function initDragGame() {
+            const tags = document.querySelectorAll('.html-tag');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            // 重置状态
+            tags.forEach(tag => {
+                tag.style.display = 'block';
+                tag.classList.remove('dragging');
+            });
+            
+            dropZones.forEach(zone => {
+                zone.classList.remove('correct', 'incorrect');
+                zone.innerHTML = zone.innerHTML.replace(/<div.*?<\/div>/, '');
+            });
+            
+            // 添加拖拽事件
+            tags.forEach(tag => {
+                tag.addEventListener('dragstart', handleDragStart);
+                tag.addEventListener('dragend', handleDragEnd);
+            });
+            
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', handleDragOver);
+                zone.addEventListener('drop', handleDrop);
+                zone.addEventListener('dragenter', handleDragEnter);
+                zone.addEventListener('dragleave', handleDragLeave);
+            });
+        }
+
+        // 拖拽事件处理
+        function handleDragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.dataset.tag);
+            e.target.classList.add('dragging');
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDragEnter(e) {
+            e.preventDefault();
+            e.target.classList.add('drag-over');
+        }
+
+        function handleDragLeave(e) {
+            e.target.classList.remove('drag-over');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const draggedTag = e.dataTransfer.getData('text/plain');
+            const dropZone = e.target.closest('.drop-zone');
+            
+            dropZone.classList.remove('drag-over');
+            
+            if (dropZone.dataset.accept === draggedTag) {
+                const tagElement = document.querySelector(`[data-tag="${draggedTag}"]`);
+                tagElement.style.display = 'none';
+                dropZone.innerHTML += `<div class="html-tag" style="margin-top: 10px;">&lt;${draggedTag}&gt;</div>`;
+            }
+        }
+
+        // 检查拖拽游戏答案
+        function checkDragGame() {
+            const dropZones = document.querySelectorAll('.drop-zone');
+            let correct = 0;
+            
+            dropZones.forEach(zone => {
+                const hasTag = zone.querySelector('.html-tag');
+                if (hasTag) {
+                    zone.classList.add('correct');
+                    correct++;
+                } else {
+                    zone.classList.add('incorrect');
+                }
+            });
+            
+            const score = Math.round((correct / dropZones.length) * 100);
+            updateScore(score);
+            
+            showFeedback(score === 100 ? 'success' : 'error', 
+                score === 100 ? '🎉 完美！所有标签都放对了！' : `答对了 ${correct}/${dropZones.length} 个，继续努力！`);
+            
+            if (score === 100) {
+                celebrate();
+            }
+        }
+
+        // 重置拖拽游戏
+        function resetDragGame() {
+            initDragGame();
+            document.getElementById('feedback').style.display = 'none';
+        }
+
+        // 初始化问答游戏
+        function initQuizGame() {
+            gameState.currentQuestion = 0;
+            showQuestion();
+        }
+
+        // 显示问题
+        function showQuestion() {
+            const question = quizQuestions[gameState.currentQuestion];
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                optionElement.textContent = option;
+                optionElement.onclick = () => selectOption(index);
+                optionsContainer.appendChild(optionElement);
+            });
+        }
+
+        // 选择选项
+        function selectOption(index) {
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelectorAll('.option')[index].classList.add('selected');
+        }
+
+        // 提交答案
+        function submitAnswer() {
+            const selectedOption = document.querySelector('.option.selected');
+            if (!selectedOption) {
+                alert('请选择一个答案！');
+                return;
+            }
+            
+            const selectedIndex = Array.from(document.querySelectorAll('.option')).indexOf(selectedOption);
+            const question = quizQuestions[gameState.currentQuestion];
+            
+            document.querySelectorAll('.option').forEach((option, index) => {
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (option.classList.contains('selected') && index !== question.correct) {
+                    option.classList.add('incorrect');
+                }
+            });
+            
+            const isCorrect = selectedIndex === question.correct;
+            updateScore(isCorrect ? 20 : 0);
+            
+            showFeedback(isCorrect ? 'success' : 'error', 
+                isCorrect ? '🎉 答对了！' : '❌ 答错了，正确答案已标出。');
+            
+            if (isCorrect) {
+                celebrate();
+            }
+        }
+
+        // 下一题
+        function nextQuestion() {
+            gameState.currentQuestion = (gameState.currentQuestion + 1) % quizQuestions.length;
+            showQuestion();
+            document.getElementById('feedback').style.display = 'none';
+        }
+
+        // 初始化代码游戏
+        function initCodeGame() {
+            gameState.currentCodeChallenge = 0;
+            showCodeChallenge();
+        }
+
+        // 显示代码挑战
+        function showCodeChallenge() {
+            const challenge = codeQuestions[gameState.currentCodeChallenge];
+            document.getElementById('codeEditor').innerHTML = `
+                <p style="color: #a0aec0; margin-bottom: 15px;">${challenge.description}</p>
+                <pre style="margin: 0;">${challenge.template}</pre>
+            `;
+        }
+
+        // 检查代码
+        function checkCode() {
+            const inputs = document.querySelectorAll('.code-input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const answer = input.dataset.answer;
+                if (input.value.toLowerCase().trim() === answer.toLowerCase()) {
+                    input.style.borderColor = '#4CAF50';
+                    input.style.background = '#e8f5e8';
+                    correct++;
+                } else {
+                    input.style.borderColor = '#f44336';
+                    input.style.background = '#ffebee';
+                }
+            });
+            
+            const score = Math.round((correct / inputs.length) * 30);
+            updateScore(score);
+            
+            showFeedback(correct === inputs.length ? 'success' : 'error', 
+                correct === inputs.length ? '🎉 代码完全正确！' : `完成了 ${correct}/${inputs.length} 个空格，继续努力！`);
+            
+            if (correct === inputs.length) {
+                celebrate();
+            }
+        }
+
+        // 下一个代码挑战
+        function nextCodeChallenge() {
+            gameState.currentCodeChallenge = (gameState.currentCodeChallenge + 1) % codeQuestions.length;
+            showCodeChallenge();
+            document.getElementById('feedback').style.display = 'none';
+        }
+
+        // 更新分数
+        function updateScore(points) {
+            gameState.score += points;
+            if (gameState.score >= gameState.level * 100) {
+                gameState.level++;
+            }
+            updateScoreBoard();
+        }
+
+        // 更新分数板
+        function updateScoreBoard() {
+            document.getElementById('score').textContent = gameState.score;
+            document.getElementById('level').textContent = gameState.level;
+            
+            const progress = (gameState.score % 100);
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        // 显示反馈
+        function showFeedback(type, message) {
+            const feedback = document.getElementById('feedback');
+            feedback.className = `feedback ${type}`;
+            feedback.textContent = message;
+            feedback.style.display = 'block';
+        }
+
+        // 庆祝动画
+        function celebrate() {
+            const celebration = document.getElementById('celebration');
+            celebration.innerHTML = '';
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.backgroundColor = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'][Math.floor(Math.random() * 5)];
+                celebration.appendChild(confetti);
+            }
+            
+            setTimeout(() => {
+                celebration.innerHTML = '';
+            }, 3000);
+        }
+
+        // 初始化游戏
+        initGame();
+    </script>
+</body>
+</html>

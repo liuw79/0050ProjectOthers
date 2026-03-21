@@ -1,0 +1,393 @@
+// CSS重置样式文件
+
+// 基础重置
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// HTML和Body
+html {
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-secondary;
+  color: $text-color-primary;
+  background-color: $bg-color-page;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// 标题重置
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: $font-weight-primary;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+// 段落
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+// 链接
+a {
+  color: $primary-color;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  
+  &:hover,
+  &:focus {
+    color: lighten($primary-color, 10%);
+    text-decoration: none;
+  }
+  
+  &:active {
+    color: darken($primary-color, 10%);
+  }
+  
+  &[disabled] {
+    color: $text-color-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// 列表
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+// 表格
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th, td {
+  padding: 0;
+  text-align: left;
+}
+
+th {
+  font-weight: $font-weight-primary;
+}
+
+// 表单元素
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+}
+
+input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+}
+
+// 图片和媒体
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+// 代码
+code, kbd, pre, samp {
+  font-family: $font-family-mono;
+  font-size: 1em;
+}
+
+code {
+  padding: 2px 4px;
+  background-color: $gray-1;
+  border-radius: $border-radius-small;
+  color: $danger-color;
+}
+
+pre {
+  display: block;
+  padding: 12px;
+  margin: 0;
+  background-color: $gray-1;
+  border-radius: $border-radius-base;
+  overflow-x: auto;
+  
+  code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+  }
+}
+
+// 引用
+blockquote {
+  margin: 0;
+  padding: 0 0 0 16px;
+  border-left: 4px solid $border-color;
+  color: $text-color-secondary;
+}
+
+// 分割线
+hr {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+// 强调
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: 0.875em;
+}
+
+// 删除线
+del {
+  text-decoration: line-through;
+}
+
+// 下划线
+ins {
+  text-decoration: underline;
+}
+
+// 上标下标
+sup, sub {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// 标记
+mark {
+  background-color: #ffeb3b;
+  color: $text-color-primary;
+  padding: 2px 4px;
+  border-radius: $border-radius-small;
+}
+
+// 键盘按键
+kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: $gray-2;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-small;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 2px #fff;
+  color: $text-color-primary;
+  font-size: 0.875em;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+// 详情和摘要
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+// 隐藏元素
+[hidden] {
+  display: none !important;
+}
+
+// 禁用元素
+[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+// 选择文本样式
+::selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $text-color-primary;
+}
+
+::-moz-selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $text-color-primary;
+}
+
+// 焦点样式
+:focus {
+  outline: 2px solid rgba($primary-color, 0.5);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid rgba($primary-color, 0.5);
+  outline-offset: 2px;
+}
+
+// 打印样式
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+  
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+  
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+  
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

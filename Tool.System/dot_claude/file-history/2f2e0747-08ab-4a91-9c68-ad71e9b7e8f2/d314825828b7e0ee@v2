@@ -1,0 +1,53 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+const smtp_server = 'smtp.feishu.cn';
+const smtp_port = 465;
+const sender_email = 'liuwei@gaowei.com';
+const password = 'AQg6ve0Xpdb3FG87';
+
+const htmlContent = fs.readFileSync('/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4.html', 'utf8');
+
+const transporter = nodemailer.createTransport({
+  host: smtp_server,
+  port: smtp_port,
+  secure: true,
+  auth: {
+    user: sender_email,
+    pass: password
+  }
+});
+
+const mailOptions = {
+  from: '"高维学堂AI教练系统" <liuwei@gaowei.com>',
+  to: 'lw@gaowei.com',
+  subject: '【超级面试官】班主任AI教练评估报告 - 邬培莹 (V4双触点版)',
+  html: `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
+      <p>刘伟，</p>
+      <p>邬培莹的班主任AI教练评估报告（V4双触点版）已生成，请审核。</p>
+      <p><strong>关键发现：</strong></p>
+      <ul>
+        <li>综合得分：<strong style="color: #e63946;">74分</strong></li>
+        <li>⚠️ 触发硬约束：第二天结课时完全遗漏"邀约课评"动作</li>
+        <li>💡 亮点：极具逻辑的"管理体系"连单铺垫，值得团队复用</li>
+      </ul>
+      <p>完整评估报告见下方：</p>
+      <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+    </div>
+    ${htmlContent}
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 20px auto;">
+      <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+      <p>请确认无误后，我将发送给培莹本人。</p>
+      <p style="color: #999; font-size: 12px;">此邮件由AI教练系统自动生成</p>
+    </div>
+  `
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.error('发送失败:', error);
+  } else {
+    console.log('邮件发送成功:', info.response);
+  }
+});

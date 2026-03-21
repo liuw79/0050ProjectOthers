@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高维学堂 - 流程型组织课100期庆祝</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部装饰 -->
+        <div class="decoration-top">
+            <div class="firework firework-1"></div>
+            <div class="firework firework-2"></div>
+            <div class="firework firework-3"></div>
+        </div>
+        
+        <!-- 主标题区域 -->
+        <header class="header">
+                <img src="static/logo.png" alt="高维学堂" class="brand-logo-img" style="height: 60px; width: auto;">
+            <h2 class="main-title">🎉流程型组织课第100期 🎉</h2>
+        </header>
+        
+        <!-- 庆祝内容区域 -->
+        <main class="main-content">
+            <div class="celebration-card">
+                <div class="card-header">
+                    <h2>🌸 专属福利 🌸</h2>
+                </div>
+                
+                <div class="reward-section">
+                    <div class="flower-display">
+                        <div class="flower-icon">🌺</div>
+                        <div class="flower-icon">🌺</div>
+                        <div class="flower-icon">🌺</div>
+                        <div class="flower-icon">🌺</div>
+                        <div class="flower-icon">🌺</div>
+                    </div>
+                    <div class="reward-text">
+                        <h3>5朵小红花</h3>
+                        <p>《流程型组织》课第100期学友专属</p>
+                    </div>
+                </div>
+                
+                <!-- 二维码区域 -->
+                <div class="qr-section">
+                    <div class="qr-container">
+                        <img src="static/code.png" alt="二维码" class="qr-code-img" style="width: 160px; height: 160px; border-radius: 10px;">
+                    </div>
+                    <p class="qr-instruction">长按识别二维码领取奖励</p>
+                </div>
+                
+
+            </div>
+        </main>
+        
+        <!-- 感谢信息 -->
+        <footer class="footer">
+            <div class="thank-you-section">
+                <h3>💝 特别感谢 💝</h3>
+                <p>感谢5915位学友们的信任与支持<br>
+                感谢蒋博陪伴企业在科学创业的路上一路前行</p>
+
+            </div>
+        </footer>
+        
+        <!-- 底部装饰 -->
+        <div class="decoration-bottom">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+        </div>
+    </div>
+    
+    <!-- 弹窗 -->
+    <div id="celebrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCelebration()">&times;</span>
+            <div class="modal-body">
+                <h2>🎉 恭喜您！🎉</h2>
+                <p>您已成功领取5朵小红花！</p>
+                <div class="success-animation">
+                    <div class="flower-rain">
+                        <span>🌺</span><span>🌺</span><span>🌺</span><span>🌺</span><span>🌺</span>
+                    </div>
+                </div>
+                <p class="success-note">积分将在24小时内到账，请耐心等待</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

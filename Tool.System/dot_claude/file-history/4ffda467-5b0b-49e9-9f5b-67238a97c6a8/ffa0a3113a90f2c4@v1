@@ -1,0 +1,53 @@
+// test-chat.js - Playwright 测试对话流程
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({ headless: false });
+  const page = await browser.newPage();
+
+  await page.goto('http://localhost:5177/new?type=article');
+  await page.waitForTimeout(1000);
+
+  // 对话流程
+  const conversations = [
+    { user: '一季度OGSM', expectTopic: 'OGSM' },
+    { user: '1~10亿创业企业创始人', expectAudience: true },
+    { user: 'ok', expectWordCount: true },
+    { user: '一季度快结束了，重点写复盘和纠偏', expectRequirements: true },
+    { user: '确认', expectComplete: true },
+  ];
+
+  for (const turn of conversations) {
+    // 等待输入框可用
+    await page.waitForSelector('input:not([disabled])', { timeout: 5000 });
+
+    // 输入消息
+    await page.fill('input', turn.user);
+    await page.click('button:has-text("发送")');
+
+    // 等待 AI 回复
+    await page.waitForTimeout(2000);
+
+    // 检查提取的信息
+    const tags = await page.$$eval('.border-t span', els => els.map(e => e.textContent));
+    console.log(`用户: ${turn.user}`);
+    console.log(`提取标签: ${tags.join(', ') || '无'}`);
+    console.log('---');
+
+    // 截图
+    await page.screenshot({ path: `/tmp/chat-step-${conversations.indexOf(turn)}.png` });
+  }
+
+  // 检查是否出现确认按钮
+  const confirmBtn = await page.$('button:has-text("确认需求")');
+  if (confirmBtn) {
+    console.log('✅ 测试通过：确认按钮出现');
+    await confirmBtn.click();
+    await page.waitForTimeout(1000);
+    await page.screenshot({ path: '/tmp/chat-final.png' });
+  } else {
+    console.log('❌ 测试失败：确认按钮未出现');
+  }
+
+  // await browser.close();
+})();

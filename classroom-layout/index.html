@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课室布局规划方案 - 7.3×12米教室</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .layout-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .layout-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .layout-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .layout-title {
+            font-size: 1.5em;
+            color: #4a5568;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .classroom {
+            width: 100%;
+            height: 300px;
+            border: 3px solid #2d3748;
+            position: relative;
+            background: #f7fafc;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .teacher-desk {
+            position: absolute;
+            background: #4a5568;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+        
+        .student-desk {
+            position: absolute;
+            background: #e2e8f0;
+            border: 2px solid #a0aec0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            border-radius: 3px;
+            color: #2d3748;
+        }
+        
+        .door {
+            position: absolute;
+            background: #f56565;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+        
+        /* 布局A - 传统行列式 */
+        .layout-a .teacher-desk {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+        }
+        
+        .layout-a .door {
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 20px;
+        }
+        
+        /* 布局B - 小组讨论式 */
+        .layout-b .teacher-desk {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+        }
+        
+        .layout-b .door {
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 20px;
+        }
+        
+        .specs {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .specs h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .specs ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .specs li {
+            padding: 5px 0;
+            border-bottom: 1px solid #cbd5e0;
+        }
+        
+        .specs li:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .comparison-table h2 {
+            color: #4a5568;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .pros {
+            color: #38a169;
+            font-weight: bold;
+        }
+        
+        .cons {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .recommendation h2 {
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .layout-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 课室布局规划方案</h1>
+            <p>教室规格：7.3米 × 12米 (87.6平方米)</p>
+        </div>
+        
+        <div class="layout-comparison">
+            <!-- 布局方案A -->
+            <div class="layout-card">
+                <h3 class="layout-title">方案A：传统行列式布局</h3>
+                <div class="classroom layout-a">
+                    <div class="teacher-desk">讲台</div>
+                    <div class="door">门</div>
+                    
+                    <!-- 第一排 -->
+                    <div class="student-desk" style="top: 60px; left: 20px; width: 25px; height: 20px;">1</div>
+                    <div class="student-desk" style="top: 60px; left: 55px; width: 25px; height: 20px;">2</div>
+                    <div class="student-desk" style="top: 60px; left: 90px; width: 25px; height: 20px;">3</div>
+                    <div class="student-desk" style="top: 60px; left: 125px; width: 25px; height: 20px;">4</div>
+                    <div class="student-desk" style="top: 60px; left: 160px; width: 25px; height: 20px;">5</div>
+                    <div class="student-desk" style="top: 60px; left: 195px; width: 25px; height: 20px;">6</div>
+                    
+                    <!-- 第二排 -->
+                    <div class="student-desk" style="top: 90px; left: 20px; width: 25px; height: 20px;">7</div>
+                    <div class="student-desk" style="top: 90px; left: 55px; width: 25px; height: 20px;">8</div>
+                    <div class="student-desk" style="top: 90px; left: 90px; width: 25px; height: 20px;">9</div>
+                    <div class="student-desk" style="top: 90px; left: 125px; width: 25px; height: 20px;">10</div>
+                    <div class="student-desk" style="top: 90px; left: 160px; width: 25px; height: 20px;">11</div>
+                    <div class="student-desk" style="top: 90px; left: 195px; width: 25px; height: 20px;">12</div>
+                    
+                    <!-- 第三排 -->
+                    <div class="student-desk" style="top: 120px; left: 20px; width: 25px; height: 20px;">13</div>
+                    <div class="student-desk" style="top: 120px; left: 55px; width: 25px; height: 20px;">14</div>
+                    <div class="student-desk" style="top: 120px; left: 90px; width: 25px; height: 20px;">15</div>
+                    <div class="student-desk" style="top: 120px; left: 125px; width: 25px; height: 20px;">16</div>
+                    <div class="student-desk" style="top: 120px; left: 160px; width: 25px; height: 20px;">17</div>
+                    <div class="student-desk" style="top: 120px; left: 195px; width: 25px; height: 20px;">18</div>
+                    
+                    <!-- 第四排 -->
+                    <div class="student-desk" style="top: 150px; left: 20px; width: 25px; height: 20px;">19</div>
+                    <div class="student-desk" style="top: 150px; left: 55px; width: 25px; height: 20px;">20</div>
+                    <div class="student-desk" style="top: 150px; left: 90px; width: 25px; height: 20px;">21</div>
+                    <div class="student-desk" style="top: 150px; left: 125px; width: 25px; height: 20px;">22</div>
+                    <div class="student-desk" style="top: 150px; left: 160px; width: 25px; height: 20px;">23</div>
+                    <div class="student-desk" style="top: 150px; left: 195px; width: 25px; height: 20px;">24</div>
+                    
+                    <!-- 第五排 -->
+                    <div class="student-desk" style="top: 180px; left: 20px; width: 25px; height: 20px;">25</div>
+                    <div class="student-desk" style="top: 180px; left: 55px; width: 25px; height: 20px;">26</div>
+                    <div class="student-desk" style="top: 180px; left: 90px; width: 25px; height: 20px;">27</div>
+                    <div class="student-desk" style="top: 180px; left: 125px; width: 25px; height: 20px;">28</div>
+                    <div class="student-desk" style="top: 180px; left: 160px; width: 25px; height: 20px;">29</div>
+                    <div class="student-desk" style="top: 180px; left: 195px; width: 25px; height: 20px;">30</div>
+                </div>
+                
+                <div class="specs">
+                    <h4>📊 方案A规格</h4>
+                    <ul>
+                        <li><strong>容纳人数：</strong> 30人</li>
+                        <li><strong>桌椅规格：</strong> 单人桌椅 60×40cm</li>
+                        <li><strong>行间距：</strong> 80cm</li>
+                        <li><strong>列间距：</strong> 70cm</li>
+                        <li><strong>讲台面积：</strong> 2×1.5m</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 布局方案B -->
+            <div class="layout-card">
+                <h3 class="layout-title">方案B：小组讨论式布局</h3>
+                <div class="classroom layout-b">
+                    <div class="teacher-desk">讲台</div>
+                    <div class="door">门</div>
+                    
+                    <!-- 小组1 -->
+                    <div class="student-desk" style="top: 70px; left: 30px; width: 20px; height: 15px;">1</div>
+                    <div class="student-desk" style="top: 70px; left: 55px; width: 20px; height: 15px;">2</div>
+                    <div class="student-desk" style="top: 90px; left: 30px; width: 20px; height: 15px;">3</div>
+                    <div class="student-desk" style="top: 90px; left: 55px; width: 20px; height: 15px;">4</div>
+                    
+                    <!-- 小组2 -->
+                    <div class="student-desk" style="top: 70px; left: 100px; width: 20px; height: 15px;">5</div>
+                    <div class="student-desk" style="top: 70px; left: 125px; width: 20px; height: 15px;">6</div>
+                    <div class="student-desk" style="top: 90px; left: 100px; width: 20px; height: 15px;">7</div>
+                    <div class="student-desk" style="top: 90px; left: 125px; width: 20px; height: 15px;">8</div>
+                    
+                    <!-- 小组3 -->
+                    <div class="student-desk" style="top: 70px; left: 170px; width: 20px; height: 15px;">9</div>
+                    <div class="student-desk" style="top: 70px; left: 195px; width: 20px; height: 15px;">10</div>
+                    <div class="student-desk" style="top: 90px; left: 170px; width: 20px; height: 15px;">11</div>
+                    <div class="student-desk" style="top: 90px; left: 195px; width: 20px; height: 15px;">12</div>
+                    
+                    <!-- 小组4 -->
+                    <div class="student-desk" style="top: 130px; left: 30px; width: 20px; height: 15px;">13</div>
+                    <div class="student-desk" style="top: 130px; left: 55px; width: 20px; height: 15px;">14</div>
+                    <div class="student-desk" style="top: 150px; left: 30px; width: 20px; height: 15px;">15</div>
+                    <div class="student-desk" style="top: 150px; left: 55px; width: 20px; height: 15px;">16</div>
+                    
+                    <!-- 小组5 -->
+                    <div class="student-desk" style="top: 130px; left: 100px; width: 20px; height: 15px;">17</div>
+                    <div class="student-desk" style="top: 130px; left: 125px; width: 20px; height: 15px;">18</div>
+                    <div class="student-desk" style="top: 150px; left: 100px; width: 20px; height: 15px;">19</div>
+                    <div class="student-desk" style="top: 150px; left: 125px; width: 20px; height: 15px;">20</div>
+                    
+                    <!-- 小组6 -->
+                    <div class="student-desk" style="top: 130px; left: 170px; width: 20px; height: 15px;">21</div>
+                    <div class="student-desk" style="top: 130px; left: 195px; width: 20px; height: 15px;">22</div>
+                    <div class="student-desk" style="top: 150px; left: 170px; width: 20px; height: 15px;">23</div>
+                    <div class="student-desk" style="top: 150px; left: 195px; width: 20px; height: 15px;">24</div>
+                </div>
+                
+                <div class="specs">
+                    <h4>📊 方案B规格</h4>
+                    <ul>
+                        <li><strong>容纳人数：</strong> 24人</li>
+                        <li><strong>小组数量：</strong> 6个小组，每组4人</li>
+                        <li><strong>桌椅规格：</strong> 单人桌椅 60×40cm</li>
+                        <li><strong>小组间距：</strong> 100cm</li>
+                        <li><strong>讲台面积：</strong> 2×1.5m</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-table">
+            <h2>📋 两种布局方案对比分析</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>对比项目</th>
+                        <th>方案A：传统行列式</th>
+                        <th>方案B：小组讨论式</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>容纳人数</strong></td>
+                        <td>30人</td>
+                        <td>24人</td>
+                    </tr>
+                    <tr>
+                        <td><strong>空间利用率</strong></td>
+                        <td class="pros">高（85%）</td>
+                        <td>中等（70%）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>教学模式适应性</strong></td>
+                        <td>传统讲授式教学</td>
+                        <td class="pros">互动式、讨论式教学</td>
+                    </tr>
+                    <tr>
+                        <td><strong>学生注意力集中度</strong></td>
+                        <td class="pros">高（面向讲台）</td>
+                        <td>中等（部分背对讲台）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>师生互动便利性</strong></td>
+                        <td class="cons">较差（距离远）</td>
+                        <td class="pros">优秀（便于巡视指导）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>学生间协作</strong></td>
+                        <td class="cons">困难</td>
+                        <td class="pros">非常便利</td>
+                    </tr>
+                    <tr>
+                        <td><strong>课堂管理难度</strong></td>
+                        <td class="pros">容易</td>
+                        <td>中等</td>
+                    </tr>
+                    <tr>
+                        <td><strong>设备共享</strong></td>
+                        <td class="cons">不便</td>
+                        <td class="pros">便利（小组内共享）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>灵活性</strong></td>
+                        <td class="cons">低</td>
+                        <td class="pros">高（可重新组合）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>适用课程类型</strong></td>
+                        <td>理论课、考试</td>
+                        <td class="pros">实践课、讨论课、项目课</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="recommendation">
+            <h2>💡 推荐建议</h2>
+            <p><strong>综合考虑教学效果和现代教育理念，推荐采用方案B（小组讨论式布局）</strong></p>
+            <p>虽然容纳人数略少，但更符合现代互动式教学需求，有利于培养学生的协作能力和创新思维。</p>
+            <p>如需兼顾两种需求，建议采用可移动桌椅，根据不同课程类型灵活调整布局。</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "id": "9",
+  "subject": "LLM 抽象层 (Task 3)",
+  "description": "实现 LLM 基类和 Anthropic、OpenAI 客户端，支持多提供商",
+  "activeForm": "实现 LLM 抽象层中",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

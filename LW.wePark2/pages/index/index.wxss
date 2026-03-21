@@ -1,0 +1,154 @@
+/**index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.camera-area {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+/* Wrapper for camera and its overlays */
+.camera-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Takes height from camera-area */
+}
+
+.camera-preview-container {
+  width: 100%;
+  height: 260rpx;
+  background-color: #000;
+  overflow: hidden;
+  border-bottom: 4rpx solid #3281FF;
+  position: relative;
+}
+
+.camera-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.camera-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-placeholder text {
+  color: #fff;
+  font-size: 30rpx;
+  opacity: 0.7;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20rpx;
+  padding-bottom: 100rpx; /* 给底部设置区域留出空间 */
+}
+
+.settings-area {
+  position: fixed;
+  bottom: 120rpx;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.camera-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.camera-switch text {
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 20rpx;
+  font-weight: 500;
+}
+
+.large-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-info-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 20rpx;
+  text-align: center;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.time-info {
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.placeholder {
+  visibility: hidden;
+  height: 28rpx;
+}
+
+.invisible-placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Overlay for loading/error states */
+.camera-state-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.camera-loading text {
+  /* Style for loading text */
+}
+
+.camera-error text {
+  color: #ff6b6b; /* Red color for error */
+}
+
+/* Style for the small photo preview thumb in time-info */
+.photo-preview-thumb {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 4rpx;
+  margin-left: 15rpx;
+  vertical-align: middle;
+} 

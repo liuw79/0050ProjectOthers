@@ -1,0 +1,1197 @@
+2026-03-13T03:45:51.654Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-03-13T03:45:51.655Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:45:51.655Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-03-13T03:45:51.655Z [DEBUG] Cleared all session hooks for session 9437fb1e-4250-42c1-81f4-1340f3f9aa23
+2026-03-13T03:45:51.656Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-03-13T03:45:51.656Z [DEBUG] Found 1 hook matchers in settings
+2026-03-13T03:45:51.657Z [DEBUG] Matched 1 unique hooks for query "clear" (1 before deduplication)
+2026-03-13T03:45:51.700Z [DEBUG] High write ratio: blit=0, write=2366 (100.0% writes), screen=80x108
+2026-03-13T03:45:51.700Z [DEBUG] Full reset (scrollback changes): scrollbackRows=34, firstChangeY=5
+  prev: "│                                 │ Recent activity                                                        │"
+  next: "│             ▐▛███▜▌             │ Recent activity                                                        │"
+2026-03-13T03:45:51.708Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T03:45:51.715Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-13T03:45:51.715Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-03-13T03:45:51.715Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-03-13T03:45:51.723Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-03-13T03:45:51.723Z [DEBUG] Hook SessionStart:clear (SessionStart) error:
+/bin/sh: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/hooks/session-start.sh: No such file or directory
+2026-03-13T03:45:51.723Z [DEBUG] FileHistory: Added snapshot for 3d119332-2f3a-4a05-9379-c61ff94456a3, tracking 0 files
+2026-03-13T03:45:51.723Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-03-13T03:45:51.725Z [DEBUG] [useDeferredValue] Messages deferred by 5 (0→5)
+2026-03-13T03:45:51.726Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-13T03:45:51.745Z [DEBUG] Full reset (shrink->below): prevHeight=80, nextHeight=23, viewport=48
+2026-03-13T03:45:51.987Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-03-13T03:45:56.683Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-13T03:45:56.690Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:45:56.690Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:45:56.690Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:45:56.690Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:45:56.690Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-03-13T03:45:56.690Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-03-13T03:45:56.690Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-03-13T03:45:56.690Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-03-13T03:45:56.690Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-03-13T03:45:56.690Z [DEBUG] Total plugin skills loaded: 0
+2026-03-13T03:45:56.690Z [DEBUG] Total plugin commands loaded: 0
+2026-03-13T03:45:56.693Z [DEBUG] Loaded 19 unique skills (19 unconditional, 0 conditional, managed: 0, user: 19, project: 0, additional: 0, legacy commands: 0)
+2026-03-13T03:45:56.693Z [DEBUG] getSkills returning: 19 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-13T03:45:56.694Z [DEBUG] Sending 19 skills via attachment (initial, 19 total sent)
+2026-03-13T03:45:56.696Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-13T03:45:56.696Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:45:56.696Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:45:56.696Z [DEBUG] FileHistory: Making snapshot for message 419e25bd-1241-444b-95bb-a2af81270037
+2026-03-13T03:45:56.696Z [DEBUG] FileHistory: Added snapshot for 419e25bd-1241-444b-95bb-a2af81270037, tracking 0 files
+2026-03-13T03:45:56.697Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-13T03:45:56.704Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T03:45:56.707Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773373556707
+2026-03-13T03:45:56.707Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T03:45:56.707Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T03:45:56.707Z [DEBUG] Applied original permissions to temp file
+2026-03-13T03:45:56.707Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773373556707 to /Users/comdir/.claude.json
+2026-03-13T03:45:56.708Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T03:45:56.708Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:45:56.709Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.dcd; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:45:56.709Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:45:56.709Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:45:56.709Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:45:56.710Z [DEBUG] autocompact: tokens=1136 threshold=167000 effectiveWindow=180000
+2026-03-13T03:45:56.712Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:45:56.715Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:45:56.716Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:45:56.716Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:45:56.716Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:45:56.720Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-03-13T03:45:57.355Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:45:57.867Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:05.551Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:46:05.552Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:46:05.552Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:05.552Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:05.558Z [DEBUG] [useDeferredValue] Messages deferred by 2 (7→9)
+2026-03-13T03:46:05.588Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:46:05.588Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.8bb; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:05.588Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:05.588Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:05.589Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:46:05.589Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:05.589Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:05.589Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:05.591Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:46:05.591Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:46:05.591Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:46:05.591Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:46:05.591Z [DEBUG] autocompact: tokens=37959 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:05.591Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:05.593Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:05.594Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:05.594Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:05.594Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:05.598Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-03-13T03:46:05.886Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:06.939Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:09.820Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-13T03:46:09.827Z [DEBUG] [useDeferredValue] Messages deferred by 2 (10→12)
+2026-03-13T03:46:09.910Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:46:09.910Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:46:09.910Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:09.910Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:09.930Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:46:09.930Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f09; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:09.930Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:09.930Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:09.931Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:46:09.931Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:09.931Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:09.931Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:09.932Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:46:09.932Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:46:09.932Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:46:09.932Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:46:09.932Z [DEBUG] autocompact: tokens=38024 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:09.932Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:09.934Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:09.936Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:09.936Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:09.936Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:09.939Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-13T03:46:10.136Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:12.179Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:13.842Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-03-13T03:46:13.846Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-03-13T03:46:14.144Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-13T03:46:14.144Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:14.144Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:46:14.144Z [DEBUG] autocompact: tokens=38356 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:14.148Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:14.151Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:14.153Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:14.153Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:14.154Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:14.158Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-13T03:46:14.163Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-13T03:46:14.501Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:17.795Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-03-13T03:46:17.795Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-03-13T03:46:17.796Z [ERROR] Error in API request: Request was aborted.
+2026-03-13T03:46:17.796Z [DEBUG] Forked agent [prompt_suggestion] received message: type=user
+2026-03-13T03:46:17.796Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[user], totalUsage: input=0 output=0 cacheRead=0 cacheCreate=0
+2026-03-13T03:46:30.681Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:46:30.681Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:46:30.681Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:46:30.681Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:46:30.685Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-13T03:46:30.685Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:30.685Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:46:30.685Z [DEBUG] FileHistory: Making snapshot for message 6c8dfeb1-fa43-4501-8dc5-40381b15369d
+2026-03-13T03:46:30.685Z [DEBUG] FileHistory: Added snapshot for 6c8dfeb1-fa43-4501-8dc5-40381b15369d, tracking 0 files
+2026-03-13T03:46:30.686Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-13T03:46:30.695Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T03:46:30.696Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-13T03:46:30.704Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773373590704
+2026-03-13T03:46:30.704Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T03:46:30.704Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T03:46:30.704Z [DEBUG] Applied original permissions to temp file
+2026-03-13T03:46:30.704Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773373590704 to /Users/comdir/.claude.json
+2026-03-13T03:46:30.704Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T03:46:30.704Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:46:30.705Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.73a; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:30.705Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:30.705Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:30.706Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:30.708Z [DEBUG] Loaded 19 unique skills (19 unconditional, 0 conditional, managed: 0, user: 19, project: 0, additional: 0, legacy commands: 0)
+2026-03-13T03:46:30.708Z [DEBUG] getSkills returning: 19 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-13T03:46:30.709Z [DEBUG] autocompact: tokens=38134 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:30.709Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:30.711Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:30.712Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:30.712Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:30.712Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:30.715Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-13T03:46:31.272Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:31.689Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:42.728Z [DEBUG] [useDeferredValue] Messages deferred by 2 (16→18)
+2026-03-13T03:46:43.825Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-13T03:46:45.259Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-13T03:46:45.283Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:46:45.284Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-13T03:46:45.284Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:46:45.284Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:46:45.284Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:45.284Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:45.284Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-13T03:46:45.284Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:45.284Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-13T03:46:45.284Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:46:45.284Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:45.284Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:45.295Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-13T03:46:45.295Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:45.295Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-13T03:46:45.296Z [DEBUG] [useDeferredValue] Messages deferred by 3 (20→23)
+2026-03-13T03:46:45.312Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:46:45.312Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:45.312Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:45.312Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:45.313Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:46:45.313Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:45.313Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:45.313Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:45.314Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-13T03:46:45.318Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:46:45.318Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.8bb; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:45.318Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:45.318Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:45.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:46:45.318Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:45.318Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:46:45.318Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:45.319Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:46:45.319Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:46:45.319Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:46:45.319Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:46:45.322Z [DEBUG] autocompact: tokens=41227 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:45.322Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:45.323Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:45.325Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:45.325Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:45.325Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:45.327Z [DEBUG] [useDeferredValue] Messages deferred by 3 (23→26)
+2026-03-13T03:46:45.794Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:46.261Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:46.364Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:46:57.372Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-03-13T03:46:57.378Z [DEBUG] [useDeferredValue] Messages deferred by 2 (26→28)
+2026-03-13T03:46:57.400Z [WARN] [PROMPT CACHE BREAK] unknown cause [source=repl_main_thread, call #5, cache read: 38080 → 512, creation: 0]
+2026-03-13T03:46:57.401Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-13T03:46:57.402Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-13T03:46:57.402Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:46:57.402Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-13T03:46:57.405Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-13T03:46:57.405Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:46:57.405Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-13T03:46:57.406Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:46:57.406Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:46:57.406Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:46:57.406Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:46:57.408Z [DEBUG] autocompact: tokens=46237 threshold=167000 effectiveWindow=180000
+2026-03-13T03:46:57.408Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:46:57.411Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:46:57.412Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:46:57.412Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:46:57.412Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:46:57.416Z [DEBUG] [useDeferredValue] Messages deferred by 3 (28→31)
+2026-03-13T03:46:58.132Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:47:03.560Z [DEBUG] [useDeferredValue] Messages deferred by 1 (31→32)
+2026-03-13T03:49:02.292Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-13T03:49:02.292Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-13T03:49:02.292Z [DEBUG] Metrics export disabled by organization setting
+2026-03-13T03:49:23.081Z [WARN] Streaming stall detected: 139.2s gap between events (stall #1)
+2026-03-13T03:49:23.083Z [DEBUG] [useDeferredValue] Messages deferred by 1 (32→33)
+2026-03-13T03:49:23.101Z [WARN] Streaming completed with 1 stall(s), total stall time: 139.2s
+2026-03-13T03:49:23.102Z [DEBUG] executePreToolHooks called for tool: Skill
+2026-03-13T03:49:23.103Z [DEBUG] Getting matching hook commands for PreToolUse with query: Skill
+2026-03-13T03:49:23.103Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:49:23.103Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-13T03:49:23.106Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773373763106
+2026-03-13T03:49:23.106Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T03:49:23.106Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T03:49:23.106Z [DEBUG] Applied original permissions to temp file
+2026-03-13T03:49:23.106Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773373763106 to /Users/comdir/.claude.json
+2026-03-13T03:49:23.107Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T03:49:23.108Z [DEBUG] Metadata string for gemini-api:
+2026-03-13T03:49:23.108Z [DEBUG] <command-message>gemini-api</command-message>
+<command-name>/gemini-api</command-name>
+<command-args>请使用以下教练提示词，对访谈原文进行教练反馈分析。
+
+---
+
+## 教练提示词
+
+这是一份为您量身定制的**高维学堂学习规划师教练系统提示词（System Prompt）**。该提示词采用了结构化
+2026-03-13T03:49:23.108Z [DEBUG] command-message tags in metadata: 1
+2026-03-13T03:49:23.108Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:49:23.108Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:49:23.108Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:49:23.108Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:49:23.109Z [DEBUG] processPromptSlashCommand creating 3 messages for gemini-api
+2026-03-13T03:49:23.109Z [DEBUG] Message 1: <command-message>gemini-api</command-message>
+<command-name>/gemini-api</command-name>
+<command-args>请使用以下教练提示词，对访谈原文进行教练反馈分析。
+
+---
+
+## 教练提示词
+
+这是一份为您量身定制的**高维学堂学习规划师教练系统提示词（System Prompt）**。该提示词采用了结构化
+2026-03-13T03:49:23.109Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/gemini-api\n\n# Gemini API 调用 Skill\n\n## 概述\n\n这是一个封装好的 Gemini API 调用工具，支持：\n- **双模式切换**：OpenAI 兼容格式 / Google 原生格式\
+2026-03-13T03:49:23.109Z [DEBUG] Message 3: [ATTACHMENT]
+2026-03-13T03:49:23.109Z [DEBUG] SkillTool returning 2 newMessages for skill gemini-api
+2026-03-13T03:49:23.109Z [DEBUG] newMessage 1: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/gemini-api\n\n# Gemini API 调用 Skill\n\n## 概述\n\n这是一个封装好的 Gemini AP...
+2026-03-13T03:49:23.110Z [DEBUG] Getting matching hook commands for PostToolUse with query: Skill
+2026-03-13T03:49:23.110Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:49:23.110Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-13T03:49:23.110Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:49:23.110Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:49:23.110Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:49:23.110Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:49:23.110Z [DEBUG] autocompact: tokens=56981 threshold=167000 effectiveWindow=180000
+2026-03-13T03:49:23.110Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:49:23.112Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:49:23.114Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:49:23.114Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:49:23.114Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:49:23.119Z [DEBUG] [useDeferredValue] Messages deferred by 4 (33→37)
+2026-03-13T03:49:23.125Z [DEBUG] High write ratio: blit=0, write=1692 (100.0% writes), screen=47x108
+2026-03-13T03:49:23.607Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:49:30.358Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-13T03:49:32.138Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-03-13T03:49:32.146Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:49:32.147Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:49:32.147Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:49:32.147Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:49:32.154Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-03-13T03:49:32.176Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:49:32.176Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:49:32.176Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:49:32.176Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:49:32.176Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:49:32.176Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:49:32.176Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:49:32.176Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:49:32.178Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:49:32.178Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:49:32.178Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:49:32.178Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:49:32.178Z [DEBUG] autocompact: tokens=59997 threshold=167000 effectiveWindow=180000
+2026-03-13T03:49:32.178Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:49:32.180Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:49:32.182Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:49:32.182Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:49:32.182Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:49:32.186Z [DEBUG] [useDeferredValue] Messages deferred by 2 (40→42)
+2026-03-13T03:49:32.191Z [DEBUG] High write ratio: blit=0, write=1887 (100.0% writes), screen=55x108
+2026-03-13T03:49:32.461Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:49:34.141Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:49:37.722Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-03-13T03:49:37.729Z [DEBUG] [useDeferredValue] Messages deferred by 2 (42→44)
+2026-03-13T03:49:37.736Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:49:37.736Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:49:37.736Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:49:37.736Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:49:37.758Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:49:37.758Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.725; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:49:37.758Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:49:37.758Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:49:37.759Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:49:37.759Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:49:37.759Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:49:37.759Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:49:37.760Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:49:37.760Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:49:37.760Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:49:37.760Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:49:37.763Z [DEBUG] autocompact: tokens=62016 threshold=167000 effectiveWindow=180000
+2026-03-13T03:49:37.764Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:49:37.765Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:49:37.766Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:49:37.766Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:49:37.766Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:49:37.770Z [DEBUG] [useDeferredValue] Messages deferred by 2 (44→46)
+2026-03-13T03:49:37.775Z [DEBUG] High write ratio: blit=0, write=2034 (100.0% writes), screen=60x108
+2026-03-13T03:49:38.473Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:49:38.877Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:50:30.696Z [DEBUG] Restarting caffeinate to maintain sleep prevention
+2026-03-13T03:50:30.696Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-13T03:50:30.700Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T03:50:36.717Z [WARN] Streaming stall detected: 54.6s gap between events (stall #1)
+2026-03-13T03:50:36.718Z [DEBUG] [useDeferredValue] Messages deferred by 1 (46→47)
+2026-03-13T03:50:36.724Z [DEBUG] [useDeferredValue] Messages deferred by 2 (46→48)
+2026-03-13T03:50:36.940Z [WARN] Streaming completed with 1 stall(s), total stall time: 54.6s
+2026-03-13T03:50:36.947Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:50:36.949Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:50:36.949Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:50:36.949Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:50:36.965Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:50:36.966Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:50:36.966Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:50:36.966Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:50:36.966Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:50:36.966Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:50:36.966Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:50:36.966Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:50:36.966Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:50:36.966Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:50:38.141Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:50:39.063Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:50:39.353Z [DEBUG] Bash tool error (135ms): Shell command failed
+2026-03-13T03:50:39.353Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-13T03:50:39.353Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:50:39.353Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:50:39.353Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:50:39.353Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:50:39.353Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:50:39.353Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:50:39.356Z [DEBUG] autocompact: tokens=65737 threshold=167000 effectiveWindow=180000
+2026-03-13T03:50:39.356Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:50:39.358Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:50:39.359Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:50:39.359Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:50:39.359Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:50:39.363Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-03-13T03:50:39.814Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:50:57.609Z [DEBUG] [useDeferredValue] Messages deferred by 2 (49→51)
+2026-03-13T03:50:57.665Z [DEBUG] executePreToolHooks called for tool: Write
+2026-03-13T03:50:57.667Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2026-03-13T03:50:57.667Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:50:57.667Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-13T03:50:57.668Z [DEBUG] FileHistory: Tracked file modification for /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.js
+2026-03-13T03:50:57.668Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.js.tmp.31093.1773373857668
+2026-03-13T03:50:57.669Z [DEBUG] Temp file written successfully, size: 1104 bytes
+2026-03-13T03:50:57.669Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.js.tmp.31093.1773373857668 to /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.js
+2026-03-13T03:50:57.669Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.js written atomically
+2026-03-13T03:50:57.670Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2026-03-13T03:50:57.670Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:50:57.670Z [DEBUG] Matched 1 unique hooks for query "Write" (1 before deduplication)
+2026-03-13T03:50:57.671Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:50:57.671Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:50:57.671Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:50:57.671Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:50:57.672Z [DEBUG] autocompact: tokens=66232 threshold=167000 effectiveWindow=180000
+2026-03-13T03:50:57.672Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:50:57.674Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:50:57.676Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:50:57.676Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:50:57.676Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:50:57.680Z [DEBUG] [useDeferredValue] Messages deferred by 3 (51→54)
+2026-03-13T03:50:57.685Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .js
+2026-03-13T03:50:57.686Z [DEBUG] [binaryCheck] Cache hit for 'typescript-language-server': false
+2026-03-13T03:50:57.686Z [DEBUG] [lspRecommendation] Skipping typescript-lsp@claude-plugins-official (binary 'typescript-language-server' not found)
+2026-03-13T03:50:58.313Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:04.018Z [DEBUG] [useDeferredValue] Messages deferred by 2 (54→56)
+2026-03-13T03:51:04.034Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:51:04.035Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:51:04.035Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:51:04.035Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:04.045Z [DEBUG] High write ratio: blit=0, write=2974 (100.0% writes), screen=93x108
+2026-03-13T03:51:04.055Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:04.055Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb7; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:04.055Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:04.055Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:04.056Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:51:04.056Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:51:04.056Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:04.056Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:04.057Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:51:04.057Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:51:04.057Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:51:04.057Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:51:04.058Z [DEBUG] autocompact: tokens=66307 threshold=167000 effectiveWindow=180000
+2026-03-13T03:51:04.058Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:51:04.060Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:04.061Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:04.061Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:04.061Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:04.065Z [DEBUG] [useDeferredValue] Messages deferred by 1 (56→57)
+2026-03-13T03:51:04.314Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:07.690Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:14.392Z [DEBUG] [useDeferredValue] Messages deferred by 2 (57→59)
+2026-03-13T03:51:14.441Z [DEBUG] High write ratio: blit=0, write=3135 (100.0% writes), screen=97x108
+2026-03-13T03:51:14.766Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:51:14.767Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:51:14.767Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:51:14.767Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:14.771Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:14.771Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:14.771Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:14.772Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:14.772Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:14.772Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:14.772Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:14.772Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:14.772Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:14.772Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:19.581Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:20.124Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:20.541Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:22.467Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:22.467Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb7; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:22.467Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:22.467Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:22.467Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:51:22.467Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:51:22.468Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:22.468Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:22.468Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:51:22.468Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:51:22.468Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:51:22.468Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:51:22.469Z [DEBUG] autocompact: tokens=66599 threshold=167000 effectiveWindow=180000
+2026-03-13T03:51:22.469Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:51:22.471Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:22.472Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:22.472Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:22.472Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:22.475Z [DEBUG] [useDeferredValue] Messages deferred by 1 (59→60)
+2026-03-13T03:51:23.080Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:25.278Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:29.247Z [DEBUG] [useDeferredValue] Messages deferred by 2 (60→62)
+2026-03-13T03:51:29.293Z [DEBUG] High write ratio: blit=0, write=3435 (100.0% writes), screen=103x108
+2026-03-13T03:51:29.373Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:51:29.373Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:51:29.373Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:51:29.373Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:29.375Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:29.375Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:29.375Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:29.375Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:51:29.375Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:29.375Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:29.375Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:29.375Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:29.375Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:29.375Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:29.375Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:29.375Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:29.375Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:32.263Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:32.729Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:33.121Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:33.626Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:34.804Z [DEBUG] Bash tool error (1039ms): Shell command failed
+2026-03-13T03:51:34.805Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2026-03-13T03:51:34.805Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:51:34.805Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:51:34.806Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:51:34.806Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:51:34.806Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:51:34.806Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:51:34.808Z [DEBUG] autocompact: tokens=66847 threshold=167000 effectiveWindow=180000
+2026-03-13T03:51:34.808Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:51:34.812Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:51:34.814Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:51:34.814Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:51:34.814Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:51:34.820Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-13T03:51:35.384Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:51:40.392Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-13T03:52:06.795Z [DEBUG] [useDeferredValue] Messages deferred by 2 (64→66)
+2026-03-13T03:52:06.854Z [DEBUG] executePreToolHooks called for tool: Write
+2026-03-13T03:52:06.856Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2026-03-13T03:52:06.856Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:52:06.856Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-13T03:52:06.857Z [DEBUG] FileHistory: Tracked file modification for /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.mjs
+2026-03-13T03:52:06.857Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.mjs.tmp.31093.1773373926857
+2026-03-13T03:52:06.858Z [DEBUG] Temp file written successfully, size: 2658 bytes
+2026-03-13T03:52:06.858Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.mjs.tmp.31093.1773373926857 to /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.mjs
+2026-03-13T03:52:06.858Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach.mjs written atomically
+2026-03-13T03:52:06.859Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2026-03-13T03:52:06.859Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:52:06.859Z [DEBUG] Matched 1 unique hooks for query "Write" (1 before deduplication)
+2026-03-13T03:52:06.860Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:52:06.860Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:52:06.860Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:52:06.860Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:52:06.861Z [DEBUG] autocompact: tokens=67755 threshold=167000 effectiveWindow=180000
+2026-03-13T03:52:06.861Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:52:06.864Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:52:06.866Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:52:06.866Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:52:06.866Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:52:06.872Z [DEBUG] [useDeferredValue] Messages deferred by 3 (66→69)
+2026-03-13T03:52:06.877Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .mjs
+2026-03-13T03:52:06.878Z [DEBUG] [binaryCheck] Cache hit for 'typescript-language-server': false
+2026-03-13T03:52:06.878Z [DEBUG] [lspRecommendation] Skipping typescript-lsp@claude-plugins-official (binary 'typescript-language-server' not found)
+2026-03-13T03:52:07.507Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:52:11.136Z [DEBUG] [useDeferredValue] Messages deferred by 2 (69→71)
+2026-03-13T03:52:11.180Z [DEBUG] High write ratio: blit=0, write=4557 (100.0% writes), screen=134x108
+2026-03-13T03:52:11.319Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:52:11.320Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:52:11.320Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:52:11.320Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:52:11.322Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:52:11.322Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:52:11.322Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:52:11.322Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:52:11.322Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:52:11.322Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:52:11.322Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:52:11.322Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:52:11.323Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:52:11.323Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:52:12.658Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:52:12.993Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:52:15.108Z [DEBUG] [useDeferredValue] Messages deferred by 1 (71→72)
+2026-03-13T03:52:16.110Z [DEBUG] [useDeferredValue] Messages deferred by 1 (72→73)
+2026-03-13T03:52:17.113Z [DEBUG] [useDeferredValue] Messages deferred by 1 (73→74)
+2026-03-13T03:52:18.113Z [DEBUG] [useDeferredValue] Messages deferred by 1 (74→75)
+2026-03-13T03:52:19.114Z [DEBUG] [useDeferredValue] Messages deferred by 1 (75→76)
+2026-03-13T03:52:20.115Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-03-13T03:52:21.116Z [DEBUG] [useDeferredValue] Messages deferred by 1 (77→78)
+2026-03-13T03:52:22.117Z [DEBUG] [useDeferredValue] Messages deferred by 1 (78→79)
+2026-03-13T03:52:23.120Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-03-13T03:52:24.122Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-13T03:52:25.125Z [DEBUG] [useDeferredValue] Messages deferred by 1 (81→82)
+2026-03-13T03:52:26.126Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-03-13T03:52:27.127Z [DEBUG] [useDeferredValue] Messages deferred by 1 (83→84)
+2026-03-13T03:52:28.130Z [DEBUG] [useDeferredValue] Messages deferred by 1 (84→85)
+2026-03-13T03:52:29.131Z [DEBUG] [useDeferredValue] Messages deferred by 1 (85→86)
+2026-03-13T03:52:30.133Z [DEBUG] [useDeferredValue] Messages deferred by 1 (86→87)
+2026-03-13T03:52:31.136Z [DEBUG] [useDeferredValue] Messages deferred by 1 (87→88)
+2026-03-13T03:52:32.136Z [DEBUG] [useDeferredValue] Messages deferred by 1 (88→89)
+2026-03-13T03:52:33.137Z [DEBUG] [useDeferredValue] Messages deferred by 1 (89→90)
+2026-03-13T03:52:34.140Z [DEBUG] [useDeferredValue] Messages deferred by 1 (90→91)
+2026-03-13T03:52:35.141Z [DEBUG] [useDeferredValue] Messages deferred by 1 (91→92)
+2026-03-13T03:52:36.144Z [DEBUG] [useDeferredValue] Messages deferred by 1 (92→93)
+2026-03-13T03:52:37.147Z [DEBUG] [useDeferredValue] Messages deferred by 1 (93→94)
+2026-03-13T03:52:38.147Z [DEBUG] [useDeferredValue] Messages deferred by 1 (94→95)
+2026-03-13T03:52:39.148Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-03-13T03:52:40.151Z [DEBUG] [useDeferredValue] Messages deferred by 1 (96→97)
+2026-03-13T03:52:41.150Z [DEBUG] [useDeferredValue] Messages deferred by 1 (97→98)
+2026-03-13T03:52:42.152Z [DEBUG] [useDeferredValue] Messages deferred by 1 (98→99)
+2026-03-13T03:52:43.154Z [DEBUG] [useDeferredValue] Messages deferred by 1 (99→100)
+2026-03-13T03:52:44.155Z [DEBUG] [useDeferredValue] Messages deferred by 1 (100→101)
+2026-03-13T03:52:45.156Z [DEBUG] [useDeferredValue] Messages deferred by 1 (101→102)
+2026-03-13T03:52:46.157Z [DEBUG] [useDeferredValue] Messages deferred by 1 (102→103)
+2026-03-13T03:52:47.158Z [DEBUG] [useDeferredValue] Messages deferred by 1 (103→104)
+2026-03-13T03:52:48.160Z [DEBUG] [useDeferredValue] Messages deferred by 1 (104→105)
+2026-03-13T03:52:49.161Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-03-13T03:52:50.161Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-03-13T03:52:51.162Z [DEBUG] [useDeferredValue] Messages deferred by 1 (107→108)
+2026-03-13T03:52:52.162Z [DEBUG] [useDeferredValue] Messages deferred by 1 (108→109)
+2026-03-13T03:52:53.163Z [DEBUG] [useDeferredValue] Messages deferred by 1 (109→110)
+2026-03-13T03:52:54.166Z [DEBUG] [useDeferredValue] Messages deferred by 1 (110→111)
+2026-03-13T03:52:55.168Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-03-13T03:52:56.170Z [DEBUG] [useDeferredValue] Messages deferred by 1 (112→113)
+2026-03-13T03:52:57.172Z [DEBUG] [useDeferredValue] Messages deferred by 1 (113→114)
+2026-03-13T03:52:58.174Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-03-13T03:52:59.176Z [DEBUG] [useDeferredValue] Messages deferred by 1 (115→116)
+2026-03-13T03:53:00.177Z [DEBUG] [useDeferredValue] Messages deferred by 1 (116→117)
+2026-03-13T03:53:00.889Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:53:00.889Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:53:00.889Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:53:00.889Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:53:00.891Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:53:00.891Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:53:00.891Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:53:00.891Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:53:00.894Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:53:00.894Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:53:00.894Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:53:00.894Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:53:00.894Z [DEBUG] autocompact: tokens=68561 threshold=167000 effectiveWindow=180000
+2026-03-13T03:53:00.895Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:53:00.898Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:53:00.899Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:53:00.899Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:53:00.899Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:53:00.903Z [DEBUG] [useDeferredValue] Messages deferred by 1 (117→118)
+2026-03-13T03:53:00.913Z [DEBUG] High write ratio: blit=0, write=4560 (100.0% writes), screen=134x108
+2026-03-13T03:53:01.521Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:53:02.167Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:53:10.823Z [DEBUG] [useDeferredValue] Messages deferred by 1 (118→119)
+2026-03-13T03:53:26.688Z [DEBUG] [useDeferredValue] Messages deferred by 2 (119→121)
+2026-03-13T03:53:26.734Z [DEBUG] High write ratio: blit=0, write=5686 (100.0% writes), screen=179x108
+2026-03-13T03:53:26.807Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:53:26.808Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:53:26.808Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:53:26.808Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:53:26.830Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:53:26.830Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.283; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:53:26.830Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:53:26.830Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:53:26.831Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:53:26.831Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:53:26.831Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:53:26.831Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:53:26.832Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:53:26.832Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:53:26.832Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:53:26.832Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:53:26.833Z [DEBUG] autocompact: tokens=70175 threshold=167000 effectiveWindow=180000
+2026-03-13T03:53:26.833Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:53:26.835Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:53:26.836Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:53:26.836Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:53:26.836Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:53:26.840Z [DEBUG] [useDeferredValue] Messages deferred by 2 (121→123)
+2026-03-13T03:53:27.161Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:53:28.100Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:53:32.912Z [DEBUG] [useDeferredValue] Messages deferred by 1 (123→124)
+2026-03-13T03:53:33.413Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-13T03:53:33.413Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:53:33.413Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:53:33.413Z [DEBUG] autocompact: tokens=70576 threshold=167000 effectiveWindow=180000
+2026-03-13T03:53:33.416Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:53:33.419Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:53:33.421Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:53:33.421Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:53:33.421Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:53:33.428Z [DEBUG] [useDeferredValue] Messages deferred by 2 (124→126)
+2026-03-13T03:53:33.788Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:53:49.576Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T03:53:49.589Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T03:53:49.595Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-13T03:53:49.595Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:53:49.595Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:53:49.595Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=359 output=346 cacheRead=70208 cacheCreate=0
+2026-03-13T03:54:02.289Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-13T03:54:02.289Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-13T03:54:02.289Z [DEBUG] Metrics export disabled by organization setting
+2026-03-13T03:54:33.438Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-03-13T03:54:33.438Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:54:33.438Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-03-13T03:55:11.655Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:55:11.655Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:55:11.655Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:55:11.655Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:55:11.660Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-13T03:55:11.660Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:55:11.660Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:55:11.660Z [DEBUG] FileHistory: Making snapshot for message 90bf1806-3fd9-4188-973e-b31db930d54b
+2026-03-13T03:55:11.660Z [DEBUG] FileHistory: Missing tracked file: GW.Content/server/temp-coach.js
+2026-03-13T03:55:11.660Z [DEBUG] FileHistory: Missing tracked file: GW.Content/server/temp-coach.mjs
+2026-03-13T03:55:11.661Z [DEBUG] FileHistory: Added snapshot for 90bf1806-3fd9-4188-973e-b31db930d54b, tracking 2 files
+2026-03-13T03:55:11.662Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-13T03:55:11.683Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T03:55:11.686Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-03-13T03:55:11.698Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773374111698
+2026-03-13T03:55:11.698Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T03:55:11.698Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T03:55:11.698Z [DEBUG] Applied original permissions to temp file
+2026-03-13T03:55:11.698Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773374111698 to /Users/comdir/.claude.json
+2026-03-13T03:55:11.698Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T03:55:11.699Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:55:11.700Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.d7f; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:55:11.700Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:55:11.700Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:55:11.701Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:55:11.705Z [DEBUG] Loaded 19 unique skills (19 unconditional, 0 conditional, managed: 0, user: 19, project: 0, additional: 0, legacy commands: 0)
+2026-03-13T03:55:11.705Z [DEBUG] getSkills returning: 19 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-03-13T03:55:11.706Z [DEBUG] autocompact: tokens=70306 threshold=167000 effectiveWindow=180000
+2026-03-13T03:55:11.706Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:55:11.709Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:55:11.713Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:55:11.713Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:55:11.714Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:55:11.720Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-13T03:55:12.189Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:55:12.883Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:55:19.124Z [DEBUG] [useDeferredValue] Messages deferred by 2 (127→129)
+2026-03-13T03:55:19.138Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-13T03:55:19.139Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-13T03:55:19.139Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:55:19.139Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-13T03:55:19.144Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-13T03:55:19.144Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:55:19.144Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-13T03:55:19.144Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:55:19.144Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:55:19.144Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:55:19.144Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:55:19.148Z [DEBUG] autocompact: tokens=71330 threshold=167000 effectiveWindow=180000
+2026-03-13T03:55:19.148Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:55:19.151Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:55:19.152Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:55:19.152Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:55:19.152Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:55:19.157Z [DEBUG] [useDeferredValue] Messages deferred by 5 (127→132)
+2026-03-13T03:55:19.192Z [DEBUG] High write ratio: blit=0, write=5776 (100.0% writes), screen=187x108
+2026-03-13T03:55:19.527Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:55:25.821Z [DEBUG] [useDeferredValue] Messages deferred by 2 (132→134)
+2026-03-13T03:55:25.831Z [DEBUG] executePreToolHooks called for tool: Skill
+2026-03-13T03:55:25.832Z [DEBUG] Getting matching hook commands for PreToolUse with query: Skill
+2026-03-13T03:55:25.832Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:55:25.832Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-13T03:55:25.835Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773374125835
+2026-03-13T03:55:25.835Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T03:55:25.835Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T03:55:25.835Z [DEBUG] Applied original permissions to temp file
+2026-03-13T03:55:25.835Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773374125835 to /Users/comdir/.claude.json
+2026-03-13T03:55:25.835Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T03:55:25.836Z [DEBUG] Metadata string for send-email:
+2026-03-13T03:55:25.836Z [DEBUG] <command-message>send-email</command-message>
+<command-name>/send-email</command-name>
+<command-args>收件人: lw@gaowei.com
+主题: 【教练反馈】一亿跨境企业配课访谈复盘 - Gemini 3.1 Pro 分析
+内容: 请将以下教练反馈报告以 HTML 格式发送</command-ar
+2026-03-13T03:55:25.836Z [DEBUG] command-message tags in metadata: 1
+2026-03-13T03:55:25.837Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:55:25.837Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:55:25.837Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:55:25.837Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:55:25.837Z [DEBUG] processPromptSlashCommand creating 3 messages for send-email
+2026-03-13T03:55:25.837Z [DEBUG] Message 1: <command-message>send-email</command-message>
+<command-name>/send-email</command-name>
+<command-args>收件人: lw@gaowei.com
+主题: 【教练反馈】一亿跨境企业配课访谈复盘 - Gemini 3.1 Pro 分析
+内容: 请将以下教练反馈报告以 HTML 格式发送</command-ar
+2026-03-13T03:55:25.838Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/send-email\n\n# 发送邮件 Skill\r\n\r\n## 概述\r\n\r\n使用飞书 SMTP 服务发送 HTML 邮件，支持：\r\n- **HTML 邮件**：支持富文本格式\r\n- **多收件人**：支持群
+2026-03-13T03:55:25.838Z [DEBUG] Message 3: [ATTACHMENT]
+2026-03-13T03:55:25.838Z [DEBUG] SkillTool returning 2 newMessages for skill send-email
+2026-03-13T03:55:25.838Z [DEBUG] newMessage 1: [{"type":"text","text":"Base directory for this skill: /Users/comdir/.claude/skills/send-email\n\n# 发送邮件 Skill\r\n\r\n## 概述\r\n\r\n使用飞书 SMTP 服务发送 HTML...
+2026-03-13T03:55:25.838Z [DEBUG] Getting matching hook commands for PostToolUse with query: Skill
+2026-03-13T03:55:25.838Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:55:25.838Z [DEBUG] Matched 0 unique hooks for query "Skill" (0 before deduplication)
+2026-03-13T03:55:25.839Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:55:25.839Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:55:25.839Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:55:25.839Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:55:25.839Z [DEBUG] autocompact: tokens=73306 threshold=167000 effectiveWindow=180000
+2026-03-13T03:55:25.840Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:55:25.842Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:55:25.844Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:55:25.844Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:55:25.844Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:55:25.849Z [DEBUG] [useDeferredValue] Messages deferred by 5 (132→137)
+2026-03-13T03:55:26.394Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:05.314Z [WARN] Streaming stall detected: 94.4s gap between events (stall #1)
+2026-03-13T03:57:05.315Z [DEBUG] [useDeferredValue] Messages deferred by 1 (137→138)
+2026-03-13T03:57:05.332Z [DEBUG] [useDeferredValue] Messages deferred by 2 (137→139)
+2026-03-13T03:57:05.366Z [DEBUG] High write ratio: blit=0, write=5866 (100.0% writes), screen=192x108
+2026-03-13T03:57:05.434Z [WARN] Streaming completed with 1 stall(s), total stall time: 94.4s
+2026-03-13T03:57:05.435Z [DEBUG] executePreToolHooks called for tool: Write
+2026-03-13T03:57:05.437Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2026-03-13T03:57:05.437Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:57:05.437Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-13T03:57:05.437Z [DEBUG] FileHistory: Tracked file modification for /Users/comdir/SynologyDrive/0050Project/GW.Content/server/send-email.mjs
+2026-03-13T03:57:05.437Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/GW.Content/server/send-email.mjs.tmp.31093.1773374225437
+2026-03-13T03:57:05.438Z [DEBUG] Temp file written successfully, size: 6700 bytes
+2026-03-13T03:57:05.438Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/GW.Content/server/send-email.mjs.tmp.31093.1773374225437 to /Users/comdir/SynologyDrive/0050Project/GW.Content/server/send-email.mjs
+2026-03-13T03:57:05.438Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/GW.Content/server/send-email.mjs written atomically
+2026-03-13T03:57:05.439Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2026-03-13T03:57:05.439Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:57:05.439Z [DEBUG] Matched 1 unique hooks for query "Write" (1 before deduplication)
+2026-03-13T03:57:05.440Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:57:05.440Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:57:05.440Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:57:05.440Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:57:05.441Z [DEBUG] autocompact: tokens=76891 threshold=167000 effectiveWindow=180000
+2026-03-13T03:57:05.441Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:57:05.443Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:05.445Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:05.445Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:05.445Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:05.450Z [DEBUG] [useDeferredValue] Messages deferred by 3 (139→142)
+2026-03-13T03:57:05.455Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .mjs
+2026-03-13T03:57:05.456Z [DEBUG] [binaryCheck] Cache hit for 'typescript-language-server': false
+2026-03-13T03:57:05.456Z [DEBUG] [lspRecommendation] Skipping typescript-lsp@claude-plugins-official (binary 'typescript-language-server' not found)
+2026-03-13T03:57:05.819Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:10.232Z [DEBUG] [useDeferredValue] Messages deferred by 2 (142→144)
+2026-03-13T03:57:10.275Z [DEBUG] High write ratio: blit=0, write=6186 (100.0% writes), screen=207x108
+2026-03-13T03:57:10.344Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:57:10.344Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:57:10.344Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:57:10.344Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:57:10.346Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:57:10.346Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:57:10.346Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:10.346Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:10.346Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:10.346Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:10.346Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:10.346Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:10.346Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:10.346Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:11.206Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:11.833Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:13.866Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-03-13T03:57:14.867Z [DEBUG] [useDeferredValue] Messages deferred by 1 (145→146)
+2026-03-13T03:57:15.600Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:57:15.600Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.204; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:15.600Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:15.600Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:15.601Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:57:15.601Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:57:15.601Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:57:15.601Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:15.603Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:57:15.603Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:57:15.603Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:57:15.603Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:57:15.604Z [DEBUG] autocompact: tokens=76973 threshold=167000 effectiveWindow=180000
+2026-03-13T03:57:15.605Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:57:15.608Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:15.609Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:15.609Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:15.610Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:15.616Z [DEBUG] [useDeferredValue] Messages deferred by 1 (146→147)
+2026-03-13T03:57:15.629Z [DEBUG] High write ratio: blit=0, write=6185 (100.0% writes), screen=207x108
+2026-03-13T03:57:15.996Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:16.699Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:19.420Z [DEBUG] [useDeferredValue] Messages deferred by 1 (147→148)
+2026-03-13T03:57:24.101Z [DEBUG] [useDeferredValue] Messages deferred by 2 (148→150)
+2026-03-13T03:57:24.153Z [DEBUG] High write ratio: blit=0, write=6550 (100.0% writes), screen=220x108
+2026-03-13T03:57:24.173Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T03:57:24.174Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T03:57:24.174Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:57:24.174Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:57:24.191Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T03:57:24.191Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.283; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:24.191Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:24.191Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:24.192Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T03:57:24.192Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T03:57:24.192Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T03:57:24.192Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:24.194Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T03:57:24.194Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T03:57:24.194Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T03:57:24.194Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T03:57:24.194Z [DEBUG] autocompact: tokens=77163 threshold=167000 effectiveWindow=180000
+2026-03-13T03:57:24.195Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:57:24.197Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:24.198Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:24.198Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:24.198Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:24.206Z [DEBUG] [useDeferredValue] Messages deferred by 1 (150→151)
+2026-03-13T03:57:24.578Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:25.359Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:27.457Z [DEBUG] [useDeferredValue] Messages deferred by 1 (151→152)
+2026-03-13T03:57:27.736Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-13T03:57:27.736Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:57:27.736Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:57:27.736Z [DEBUG] autocompact: tokens=77461 threshold=167000 effectiveWindow=180000
+2026-03-13T03:57:27.738Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T03:57:27.741Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T03:57:27.743Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T03:57:27.743Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T03:57:27.743Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T03:57:27.749Z [DEBUG] [useDeferredValue] Messages deferred by 2 (152→154)
+2026-03-13T03:57:28.170Z [DEBUG] Stream started - received first chunk
+2026-03-13T03:57:49.574Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T03:57:49.575Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T03:57:49.578Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-13T03:57:49.578Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T03:57:49.578Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T03:57:49.578Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=332 output=363 cacheRead=77120 cacheCreate=0
+2026-03-13T03:59:02.292Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-03-13T03:59:02.292Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-03-13T03:59:02.292Z [DEBUG] Metrics export disabled by organization setting
+2026-03-13T04:09:42.929Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T04:09:42.930Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T04:09:42.931Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T04:09:42.931Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T04:09:42.935Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-03-13T04:09:42.935Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:09:42.935Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T04:09:42.935Z [DEBUG] FileHistory: Making snapshot for message 688502db-952a-4f36-91b2-c72c5ab1a92a
+2026-03-13T04:09:42.935Z [DEBUG] FileHistory: Missing tracked file: GW.Content/server/temp-coach.js
+2026-03-13T04:09:42.935Z [DEBUG] FileHistory: Missing tracked file: GW.Content/server/temp-coach.mjs
+2026-03-13T04:09:42.935Z [DEBUG] FileHistory: Missing tracked file: GW.Content/server/send-email.mjs
+2026-03-13T04:09:42.936Z [DEBUG] FileHistory: Added snapshot for 688502db-952a-4f36-91b2-c72c5ab1a92a, tracking 3 files
+2026-03-13T04:09:42.937Z [DEBUG] [useDeferredValue] Messages deferred by 1 (154→155)
+2026-03-13T04:09:42.972Z [DEBUG] Started caffeinate to prevent sleep
+2026-03-13T04:09:42.977Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.31093.1773374982977
+2026-03-13T04:09:42.977Z [DEBUG] Preserving file permissions: 100600
+2026-03-13T04:09:42.977Z [DEBUG] Temp file written successfully, size: 17734 bytes
+2026-03-13T04:09:42.977Z [DEBUG] Applied original permissions to temp file
+2026-03-13T04:09:42.977Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.31093.1773374982977 to /Users/comdir/.claude.json
+2026-03-13T04:09:42.978Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-03-13T04:09:42.978Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T04:09:42.979Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.0f0; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:09:42.979Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:09:42.979Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:09:42.980Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:09:42.981Z [DEBUG] autocompact: tokens=77190 threshold=167000 effectiveWindow=180000
+2026-03-13T04:09:42.986Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:09:42.992Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:09:42.993Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:09:42.993Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:09:42.994Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:09:43.002Z [DEBUG] [useDeferredValue] Messages deferred by 1 (154→155)
+2026-03-13T04:09:43.547Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:09:44.103Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:09:49.377Z [DEBUG] [useDeferredValue] Messages deferred by 2 (155→157)
+2026-03-13T04:09:49.388Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-13T04:09:49.389Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-13T04:09:49.389Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:09:49.389Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-13T04:09:49.393Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-13T04:09:49.393Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T04:09:49.393Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-13T04:09:49.394Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T04:09:49.394Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T04:09:49.394Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T04:09:49.394Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T04:09:49.398Z [DEBUG] autocompact: tokens=78304 threshold=167000 effectiveWindow=180000
+2026-03-13T04:09:49.399Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:09:49.401Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:09:49.402Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:09:49.402Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:09:49.402Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:09:49.407Z [DEBUG] [useDeferredValue] Messages deferred by 5 (155→160)
+2026-03-13T04:09:49.838Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:09:54.683Z [DEBUG] [useDeferredValue] Messages deferred by 1 (160→161)
+2026-03-13T04:10:52.105Z [WARN] Streaming stall detected: 56.8s gap between events (stall #1)
+2026-03-13T04:10:52.107Z [DEBUG] [useDeferredValue] Messages deferred by 1 (161→162)
+2026-03-13T04:10:52.161Z [DEBUG] High write ratio: blit=0, write=6660 (100.0% writes), screen=230x108
+2026-03-13T04:10:52.225Z [WARN] Streaming completed with 1 stall(s), total stall time: 56.8s
+2026-03-13T04:10:52.228Z [DEBUG] executePreToolHooks called for tool: Write
+2026-03-13T04:10:52.230Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2026-03-13T04:10:52.230Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:10:52.230Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2026-03-13T04:10:52.231Z [DEBUG] FileHistory: Tracked file modification for /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach-v2.mjs
+2026-03-13T04:10:52.231Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach-v2.mjs.tmp.31093.1773375052231
+2026-03-13T04:10:52.232Z [DEBUG] Temp file written successfully, size: 5936 bytes
+2026-03-13T04:10:52.232Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach-v2.mjs.tmp.31093.1773375052231 to /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach-v2.mjs
+2026-03-13T04:10:52.232Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/GW.Content/server/temp-coach-v2.mjs written atomically
+2026-03-13T04:10:52.233Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2026-03-13T04:10:52.233Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T04:10:52.233Z [DEBUG] Matched 1 unique hooks for query "Write" (1 before deduplication)
+2026-03-13T04:10:52.234Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T04:10:52.234Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T04:10:52.234Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T04:10:52.234Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T04:10:52.234Z [DEBUG] autocompact: tokens=81844 threshold=167000 effectiveWindow=180000
+2026-03-13T04:10:52.235Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:10:52.238Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:10:52.240Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:10:52.240Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:10:52.240Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:10:52.246Z [DEBUG] [useDeferredValue] Messages deferred by 5 (162→167)
+2026-03-13T04:10:52.261Z [DEBUG] High write ratio: blit=0, write=6660 (100.0% writes), screen=230x108
+2026-03-13T04:10:52.261Z [DEBUG] [lspRecommendation] Looking for LSP plugins for .mjs
+2026-03-13T04:10:52.262Z [DEBUG] [binaryCheck] Cache hit for 'typescript-language-server': false
+2026-03-13T04:10:52.262Z [DEBUG] [lspRecommendation] Skipping typescript-lsp@claude-plugins-official (binary 'typescript-language-server' not found)
+2026-03-13T04:10:52.623Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:10:57.524Z [DEBUG] [useDeferredValue] Messages deferred by 2 (167→169)
+2026-03-13T04:10:57.537Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T04:10:57.538Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T04:10:57.538Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:10:57.538Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T04:10:57.540Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T04:10:57.540Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T04:10:57.540Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:10:57.540Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:10:57.540Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:10:57.540Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.7f8; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:10:57.540Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:10:57.540Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:10:57.540Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:10:57.540Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:10:57.545Z [DEBUG] [useDeferredValue] Messages deferred by 2 (167→169)
+2026-03-13T04:10:58.425Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:10:58.891Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:11:00.951Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-13T04:11:01.953Z [DEBUG] [useDeferredValue] Messages deferred by 1 (170→171)
+2026-03-13T04:11:02.954Z [DEBUG] [useDeferredValue] Messages deferred by 1 (171→172)
+2026-03-13T04:11:03.956Z [DEBUG] [useDeferredValue] Messages deferred by 1 (172→173)
+2026-03-13T04:11:04.956Z [DEBUG] [useDeferredValue] Messages deferred by 1 (173→174)
+2026-03-13T04:11:05.959Z [DEBUG] [useDeferredValue] Messages deferred by 1 (174→175)
+2026-03-13T04:11:06.960Z [DEBUG] [useDeferredValue] Messages deferred by 1 (175→176)
+2026-03-13T04:11:07.961Z [DEBUG] [useDeferredValue] Messages deferred by 1 (176→177)
+2026-03-13T04:11:08.962Z [DEBUG] [useDeferredValue] Messages deferred by 1 (177→178)
+2026-03-13T04:11:09.963Z [DEBUG] [useDeferredValue] Messages deferred by 1 (178→179)
+2026-03-13T04:11:10.963Z [DEBUG] [useDeferredValue] Messages deferred by 1 (179→180)
+2026-03-13T04:11:11.964Z [DEBUG] [useDeferredValue] Messages deferred by 1 (180→181)
+2026-03-13T04:11:12.964Z [DEBUG] [useDeferredValue] Messages deferred by 1 (181→182)
+2026-03-13T04:11:13.964Z [DEBUG] [useDeferredValue] Messages deferred by 1 (182→183)
+2026-03-13T04:11:14.965Z [DEBUG] [useDeferredValue] Messages deferred by 1 (183→184)
+2026-03-13T04:11:15.966Z [DEBUG] [useDeferredValue] Messages deferred by 1 (184→185)
+2026-03-13T04:11:16.967Z [DEBUG] [useDeferredValue] Messages deferred by 1 (185→186)
+2026-03-13T04:11:17.969Z [DEBUG] [useDeferredValue] Messages deferred by 1 (186→187)
+2026-03-13T04:11:18.969Z [DEBUG] [useDeferredValue] Messages deferred by 1 (187→188)
+2026-03-13T04:11:19.968Z [DEBUG] [useDeferredValue] Messages deferred by 1 (188→189)
+2026-03-13T04:11:20.970Z [DEBUG] [useDeferredValue] Messages deferred by 1 (189→190)
+2026-03-13T04:11:21.972Z [DEBUG] [useDeferredValue] Messages deferred by 1 (190→191)
+2026-03-13T04:11:22.973Z [DEBUG] [useDeferredValue] Messages deferred by 1 (191→192)
+2026-03-13T04:11:23.974Z [DEBUG] [useDeferredValue] Messages deferred by 1 (192→193)
+2026-03-13T04:11:24.976Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-03-13T04:11:25.976Z [DEBUG] [useDeferredValue] Messages deferred by 1 (194→195)
+2026-03-13T04:11:26.978Z [DEBUG] [useDeferredValue] Messages deferred by 1 (195→196)
+2026-03-13T04:11:27.977Z [DEBUG] [useDeferredValue] Messages deferred by 1 (196→197)
+2026-03-13T04:11:28.979Z [DEBUG] [useDeferredValue] Messages deferred by 1 (197→198)
+2026-03-13T04:11:29.981Z [DEBUG] [useDeferredValue] Messages deferred by 1 (198→199)
+2026-03-13T04:11:30.981Z [DEBUG] [useDeferredValue] Messages deferred by 1 (199→200)
+2026-03-13T04:11:31.982Z [DEBUG] [useDeferredValue] Messages deferred by 1 (200→201)
+2026-03-13T04:11:32.982Z [DEBUG] [useDeferredValue] Messages deferred by 1 (201→202)
+2026-03-13T04:11:33.983Z [DEBUG] [useDeferredValue] Messages deferred by 1 (202→203)
+2026-03-13T04:11:34.984Z [DEBUG] [useDeferredValue] Messages deferred by 1 (203→204)
+2026-03-13T04:11:35.985Z [DEBUG] [useDeferredValue] Messages deferred by 1 (204→205)
+2026-03-13T04:11:36.986Z [DEBUG] [useDeferredValue] Messages deferred by 1 (205→206)
+2026-03-13T04:11:37.987Z [DEBUG] [useDeferredValue] Messages deferred by 1 (206→207)
+2026-03-13T04:11:38.989Z [DEBUG] [useDeferredValue] Messages deferred by 1 (207→208)
+2026-03-13T04:11:39.989Z [DEBUG] [useDeferredValue] Messages deferred by 1 (208→209)
+2026-03-13T04:11:40.990Z [DEBUG] [useDeferredValue] Messages deferred by 1 (209→210)
+2026-03-13T04:11:41.990Z [DEBUG] [useDeferredValue] Messages deferred by 1 (210→211)
+2026-03-13T04:11:42.991Z [DEBUG] [useDeferredValue] Messages deferred by 1 (211→212)
+2026-03-13T04:11:43.993Z [DEBUG] [useDeferredValue] Messages deferred by 1 (212→213)
+2026-03-13T04:11:44.993Z [DEBUG] [useDeferredValue] Messages deferred by 1 (213→214)
+2026-03-13T04:11:45.994Z [DEBUG] [useDeferredValue] Messages deferred by 1 (214→215)
+2026-03-13T04:11:46.995Z [DEBUG] [useDeferredValue] Messages deferred by 1 (215→216)
+2026-03-13T04:11:47.997Z [DEBUG] [useDeferredValue] Messages deferred by 1 (216→217)
+2026-03-13T04:11:48.998Z [DEBUG] [useDeferredValue] Messages deferred by 1 (217→218)
+2026-03-13T04:11:49.997Z [DEBUG] [useDeferredValue] Messages deferred by 1 (218→219)
+2026-03-13T04:11:50.997Z [DEBUG] [useDeferredValue] Messages deferred by 1 (219→220)
+2026-03-13T04:11:51.998Z [DEBUG] [useDeferredValue] Messages deferred by 1 (220→221)
+2026-03-13T04:11:52.999Z [DEBUG] [useDeferredValue] Messages deferred by 1 (221→222)
+2026-03-13T04:11:54.002Z [DEBUG] [useDeferredValue] Messages deferred by 1 (222→223)
+2026-03-13T04:11:55.001Z [DEBUG] [useDeferredValue] Messages deferred by 1 (223→224)
+2026-03-13T04:11:56.003Z [DEBUG] [useDeferredValue] Messages deferred by 1 (224→225)
+2026-03-13T04:11:57.002Z [DEBUG] [useDeferredValue] Messages deferred by 1 (225→226)
+2026-03-13T04:11:58.003Z [DEBUG] [useDeferredValue] Messages deferred by 1 (226→227)
+2026-03-13T04:11:59.004Z [DEBUG] [useDeferredValue] Messages deferred by 1 (227→228)
+2026-03-13T04:12:00.006Z [DEBUG] [useDeferredValue] Messages deferred by 1 (228→229)
+2026-03-13T04:12:01.005Z [DEBUG] [useDeferredValue] Messages deferred by 1 (229→230)
+2026-03-13T04:12:02.007Z [DEBUG] [useDeferredValue] Messages deferred by 1 (230→231)
+2026-03-13T04:12:03.009Z [DEBUG] [useDeferredValue] Messages deferred by 1 (231→232)
+2026-03-13T04:12:04.008Z [DEBUG] [useDeferredValue] Messages deferred by 1 (232→233)
+2026-03-13T04:12:05.009Z [DEBUG] [useDeferredValue] Messages deferred by 1 (233→234)
+2026-03-13T04:12:06.011Z [DEBUG] [useDeferredValue] Messages deferred by 1 (234→235)
+2026-03-13T04:12:07.010Z [DEBUG] [useDeferredValue] Messages deferred by 1 (235→236)
+2026-03-13T04:12:08.011Z [DEBUG] [useDeferredValue] Messages deferred by 1 (236→237)
+2026-03-13T04:12:09.013Z [DEBUG] [useDeferredValue] Messages deferred by 1 (237→238)
+2026-03-13T04:12:10.013Z [DEBUG] [useDeferredValue] Messages deferred by 1 (238→239)
+2026-03-13T04:12:10.890Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T04:12:10.890Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.f2f; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:12:10.890Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:12:10.890Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:12:10.891Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T04:12:10.891Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T04:12:10.891Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T04:12:10.891Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:12:10.893Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T04:12:10.893Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T04:12:10.893Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T04:12:10.894Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T04:12:10.894Z [DEBUG] autocompact: tokens=82068 threshold=167000 effectiveWindow=180000
+2026-03-13T04:12:10.895Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:12:10.897Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:12:10.899Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:12:10.899Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:12:10.899Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:12:10.903Z [DEBUG] [useDeferredValue] Messages deferred by 1 (239→240)
+2026-03-13T04:12:10.916Z [DEBUG] High write ratio: blit=0, write=7150 (100.0% writes), screen=247x108
+2026-03-13T04:12:11.394Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:12:12.821Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:12:14.539Z [DEBUG] [useDeferredValue] Messages deferred by 1 (240→241)
+2026-03-13T04:12:17.827Z [DEBUG] [useDeferredValue] Messages deferred by 2 (241→243)
+2026-03-13T04:12:17.875Z [DEBUG] High write ratio: blit=0, write=7394 (100.0% writes), screen=261x108
+2026-03-13T04:12:19.886Z [DEBUG] [useDeferredValue] Messages deferred by 1 (243→244)
+2026-03-13T04:12:19.935Z [DEBUG] High write ratio: blit=0, write=7429 (100.0% writes), screen=263x108
+2026-03-13T04:12:19.973Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-13T04:12:19.975Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-03-13T04:12:19.975Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:12:19.975Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T04:12:20.000Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-13T04:12:20.000Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.283; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:12:20.000Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:12:20.000Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:12:20.001Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-03-13T04:12:20.001Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T04:12:20.001Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-03-13T04:12:20.001Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:12:20.003Z [DEBUG] executePreToolHooks called for tool: Read
+2026-03-13T04:12:20.003Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-03-13T04:12:20.003Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:12:20.003Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-03-13T04:12:20.004Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-03-13T04:12:20.004Z [DEBUG] Found 5 hook matchers in settings
+2026-03-13T04:12:20.004Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-03-13T04:12:20.005Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-03-13T04:12:20.005Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-03-13T04:12:20.005Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-03-13T04:12:20.005Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-03-13T04:12:20.008Z [DEBUG] autocompact: tokens=83167 threshold=167000 effectiveWindow=180000
+2026-03-13T04:12:20.009Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:12:20.011Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:12:20.012Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:12:20.012Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:12:20.013Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:12:20.018Z [DEBUG] [useDeferredValue] Messages deferred by 4 (244→248)
+2026-03-13T04:12:20.307Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:12:20.889Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:12:28.523Z [DEBUG] [useDeferredValue] Messages deferred by 1 (248→249)
+2026-03-13T04:12:39.248Z [DEBUG] [useDeferredValue] Messages deferred by 1 (249→250)
+2026-03-13T04:12:39.252Z [WARN] [PROMPT CACHE BREAK] unknown cause [source=repl_main_thread, call #28, cache read: 81920 → 1472, creation: 0]
+2026-03-13T04:12:39.256Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-03-13T04:12:39.256Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:12:39.256Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T04:12:39.256Z [DEBUG] autocompact: tokens=84882 threshold=167000 effectiveWindow=180000
+2026-03-13T04:12:39.259Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-03-13T04:12:39.264Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.c00; cc_entrypoint=cli; cch=00000;
+2026-03-13T04:12:39.266Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-13T04:12:39.266Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-13T04:12:39.267Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-13T04:12:39.272Z [DEBUG] [useDeferredValue] Messages deferred by 2 (249→251)
+2026-03-13T04:12:39.279Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-03-13T04:12:39.704Z [DEBUG] Stream started - received first chunk
+2026-03-13T04:12:50.566Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T04:12:50.717Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-03-13T04:12:50.723Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-03-13T04:12:50.723Z [DEBUG] Found 0 hook matchers in settings
+2026-03-13T04:12:50.723Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-03-13T04:12:50.723Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=649 output=248 cacheRead=84224 cacheCreate=0

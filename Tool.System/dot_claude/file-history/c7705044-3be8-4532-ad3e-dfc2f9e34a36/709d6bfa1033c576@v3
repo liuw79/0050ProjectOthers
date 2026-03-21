@@ -1,0 +1,369 @@
+/**
+ * Claude Remote - 飞书长连接版本
+ * 不需要公网地址，不需要内网穿透
+ */
+
+import WebSocket from 'ws';
+import axios from 'axios';
+import { readFileSync, existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+import { parseCommand, getHelpText } from './commands.js';
+import {
+  setCurrentProject,
+  getCurrentProjectInfo,
+  getAllProjects,
+  getHistory
+} from './session.js';
+import { sendMessage } from './claude.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// 加载环境配置
+const envPath = join(__dirname, '../config/.env');
+if (existsSync(envPath)) {
+  const envContent = readFileSync(envPath, 'utf-8');
+  envContent.split('\n').forEach(line => {
+    const [key, ...values] = line.split('=');
+    if (key && values.length > 0) {
+      process.env[key.trim()] = values.join('=').trim();
+    }
+  });
+}
+
+// 飞书应用配置
+const LARK_APP_ID = process.env.LARK_APP_ID;
+const LARK_APP_SECRET = process.env.LARK_APP_SECRET;
+
+// 飞书 API 地址
+const LARK_API = 'https://open.feishu.cn';
+const WS_URL = 'wss://open.feishu.cn/open-apis/event/v2/websocket';
+
+// 存储 access token
+let larkAccessToken = null;
+let tokenExpireTime = 0;
+
+// WebSocket 连接
+let ws = null;
+let heartbeatTimer = null;
+
+// 获取飞书 access token
+async function getLarkAccessToken() {
+  if (larkAccessToken && Date.now() < tokenExpireTime) {
+    return larkAccessToken;
+  }
+
+  try {
+    const response = await axios.post(
+      `${LARK_API}/open-apis/auth/v3/tenant_access_token/internal`,
+      {
+        app_id: LARK_APP_ID,
+        app_secret: LARK_APP_SECRET
+      }
+    );
+
+    if (response.data.code === 0) {
+      larkAccessToken = response.data.tenant_access_token;
+      tokenExpireTime = Date.now() + (response.data.expire - 60) * 1000;
+      console.log('[Lark] 获取 access token 成功');
+      return larkAccessToken;
+    } else {
+      throw new Error(`获取 token 失败: ${response.data.msg}`);
+    }
+  } catch (error) {
+    console.error('[Lark] 获取 access token 失败:', error.message);
+    throw error;
+  }
+}
+
+// 发送飞书消息
+async function sendLarkMessage(openId, content) {
+  const token = await getLarkAccessToken();
+
+  try {
+    // 分段发送长消息
+    const maxLength = 30000;
+    const chunks = [];
+
+    if (content.length > maxLength) {
+      for (let i = 0; i < content.length; i += maxLength) {
+        chunks.push(content.slice(i, i + maxLength));
+      }
+    } else {
+      chunks.push(content);
+    }
+
+    for (const chunk of chunks) {
+      await axios.post(
+        `${LARK_API}/open-apis/im/v1/messages?receive_id_type=open_id`,
+        {
+          receive_id: openId,
+          msg_type: 'text',
+          content: JSON.stringify({ text: chunk })
+        },
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (chunks.length > 1) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+
+    console.log('[Lark] 消息发送成功');
+  } catch (error) {
+    console.error('[Lark] 发送消息失败:', error.response?.data || error.message);
+  }
+}
+
+// 处理飞书事件
+async function handleEvent(event) {
+  console.log('[Event] 收到事件:', JSON.stringify(event, null, 2));
+
+  // 忽略机器人自己发送的消息
+  if (event.sender?.sender_type === 'app') {
+    return;
+  }
+
+  const openId = event.sender?.sender_id?.open_id;
+  const message = event.message;
+
+  if (!message || !openId) {
+    return;
+  }
+
+  // 解析消息内容
+  let userMessage = '';
+  try {
+    const content = JSON.parse(message.content);
+    userMessage = content.text || '';
+  } catch (e) {
+    userMessage = message.content || '';
+  }
+
+  if (!userMessage.trim()) {
+    return;
+  }
+
+  console.log(`[Event] 用户消息: ${userMessage}`);
+
+  try {
+    const command = parseCommand(userMessage);
+    let reply = '';
+
+    switch (command.type) {
+      case 'status': {
+        const project = getCurrentProjectInfo();
+        reply = `📍 当前项目: ${project?.name || 'sys'}\n`;
+        reply += `📁 路径: ${project?.path || '未知'}\n`;
+        reply += `📝 描述: ${project?.description || '无'}`;
+        break;
+      }
+
+      case 'projects': {
+        const projects = getAllProjects();
+        const lines = ['📚 可用项目列表:\n'];
+
+        const groups = {};
+        for (const [key, info] of Object.entries(projects)) {
+          const prefix = key[0].toUpperCase();
+          if (!groups[prefix]) groups[prefix] = [];
+          groups[prefix].push({ key, ...info });
+        }
+
+        const seenPaths = new Set();
+        for (const [prefix, items] of Object.entries(groups)) {
+          const uniqueItems = items.filter(item => {
+            if (seenPaths.has(item.path)) return false;
+            seenPaths.add(item.path);
+            return true;
+          });
+
+          if (uniqueItems.length > 0) {
+            lines.push(`\n【${prefix}】`);
+            for (const item of uniqueItems) {
+              const aliases = items.filter(i => i.path === item.path).map(i => i.key);
+              lines.push(`  /${aliases.join(' /')} - ${item.description}`);
+            }
+          }
+        }
+
+        reply = lines.join('\n');
+        break;
+      }
+
+      case 'history': {
+        const history = getHistory(command.count);
+        if (history.length === 0) {
+          reply = '📜 暂无历史记录';
+        } else {
+          const lines = ['📜 历史记录:\n'];
+          for (const h of history) {
+            const role = h.role === 'user' ? '👤' : '🤖';
+            const preview = h.content.substring(0, 100) + (h.content.length > 100 ? '...' : '');
+            lines.push(`${role} ${preview}`);
+          }
+          reply = lines.join('\n');
+        }
+        break;
+      }
+
+      case 'help':
+        reply = getHelpText();
+        break;
+
+      case 'switch': {
+        const result = setCurrentProject(command.project);
+        if (result.success) {
+          reply = `✅ 已切换到: ${result.project.name}\n`;
+          reply += `📁 路径: ${result.project.path}\n`;
+          reply += `📝 ${result.project.description}`;
+        } else {
+          reply = `❌ ${result.error}\n\n使用 /projects 查看所有可用项目`;
+        }
+        break;
+      }
+
+      case 'wake':
+        reply = '💡 电脑已经在运行中';
+        break;
+
+      case 'message': {
+        reply = await sendMessage(command.content);
+        break;
+      }
+
+      default:
+        reply = '未知命令。发送 /help 查看帮助。';
+    }
+
+    await sendLarkMessage(openId, reply);
+
+  } catch (error) {
+    console.error('[Event] 处理错误:', error);
+    await sendLarkMessage(openId, `❌ 处理出错: ${error.message}`);
+  }
+}
+
+// 连接 WebSocket
+async function connectWebSocket() {
+  const token = await getLarkAccessToken();
+
+  console.log('[WebSocket] 正在连接...');
+
+  ws = new WebSocket(WS_URL);
+
+  ws.on('open', () => {
+    console.log('[WebSocket] 连接已建立');
+
+    // 发送认证消息
+    ws.send(JSON.stringify({
+      type: 'authorize',
+      data: {
+        app_id: LARK_APP_ID,
+        tenant_access_token: token
+      }
+    }));
+
+    // 启动心跳
+    startHeartbeat();
+  });
+
+  ws.on('message', (data) => {
+    try {
+      const msg = JSON.parse(data.toString());
+      handleMessage(msg);
+    } catch (e) {
+      console.error('[WebSocket] 解析消息失败:', e);
+    }
+  });
+
+  ws.on('error', (error) => {
+    console.error('[WebSocket] 错误:', error.message);
+  });
+
+  ws.on('close', () => {
+    console.log('[WebSocket] 连接已关闭');
+    stopHeartbeat();
+
+    // 5 秒后重连
+    console.log('[WebSocket] 5 秒后重新连接...');
+    setTimeout(connectWebSocket, 5000);
+  });
+}
+
+// 处理 WebSocket 消息
+function handleMessage(msg) {
+  // console.log('[WebSocket] 收到消息:', JSON.stringify(msg, null, 2));
+
+  switch (msg.type) {
+    case 'authorize':
+      if (msg.code === 0) {
+        console.log('[WebSocket] ✅ 认证成功！等待飞书消息...');
+      } else {
+        console.error('[WebSocket] ❌ 认证失败:', msg.msg);
+      }
+      break;
+
+    case 'pong':
+      // 心跳响应，忽略
+      break;
+
+    case 'event':
+      // 飞书事件
+      handleEvent(msg.event);
+      break;
+
+    default:
+      console.log('[WebSocket] 未知消息类型:', msg.type);
+  }
+}
+
+// 启动心跳
+function startHeartbeat() {
+  heartbeatTimer = setInterval(() => {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ type: 'ping' }));
+    }
+  }, 30000); // 每 30 秒发送心跳
+}
+
+// 停止心跳
+function stopHeartbeat() {
+  if (heartbeatTimer) {
+    clearInterval(heartbeatTimer);
+    heartbeatTimer = null;
+  }
+}
+
+// 启动服务
+async function start() {
+  console.log('\n🚀 Claude Remote 服务启动中...\n');
+  console.log(`📡 长连接模式（无需公网地址）`);
+  console.log(`🔑 App ID: ${LARK_APP_ID}\n`);
+
+  try {
+    await connectWebSocket();
+  } catch (error) {
+    console.error('启动失败:', error);
+    process.exit(1);
+  }
+}
+
+// 优雅关闭
+process.on('SIGINT', () => {
+  console.log('\n正在关闭...');
+  stopHeartbeat();
+  if (ws) {
+    ws.close();
+  }
+  process.exit(0);
+});
+
+start();

@@ -1,0 +1,188 @@
+<script setup lang="ts">
+import type { H5CourseDetail } from '@/types/h5'
+
+interface Props {
+  course: H5CourseDetail
+}
+
+defineProps<Props>()
+
+// 格式化价格
+const formatPrice = (price: number) => {
+  if (price === 0) return '咨询'
+  return `¥${price.toLocaleString()}`
+}
+</script>
+
+<template>
+  <div class="h5-hero">
+    <!-- 装饰元素 -->
+    <div class="h5-hero-decor">
+      <div class="h5-hero-circle h5-hero-circle-1"></div>
+      <div class="h5-hero-circle h5-hero-circle-2"></div>
+    </div>
+
+    <!-- 分类标签 -->
+    <div class="h5-hero-category">
+      <span class="h5-hero-category-tag">{{ course.category }}</span>
+    </div>
+
+    <!-- 课程标题 -->
+    <h1 class="h5-hero-title">{{ course.name }}</h1>
+    <p class="h5-hero-subtitle">{{ course.subtitle }}</p>
+
+    <!-- 亮点标签 -->
+    <div class="h5-hero-highlights">
+      <span v-for="highlight in course.highlights.slice(0, 3)" :key="highlight" class="h5-hero-highlight">
+        {{ highlight }}
+      </span>
+    </div>
+
+    <!-- 价格信息 -->
+    <div class="h5-hero-price">
+      <span class="h5-hero-price-label">课程费用</span>
+      <div class="h5-hero-price-value">
+        <span class="h5-hero-price-main">{{ formatPrice(course.price) }}</span>
+        <span v-if="course.price > 0" class="h5-hero-price-unit">/{{ course.priceUnit }}</span>
+      </div>
+      <span v-if="course.originalPrice && course.originalPrice > course.price" class="h5-hero-price-original">
+        ¥{{ course.originalPrice }}
+      </span>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-hero {
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  padding: 64px 16px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.h5-hero-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.h5-hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.h5-hero-circle-1 {
+  top: -60px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+}
+
+.h5-hero-circle-2 {
+  bottom: -30px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+}
+
+.h5-hero-category {
+  margin-bottom: 12px;
+}
+
+.h5-hero-category-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--h5-text-white);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.h5-hero-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--h5-text-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.h5-hero-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.h5-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.h5-hero-highlight {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--h5-text-white);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.h5-hero-highlight::before {
+  content: '✓';
+  margin-right: 4px;
+  font-size: 10px;
+}
+
+.h5-hero-price {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.h5-hero-price-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 8px;
+}
+
+.h5-hero-price-value {
+  display: flex;
+  align-items: baseline;
+}
+
+.h5-hero-price-main {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--h5-text-white);
+  line-height: 1;
+}
+
+.h5-hero-price-unit {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 2px;
+}
+
+.h5-hero-price-original {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+</style>

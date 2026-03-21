@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "=== 功能键测试脚本 (更新版) ==="
+echo "时间: $(date)"
+echo ""
+
+echo "📋 当前系统设置状态:"
+echo "├─ NVRAM keyboard.fnState: $(nvram keyboard.fnState 2>/dev/null || echo '未设置')"
+echo "├─ 系统 fnState: $(defaults read -g com.apple.keyboard.fnState 2>/dev/null || echo '未设置')"
+echo "├─ Hammerspoon 进程: $(ps aux | grep -i hammerspoon | grep -v grep | wc -l | tr -d ' ') 个"
+echo "└─ AppleTopCaseHIDEventDriver: $(system_profiler SPExtensionsDataType | grep -A 1 "AppleTopCaseHIDEventDriver" | tail -1 | awk '{print $2}' || echo '未找到')"
+echo ""
+
+echo "🎯 测试清单:"
+echo "请按以下功能键测试 (不要按 Fn):"
+echo ""
+echo "F7  - 上一首 (媒体控制)"
+echo "F8  - 播放/暂停 (媒体控制)" 
+echo "F9  - 下一首 (媒体控制)"
+echo "F10 - 静音 (音量控制)"
+echo "F11 - 音量减 (音量控制)"
+echo "F12 - 音量加 (音量控制)"
+echo ""
+
+echo "✅ 预期结果:"
+echo "- F7-F9: 应该直接控制媒体播放 (不需要按 Fn)"
+echo "- F10-F12: 应该直接控制音量 (不需要按 Fn)"
+echo ""
+
+echo "🔧 如果 F7-F9 仍需要 Fn:"
+echo "1. 确认 Hammerspoon 已重新加载配置"
+echo "2. 检查 Hammerspoon 控制台是否有错误信息"
+echo "3. 尝试重启 Hammerspoon 应用"
+echo ""
+
+echo "📝 测试完成后请报告:"
+echo "- F7: [正常/需要Fn/无反应]"
+echo "- F8: [正常/需要Fn/无反应]" 
+echo "- F9: [正常/需要Fn/无反应]"
+echo "- F10: [正常/需要Fn/无反应]"
+echo "- F11: [正常/需要Fn/无反应]"
+echo "- F12: [正常/需要Fn/无反应]"

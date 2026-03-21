@@ -1,0 +1,326 @@
+<template>
+  <div class="bg-white rounded-lg p-6 shadow-sm">
+    <!-- 引导语 -->
+    <div class="mb-6">
+      <h2 class="text-xl font-bold mb-2">{{ guideTitle }}</h2>
+      <p class="text-gray-500">{{ guideDesc }}</p>
+    </div>
+
+    <!-- 公众号文章表单 -->
+    <div v-if="type === 'article'" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          你想写什么主题？
+        </label>
+        <textarea
+          v-model="brief.topic"
+          placeholder="比如：流程型组织、战略共识、第一曲线..."
+          class="w-full border rounded-lg p-3 h-24 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        ></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          这篇文章是写给谁看的？
+        </label>
+        <input
+          v-model="brief.audience"
+          type="text"
+          placeholder="比如：1-10亿规模的制造业创始人"
+          class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            预期字数
+          </label>
+          <select v-model="brief.wordCount" class="w-full border rounded-lg p-3">
+            <option value="">不限</option>
+            <option value="1500">1500字左右</option>
+            <option value="2500">2500字左右</option>
+            <option value="3500">3500字左右</option>
+            <option value="5000">5000字以上</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            截稿时间
+          </label>
+          <input
+            v-model="brief.deadline"
+            type="date"
+            class="w-full border rounded-lg p-3"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          还有什么特别的要求吗？
+        </label>
+        <textarea
+          v-model="brief.requirements"
+          placeholder="比如：需要配5张图、要引用某位老师的金句、避免某些敏感词..."
+          class="w-full border rounded-lg p-3 h-20"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- 主持词表单 -->
+    <div v-if="type === 'host'" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          是哪门课程的主持词？
+        </label>
+        <select v-model="brief.courseId" class="w-full border rounded-lg p-3">
+          <option value="">请选择课程</option>
+          <option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          这是什么场合的主持？
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button
+            v-for="scene in hostScenes"
+            :key="scene.value"
+            @click="brief.scene = scene.value"
+            :class="brief.scene === scene.value ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'"
+            class="px-4 py-2 rounded-lg hover:opacity-80"
+          >
+            {{ scene.label }}
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          听众是谁？
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button
+            v-for="audience in audienceTypes"
+            :key="audience.value"
+            @click="brief.audienceType = audience.value"
+            :class="brief.audienceType === audience.value ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'"
+            class="px-4 py-2 rounded-lg hover:opacity-80"
+          >
+            {{ audience.label }}
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            主讲老师
+          </label>
+          <input
+            v-model="brief.teacher"
+            type="text"
+            placeholder="老师姓名"
+            class="w-full border rounded-lg p-3"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+            时长要求
+          </label>
+          <select v-model="brief.duration" class="w-full border rounded-lg p-3">
+            <option value="3">3分钟左右</option>
+            <option value="5">5分钟左右</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          有什么需要特别注意的？
+        </label>
+        <textarea
+          v-model="brief.notes"
+          placeholder="比如：需要点名某位学员、有禁忌话题..."
+          class="w-full border rounded-lg p-3 h-20"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- 五句话介绍表单 -->
+    <div v-if="type === 'intro'" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          要介绍哪门课程？
+        </label>
+        <select v-model="brief.courseId" class="w-full border rounded-lg p-3">
+          <option value="">请选择课程</option>
+          <option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          在什么场景下介绍？
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button
+            v-for="scene in introScenes"
+            :key="scene.value"
+            @click="brief.scene = scene.value"
+            :class="brief.scene === scene.value ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'"
+            class="px-4 py-2 rounded-lg hover:opacity-80"
+          >
+            {{ scene.label }}
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          介绍给谁听？
+        </label>
+        <input
+          v-model="brief.audience"
+          type="text"
+          placeholder="比如：传统制造业创始人、正在经历增长瓶颈的创业者"
+          class="w-full border rounded-lg p-3"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          有什么特别要强调的？
+        </label>
+        <textarea
+          v-model="brief.highlights"
+          placeholder="比如：要突出课程的实战性、引用某个学员案例..."
+          class="w-full border rounded-lg p-3 h-20"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- 下一步按钮 -->
+    <div class="mt-6 pt-4 border-t">
+      <button
+        @click="handleNext"
+        :disabled="!canProceed"
+        class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        下一步：选择课程
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, onMounted, watch } from 'vue';
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'article' // article, host, intro, moments, video
+  }
+});
+
+const emit = defineEmits(['next']);
+
+// 课程列表
+const courses = ref([]);
+
+// 需求数据
+const brief = ref({
+  // 公众号
+  topic: '',
+  audience: '',
+  wordCount: '',
+  deadline: '',
+  requirements: '',
+  // 主持词
+  courseId: '',
+  scene: '',
+  audienceType: '',
+  teacher: '',
+  duration: '3',
+  notes: '',
+  // 五句话
+  highlights: ''
+});
+
+// 选项配置
+const hostScenes = [
+  { value: 'opening', label: '开学典礼' },
+  { value: 'course', label: '课程开场' },
+  { value: 'camp', label: '特训营开营' }
+];
+
+const audienceTypes = [
+  { value: 'new', label: '新学员' },
+  { value: 'old', label: '老学员' },
+  { value: 'mixed', label: '新老混合' }
+];
+
+const introScenes = [
+  { value: 'host', label: '开场主持' },
+  { value: 'sales', label: '面向客户介绍' }
+];
+
+// 引导语
+const guideTitle = computed(() => {
+  const titles = {
+    article: '开始之前，先聊聊你想写什么',
+    host: '告诉我这次主持的背景',
+    intro: '帮我了解一下这次介绍的背景',
+    moments: '这条朋友圈想表达什么？',
+    video: '这个视频想讲什么？'
+  };
+  return titles[props.type] || '告诉我你的需求';
+});
+
+const guideDesc = computed(() => {
+  const descs = {
+    article: '越具体，AI 就能帮你准备越精准的素材',
+    host: '场景和听众不同，主持词的写法也会不一样',
+    intro: '了解场景和听众，才能写出打动人心的五句话',
+    moments: '明确目的，文案才能有的放矢',
+    video: '脚本要服务于视频的目标'
+  };
+  return descs[props.type] || '';
+});
+
+// 是否可以继续
+const canProceed = computed(() => {
+  if (props.type === 'article') {
+    return brief.value.topic.trim().length > 0;
+  }
+  if (props.type === 'host' || props.type === 'intro') {
+    return brief.value.courseId && brief.value.scene;
+  }
+  return true;
+});
+
+// 加载课程列表
+async function loadCourses() {
+  try {
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000';
+    const res = await fetch(`${API_BASE}/api/courses`);
+    const data = await res.json();
+    if (data.success) courses.value = data.courses;
+  } catch (e) {
+    console.error('加载课程失败', e);
+  }
+}
+
+// 下一步
+function handleNext() {
+  emit('next', { brief: brief.value });
+}
+
+onMounted(() => {
+  if (props.type === 'host' || props.type === 'intro') {
+    loadCourses();
+  }
+});
+</script>

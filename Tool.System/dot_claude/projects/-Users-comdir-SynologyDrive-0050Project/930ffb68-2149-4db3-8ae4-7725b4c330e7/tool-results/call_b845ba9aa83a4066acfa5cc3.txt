@@ -1,0 +1,158 @@
+     1→// 飞书API客户端 - 使用直接HTTP调用
+     2→const path = require('path');
+     3→require('dotenv').config({ path: path.join(__dirname, '../.env') });
+     4→
+     5→const FEISHU_BASE_URL = 'https://open.feishu.cn/open-apis';
+     6→
+     7→class LarkClient {
+     8→  constructor() {
+     9→    this.appAccessToken = null;
+    10→    this.tokenExpireTime = 0;
+    11→  }
+    12→
+    13→  // 获取app access token
+    14→  async getAppAccessToken() {
+    15→    // 检查token是否过期
+    16→    if (this.appAccessToken && Date.now() < this.tokenExpireTime) {
+    17→      return this.appAccessToken;
+    18→    }
+    19→
+    20→    try {
+    21→      const response = await fetch(`${FEISHU_BASE_URL}/auth/v3/app_access_token/internal`, {
+    22→        method: 'POST',
+    23→        headers: { 'Content-Type': 'application/json' },
+    24→        body: JSON.stringify({
+    25→          app_id: process.env.LARK_APP_ID,
+    26→          app_secret: process.env.LARK_APP_SECRET,
+    27→        }),
+    28→      });
+    29→
+    30→      const data = await response.json();
+    31→      if (data.code !== 0) {
+    32→        throw new Error(`获取飞书token失败: ${data.msg}`);
+    33→      }
+    34→
+    35→      this.appAccessToken = data.app_access_token;
+    36→      this.tokenExpireTime = Date.now() + (data.expire_in - 300) * 1000; // 提前5分钟过期
+    37→      return this.appAccessToken;
+    38→    } catch (error) {
+    39→      console.error('获取飞书token失败:', error);
+    40→      throw error;
+    41→    }
+    42→  }
+    43→
+    44→  // 获取多维表格数据
+    45→  async getBitableData(appToken, tableId, options = {}) {
+    46→    try {
+    47→      const { page_size = 100, page_token = '' } = options;
+    48→      const token = await this.getAppAccessToken();
+    49→      const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records?page_size=${page_size}&page_token=${page_token}`;
+    50→
+    51→      const response = await fetch(url, {
+    52→        method: 'GET',
+    53→        headers: {
+    54→          'Authorization': `Bearer ${token}`,
+    55→          'Content-Type': 'application/json',
+    56→        },
+    57→      });
+    58→
+    59→      const data = await response.json();
+    60→      if (data.code !== 0) {
+    61→        throw new Error(`获取多维表格数据失败: ${data.msg}`);
+    62→      }
+    63→
+    64→      return data.data.items;
+    65→    } catch (error) {
+    66→      console.error('获取多维表格数据失败:', error);
+    67→      throw error;
+    68→    }
+    69→  }
+    70→
+    71→  // 添加多维表格记录
+    72→  async addBitableRecord(appToken, tableId, fields) {
+    73→    try {
+    74→      const token = await this.getAppAccessToken();
+    75→      const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records`;
+    76→
+    77→      const response = await fetch(url, {
+    78→        method: 'POST',
+    79→        headers: {
+    80→          'Authorization': `Bearer ${token}`,
+    81→          'Content-Type': 'application/json',
+    82→        },
+    83→        body: JSON.stringify(fields),
+    84→      });
+    85→
+    86→      const data = await response.json();
+    87→      if (data.code !== 0) {
+    88→        throw new Error(`添加多维表格记录失败: ${data.msg}`);
+    89→      }
+    90→
+    91→      return data.data;
+    92→    } catch (error) {
+    93→      console.error('添加多维表格记录失败:', error);
+    94→      throw error;
+    95→    }
+    96→  }
+    97→
+    98→  // 更新多维表格记录
+    99→  async updateBitableRecord(appToken, tableId, recordId, fields) {
+   100→    try {
+   101→      const token = await this.getAppAccessToken();
+   102→      const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records/${recordId}`;
+   103→
+   104→      const response = await fetch(url, {
+   105→        method: 'PUT',
+   106→        headers: {
+   107→          'Authorization': `Bearer ${token}`,
+   108→          'Content-Type': 'application/json',
+   109→        },
+   110→        body: JSON.stringify(fields),
+   111→      });
+   112→
+   113→      const data = await response.json();
+   114→      if (data.code !== 0) {
+   115→        throw new Error(`更新多维表格记录失败: ${data.msg}`);
+   116→      }
+   117→
+   118→      return data.data;
+   119→    } catch (error) {
+   120→      console.error('更新多维表格记录失败:', error);
+   121→      throw error;
+   122→    }
+   123→  }
+   124→
+   125→  // 查询多维表格记录
+   126→  async queryBitableRecords(appToken, tableId, filter = {}) {
+   127→    try {
+   128→      const token = await this.getAppAccessToken();
+   129→      const url = `${FEISHU_BASE_URL}/bitable/v1/apps/${appToken}/tables/${tableId}/records/search`;
+   130→
+   131→      const response = await fetch(url, {
+   132→        method: 'POST',
+   133→        headers: {
+   134→          'Authorization': `Bearer ${token}`,
+   135→          'Content-Type': 'application/json',
+   136→        },
+   137→        body: JSON.stringify({ filter }),
+   138→      });
+   139→
+   140→      const data = await response.json();
+   141→      if (data.code !== 0) {
+   142→        throw new Error(`查询多维表格记录失败: ${data.msg}`);
+   143→      }
+   144→
+   145→      return data.data.items || [];
+   146→    } catch (error) {
+   147→      console.error('查询多维表格记录失败:', error);
+   148→      throw error;
+   149→    }
+   150→  }
+   151→}
+   152→
+   153→module.exports = LarkClient;
+   154→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

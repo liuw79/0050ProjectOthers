@@ -1,0 +1,351 @@
+// SCSS混入文件
+
+// ===== 响应式断点混入 =====
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile or $breakpoint == xs {
+    @media (max-width: #{$breakpoint-mobile - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet or $breakpoint == sm {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop or $breakpoint == md {
+    @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+    }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxl {
+    @media (min-width: #{$breakpoint-xxl}) {
+      @content;
+    }
+  }
+}
+
+// 移动端优先的响应式混入
+@mixin respond-above($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (min-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (min-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+    }
+  }
+}
+
+// 文字省略号
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 居中对齐
+@mixin center($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 垂直居中
+@mixin vertical-center($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 水平居中
+@mixin horizontal-center($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Flex布局
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Flex居中
+@mixin flex-center {
+  @include flex(row, center, center);
+}
+
+// ===== 按钮样式混入 =====
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  transition: all $transition-duration-base $transition-timing-function;
+  
+  &:hover,
+  &:focus {
+    color: $color;
+    background-color: lighten($background, 8%);
+    border-color: lighten($border, 8%);
+    transform: translateY(-1px);
+    box-shadow: $box-shadow-hover;
+  }
+  
+  &:active {
+    color: $color;
+    background-color: darken($background, 5%);
+    border-color: darken($border, 5%);
+    transform: translateY(0);
+    box-shadow: $box-shadow-active;
+  }
+  
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &.is-disabled:active {
+    color: $button-disabled-color;
+    background-color: $button-disabled-bg;
+    border-color: $button-disabled-border;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+
+// 按钮尺寸混入
+@mixin button-size($size) {
+  @if $size == large {
+    padding: $button-padding-large;
+    font-size: $button-font-size-large;
+    border-radius: $button-border-radius-large;
+    min-height: $button-height-large;
+  } @else if $size == medium {
+    padding: $button-padding-medium;
+    font-size: $button-font-size-medium;
+    border-radius: $button-border-radius-medium;
+    min-height: $button-height-medium;
+  } @else if $size == small {
+    padding: $button-padding-small;
+    font-size: $button-font-size-small;
+    border-radius: $button-border-radius-small;
+    min-height: $button-height-small;
+  }
+}
+
+// ===== 卡片阴影 =====
+@mixin card-shadow($level: base) {
+  @if $level == light {
+    box-shadow: $box-shadow-light;
+  } @else if $level == base {
+    box-shadow: $box-shadow-base;
+  } @else if $level == medium {
+    box-shadow: $box-shadow-medium;
+  } @else if $level == strong {
+    box-shadow: $box-shadow-strong;
+  } @else if $level == hover {
+    box-shadow: $box-shadow-hover;
+  } @else if $level == active {
+    box-shadow: $box-shadow-active;
+  }
+}
+
+// 品牌渐变背景
+@mixin brand-gradient($direction: to right) {
+  background: linear-gradient($direction, $brand-primary, lighten($brand-primary, 10%));
+}
+
+// 强调色渐变背景
+@mixin accent-gradient($direction: to right) {
+  background: linear-gradient($direction, $accent-light-beige, lighten($accent-light-beige, 15%));
+}
+
+// 滚动条样式
+@mixin scrollbar($size: 6px, $track-color: transparent, $thumb-color: #c1c1c1) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: $size / 2;
+    
+    &:hover {
+      background: darken($thumb-color, 10%);
+    }
+  }
+}
+
+// 动画混入
+@mixin animation($name, $duration: 1s, $timing-function: ease, $delay: 0s, $iteration-count: 1, $direction: normal, $fill-mode: both) {
+  animation: $name $duration $timing-function $delay $iteration-count $direction $fill-mode;
+}
+
+// 过渡动画
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+// 边框圆角
+@mixin border-radius($radius: $border-radius-base) {
+  border-radius: $radius;
+}
+
+// 文字渐变
+@mixin text-gradient($start-color, $end-color, $direction: to right) {
+  background: linear-gradient($direction, $start-color, $end-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// 背景渐变
+@mixin background-gradient($start-color, $end-color, $direction: to right) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// 隐藏元素但保持可访问性
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// 重置按钮样式
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// 重置列表样式
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// 图片响应式
+@mixin img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+// 固定宽高比
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// 三角形
+@mixin triangle($direction, $size, $color) {
+  width: 0;
+  height: 0;
+  
+  @if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+// 占位符样式
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  
+  &::-moz-placeholder {
+    @content;
+  }
+  
+  &:-ms-input-placeholder {
+    @content;
+  }
+  
+  &::placeholder {
+    @content;
+  }
+}

@@ -1,0 +1,217 @@
+# AI教练报告 JSON Schema
+
+## 概述
+
+定义 AI 教练评估报告的结构化数据格式，用于：
+1. 指导 Gemini 输出结构化 JSON
+2. 渲染成 HTML 报告
+
+---
+
+## JSON Schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["score", "summary", "dimensions", "bonus", "suggestions", "ending", "target"],
+  "properties": {
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "总分（0-100）"
+    },
+    "summary": {
+      "type": "string",
+      "description": "一句话总评"
+    },
+    "dimensions": {
+      "type": "array",
+      "description": "分项评分（6个维度）",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "weight", "score", "max", "detail"],
+        "properties": {
+          "name": { "type": "string", "description": "维度名称" },
+          "weight": { "type": "string", "description": "权重，如'30%'" },
+          "score": { "type": "integer", "description": "得分" },
+          "max": { "type": "integer", "description": "满分" },
+          "highlight": { "type": "string", "description": "亮点（可选）" },
+          "detail": { "type": "string", "description": "详细说明" },
+          "suggested_script": { "type": "string", "description": "建议话术（可选）" }
+        }
+      }
+    },
+    "bonus": {
+      "type": "array",
+      "description": "高阶加分项",
+      "items": {
+        "type": "object",
+        "required": ["title", "points", "detail"],
+        "properties": {
+          "title": { "type": "string", "description": "加分项名称" },
+          "points": { "type": "integer", "enum": [1, 3, 5], "description": "加分值（+1/+3/+5）" },
+          "original": { "type": "string", "description": "原稿表达（可选）" },
+          "golden_sentence": { "type": "string", "description": "现场金句（可选）" },
+          "detail": { "type": "string", "description": "分析说明" }
+        }
+      }
+    },
+    "suggestions": {
+      "type": "array",
+      "description": "AI教练建议（Top 3）",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["title", "problem_type", "performance", "insight", "suggestion"],
+        "properties": {
+          "title": { "type": "string", "description": "建议标题" },
+          "problem_type": { "type": "string", "description": "问题类型" },
+          "performance": { "type": "string", "description": "具体表现" },
+          "insight": { "type": "string", "description": "深度洞察" },
+          "suggestion": { "type": "string", "description": "优化建议" },
+          "suggested_script": { "type": "string", "description": "建议话术" }
+        }
+      }
+    },
+    "ending": {
+      "type": "string",
+      "description": "结束语（个性化寄语）"
+    },
+    "target": {
+      "type": "object",
+      "required": ["name", "course"],
+      "properties": {
+        "name": { "type": "string", "description": "班主任姓名" },
+        "course": { "type": "string", "description": "课程名称" }
+      }
+    }
+  }
+}
+```
+
+---
+
+## 维度定义（固定顺序）
+
+| 序号 | name | weight | max |
+|------|------|--------|-----|
+| 1 | 高维介绍 | 30% | 30 |
+| 2 | 产品介绍 | 30% | 30 |
+| 3 | 团建破冰 | 5% | 5 |
+| 4 | 邀约课评 | 15% | 15 |
+| 5 | 结尾升华 | 10% | 10 |
+| 6 | 口语节奏 | 10% | 10 |
+
+---
+
+## 示例输出
+
+```json
+{
+  "score": 88,
+  "summary": "场域掌控自然从容，核心业务与产品价值传递精准，是一位能与企业家同频共振的优秀成长陪伴者！",
+  "dimensions": [
+    {
+      "name": "高维介绍",
+      "weight": "30%",
+      "score": 28,
+      "max": 30,
+      "highlight": "完整覆盖了实战商学院、实战三个标准、创业路线图定位以及统一管理语言",
+      "detail": "表现非常扎实。特别是致敬会员企业带队共学的部分，极大地拉升了现场的场域能量。"
+    },
+    {
+      "name": "产品介绍",
+      "weight": "30%",
+      "score": 28,
+      "max": 30,
+      "detail": "FOCUS结构完整，痛点抓取精准。信任背书硬核，核心价值、工具包和实践案例全部清晰传达。"
+    },
+    {
+      "name": "团建破冰",
+      "weight": "5%",
+      "score": 5,
+      "max": 5,
+      "detail": "指令清晰，时间把控精准（3分钟）。要求大家带着卡点和问题去交流。"
+    },
+    {
+      "name": "邀约课评",
+      "weight": "15%",
+      "score": 10,
+      "max": 15,
+      "detail": "课评意义的升华非常好，但在执行动作上出现了卡顿（群内链接未能同步就绪）。",
+      "suggested_script": "各位，此时此刻，我们的面条老师已经把评测链接发到了群里..."
+    },
+    {
+      "name": "结尾升华",
+      "weight": "10%",
+      "score": 8,
+      "max": 10,
+      "detail": "点出了回到公司新的关键战役的开始，有行动号召力。但结尾略显仓促。"
+    },
+    {
+      "name": "口语节奏",
+      "weight": "10%",
+      "score": 9,
+      "max": 10,
+      "detail": "语调亲切且有力量，极具专业度。展现了资深班主任的场域掌控力。"
+    }
+  ],
+  "bonus": [
+    {
+      "title": "破冰金句：巧妙化解选组长尴尬",
+      "points": 3,
+      "golden_sentence": "当选不出组长的时候，咱们就选颜值最高的那位就对了",
+      "detail": "用幽默且极具操作性的高维惯例迅速化解了僵局，让现场氛围瞬间升温。"
+    }
+  ],
+  "suggestions": [
+    {
+      "title": "课评邀约：场域势能与工具协同",
+      "problem_type": "执行协同",
+      "performance": "课评铺垫很有感染力，但群里的评价链接还没发出来",
+      "insight": "作为高阶顾问，若能提前确保动作与话术严丝合缝，能让同学们的情绪顺畅转化为行动。",
+      "suggestion": "下次可以在课评PPT上直接放上大大的二维码，或者与助教约定硬核暗号。",
+      "suggested_script": "各位，此时此刻，我们的面条老师已经把评测链接发到了群里。趁着大家手上的弹药还有温度，请用一分钟时间..."
+    },
+    {
+      "title": "痛点共鸣：将方法论具象化为业务场景",
+      "problem_type": "内容表达",
+      "performance": "开场对业务一号位的痛点描述很棒",
+      "insight": "为了让企业家的代入感更强，可以少一点名词堆砌，多一点场景结合。",
+      "suggestion": "直接告诉他们这套工具解决哪个具体场景的痛。",
+      "suggested_script": "比如，每次分派新任务大家就推诿扯皮怎么办？汤老师准备了《团队合作宪章》..."
+    },
+    {
+      "title": "结尾升华：强化陪伴者的闭环价值",
+      "problem_type": "价值收口",
+      "performance": "结尾稍微快了一点",
+      "insight": "如果能在结尾时呼应开场的共学理念，并强调课后持续陪伴，能给企业留下更深的安全感。",
+      "suggestion": "强调高维会一直陪跑大家。",
+      "suggested_script": "明天的太阳升起，又是新的战役。如果在落地的过程中遇到任何卡点，别忘了群里还有我们班主任和教研团队..."
+    }
+  ],
+  "ending": "碧荣，你的主持气场从容自信，对科学创业理念的理解非常透彻！你的金句和控场细节已经具备了资深陪伴者的风范。微调一下结尾工具的协同节奏，你的场域交付将无可挑剔。期待你在下一期继续带大家打胜仗！",
+  "target": {
+    "name": "碧容",
+    "course": "业务管理者养成"
+  }
+}
+```
+
+---
+
+## 使用说明
+
+1. **生成**：调用 Gemini 时使用 `--json` 参数，附加此 Schema
+2. **渲染**：用 Node.js 脚本将 JSON 渲染成 HTML
+3. **校验**：可对 score 进行后处理校验（如分项分数之和是否匹配）
+
+---
+
+*版本：v1.0*
+*更新时间：2026-03-17*

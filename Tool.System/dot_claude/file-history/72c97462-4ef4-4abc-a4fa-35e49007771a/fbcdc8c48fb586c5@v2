@@ -1,0 +1,139 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+interface Props {
+  title?: string
+  transparent?: boolean // 透明背景（用于 Hero 区域）
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  transparent: false
+})
+
+const emit = defineEmits<{
+  share: []
+}>()
+
+const router = useRouter()
+const isScrolled = ref(false)
+
+// 监听滚动，超过一定距离后改变背景
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+// 返回上一页
+const goBack = () => {
+  if (window.history.length > 1) {
+    router.back()
+  } else {
+    router.push('/')
+  }
+}
+
+// 分享
+const handleShare = () => {
+  emit('share')
+}
+</script>
+
+<template>
+  <header
+    class="h5-header"
+    :class="{
+      'h5-header-white': !transparent || isScrolled || title,
+      'h5-header-transparent': transparent && !isScrolled && !title
+    }"
+  >
+    <!-- 返回按钮 -->
+    <button class="h5-header-btn" @click="goBack" aria-label="返回">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <!-- 标题（可选） -->
+    <div v-if="title || (!transparent && isScrolled)" class="h5-header-title">
+      {{ title }}
+    </div>
+
+    <!-- 分享按钮 -->
+    <button class="h5-header-btn" @click="handleShare" aria-label="分享">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+        <polyline points="16 6 12 2 8 6" />
+        <line x1="12" y1="2" x2="12" y2="15" />
+      </svg>
+    </button>
+  </header>
+</template>
+
+<style scoped>
+.h5-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--h5-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.h5-header-transparent {
+  background: transparent;
+}
+
+.h5-header-white {
+  background: var(--h5-bg-white);
+  box-shadow: 0 1px 0 var(--h5-border-light);
+}
+
+.h5-header-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.h5-header-transparent .h5-header-btn {
+  color: var(--h5-text-white);
+}
+
+.h5-header-white .h5-header-btn {
+  background: var(--h5-bg-light);
+  color: var(--h5-text-dark);
+}
+
+.h5-header-btn:active {
+  opacity: 0.8;
+}
+
+.h5-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--h5-text-dark);
+}
+</style>

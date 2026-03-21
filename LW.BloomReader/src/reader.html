@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloomReader</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, "Noto Serif SC", serif;
+      background: #8b7355;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .book {
+      display: flex;
+      width: 100%;
+      max-width: 900px;
+      height: 70vh;
+      background: #6b5a42;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    .page {
+      flex: 1;
+      background: #fffef8;
+      padding: 30px 35px;
+      font-size: 16px;
+      line-height: 2;
+      color: #8a8a8a;
+      cursor: pointer;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .page.left {
+      border-right: 1px solid #d4c4a8;
+    }
+
+    .page.right {
+      border-left: 1px solid #f0e8d8;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 15px;
+      font-size: 12px;
+      color: #c0b090;
+    }
+
+    .left .page-number { left: 20px; }
+    .right .page-number { right: 20px; }
+
+    /* 句子样式 */
+    .sentence {
+      opacity: 0.2;
+      transition: opacity 0.5s ease;
+    }
+
+    .sentence.active {
+      opacity: 1;
+      color: #2a2a2a;
+    }
+
+    .sentence.done {
+      opacity: 0.8;
+      color: #4a4a4a;
+    }
+
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+      background: #5a4a32;
+      color: #f5ebe0;
+    }
+
+    button:hover {
+      background: #4a3a22;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #d4c4a8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="book">
+    <div class="page left" id="leftPage">
+      <div class="page-number" id="leftNum">1</div>
+    </div>
+    <div class="page right" id="rightPage">
+      <div class="page-number" id="rightNum">2</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevPage()">上一页</button>
+    <button onclick="nextSentence()">下一句</button>
+    <button onclick="nextPage()">下一页</button>
+    <button onclick="reset()">重置</button>
+  </div>
+
+  <div class="hint">点击页面 或 按空格键 显示下一句</div>
+
+  <script>
+    // 书页内容 - 每页一个数组，包含多个句子
+    var bookPages = [
+      // 第1页
+      [
+        "我们谁都不能构成在人人眼中都一样的物质的整体，总是仁者见仁，智者见智。",
+        "我们的社会人格，其实是别人的思想创造出来的。",
+        "我们用我们所掌握的有关他的一切概念，来充实我们所见到的这个人的音容笑貌。",
+        "我们的心目中有关他的全貌，不用说大部分包含了上述的概念。",
+        "那些概念使他的面颊丰满起来，而且贴切地勾画出他鼻梁的轮廓。",
+        "那些概念把音量区分得那样纤毫不差，好似音量只是一层透明的外罩。"
+      ],
+      // 第2页
+      [
+        "晚上，在贡布雷的小花园中，铃铛怯怯地响了两声之后，我的姨祖母便用她所知道的有关斯万家的一切陈年掌故，来充实那个默默无闻的斯万。",
+        "所以，我的姨祖母对他相当不客气。",
+        "她认为，我们请他来作客，是给他面子。",
+        "夏天，他每回来我们家，总提着一筐自己园子里出产的桃子和覆盆子。",
+        "他每次从意大利旅行回来，总要送给我好几张美术名作的照片。",
+        "这些，我的姨祖母认为都是理所当然的。"
+      ],
+      // 第3页
+      [
+        "遇到要大摆筵席的日子，我的姨祖母就托他想办法弄配方，但又不请他来赴宴。",
+        "她居然不觉得这么做有什么不妥，反而认为他还不够体面。",
+        "如果谈话涉及到法兰西王室的几位亲王，姨祖母就对斯万说：这几位大贵人，您跟我一样，咱们都永远高攀不上，还是不谈算了。",
+        "她哪里知道，也许当时斯万的口袋里偏巧正装着一封从特威克汉姆寄来的信呢。",
+        "赶上哪天晚上，我外祖母的妹妹表演唱歌，姨祖母就吩咐斯万推钢琴、翻琴谱，把这么一位斯文的人支使得团团转。"
+      ],
+      // 第4页
+      [
+        "她那种不知深浅的粗放做法，就象是不识货的孩子，拿着古董当不值钱的东西玩，根本不知道爱惜。",
+        "当时在俱乐部会员中那样赫赫有名的斯万，同我的姨祖母心目中所创造出来的斯万，说不定有天壤之别。",
+        "也许，我的姨祖母、外祖父、外祖母们在勾画斯万的形象时，由于无知而删略了他在社交场中所具备的许多特点。"
+      ]
+    ];
+
+    var pageIndex = 0;      // 当前书页索引 (0-3)
+    var sentenceIndex = 0;  // 当前句子索引
+    var sentenceElements = [];  // 当前页的句子DOM元素
+
+    // 获取当前跨页索引 (0=第1-2页, 1=第3-4页)
+    function getSpreadIndex() {
+      return Math.floor(pageIndex / 2);
+    }
+
+    // 渲染当前跨页
+    function render() {
+      var leftPage = document.getElementById("leftPage");
+      var rightPage = document.getElementById("rightPage");
+      var spreadIndex = getSpreadIndex();
+
+      // 左页
+      var leftPageIndex = spreadIndex * 2;
+      leftPage.innerHTML = '<div class="page-number">' + (leftPageIndex + 1) + '</div>';
+      sentenceElements = [];
+
+      var leftSentences = bookPages[leftPageIndex] || [];
+      leftSentences.forEach(function(text, i) {
+        var div = document.createElement("div");
+        div.className = "sentence";
+        div.innerText = text;
+        leftPage.appendChild(div);
+        sentenceElements.push(div);
+      });
+
+      // 右页
+      var rightPageIndex = spreadIndex * 2 + 1;
+      rightPage.innerHTML = '<div class="page-number">' + (rightPageIndex + 1) + '</div>';
+
+      var rightSentences = bookPages[rightPageIndex] || [];
+      rightSentences.forEach(function(text, i) {
+        var div = document.createElement("div");
+        div.className = "sentence";
+        div.innerText = text;
+        rightPage.appendChild(div);
+        sentenceElements.push(div);
+      });
+
+      // 标记已读句子
+      updateSentenceStates();
+    }
+
+    // 更新句子显示状态
+    function updateSentenceStates() {
+      var spreadIndex = getSpreadIndex();
+      var currentGlobalIndex = pageIndex;
+      var sentencesInLeftPage = (bookPages[spreadIndex * 2] || []).length;
+
+      sentenceElements.forEach(function(el, i) {
+        el.classList.remove("active", "done");
+
+        var isLeftPage = i < sentencesInLeftPage;
+        var localPageIndex = isLeftPage ? spreadIndex * 2 : spreadIndex * 2 + 1;
+        var localSentenceIndex = isLeftPage ? i : i - sentencesInLeftPage;
+
+        if (localPageIndex < currentGlobalIndex) {
+          // 之前页的句子，全部完成
+          el.classList.add("done");
+        } else if (localPageIndex === currentGlobalIndex) {
+          // 当前页
+          if (localSentenceIndex < sentenceIndex) {
+            el.classList.add("done");
+          } else if (localSentenceIndex === sentenceIndex) {
+            el.classList.add("active");
+          }
+        }
+      });
+    }
+
+    // 下一句
+    function nextSentence() {
+      var currentPageSentences = bookPages[pageIndex] || [];
+
+      if (sentenceIndex < currentPageSentences.length - 1) {
+        // 当前页还有句子
+        sentenceIndex++;
+        updateSentenceStates();
+      } else if (pageIndex < bookPages.length - 1) {
+        // 翻到下一页
+        pageIndex++;
+        sentenceIndex = 0;
+        render();
+      }
+    }
+
+    // 上一句
+    function prevSentence() {
+      if (sentenceIndex > 0) {
+        sentenceIndex--;
+        updateSentenceStates();
+      } else if (pageIndex > 0) {
+        pageIndex--;
+        sentenceIndex = (bookPages[pageIndex] || []).length - 1;
+        render();
+      }
+    }
+
+    // 下一页
+    function nextPage() {
+      var spreadIndex = getSpreadIndex();
+      if ((spreadIndex + 1) * 2 < bookPages.length) {
+        pageIndex = (spreadIndex + 1) * 2;
+        sentenceIndex = 0;
+        render();
+      }
+    }
+
+    // 上一页
+    function prevPage() {
+      var spreadIndex = getSpreadIndex();
+      if (spreadIndex > 0) {
+        pageIndex = (spreadIndex - 1) * 2;
+        sentenceIndex = 0;
+        render();
+      }
+    }
+
+    // 重置
+    function reset() {
+      pageIndex = 0;
+      sentenceIndex = 0;
+      render();
+    }
+
+    // 点击事件
+    document.getElementById("leftPage").addEventListener("click", nextSentence);
+    document.getElementById("rightPage").addEventListener("click", nextSentence);
+
+    // 键盘事件
+    document.addEventListener("keydown", function(e) {
+      if (e.code === "Space") {
+        e.preventDefault();
+        nextSentence();
+      } else if (e.code === "ArrowRight") {
+        nextPage();
+      } else if (e.code === "ArrowLeft") {
+        prevPage();
+      }
+    });
+
+    // 初始化
+    render();
+  </script>
+
+</body>
+</html>

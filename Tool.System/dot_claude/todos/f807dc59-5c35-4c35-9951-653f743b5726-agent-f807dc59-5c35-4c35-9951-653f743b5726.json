@@ -1,0 +1,12 @@
+[
+  {
+    "content": "更新 projects.json 添加 Tool.Deepseek",
+    "status": "in_progress",
+    "activeForm": "更新项目配置文件"
+  },
+  {
+    "content": "更新 CLAUDE.md 添加项目映射",
+    "status": "pending",
+    "activeForm": "更新 CLAUDE.md"
+  }
+]

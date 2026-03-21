@@ -1,0 +1,59 @@
+# Tool.System Progress
+
+> **规则：** 本文件仅记录最新有效信息。如有版本迭代，只保留最新版本，删除旧版本以避免上下文混乱。
+
+---
+
+## AI教练评估系统 - 飞书发布方案
+
+**日期**: 2026-03-19
+**状态**: ✅ 完成
+**目标**: 实现评估报告自动发布到飞书
+
+### 最终方案
+
+使用 `publish-feishu.js` 调用现有 Python 脚本 `feishu_publish.py`
+
+### 交付物
+
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| publish-feishu.js | `GW.Content/五句话介绍/skill-coach/publish-feishu.js` | Node.js 发布脚本 |
+| feishu-doc.md | `GW.Content/.claude/commands/feishu-doc.md` | +添加协作者操作说明 |
+| coach.js | `GW.Content/五句话介绍/skill-coach/coach.js` | +--feishu/--share 参数 |
+
+### 使用方法
+
+```bash
+# 方式1：评估 + 发布飞书
+node coach.js --course "xxx" --teacher "xxx" --date "xxx" --feishu
+
+# 方式2：仅发布已有报告
+node publish-feishu.js --file "报告.md" --title "标题"
+```
+
+### 已知限制
+
+- 协作者权限需手动添加（API 权限未配置）
+- 文档发布到「我的空间」，可手动移动到知识库
+
+### 测试结果
+
+```
+✅ 发布成功: https://gaowei1.feishu.cn/docx/HPPHdIIpoo1E2bxugUMcUT5tnwe
+```
+
+---
+
+## 多模型 API 配置
+
+| 别名 | 实际模型 | 说明 |
+|------|----------|------|
+| `gemini3.1` | gemini-3.1-pro-preview | 稳定可靠 |
+| `gpt5.4` | gpt-5.4 | 推理能力强 |
+
+**禁止使用不带版本号的别名**
+
+---
+
+*更新时间：2026-03-19*

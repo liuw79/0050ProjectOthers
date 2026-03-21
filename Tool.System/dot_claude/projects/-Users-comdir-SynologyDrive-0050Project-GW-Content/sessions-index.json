@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "1a118fd7-6dc3-4434-8c6f-53342f29b74d",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/1a118fd7-6dc3-4434-8c6f-53342f29b74d.jsonl",
+      "fileMtime": 1768118008793,
+      "firstPrompt": "这个创作系统有一个小问题,就是AI有时候不会去学习阅读课程内容,另外课程内容每个文件比较长,AI可能容易读取失败.  你能否把流程或claud.md文件增加一些说明,让内容学习这个环节作为选题前的固定环节.",
+      "messageCount": 21,
+      "created": "2026-01-11T07:44:23.200Z",
+      "modified": "2026-01-11T07:53:28.775Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "aede5017-8a4a-4bd8-b9a9-fd157966063c",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/aede5017-8a4a-4bd8-b9a9-fd157966063c.jsonl",
+      "fileMtime": 1768271576729,
+      "firstPrompt": "刚才的任务是不是被打断了,请继续",
+      "messageCount": 12,
+      "created": "2026-01-13T02:22:14.959Z",
+      "modified": "2026-01-13T02:32:56.709Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "fe364162-f899-45ac-99ee-84ea043f68d3",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/fe364162-f899-45ac-99ee-84ea043f68d3.jsonl",
+      "fileMtime": 1768185387555,
+      "firstPrompt": "我想增加一个内容创作类型,你帮我加一下:就是五句话的高维课程介绍,作为班主任,主持课程开场的时候或面向客户的时候如何一门课程.  高维班主任是高维学堂一个关键角色,负责就建立与维护与创始人客户直接的关系,建立深度信任,用专业和共情,而不是靠推销和骚扰,客户企业成功导向.班主任负责招生开班,日常运营客户及企业陪跑.",
+      "messageCount": 31,
+      "created": "2026-01-12T00:54:04.603Z",
+      "modified": "2026-01-12T02:36:27.534Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "4bf46d49-8f81-4353-b72c-25f07d0debff",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/4bf46d49-8f81-4353-b72c-25f07d0debff.jsonl",
+      "fileMtime": 1768275214437,
+      "firstPrompt": "所有内容生产,最后一步生成文件的时候,文件名需要后缀 by xxx,  xxx=我所当下使用的模型名称,比如sonnet4.5,gemini3.0pro,gpt5.2等等,你帮我再优化一下生产流程",
+      "messageCount": 27,
+      "created": "2026-01-13T02:41:47.756Z",
+      "modified": "2026-01-13T03:33:34.405Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "d7258457-9b37-40c0-9f4d-7ea4c0fdcea9",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/d7258457-9b37-40c0-9f4d-7ea4c0fdcea9.jsonl",
+      "fileMtime": 1768270890008,
+      "firstPrompt": "请你增加一个雯祯版主持词的写作范式(或流程):F 高战位开场 O 证言 (有时候和s并在一起） C 核心价值 U 方法 S 生动例子 [666] 用战略设计总纲举例： F 高站位开场，定性这是一门什么课(与众不同的魅力)  例如：这是一门提升战略素养能力的课程。战略，作为企业高阶经营能力，本身不容易习得，所以这门课堪称高维学堂课程体系中的门槛标杆  O 背书  例如：这门课课程虽然难，但凭借硬核价…",
+      "messageCount": 7,
+      "created": "2026-01-13T02:04:02.003Z",
+      "modified": "2026-01-13T02:21:29.990Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "cd10cae2-3b7a-4f02-9acc-2d81c918acba",
+      "fullPath": "/Users/comdir/.claude/projects/-Users-comdir-SynologyDrive-0050Project-GW-Content/cd10cae2-3b7a-4f02-9acc-2d81c918acba.jsonl",
+      "fileMtime": 1768483687158,
+      "firstPrompt": "<ide_opened_file>The user opened the file /Users/comdir/SynologyDrive/0050Project/GW.Content/公众号写作/CLAUDE.md in the IDE. This may or may not be related to the current task.</ide_opened_file>",
+      "messageCount": 29,
+      "created": "2026-01-15T12:52:02.761Z",
+      "modified": "2026-01-15T13:28:07.138Z",
+      "gitBranch": "master",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/GW.Content",
+      "isSidechain": false
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+---
+name: publish-feishu
+description: 发布文档到飞书知识库。使用 MCP 工具直接调用，无需手动授权。
+---
+
+# 发布到飞书知识库 (publish-feishu)
+
+## 目的
+将文档发布到飞书知识库，实现知识的组织内共享。
+
+## 前置条件
+- 已配置飞书 MCP（lark-mcp）✓
+- **使用 tenant_access_token**（MCP 自动管理）
+
+---
+
+## 🚀 快速开始
+
+### 方式一：创建独立文档（推荐）
+
+直接调用 MCP 工具，一步完成：
+
+```json
+// 调用 mcp__lark-mcp__docx_builtin_import
+{
+  "data": {
+    "markdown": "# 文档标题\n\n正文内容...",
+    "file_name": "文档标题"
+  },
+  "useUAT": false
+}
+```
+
+**返回**：`{"result": {"token": "xxx", "url": "https://..."}}`
+
+### 方式二：创建到知识库目录
+
+1. 用 `docx_builtin_import` 创建文档（同上）
+2. 用 `wiki_v2_spaceNode_moveDocsToWiki` 移动到目标目录
+
+---
+
+## ⚠️ 核心规则
+
+### Token 类型选择
+
+| 场景 | useUAT | 说明 |
+|------|--------|------|
+| 创建文档 | **false** | tenant_token，自动管理 |
+| 知识库操作 | true | user_token，需授权 |
+
+**大部分情况用 `useUAT: false` 即可！**
+
+### Block 类型规则
+
+| 内容类型 | block_type | 说明 |
+|----------|------------|------|
+| 普通段落 | 2 (text) | 默认使用 |
+| 标题1/2/3 | 3/4/5 | ✅ 可用 |
+| 引用 | 15 (quote) | ✅ 可用 |
+| 列表 | 2 (text) | ❌ 禁用 12/13，用 `• ` 或 `1.` 前缀 |
+| 表格 | 2 (text) | ❌ 禁用 23，用 `│` 格式 |
+
+---
+
+## 配置信息
+
+```
+知识空间ID: 7600806729793686488
+知识库链接: https://gaowei1.feishu.cn/wiki/space/7600806729793686488
+
+目录节点Token:
+- 01_客户档案: ZqT6wcOYOiBXyYkk01Lc2wg0n5s
+- 02_访谈技术: HiwhwQppwiCssVkkt9nc7K3Wng
+- 03_方法论: ApQuw1UytiKo3Bkazt8cJdWfnSc
+- 04_客户案例: RAdZwTIjYiuWbokfFCgcty0Knnc
+- 05_高维小故事: Edyew70S1i880Ikz5R4cBTkLnkk
+- 06_持续挖掘: FaFnwadHoiSgqqkSsfJcSgPgnJ1
+- 07_组织建设: US8pwmNdHidb7akuvL2chCmVnUf
+```
+
+---
+
+## 常见错误
+
+| 错误 | 原因 | 解决方案 |
+|------|------|----------|
+| token invalid | useUAT=true 但未授权 | 改为 `useUAT: false` |
+| block_type 不支持 | 使用了 12/13/23 | 改用 text block |
+
+---
+
+## 详细文档
+
+完整规则和高级用法见项目内的 `.claude/commands/feishu-doc.md`

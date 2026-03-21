@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; background: #f5f5f5; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .score-big { font-size: 56px; font-weight: bold; color: #2c3e50; text-align: center; }
+    .score-label { text-align: center; color: #888; font-size: 14px; }
+    .summary { background: #f8f9fa; padding: 15px; border-radius: 6px; font-size: 15px; color: #444; margin-top: 15px; border-left: 3px solid #3182ce; }
+    h2 { font-size: 16px; color: #2c3e50; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+    .score-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f0f0f0; font-weight: 500;}
+    .score-detail { font-size: 13px; color: #666; padding: 6px 0 10px 10px; border-bottom: 1px solid #f0f0f0; }
+    .suggested-script { color: #2b6cb0; background: #ebf8ff; padding: 6px 10px; border-radius: 4px; display: inline-block; margin-top: 6px; line-height: 1.5; }
+    .score-row:last-child, .score-detail:last-child { border-bottom: none; }
+    .bonus-item { background: #f0fff4; padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #48bb78; }
+    .bonus-title { font-weight: bold; color: #276749; font-size: 14px; margin-bottom: 8px; }
+    .bonus-detail { font-size: 13px; color: #555; margin: 4px 0; padding-left: 10px; }
+    .feedback-item { margin-bottom: 20px; }
+    .feedback-title { font-weight: bold; color: #c53030; font-size: 15px; margin-bottom: 8px; }
+    .feedback-content { font-size: 14px; color: #444; }
+    .feedback-content p { margin: 6px 0; }
+    .suggestion { background: #ebf8ff; padding: 10px; border-radius: 4px; font-size: 13px; color: #2b6cb0; margin-top: 8px; line-height: 1.5; }
+    .ending { background: #2c3e50; color: #fff; padding: 20px; border-radius: 8px; text-align: center; font-size: 14px; margin-top: 20px; line-height: 1.6; }
+    .footer { text-align: center; font-size: 11px; color: #999; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <p>大眼，你好！</p>
+    <div class="score-label">现场主持专属复盘报告</div>
+    <div class="score-big">52<span style="font-size: 24px;">/100</span></div>
+
+    <div class="summary">
+        <strong>一句话总评：</strong>场域互动极具亲和力，破冰设计有惊喜，但在课程核心价值的传递上稍显单薄。（注：因缺少第二天课评邀约与结尾升华录音，此两项暂计0分，触发核心价值缺失硬约束，总分受限。期待下次听到你的完整版！）
+    </div>
+</div>
+
+<div class="card">
+    <h2>一、 分项评分</h2>
+
+    <div class="score-row"><span>高维介绍（30%）</span><span>22/30</span></div>
+    <div class="score-detail">
+        扣分原因：我很理解你可能是为了让开场更紧凑，主动精简了篇幅，重点强调了投资机构背书和团队共学。但作为企业成长陪跑伙伴，未点透"科学创业"的底层定义，会让初次到访的企业家觉得我们与其他商学院无异。缺少了"经验主义到科学经营"的对比。
+        <br>
+        <span class="suggested-script">建议话术：作为"科学创业"的倡导者，我们的目标是帮助大家从"依赖能人的经验主义"，进化为"有章可循的科学经营"。</span>
+    </div>
+
+    <div class="score-row"><span>产品介绍（30%）</span><span>10/30</span></div>
+    <div class="score-detail">
+        扣分原因：你巧妙地结合了"跨境行业"背景进行痛点切入，这展现了你极强的场域洞察力！但先假设你是把专业内容留给了老师发挥，这导致产品介绍完全缺失了"方法工具（漏斗模型）"和"标杆案例（南孚等）"。作为高阶场域负责人，我们需要在课前为学员植入"确定性收益"的心智锚点，否则大家可能只带着听普通营销课的预期，而非系统提升经营效率的预期。
+        <br>
+        <span class="suggested-script">建议话术：这门课将交付价值千万的"超级转化率漏斗模型"，用"下单三步骤+转化六要素"，让影响转化的每一环节都有章可循。就像南孚电池用完这套方法，转化率飙升超200%，真正把每一分流量都变成了利润。</span>
+    </div>
+
+    <div class="score-row"><span>团建破冰（5%）</span><span>5/5</span></div>
+    <div class="score-detail">
+        得分点：破冰环节设计非常亮眼！从"头发最长"到"倒数321点赞"，动作指令清晰且带有游戏感，极大地调动了现场氛围，满分表现！
+    </div>
+
+    <div class="score-row"><span>邀约课评（15%）</span><span>0/15</span></div>
+    <div class="score-detail">
+        说明：因未提供第二天结束时邀约课评的录音素材，本项暂无法评估得分。
+    </div>
+
+    <div class="score-row"><span>结尾升华（10%）</span><span>0/10</span></div>
+    <div class="score-detail">
+        说明：因未提供第二天结束时价值升华的录音素材，本项暂无法评估得分。
+    </div>
+
+    <div class="score-row"><span>口语节奏（10%）</span><span>9/10</span></div>
+    <div class="score-detail">
+        得分点：语调亲切自然，不像是"背稿"，更像是和老朋友聊天。能够自然地cue到第7组优曼的同学，体现了对场域极高的关注度。
+    </div>
+</div>
+
+<div class="card">
+    <h2>二、 高阶加分项</h2>
+
+    <div class="bonus-item">
+        <div class="bonus-title">+3分：极具创意的互动指令与场域设计</div>
+        <div class="bonus-detail">
+            超越参考文案的现场金句："从组内头发最长的那个同学开始...倒数321，我们就把赞来点给我们心中的组长。"
+            <br>
+            这套话术非常有网感且易于执行，瞬间打破了企业家之间的社交防御，是极具复用价值的闪光点。
+        </div>
+    </div>
+
+    <div class="bonus-item">
+        <div class="bonus-title">+3分：基于课前调研的定制化服务呈现</div>
+        <div class="bonus-detail">
+            超越参考文案的专业洞察："我们通过提前的课前调研...老师特地给大家增加了特别多没有印在课件上面的跨境相关的内容。"
+            <br>
+            这句话巧妙地让学员感知到了高维"实战且定制化"的伴跑价值，极大提升了特定行业学员（跨境电商）的期待值。
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>三、 AI教练建议 (Top 3)</h2>
+
+    <div class="feedback-item">
+        <div class="feedback-title">1. 产品价值的"定海神针"不可省略</div>
+        <div class="feedback-content">
+            <p><strong>深度洞察：</strong>我非常理解你为了避免"越俎代庖"，选择让老师来讲解具体专业内容。但在高客单价的商学院课堂，班主任的产品介绍不仅是"报幕"，更是"认知框架的预设"。如果不提前抛出"漏斗模型"、"南孚案例"这些强有力的信任状和具象化工具，高管们在听第一节课时，容易缺乏对"落地性"的确定感。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>作为高阶顾问，若能顺势抛出具体的方法论名称和数字级结果，能在心理上建立更强的求知欲。请务必在开场补齐【方法工具】与【生动案例】。<br>
+                <strong>建议话术：</strong>"陈勇老师不会讲虚无缥缈的概念，而是直接交付一套'超级转化率漏斗模型'，并且带着南孚充电宝如何让销量翻13倍的实战拆解，手把手教我们从流量里抠出利润。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">2. "科学创业"的翻译官</div>
+        <div class="feedback-content">
+            <p><strong>深度洞察：</strong>你在串场时提到了投资机构背书和团队学习的好处，这点做得很好，充分照顾了现场学员的安全感。但稍显遗憾的是，你没有把"科学创业"这四个字的魂讲透。对于初创企业老板来说，他们最大的痛点就是"凭感觉做决策"。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>不要只把"科学创业"当成一句口号滑过去，而是要作为一种"经营理念的升级"来传递。点出"经验主义"的痛，才能显出"科学"的贵。<br>
+                <strong>建议话术：</strong>"为什么我们要叫科学创业？因为我们发现多数企业的卡点，在于老板靠直觉打仗，员工靠经验干活。在高维，我们要把这些隐性的经验，变成一套全员通用的、有章可循的科学方法论。"
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-item">
+        <div class="feedback-title">3. 晚间加餐（辅导环节）的势能前置</div>
+        <div class="feedback-content">
+            <p><strong>深度洞察：</strong>你在选组长时，巧妙地将"组长抢答计分"和"晚上详情页点评"绑定在了一起，这个设计非常棒！但目前的表达略显"游戏化"。如果能从HRBP解决企业实际问题的视角出发，把晚间点评包装成"高价值的企业微咨询"，组长的抢分动力会呈指数级上升。</p>
+            <div class="suggestion">
+                <strong>优化建议：</strong>作为企业成长陪跑伙伴，若能顺势抛出老师外部咨询的高昂价值，能在心理上为学员建立更强的"薅羊毛"期待，让场域热度彻底点燃。<br>
+                <strong>建议话术：</strong>"班班在这里透露一个秘密，陈勇老师平时的企业内训咨询费是非常高昂的，而今晚积分前三名的小组，将直接获得老师针对你们公司真实详情页的1对1拆解。这几分钟的点评，可能直接为您企业省下几十万的试错成本！所以组长们，今天请务必准备好你们的双手！"
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ending">
+    大眼，整场听下来，我能强烈感受到你对学员那份真诚的关注，你的场域破冰能力和灵动的应变力是你极大的天赋优势。我们现在要做的，只是在这个充满温度的场域里，再植入两根理性的"骨头"——把品牌的底层共识和课程的核心抓手钉得更深一点。继续保持你的亲和力，期待在下一次完整的现场复盘中，听到你更加游刃有余的呈现！加油！
+</div>
+
+<div class="footer">
+    Generated by Gaowei AI Coach System | Version: V6 专业洞察+温度称呼版
+</div>
+
+</body>
+</html>

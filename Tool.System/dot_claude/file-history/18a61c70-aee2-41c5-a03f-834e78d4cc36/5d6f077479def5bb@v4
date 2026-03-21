@@ -1,0 +1,203 @@
+# Network Diagnostic Script - Diagnose "WeChat works but browser cannot open web pages"
+# Usage: Run PowerShell as Administrator, then execute this script
+
+Write-Host "========== Network Diagnostic Script ==========" -ForegroundColor Cyan
+Write-Host ""
+
+# Check admin privileges
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) {
+    Write-Host "[Warning] Not running as Administrator. Some diagnostics may be incomplete." -ForegroundColor Yellow
+    Write-Host "Suggestion: Right-click PowerShell - Run as Administrator" -ForegroundColor Yellow
+    Write-Host ""
+}
+
+# ========== 1. Basic Network Connectivity Test ==========
+Write-Host "[1] Basic Network Connectivity Test" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$pingTargets = @("8.8.8.8", "223.5.5.5", "www.baidu.com", "www.qq.com")
+foreach ($target in $pingTargets) {
+    $result = Test-Connection -ComputerName $target -Count 2 -Quiet -ErrorAction SilentlyContinue
+    if ($result) {
+        Write-Host "  Ping $target : [OK] Success" -ForegroundColor Green
+    } else {
+        Write-Host "  Ping $target : [X] Failed" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# ========== 2. DNS Resolution Test ==========
+Write-Host "[2] DNS Resolution Test" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$dnsDomains = @("www.baidu.com", "www.qq.com", "www.taobao.com")
+foreach ($domain in $dnsDomains) {
+    try {
+        $ips = [System.Net.Dns]::GetHostAddresses($domain)
+        Write-Host "  $domain -> $($ips[0].IPAddressToString)" -ForegroundColor Green
+    } catch {
+        Write-Host "  $domain -> Resolution Failed" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# Current DNS Servers
+Write-Host "  Current DNS Servers:" -ForegroundColor Cyan
+Get-DnsClientServerAddress -AddressFamily IPv4 | Where-Object { $_.ServerAddresses } |
+    Select-Object -First 5 | ForEach-Object {
+        Write-Host "    $($_.InterfaceAlias): $($_.ServerAddresses -join ', ')"
+    }
+Write-Host ""
+
+# ========== 3. Proxy Settings Check ==========
+Write-Host "[3] Proxy Settings Check" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$proxy = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -ErrorAction SilentlyContinue
+if ($proxy.ProxyEnable -eq 1) {
+    Write-Host "  System Proxy: ENABLED" -ForegroundColor Yellow
+    Write-Host "  Proxy Address: $($proxy.ProxyServer)" -ForegroundColor Yellow
+    Write-Host "  [!] Suggestion: Disable proxy if not in use" -ForegroundColor Red
+} else {
+    Write-Host "  System Proxy: Disabled" -ForegroundColor Green
+}
+
+$autoDetect = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" -ErrorAction SilentlyContinue
+if ($autoDetect.DefaultConnectionSettings[8] -band 0x08) {
+    Write-Host "  Auto-detect Settings: Enabled" -ForegroundColor Green
+} else {
+    Write-Host "  Auto-detect Settings: Disabled" -ForegroundColor Yellow
+}
+Write-Host ""
+
+# ========== 4. Network Adapter Status ==========
+Write-Host "[4] Network Adapter Status" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+Get-NetAdapter | Where-Object { $_.Status -eq "Up" } | ForEach-Object {
+    Write-Host "  $($_.Name): $($_.Status)" -ForegroundColor Green
+    $ip = Get-NetIPAddress -InterfaceAlias $_.Name -AddressFamily IPv4 -ErrorAction SilentlyContinue
+    if ($ip) {
+        Write-Host "    IP: $($ip.IPAddress)"
+        $gateway = Get-NetRoute -InterfaceAlias $_.Name -DestinationPrefix 0.0.0.0/0 -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty NextHop
+        if ($gateway) {
+            Write-Host "    Gateway: $gateway"
+        }
+    }
+}
+Write-Host ""
+
+# ========== 5. Firewall Status ==========
+Write-Host "[5] Firewall Status" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+Get-NetFirewallProfile | Select-Object Name, Enabled | ForEach-Object {
+    if ($_.Enabled) {
+        Write-Host "  $($_.Name): Enabled" -ForegroundColor Yellow
+    } else {
+        Write-Host "  $($_.Name): Disabled" -ForegroundColor Green
+    }
+}
+Write-Host ""
+
+# ========== 6. System Time Check ==========
+Write-Host "[6] System Time Check" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$currentTime = Get-Date
+Write-Host "  Local Time: $currentTime"
+
+try {
+    $tcpClient = New-Object System.Net.Sockets.TcpClient("time.windows.com", 37)
+    $stream = $tcpClient.GetStream()
+    $buffer = New-Object byte[] 4
+    $stream.Read($buffer, 0, 4) | Out-Null
+    $seconds = [BitConverter]::ToUInt32($buffer, 0)
+    $ntpTime = [DateTime]::new(1900, 1, 1).AddSeconds($seconds)
+    $tcpClient.Close()
+    $diff = ($currentTime - $ntpTime).TotalMinutes
+    if ([Math]::Abs($diff) -gt 5) {
+        Write-Host "  Time Offset: $([Math]::Round($diff, 1)) minutes" -ForegroundColor Red
+        Write-Host "  [!] Suggestion: Sync system time (run: w32tm /resync)" -ForegroundColor Red
+    } else {
+        Write-Host "  Time Offset: $([Math]::Round($diff, 1)) minutes (Normal)" -ForegroundColor Green
+    }
+} catch {
+    Write-Host "  Cannot reach NTP server for time comparison" -ForegroundColor Yellow
+}
+Write-Host ""
+
+# ========== 7. HTTP/HTTPS Connectivity Test ==========
+Write-Host "[7] HTTP/HTTPS Connectivity Test" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$urls = @("http://www.baidu.com", "https://www.baidu.com", "http://www.qq.com", "https://www.qq.com")
+foreach ($url in $urls) {
+    try {
+        $response = Invoke-WebRequest -Uri $url -TimeoutSec 5 -UseBasicParsing -ErrorAction Stop
+        Write-Host "  $url -> Status $($response.StatusCode)" -ForegroundColor Green
+    } catch {
+        Write-Host "  $url -> FAILED" -ForegroundColor Red
+    }
+}
+Write-Host ""
+
+# ========== 8. Hosts File Check ==========
+Write-Host "[8] Hosts File Custom Entries" -ForegroundColor Green
+Write-Host "--------------------------------"
+
+$hostsPath = "$env:SystemRoot\System32\drivers\etc\hosts"
+$hostsContent = Get-Content $hostsPath -ErrorAction SilentlyContinue | Where-Object {
+    $_ -notmatch "^\s*#" -and $_ -match "\S"
+}
+if ($hostsContent) {
+    Write-Host "  Found custom entries:" -ForegroundColor Yellow
+    $hostsContent | ForEach-Object { Write-Host "    $_" -ForegroundColor Yellow }
+} else {
+    Write-Host "  No custom entries in Hosts file" -ForegroundColor Green
+}
+Write-Host ""
+
+# ========== Summary ==========
+Write-Host "========== Diagnosis Complete ==========" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Common Solutions:" -ForegroundColor Yellow
+Write-Host "1. DNS Issue: netsh interface ip set dns `"Ethernet`" static 223.5.5.5"
+Write-Host "2. Reset Proxy: Settings -> Network -> Proxy -> Turn off all proxies"
+Write-Host "3. Reset Winsock: netsh winsock reset"
+Write-Host "4. Flush DNS: ipconfig /flushdns"
+Write-Host "5. Sync Time: w32tm /resync"
+Write-Host ""
+
+# Ask to run auto-fix
+if ($isAdmin) {
+    $fix = Read-Host "Run auto-fix? (y/n)"
+    if ($fix -eq "y") {
+        Write-Host ""
+        Write-Host "Running fixes..." -ForegroundColor Cyan
+
+        Write-Host "  Flushing DNS cache..." -NoNewline
+        ipconfig /flushdns | Out-Null
+        Write-Host " Done" -ForegroundColor Green
+
+        Write-Host "  Resetting Winsock..." -NoNewline
+        netsh winsock reset | Out-Null
+        Write-Host " Done" -ForegroundColor Green
+
+        Write-Host "  Resetting IP stack..." -NoNewline
+        netsh int ip reset | Out-Null
+        Write-Host " Done" -ForegroundColor Green
+
+        Write-Host "  Clearing ARP cache..." -NoNewline
+        netsh interface ip delete arpcache | Out-Null
+        Write-Host " Done" -ForegroundColor Green
+
+        Write-Host ""
+        Write-Host "Fix complete! Please restart your computer." -ForegroundColor Green
+    }
+}
+
+Write-Host ""
+Write-Host "Press any key to exit..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

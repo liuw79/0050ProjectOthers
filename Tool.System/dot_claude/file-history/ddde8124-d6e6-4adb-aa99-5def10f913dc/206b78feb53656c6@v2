@@ -1,0 +1,49 @@
+# Progress - GW.Content
+
+> **规则：** 本文件仅记录最新有效信息。如有版本迭代，只保留最新版本，删除旧版本以避免上下文混乱。
+
+---
+
+## 飞书文档发布 - 完成记录
+
+**日期**: 2026-03-19
+**状态**: ✅ 完成
+
+### 交付物
+
+| 文件 | 说明 |
+|------|------|
+| `五句话介绍/skill-coach/publish-feishu.js` | 飞书发布脚本 |
+| `五句话介绍/skill-coach/coach.js` | +--feishu/--share 参数 |
+| `.claude/commands/feishu-doc.md` | +添加协作者操作说明 |
+
+### 使用方法
+
+```bash
+# 评估 + 发布飞书
+node coach.js --course "xxx" --teacher "xxx" --date "xxx" --feishu
+
+# 仅发布
+node publish-feishu.js --file "报告.md" --title "标题"
+```
+
+### 测试结果
+
+✅ 发布成功: https://gaowei1.feishu.cn/docx/HPPHdIIpoo1E2bxugUMcUT5tnwe
+
+### 已知限制
+
+- 协作者权限需手动添加
+
+---
+
+## 多模型 API（必须带版本号）
+
+| 别名 | 实际模型 |
+|------|----------|
+| `gemini3.1` | gemini-3.1-pro-preview |
+| `gpt5.4` | gpt-5.4 |
+
+---
+
+*更新时间：2026-03-19*

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒模型演示 - 可视化学习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        /* 盒模型可视化演示 */
+        .box-model-demo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+
+        .box-model-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .margin-box {
+            background: rgba(255, 193, 7, 0.3);
+            border: 2px dashed #ffc107;
+            padding: 30px;
+            position: relative;
+        }
+
+        .border-box {
+            background: rgba(220, 53, 69, 0.3);
+            border: 8px solid #dc3545;
+            padding: 25px;
+            position: relative;
+        }
+
+        .padding-box {
+            background: rgba(40, 167, 69, 0.3);
+            border: 2px dashed #28a745;
+            padding: 20px;
+            position: relative;
+        }
+
+        .content-box {
+            background: rgba(0, 123, 255, 0.8);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 8px;
+        }
+
+        .label {
+            position: absolute;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .margin-label {
+            top: -15px;
+            left: -15px;
+            background: #ffc107;
+            color: #000;
+        }
+
+        .border-label {
+            top: -15px;
+            right: -15px;
+            background: #dc3545;
+        }
+
+        .padding-label {
+            bottom: -15px;
+            left: -15px;
+            background: #28a745;
+        }
+
+        .content-label {
+            bottom: -15px;
+            right: -15px;
+            background: #007bff;
+        }
+
+        /* 交互式控制面板 */
+        .control-panel {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .control-group {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-group h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .slider-container {
+            margin-bottom: 15px;
+        }
+
+        .slider-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007bff;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007bff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .value-display {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* 演示盒子 */
+        .demo-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 代码示例 */
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-example::before {
+            content: 'CSS';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #4299e1;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+
+        /* 对比演示 */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .comparison-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .comparison-item h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .box-sizing-demo {
+            width: 200px;
+            height: 100px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .content-box-demo {
+            box-sizing: content-box;
+            padding: 20px;
+            border: 5px solid #e74c3c;
+        }
+
+        .border-box-demo {
+            box-sizing: border-box;
+            padding: 20px;
+            border: 5px solid #e74c3c;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* 重点提示 */
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .highlight p {
+            color: #856404;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📦 CSS盒模型演示</h1>
+            <p>可视化学习CSS盒模型的组成和工作原理</p>
+        </div>
+
+        <div class="content">
+            <!-- 盒模型基础概念 -->
+            <div class="section">
+                <h2 class="section-title">🎯 什么是盒模型？</h2>
+                <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+                    CSS盒模型是网页布局的基础概念。每个HTML元素都可以看作一个矩形的盒子，这个盒子由四个部分组成：
+                    <strong>内容(Content)</strong>、<strong>内边距(Padding)</strong>、<strong>边框(Border)</strong>和<strong>外边距(Margin)</strong>。
+                </p>
+                
+                <!-- 可视化盒模型 -->
+                <div class="box-model-demo">
+                    <div class="box-model-container">
+                        <div class="margin-box">
+                            <div class="label margin-label">Margin 外边距</div>
+                            <div class="border-box">
+                                <div class="label border-label">Border 边框</div>
+                                <div class="padding-box">
+                                    <div class="label padding-label">Padding 内边距</div>
+                                    <div class="content-box">
+                                        <div class="label content-label">Content 内容</div>
+                                        这里是内容区域<br>
+                                        文字和其他元素
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交互式演示 -->
+            <div class="section">
+                <h2 class="section-title">🎮 交互式盒模型调整</h2>
+                <p style="margin-bottom: 20px;">拖动下面的滑块，实时观察盒模型各部分的变化：</p>
+                
+                <div class="control-panel">
+                    <div class="controls">
+                        <div class="control-group">
+                            <h4>📏 内容尺寸</h4>
+                            <div class="slider-container">
+                                <label>宽度: <span class="value-display" id="widthValue">200px</span></label>
+                                <input type="range" class="slider" id="widthSlider" min="100" max="300" value="200">
+                            </div>
+                            <div class="slider-container">
+                                <label>高度: <span class="value-display" id="heightValue">100px</span></label>
+                                <input type="range" class="slider" id="heightSlider" min="50" max="150" value="100">
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <h4>📦 内边距 (Padding)</h4>
+                            <div class="slider-container">
+                                <label>上下: <span class="value-display" id="paddingYValue">20px</span></label>
+                                <input type="range" class="slider" id="paddingYSlider" min="0" max="50" value="20">
+                            </div>
+                            <div class="slider-container">
+                                <label>左右: <span class="value-display" id="paddingXValue">20px</span></label>
+                                <input type="range" class="slider" id="paddingXSlider" min="0" max="50" value="20">
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <h4>🔲 边框 (Border)</h4>
+                            <div class="slider-container">
+                                <label>宽度: <span class="value-display" id="borderValue">2px</span></label>
+                                <input type="range" class="slider" id="borderSlider" min="0" max="20" value="2">
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <h4>🌌 外边距 (Margin)</h4>
+                            <div class="slider-container">
+                                <label>上下: <span class="value-display" id="marginYValue">20px</span></label>
+                                <input type="range" class="slider" id="marginYSlider" min="0" max="50" value="20">
+                            </div>
+                            <div class="slider-container">
+                                <label>左右: <span class="value-display" id="marginXValue">20px</span></label>
+                                <input type="range" class="slider" id="marginXSlider" min="0" max="50" value="20">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-box" id="demoBox">
+                        演示盒子
+                    </div>
+                    
+                    <div class="code-example" id="codeDisplay">
+.demo-box {
+    width: 200px;
+    height: 100px;
+    padding: 20px 20px;
+    border: 2px solid #e74c3c;
+    margin: 20px 20px;
+}
+                    </div>
+                </div>
+            </div>
+
+            <!-- box-sizing 对比 -->
+            <div class="section">
+                <h2 class="section-title">⚖️ box-sizing 属性对比</h2>
+                <p style="margin-bottom: 20px;">box-sizing属性决定了元素的总宽度和高度如何计算：</p>
+                
+                <div class="comparison">
+                    <div class="comparison-item">
+                        <h4>content-box (默认)</h4>
+                        <p style="margin-bottom: 15px;">宽度 = 内容宽度<br>总宽度 = 内容 + 内边距 + 边框</p>
+                        <div class="box-sizing-demo content-box-demo">
+                            总宽度: 250px
+                        </div>
+                        <div class="code-example">
+width: 200px;
+padding: 20px;
+border: 5px solid #e74c3c;
+box-sizing: content-box;
+/* 总宽度 = 200 + 40 + 10 = 250px */
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <h4>border-box (推荐)</h4>
+                        <p style="margin-bottom: 15px;">宽度 = 总宽度<br>内容宽度 = 总宽度 - 内边距 - 边框</p>
+                        <div class="box-sizing-demo border-box-demo">
+                            总宽度: 200px
+                        </div>
+                        <div class="code-example">
+width: 200px;
+padding: 20px;
+border: 5px solid #e74c3c;
+box-sizing: border-box;
+/* 总宽度 = 200px */
+/* 内容宽度 = 200 - 40 - 10 = 150px */
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实用技巧 -->
+            <div class="section">
+                <h2 class="section-title">💡 实用技巧和最佳实践</h2>
+                
+                <div class="highlight">
+                    <h4>🌟 推荐的全局设置</h4>
+                    <p>在CSS开头添加这段代码，让所有元素使用border-box模型，布局更直观：</p>
+                </div>
+                
+                <div class="code-example">
+* {
+    box-sizing: border-box;
+}
+
+/* 或者更精确的设置 */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+                </div>
+                
+                <div class="highlight">
+                    <h4>🎯 常见应用场景</h4>
+                    <p>
+                        • <strong>响应式布局</strong>：使用百分比宽度时，border-box让计算更简单<br>
+                        • <strong>表单设计</strong>：输入框的padding不会影响总宽度<br>
+                        • <strong>卡片布局</strong>：确保所有卡片尺寸一致<br>
+                        • <strong>网格系统</strong>：避免因padding导致的换行问题
+                    </p>
+                </div>
+            </div>
+
+            <!-- 调试技巧 -->
+            <div class="section">
+                <h2 class="section-title">🔍 盒模型调试技巧</h2>
+                <p style="margin-bottom: 20px;">在开发中遇到布局问题时，这些技巧能帮你快速定位问题：</p>
+                
+                <div class="code-example">
+/* 临时添加边框，可视化所有元素的盒模型 */
+* {
+    border: 1px solid red !important;
+}
+
+/* 或者使用outline，不影响布局 */
+* {
+    outline: 1px solid red !important;
+}
+
+/* 使用背景色区分不同区域 */
+.debug {
+    background: rgba(255, 0, 0, 0.1); /* 浅红色背景 */
+}
+                </div>
+                
+                <div class="highlight">
+                    <h4>🛠️ 浏览器开发者工具</h4>
+                    <p>
+                        按F12打开开发者工具，选择Elements面板，点击任意元素，在右侧的Styles面板下方可以看到盒模型的可视化图表，
+                        显示了margin、border、padding和content的具体数值。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取所有控制元素
+        const widthSlider = document.getElementById('widthSlider');
+        const heightSlider = document.getElementById('heightSlider');
+        const paddingYSlider = document.getElementById('paddingYSlider');
+        const paddingXSlider = document.getElementById('paddingXSlider');
+        const borderSlider = document.getElementById('borderSlider');
+        const marginYSlider = document.getElementById('marginYSlider');
+        const marginXSlider = document.getElementById('marginXSlider');
+        
+        const widthValue = document.getElementById('widthValue');
+        const heightValue = document.getElementById('heightValue');
+        const paddingYValue = document.getElementById('paddingYValue');
+        const paddingXValue = document.getElementById('paddingXValue');
+        const borderValue = document.getElementById('borderValue');
+        const marginYValue = document.getElementById('marginYValue');
+        const marginXValue = document.getElementById('marginXValue');
+        
+        const demoBox = document.getElementById('demoBox');
+        const codeDisplay = document.getElementById('codeDisplay');
+        
+        // 更新盒模型样式和代码显示
+        function updateBoxModel() {
+            const width = widthSlider.value;
+            const height = heightSlider.value;
+            const paddingY = paddingYSlider.value;
+            const paddingX = paddingXSlider.value;
+            const border = borderSlider.value;
+            const marginY = marginYSlider.value;
+            const marginX = marginXSlider.value;
+            
+            // 更新显示值
+            widthValue.textContent = width + 'px';
+            heightValue.textContent = height + 'px';
+            paddingYValue.textContent = paddingY + 'px';
+            paddingXValue.textContent = paddingX + 'px';
+            borderValue.textContent = border + 'px';
+            marginYValue.textContent = marginY + 'px';
+            marginXValue.textContent = marginX + 'px';
+            
+            // 应用样式到演示盒子
+            demoBox.style.width = width + 'px';
+            demoBox.style.height = height + 'px';
+            demoBox.style.padding = paddingY + 'px ' + paddingX + 'px';
+            demoBox.style.border = border + 'px solid #e74c3c';
+            demoBox.style.margin = marginY + 'px ' + marginX + 'px';
+            
+            // 更新代码显示
+            codeDisplay.textContent = `.demo-box {
+    width: ${width}px;
+    height: ${height}px;
+    padding: ${paddingY}px ${paddingX}px;
+    border: ${border}px solid #e74c3c;
+    margin: ${marginY}px ${marginX}px;
+}`;
+        }
+        
+        // 绑定事件监听器
+        widthSlider.addEventListener('input', updateBoxModel);
+        heightSlider.addEventListener('input', updateBoxModel);
+        paddingYSlider.addEventListener('input', updateBoxModel);
+        paddingXSlider.addEventListener('input', updateBoxModel);
+        borderSlider.addEventListener('input', updateBoxModel);
+        marginYSlider.addEventListener('input', updateBoxModel);
+        marginXSlider.addEventListener('input', updateBoxModel);
+        
+        // 初始化
+        updateBoxModel();
+        
+        // 添加一些交互效果
+        demoBox.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+        });
+        
+        demoBox.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

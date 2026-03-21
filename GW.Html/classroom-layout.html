@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精确教室布局设计 - 基于手绘图优化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .layout-section {
+            margin-bottom: 50px;
+        }
+
+        .layout-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+        }
+
+        .layout-title::before {
+            content: "📐";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .classroom-container {
+            position: relative;
+            margin: 30px auto;
+            border: 3px solid #2c3e50;
+            background: #f8f9fa;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 横向布局 - 精确尺寸 7.3m×12m */
+        .horizontal-layout {
+            width: 600px; /* 12m × 50 = 600px */
+            height: 365px; /* 7.3m × 50 = 365px */
+        }
+
+        /* 屏幕样式 - 位于顶部墙面 */
+        .screen {
+            position: absolute;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border: 2px solid #1a252f;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* 屏幕配置 - 根据实际尺寸调整 */
+        .horizontal-screen {
+            width: 200px;   /* 4m × 50 = 200px */
+            height: 10px;   /* 0.2m × 50 = 10px */
+            top: 5px;       /* 距离顶部0.1m */
+        }
+
+        .screen-1 { left: 200px; }  /* 居中放置屏幕 */
+
+        /* 桌子样式 */
+        .table {
+            position: absolute;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            border: 2px solid #d68910;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        /* 桌子尺寸 - 根据实际规格 */
+        .horizontal-table {
+            width: 300px;   /* 6m × 50 = 300px (5张桌子拼接) */
+            height: 20px;   /* 0.4m × 50 = 20px */
+        }
+
+        /* 5个桌组 - 精确定位 (7.3m×12m教室) */
+        .row1-table1 { top: 115px; left: 150px; }  /* 第1组：距离屏幕2m，居中 */
+        .row2-table1 { top: 165px; left: 150px; }  /* 第2组：组间距1m */
+        .row3-table1 { top: 215px; left: 150px; }  /* 第3组：组间距1m */
+        .row4-table1 { top: 265px; left: 150px; }  /* 第4组：组间距1m */
+        .row5-table1 { top: 315px; left: 150px; }  /* 第5组：距离后墙1.5m */
+
+        /* 椅子样式 */
+        .chair {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #3498db;
+            border: 1px solid #2980b9;
+            border-radius: 50%;
+        }
+
+        /* 尺寸标注样式 */
+        .dimension {
+            position: absolute;
+            font-size: 10px;
+            color: #e74c3c;
+            font-weight: bold;
+            background: rgba(255,255,255,0.9);
+            padding: 2px 4px;
+            border-radius: 3px;
+            border: 1px solid #e74c3c;
+        }
+
+        /* 距离标注 */
+        .distance-label {
+            position: absolute;
+            font-size: 9px;
+            color: #27ae60;
+            font-weight: bold;
+            background: rgba(255,255,255,0.9);
+            padding: 1px 3px;
+            border-radius: 2px;
+            border: 1px solid #27ae60;
+        }
+
+        /* 规格参数样式 */
+        .specs {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .specs h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .specs li {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px dotted #bdc3c7;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .specs li:last-child {
+            border-bottom: none;
+        }
+
+        .specs .label {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .specs .value {
+            color: #2c3e50;
+        }
+
+        /* 计算结果样式 */
+        .calculation {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .calculation h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        /* 图例样式 */
+        .legend {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .legend h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+            border: 1px solid #bdc3c7;
+        }
+
+        .screen-color { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        .table-color { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .chair-color { background: #3498db; }
+        .dimension-color { background: #e74c3c; }
+        .distance-color { background: #27ae60; }
+
+        /* 响应式设计 */
+        @media (max-width: 1500px) {
+            .horizontal-layout {
+                transform: scale(0.8);
+                transform-origin: top left;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .horizontal-layout {
+                transform: scale(0.6);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .horizontal-layout {
+                transform: scale(0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏫 精确教室布局设计 - 基于手绘图优化</h1>
+            <p>7.3m × 12m 教室空间 | 1:50 精确比例 | 详细距离计算</p>
+        </div>
+
+        <div class="content">
+            <!-- 横向布局 -->
+            <div class="layout-section">
+                <h2 class="layout-title">横向布局方案 - 基于手绘图精确还原</h2>
+                
+                <div class="classroom-container horizontal-layout">
+                    <!-- 屏幕配置 -->
+                    <div class="screen horizontal-screen screen-1">教学屏幕</div>
+                    
+                    <!-- 5个桌组 (每组8人) -->
+                    <div class="table horizontal-table row1-table1">第1组 (8人)</div>
+                    <div class="table horizontal-table row2-table1">第2组 (8人)</div>
+                    <div class="table horizontal-table row3-table1">第3组 (8人)</div>
+                    <div class="table horizontal-table row4-table1">第4组 (8人)</div>
+                    <div class="table horizontal-table row5-table1">第5组 (8人)</div>
+                    
+                    <!-- 椅子配置 - 每组两侧坐人 -->
+                     <!-- 第1组椅子 (桌子两侧各4把) -->
+                     <div class="chair" style="top: 110px; left: 145px;"></div>
+                     <div class="chair" style="top: 110px; left: 220px;"></div>
+                     <div class="chair" style="top: 110px; left: 295px;"></div>
+                     <div class="chair" style="top: 110px; left: 370px;"></div>
+                     <div class="chair" style="top: 125px; left: 145px;"></div>
+                     <div class="chair" style="top: 125px; left: 220px;"></div>
+                     <div class="chair" style="top: 125px; left: 295px;"></div>
+                     <div class="chair" style="top: 125px; left: 370px;"></div>
+                     
+                     <!-- 第2组椅子 -->
+                     <div class="chair" style="top: 160px; left: 145px;"></div>
+                     <div class="chair" style="top: 160px; left: 220px;"></div>
+                     <div class="chair" style="top: 160px; left: 295px;"></div>
+                     <div class="chair" style="top: 160px; left: 370px;"></div>
+                     <div class="chair" style="top: 175px; left: 145px;"></div>
+                     <div class="chair" style="top: 175px; left: 220px;"></div>
+                     <div class="chair" style="top: 175px; left: 295px;"></div>
+                     <div class="chair" style="top: 175px; left: 370px;"></div>
+                     
+                     <!-- 第3组椅子 -->
+                     <div class="chair" style="top: 210px; left: 145px;"></div>
+                     <div class="chair" style="top: 210px; left: 220px;"></div>
+                     <div class="chair" style="top: 210px; left: 295px;"></div>
+                     <div class="chair" style="top: 210px; left: 370px;"></div>
+                     <div class="chair" style="top: 225px; left: 145px;"></div>
+                     <div class="chair" style="top: 225px; left: 220px;"></div>
+                     <div class="chair" style="top: 225px; left: 295px;"></div>
+                     <div class="chair" style="top: 225px; left: 370px;"></div>
+                     
+                     <!-- 第4组椅子 -->
+                     <div class="chair" style="top: 260px; left: 145px;"></div>
+                     <div class="chair" style="top: 260px; left: 220px;"></div>
+                     <div class="chair" style="top: 260px; left: 295px;"></div>
+                     <div class="chair" style="top: 260px; left: 370px;"></div>
+                     <div class="chair" style="top: 275px; left: 145px;"></div>
+                     <div class="chair" style="top: 275px; left: 220px;"></div>
+                     <div class="chair" style="top: 275px; left: 295px;"></div>
+                     <div class="chair" style="top: 275px; left: 370px;"></div>
+                     
+                     <!-- 第5组椅子 -->
+                     <div class="chair" style="top: 310px; left: 145px;"></div>
+                     <div class="chair" style="top: 310px; left: 220px;"></div>
+                     <div class="chair" style="top: 310px; left: 295px;"></div>
+                     <div class="chair" style="top: 310px; left: 370px;"></div>
+                     <div class="chair" style="top: 325px; left: 145px;"></div>
+                     <div class="chair" style="top: 325px; left: 220px;"></div>
+                     <div class="chair" style="top: 325px; left: 295px;"></div>
+                     <div class="chair" style="top: 325px; left: 370px;"></div>
+                    
+                    <!-- 尺寸标注 -->
+                    <div class="dimension" style="top: 100px; left: 300px;">6m×0.4m</div>
+                    
+                    <!-- 距离标注 -->
+                    <div class="distance-label" style="top: 90px; left: 300px;">2m</div>    <!-- 第一组与屏幕距离 -->
+                    <div class="distance-label" style="top: 150px; left: 300px;">1m</div>    <!-- 组间距 -->
+                    <div class="distance-label" style="top: 115px; left: 120px;">1m</div>    <!-- 左边距 -->
+                    <div class="distance-label" style="top: 115px; left: 480px;">1m</div>    <!-- 右边距 -->
+                    <div class="distance-label" style="top: 340px; left: 300px;">1.5m</div>  <!-- 后边距 -->
+                </div>
+                
+                <div class="calculation">
+                    <h3>📏 精确距离计算结果</h3>
+                    <ul>
+                        <li><span class="label">第一组与屏幕距离：</span><span class="value">2m</span></li>
+                        <li><span class="label">桌组间纵向距离：</span><span class="value">1m</span></li>
+                        <li><span class="label">桌组与左墙距离：</span><span class="value">1m</span></li>
+                        <li><span class="label">桌组与右墙距离：</span><span class="value">1m</span></li>
+                        <li><span class="label">第五组与后墙距离：</span><span class="value">1.5m</span></li>
+                        <li><span class="label">单个桌组尺寸：</span><span class="value">6m×0.4m (5张桌子拼接)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="specs">
+                    <h3>📊 横向布局规格参数</h3>
+                    <ul>
+                        <li><span class="label">教室总尺寸：</span><span class="value">7.3m × 12m (87.6㎡)</span></li>
+                        <li><span class="label">桌组数量：</span><span class="value">5组</span></li>
+                        <li><span class="label">每组桌子：</span><span class="value">5张 (1.2m×0.4m拼接成6m×0.4m)</span></li>
+                        <li><span class="label">每组坐人：</span><span class="value">8人 (两侧各4人)</span></li>
+                        <li><span class="label">总容纳人数：</span><span class="value">40人</span></li>
+                        <li><span class="label">屏幕配置：</span><span class="value">1块教学屏幕</span></li>
+                        <li><span class="label">有效桌面面积：</span><span class="value">12㎡ (5组 × 2.4㎡)</span></li>
+                        <li><span class="label">人均桌面面积：</span><span class="value">0.3㎡/人</span></li>
+                        <li><span class="label">空间利用率：</span><span class="value">86.3%</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 图例说明 -->
+            <div class="legend">
+                <h4>🎨 图例说明</h4>
+                <div class="legend-item">
+                    <div class="legend-color screen-color"></div>
+                    <span>屏幕 (深灰色，4块5m×0.4m屏幕)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color table-color"></div>
+                    <span>桌子 (橙色，2m×2m正方形桌，标注编号)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color chair-color"></div>
+                    <span>椅子 (蓝色圆点，每桌12个，四面坐人)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color dimension-color"></div>
+                    <span>尺寸标注 (红色，桌子尺寸)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color distance-color"></div>
+                    <span>距离标注 (绿色，各种间距)</span>
+                </div>
+            </div>
+
+            <!-- 空间分析 -->
+            <div class="layout-section">
+                <h2 class="layout-title">🧮 详细空间分析</h2>
+                
+                <div class="specs">
+                    <h3>空间分配明细</h3>
+                    <ul>
+                        <li><span class="label">教室总面积：</span><span class="value">7.3m × 12m = 87.6㎡</span></li>
+                        <li><span class="label">桌子占用面积：</span><span class="value">5组 × 2.4㎡ = 12㎡</span></li>
+                        <li><span class="label">前部空间：</span><span class="value">12m × 2m = 24㎡</span></li>
+                        <li><span class="label">后部空间：</span><span class="value">12m × 1.5m = 18㎡</span></li>
+                        <li><span class="label">左右通道：</span><span class="value">2 × (1m × 7.3m) = 14.6㎡</span></li>
+                        <li><span class="label">组间通道：</span><span class="value">4 × (12m × 1m) = 48㎡</span></li>
+                        <li><span class="label">有效利用面积：</span><span class="value">87.6㎡ - 12㎡ = 75.6㎡ (通道活动空间)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="calculation">
+                    <h3>设计优势分析</h3>
+                    <ul>
+                        <li><span class="label">标准容量设计：</span><span class="value">40人容量，适合标准班级教学</span></li>
+                        <li><span class="label">长桌设计：</span><span class="value">6m长桌便于小组协作和讨论</span></li>
+                        <li><span class="label">合理间距：</span><span class="value">1m组间距确保通行便利</span></li>
+                        <li><span class="label">视线良好：</span><span class="value">横向布局确保所有学生面向屏幕</span></li>
+                        <li><span class="label">灵活布局：</span><span class="value">长桌便于重新组合和调整</span></li>
+                        <li><span class="label">安全疏散：</span><span class="value">左右通道利于紧急疏散</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 使用建议 -->
+            <div class="layout-section">
+                <h2 class="layout-title">💡 使用建议</h2>
+                
+                <div class="specs">
+                    <h3>适用场景</h3>
+                    <ul>
+                        <li><span class="label">标准教学：</span><span class="value">40人容量适合标准班级授课</span></li>
+                        <li><span class="label">小组讨论：</span><span class="value">长桌便于8人小组讨论</span></li>
+                        <li><span class="label">考试安排：</span><span class="value">合理间距确保考试公平性</span></li>
+                        <li><span class="label">多媒体教学：</span><span class="value">单屏配置适合标准教学内容</span></li>
+                        <li><span class="label">会议培训：</span><span class="value">灵活的桌椅组合适合不同需求</span></li>
+                    </ul>
+                </div>
+                
+                <div class="calculation">
+                    <h3>注意事项</h3>
+                    <ul>
+                        <li><span class="label">声学设计：</span><span class="value">标准教室需要适当的音响配置</span></li>
+                        <li><span class="label">照明配置：</span><span class="value">确保每个座位都有充足照明</span></li>
+                        <li><span class="label">空调系统：</span><span class="value">40人空间需要合适的通风系统</span></li>
+                        <li><span class="label">安全出口：</span><span class="value">建议在左右两侧设置安全出口</span></li>
+                        <li><span class="label">设备管理：</span><span class="value">单屏幕配置便于统一管理</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

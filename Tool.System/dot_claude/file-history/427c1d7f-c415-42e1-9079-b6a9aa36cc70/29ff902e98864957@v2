@@ -1,0 +1,114 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+// SMTP 配置
+const transporter = nodemailer.createTransport({
+  host: 'smtp.feishu.cn',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'liuwei@gaowei.com',
+    pass: 'AQg6ve0Xpdb3FG87'
+  }
+});
+
+// 读取报告
+const report1 = fs.readFileSync('/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313情绪驱动产品创新 雯祯/雯祯-AI教练报告-V4-final.html', 'utf-8');
+const report2 = fs.readFileSync('/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260313超级面试官 邬培莹/邬培莹-AI教练报告-V4-final.html', 'utf-8');
+const report3 = fs.readFileSync('/Users/comdir/SynologyDrive/0050Project/GW.Content/五句话介绍/现场/20260313/260314战略解码 丁芹伟/丁芹伟-AI教练报告-V4-final.html', 'utf-8');
+
+// 构建汇总邮件HTML
+const html = `
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; color: #333; max-width: 600px; margin: 0 auto; padding: 15px; }
+  .header { background: linear-gradient(135deg, #2c3e50, #3498db); color: #fff; padding: 30px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+  .summary-table th, .summary-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+  .summary-table th { background: #f8f9fa; font-weight: bold; }
+  .score-high { color: #27ae60; font-weight: bold; }
+  .score-mid { color: #f39c12; font-weight: bold; }
+  .score-low { color: #e74c3c; font-weight: bold; }
+  .report-divider { border-top: 3px solid #3498db; margin: 40px 0; padding-top: 20px; }
+  .note { background: #fff3cd; padding: 15px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #ffc107; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="margin: 0;">班主任AI教练评估报告</h1>
+  <p style="margin: 10px 0 0 0; opacity: 0.9;">2026年03月13-14期 · V4双触点全流程版</p>
+</div>
+
+<h2>📊 评估汇总</h2>
+<table class="summary-table">
+  <tr>
+    <th>班主任</th>
+    <th>课程</th>
+    <th>总分</th>
+  </tr>
+  <tr>
+    <td>雯祯</td>
+    <td>情绪驱动产品创新</td>
+    <td class="score-low">59/100</td>
+  </tr>
+  <tr>
+    <td>邬培莹</td>
+    <td>超级面试官</td>
+    <td class="score-mid">68/100</td>
+  </tr>
+  <tr>
+    <td>丁芹伟</td>
+    <td>战略解码</td>
+    <td class="score-high">85/100</td>
+  </tr>
+</table>
+
+<div class="note">
+  <strong>📋 说明：</strong>本邮件包含3份已完成的V4版AI教练评估报告。请审核后确认是否发送给各班主任本人。
+  <br><br>
+  <strong>待完成：</strong>阿左、碧容、黄文静（3位班主任的评估报告将在完成后补发）
+</div>
+
+<hr class="report-divider">
+<h2>1️⃣ 雯祯 - 情绪驱动产品创新</h2>
+${report1}
+
+<hr class="report-divider">
+<h2>2️⃣ 邬培莹 - 超级面试官</h2>
+${report2}
+
+<hr class="report-divider">
+<h2>3️⃣ 丁芹伟 - 战略解码</h2>
+${report3}
+
+<div style="text-align: center; color: #999; font-size: 12px; margin-top: 30px; padding: 20px; border-top: 1px solid #eee;">
+  高维学堂 AI教练系统 · 自动生成<br>
+  生成时间：2026-03-16 23:00
+</div>
+
+</body>
+</html>
+`;
+
+// 发送邮件
+async function sendMail() {
+  try {
+    const info = await transporter.sendMail({
+      from: '"高维AI教练系统" <liuwei@gaowei.com>',
+      to: 'lw@gaowei.com',
+      subject: '【审核】班主任AI教练评估报告 - 3月13-14期 (3/6完成)',
+      html: html
+    });
+    console.log('邮件发送成功！');
+    console.log('Message ID:', info.messageId);
+  } catch (error) {
+    console.error('发送失败:', error);
+  }
+}
+
+sendMail();

@@ -1,0 +1,241 @@
+2026-02-20T16:22:23.372Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2026-02-20T16:22:23.372Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:22:23.372Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2026-02-20T16:22:23.373Z [DEBUG] Cleared all session hooks for session 24911f3f-f925-499b-a9c9-59254af335b1
+2026-02-20T16:22:23.374Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2026-02-20T16:22:23.374Z [DEBUG] Found 1 hook matchers in settings
+2026-02-20T16:22:23.375Z [DEBUG] Matched 1 unique hooks for query "clear" (1 before deduplication)
+2026-02-20T16:22:23.417Z [DEBUG] High write ratio: blit=0, write=12963 (100.0% writes), screen=571x139
+2026-02-20T16:22:23.417Z [DEBUG] Full reset (scrollback changes): scrollbackRows=525, firstChangeY=5
+  prev: "│                                 │ Recent activity                                                                                       │"
+  next: "│             ▐▛███▜▌             │ Recent activity                                                                                       │"
+2026-02-20T16:22:23.436Z [DEBUG] Started caffeinate to prevent sleep
+2026-02-20T16:22:23.440Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-20T16:22:23.440Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-02-20T16:22:23.440Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-02-20T16:22:23.456Z [DEBUG] High write ratio: blit=0, write=1002 (100.0% writes), screen=23x139
+2026-02-20T16:22:23.456Z [DEBUG] Full reset (shrink->below): prevHeight=571, nextHeight=23, viewport=48
+2026-02-20T16:22:23.551Z [DEBUG] AutoUpdaterWrapper: Installation type: unknown
+2026-02-20T16:22:23.574Z [DEBUG] Hooks: Checking initial response for async: {
+  "hookSpecificOutput": {
+    "hookEventName": "SessionStart",
+    "additionalContext": "<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n---\nname: using-superpowers\ndescription: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions\n---\n\n<EXTREMELY-IMPORTANT>\nIf you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.\n\nIF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.\n\nThis is not negotiable. This is not optional. You cannot rationalize your way out of this.\n</EXTREMELY-IMPORTANT>\n\n## How to Access Skills\n\n**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Never use the Read tool on skill files.\n\n**In other environments:** Check your platform's documentation for how skills are loaded.\n\n# Using Skills\n\n## The Rule\n\n**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.\n\n```dot\ndigraph skill_flow {\n    \"User message received\" [shape=doublecircle];\n    \"About to EnterPlanMode?\" [shape=doublecircle];\n    \"Already brainstormed?\" [shape=diamond];\n    \"Invoke brainstorming skill\" [shape=box];\n    \"Might any skill apply?\" [shape=diamond];\n    \"Invoke Skill tool\" [shape=box];\n    \"Announce: 'Using [skill] to [purpose]'\" [shape=box];\n    \"Has checklist?\" [shape=diamond];\n    \"Create TodoWrite todo per item\" [shape=box];\n    \"Follow skill exactly\" [shape=box];\n    \"Respond (including clarifications)\" [shape=doublecircle];\n\n    \"About to EnterPlanMode?\" -> \"Already brainstormed?\";\n    \"Already brainstormed?\" -> \"Invoke brainstorming skill\" [label=\"no\"];\n    \"Already brainstormed?\" -> \"Might any skill apply?\" [label=\"yes\"];\n    \"Invoke brainstorming skill\" -> \"Might any skill apply?\";\n\n    \"User message received\" -> \"Might any skill apply?\";\n    \"Might any skill apply?\" -> \"Invoke Skill tool\" [label=\"yes, even 1%\"];\n    \"Might any skill apply?\" -> \"Respond (including clarifications)\" [label=\"definitely not\"];\n    \"Invoke Skill tool\" -> \"Announce: 'Using [skill] to [purpose]'\";\n    \"Announce: 'Using [skill] to [purpose]'\" -> \"Has checklist?\";\n    \"Has checklist?\" -> \"Create TodoWrite todo per item\" [label=\"yes\"];\n    \"Has checklist?\" -> \"Follow skill exactly\" [label=\"no\"];\n    \"Create TodoWrite todo per item\" -> \"Follow skill exactly\";\n}\n```\n\n## Red Flags\n\nThese thoughts mean STOP—you're rationalizing:\n\n| Thought | Reality |\n|---------|---------|\n| \"This is just a simple question\" | Questions are tasks. Check for skills. |\n| \"I need more context first\" | Skill check comes BEFORE clarifying questions. |\n| \"Let me explore the codebase first\" | Skills tell you HOW to explore. Check first. |\n| \"I can check git/files quickly\" | Files lack conversation context. Check for skills. |\n| \"Let me gather information first\" | Skills tell you HOW to gather information. |\n| \"This doesn't need a formal skill\" | If a skill exists, use it. |\n| \"I remember this skill\" | Skills evolve. Read current version. |\n| \"This doesn't count as a task\" | Action = task. Check for skills. |\n| \"The skill is overkill\" | Simple things become complex. Use it. |\n| \"I'll just do this one thing first\" | Check BEFORE doing anything. |\n| \"This feels productive\" | Undisciplined action wastes time. Skills prevent this. |\n| \"I know what that means\" | Knowing the concept ≠ using the skill. Invoke it. |\n\n## Skill Priority\n\nWhen multiple skills could apply, use this order:\n\n1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task\n2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution\n\n\"Let's build X\" → brainstorming first, then implementation skills.\n\"Fix this bug\" → debugging first, then domain-specific skills.\n\n## Skill Types\n\n**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.\n\n**Flexible** (patterns): Adapt principles to context.\n\nThe skill itself tells you which.\n\n## User Instructions\n\nInstructions say WHAT, not HOW. \"Add X\" or \"Fix Y\" doesn't mean skip workflows.\n\n\n</EXTREMELY_IMPORTANT>"
+  }
+}
+2026-02-20T16:22:23.574Z [DEBUG] Hooks: Parsed initial response: {"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n---\nname: using-superpowers\ndescription: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions\n---\n\n<EXTREMELY-IMPORTANT>\nIf you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.\n\nIF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.\n\nThis is not negotiable. This is not optional. You cannot rationalize your way out of this.\n</EXTREMELY-IMPORTANT>\n\n## How to Access Skills\n\n**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Never use the Read tool on skill files.\n\n**In other environments:** Check your platform's documentation for how skills are loaded.\n\n# Using Skills\n\n## The Rule\n\n**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.\n\n```dot\ndigraph skill_flow {\n    \"User message received\" [shape=doublecircle];\n    \"About to EnterPlanMode?\" [shape=doublecircle];\n    \"Already brainstormed?\" [shape=diamond];\n    \"Invoke brainstorming skill\" [shape=box];\n    \"Might any skill apply?\" [shape=diamond];\n    \"Invoke Skill tool\" [shape=box];\n    \"Announce: 'Using [skill] to [purpose]'\" [shape=box];\n    \"Has checklist?\" [shape=diamond];\n    \"Create TodoWrite todo per item\" [shape=box];\n    \"Follow skill exactly\" [shape=box];\n    \"Respond (including clarifications)\" [shape=doublecircle];\n\n    \"About to EnterPlanMode?\" -> \"Already brainstormed?\";\n    \"Already brainstormed?\" -> \"Invoke brainstorming skill\" [label=\"no\"];\n    \"Already brainstormed?\" -> \"Might any skill apply?\" [label=\"yes\"];\n    \"Invoke brainstorming skill\" -> \"Might any skill apply?\";\n\n    \"User message received\" -> \"Might any skill apply?\";\n    \"Might any skill apply?\" -> \"Invoke Skill tool\" [label=\"yes, even 1%\"];\n    \"Might any skill apply?\" -> \"Respond (including clarifications)\" [label=\"definitely not\"];\n    \"Invoke Skill tool\" -> \"Announce: 'Using [skill] to [purpose]'\";\n    \"Announce: 'Using [skill] to [purpose]'\" -> \"Has checklist?\";\n    \"Has checklist?\" -> \"Create TodoWrite todo per item\" [label=\"yes\"];\n    \"Has checklist?\" -> \"Follow skill exactly\" [label=\"no\"];\n    \"Create TodoWrite todo per item\" -> \"Follow skill exactly\";\n}\n```\n\n## Red Flags\n\nThese thoughts mean STOP—you're rationalizing:\n\n| Thought | Reality |\n|---------|---------|\n| \"This is just a simple question\" | Questions are tasks. Check for skills. |\n| \"I need more context first\" | Skill check comes BEFORE clarifying questions. |\n| \"Let me explore the codebase first\" | Skills tell you HOW to explore. Check first. |\n| \"I can check git/files quickly\" | Files lack conversation context. Check for skills. |\n| \"Let me gather information first\" | Skills tell you HOW to gather information. |\n| \"This doesn't need a formal skill\" | If a skill exists, use it. |\n| \"I remember this skill\" | Skills evolve. Read current version. |\n| \"This doesn't count as a task\" | Action = task. Check for skills. |\n| \"The skill is overkill\" | Simple things become complex. Use it. |\n| \"I'll just do this one thing first\" | Check BEFORE doing anything. |\n| \"This feels productive\" | Undisciplined action wastes time. Skills prevent this. |\n| \"I know what that means\" | Knowing the concept ≠ using the skill. Invoke it. |\n\n## Skill Priority\n\nWhen multiple skills could apply, use this order:\n\n1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task\n2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution\n\n\"Let's build X\" → brainstorming first, then implementation skills.\n\"Fix this bug\" → debugging first, then domain-specific skills.\n\n## Skill Types\n\n**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.\n\n**Flexible** (patterns): Adapt principles to context.\n\nThe skill itself tells you which.\n\n## User Instructions\n\nInstructions say WHAT, not HOW. \"Add X\" or \"Fix Y\" doesn't mean skip workflows.\n\n\n</EXTREMELY_IMPORTANT>"}}
+2026-02-20T16:22:23.574Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-20T16:22:23.575Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-20T16:22:23.575Z [DEBUG] Hook SessionStart:clear (SessionStart) success:
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SessionStart",
+    "additionalContext": "<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n---\nname: using-superpowers\ndescription: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions\n---\n\n<EXTREMELY-IMPORTANT>\nIf you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.\n\nIF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.\n\nThis is not negotiable. This is not optional. You cannot rationalize your way out of this.\n</EXTREMELY-IMPORTANT>\n\n## How to Access Skills\n\n**In Claude Code:** Use the `Skill` tool. When you invoke a skill, its content is loaded and presented to you—follow it directly. Never use the Read tool on skill files.\n\n**In other environments:** Check your platform's documentation for how skills are loaded.\n\n# Using Skills\n\n## The Rule\n\n**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.\n\n```dot\ndigraph skill_flow {\n    \"User message received\" [shape=doublecircle];\n    \"About to EnterPlanMode?\" [shape=doublecircle];\n    \"Already brainstormed?\" [shape=diamond];\n    \"Invoke brainstorming skill\" [shape=box];\n    \"Might any skill apply?\" [shape=diamond];\n    \"Invoke Skill tool\" [shape=box];\n    \"Announce: 'Using [skill] to [purpose]'\" [shape=box];\n    \"Has checklist?\" [shape=diamond];\n    \"Create TodoWrite todo per item\" [shape=box];\n    \"Follow skill exactly\" [shape=box];\n    \"Respond (including clarifications)\" [shape=doublecircle];\n\n    \"About to EnterPlanMode?\" -> \"Already brainstormed?\";\n    \"Already brainstormed?\" -> \"Invoke brainstorming skill\" [label=\"no\"];\n    \"Already brainstormed?\" -> \"Might any skill apply?\" [label=\"yes\"];\n    \"Invoke brainstorming skill\" -> \"Might any skill apply?\";\n\n    \"User message received\" -> \"Might any skill apply?\";\n    \"Might any skill apply?\" -> \"Invoke Skill tool\" [label=\"yes, even 1%\"];\n    \"Might any skill apply?\" -> \"Respond (including clarifications)\" [label=\"definitely not\"];\n    \"Invoke Skill tool\" -> \"Announce: 'Using [skill] to [purpose]'\";\n    \"Announce: 'Using [skill] to [purpose]'\" -> \"Has checklist?\";\n    \"Has checklist?\" -> \"Create TodoWrite todo per item\" [label=\"yes\"];\n    \"Has checklist?\" -> \"Follow skill exactly\" [label=\"no\"];\n    \"Create TodoWrite todo per item\" -> \"Follow skill exactly\";\n}\n```\n\n## Red Flags\n\nThese thoughts mean STOP—you're rationalizing:\n\n| Thought | Reality |\n|---------|---------|\n| \"This is just a simple question\" | Questions are tasks. Check for skills. |\n| \"I need more context first\" | Skill check comes BEFORE clarifying questions. |\n| \"Let me explore the codebase first\" | Skills tell you HOW to explore. Check first. |\n| \"I can check git/files quickly\" | Files lack conversation context. Check for skills. |\n| \"Let me gather information first\" | Skills tell you HOW to gather information. |\n| \"This doesn't need a formal skill\" | If a skill exists, use it. |\n| \"I remember this skill\" | Skills evolve. Read current version. |\n| \"This doesn't count as a task\" | Action = task. Check for skills. |\n| \"The skill is overkill\" | Simple things become complex. Use it. |\n| \"I'll just do this one thing first\" | Check BEFORE doing anything. |\n| \"This feels productive\" | Undisciplined action wastes time. Skills prevent this. |\n| \"I know what that means\" | Knowing the concept ≠ using the skill. Invoke it. |\n\n## Skill Priority\n\nWhen multiple skills could apply, use this order:\n\n1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task\n2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution\n\n\"Let's build X\" → brainstorming first, then implementation skills.\n\"Fix this bug\" → debugging first, then domain-specific skills.\n\n## Skill Types\n\n**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.\n\n**Flexible** (patterns): Adapt principles to context.\n\nThe skill itself tells you which.\n\n## User Instructions\n\nInstructions say WHAT, not HOW. \"Add X\" or \"Fix Y\" doesn't mean skip workflows.\n\n\n</EXTREMELY_IMPORTANT>"
+  }
+}
+2026-02-20T16:22:23.575Z [DEBUG] FileHistory: Added snapshot for 7b781c8d-758e-43dc-830e-36ebe0282705, tracking 0 files
+2026-02-20T16:22:23.575Z [DEBUG] [useDeferredValue] Messages deferred by 6 (0→6)
+2026-02-20T16:22:23.579Z [DEBUG] [useDeferredValue] Messages deferred by 6 (0→6)
+2026-02-20T16:22:23.579Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-20T16:23:14.402Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-20T16:23:14.419Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-20T16:23:14.420Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-20T16:23:14.420Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-20T16:23:14.420Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-20T16:23:14.420Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-20T16:23:14.420Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-20T16:23:14.420Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-20T16:23:14.428Z [DEBUG] Loaded 14 skills from plugin superpowers default directory
+2026-02-20T16:23:14.428Z [DEBUG] Total plugin skills loaded: 14
+2026-02-20T16:23:14.428Z [DEBUG] Loaded 3 commands from plugin superpowers default directory
+2026-02-20T16:23:14.428Z [DEBUG] Total plugin commands loaded: 3
+2026-02-20T16:23:14.452Z [DEBUG] Loaded 16 unique skills (16 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 1)
+2026-02-20T16:23:14.452Z [DEBUG] getSkills returning: 16 skill dir commands, 14 plugin skills, 2 bundled skills
+2026-02-20T16:23:14.452Z [DEBUG] Sending 30 skills via attachment (initial, 30 total sent)
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:brainstorming" (userFacingName="brainstorming")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:dispatching-parallel-agents" (userFacingName="dispatching-parallel-agents")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:executing-plans" (userFacingName="executing-plans")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:finishing-a-development-branch" (userFacingName="finishing-a-development-branch")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:receiving-code-review" (userFacingName="receiving-code-review")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:requesting-code-review" (userFacingName="requesting-code-review")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:subagent-driven-development" (userFacingName="subagent-driven-development")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:systematic-debugging" (userFacingName="systematic-debugging")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:test-driven-development" (userFacingName="test-driven-development")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:using-git-worktrees" (userFacingName="using-git-worktrees")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:using-superpowers" (userFacingName="using-superpowers")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:verification-before-completion" (userFacingName="verification-before-completion")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:writing-plans" (userFacingName="writing-plans")
+2026-02-20T16:23:14.452Z [DEBUG] Skill prompt: showing "superpowers:writing-skills" (userFacingName="writing-skills")
+2026-02-20T16:23:14.454Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-20T16:23:14.454Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:23:14.454Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-20T16:23:14.454Z [DEBUG] FileHistory: Making snapshot for message 4d35fd38-4970-4149-b6ad-ec3cf9cede76
+2026-02-20T16:23:14.454Z [DEBUG] FileHistory: Added snapshot for 4d35fd38-4970-4149-b6ad-ec3cf9cede76, tracking 0 files
+2026-02-20T16:23:14.455Z [DEBUG] [useDeferredValue] Messages deferred by 2 (6→8)
+2026-02-20T16:23:14.457Z [DEBUG] Started caffeinate to prevent sleep
+2026-02-20T16:23:14.460Z [DEBUG] Writing to temp file: /Users/comdir/.claude.json.tmp.8539.1771604594460
+2026-02-20T16:23:14.460Z [DEBUG] Preserving file permissions: 100600
+2026-02-20T16:23:14.460Z [DEBUG] Temp file written successfully, size: 16377 bytes
+2026-02-20T16:23:14.460Z [DEBUG] Applied original permissions to temp file
+2026-02-20T16:23:14.460Z [DEBUG] Renaming /Users/comdir/.claude.json.tmp.8539.1771604594460 to /Users/comdir/.claude.json
+2026-02-20T16:23:14.460Z [DEBUG] File /Users/comdir/.claude.json written atomically
+2026-02-20T16:23:14.460Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-02-20T16:23:14.461Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.3f7; cc_entrypoint=cli; cch=00000;
+2026-02-20T16:23:14.461Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T16:23:14.461Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T16:23:14.465Z [DEBUG] autocompact: tokens=3974 threshold=167000 effectiveWindow=180000
+2026-02-20T16:23:14.465Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-20T16:23:14.467Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb0; cc_entrypoint=cli; cch=00000;
+2026-02-20T16:23:14.468Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T16:23:14.468Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T16:23:14.468Z [DEBUG] [useDeferredValue] Messages deferred by 2 (6→8)
+2026-02-20T16:23:18.177Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T16:23:18.177Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T16:23:18.805Z [DEBUG] Stream started - received first chunk
+2026-02-20T16:23:18.971Z [DEBUG] Stream started - received first chunk
+2026-02-20T16:24:09.185Z [WARN] Streaming stall detected: 50.4s gap between events (stall #1)
+2026-02-20T16:24:11.226Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-02-20T16:24:13.590Z [DEBUG] [useDeferredValue] Messages deferred by 2 (9→11)
+2026-02-20T16:24:13.622Z [DEBUG] High write ratio: blit=0, write=1188 (100.0% writes), screen=30x139
+2026-02-20T16:24:13.656Z [WARN] Streaming completed with 1 stall(s), total stall time: 50.4s
+2026-02-20T16:24:13.659Z [DEBUG] executePreToolHooks called for tool: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:13.660Z [DEBUG] Getting matching hook commands for PreToolUse with query: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:13.660Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:13.660Z [DEBUG] Matched 0 unique hooks for query "mcp__lark-mcp__docx_builtin_search" (0 before deduplication)
+2026-02-20T16:24:13.660Z [DEBUG] MCP server "lark-mcp": Calling MCP tool: docx_builtin_search
+2026-02-20T16:24:13.661Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-02-20T16:24:13.789Z [ERROR] MCP server "lark-mcp" {"errorMessage":"Current user_access_token is invalid or expired","instruction":""}
+2026-02-20T16:24:13.789Z [DEBUG] MCP server "lark-mcp": Tool 'docx_builtin_search' failed after 0s: {"errorMessage":"Current user_access_token is invalid or expired","instruction":""}
+2026-02-20T16:24:13.789Z [DEBUG] mcp__lark-mcp__docx_builtin_search tool error (129ms): {"errorMessage":"Current user_access_token is invalid or expired","instruction":""}
+2026-02-20T16:24:13.789Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:13.789Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:13.789Z [DEBUG] Matched 0 unique hooks for query "mcp__lark-mcp__docx_builtin_search" (0 before deduplication)
+2026-02-20T16:24:13.789Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-20T16:24:13.789Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-20T16:24:13.789Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-20T16:24:13.789Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-20T16:24:13.789Z [DEBUG] autocompact: tokens=34951 threshold=167000 effectiveWindow=180000
+2026-02-20T16:24:13.790Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-20T16:24:13.791Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb0; cc_entrypoint=cli; cch=00000;
+2026-02-20T16:24:13.791Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T16:24:13.791Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T16:24:13.810Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T16:24:13.812Z [DEBUG] [useDeferredValue] Messages deferred by 2 (12→14)
+2026-02-20T16:24:14.163Z [DEBUG] Stream started - received first chunk
+2026-02-20T16:24:17.524Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-20T16:24:19.328Z [DEBUG] executePreToolHooks called for tool: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:19.328Z [DEBUG] Getting matching hook commands for PreToolUse with query: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:19.328Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:19.328Z [DEBUG] Matched 0 unique hooks for query "mcp__lark-mcp__docx_builtin_search" (0 before deduplication)
+2026-02-20T16:24:19.329Z [DEBUG] MCP server "lark-mcp": Calling MCP tool: docx_builtin_search
+2026-02-20T16:24:19.330Z [DEBUG] [useDeferredValue] Messages deferred by 3 (15→18)
+2026-02-20T16:24:19.339Z [ERROR] MCP server "lark-mcp" {"msg":"User access token is not configured"}
+2026-02-20T16:24:19.339Z [DEBUG] MCP server "lark-mcp": Tool 'docx_builtin_search' failed after 0s: {"msg":"User access token is not configured"}
+2026-02-20T16:24:19.339Z [DEBUG] mcp__lark-mcp__docx_builtin_search tool error (10ms): {"msg":"User access token is not configured"}
+2026-02-20T16:24:19.340Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: mcp__lark-mcp__docx_builtin_search
+2026-02-20T16:24:19.340Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:19.340Z [DEBUG] Matched 0 unique hooks for query "mcp__lark-mcp__docx_builtin_search" (0 before deduplication)
+2026-02-20T16:24:19.340Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-20T16:24:19.340Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-20T16:24:19.340Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-20T16:24:19.340Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-20T16:24:19.341Z [DEBUG] autocompact: tokens=35042 threshold=167000 effectiveWindow=180000
+2026-02-20T16:24:19.341Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-20T16:24:19.344Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb0; cc_entrypoint=cli; cch=00000;
+2026-02-20T16:24:19.346Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T16:24:19.346Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T16:24:19.346Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T16:24:19.350Z [DEBUG] [useDeferredValue] Messages deferred by 2 (18→20)
+2026-02-20T16:24:19.538Z [DEBUG] Stream started - received first chunk
+2026-02-20T16:24:23.675Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-02-20T16:24:29.925Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-20T16:24:29.925Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:29.925Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-20T16:24:29.925Z [DEBUG] autocompact: tokens=35474 threshold=167000 effectiveWindow=180000
+2026-02-20T16:24:29.927Z [DEBUG] Auto tool search disabled: 15118 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-20T16:24:29.930Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.38.bb0; cc_entrypoint=cli; cch=00000;
+2026-02-20T16:24:29.933Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-20T16:24:29.933Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-20T16:24:29.933Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-20T16:24:29.937Z [DEBUG] [useDeferredValue] Messages deferred by 2 (21→23)
+2026-02-20T16:24:29.941Z [DEBUG] Stopped caffeinate, allowing sleep
+2026-02-20T16:24:30.313Z [DEBUG] Stream started - received first chunk
+2026-02-20T16:24:37.820Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-20T16:24:37.966Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-20T16:24:37.969Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-02-20T16:24:37.969Z [DEBUG] Found 0 hook matchers in settings
+2026-02-20T16:24:37.969Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-20T16:24:37.969Z [DEBUG] Forked agent [prompt_suggestion] finished: 2 messages, types=[assistant, assistant], totalUsage: input=457 output=104 cacheRead=35008 cacheCreate=0
+2026-02-20T16:26:26.015Z [DEBUG] Metrics opt-out check failed: No API key available
+2026-02-20T16:26:26.015Z [DEBUG] Metrics check failed, defaulting to disabled
+2026-02-20T16:26:26.015Z [DEBUG] Metrics export disabled by organization setting
+2026-02-20T17:01:42.097Z [DEBUG] npm view failed with code 1
+2026-02-20T17:01:42.098Z [DEBUG] npm stderr: (empty)
+2026-02-20T17:46:27.557Z [DEBUG] npm view failed with code 1
+2026-02-20T17:46:27.557Z [DEBUG] npm stderr: (empty)
+2026-02-20T18:17:59.461Z [DEBUG] npm view failed with code 1
+2026-02-20T18:17:59.461Z [DEBUG] npm stderr: (empty)
+2026-02-20T18:47:59.456Z [DEBUG] npm view failed with code 1
+2026-02-20T18:47:59.456Z [DEBUG] npm stderr: (empty)
+2026-02-20T19:19:08.530Z [DEBUG] npm view failed with code 1
+2026-02-20T19:19:08.530Z [DEBUG] npm stderr: (empty)
+2026-02-20T19:49:08.525Z [DEBUG] npm view failed with code 1
+2026-02-20T19:49:08.525Z [DEBUG] npm stderr: (empty)
+2026-02-20T20:20:10.021Z [DEBUG] npm view failed with code 1
+2026-02-20T20:20:10.021Z [DEBUG] npm stderr: (empty)
+2026-02-20T20:50:10.015Z [DEBUG] npm view failed with code 1
+2026-02-20T20:50:10.015Z [DEBUG] npm stderr: (empty)
+2026-02-21T14:30:20.966Z [DEBUG] npm view failed with code 1
+2026-02-21T14:30:20.966Z [DEBUG] npm stderr: (empty)
+2026-02-21T14:30:20.966Z [DEBUG] npm stdout: 2.1.50
+2026-02-22T05:11:29.066Z [DEBUG] npm view failed with code 1
+2026-02-22T05:11:29.066Z [DEBUG] npm stderr: (empty)
+2026-02-22T05:54:48.374Z [DEBUG] npm view failed with code 1
+2026-02-22T05:54:48.374Z [DEBUG] npm stderr: (empty)
+2026-02-22T07:56:48.103Z [DEBUG] npm view failed with code 1
+2026-02-22T07:56:48.104Z [DEBUG] npm stderr: (empty)
+2026-02-22T08:57:48.246Z [DEBUG] npm view failed with code 1
+2026-02-22T08:57:48.246Z [DEBUG] npm stderr: (empty)
+2026-02-22T09:58:48.392Z [DEBUG] npm view failed with code 1
+2026-02-22T09:58:48.392Z [DEBUG] npm stderr: (empty)
+2026-02-22T10:41:30.146Z [DEBUG] npm view failed with code 1
+2026-02-22T10:41:30.146Z [DEBUG] npm stderr: (empty)
+2026-02-22T11:42:02.597Z [DEBUG] npm view failed with code 1
+2026-02-22T11:42:02.597Z [DEBUG] npm stderr: (empty)
+2026-02-22T14:34:49.315Z [DEBUG] Detected skill change: /Users/comdir/.claude/commands/sys.md
+2026-02-22T14:34:49.318Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-22T14:34:49.351Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-22T14:34:49.351Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-22T14:34:49.351Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-22T14:34:49.351Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-22T14:34:49.351Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-22T14:34:49.351Z [DEBUG] Total plugin skills loaded: 0
+2026-02-22T14:34:49.351Z [DEBUG] Total plugin commands loaded: 0
+2026-02-22T14:34:49.371Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 2)
+2026-02-22T14:34:49.371Z [DEBUG] getSkills returning: 17 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-22T14:38:12.890Z [DEBUG] Detected skill change: /Users/comdir/.claude/commands/sys.md
+2026-02-22T14:38:12.890Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/.claude/skills, project=[]
+2026-02-22T14:38:12.892Z [DEBUG] getPluginSkills: Processing 1 enabled plugins
+2026-02-22T14:38:12.892Z [DEBUG] Checking plugin superpowers: skillsPath=exists, skillsPaths=0 paths
+2026-02-22T14:38:12.892Z [DEBUG] Attempting to load skills from plugin superpowers default skillsPath: /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills
+2026-02-22T14:38:12.893Z [ERROR] Failed to scan directory /Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands: Error: ENOENT: no such file or directory, scandir '/Users/comdir/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/commands'
+2026-02-22T14:38:12.893Z [DEBUG] Loaded 0 skills from plugin superpowers default directory
+2026-02-22T14:38:12.893Z [DEBUG] Total plugin skills loaded: 0
+2026-02-22T14:38:12.893Z [DEBUG] Total plugin commands loaded: 0
+2026-02-22T14:38:12.908Z [DEBUG] Loaded 16 unique skills (16 unconditional, 0 conditional, managed: 0, user: 15, project: 0, additional: 0, legacy commands: 1)
+2026-02-22T14:38:12.908Z [DEBUG] getSkills returning: 16 skill dir commands, 0 plugin skills, 2 bundled skills
+2026-02-23T05:04:51.137Z [DEBUG] npm view failed with code 1
+2026-02-23T05:04:51.137Z [DEBUG] npm stderr: (empty)
+2026-02-23T06:22:47.812Z [DEBUG] npm view failed with code 1
+2026-02-23T06:22:47.812Z [DEBUG] npm stderr: (empty)
+2026-02-23T07:23:47.923Z [DEBUG] npm view failed with code 1
+2026-02-23T07:23:47.923Z [DEBUG] npm stderr: (empty)
+2026-02-23T08:13:08.176Z [DEBUG] npm view failed with code 1
+2026-02-23T08:13:08.176Z [DEBUG] npm stderr: (empty)
+2026-02-23T09:25:48.507Z [DEBUG] npm view failed with code 1
+2026-02-23T09:25:48.507Z [DEBUG] npm stderr: (empty)
+2026-02-23T10:26:47.904Z [DEBUG] npm view failed with code 1
+2026-02-23T10:26:47.904Z [DEBUG] npm stderr: (empty)
+2026-02-23T11:27:48.065Z [DEBUG] npm view failed with code 1
+2026-02-23T11:27:48.065Z [DEBUG] npm stderr: (empty)
+2026-02-23T11:58:40.233Z [DEBUG] npm view failed with code 1
+2026-02-23T11:58:40.233Z [DEBUG] npm stderr: (empty)

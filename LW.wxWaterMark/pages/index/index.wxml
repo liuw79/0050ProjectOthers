@@ -1,0 +1,56 @@
+<!--pages/index/index.wxml - 真机优化版本-->
+<view class="container">
+  
+  <!-- 历史图片区域 -->
+  <view wx:if="{{savedImages.length > 0}}" class="history-section">
+    <view class="history-title">历史图片（点击使用，长按删除）</view>
+    <scroll-view scroll-x class="history-scroll">
+      <view class="history-list">
+        <view 
+          wx:for="{{savedImages}}" 
+          wx:key="timestamp" 
+          class="history-item"
+          bindtap="selectSavedImage"
+          bindlongpress="onLongPressSavedImage"
+          data-index="{{index}}"
+        >
+          <image src="{{item.path}}" mode="aspectFill" class="history-image" />
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  
+  <!-- 图片预览区域 -->
+  <view class="image-container" bindtap="chooseImage">
+    <image 
+      wx:if="{{tempFilePath}}" 
+      src="{{tempFilePath}}" 
+      mode="aspectFit" 
+      style="width: 100%; max-height: {{imageMaxHeightPx}}px;" 
+    />
+    <view wx:else class="placeholder-text">点击选择图片</view>
+  </view>
+
+  <!-- 水印文字编辑区域 -->
+  <textarea 
+    placeholder="请输入水印内容" 
+    value="{{fullWatermarkText}}"
+    bindinput="onWatermarkTextChange"
+    class="watermark-textarea"
+  ></textarea>
+
+  <!-- 生成按钮 -->
+  <button 
+    type="primary" 
+    bindtap="generateWatermarkedImage" 
+    class="generate-btn"
+  >
+    生成水印图片
+  </button>
+</view>
+
+<!-- 动态尺寸Canvas -->
+<canvas 
+  canvas-id="watermarkCanvas"
+  style="position: fixed; left: -2000px; top: -2000px; width: {{canvasWidth || 400}}px; height: {{canvasHeight || 300}}px;"
+></canvas>

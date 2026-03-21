@@ -1,0 +1,108 @@
+<script setup lang="ts">
+interface Props {
+  notice: string[]
+}
+
+defineProps<Props>()
+</script>
+
+<template>
+  <div class="h5-section" id="notice">
+    <div class="h5-section-header">
+      <h2 class="h5-section-title">报名须知</h2>
+    </div>
+    <div class="h5-section-content">
+      <ul v-if="notice?.length" class="h5-notice-list">
+        <li v-for="(item, index) in notice" :key="index">
+          {{ item }}
+        </li>
+      </ul>
+      <div v-else class="h5-notice-empty">
+        暂无报名须知
+      </div>
+
+      <!-- 联系方式 -->
+      <div class="h5-notice-contact">
+        <div class="h5-notice-contact-title">咨询方式</div>
+        <div class="h5-notice-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>400-888-8888</span>
+        </div>
+        <div class="h5-notice-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <span>contact@gaowei.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-notice-list {
+  padding-left: 0;
+  margin: 0;
+}
+
+.h5-notice-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.h5-notice-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  background: var(--h5-primary);
+  border-radius: 50%;
+}
+
+.h5-notice-empty {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--h5-text-light);
+  font-size: 14px;
+}
+
+.h5-notice-contact {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--h5-border-light);
+}
+
+.h5-notice-contact-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--h5-text-dark);
+  margin-bottom: 12px;
+}
+
+.h5-notice-contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  margin-bottom: 8px;
+}
+
+.h5-notice-contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.h5-notice-contact-item svg {
+  color: var(--h5-primary);
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+</style>

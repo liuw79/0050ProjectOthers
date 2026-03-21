@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品复盘表 - GTM表格系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* 特殊样式：选择框美化 */
+        .gtm-table select {
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+            color: #333;
+            border-radius: 4px;
+        }
+
+        .gtm-table select:focus {
+            outline: 2px solid #1890ff;
+            background: white;
+        }
+
+        /* 分组显示样式 */
+        .aspect-good .gtm-table td:first-child {
+            background: #f6ffed !important;
+            color: #389e0d;
+            font-weight: bold;
+        }
+
+        .aspect-poor .gtm-table td:first-child {
+            background: #fff2f0 !important;
+            color: #cf1322;
+            font-weight: bold;
+        }
+
+        .aspect-unsolved .gtm-table td:first-child {
+            background: #fff7e6 !important;
+            color: #d46b08;
+            font-weight: bold;
+        }
+
+        /* 提示信息样式 */
+        .review-instructions {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #e6f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #1890ff;
+        }
+
+        .review-instructions h3 {
+            color: #1890ff;
+            margin-bottom: 15px;
+        }
+
+        .review-instructions .instruction-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .instruction-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid;
+        }
+
+        .instruction-item.good {
+            border-left-color: #52c41a;
+        }
+
+        .instruction-item.poor {
+            border-left-color: #ff4d4f;
+        }
+
+        .instruction-item.unsolved {
+            border-left-color: #faad14;
+        }
+
+        .instruction-item h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .instruction-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- 使用说明 -->
+    <div class="review-instructions">
+        <h3>📋 产品复盘表使用指南</h3>
+        <p style="color: #333; margin-bottom: 15px;">
+            <strong>目的：</strong>全面回顾产品表现，识别成功经验、改进空间和持续挑战，为下一阶段制定更好的策略。
+        </p>
+
+        <div class="instruction-grid">
+            <div class="instruction-item good">
+                <h4>✅ 做的好的</h4>
+                <p>列出产品表现优秀的TOP3方面，分析成功的根本原因，便于复制和放大优势。</p>
+            </div>
+
+            <div class="instruction-item poor">
+                <h4>❌ 做的不好</h4>
+                <p>识别产品表现不佳的TOP3问题，深挖问题根源，制定针对性改进措施。</p>
+            </div>
+
+            <div class="instruction-item unsolved">
+                <h4>⚠️ 依然没有解决的问题</h4>
+                <p>梳理仍未解决的TOP3挑战，分析阻碍因素，寻找突破口和解决方案。</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tableContainer"></div>
+
+    <script>
+        // 产品复盘表配置
+        const PRODUCT_REVIEW_CONFIG = {
+            type: 'product_review',
+            displayName: '产品复盘表',
+            description: '全面复盘产品表现，识别优势、不足和待解决问题',
+
+            columns: [
+                {
+                    key: 'review_aspect',
+                    label: '三个方面',
+                    type: 'select',
+                    required: true,
+                    width: '15%',
+                    options: [
+                        { value: '', label: '请选择...' },
+                        { value: 'good_performance', label: '做的好的' },
+                        { value: 'poor_performance', label: '做的不好' },
+                        { value: 'unsolved_issues', label: '依然没有解决的问题' }
+                    ],
+                    placeholder: '选择复盘方面'
+                },
+                {
+                    key: 'top3_items',
+                    label: 'TOP3的表现',
+                    type: 'textarea',
+                    width: '42%',
+                    placeholder: '请列出3个最重要的表现：\\n1. \\n2. \\n3. ',
+                    rows: 6
+                },
+                {
+                    key: 'root_causes',
+                    label: '原因',
+                    type: 'textarea',
+                    width: '43%',
+                    placeholder: '请分析对应的原因：\\n1. \\n2. \\n3. ',
+                    rows: 6
+                }
+            ],
+
+            settings: {
+                autoSave: true,
+                autoSaveDelay: 3000,
+                defaultRows: 3,
+                maxRows: 10,
+                allowAddRows: true,
+                allowDeleteRows: false,
+                showRowNumbers: false
+            },
+
+            validation: {
+                minRows: 3,
+                requiredFields: ['review_aspect', 'top3_items']
+            },
+
+            theme: {
+                headerColor: '#1890ff',
+                accentColor: '#0050b3',
+                successColor: '#52c41a',
+                warningColor: '#faad14',
+                errorColor: '#ff4d4f'
+            }
+        };
+
+        // 增强的GTM表格组件（支持选择框和分组）
+        class EnhancedGTMTable {
+            constructor(container, config, apiBase = 'http://localhost:3002/api') {
+                this.container = container;
+                this.config = config;
+                this.apiBase = apiBase;
+                this.projectId = 6; // 固定项目ID
+                this.currentSheetId = null;
+                this.data = [];
+                this.isModified = false;
+                this.autoSaveTimer = null;
+
+                this.init();
+            }
+
+            init() {
+                this.createHTML();
+                this.setupEventListeners();
+                this.loadProjectInfo();
+                this.initializeDefaultData();
+            }
+
+            createHTML() {
+                this.container.innerHTML = \`
+                    <div class="gtm-table-container">
+                        <!-- 头部控制区 -->
+                        <div class="gtm-header">
+                            <h1>\${this.config.displayName}</h1>
+                            <div class="gtm-logo">
+                                <span class="logo-text">高维学堂</span>
+                                <div class="logo-icon">®</div>
+                            </div>
+                        </div>
+
+                        <!-- 控制面板 -->
+                        <div class="gtm-controls">
+                            <div class="gtm-sheet-info">
+                                <h3>项目：<span id="projectName">加载中...</span></h3>
+                            </div>
+
+                            <div class="gtm-form-controls">
+                                <div class="gtm-input-group">
+                                    <label>复盘名称：</label>
+                                    <input type="text" id="sheetName" placeholder="如：2024年Q3产品复盘">
+                                </div>
+
+                                <div class="gtm-input-group">
+                                    <label>复盘周期：</label>
+                                    <input type="text" id="sheetPeriod" placeholder="如：2024年Q3">
+                                </div>
+
+                                <div class="gtm-action-buttons">
+                                    <button id="saveBtn" class="gtm-btn gtm-btn-primary">💾 保存复盘</button>
+                                    <div class="gtm-secondary-buttons">
+                                        <button id="loadHistoryBtn" class="gtm-btn gtm-btn-info">📋 历史复盘</button>
+                                        <button id="newSheetBtn" class="gtm-btn gtm-btn-success">✨ 新建复盘</button>
+                                        <button id="addRowBtn" class="gtm-btn gtm-btn-secondary">➕ 添加行</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 历史记录列表 -->
+                        <div id="historyList" class="gtm-history-list" style="display: none;">
+                            <h4>历史复盘记录</h4>
+                            <div id="historyContainer"></div>
+                        </div>
+
+                        <!-- 表格区域 -->
+                        <div class="gtm-table-wrapper">
+                            <table class="gtm-table">
+                                <thead>
+                                    <tr>
+                                        \${this.config.columns.map(col =>
+                                            \`<th style="width: \${col.width || 'auto'}">\${col.label}</th>\`
+                                        ).join('')}
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <!-- 动态生成行 -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 浮动保存按钮 -->
+                        <div id="floatingSaveBtn" class="gtm-floating-save" style="display: none;">
+                            <button class="gtm-btn gtm-btn-primary gtm-btn-round" title="快速保存">💾</button>
+                        </div>
+
+                        <!-- 消息提示区域 -->
+                        <div id="messageArea"></div>
+                    </div>
+                \`;
+
+                this.loadCSS();
+            }
+
+            loadCSS() {
+                const style = document.createElement('style');
+                style.textContent = \`
+                    .gtm-table-container {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        background: white;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    }
+
+                    .gtm-header {
+                        background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
+                        padding: 20px 30px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 3px solid \${this.config.theme.headerColor};
+                    }
+
+                    .gtm-header h1 {
+                        color: \${this.config.theme.accentColor};
+                        font-size: 28px;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+
+                    .gtm-logo {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .logo-text {
+                        color: \${this.config.theme.accentColor};
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    .logo-icon {
+                        width: 40px;
+                        height: 40px;
+                        background: \${this.config.theme.accentColor};
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    .gtm-controls {
+                        padding: 20px 30px;
+                        background: #fafafa;
+                        border-bottom: 1px solid #e0e0e0;
+                    }
+
+                    .gtm-form-controls {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                    }
+
+                    .gtm-input-group {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .gtm-input-group label {
+                        font-weight: bold;
+                        color: #666;
+                        min-width: 80px;
+                    }
+
+                    .gtm-input-group input {
+                        padding: 10px 15px;
+                        border: 2px solid #e8e8e8;
+                        border-radius: 8px;
+                        min-width: 250px;
+                        font-size: 14px;
+                        transition: all 0.3s ease;
+                    }
+
+                    .gtm-input-group input:focus {
+                        border-color: \${this.config.theme.accentColor};
+                        box-shadow: 0 0 8px rgba(24, 144, 255, 0.2);
+                        outline: none;
+                    }
+
+                    .gtm-action-buttons {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        align-items: flex-end;
+                    }
+
+                    .gtm-secondary-buttons {
+                        display: flex;
+                        gap: 8px;
+                    }
+
+                    .gtm-btn {
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: bold;
+                        transition: all 0.3s ease;
+                    }
+
+                    .gtm-btn-primary {
+                        background: linear-gradient(135deg, \${this.config.theme.accentColor} 0%, \${this.config.theme.successColor} 100%);
+                        color: white;
+                        font-size: 16px;
+                        padding: 12px 24px;
+                        box-shadow: 0 4px 15px rgba(24, 144, 255, 0.4);
+                    }
+
+                    .gtm-btn-primary:hover {
+                        transform: translateY(-1px);
+                        box-shadow: 0 6px 20px rgba(24, 144, 255, 0.6);
+                    }
+
+                    .gtm-btn-info {
+                        background: #13c2c2;
+                        color: white;
+                        font-size: 13px;
+                        padding: 6px 12px;
+                    }
+
+                    .gtm-btn-success {
+                        background: \${this.config.theme.successColor};
+                        color: white;
+                        font-size: 13px;
+                        padding: 6px 12px;
+                    }
+
+                    .gtm-btn-secondary {
+                        background: #d9d9d9;
+                        color: #666;
+                        font-size: 13px;
+                        padding: 6px 12px;
+                    }
+
+                    .gtm-table-wrapper {
+                        padding: 0;
+                    }
+
+                    .gtm-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 14px;
+                    }
+
+                    .gtm-table thead {
+                        background: \${this.config.theme.headerColor};
+                        color: white;
+                    }
+
+                    .gtm-table th {
+                        padding: 15px 20px;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 16px;
+                        border-right: 1px solid rgba(255,255,255,0.3);
+                    }
+
+                    .gtm-table th:last-child {
+                        border-right: none;
+                    }
+
+                    .gtm-table td {
+                        padding: 15px 20px;
+                        text-align: center;
+                        border-bottom: 1px solid #e0e0e0;
+                        border-right: 1px solid #e0e0e0;
+                        background: #fafafa;
+                        vertical-align: top;
+                    }
+
+                    .gtm-table td:last-child {
+                        border-right: none;
+                    }
+
+                    .gtm-table tbody tr:hover {
+                        background-color: #f8f9fa;
+                    }
+
+                    .gtm-table input {
+                        border: none;
+                        background: transparent;
+                        width: 100%;
+                        text-align: center;
+                        padding: 5px;
+                        font-size: 14px;
+                        color: #333;
+                    }
+
+                    .gtm-table input:focus {
+                        outline: 2px solid \${this.config.theme.accentColor};
+                        background: white;
+                        border-radius: 4px;
+                    }
+
+                    .gtm-table textarea {
+                        border: none;
+                        background: transparent;
+                        width: 100%;
+                        min-height: 80px;
+                        padding: 8px;
+                        font-size: 14px;
+                        color: #333;
+                        resize: vertical;
+                        text-align: left;
+                        line-height: 1.5;
+                    }
+
+                    .gtm-table textarea:focus {
+                        outline: 2px solid \${this.config.theme.accentColor};
+                        background: white;
+                        border-radius: 4px;
+                    }
+
+                    .gtm-floating-save {
+                        position: fixed;
+                        bottom: 30px;
+                        right: 30px;
+                        z-index: 1000;
+                    }
+
+                    .gtm-btn-round {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        font-size: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                    }
+
+                    .gtm-message {
+                        padding: 10px 15px;
+                        margin: 10px 30px;
+                        border-radius: 6px;
+                        font-weight: bold;
+                    }
+
+                    .gtm-message-success {
+                        background: #f6ffed;
+                        color: \${this.config.theme.successColor};
+                        border: 1px solid #b7eb8f;
+                    }
+
+                    .gtm-message-error {
+                        background: #fff2f0;
+                        color: \${this.config.theme.errorColor};
+                        border: 1px solid #ffccc7;
+                    }
+
+                    .gtm-message-info {
+                        background: #e6f7ff;
+                        color: \${this.config.theme.accentColor};
+                        border: 1px solid #91d5ff;
+                    }
+
+                    .gtm-history-list {
+                        padding: 20px 30px;
+                        background: #f8f9fa;
+                        border-bottom: 1px solid #e0e0e0;
+                    }
+
+                    .gtm-history-list h4 {
+                        color: #333;
+                        margin-bottom: 15px;
+                    }
+
+                    .review-item {
+                        background: white;
+                        padding: 15px;
+                        margin-bottom: 10px;
+                        border-radius: 6px;
+                        border: 1px solid #e0e0e0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    .review-item:hover {
+                        background: #f0f8ff;
+                        border-color: #1890ff;
+                    }
+
+                    .review-item.active {
+                        background: #e6f7ff;
+                        border-color: #1890ff;
+                    }
+
+                    .review-info-text {
+                        flex: 1;
+                    }
+
+                    .review-name {
+                        font-weight: bold;
+                        color: #333;
+                        margin-bottom: 5px;
+                    }
+
+                    .review-meta {
+                        color: #666;
+                        font-size: 12px;
+                    }
+
+                    .review-actions {
+                        display: flex;
+                        gap: 5px;
+                    }
+
+                    .review-actions .btn {
+                        padding: 4px 8px;
+                        font-size: 12px;
+                    }
+
+                    @media (max-width: 768px) {
+                        .gtm-header {
+                            flex-direction: column;
+                            gap: 15px;
+                            text-align: center;
+                        }
+
+                        .gtm-form-controls {
+                            flex-direction: column;
+                            align-items: stretch;
+                        }
+
+                        .gtm-input-group {
+                            flex-direction: column;
+                            align-items: stretch;
+                        }
+
+                        .gtm-input-group input {
+                            min-width: auto;
+                            width: 100%;
+                        }
+                    }
+                \`;
+                document.head.appendChild(style);
+            }
+
+            setupEventListeners() {
+                // 保存按钮
+                this.container.querySelector('#saveBtn').addEventListener('click', () => this.save());
+                this.container.querySelector('#floatingSaveBtn button').addEventListener('click', () => this.save());
+
+                // 其他按钮
+                this.container.querySelector('#loadHistoryBtn').addEventListener('click', () => this.loadHistory());
+                this.container.querySelector('#newSheetBtn').addEventListener('click', () => this.newSheet());
+                this.container.querySelector('#addRowBtn').addEventListener('click', () => this.addRow());
+
+                // 输入变化监听
+                this.container.addEventListener('input', (e) => {
+                    if (e.target.matches('input, textarea, select')) {
+                        this.onDataChange();
+                        if (e.target.name === 'review_aspect') {
+                            this.updateRowStyle(e.target.closest('tr'));
+                        }
+                    }
+                });
+
+                // 滚动监听（浮动按钮）
+                window.addEventListener('scroll', () => this.updateFloatingButton());
+            }
+
+            showMessage(text, type = 'info') {
+                const messageArea = this.container.querySelector('#messageArea');
+                const message = document.createElement('div');
+                message.className = \`gtm-message gtm-message-\${type}\`;
+                message.textContent = text;
+
+                messageArea.appendChild(message);
+
+                setTimeout(() => {
+                    if (message.parentNode) {
+                        message.parentNode.removeChild(message);
+                    }
+                }, 3000);
+            }
+
+            addRow() {
+                const tbody = this.container.querySelector('#tableBody');
+                const row = document.createElement('tr');
+
+                row.innerHTML = this.config.columns.map(col => {
+                    if (col.type === 'textarea') {
+                        return \`<td><textarea name="\${col.key}" placeholder="\${col.placeholder || ''}" rows="\${col.rows || 3}"></textarea></td>\`;
+                    } else if (col.type === 'select') {
+                        const options = col.options.map(opt =>
+                            \`<option value="\${opt.value}">\${opt.label}</option>\`
+                        ).join('');
+                        return \`<td><select name="\${col.key}">\${options}</select></td>\`;
+                    } else {
+                        return \`<td><input type="text" name="\${col.key}" placeholder="\${col.placeholder || ''}"></td>\`;
+                    }
+                }).join('');
+
+                tbody.appendChild(row);
+                this.updateRowStyle(row);
+            }
+
+            initializeDefaultData() {
+                // 添加默认的三行数据
+                const defaultData = [
+                    { review_aspect: 'good_performance' },
+                    { review_aspect: 'poor_performance' },
+                    { review_aspect: 'unsolved_issues' }
+                ];
+
+                defaultData.forEach(data => {
+                    this.addRowWithData(data);
+                });
+            }
+
+            addRowWithData(data) {
+                const tbody = this.container.querySelector('#tableBody');
+                const row = document.createElement('tr');
+
+                row.innerHTML = this.config.columns.map(col => {
+                    const value = data[col.key] || '';
+
+                    if (col.type === 'textarea') {
+                        const placeholder = col.key === 'top3_items' ?
+                            '请列出3个最重要的表现：\\n1. \\n2. \\n3. ' :
+                            '请分析对应的原因：\\n1. \\n2. \\n3. ';
+                        return \`<td><textarea name="\${col.key}" rows="\${col.rows || 3}" placeholder="\${placeholder}">\${value}</textarea></td>\`;
+                    } else if (col.type === 'select') {
+                        const options = col.options.map(opt =>
+                            \`<option value="\${opt.value}" \${opt.value === value ? 'selected' : ''}>\${opt.label}</option>\`
+                        ).join('');
+                        return \`<td><select name="\${col.key}">\${options}</select></td>\`;
+                    } else {
+                        return \`<td><input type="text" name="\${col.key}" value="\${value}" placeholder="\${col.placeholder || ''}"></td>\`;
+                    }
+                }).join('');
+
+                tbody.appendChild(row);
+                this.updateRowStyle(row);
+            }
+
+            updateRowStyle(row) {
+                const select = row.querySelector('select[name="review_aspect"]');
+                if (select) {
+                    // 移除旧的类名
+                    row.classList.remove('aspect-good', 'aspect-poor', 'aspect-unsolved');
+
+                    // 根据选择添加新的类名
+                    switch (select.value) {
+                        case 'good_performance':
+                            row.classList.add('aspect-good');
+                            break;
+                        case 'poor_performance':
+                            row.classList.add('aspect-poor');
+                            break;
+                        case 'unsolved_issues':
+                            row.classList.add('aspect-unsolved');
+                            break;
+                    }
+                }
+            }
+
+            onDataChange() {
+                this.isModified = true;
+                this.updateFloatingButton();
+
+                if (this.config.settings.autoSave) {
+                    this.scheduleAutoSave();
+                }
+            }
+
+            scheduleAutoSave() {
+                clearTimeout(this.autoSaveTimer);
+                this.autoSaveTimer = setTimeout(() => {
+                    if (this.isModified && this.currentSheetId) {
+                        this.autoSave();
+                    }
+                }, this.config.settings.autoSaveDelay);
+            }
+
+            updateFloatingButton() {
+                const floatingBtn = this.container.querySelector('#floatingSaveBtn');
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > 200 || this.isModified) {
+                    floatingBtn.style.display = 'block';
+                } else {
+                    floatingBtn.style.display = 'none';
+                }
+            }
+
+            getTableData() {
+                const rows = this.container.querySelectorAll('#tableBody tr');
+                const data = [];
+
+                rows.forEach(row => {
+                    const rowData = {};
+                    this.config.columns.forEach(col => {
+                        const input = row.querySelector(\`[name="\${col.key}"]\`);
+                        if (input) {
+                            rowData[col.key] = input.value;
+                        }
+                    });
+
+                    // 只保存有内容的行
+                    if (rowData.review_aspect && rowData.top3_items) {
+                        data.push(rowData);
+                    }
+                });
+
+                return data;
+            }
+
+            async loadProjectInfo() {
+                try {
+                    const response = await fetch(\`\${this.apiBase}/projects/\${this.projectId}\`);
+                    if (response.ok) {
+                        const project = await response.json();
+                        this.container.querySelector('#projectName').textContent = project.name;
+                    }
+                } catch (error) {
+                    console.error('加载项目信息失败:', error);
+                    this.container.querySelector('#projectName').textContent = '测试GTM项目';
+                }
+            }
+
+            async save() {
+                const sheetName = this.container.querySelector('#sheetName').value.trim();
+                const period = this.container.querySelector('#sheetPeriod').value.trim();
+                const data = this.getTableData();
+
+                if (!sheetName) {
+                    this.showMessage('请输入复盘名称', 'error');
+                    return;
+                }
+
+                if (data.length === 0) {
+                    this.showMessage('请至少填写一个复盘项目', 'error');
+                    return;
+                }
+
+                const reviewData = {
+                    sheet_name: sheetName,
+                    period: period,
+                    data: data,
+                    created_by: 4, // 固定用户ID
+                    updated_by: 4
+                };
+
+                try {
+                    this.showMessage('正在保存...', 'info');
+
+                    let response;
+                    if (this.currentSheetId) {
+                        // 更新现有复盘
+                        response = await fetch(\`\${this.apiBase}/sheets/\${this.currentSheetId}\`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(reviewData)
+                        });
+                    } else {
+                        // 创建新复盘
+                        response = await fetch(\`\${this.apiBase}/projects/\${this.projectId}/sheets/\${this.config.type}\`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(reviewData)
+                        });
+                    }
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result.id) {
+                            this.currentSheetId = result.id;
+                        }
+                        this.showMessage('保存成功', 'success');
+                        this.isModified = false;
+                        this.updateFloatingButton();
+
+                        // 静默刷新历史记录
+                        this.loadHistorySilent();
+                    } else {
+                        this.showMessage('保存失败', 'error');
+                    }
+                } catch (error) {
+                    console.error('保存错误:', error);
+                    this.showMessage('保存时发生错误', 'error');
+                }
+            }
+
+            async loadHistory() {
+                try {
+                    const response = await fetch(\`\${this.apiBase}/projects/\${this.projectId}/sheets/\${this.config.type}\`);
+
+                    if (response.ok) {
+                        const reviews = await response.json();
+                        this.displayReviews(reviews);
+                        this.showMessage(\`成功加载\${reviews.length}条历史复盘\`, 'success');
+                    } else {
+                        this.showMessage('加载历史复盘失败', 'error');
+                    }
+                } catch (error) {
+                    console.error('加载历史复盘错误:', error);
+                    this.showMessage('加载历史复盘时发生错误', 'error');
+                }
+            }
+
+            async loadHistorySilent() {
+                try {
+                    const response = await fetch(\`\${this.apiBase}/projects/\${this.projectId}/sheets/\${this.config.type}\`);
+                    if (response.ok) {
+                        const reviews = await response.json();
+                        this.displayReviews(reviews);
+                    }
+                } catch (error) {
+                    console.log('静默刷新历史记录失败:', error);
+                }
+            }
+
+            displayReviews(reviews) {
+                const reviewsContainer = this.container.querySelector('#historyContainer');
+                const reviewsList = this.container.querySelector('#historyList');
+
+                reviewsContainer.innerHTML = '';
+
+                if (reviews.length === 0) {
+                    reviewsContainer.innerHTML = '<p style="color: #666; text-align: center; padding: 20px;">暂无历史复盘记录</p>';
+                } else {
+                    reviews.forEach(review => {
+                        const reviewItem = document.createElement('div');
+                        reviewItem.className = 'review-item';
+                        reviewItem.innerHTML = \`
+                            <div class="review-info-text">
+                                <div class="review-name">\${review.sheet_name}</div>
+                                <div class="review-meta">
+                                    周期: \${review.period || '未设置'} |
+                                    创建: \${new Date(review.created_at).toLocaleDateString()} |
+                                    创建者: \${review.creator_name} |
+                                    项目数: \${review.item_count}
+                                </div>
+                            </div>
+                            <div class="review-actions">
+                                <button class="gtm-btn gtm-btn-info" onclick="table.loadReview(\${review.id})">加载</button>
+                                <button class="gtm-btn gtm-btn-danger" onclick="table.deleteReview(\${review.id})">删除</button>
+                            </div>
+                        \`;
+                        reviewsContainer.appendChild(reviewItem);
+                    });
+                }
+
+                reviewsList.style.display = 'block';
+            }
+
+            async loadReview(reviewId) {
+                try {
+                    const response = await fetch(\`\${this.apiBase}/sheets/\${reviewId}\`);
+
+                    if (response.ok) {
+                        const sheetData = await response.json();
+                        this.currentSheetId = reviewId;
+
+                        // 填充基本信息
+                        this.container.querySelector('#sheetName').value = sheetData.sheet_name;
+                        this.container.querySelector('#sheetPeriod').value = sheetData.period || '';
+
+                        // 清空并重新生成表格
+                        this.container.querySelector('#tableBody').innerHTML = '';
+
+                        // 加载数据行
+                        if (sheetData.data && sheetData.data.length > 0) {
+                            sheetData.data.forEach(item => {
+                                this.addRowWithData(item);
+                            });
+                        } else {
+                            this.initializeDefaultData();
+                        }
+
+                        // 高亮选中的复盘
+                        this.container.querySelectorAll('.review-item').forEach(item => {
+                            item.classList.remove('active');
+                            if (item.querySelector(\`[onclick="table.loadReview(\${reviewId})"]\`)) {
+                                item.classList.add('active');
+                            }
+                        });
+
+                        this.showMessage(\`已加载复盘：\${sheetData.sheet_name}\`, 'success');
+                        this.isModified = false;
+                        this.updateFloatingButton();
+                    } else {
+                        this.showMessage('加载复盘详情失败', 'error');
+                    }
+                } catch (error) {
+                    console.error('加载复盘详情错误:', error);
+                    this.showMessage('加载复盘详情时发生错误', 'error');
+                }
+            }
+
+            async deleteReview(reviewId) {
+                if (!confirm('确定要删除这个产品复盘吗？此操作不可恢复。')) {
+                    return;
+                }
+
+                try {
+                    this.showMessage('正在删除复盘...', 'info');
+                    const response = await fetch(\`\${this.apiBase}/sheets/\${reviewId}\`, {
+                        method: 'DELETE'
+                    });
+
+                    if (response.ok) {
+                        this.showMessage('复盘删除成功', 'success');
+
+                        // 静默重新加载列表
+                        this.loadHistorySilent();
+
+                        // 如果删除的是当前复盘，清空表单
+                        if (this.currentSheetId === reviewId) {
+                            this.newSheet();
+                        }
+                    } else {
+                        this.showMessage('删除复盘失败', 'error');
+                    }
+                } catch (error) {
+                    console.error('删除复盘错误:', error);
+                    this.showMessage('删除复盘时发生错误', 'error');
+                }
+            }
+
+            newSheet() {
+                this.currentSheetId = null;
+                this.container.querySelector('#sheetName').value = '';
+                this.container.querySelector('#sheetPeriod').value = '';
+                this.container.querySelector('#tableBody').innerHTML = '';
+
+                // 移除所有复盘项的高亮
+                this.container.querySelectorAll('.review-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                this.initializeDefaultData();
+                this.isModified = false;
+                this.updateFloatingButton();
+            }
+
+            async autoSave() {
+                console.log('自动保存产品复盘...');
+                // 可以在此处实现静默自动保存逻辑
+            }
+        }
+
+        // 初始化表格
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('tableContainer');
+            window.table = new EnhancedGTMTable(container, PRODUCT_REVIEW_CONFIG);
+        });
+    </script>
+</body>
+</html>

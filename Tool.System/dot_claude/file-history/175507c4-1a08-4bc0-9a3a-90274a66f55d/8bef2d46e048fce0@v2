@@ -1,0 +1,268 @@
+#!/usr/bin/env node
+/**
+ * 多模型 API CLI Tool
+ * 用法：
+ *   node ai.js --model gemini "你的prompt"
+ *   node ai.js --model gpt "你的prompt"
+ *   node ai.js --model gemini --json "生成JSON的prompt"
+ *   node ai.js --model gpt --file prompt.txt
+ *
+ * ⚠️ 必须指定模型：--model gemini 或 --model gpt
+ */
+
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+
+// 支持的模型映射
+const MODEL_MAP = {
+  'gemini': 'gemini-3.1-pro-preview',
+  'gpt': 'gpt-5.4',
+  'gemini-3.1-pro-preview': 'gemini-3.1-pro-preview',
+  'gpt-5.4': 'gpt-5.4'
+};
+
+// 加载环境变量
+function loadEnv() {
+  const envPath = path.join(__dirname, '.env');
+  if (fs.existsSync(envPath)) {
+    const content = fs.readFileSync(envPath, 'utf-8');
+    content.split('\n').forEach(line => {
+      const match = line.match(/^([^#=]+)=(.*)$/);
+      if (match) {
+        const key = match[1].trim();
+        const value = match[2].trim().replace(/^["']|["']$/g, '');
+        if (!process.env[key]) {
+          process.env[key] = value;
+        }
+      }
+    });
+  }
+}
+
+loadEnv();
+
+const baseUrl = process.env.API_BASE_URL || 'https://api.openai-proxy.org';
+const apiKey = process.env.API_KEY;
+
+if (!apiKey) {
+  console.error('错误: API_KEY 未设置');
+  console.error('请在 .env 文件中设置：API_KEY=your-key');
+  process.exit(1);
+}
+
+function generate(messages, options = {}) {
+  return new Promise((resolve, reject) => {
+    const model = options.model;
+    const maxTokens = options.maxTokens || 8192;
+
+    if (!model) {
+      reject(new Error('必须指定模型 (--model gemini 或 --model gpt)'));
+      return;
+    }
+
+    const payload = {
+      model,
+      messages,
+      max_tokens: maxTokens
+    };
+
+    const url = new URL(baseUrl + '/v1/chat/completions');
+
+    const reqOptions = {
+      hostname: url.hostname,
+      port: url.port || 443,
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      }
+    };
+
+    const req = https.request(reqOptions, (res) => {
+      const chunks = [];
+      res.on('data', chunk => chunks.push(chunk));
+      res.on('end', () => {
+        try {
+          const buffer = Buffer.concat(chunks);
+          const data = buffer.toString('utf-8');
+          const json = JSON.parse(data);
+          if (json.error) {
+            reject(new Error(json.error.message || JSON.stringify(json.error)));
+          } else if (json.choices && json.choices[0]) {
+            const choice = json.choices[0];
+            if (process.env.DEBUG) {
+              console.error('\n[DEBUG] 完整响应:', JSON.stringify(json, null, 2));
+            }
+            const result = {
+              content: choice.message.content,
+              reasoning_content: choice.message.reasoning_content || null
+            };
+            resolve(result);
+          } else {
+            reject(new Error('Unexpected response: ' + data));
+          }
+        } catch (e) {
+          reject(new Error('Parse error: ' + e.message + '\n' + data));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(JSON.stringify(payload));
+    req.end();
+  });
+}
+
+function extractJSON(text) {
+  const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (codeBlockMatch) {
+    return codeBlockMatch[1].trim();
+  }
+  const braceMatch = text.match(/\{[\s\S]*\}/);
+  if (braceMatch) {
+    return braceMatch[0];
+  }
+  return text;
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+
+  if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
+    console.log(`
+多模型 API CLI Tool
+
+用法：
+  ai --model gemini "你的prompt"           # 使用 Gemini
+  ai --model gpt "你的prompt"              # 使用 GPT-5.4
+  ai --model gemini --json "生成JSON"      # JSON输出模式
+  ai --model gpt --file prompt.txt         # 从文件读取
+
+⚠️ 必须指定模型：--model gemini 或 --model gpt
+
+选项：
+  --model         指定模型：gemini 或 gpt【必填】
+  --json          强制JSON输出
+  --system        设置系统提示词
+  --file          从文件读取prompt
+  --max-tokens    最大token数（默认：8192）
+
+支持的模型：
+  gemini  → gemini-3.1-pro-preview（稳定可靠）
+  gpt     → gpt-5.4（推理能力强）
+
+示例：
+  ai --model gemini "用一句话介绍高维学堂"
+  ai --model gpt --json "生成一个包含name和age的JSON"
+  ai --model gemini --system "你是营销专家" "帮我写个标题"
+  ai --model gpt --file prompt.txt
+
+模型选择建议：
+  - 评估报告、深度分析 → --model gpt
+  - 日常生成、稳定输出 → --model gemini
+`);
+    process.exit(0);
+  }
+
+  let modelAlias = null;
+  let systemPrompt = '';
+  let userPrompt = '';
+  let isJSON = false;
+  let maxTokens = 8192;
+
+  // 解析参数
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--model') {
+      const alias = args[++i];
+      if (alias && MODEL_MAP[alias]) {
+        modelAlias = alias;
+      } else {
+        console.error(`错误: 不支持的模型 "${alias}"`);
+        console.error('支持的模型: gemini, gpt');
+        process.exit(1);
+      }
+    } else if (args[i] === '--json') {
+      isJSON = true;
+    } else if (args[i] === '--system') {
+      systemPrompt = args[++i] || '';
+    } else if (args[i] === '--file') {
+      const filePath = args[++i];
+      if (filePath && fs.existsSync(filePath)) {
+        userPrompt = fs.readFileSync(filePath, 'utf-8');
+      } else {
+        console.error(`文件不存在: ${filePath}`);
+        process.exit(1);
+      }
+    } else if (args[i] === '--max-tokens') {
+      maxTokens = parseInt(args[++i]) || 8192;
+    } else if (!args[i].startsWith('--')) {
+      if (!userPrompt) {
+        userPrompt = args[i];
+      }
+    }
+  }
+
+  // ⚠️ 强制检查模型
+  if (!modelAlias) {
+    console.error('❌ 错误: 必须指定模型');
+    console.error('');
+    console.error('用法：');
+    console.error('  node ai.js --model gemini "你的prompt"');
+    console.error('  node ai.js --model gpt "你的prompt"');
+    console.error('');
+    console.error('支持的模型：');
+    console.error('  --model gemini  → gemini-3.1-pro-preview');
+    console.error('  --model gpt     → gpt-5.4');
+    process.exit(1);
+  }
+
+  if (!userPrompt) {
+    console.error('错误: 请提供 prompt');
+    process.exit(1);
+  }
+
+  const model = MODEL_MAP[modelAlias];
+
+  // JSON模式添加后缀
+  if (isJSON) {
+    userPrompt += '\n\n只输出 JSON，不要 markdown 代码块，不要其他内容。';
+  }
+
+  // 构建消息
+  const messages = [];
+  if (systemPrompt) {
+    messages.push({ role: 'system', content: systemPrompt });
+  }
+  messages.push({ role: 'user', content: userPrompt });
+
+  console.error(`[Model: ${model}]`);
+
+  try {
+    const result = await generate(messages, { model, maxTokens });
+
+    if (isJSON) {
+      const jsonStr = extractJSON(result.content);
+      try {
+        const json = JSON.parse(jsonStr);
+        console.log(JSON.stringify(json, null, 2));
+      } catch (e) {
+        console.error('JSON解析失败，原始输出：');
+        console.log(result.content);
+      }
+    } else {
+      if (result.reasoning_content) {
+        console.log('\n=== 思考过程 ===');
+        console.log(result.reasoning_content);
+        console.log('=== 回答 ===\n');
+      }
+      console.log(result.content);
+    }
+  } catch (error) {
+    console.error('错误:', error.message);
+    process.exit(1);
+  }
+}
+
+main();

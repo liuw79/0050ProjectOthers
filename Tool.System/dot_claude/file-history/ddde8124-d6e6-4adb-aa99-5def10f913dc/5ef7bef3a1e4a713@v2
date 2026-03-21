@@ -1,0 +1,406 @@
+#!/usr/bin/env node
+
+/**
+ * 飞书文档创建脚本
+ *
+ * 功能：
+ * 1. 创建空白文档
+ * 2. 添加内容（分批添加，避免 API 限制）
+ * 3. 添加协作者权限
+ * 4. 返回文档链接
+ *
+ * 使用：
+ * node create-doc.mjs --title "标题" --content "内容" [--share email] [--perm permission]
+ *
+ * 凭证来源（按优先级）：
+ * 1. 环境变量 FEISHU_APP_ID + FEISHU_APP_SECRET
+ * 2. 本地配置 ~/.claude/skills/feishu-doc-create/credentials.json
+ * 3. OpenClaw 配置 ~/.openclaw/openclaw.json
+ */
+
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+
+const FEISHU_API = 'open.feishu.cn';
+const SKILL_DIR = path.join(os.homedir(), '.claude', 'skills', 'feishu-doc-create');
+
+// 解析命令行参数
+function parseArgs() {
+  const args = process.argv.slice(2);
+  const params = {
+    title: null,
+    content: null,
+    share: 'liuwei@gaowei.com',
+    perm: 'full_access'
+  };
+
+  for (let i = 0; i < args.length; i += 2) {
+    const key = args[i]?.replace(/^--/, '');
+    const value = args[i + 1];
+    if (key && value && params.hasOwnProperty(key)) {
+      params[key] = value;
+    }
+  }
+
+  return params;
+}
+
+// 获取凭证（多来源）
+function getCredentials() {
+  // 1. 优先从环境变量获取
+  const envAppId = process.env.FEISHU_APP_ID;
+  const envAppSecret = process.env.FEISHU_APP_SECRET;
+  if (envAppId && envAppSecret) {
+    console.log('   凭证来源: 环境变量');
+    return { appId: envAppId, appSecret: envAppSecret };
+  }
+
+  // 2. 从本地配置文件获取
+  const localConfigPath = path.join(SKILL_DIR, 'credentials.json');
+  if (fs.existsSync(localConfigPath)) {
+    try {
+      const config = JSON.parse(fs.readFileSync(localConfigPath, 'utf-8'));
+      if (config.appId && config.appSecret) {
+        console.log('   凭证来源: 本地配置');
+        return { appId: config.appId, appSecret: config.appSecret };
+      }
+    } catch (e) {
+      console.warn('   本地配置文件格式错误');
+    }
+  }
+
+  // 3. 从 OpenClaw 配置获取
+  const openclawPath = path.join(os.homedir(), '.openclaw', 'openclaw.json');
+  if (fs.existsSync(openclawPath)) {
+    try {
+      const config = JSON.parse(fs.readFileSync(openclawPath, 'utf-8'));
+      const feishuConfig = config.channels?.feishu?.accounts?.default;
+      if (feishuConfig?.appId && feishuConfig?.appSecret) {
+        console.log('   凭证来源: OpenClaw 配置');
+        return { appId: feishuConfig.appId, appSecret: feishuConfig.appSecret };
+      }
+    } catch (e) {
+      console.warn('   OpenClaw 配置文件格式错误');
+    }
+  }
+
+  throw new Error(`未找到飞书凭证！
+
+请通过以下任一方式配置：
+
+1. 环境变量:
+   export FEISHU_APP_ID="your_app_id"
+   export FEISHU_APP_SECRET="your_app_secret"
+
+2. 本地配置文件:
+   echo '{"appId":"xxx","appSecret":"xxx"}' > ~/.claude/skills/feishu-doc-create/credentials.json
+
+3. 安装 OpenClaw 并配置飞书频道
+`);
+}
+
+// 发送 HTTPS 请求
+function request(method, path, token, body = null) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: FEISHU_API,
+      path: path,
+      method: method,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    if (token) {
+      options.headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          resolve({ raw: data });
+        }
+      });
+    });
+
+    req.on('error', reject);
+
+    if (body) {
+      req.write(JSON.stringify(body));
+    }
+    req.end();
+  });
+}
+
+// 获取 tenant_access_token
+async function getToken(appId, appSecret) {
+  const result = await request('POST', '/open-apis/auth/v3/tenant_access_token/internal', null, {
+    app_id: appId,
+    app_secret: appSecret
+  });
+
+  if (result.code !== 0) {
+    throw new Error(`获取 Token 失败: ${result.msg}`);
+  }
+
+  return result.tenant_access_token;
+}
+
+// 创建空文档
+async function createDocument(token, title) {
+  const result = await request('POST', '/open-apis/docx/v1/documents', token, {
+    title: title
+  });
+
+  if (result.code !== 0) {
+    throw new Error(`创建文档失败: ${result.msg}`);
+  }
+
+  return result.data.document.document_id;
+}
+
+// Markdown 解析为飞书 Blocks
+// 支持的格式: #/##/### 标题, - 列表, 1. 有序列表, > 引用, --- 分割线, ``` 代码块
+function markdownToBlocks(text) {
+  const lines = text.split('\n');
+  const blocks = [];
+  let inCodeBlock = false;
+  let codeContent = [];
+  let codeLang = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // 代码块处理
+    if (line.startsWith('```')) {
+      if (!inCodeBlock) {
+        inCodeBlock = true;
+        codeLang = line.slice(3).trim();
+        codeContent = [];
+      } else {
+        // 结束代码块
+        blocks.push({
+          block_type: 10, // code
+          code: {
+            elements: [
+              { text_run: { content: codeContent.join('\n') } }
+            ],
+            style: { language: codeLang || 'plain' }
+          }
+        });
+        inCodeBlock = false;
+        codeContent = [];
+        codeLang = '';
+      }
+      continue;
+    }
+
+    if (inCodeBlock) {
+      codeContent.push(line);
+      continue;
+    }
+
+    // 跳过空行
+    if (!line.trim()) continue;
+
+    // 分割线
+    if (line.match(/^-{3,}$/)) {
+      blocks.push({ block_type: 13 }); // divider
+      continue;
+    }
+
+    // 一级标题
+    if (line.startsWith('# ') && !line.startsWith('## ')) {
+      blocks.push({
+        block_type: 4, // heading1
+        heading1: {
+          elements: [{ text_run: { content: line.slice(2).trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 二级标题
+    if (line.startsWith('## ') && !line.startsWith('### ')) {
+      blocks.push({
+        block_type: 5, // heading2
+        heading2: {
+          elements: [{ text_run: { content: line.slice(3).trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 三级标题
+    if (line.startsWith('### ')) {
+      blocks.push({
+        block_type: 6, // heading3
+        heading3: {
+          elements: [{ text_run: { content: line.slice(4).trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 引用
+    if (line.startsWith('> ')) {
+      blocks.push({
+        block_type: 8, // quote
+        quote: {
+          elements: [{ text_run: { content: line.slice(2).trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 无序列表
+    if (line.match(/^[-*+]\s/)) {
+      blocks.push({
+        block_type: 3, // bullet
+        bullet: {
+          elements: [{ text_run: { content: line.replace(/^[-*+]\s/, '').trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 有序列表
+    if (line.match(/^\d+\.\s/)) {
+      blocks.push({
+        block_type: 12, // ordered
+        ordered_list: {
+          elements: [{ text_run: { content: line.replace(/^\d+\.\s/, '').trim() } }]
+        }
+      });
+      continue;
+    }
+
+    // 普通段落（支持 **粗体** 和 `代码`）
+    const processedLine = processInlineFormatting(line);
+    blocks.push({
+      block_type: 2, // text
+      text: {
+        elements: processedLine
+      }
+    });
+  }
+
+  return blocks;
+}
+
+// 处理行内格式（粗体、斜体、代码）
+function processInlineFormatting(text) {
+  // 简化处理：直接作为纯文本
+  // 飞书 API 对行内格式支持有限，这里保持简单
+  return [{ text_run: { content: text } }];
+}
+
+// 分批添加内容
+async function addContent(token, docId, content) {
+  const blocks = markdownToBlocks(content);
+
+  if (blocks.length === 0) return;
+
+  const BATCH_SIZE = 30;
+  let index = 0;
+
+  for (let i = 0; i < blocks.length; i += BATCH_SIZE) {
+    const batch = blocks.slice(i, i + BATCH_SIZE);
+
+    const result = await request(
+      'POST',
+      `/open-apis/docx/v1/documents/${docId}/blocks/${docId}/children`,
+      token,
+      {
+        children: batch,
+        index: index
+      }
+    );
+
+    if (result.code !== 0) {
+      console.error(`   添加内容失败 (批次 ${Math.floor(i / BATCH_SIZE) + 1}): ${result.msg}`);
+    }
+
+    index += batch.length;
+  }
+}
+
+// 添加协作者
+async function addCollaborator(token, docId, email, perm) {
+  const result = await request(
+    'POST',
+    `/open-apis/drive/v1/permissions/${docId}/members?type=docx`,
+    token,
+    {
+      member_type: 'email',
+      member_id: email,
+      perm: perm
+    }
+  );
+
+  if (result.code !== 0) {
+    console.error(`   添加协作者失败: ${result.msg}`);
+    return false;
+  }
+
+  return true;
+}
+
+// 主函数
+async function main() {
+  const params = parseArgs();
+
+  if (!params.title || !params.content) {
+    console.error('用法: node create-doc.mjs --title "标题" --content "内容"');
+    process.exit(1);
+  }
+
+  console.log('正在创建飞书文档...\n');
+
+  try {
+    // 1. 获取凭证
+    console.log('1. 获取凭证...');
+    const { appId, appSecret } = getCredentials();
+
+    // 2. 获取 Token
+    console.log('2. 获取 Token...');
+    const token = await getToken(appId, appSecret);
+
+    // 3. 创建文档
+    console.log('3. 创建文档...');
+    const docId = await createDocument(token, params.title);
+    console.log(`   文档 ID: ${docId}`);
+
+    // 4. 添加内容
+    console.log('4. 添加内容...');
+    await addContent(token, docId, params.content);
+
+    // 5. 添加协作者
+    console.log(`5. 添加协作者 (${params.share})...`);
+    const shared = await addCollaborator(token, docId, params.share, params.perm);
+    if (shared) {
+      console.log('   ✓ 已分享');
+    }
+
+    // 6. 输出链接
+    const url = `https://feishu.cn/docx/${docId}`;
+    console.log('\n📄 文档链接:');
+    console.log(url);
+
+    // JSON 输出供程序读取
+    console.log('\n---JSON-OUTPUT---');
+    console.log(JSON.stringify({ docId, url, shared }));
+
+  } catch (err) {
+    console.error('\n错误:', err.message);
+    process.exit(1);
+  }
+}
+
+main();

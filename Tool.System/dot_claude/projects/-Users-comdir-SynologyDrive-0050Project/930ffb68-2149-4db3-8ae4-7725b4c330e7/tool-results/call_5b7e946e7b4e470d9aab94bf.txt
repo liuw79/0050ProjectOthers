@@ -1,0 +1,438 @@
+     1→<!DOCTYPE html>
+     2→<html lang="zh-CN">
+     3→<head>
+     4→  <meta charset="UTF-8">
+     5→  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→  <title>导入课程资料</title>
+     7→  <style>
+     8→    * {
+     9→      margin: 0;
+    10→      padding: 0;
+    11→      box-sizing: border-box;
+    12→    }
+    13→    body {
+    14→      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    15→      background: #f5f5f5;
+    16→    }
+    17→    .header {
+    18→      background: white;
+    19→      padding: 20px 30px;
+    20→      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    21→      display: flex;
+    22→      justify-content: center;
+    23→    }
+    24→    .header h1 {
+    25→      margin: 0;
+    26→      color: #333;
+    27→    }
+    28→    .container {
+    29→      max-width: 800px;
+    30→      margin: 0 auto;
+    31→      padding: 30px 20px;
+    32→    }
+    33→    .form {
+    34→      background: white;
+    35→      border-radius: 10px;
+    36→      padding: 30px;
+    37→      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    38→    }
+    39→    .form h2 {
+    40→      margin: 0 0 20px 0;
+    41→      color: #333;
+    42→    }
+    43→    .form-group {
+    44→      margin-bottom: 20px;
+    45→    }
+    46→    .form-group label {
+    47→      display: block;
+    48→      margin-bottom: 8px;
+    49→      font-weight: 600;
+    50→      color: #333;
+    51→    }
+    52→    .form-group input,
+    53→    .form-group textarea,
+    54→    .form-group select {
+    55→      width: 100%;
+    56→      padding: 12px;
+    57→      border: 2px solid #e0e0e0;
+    58→      border-radius: 6px;
+    59→      font-size: 14px;
+    60→      transition: border-color 0.3s;
+    61→    }
+    62→    .form-group input:focus,
+    63→    .form-group textarea:focus,
+    64→    .form-group select:focus {
+    65→      outline: none;
+    66→      border-color: #3385ff;
+    67→    }
+    68→    .form-group textarea {
+    69→      min-height: 150px;
+    70→      resize: vertical;
+    71→    }
+    72→    .form-group .hint {
+    73→      font-size: 12px;
+    74→      color: #999;
+    75→      margin-top: 5px;
+    76→    }
+    77→    .form-group .tags-container {
+    78→      display: flex;
+    79→      gap: 10px;
+    80→      flex-wrap: wrap;
+    81→    }
+    82→    .form-group .tag-input {
+    83→      flex: 1;
+    84→    }
+    85→    .form-group .tags {
+    86→      display: flex;
+    87→      gap: 8px;
+    88→      flex-wrap: wrap;
+    89→      margin-top: 10px;
+    90→    }
+    91→    .form-group .tag {
+    92→      background: #e3f2fd;
+    93→      color: white;
+    94→      padding: 4px 12px;
+    95→      border-radius: 20px;
+    96→      font-size: 12px;
+    97→      cursor: pointer;
+    98→    }
+    99→    .form-group .tag:hover {
+   100→      background: #2563eb;
+   101→    }
+   102→    .form-group .tag .remove {
+   103→      margin-left: 5px;
+   104→      padding: 0 4px;
+   105→      background: rgba(255, 255, 255, 0.3);
+   106→      border-radius: 50%;
+   107→    }
+   108→    .import-btn {
+   109→      display: flex;
+   110→      align-items: center;
+   111→      justify-content: center;
+   112→      width: 100%;
+   113→      padding: 14px;
+   114→      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   115→      color: white;
+   116→      border: none;
+   117→      border-radius: 8px;
+   118→      font-size: 16px;
+   119→      cursor: pointer;
+   120→      transition: all 0.3s;
+   121→      margin-top: 10px;
+   122→    }
+   123→    .import-btn:hover {
+   124→      transform: translateY(-2px);
+   125→      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+   126→    }
+   127→    .file-drop-zone {
+   128→      border: 2px dashed #ccc;
+   129→      border-radius: 8px;
+   130→      padding: 40px;
+   131→      text-align: center;
+   132→      cursor: pointer;
+   133→      transition: all 0.3s;
+   134→    }
+   135→    .file-drop-zone:hover,
+   136→    .file-drop-zone.dragover {
+   137→      border-color: #3385ff;
+   138→      background: #f0f7ff;
+   139→    }
+   140→    .file-drop-zone .icon {
+   141→      font-size: 48px;
+   142→      margin-bottom: 10px;
+   143→    }
+   144→    .file-drop-zone .text {
+   145→      color: #666;
+   146→      margin-bottom: 10px;
+   147→    }
+   148→    .file-drop-zone input[type="file"] {
+   149→      display: none;
+   150→    }
+   151→    .actions {
+   152→      display: flex;
+   153→      gap: 15px;
+   154→      margin-top: 30px;
+   155→    }
+   156→    .btn {
+   157→      flex: 1;
+   158→      padding: 14px;
+   159→      border: none;
+   160→      border-radius: 6px;
+   161→      font-size: 16px;
+   162→      cursor: pointer;
+   163→      transition: all 0.3s;
+   164→    }
+   165→    .btn-secondary {
+   166→      background: #f0f0f0;
+   167→      color: #666;
+   168→    }
+   169→    .btn-secondary:hover {
+   170→      background: #e0e0e0;
+   171→    }
+   172→    .message {
+   173→      padding: 15px;
+   174→      border-radius: 6px;
+   175→      margin-bottom: 20px;
+   176→      display: none;
+   177→    }
+   178→    .message.success {
+   179→      background: #d4edda;
+   180→      color: #155724;
+   181→    }
+   182→    .message.error {
+   183→      background: #f8d7da;
+   184→      color: #721c24;
+   185→    }
+   186→    .file-preview {
+   187→      background: #f9f9f9;
+   188→      border-radius: 6px;
+   189→      padding: 15px;
+   190→      margin-top: 10px;
+   191→      font-size: 14px;
+   192→    }
+   193→  </style>
+   194→</head>
+   195→<body>
+   196→  <div class="header">
+   197→    <h1>导入课程资料</h1>
+   198→  </div>
+   199→
+   200→  <div class="container">
+   201→    <div id="message" class="message"></div>
+   202→
+   203→    <form class="form" onsubmit="handleSubmit(event)">
+   204→      <h2>课程信息</h2>
+   205→
+   206→      <div class="form-group">
+   207→        <label for="courseName">课程名称 *</label>
+   208→        <input type="text" id="courseName" placeholder="请输入课程名称" required>
+   209→      </div>
+   210→
+   211→      <div class="form-group">
+   212→        <label for="instructor">讲师</label>
+   213→        <input type="text" id="instructor" placeholder="请输入讲师姓名">
+   214→      </div>
+   215→
+   216→      <div class="form-group">
+   217→        <label for="category">分类</label>
+   218→        <select id="category">
+   219→          <option value="default">默认</option>
+   220→          <option value="战略">战略</option>
+   221→          <option value="组织">组织</option>
+   222→          <option value="管理">管理</option>
+   223→          <option value="营销">营销</option>
+   224→          <option value="产品">产品</option>
+   225→          <option value="其他">其他</option>
+   226→        </select>
+   227→      </div>
+   228→
+   229→      <div class="form-group">
+   230→        <label for="tags">标签</label>
+   231→        <input type="text" id="tagInput" class="tag-input" placeholder="输入标签后按回车添加">
+   232→        <div id="tags" class="tags"></div>
+   233→      </div>
+   234→
+   235→      <div class="form-group">
+   236→        <label for="content">课程内容 *</label>
+   237→        <textarea id="content" placeholder="请输入课程内容，支持粘贴文本..." required></textarea>
+   238→        <div class="hint">支持粘贴课程文字稿或摘要</div>
+   239→      </div>
+   240→
+   241→      <div class="form-group">
+   242→        <label>导入文件</label>
+   243→        <div class="file-drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+   244→          <div class="icon">📁</div>
+   245→          <div class="text">点击或拖拽文件到此处</div>
+   246→          <div class="hint">支持 .txt, .md, .json 文件</div>
+   247→        </div>
+   248→        <input type="file" id="fileInput" accept=".txt,.md,.json" onchange="handleFileSelect(event)">
+   249→        <div id="filePreview" class="file-preview" style="display: none;"></div>
+   250→      </div>
+   251→
+   252→      <button type="button" class="import-btn" onclick="importCourse()">导入课程</button>
+   253→
+   254→      <div class="actions">
+   255→        <button type="button" class="btn btn-secondary" onclick="goBack()">返回</button>
+   256→      </div>
+   257→    </form>
+   258→  </div>
+   259→
+   260→  <script>
+   261→    const API_BASE = 'http://localhost:3000/api';
+   262→    let currentUserId = null;
+   263→    let tags = [];
+   264→    let fileContent = '';
+   265→
+   266→    // 从localStorage获取userId
+   267→    function getUserId() {
+   268→      const userStr = localStorage.getItem('currentUser');
+   269→      if (userStr) {
+   270→        const user = JSON.parse(userStr);
+   271→        return user.userId || user.openId;
+   272→      }
+   273→      const params = new URLSearchParams(window.location.search);
+   274→      return params.get('userId');
+   275→    }
+   276→
+   277→    // 添加标签
+   278→    function addTag() {
+   279→      const input = document.getElementById('tagInput');
+   280→      const value = input.value.trim();
+   281→      if (value && !tags.includes(value)) {
+   282→        tags.push(value);
+   283→        renderTags();
+   284→        input.value = '';
+   285→      }
+   286→    }
+   287→
+   288→    // 删除标签
+   289→    function removeTag(index) {
+   290→      tags.splice(index, 1);
+   291→      renderTags();
+   292→    }
+   293→
+   294→    // 渲染标签
+   295→    function renderTags() {
+   296→      const container = document.getElementById('tags');
+   297→      container.innerHTML = tags.map((tag, index) => `
+   298→        <span class="tag" onclick="removeTag(${index})">
+   299→          ${escapeHtml(tag)}
+   300→          <span class="remove">×</span>
+   301→        </span>
+   302→      `).join('');
+   303→    }
+   304→
+   305→    // 显示消息
+   306→    function showMessage(text, type) {
+   307→      const message = document.getElementById('message');
+   308→      message.textContent = text;
+   309→      message.className = `message ${type}`;
+   310→      message.style.display = 'block';
+   311→      setTimeout(() => {
+   312→        message.style.display = 'none';
+   313→      }, 3000);
+   314→    }
+   315→
+   316→    // 文件选择
+   317→    function handleFileSelect(event) {
+   318→      const file = event.target.files[0];
+   319→      if (!file) return;
+   320→
+   321→      const reader = new FileReader();
+   322→      reader.onload = (e) => {
+   323→        fileContent = e.target.result;
+   324→        document.getElementById('content').value = fileContent;
+   325→        document.getElementById('filePreview').textContent = `已选择文件: ${file.name} (${Math.round(file.size / 1024)}KB)`;
+   326→        document.getElementById('filePreview').style.display = 'block';
+   327→      };
+   328→      reader.readAsText(file);
+   329→    }
+   330→
+   331→    // 拖放处理
+   332→    const dropZone = document.getElementById('dropZone');
+   333→    dropZone.addEventListener('dragover', (e) => {
+   334→      e.preventDefault();
+   335→      dropZone.classList.add('dragover');
+   336→    });
+   337→    dropZone.addEventListener('dragleave', () => {
+   338→      dropZone.classList.remove('dragover');
+   339→    });
+   340→    dropZone.addEventListener('drop', (e) => {
+   341→      e.preventDefault();
+   342→      dropZone.classList.remove('dragover');
+   343→      const file = e.dataTransfer.files[0];
+   344→      if (file) {
+   345→        document.getElementById('fileInput').files = e.dataTransfer.files;
+   346→        handleFileSelect({ target: { files: [file] } });
+   347→      }
+   348→    });
+   349→
+   350→    // 导入课程
+   351→    async function importCourse() {
+   352→      currentUserId = getUserId();
+   353→
+   354→      const courseName = document.getElementById('courseName').value.trim();
+   355→      const instructor = document.getElementById('instructor').value.trim();
+   356→      const category = document.getElementById('category').value;
+   357→      const content = document.getElementById('content').value.trim();
+   358→
+   359→      if (!courseName || !content) {
+   360→        showMessage('请填写课程名称和内容', 'error');
+   361→        return;
+   362→      }
+   363→
+   364→      const form = document.querySelector('.form');
+   365→      form.style.opacity = '0.5';
+   366→      form.style.pointerEvents = 'none';
+   367→
+   368→      try {
+   369→        const response = await fetch(`${API_BASE}/materials`, {
+   370→          method: 'POST',
+   371→          headers: { 'Content-Type': 'application/json' },
+   372→          body: JSON.stringify({
+   373→            userId: currentUserId,
+   374→            title: courseName,
+   375→            content: content + (instructor ? `\n\n讲师：${instructor}` : ''),
+   376→            tags: tags,
+   377→            category: category
+   378→          })
+   379→        });
+   380→
+   381→        const data = await response.json();
+   382→
+   383→        if (data.success) {
+   384→          showMessage('课程导入成功！', 'success');
+   385→          // 清空表单
+   386→          document.getElementById('courseName').value = '';
+   387→          document.getElementById('instructor').value = '';
+   388→          document.getElementById('content').value = '';
+   389→          document.getElementById('filePreview').style.display = 'none';
+   390→          fileContent = '';
+   391→          tags = [];
+   392→          renderTags();
+   393→        } else {
+   394→          showMessage(data.error || '导入失败', 'error');
+   395→        }
+   396→      } catch (error) {
+   397→        showMessage(`导入失败：${error.message}`, 'error');
+   398→      } finally {
+   399→        form.style.opacity = '1';
+   400→        form.style.pointerEvents = 'auto';
+   401→      }
+   402→    }
+   403→
+   404→    // 表单提交（阻止默认行为）
+   405→    function handleSubmit(event) {
+   406→      event.preventDefault();
+   407→    }
+   408→
+   409→    // 返回
+   410→    function goBack() {
+   411→      window.location.href = `materials.html?userId=${getUserId()}`;
+   412→    }
+   413→
+   414→    // HTML转义
+   415→    function escapeHtml(text) {
+   416→      const div = document.createElement('div');
+   417→      div.textContent = text;
+   418→      return div.innerHTML;
+   419→    }
+   420→
+   421→    // 标签输入回车处理
+   422→    document.getElementById('tagInput').addEventListener('keydown', function(event) {
+   423→      if (event.key === 'Enter') {
+   424→        event.preventDefault();
+   425→        addTag();
+   426→      }
+   427→    });
+   428→
+   429→    // 初始化
+   430→    currentUserId = getUserId();
+   431→  </script>
+   432→</body>
+   433→</html>
+   434→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

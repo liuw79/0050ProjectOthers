@@ -1,0 +1,714 @@
+:root {
+    --primary-color: #1a3c5e; /* Deep Blue */
+    --accent-color: #d4af37; /* Gold */
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --light-text: #666;
+    --card-bg: #ffffff;
+    --font-serif: 'Noto Serif SC', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #fcfbf9; /* Warm Linen instead of Gray */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px; /* Mobile-first, long infographic style */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.hero {
+    /* Blend of Shanghai (Deep Blue) and France (Romantic Rose/Gold) */
+    background: linear-gradient(135deg, #1a3c5e 0%, #632b6c 50%, #c06c84 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.3); /* Vignette for depth */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #fff;
+    border-radius: 50% 50% 0 0;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.divider {
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 20px auto;
+}
+
+.intro {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+/* Quote */
+.quote-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.quote-text {
+    font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', serif; /* Use a handwriting-like font if available */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Embedded Vintage Player */
+.player-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.vintage-player {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.vintage-player:hover {
+    background: transparent;
+    transform: scale(1.05);
+}
+
+.turntable-base {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+}
+
+.vinyl-disc {
+    width: 70px;
+    height: 70px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Realistic Grooves with Sheen */
+.vinyl-grooves {
+    position: absolute;
+    top: 2px; left: 2px; right: 2px; bottom: 2px;
+    border-radius: 50%;
+    background: 
+        conic-gradient(
+            from 90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 15%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0.1) 65%,
+            rgba(255, 255, 255, 0) 80%
+        ),
+        repeating-radial-gradient(
+            #1a1a1a,
+            #1a1a1a 2px,
+            #2a2a2a 3px,
+            #1a1a1a 4px
+        );
+}
+
+.vinyl-label {
+    width: 24px;
+    height: 24px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6px; /* Smaller font to fit in 24px circle */
+    color: rgba(0,0,0,0.5);
+    font-weight: bold;
+    overflow: hidden;
+}
+
+/* Center hole */
+.vinyl-label::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px; height: 4px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Label Pattern/Text to show rotation */
+.vinyl-label::before {
+    content: 'WY';
+    transform: rotate(45deg);
+    z-index: 1;
+    letter-spacing: 8px; /* Increased spacing to clearly clear the 4px center hole */
+    padding-left: 8px; /* Compensate for letter-spacing to ensure perfect centering */
+}
+
+/* Tone Arm */
+.tone-arm {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 40px;
+    height: 80px; /* Increased height for longer arm */
+    transform-origin: 32px 8px; /* Pivot point */
+    transform: rotate(-30deg); /* Parked position */
+    transition: transform 0.8s ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Arm Structure constructed with CSS */
+.arm-counterweight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    background: #888;
+    border-radius: 50%;
+    border: 2px solid #555;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* Gold pivot center */
+.arm-counterweight::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
+}
+
+.arm-rod {
+    position: absolute;
+    top: 8px;
+    left: 30px; /* Aligned with pivot center (32px) - half width (2px) */
+    width: 4px;
+    height: 45px; /* Shortened to prevent hitting record center */
+    background: #c0c0c0;
+    border-radius: 2px;
+    z-index: 1;
+    /* Straight rod for better alignment, rotation handled by parent */
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.arm-head {
+    position: absolute;
+    top: 52px; /* Connected to end of rod (8 + 45 - 1px overlap) */
+    left: 26px; /* Centered on rod */
+    width: 12px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Player Controls Text - Hidden */
+.player-controls {
+    display: none;
+}
+
+.play-hint {
+    display: none;
+}
+
+/* Playing State Animations */
+.vintage-player.playing .vinyl-disc {
+    animation: spinVinyl 4s linear infinite;
+}
+
+.vintage-player.playing .tone-arm {
+    /* Move to start of record */
+    transform: rotate(10deg); 
+    /* Then track towards center: 20s duration, 0.8s delay (wait for arm to drop), loop */
+    animation: trackRecord 20s linear 0.8s infinite;
+}
+
+@keyframes spinVinyl {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes trackRecord {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(25deg); }
+}
+
+/* Section Common */
+section {
+    padding: 40px 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Prologue */
+.prologue {
+    text-align: center;
+    background: #fff;
+    padding: 50px 20px;
+    border-bottom: 1px dashed #eee;
+}
+
+.prologue-content {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+.prologue-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.prologue-date {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.prologue-date::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 5px auto 0;
+}
+
+.prologue-text {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #555;
+    font-family: var(--font-serif);
+}
+
+.prologue-text strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Metrics Grid */
+.metrics-section {
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding-top: 0;
+}
+
+.metric-card {
+    background: var(--card-bg);
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-sans);
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+/* Narrative Timeline (Updated) */
+.timeline-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #eee 10%, #eee 90%, transparent);
+}
+
+.timeline-year-summary {
+    position: relative;
+    padding-left: 50px;
+    margin: 40px 0 20px 0;
+}
+
+.timeline-year-summary .year-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: #fff;
+    padding: 5px 0;
+    z-index: 2;
+    font-family: var(--font-serif);
+}
+
+.timeline-year-summary p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+    margin-top: 30px; /* Space for year label */
+    font-style: italic;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 25px;
+}
+
+/* Event Types Styling */
+.timeline-item.milestone h3 { color: var(--accent-color); }
+.timeline-item.personal h3 { color: #d63384; } /* Pinkish for personal */
+.timeline-item.teacher h3 { color: #0d6efd; } /* Blue for teacher */
+.timeline-item.covid h3 { color: #7f8c8d; } /* Grey-ish for serious events */
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #ddd;
+    z-index: 1;
+}
+
+.timeline-item.milestone::before { background: var(--accent-color); box-shadow: 0 0 0 1px var(--accent-color); }
+.timeline-item.personal::before { background: #d63384; box-shadow: 0 0 0 1px #d63384; }
+.timeline-item.covid::before { 
+    content: '😷'; 
+    background: transparent; 
+    box-shadow: none; 
+    border: none;
+    font-size: 1.4rem;
+    left: 10px;
+    top: -5px;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
+
+.timeline-item .date {
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 2px;
+}
+
+.timeline-item h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* New Courses (Artistic View) */
+.new-course-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.year-group {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px dashed #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.year-group .year-label {
+    flex: 0 0 50px;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+}
+
+.year-group .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.course-pill {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.course-pill:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: #f0f8ff;
+}
+
+/* Term Milestones Grid */
+.milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.milestone-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px 15px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    border-color: var(--accent-color);
+}
+
+.milestone-card .term-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.milestone-card.term-100 .term-badge { 
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); 
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.milestone-card.term-50 .term-badge { 
+    background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%); /* 珊瑚红，代表热度 */
+    box-shadow: 0 2px 5px rgba(255, 107, 107, 0.4);
+    color: #fff;
+}
+
+.milestone-card .course-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    line-height: 1.4;
+    min-height: 2.8em; /* Ensure alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.milestone-card .date {
+    font-size: 0.75rem;
+    color: #999;
+    border-top: 1px dashed #eee;
+    padding-top: 8px;
+    margin-top: 5px;
+}
+
+/* Teacher Grid (Updated) */
+.teacher-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.teacher-year-group {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.teacher-year-group .year-badge {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+.teacher-year-group .year-badge .icon {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+.teacher-year-group .teacher-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.teacher-name {
+    background: #f8f9fa;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.teacher-name:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+}
+
+.footer .copyright {
+    margin-top: 30px;
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    opacity: 0.5;
+}

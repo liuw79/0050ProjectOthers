@@ -1,0 +1,115 @@
+<script setup lang="ts">
+import type { H5Mentor } from '@/types/h5'
+
+interface Props {
+  mentor: H5Mentor
+}
+
+defineProps<Props>()
+</script>
+
+<template>
+  <div class="h5-section" id="mentor">
+    <div class="h5-section-header">
+      <h2 class="h5-section-title">导师介绍</h2>
+    </div>
+    <div class="h5-section-content">
+      <div class="h5-mentor-card">
+        <!-- 头像 -->
+        <div class="h5-mentor-avatar">
+          <span v-if="!mentor.avatar">{{ mentor.name.charAt(0) }}</span>
+          <img v-else :src="mentor.avatar" :alt="mentor.name" />
+        </div>
+
+        <!-- 信息 -->
+        <div class="h5-mentor-info">
+          <h3 class="h5-mentor-name">{{ mentor.name }}</h3>
+          <p class="h5-mentor-title">
+            {{ mentor.title }}
+            <span v-if="mentor.company" class="h5-mentor-company"> · {{ mentor.company }}</span>
+          </p>
+          <p class="h5-mentor-desc">{{ mentor.description }}</p>
+
+          <!-- 经历标签 -->
+          <div v-if="mentor.experience?.length" class="h5-mentor-experience">
+            <span v-for="(exp, index) in mentor.experience.slice(0, 3)" :key="index" class="h5-mentor-tag">
+              {{ exp }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.h5-mentor-card {
+  display: flex;
+  padding: 4px 0;
+}
+
+.h5-mentor-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--h5-primary) 0%, var(--h5-primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--h5-text-white);
+  font-size: 28px;
+  font-weight: 700;
+  margin-right: 16px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.h5-mentor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h5-mentor-info {
+  flex: 1;
+}
+
+.h5-mentor-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--h5-text-dark);
+  margin-bottom: 4px;
+}
+
+.h5-mentor-title {
+  font-size: 13px;
+  color: var(--h5-text-gray);
+  margin-bottom: 8px;
+}
+
+.h5-mentor-company {
+  color: var(--h5-text-light);
+}
+
+.h5-mentor-desc {
+  font-size: 14px;
+  color: var(--h5-text-gray);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.h5-mentor-experience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.h5-mentor-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--h5-bg-light);
+  color: var(--h5-text-gray);
+  font-size: 12px;
+  border-radius: 4px;
+}
+</style>

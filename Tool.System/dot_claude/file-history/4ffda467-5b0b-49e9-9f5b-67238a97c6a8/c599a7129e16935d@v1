@@ -1,0 +1,61 @@
+<template>
+  <div>
+    <h1 class="text-2xl font-bold mb-2">开始创作</h1>
+    <p class="text-gray-500 mb-8">选择你要创作的内容类型</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <router-link
+        v-for="item in projectTypes"
+        :key="item.id"
+        :to="item.route"
+        class="block bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 hover:border-blue-200"
+      >
+        <div class="text-3xl mb-3">{{ item.icon }}</div>
+        <h3 class="font-bold text-lg mb-2">{{ item.title }}</h3>
+        <p class="text-gray-500 text-sm">{{ item.desc }}</p>
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const projectTypes = ref([
+  {
+    id: 'article',
+    title: '写公众号文章',
+    desc: '选题分析、素材准备、AI 写作',
+    icon: '✍️',
+    route: '/new?type=article'
+  },
+  {
+    id: 'host',
+    title: '写主持词',
+    desc: '课程开场主持，FOCUS 框架',
+    icon: '🎤',
+    route: '/new?type=host'
+  },
+  {
+    id: 'intro',
+    title: '写五句话介绍',
+    desc: '课程介绍，4 个版本输出',
+    icon: '📝',
+    route: '/new?type=intro'
+  },
+  {
+    id: 'moments',
+    title: '写朋友圈文案',
+    desc: '营销场景，课程推广',
+    icon: '💬',
+    route: '/new?type=moments'
+  },
+  {
+    id: 'video',
+    title: '写视频脚本',
+    desc: '脚本大纲、时间控制',
+    icon: '🎬',
+    route: '/new?type=video'
+  }
+]);
+</script>

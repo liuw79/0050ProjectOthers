@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-07-24 12:13:35",
+  "movie_base_path": "/Volumes/video/电影",
+  "statistics": {
+    "processed": 0,
+    "renamed": 7,
+    "moved": 1,
+    "errors": 0,
+    "collections_organized": 1
+  },
+  "summary": {
+    "total_operations": 9,
+    "success_rate": "100.0%"
+  }
+}

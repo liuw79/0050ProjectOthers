@@ -1,0 +1,30 @@
+# LLM 配置
+llm:
+  provider: anthropic  # anthropic, openai, custom
+  api_key: ${ANTHROPIC_API_KEY}
+  model: claude-sonnet-4-5-20250929
+  max_tokens: 4096
+
+# 项目配置
+project:
+  work_dir: ./workspace
+  feature_list_path: ./feature_list.json
+  progress_file: ./claude-progress.txt
+  init_script: ./init.sh
+
+# 测试配置
+test:
+  tool: puppeteer
+  headless: true
+  screenshot_dir: ./screenshots
+
+# Git 配置
+git:
+  auto_commit: true
+  commit_message_format: "feat: {description}"
+
+# Web Dashboard (可选)
+dashboard:
+  enabled: false
+  host: 0.0.0.0
+  port: 8000

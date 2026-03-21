@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-07-23T20:31:46.073963",
+  "reorganization_type": "piano_specialized",
+  "summary": {
+    "piano_tutorials": 4,
+    "categories": 3,
+    "deletions": 4,
+    "preserved": 1
+  },
+  "piano_categories": {
+    "📦 其他钢琴内容": {
+      "count": 2,
+      "total_size_gb": 17.3,
+      "tutorials": [
+        {
+          "name": "Piano.tutorial.collection",
+          "size_gb": 15.2,
+          "description": "钢琴教程合集，包含多套完整教程"
+        },
+        {
+          "name": "学钢琴必备的认知提升课 五维高效学习法 【成人、琴童家长】",
+          "size_gb": 2.1,
+          "description": "钢琴学习方法和认知提升"
+        }
+      ],
+      "description": "其他钢琴相关内容"
+    },
+    "🎹 钢琴基础入门": {
+      "count": 1,
+      "total_size_gb": 3.8,
+      "tutorials": [
+        {
+          "name": "V叔的钢琴基础入门课",
+          "size_gb": 3.8,
+          "description": "钢琴基础入门课程"
+        }
+      ],
+      "description": "钢琴基础入门教程，适合零基础学习者"
+    },
+    "🎵 钢琴曲目练习": {
+      "count": 1,
+      "total_size_gb": 4.5,
+      "tutorials": [
+        {
+          "name": "L优质好歌轻松弹 打造你的拿手曲目 钢琴演奏好听歌曲 丫妮钢琴",
+          "size_gb": 4.5,
+          "description": "流行歌曲钢琴演奏教程"
+        }
+      ],
+      "description": "具体钢琴曲目的学习和练习"
+    }
+  },
+  "deletion_list": [
+    {
+      "name": "音乐奥秘解码——轻松学乐理",
+      "size_gb": 1.8,
+      "reason": "通用乐理知识（非钢琴专用）"
+    },
+    {
+      "name": "方百里 哈农(34个视频 共925M)",
+      "size_gb": 0.9,
+      "reason": "哈农练习（可能包含其他乐器）"
+    },
+    {
+      "name": "鲍释贤",
+      "size_gb": 2.3,
+      "reason": "未明确的音乐教程"
+    },
+    {
+      "name": "AI",
+      "size_gb": 1.2,
+      "reason": "AI相关教程（非音乐）"
+    }
+  ],
+  "preserved_directories": [
+    {
+      "name": "高维学堂-专业课程",
+      "size_gb": 25.6,
+      "description": "高维学堂专业课程（保持不变）"
+    }
+  ]
+}

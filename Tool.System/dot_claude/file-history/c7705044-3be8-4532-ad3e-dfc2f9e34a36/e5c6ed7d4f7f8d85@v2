@@ -1,0 +1,8 @@
+{
+  "status": "running",
+  "startedAt": "2026-02-19T10:40:00.000Z",
+  "publicUrl": "https://toddler-memo-rocket-reproduction.trycloudflare.com",
+  "webhookUrl": "https://toddler-memo-rocket-reproduction.trycloudflare.com/webhook",
+  "localPort": 3000,
+  "note": "请将 webhookUrl 配置到飞书应用的事件订阅中"
+}

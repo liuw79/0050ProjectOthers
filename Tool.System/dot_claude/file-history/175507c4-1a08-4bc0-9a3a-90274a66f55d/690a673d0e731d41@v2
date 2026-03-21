@@ -1,0 +1,264 @@
+---
+name: gemini-api
+description: Gemini API 调用工具。当用户想要调用 Gemini 模型生成内容时必须使用此 skill。触发词："调用 Gemini"、"用 Gemini"、"Gemini 生成"、"让 Gemini 写"、"发给 Gemini"、"用 Gemini 3.1 Pro"、"gemini-api"。支持文本生成、JSON输出。
+---
+
+# Gemini API 调用 Skill
+
+## 概述
+
+这是一个封装好的 Gemini API 调用工具，支持：
+- **CLI 命令行工具** - 快速调用（推荐）⭐
+- **Node.js 库** - 代码集成
+- **文本生成** - 标准输出
+- **JSON 输出** - 结构化数据
+- **AI教练评估报告** - 专用脚本生成 HTML 报告
+
+---
+
+## ⚠️ 模型选择规则（重要）
+
+### 推荐使用
+
+| 模型 | 说明 | 适用场景 |
+|------|------|----------|
+| `gemini-3.1-pro-preview` | **默认模型**，稳定可靠 | 通用场景 |
+| `gpt-5.4` | GPT最新旗舰，推理强 | 复杂分析、评估报告 |
+| `gpt-5.2-pro` | GPT Pro版本 | 高质量输出 |
+| `claude-opus-4-5` | Claude最强 | 深度推理 |
+| `claude-sonnet-4-5` | Claude均衡版 | 日常任务 |
+
+### 可选模型
+
+| 模型 | 说明 |
+|------|------|
+| `gpt-5.1` | GPT-5基础版 |
+| `gpt-5.4-mini` | 轻量快速 |
+| `o1-pro` | OpenAI推理专用 |
+| `o4-mini` | 新版推理模型 |
+| `gemini-3-pro-preview` | Gemini新版 |
+
+### 不推荐
+
+| 模型 | 原因 |
+|------|------|
+| `gemini-2.5-pro` | 不稳定 |
+| `gemini-2.0-flash` | 质量不够 |
+
+**模型选择建议：**
+- 评估报告、深度分析 → `gpt-5.4` 或 `gemini-3.1-pro-preview`
+- 快速生成、简单任务 → `gpt-5.4-mini`
+- 用户指定模型 → 按用户要求执行
+
+---
+
+## 快速使用（CLI）⭐ 推荐
+
+### 基本用法
+
+```bash
+# 进入 skill 目录
+cd ~/.claude/skills/gemini-api
+
+# 简单文本生成（默认使用 gemini-3.1-pro-preview）
+node gemini.js "你的prompt"
+
+# JSON 输出模式
+node gemini.js --json "生成一个包含name和age的JSON"
+
+# 带系统提示词
+node gemini.js --system "你是营销专家" "帮我写个标题"
+
+# 从文件读取
+node gemini.js --file prompt.txt
+```
+
+### 选项
+
+| 选项 | 说明 | 默认值 |
+|------|------|--------|
+| `--json` | 强制 JSON 输出 | - |
+| `--system` | 设置系统提示词 | - |
+| `--file` | 从文件读取 prompt | - |
+| `--model` | 指定模型 | `gemini-3.1-pro-preview` |
+| `--max-tokens` | 最大 token 数 | `8192` |
+
+### 示例
+
+```bash
+# 教练反馈场景
+node gemini.js --system "你是企业教练" --file interview.txt
+
+# 快速生成
+node gemini.js "用一句话介绍高维学堂"
+
+# JSON 数据提取
+node gemini.js --json "从以下文本提取：姓名、公司、职位..."
+```
+
+---
+
+## AI 教练评估报告 ⭐
+
+### 专用脚本
+
+使用 `coach-evaluate.js` 生成 AI 教练评估报告：
+
+```bash
+node coach-evaluate.js --prompt prompt.txt --output report.html
+```
+
+### 工作流程
+
+1. 读取教练提示词（V4）和录音逐字稿
+2. 自动注入 JSON Schema 到提示词
+3. 调用 Gemini 生成结构化 JSON
+4. 自动校验分数、渲染 HTML
+5. 同时保存 `.json` 和 `.html` 文件
+
+### 输出文件
+
+| 文件 | 说明 |
+|------|------|
+| `report.html` | 格式化的 HTML 报告 |
+| `report.json` | 结构化的 JSON 数据 |
+
+---
+
+## 环境配置
+
+`.env` 文件位置：`~/.claude/skills/gemini-api/.env`
+
+```bash
+# OpenAI 兼容代理接口（当前配置）
+GEMINI_BASE_URL=https://api.openai-proxy.org
+GEMINI_API_KEY=sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI
+
+# 默认模型
+GEMINI_MODEL=gemini-3.1-pro-preview
+```
+
+---
+
+## Node.js 库使用
+
+### 引入
+
+```javascript
+// 方式1：直接运行 CLI（推荐）
+// node gemini.js "prompt"
+
+// 方式2：作为库引入
+import { ai } from './lib/ai.js';
+```
+
+### generate() - 文本生成
+
+```javascript
+const text = await ai.generate('你的prompt', {
+  model: 'gemini-3.1-pro-preview',  // 默认，可省略
+  maxTokens: 8192
+});
+```
+
+### generateJSON() - JSON 输出
+
+```javascript
+const data = await ai.generateJSON('生成一个包含name和age的JSON');
+// 返回: { name: "...", age: ... }
+```
+
+---
+
+## 在其他 Skill 中调用
+
+当其他 skill 需要调用 Gemini API 时：
+
+```javascript
+// 使用 child_process 调用 CLI
+const { execSync } = require('child_process');
+const result = execSync('node ~/.claude/skills/gemini-api/gemini.js --file prompt.txt', {
+  encoding: 'utf-8',
+  maxBuffer: 10 * 1024 * 1024  // 10MB
+});
+```
+
+或者直接使用 HTTP 请求：
+
+```javascript
+const response = await fetch('https://api.openai-proxy.org/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer sk-bwsCC2110SeplnPJcgq1m8B0jAMzn8nsKzlbwYhkPeU34sAI'
+  },
+  body: JSON.stringify({
+    model: 'gemini-3.1-pro-preview',  // 必须使用此模型
+    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 8192
+  })
+});
+```
+
+---
+
+## 报告贴合度评估
+
+### V4 标准报告结构
+
+| 序号 | 模块 | 标准要求 |
+|------|------|----------|
+| 1 | 总分 | 0-100分，大字展示 |
+| 2 | 一句话总评 | 以"一句话总评："开头 |
+| 3 | 分项评分 | 6个维度完整呈现 |
+| 4 | 高阶加分项 | 独立模块，标注分值（+1/+3/+5）|
+| 5 | AI教练建议 Top 3 | 结构化建议（问题类型/具体表现/深度洞察/建议话术）|
+| 6 | 结束语 | 温暖激励，个性化寄语 |
+| 7 | Footer信息 | Model Version + Target |
+
+### 六维度评分权重
+
+| 维度 | 权重 | 评估要点 |
+|------|------|----------|
+| 高维介绍 | 30% | 实战商学院、三标准、投资背书、路线图、统一语言 |
+| 产品介绍 | 30% | FOCUS五要素（定性/背书/价值/工具/案例）|
+| 团建破冰 | 5% | 场域预热、互动设计 |
+| 邀约课评 | 15% | 动作坚决、意义传达 |
+| 结尾升华 | 10% | 价值提炼、行动号召 |
+| 口语节奏 | 10% | 流畅度、专业气场 |
+
+### 硬约束规则
+
+- **0-59分**：核心价值没讲清楚 → 总分严禁超过60分
+- **60-75分**：方法/案例缺失或邀约不坚决 → 总分严禁超过75分
+- **85+分**：标准动作无缺失 + 有显著可复用亮点
+
+---
+
+## 常见问题
+
+### Q: 为什么不能用其他模型？
+
+代理服务（api.openai-proxy.org）目前只稳定支持 `gemini-3.1-pro-preview`。其他模型要么不支持，要么输出质量不稳定。
+
+### Q: 如何确认使用了正确的模型？
+
+检查输出日志，确认模型名称为 `gemini-3.1-pro-preview`。
+
+### Q: 超时怎么办？
+
+```bash
+node --max-old-space-size=4096 gemini.js --file long-prompt.txt
+```
+
+### Q: 如何生成 AI 教练评估报告？
+
+使用专用脚本：
+```bash
+node coach-evaluate.js --prompt prompt.txt --output report.html
+```
+
+---
+
+*版本：v2.3*
+*更新时间：2026-03-17*

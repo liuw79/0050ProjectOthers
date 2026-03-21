@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>高维学堂·班主任带班复盘评估报告</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --highlight-color: #e6f2ff;
+            --border-color: #ddd;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .score-box {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--highlight-color);
+            border-radius: 6px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 35px;
+        }
+        .content-block { margin-bottom: 25px; }
+        .feedback-item {
+            background: var(--secondary-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+        .good { border-left: 4px solid #28a745; }
+        .improve { border-left: 4px solid #dc3545; }
+        .tips {
+            background: #e6f7ff;
+            border: 1px dashed #1890ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .vision {
+            text-align: center;
+            font-size: 16px;
+            font-style: italic;
+            color: #555;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <div class="header">
+        <h1>班主任带班胜任力复盘报告</h1>
+        <p>基于"企业成长陪跑伙伴"标准</p>
+    </div>
+
+    <div class="meta-info">
+        <div><strong>评估对象：</strong>黄文静</div>
+        <div><strong>课程主题：</strong>《流程型组织》- 蒋伟良博士</div>
+    </div>
+
+    <div class="score-box">
+        <div>综合评估得分：<span class="score">73</span> 分</div>
+        <div style="font-size: 14px; color: #555; margin-top: 5px;">
+            <strong>触发限分规则：</strong>结尾未进行课评邀约，且缺乏结训升华，按标准最高不超过75分。
+        </div>
+    </div>
+
+    <div class="content-block">
+        <p>亲爱的黄文静，辛苦了！两天的流程型组织课程非常硬核，能感受到你对高维业务流程的熟悉。作为HRBP，我基于"企业成长陪跑伙伴"的高标准为你做了复盘：</p>
+    </div>
+
+    <h2>一、 值得肯定的高光时刻</h2>
+    <div class="content-block">
+        <div class="feedback-item good">
+            <strong>1. 展现了极强的"业务陪跑"意识与同理心</strong><br>
+            在第二天结尾，你精准洞察到了企业家学友"既兴奋又焦虑，恨不得立马推行"的痛点，并及时踩刹车，建议他们<strong>"先想一想，内部达成共识"</strong>。这正是"成长陪跑伙伴"价值的体现。
+        </div>
+        <div class="feedback-item good">
+            <strong>2. 闭环服务与复训意识良好</strong><br>
+            主动向学友抛出"用小红花兑换复训名额"的福利，并给出了"落地一段时间吃不透再来复训"的合理场景。
+        </div>
+    </div>
+
+    <h2>二、 核心复盘与提升空间</h2>
+    <div class="content-block">
+        <div class="feedback-item improve">
+            <strong>1. 第一天开场：产品"5句话"缺乏精准穿透力</strong><br>
+            《流程型组织》这门课太重了，我们需要在开场就用语言给企业家建立极高的预期：
+            <ul>
+                <li><strong>定性：</strong>强调这是推倒重建的"底座课"</li>
+                <li><strong>背书：</strong>点出蒋博"最懂变革"及华为/vivo等标杆经验</li>
+                <li><strong>核心价值：</strong>"打破职能烟囱，端到端，让听见炮声的人呼唤炮火"</li>
+            </ul>
+        </div>
+
+        <div class="feedback-item improve">
+            <strong>2. 第二天结尾：场域收口过弱，严重遗漏"邀约课评"</strong><br>
+            <strong>致命遗漏：</strong>NPS（净推荐值）和课评是高维持续迭代生命线。即使课程再硬核，不坚决邀约填写课评，是一次运营失职。<br>
+            <strong>缺乏结语升华：</strong>课程结束时企业家需要用有力量的结束语，把"干货"升华为"行动的勇气"。
+        </div>
+    </div>
+
+    <h2>三、 实战锦囊</h2>
+    <div class="tips">
+        <strong>💡 "第二天结尾示范话术"：</strong><br><br>
+        "各位学友，两天烧脑的课程到这里就告一段落了。正如我刚才所说，大家回去后先别急着盲目推行，先建立内部共识。流程变革，注定是一场'一把手'的孤独修行，但好在有高维，大家并不孤单。<br><br>
+        <strong>现在请各位拿出手机，扫描屏幕上的二维码，我们需要您最真实的课评反馈。</strong><br><br>
+        最后，祝愿大家回去后，都能把偶然的成功变成必然的复制，真正实现'三分流程，七分组织'的跃迁！期待大家带团队来复训！"
+    </div>
+
+    <div class="vision">
+        "优秀的班主任，是讲师的翻译官，是学友的镜子，更是高维品牌温度的传递者。<br>
+        你已经具备了极好的同理心底子，期待下一次，用精准的语言穿透人心，用专业的运营闭环成就客户！加油！"
+    </div>
+</div>
+
+</body>
+</html>

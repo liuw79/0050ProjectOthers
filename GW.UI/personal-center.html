@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 高维学院</title>
+    <link rel="stylesheet" href="personal-center.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="nav-bar">
+                <button class="back-btn" aria-label="返回">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">个人中心</h1>
+                <button class="more-btn" aria-label="更多">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="19" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="5" cy="12" r="1" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2300A0EB'/%3E%3Ctext x='40' y='50' text-anchor='middle' fill='white' font-size='24' font-weight='bold'%3E刘%3C/text%3E%3C/svg%3E" alt="用户头像" class="avatar">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="username">刘伟</h2>
+                        <div class="user-badges">
+                            <span class="badge premium">SVIP</span>
+                            <span class="badge membership">企业学习卡 · 过期347天 · 续费</span>
+                        </div>
+                    </div>
+                    <button class="profile-edit-btn" aria-label="编辑资料">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12 2L18 8L6 20H0V14L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">1413</div>
+                        <div class="stat-label">红花</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">上课</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">评价</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">关注</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <div class="action-card highlighted">
+                <div class="action-content">
+                    <div class="action-icon calendar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="action-text">
+                        <span class="action-title">已报名待上课</span>
+                    </div>
+                </div>
+                <div class="action-badge">
+                    <span class="badge-text">1门即将开课</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Menu -->
+        <section class="main-menu">
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon study">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2 3H8C9.1 3 10 3.9 10 5V19C10 20.1 9.1 21 8 21H2V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M22 3H16C14.9 3 14 3.9 14 5V19C14 20.1 14.9 21 16 21H22V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">我的学习记录</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon certificate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M14 2H6C4.9 2 4 2.9 4 4V20L8 18L12 20V4C12 2.9 11.1 2 10 2H14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M20 8V18C20 19.1 19.1 20 18 20H14V4H18C19.1 4 20 4.9 20 6V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">我的听课凭证</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon coupon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 12C21 13.1 20.1 14 19 14C17.9 14 17 13.1 17 12C17 10.9 17.9 10 19 10C20.1 10 21 10.9 21 12Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 12C7 10.9 6.1 10 5 10C3.9 10 3 10 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 10H17M7 14H17" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">我的学习券</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon rating">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">课后评价</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon practice">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">我要复训</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon invoice">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M14 2H6C4.9 2 4 2.9 4 4V20L8 18L12 20L16 18L20 20V6C20 4.9 19.1 4 18 4H16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <line x1="9" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="2"/>
+                            <line x1="9" y1="13" x2="15" y2="13" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">开具发票</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon invite">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M16 21V19C16 17.9 15.1 17 14 17H5C3.9 17 3 17.9 3 19V21" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2"/>
+                            <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">邀请好友</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon friends">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 21V19C6 18.5 6.2 18 6.5 17.5C6.8 17 7.4 16.8 8 17H16C16.6 16.8 17.2 17 17.5 17.5C17.8 18 18 18.5 18 19V21" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">我的好友</span>
+                    <div class="menu-extra">
+                        <span class="friend-count">好友数: 7</span>
+                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <div class="menu-item">
+                    <div class="menu-icon shop">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">小红花商城</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon privilege">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">已兑换特权</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon orders">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11H15M9 15H15M17 21H7C5.9 21 5 20.1 5 19V5C5 3.9 5.9 3 7 3H12L17 8V19C17 20.1 16.1 21 15 21H17Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">全部订单</span>
+                    <div class="menu-extra">
+                        <span class="notification-badge">3</span>
+                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-icon management">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 14L10 16L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title">企业学习卡管理</span>
+                    <svg class="menu-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="feedback-section">
+            <button class="feedback-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M18 8C18 12.4183 14.4183 16 10 16H2L6 12C6 7.58172 9.58172 4 14 4H18V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <span>问题反馈</span>
+            </button>
+        </section>
+    </div>
+</body>
+</html>

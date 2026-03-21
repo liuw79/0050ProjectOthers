@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-07-23T22:18:10.430180",
+  "summary": {
+    "total_piano_tutorials": 17,
+    "total_deleted_tutorials": 1,
+    "categories_created": 7
+  },
+  "piano_categories": {
+    "📦 其他教材": {
+      "count": 7,
+      "tutorials": [
+        "Piano.tutorial.collection",
+        "百首名曲",
+        "常见钢琴演奏技巧",
+        "古典音乐鉴赏课程",
+        "轻音乐",
+        "学钢琴必备的认知提升课 五维高效学习法 【成人、琴童家长】",
+        "L优质好歌轻松弹 打造你的拿手曲目 钢琴演奏好听歌曲 丫妮钢琴"
+      ],
+      "description": "其他钢琴教材和内容"
+    },
+    "🎓 乐理基础": {
+      "count": 1,
+      "tutorials": [
+        "音乐奥秘解码——轻松学乐理"
+      ],
+      "description": "音乐理论和乐理基础知识"
+    },
+    "🎵 哈农练指法": {
+      "count": 2,
+      "tutorials": [
+        "方百里 哈农(34个视频 共925M)",
+        "哈农教程全集精讲"
+      ],
+      "description": "哈农钢琴练指法"
+    },
+    "🎪 巴赫作品": {
+      "count": 1,
+      "tutorials": [
+        "巴赫初级钢琴曲集"
+      ],
+      "description": "巴赫钢琴作品集"
+    },
+    "📚 拜厄教程": {
+      "count": 2,
+      "tutorials": [
+        "拜厄",
+        "V叔的钢琴基础入门课"
+      ],
+      "description": "拜厄钢琴基本教程"
+    },
+    "🎼 车尔尼系列": {
+      "count": 3,
+      "tutorials": [
+        "车尔尼299钢琴教程",
+        "车尔尼599钢琴课程",
+        "车尔尼849"
+      ],
+      "description": "车尔尼钢琴练习曲系列"
+    },
+    "🎹 小汤系列": {
+      "count": 1,
+      "tutorials": [
+        "小汤普森教程"
+      ],
+      "description": "汤普森简易钢琴教程系列"
+    }
+  },
+  "deleted_tutorials": [
+    "AI"
+  ],
+  "operations": {
+    "moves": 17,
+    "deletions": 1
+  }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>品牌体验设计数据分析报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .chart-container {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .chart-container {
+                height: 250px;
+            }
+            .summary {
+                padding: 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>品牌体验设计数据分析报告</h1>
+        
+        <div class="section">
+            <h2>1. 行业分布分析</h2>
+            <div class="summary">
+                <p>根据数据统计，主要行业分布如下：</p>
+                <ul>
+                    <li>消费品行业占比最大，主要包括服装、食品、电子产品等细分领域</li>
+                    <li>其他行业次之，包含医疗、地产等多个领域</li>
+                    <li>科技行业主要集中在教育培训和互联网领域</li>
+                    <li>餐饮行业和跨境电商行业占比相对较小但较为稳定</li>
+                </ul>
+            </div>
+            <div id="industryChart" class="chart-container"></div>
+        </div>
+
+        <div class="section">
+            <h2>2. 职务层级分析</h2>
+            <div class="summary">
+                <p>职务分布特点：</p>
+                <ul>
+                    <li>高管层级（CEO、总经理、创始人等）占比较高</li>
+                    <li>中层管理者（经理、总监）是第二大群体</li>
+                    <li>专业岗位（产品、运营、市场）人员分布均匀</li>
+                </ul>
+            </div>
+            <div id="positionChart" class="chart-container"></div>
+        </div>
+
+        <div class="section">
+            <h2>3. 地域分布分析</h2>
+            <div class="summary">
+                <p>企业地域分布特征：</p>
+                <ul>
+                    <li>一线城市（北上广深）企业占比最高</li>
+                    <li>杭州作为新一线城市表现突出</li>
+                    <li>其他城市分布相对分散</li>
+                </ul>
+            </div>
+            <div id="locationChart" class="chart-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化图表
+        const industryChart = echarts.init(document.getElementById('industryChart'));
+        const positionChart = echarts.init(document.getElementById('positionChart'));
+        const locationChart = echarts.init(document.getElementById('locationChart'));
+
+        // 行业分布图表配置
+        industryChart.setOption({
+            title: {
+                text: '行业分布',
+                left: 'center',
+                textStyle: {
+                    fontSize: window.innerWidth <= 768 ? 14 : 16
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'horizontal',
+                bottom: 10,
+                textStyle: {
+                    fontSize: window.innerWidth <= 768 ? 12 : 14
+                }
+            },
+            series: [{
+                name: '行业分布',
+                type: 'pie',
+                radius: window.innerWidth <= 768 ? '40%' : '50%',
+                data: [
+                    {value: 45, name: '消费品'},
+                    {value: 35, name: '其他'},
+                    {value: 25, name: '科技'},
+                    {value: 20, name: '餐饮'},
+                    {value: 15, name: '跨境电商'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        });
+
+        // 职务分布图表配置
+        positionChart.setOption({
+            title: {
+                text: '职务层级分布',
+                left: 'center',
+                textStyle: {
+                    fontSize: window.innerWidth <= 768 ? 14 : 16
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['高管层', '中层管理', '专业岗位', '其他职务'],
+                axisLabel: {
+                    fontSize: window.innerWidth <= 768 ? 12 : 14
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: '人数',
+                axisLabel: {
+                    fontSize: window.innerWidth <= 768 ? 12 : 14
+                }
+            },
+            series: [{
+                data: [40, 35, 25, 15],
+                type: 'bar',
+                barWidth: window.innerWidth <= 768 ? '30%' : '40%',
+                itemStyle: {
+                    color: '#3498db'
+                }
+            }]
+        });
+
+        // 地域分布图表配置
+        locationChart.setOption({
+            title: {
+                text: '企业地域分布',
+                left: 'center',
+                textStyle: {
+                    fontSize: window.innerWidth <= 768 ? 14 : 16
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'horizontal',
+                bottom: 10,
+                textStyle: {
+                    fontSize: window.innerWidth <= 768 ? 12 : 14
+                }
+            },
+            series: [{
+                name: '地域分布',
+                type: 'pie',
+                radius: window.innerWidth <= 768 ? ['30%', '60%'] : ['40%', '70%'],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                    borderRadius: 10,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                },
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: window.innerWidth <= 768 ? 16 : 20,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: 30, name: '北上广深'},
+                    {value: 20, name: '杭州'},
+                    {value: 15, name: '其他一线'},
+                    {value: 35, name: '其他城市'}
+                ]
+            }]
+        });
+
+        // 响应式调整
+        window.addEventListener('resize', function() {
+            industryChart.resize();
+            positionChart.resize();
+            locationChart.resize();
+            
+            // 更新图表配置
+            const isMobile = window.innerWidth <= 768;
+            
+            industryChart.setOption({
+                title: { textStyle: { fontSize: isMobile ? 14 : 16 } },
+                legend: { textStyle: { fontSize: isMobile ? 12 : 14 } },
+                series: [{ radius: isMobile ? '40%' : '50%' }]
+            });
+            
+            positionChart.setOption({
+                title: { textStyle: { fontSize: isMobile ? 14 : 16 } },
+                xAxis: { axisLabel: { fontSize: isMobile ? 12 : 14 } },
+                yAxis: { axisLabel: { fontSize: isMobile ? 12 : 14 } },
+                series: [{ barWidth: isMobile ? '30%' : '40%' }]
+            });
+            
+            locationChart.setOption({
+                title: { textStyle: { fontSize: isMobile ? 14 : 16 } },
+                legend: { textStyle: { fontSize: isMobile ? 12 : 14 } },
+                series: [{
+                    radius: isMobile ? ['30%', '60%'] : ['40%', '70%'],
+                    emphasis: { label: { fontSize: isMobile ? 16 : 20 } }
+                }]
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+[
+  {
+    "content": "探索项目上下文 - 查看公众号写作相关文件",
+    "status": "completed",
+    "activeForm": "探索项目上下文"
+  },
+  {
+    "content": "询问澄清问题 - 理解文章目的/约束/成功标准",
+    "status": "completed",
+    "activeForm": "询问澄清问题"
+  },
+  {
+    "content": "提出2-3种方案 - 包含权衡和推荐",
+    "status": "completed",
+    "activeForm": "提出方案"
+  },
+  {
+    "content": "呈现设计 - 分段展示并获得用户批准",
+    "status": "completed",
+    "activeForm": "呈现设计"
+  },
+  {
+    "content": "撰写文章正文",
+    "status": "in_progress",
+    "activeForm": "撰写文章正文"
+  }
+]

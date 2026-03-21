@@ -1,0 +1,12 @@
+[
+  {
+    "content": "更新 CLAUDE.md 添加新项目映射",
+    "status": "in_progress",
+    "activeForm": "更新项目映射配置"
+  },
+  {
+    "content": "更新 .claude.json 添加新项目权限",
+    "status": "pending",
+    "activeForm": "更新权限配置"
+  }
+]

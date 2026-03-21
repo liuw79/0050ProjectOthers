@@ -1,0 +1,4 @@
+2026-02-28T14:38:08.097Z [DEBUG] High write ratio: blit=0, write=20131 (100.0% writes), screen=876x57
+2026-02-28T14:38:09.538Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-02-28T14:38:09.538Z [DEBUG] Found 0 hook matchers in settings
+2026-02-28T14:38:09.538Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)

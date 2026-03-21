@@ -1,0 +1,29 @@
+     1→# 飞书应用配置
+     2→LARK_APP_ID=cli_a90590cbbdb8dcd5
+     3→LARK_APP_SECRET=usjMVVhp5XS8RlplsBpWedSKAIYDDk6U
+     4→LARK_VERIFICATION_TOKEN=
+     5→LARK_ENCRYPT_KEY=
+     6→LARK_REDIRECT_URI=http://localhost:3000/auth/callback
+     7→
+     8→# 多维表格配置
+     9→LARK_USERS_APP_TOKEN=
+    10→LARK_USERS_TABLE_ID=
+    11→LARK_MATERIALS_APP_TOKEN=VoZabSB3NawsUUslR3ycKNa1nzg
+    12→LARK_MATERIALS_TABLE_ID=tbl3lkLFcjnbqcWv
+    13→LARK_KNOWLEDGE_APP_TOKEN=
+    14→LARK_KNOWLEDGE_TABLE_ID=
+    15→LARK_SKILLS_APP_TOKEN=
+    16→LARK_SKILLS_TABLE_ID=
+    17→
+    18→# AI API配置（可选）
+    19→ANTHROPIC_API_KEY=
+    20→GOOGLE_AI_API_KEY=
+    21→ZHIPUAI_API_KEY=
+    22→
+    23→# 服务器配置
+    24→PORT=3000
+    25→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

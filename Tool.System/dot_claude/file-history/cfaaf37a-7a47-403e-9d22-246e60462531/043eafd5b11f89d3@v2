@@ -1,0 +1,16 @@
+Host op.gaowei.com
+    HostName op.gaowei.com
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ConnectTimeout 10
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    LogLevel ERROR
+
+Host git.code.tencent.com
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    IdentityFile ~/.ssh/id_rsa_gw

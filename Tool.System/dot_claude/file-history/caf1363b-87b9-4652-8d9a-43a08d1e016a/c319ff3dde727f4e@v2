@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>高维AI教练现场主持专属报告</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; }
+        h1 { font-size: 24px; font-weight: normal; margin-bottom: 5px; color: #222; }
+        h2 { font-size: 18px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 30px; }
+        .score-block { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 4px; }
+        .total-score { font-size: 36px; font-weight: bold; color: #333; }
+        .summary { font-size: 16px; margin-top: 10px; color: #555; }
+        .critical { color: #d9534f; font-weight: bold; }
+        .table-scores { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .table-scores td { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .table-scores td:last-child { text-align: right; font-weight: bold; }
+        .highlight { margin-bottom: 15px; border-left: 3px solid #ccc; padding-left: 10px; }
+        .highlight-quote { font-style: italic; color: #666; display: block; margin-bottom: 5px; }
+        .module { margin-bottom: 25px; }
+        .module-title { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+        .label { font-weight: bold; color: #555; margin-right: 5px; }
+        .insight { color: #d35400; margin-bottom: 5px; font-style: italic; }
+        .suggestion { background: #f0f7ff; padding: 10px; border-radius: 4px; margin-top: 5px; color: #333; }
+        .ending { margin-top: 40px; font-size: 18px; font-weight: bold; color: #333; text-align: center; padding: 20px; background: #f5f5f5; border-radius: 4px; }
+        .footer { font-size: 12px; color: #999; margin-top: 40px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1>高维AI教练现场主持专属报告</h1>
+    <div class="meta">测评对象：阿左 | 课程：业务优化与利润提升 | 日期：2026-03-14</div>
+
+    <div class="score-block">
+        <h2>Section 1: 综合评分</h2>
+        <div class="total-score">55 / 100</div>
+        <div class="summary">
+            阿左，听完你的开场，我能感受到你极其出色的亲和力，你把现场的破冰氛围带得非常温暖。但正是因为你想把"学员服务"和"互动体验"做得太满，导致长达近10分钟的暖场挤占了标准产品介绍的空间。在后续的课程导入中，核心的方法论与实战案例完全丢失，使得你更像一位贴心的"班主任"，而暂时褪去了"企业成长陪跑伙伴"的专业权威感。<br><br>
+            <span class="critical">核心矛盾：过度的破冰互动与冗长的暖场，稀释了商学院应有的专业气场；而【方法工具】与【案例支撑】的完全缺失，让这门硬核课程的价值落地感大打折扣。</span>
+        </div>
+    </div>
+
+    <h2>Section 2: 分项评分</h2>
+    <table class="table-scores">
+        <tr><td><strong>课程定性</strong> (权重 20%)</td><td>6 / 10</td></tr>
+        <tr><td><strong>背书与信任感</strong> (权重 15%)</td><td>7 / 10</td></tr>
+        <tr><td><strong>价值表达</strong> (权重 20%)</td><td>8 / 10</td></tr>
+        <tr><td><strong>方法表达</strong> (权重 15%)</td><td>2 / 10</td></tr>
+        <tr><td><strong>案例支撑</strong> (权重 10%)</td><td>1 / 10</td></tr>
+        <tr><td><strong>口语节奏</strong> (权重 10%)</td><td>6 / 10</td></tr>
+        <tr><td><strong>现场表现力</strong> (权重 10%)</td><td>6 / 10</td></tr>
+    </table>
+    <div style="font-size: 12px; color: #999; margin-top: 5px;">*说明：这次评分按"标准 5+5 开场主持"口径来打，不按"现场综合表现"宽口径来打。方法表达与案例支撑严重缺失，触发扣分硬约束。">*</div>
+
+    <h2>Section 3: ✨ 高光时刻</h2>
+    <div class="highlight">
+        <span class="highlight-quote">原稿表达：(无特定破冰指令)</span>
+        <span class="highlight-quote">现场金句："如果是同一组的，都是同一个企业的同学，我们可以来共识一下这两天的我们的学习目标...我们小组可以从高年级到低年级开始，这样的话我们也会有一个带动。"</span>
+        <strong>分析：</strong> 虽然前序暖场略长，但你精准地利用了"年级"文化作为场域破冰的抓手，既激发了老学员的荣誉感，又给新学员树立了榜样。这展现了你作为班主任对现场生态的敏锐洞察。
+    </div>
+
+    <h2>Section 4: 🔍 AI教练精准纠偏</h2>
+
+    <div class="module">
+        <span class="module-title">模块 1: 关于【高维介绍】 (5句话标准)</span>
+        <div><span class="label">问题类型:</span> 核心信息失真 / 口语化冲淡品牌严谨度</div>
+        <div><span class="label">具体表现:</span> "我们有科学家使用的双重内容标准" (19:52)；"红杉、经纬天府等12家..." </div>
+        <div class="insight"><span class="label">深度洞察:</span> 你的出发点是想快速推进流程，但"科学+实用"被口误说成"科学家使用"，"天图"被说成"天府"。当你作为高维的官方代言人站在这台上时，这类关键词的误差，会瞬间削弱企业家对高维"严谨、科学"定位的信任。投资机构的名字就是高维的肌肉，报错名字会伤害背书的含金量。</div>
+        <div><span class="label">优化建议:</span> 把5句话作为不可随意篡改的"锚点"。宁可语速放慢，也要确保每一个字掷地有声。</div>
+        <div class="suggestion"><strong>建议话术：</strong>"高维定义的实战有三个标准：...有科学+实用的双重内容标准...基于此，我们还成为了红杉、GGV、天图等12家一线投资机构指定的投后赋能伙伴。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块 2: 关于【产品介绍：F/C 定性与核心价值】</span>
+        <div><span class="label">问题类型:</span> 痛点铺垫到位，但丢失了"归因题眼"</div>
+        <div><span class="label">具体表现:</span> (27:06) 描述了"利润薄、现金流紧张"等表象后，直接跳到了"没有用到科学的方法"，遗漏了"隐性成本"。</div>
+        <div class="insight"><span class="label">深度洞察:</span> 你把痛点描述得很生动，但你漏掉了最重要的诊断词——"隐性成本"。对于企业家来说，光抛痛点是不够的，你必须帮他们指出"病因在哪"，这个词是整堂课的钩子。没有这个词，学员只会觉得"对，我很痛"，但不会产生"原来是这样，我迫不及待想听课"的顿悟感。</div>
+        <div><span class="label">优化建议:</span> 在抛出痛点和引出老师之间，必须把"隐性成本"作为桥梁重重地砸出来。</div>
+        <div class="suggestion"><strong>建议话术：</strong>"其实，很多时候并不是我们业务不够努力，而是企业的利润被那些看不见的'隐性成本'给吞噬了。今天这门课，就是帮大家精准定位这些经营黑洞。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块 3: 关于【产品介绍：O/U 背书与方法工具】</span>
+        <div><span class="label">问题类型:</span> 结构断层（方法工具 U 模块完全缺失）</div>
+        <div><span class="label">具体表现:</span> (28:34-29:29) 讲完了5大痛点后，直接进入了"老师会毫无保留分享"的结束语，没有提及"三层业务检视"和"20多个实战工具"。</div>
+        <div class="insight"><span class="label">深度洞察:</span> 老师很牛（O）是前提，但能让企业家安心坐两天的，是他们明确知道"我能带走什么武器"（U）。因为你省略了工具交付的预告，这门课在听众耳朵里就变成了一场"名师演讲"，而不是"能回去落地的心法+工具"的实战课。这削弱了高维区别于传统商学院的核心竞争力。</div>
+        <div><span class="label">优化建议:</span> 在介绍完核心价值后，务必清晰交代学员将获得的具体工具框架，给他们吃一颗"包落地"的定心丸。</div>
+        <div class="suggestion"><strong>建议话术：</strong>"接下来的两天，张鹏老师会带着大家进行一次彻底的'三层业务检视'。此外，他还会交付经营驾驶舱等20多个实战工具。每个工具都有模板，大家带回企业，立刻就能上手落地。"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块 4: 关于【产品介绍：S 案例支撑】</span>
+        <div><span class="label">问题类型:</span> 结果见证缺失</div>
+        <div><span class="label">具体表现:</span> 全程未提及往期学友的真实反馈和具体改善成果。</div>
+        <div class="insight"><span class="label">深度洞察:</span> 你的善良让你不想占用大家太多时间，但对于理性的成长型企业家来说，"同行的成功验证"（S）是击穿信任壁垒的最后一发子弹。没有往期学员的案例背书，前面所说的"优化利润"就缺乏安全感。加上案例，你就不只是在"推销"课程，而是在"陈述一个已被验证的事实"。</div>
+        <div><span class="label">优化建议:</span> 用学友视角的真实原话，来印证课程的威力。</div>
+        <div class="suggestion"><strong>建议话术：</strong>"很多往期学友反馈：'以前降本只知道盯着显性成本，学完才发现隐性成本才是关键。'事实证明，利润不是硬省出来的，而是科学设计出来的！"</div>
+    </div>
+
+    <div class="module">
+        <span class="module-title">模块 5: 关于【现场表现力】</span>
+        <div><span class="label">问题类型:</span> 角色重心偏移（场务组织者色彩 > 专家定调者色彩）</div>
+        <div><span class="label">具体表现:</span> 使用了大量"然后、的话、其实、不知道大家有没有这种感觉"等弱化语气的词汇；在正课开始前，花了近10分钟进行小组团建。</div>
+        <div class="insight"><span class="label">深度洞察:</span> 正是因为你有着非常强的同理心，你想照顾到每一个人的感受，导致你的场务性话语（管纪律、选组长、找同学）远远多于专业定调。当你在台上频繁使用商量的语气（"不知道大家有没有..."）时，你主动放低了身段，从一个与企业家平起平坐的"成长陪跑伙伴"降级成了"热心的组织者"。</div>
+        <div><span class="label">优化建议:</span> 区分"带班动作"与"主持宣讲"。在进入FOCUS主持词时，收起口头禅，切断商量语气，换上笃定、果决的专家声线。</div>
+        <div class="suggestion"><strong>建议话术：</strong>(去除冗余词)"各位同学，当下的竞争环境下，现金流和利润就是企业的生命线。未来两天，请大家暂时放下日常的琐碎，和核心团队一起全身心投入学习。"</div>
+    </div>
+
+    <div class="ending">
+        阿左，你的亲和力与同理心是你与生俱来的天赋，现场的温度因为有你而变得火热。但这块璞玉还需要"专业度"这把刀来雕琢。试着在登台那几分钟，收敛起一点"随和"，穿上"高维专业陪跑伙伴"的盔甲。只要把那缺失的框架补齐，把软词换成笃定，你一定会成为台上那个既有温度、又有力量的顶级班主任！期待你下一次的绽放！
+    </div>
+
+    <div class="footer">
+        *注：输入信息来源自 2026-03-14 阿左【业务优化与利润提升】录音逐字稿及高维5+5标准主持词文件。
+    </div>
+
+</body>
+</html>
