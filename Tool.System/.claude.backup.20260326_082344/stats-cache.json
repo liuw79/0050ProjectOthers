@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "lastComputedDate": "2026-02-12",
+  "dailyActivity": [
+    {
+      "date": "2026-01-25",
+      "messageCount": 5,
+      "sessionCount": 2,
+      "toolCallCount": 0
+    }
+  ],
+  "dailyModelTokens": [],
+  "modelUsage": {},
+  "totalSessions": 2,
+  "totalMessages": 5,
+  "longestSession": {
+    "sessionId": "6a3c1ab7-ec1c-4e5b-a6e8-84a1fe2dd5c0",
+    "duration": 1051,
+    "messageCount": 2,
+    "timestamp": "2026-01-25T08:58:28.049Z"
+  },
+  "firstSessionDate": "2026-01-25T08:58:28.049Z",
+  "hourCounts": {
+    "16": 1,
+    "17": 1
+  },
+  "totalSpeculationTimeSavedMs": 0
+}

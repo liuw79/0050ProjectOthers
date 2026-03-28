@@ -1,0 +1,108 @@
+2026-01-25T08:52:23.472Z [ERROR] Failed to save config with lock: Error: ENOENT: no such file or directory, lstat '/Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json'
+2026-01-25T08:52:23.473Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143473
+2026-01-25T08:52:23.473Z [DEBUG] Setting permissions for new file: 600
+2026-01-25T08:52:23.473Z [DEBUG] Temp file written successfully, size: 82 bytes
+2026-01-25T08:52:23.473Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143473 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.473Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.477Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143477
+2026-01-25T08:52:23.477Z [DEBUG] Preserving file permissions: 100600
+2026-01-25T08:52:23.477Z [DEBUG] Temp file written successfully, size: 130 bytes
+2026-01-25T08:52:23.477Z [DEBUG] Applied original permissions to temp file
+2026-01-25T08:52:23.477Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143477 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.477Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.477Z [DEBUG] [init] configureGlobalMTLS starting
+2026-01-25T08:52:23.477Z [DEBUG] [init] configureGlobalMTLS complete
+2026-01-25T08:52:23.477Z [DEBUG] [init] configureGlobalAgents starting
+2026-01-25T08:52:23.477Z [DEBUG] [init] configureGlobalAgents complete
+2026-01-25T08:52:23.479Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143479
+2026-01-25T08:52:23.479Z [DEBUG] Preserving file permissions: 100600
+2026-01-25T08:52:23.479Z [DEBUG] Temp file written successfully, size: 167 bytes
+2026-01-25T08:52:23.479Z [DEBUG] Applied original permissions to temp file
+2026-01-25T08:52:23.479Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143479 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.479Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.480Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143480
+2026-01-25T08:52:23.480Z [DEBUG] Preserving file permissions: 100600
+2026-01-25T08:52:23.480Z [DEBUG] Temp file written successfully, size: 202 bytes
+2026-01-25T08:52:23.480Z [DEBUG] Applied original permissions to temp file
+2026-01-25T08:52:23.480Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143480 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.480Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.481Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143481
+2026-01-25T08:52:23.481Z [DEBUG] Preserving file permissions: 100600
+2026-01-25T08:52:23.481Z [DEBUG] Temp file written successfully, size: 238 bytes
+2026-01-25T08:52:23.481Z [DEBUG] Applied original permissions to temp file
+2026-01-25T08:52:23.481Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143481 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.481Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.482Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143482
+2026-01-25T08:52:23.482Z [DEBUG] Preserving file permissions: 100600
+2026-01-25T08:52:23.482Z [DEBUG] Temp file written successfully, size: 275 bytes
+2026-01-25T08:52:23.482Z [DEBUG] Applied original permissions to temp file
+2026-01-25T08:52:23.482Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json.tmp.11879.1769331143482 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json
+2026-01-25T08:52:23.482Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude.json written atomically
+2026-01-25T08:52:23.489Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-01-25T08:52:23.505Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-01-25T08:52:23.505Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-01-25T08:52:23.505Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-01-25T08:52:23.505Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-01-25T08:52:23.507Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-01-25T08:52:23.507Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-01-25T08:52:23.507Z [DEBUG] [STARTUP] Running setup()...
+2026-01-25T08:52:23.509Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/skills, project=[]
+2026-01-25T08:52:23.530Z [ERROR] Error: Error: ENOENT: no such file or directory, scandir '/Library/Application Support/ClaudeCode/.claude/skills'
+    at Module.readdirSync (node:fs:1569:26)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:1766
+    at yO (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:35112)
+    at Object.readdirSync (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:1736)
+    at _D1 (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2284:369)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2284:4279
+    at q (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:6814)
+    at CB2 (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:4920:4362)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:4920:6961
+    at q (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:6814)
+2026-01-25T08:52:23.530Z [ERROR] Error: Error: ENOENT: no such file or directory, scandir '/Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/skills'
+    at Module.readdirSync (node:fs:1569:26)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:1766
+    at yO (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:35112)
+    at Object.readdirSync (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:1736)
+    at _D1 (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2284:369)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:2284:4322
+    at q (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:6814)
+    at CB2 (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:4920:4362)
+    at file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:4920:6961
+    at q (file:///Users/comdir/.npm-global/lib/node_modules/@anthropic-ai/claude-code/cli.js:8:6814)
+2026-01-25T08:52:23.530Z [DEBUG] Error log sink initialized
+2026-01-25T08:52:23.531Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-01-25T08:52:23.531Z [DEBUG] Total plugin skills loaded: 0
+2026-01-25T08:52:23.531Z [DEBUG] Total plugin commands loaded: 0
+2026-01-25T08:52:23.531Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-01-25T08:52:23.550Z [DEBUG] [STARTUP] setup() completed in 43ms
+2026-01-25T08:52:23.550Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-01-25T08:52:23.554Z [DEBUG] Total plugin agents loaded: 0
+2026-01-25T08:52:23.554Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, legacy commands: 0)
+2026-01-25T08:52:23.555Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills, 0 bundled skills
+2026-01-25T08:52:23.555Z [DEBUG] [STARTUP] Commands and agents loaded in 5ms
+2026-01-25T08:52:23.555Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-01-25T08:52:23.555Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-01-25T08:52:23.555Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-01-25T08:52:23.557Z [DEBUG] Total LSP servers loaded: 0
+2026-01-25T08:52:23.557Z [DEBUG] [STARTUP] MCP configs loaded in 68ms
+2026-01-25T08:52:23.558Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-01-25T08:52:23.558Z [DEBUG] LSP manager initialized with 0 servers
+2026-01-25T08:52:23.558Z [DEBUG] LSP server manager initialized successfully
+2026-01-25T08:52:23.558Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-01-25T08:52:23.559Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-01-25T08:52:23.559Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-01-25T08:52:23.561Z [DEBUG] installed_plugins.json doesn't exist, returning empty V2 object
+2026-01-25T08:52:23.561Z [DEBUG] Initialized versioned plugins system with 0 plugins
+2026-01-25T08:52:23.562Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-01-25T08:52:23.579Z [DEBUG] Created empty session index
+2026-01-25T08:52:23.579Z [DEBUG] Writing to temp file: /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/todos/c52ef255-4032-458e-9d52-8f949aeb12b9-agent-c52ef255-4032-458e-9d52-8f949aeb12b9.json.tmp.11879.1769331143579
+2026-01-25T08:52:23.579Z [DEBUG] Temp file written successfully, size: 2 bytes
+2026-01-25T08:52:23.579Z [DEBUG] Renaming /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/todos/c52ef255-4032-458e-9d52-8f949aeb12b9-agent-c52ef255-4032-458e-9d52-8f949aeb12b9.json.tmp.11879.1769331143579 to /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/todos/c52ef255-4032-458e-9d52-8f949aeb12b9-agent-c52ef255-4032-458e-9d52-8f949aeb12b9.json
+2026-01-25T08:52:23.579Z [DEBUG] File /Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/todos/c52ef255-4032-458e-9d52-8f949aeb12b9-agent-c52ef255-4032-458e-9d52-8f949aeb12b9.json written atomically
+2026-01-25T08:52:23.582Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-01-25T08:52:23.582Z [DEBUG] Found 0 hook matchers in settings
+2026-01-25T08:52:23.582Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2026-01-25T08:52:23.592Z [DEBUG] Total plugin output styles loaded: 0
+2026-01-25T08:52:23.593Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-01-25T08:52:23.593Z [DEBUG] Found 0 hook matchers in settings
+2026-01-25T08:52:23.593Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)

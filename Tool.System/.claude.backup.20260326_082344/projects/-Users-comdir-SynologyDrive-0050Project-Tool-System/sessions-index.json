@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "6a3c1ab7-ec1c-4e5b-a6e8-84a1fe2dd5c0",
+      "fullPath": "/Users/comdir/SynologyDrive/0050Project/Tool.System/.claude/projects/-Users-comdir-SynologyDrive-0050Project-Tool-System/6a3c1ab7-ec1c-4e5b-a6e8-84a1fe2dd5c0.jsonl",
+      "fileMtime": 1769333487683,
+      "firstPrompt": "hello",
+      "summary": "Login Error - Invalid API Key",
+      "messageCount": 2,
+      "created": "2026-01-25T08:58:28.049Z",
+      "modified": "2026-01-25T08:58:29.100Z",
+      "gitBranch": "main",
+      "projectPath": "/Users/comdir/SynologyDrive/0050Project/Tool.System",
+      "isSidechain": false
+    }
+  ],
+  "originalPath": "/Users/comdir/SynologyDrive/0050Project/Tool.System"
+}
