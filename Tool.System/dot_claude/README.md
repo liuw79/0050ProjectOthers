@@ -64,3 +64,18 @@ EOF
 - SSH 配置信息
 - 全局 Skills（/tencent-ssh、/meeting 等）
 - Claude Code 设置
+
+## 快捷别名配置
+
+```bash
+# 1. 官方 Anthropic Opus 4.6 (原汁原味)
+alias cy='ANTHROPIC_BASE_URL="https://api.anthropic.com" claude --dangerously-skip-permissions --model claude-opus-4.6'
+
+# 2. 智谱 GLM-5.1 (绕过权限检查)
+# 配置目录: ~/.claude (或通过软链接映射的 dot_claude)
+alias cyg='CLAUDE_CONFIG_DIR="$HOME/.claude" claude --dangerously-skip-permissions'
+
+# 3. MiniMax M2.7 (绕过权限检查)
+# 配置目录: ~/.claude/minimax_config
+alias cym='CLAUDE_CONFIG_DIR="$HOME/.claude/minimax_config" claude --dangerously-skip-permissions'
+```
