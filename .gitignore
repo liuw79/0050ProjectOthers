@@ -17,3 +17,5 @@ Thumbs.db
 *.tmp
 *.temp
 .DS_Store
+Tool.System/hammerspoon/clipboard_history.json
+Tool.System/hammerspoon/iMac_sleep_troubleshooting/

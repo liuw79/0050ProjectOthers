@@ -1,0 +1,72 @@
+# 高维学堂品牌监控配置
+
+# 学友企业品牌关键词
+brands:
+  - 北方华创
+  - 名创优品
+  - MINISO
+  - 霸王茶姬
+  - 小熊电器
+  - 电小二
+  - DR
+  - DR钻戒
+  - 由莱
+  - YOLAI
+  - 韶音
+  - Shokz
+  - 盈富斯
+  - INFOTHINK
+  - 倍思
+  - Baseus
+  - 布童
+
+# RSS 源
+rss_sources:
+  # 垂类网站
+  - name: 36氪
+    url: https://www.36kr.com/feed
+    category: 垂类网站
+  - name: 虎嗅
+    url: https://rss.huxiu.com/
+    category: 垂类网站
+  - name: 创业邦
+    url: https://www.cyzone.cn/rss
+    category: 垂类网站
+  - name: 钛媒体
+    url: https://www.tmtpost.com/rss.xml
+    category: 垂类网站
+  - name: 亿邦动力
+    url: https://www.ebrun.com/rss.xml
+    category: 垂类网站
+  # 主流/财经媒体
+  - name: 界面新闻
+    url: https://a.jiemian.com/index.php?m=article&a=rss
+    category: 主流媒体
+  - name: 澎湃新闻
+    url: https://www.thepaper.cn/rss.xml
+    category: 主流媒体
+  - name: 每日经济新闻
+    url: https://www.nbd.com.cn/rss/news.xml
+    category: 财经媒体
+  # 科技媒体
+  - name: IT之家
+    url: https://www.ithome.com/rss/
+    category: 科技媒体
+  - name: 爱范儿
+    url: https://www.ifanr.com/rss
+    category: 科技媒体
+
+# 数据存储路径
+data_dir: data
+
+# 启用百度新闻搜索
+enable_baidu_news: true
+
+# 邮件通知配置
+email:
+  enabled: true
+  smtp_server: smtp.feishu.cn
+  smtp_port: 465
+  smtp_user: lw@gaowei.com  # 发件邮箱
+  smtp_password: ""  # 邮箱密码或应用专用密码
+  recipient: lw@gaowei.com  # 收件人

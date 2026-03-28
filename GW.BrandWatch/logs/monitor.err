@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/liuwei/SynologyDrive/0050Project/GW.BrandWatch/src/monitor.py", line 7, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/liuwei/SynologyDrive/0050Project/GW.BrandWatch/src/monitor.py", line 7, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/liuwei/SynologyDrive/0050Project/GW.BrandWatch/src/monitor.py", line 7, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+Traceback (most recent call last):
+  File "/Users/liuwei/SynologyDrive/0050Project/GW.BrandWatch/src/monitor.py", line 7, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
