@@ -59,7 +59,7 @@ Host git.code.tencent.com
 |------|------|------|
 | `gkb` | GW.KnowledgeBase | 知识库 |
 | `gc` / `con` / `CON` | GW.Content | 内容 |
-| `da` | GW.DataAnalysis | 数据分析 |
+| `da` / `data` / `DATA` | GW.DataAnalysis | 数据分析 |
 | `db` | GW.Database | 数据库 |
 | `gtm` | GW.GTM | GTM |
 | `html` | GW.Html | HTML |
@@ -79,12 +79,14 @@ Host git.code.tencent.com
 | `csv` | GW.Csv | CSV |
 | `classroom` | GW.Classroom | 课堂 |
 | `ascend` | GW.AscendPlan | 攀升计划 |
-| `sm` | GW.ShareMoney | 净利分配 |
+| `sm` / `share` / `SHARE` | GW.ShareMoney | 净利分配 |
 
 ### 刘伟 (LW) 系列
 | 缩写 | 目录 | 说明 |
 |------|------|------|
-| `lkb` | LW.KnowledgeBase | 知识库 |
+| `lkb` / `LKB` | /Users/comdir/SynologyDrive/LW.KnowledgeBase | 知识库（项目外路径） |
+| `ltf` / `LTF` | LW.LiuTongfei | 刘同飞 |
+| `yy` / `YY` | LW.Yy | Yy |
 | `br` | LW.BloomReader | Bloom阅读器 |
 | `ebook` | LW.eBook | 电子书 |
 | `fy` | LW.FeiYang | 飞扬 |
@@ -95,7 +97,7 @@ Host git.code.tencent.com
 ### 工具 (Tool) 系列
 | 缩写 | 目录 | 说明 |
 |------|------|------|
-| `ts` / `sys` | Tool.System | 系统工具 |
+| `ts` / `sys` / `SYS` | Tool.System | 系统工具 |
 | `tas` | Tool.Agent-S | Agent-S |
 | `td` | Tool.Docs | 文档工具 |
 | `ds` / `deepseek` | Tool.DeepSeek | DeepSeek导出 |
