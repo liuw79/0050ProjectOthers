@@ -56,12 +56,46 @@ log = logging.getLogger(__name__)
 # ── progress / helpers ───────────────────────────────────────────────
 def load_progress():
     if PROGRESS_FILE.exists():
-        return json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
-    return {"completed": [], "failed": []}
+        data = json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
+        # 兼容旧格式: completed=[id1,id2,...] -> completed={id: count,...}
+        if isinstance(data.get("completed"), list):
+            old_ids = data["completed"]
+            data["completed"] = {pid: -1 for pid in old_ids}  # -1 = 未知数量
+        if isinstance(data.get("failed"), list):
+            data["failed"] = list(set(data["failed"]))
+        return data
+    return {"completed": {}, "failed": []}
 
 
 def save_progress(p):
     PROGRESS_FILE.write_text(json.dumps(p, ensure_ascii=False, indent=2))
+
+
+def scan_downloaded_images():
+    """扫描 images/ 目录，统计每个帖子ID已下载的图片数。"""
+    pid_count = {}
+    for d in IMAGES_DIR.iterdir():
+        if not d.is_dir():
+            continue
+        for f in d.iterdir():
+            if f.is_file():
+                # 文件名格式: {pid}_{NNN}.{ext}
+                m = re.match(r"^(\d+)_", f.name)
+                if m:
+                    pid = m.group(1)
+                    pid_count[pid] = pid_count.get(pid, 0) + 1
+    return pid_count
+
+
+def is_post_done(pid, progress, disk_images):
+    """判断帖子是否已完整处理（有图片且记录在 progress 中）。"""
+    if pid in progress.get("failed", []):
+        return False
+    if pid in progress.get("completed", {}):
+        img_count = disk_images.get(pid, 0)
+        # 已有图片才算真正完成
+        return img_count > 0
+    return False
 
 
 def safe_name(name: str) -> str:
@@ -366,6 +400,18 @@ def main():
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
     progress = load_progress()
 
+    # 扫描磁盘已有图片，构建去重依据
+    disk_images = scan_downloaded_images()
+    log.info("磁盘已有 %d 个帖子的图片（共 %d 张）",
+             len(disk_images), sum(disk_images.values()))
+
+    # 将磁盘数据同步到 progress（补漏）
+    for pid, count in disk_images.items():
+        if pid not in progress["completed"]:
+            progress["completed"][pid] = count
+            log.info("  补录磁盘帖子: %s (%d 张图片)", pid, count)
+    save_progress(progress)
+
     # 清除登录标记
     LOGIN_DONE_FILE.unlink(missing_ok=True)
 
@@ -443,9 +489,10 @@ def main():
             log.info("共 %d 个帖子待处理", len(threads))
 
             # ── 逐帖处理 ────────────────────────────────────────────
+            skipped = 0
             for t in threads:
-                if not args.dry_run and t["id"] in progress["completed"]:
-                    log.info("跳过已完成: %s", t["title"])
+                if not args.dry_run and is_post_done(t["id"], progress, disk_images):
+                    skipped += 1
                     continue
 
                 ok = process_thread(
@@ -455,10 +502,22 @@ def main():
                     dry_run=args.dry_run,
                 )
                 if not args.dry_run:
-                    key = "completed" if ok else "failed"
-                    progress[key].append(t["id"])
+                    if ok:
+                        # 记录下载的图片数
+                        new_count = len(list(
+                            f for d in IMAGES_DIR.iterdir() if d.is_dir()
+                            for f in d.iterdir()
+                            if f.name.startswith(f"{t['id']}_")
+                        ))
+                        progress["completed"][t["id"]] = new_count
+                    else:
+                        if t["id"] not in progress["failed"]:
+                            progress["failed"].append(t["id"])
                     save_progress(progress)
                 time.sleep(args.delay)
+
+            if skipped:
+                log.info("跳过已下载: %d 个帖子", skipped)
 
         finally:
             ctx.close()
