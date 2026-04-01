@@ -1,0 +1,6 @@
+.browser_session/
+.chrome_profile/
+.login_done
+__pycache__/
+*.log
+scraper.log
