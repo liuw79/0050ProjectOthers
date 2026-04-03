@@ -21,3 +21,14 @@ Tool.System/hammerspoon/clipboard_history.json
 Tool.System/hammerspoon/iMac_sleep_troubleshooting/
 Tool.System/hammerspoon/clipboard_history.json
 Tool.System/hammerspoon/iMac_sleep_troubleshooting/
+
+# Legfoot scraper data
+legfoot/images/
+legfoot/*.log
+legfoot/.browser_session/
+legfoot/.chrome_profile/
+legfoot/.login_done
+legfoot/debug_*.html
+legfoot/debug_*.png
+legfoot/progress.json.bak
+legfoot/stats.py
