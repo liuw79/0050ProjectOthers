@@ -178,6 +178,28 @@ def get_thread_links(page, start=1, end=1):
                .filter(x => x.text.length > 0 && !x.text.match(/^\\d+$/))""",
         )
 
+        # 提取回复数（Cell[4] = 回复数，Cell[5] = 查看数）
+        reply_counts = page.evaluate("""() => {
+            const rows = document.querySelectorAll('tr');
+            const map = {};
+            for (const row of rows) {
+                const link = row.querySelector('a[href*="showtopic"]');
+                if (!link) continue;
+                const m = link.href.match(/id=(\\d+)/);
+                if (!m) continue;
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 5) {
+                    const replyText = cells[4].textContent.trim();
+                    const replies = parseInt(replyText);
+                    if (!isNaN(replies)) {
+                        map[m[1]] = replies;
+                    }
+                }
+            }
+            return map;
+        }""")
+        log.info("  回复数提取: %d 个帖子有回复数据", len(reply_counts))
+
         seen = set()
         for a in anchors:
             m = re.search(r"id=(\d+)", a["href"])
@@ -187,7 +209,12 @@ def get_thread_links(page, start=1, end=1):
             if pid in seen:
                 continue
             seen.add(pid)
-            links.append({"id": pid, "url": a["href"], "title": a["text"]})
+            links.append({
+                "id": pid,
+                "url": a["href"],
+                "title": a["text"],
+                "replies": reply_counts.get(pid, 0),
+            })
 
         log.info("  找到 %d 个帖子", len(seen))
     return links
@@ -212,12 +239,58 @@ def random_reply() -> str:
     return random.choice(REPLY_POOL)
 
 
+# 同一模特的别名映射 → 统一归入同一文件夹
+MODEL_ALIASES: dict[str, str] = {
+    "Twins-桃桃": "Twins-桃桃夭夭",
+    "Twins-夭夭": "Twins-桃桃夭夭",
+    "桃桃·夭夭twins": "Twins-桃桃夭夭",
+}
+
+
 def extract_model_name(title: str) -> str:
-    """从帖子标题提取模特名字。如 'Model 杨晨晨Yome 26033116' -> '杨晨晨Yome'"""
-    m = re.match(r"Model\s+(.+?)\s+\d{8,}", title)
+    """从帖子标题提取模特名字，归入统一文件夹。
+
+    支持的标题格式:
+      Model 杨晨晨Yome 26033116    → 杨晨晨Yome
+      Model 陆萱萱 0307生日快乐16  → 陆萱萱
+      祝 陆萱萱 0307生日快乐16     → 陆萱萱
+      愛穿絲襪的女孩- 289          → 愛穿絲襪的女孩
+      都市丽人的丝腿自拍 NO.2624.. → 都市丽人的丝腿自拍
+      beautyleg Kaylar -20          → beautyleg Kaylar
+    """
+    name = None
+
+    # 1) Model XXX 数字... — 最常见格式
+    m = re.match(r"Model\s+(.+?)\s+\d", title)
     if m:
-        return safe_name(m.group(1).strip())
-    return safe_name(title)
+        name = m.group(1).strip()
+
+    # 2) 祝 XXX 生日快乐...
+    if not name:
+        m = re.match(r"祝\s+(\S+)", title)
+        if m:
+            name = m.group(1).strip()
+
+    # 3) 愛穿絲襪的女孩- NNN
+    if not name and title.startswith("愛穿絲襪"):
+        name = "愛穿絲襪的女孩"
+
+    # 4) 都市丽人的丝腿自拍 NO.NNNN ...
+    if not name and title.startswith("都市丽人"):
+        name = "都市丽人的丝腿自拍"
+
+    # 5) beautyleg Kaylar -NN
+    if not name and title.startswith("beautyleg"):
+        name = "beautyleg Kaylar"
+
+    # 6) 兜底：整个标题
+    if not name:
+        name = title
+
+    name = safe_name(name)
+
+    # 别名映射
+    return MODEL_ALIASES.get(name, name)
 
 
 def process_thread(context, info, *, delay=5, reply_text=None, dry_run=False):
@@ -241,6 +314,26 @@ def process_thread(context, info, *, delay=5, reply_text=None, dry_run=False):
         except PlaywrightTimeout:
             log.warning("帖子加载超时，继续操作")
         time.sleep(delay)
+
+        # ── 检查限速 / 帖子过期 ──────────────────────────────────────
+        for attempt in range(3):
+            body_text = page.evaluate("() => document.body.innerText")
+            if "刷新页面过快" in body_text:
+                wait = 30 * (attempt + 1)
+                log.warning("触发限速，等待 %ds 后重试… (第%d次)", wait, attempt + 1)
+                time.sleep(wait)
+                page.goto(url, wait_until=GOTO_WAIT, timeout=GOTO_TIMEOUT)
+                time.sleep(delay)
+                continue
+            break
+        else:
+            log.error("限速未解除，跳过帖子 %s", pid)
+            return False
+
+        body_text = page.evaluate("() => document.body.innerText")
+        if "超过 90 天" in body_text:
+            log.info("帖子超过90天，需要VIP，跳过: %s", title)
+            return True  # 标记为完成，避免重试
 
         # ── 检查是否已登录 ──────────────────────────────────────────
         has_login_link = page.evaluate(
@@ -288,6 +381,14 @@ def process_thread(context, info, *, delay=5, reply_text=None, dry_run=False):
                     )
                     log.info("通过 form.submit() 提交")
                 time.sleep(delay)
+
+                # 回复后重新加载页面，使隐藏图片变为可见
+                log.info("重新加载帖子页面以获取图片…")
+                try:
+                    page.goto(url, wait_until=GOTO_WAIT, timeout=GOTO_TIMEOUT)
+                except PlaywrightTimeout:
+                    log.warning("重新加载超时，继续解析")
+                time.sleep(3)
             else:
                 log.info("未找到回复框，尝试直接获取图片")
         else:
@@ -297,52 +398,33 @@ def process_thread(context, info, *, delay=5, reply_text=None, dry_run=False):
         time.sleep(3)
 
         # 策略：从帖子内容区域查找大图
+        # 实际图片URL格式: images.legfoot.net/2026/0107/1_xxx.jpg
         image_urls = page.evaluate(
             """() => {
                 const imgs = [...document.querySelectorAll('img')];
                 return imgs
-                    .filter(img => img.naturalWidth > 100 && img.naturalHeight > 100)
+                    .filter(img => img.naturalWidth > 200 && img.naturalHeight > 200)
                     .filter(img => {
                         const s = img.src.toLowerCase();
-                        // 内容图片特征
-                        return s.includes('images.legfoot.net/uploads')
-                            || s.includes('images.legfoot.net/attachments')
-                            || s.includes('images.legfoot.net/photo')
-                            || s.includes('upload') || s.includes('attachment')
-                            || s.includes('photo');
+                        // 内容图片：来自 images.legfoot.net 的非头像图
+                        return s.includes('images.legfoot.net/')
+                            && !s.includes('/avatars/')
+                            && !s.includes('/avatar');
                     })
                     .filter(img => {
                         const s = img.src.toLowerCase();
                         // 排除 UI 元素
-                        return !s.includes('/avatars/') && !s.includes('/avatar')
-                            && !s.includes('emoji') && !s.includes('smiley')
+                        return !s.includes('emoji') && !s.includes('smiley')
                             && !s.includes('/icon') && !s.includes('/logo')
                             && !s.includes('/banner') && !s.includes('images/star')
                             && !s.includes('images/lftitle') && !s.includes('images/vip')
-                            && !s.includes('images/styles')
+                            && !s.includes('images/video') && !s.includes('images/styles')
                             && !s.includes('members.legfoot.net/images/')
                             && !s.includes('signature.gif');
                     })
                     .map(img => img.src);
             }"""
         )
-
-        # 如果精确匹配为空，宽松匹配
-        if not image_urls:
-            image_urls = page.evaluate(
-                """() => {
-                    const imgs = [...document.querySelectorAll('img')];
-                    return imgs
-                        .filter(img => img.naturalWidth > 200 && img.naturalHeight > 200)
-                        .filter(img => {
-                            const s = img.src.toLowerCase();
-                            return s.includes('images.legfoot.net')
-                                && !s.includes('/avatars/')
-                                && !s.includes('members.legfoot.net/images/');
-                        })
-                        .map(img => img.src);
-                }"""
-            )
 
         # 去重
         image_urls = list(dict.fromkeys(image_urls))
@@ -391,6 +473,8 @@ def main():
     ap.add_argument("--skip-announcements", action="store_true", default=True,
                     help="跳过公告帖（默认开启）")
     ap.add_argument("--dry-run", action="store_true", help="仅预览，不执行")
+    ap.add_argument("--min-replies", type=int, default=0,
+                    help="只抓取回复数 >= N 的帖子（默认 0，不过滤）")
     args = ap.parse_args()
 
     if not any([args.pages, args.post, args.url]):
@@ -485,6 +569,12 @@ def main():
                 threads = [t for t in threads
                            if not any(kw in t["title"] for kw in ann_keywords)]
                 log.info("过滤公告: %d → %d 个帖子", before, len(threads))
+
+            # 按回复数过滤
+            if args.min_replies > 0:
+                before = len(threads)
+                threads = [t for t in threads if t.get("replies", 0) >= args.min_replies]
+                log.info("回复数 >= %d 过滤: %d → %d 个帖子", args.min_replies, before, len(threads))
 
             log.info("共 %d 个帖子待处理", len(threads))
 

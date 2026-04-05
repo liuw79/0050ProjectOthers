@@ -1,0 +1,15 @@
+# Ignore Hammerspoon third-party Spoons
+hammerspoon/Spoons/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VSCode settings
+.vscode/
